@@ -5,7 +5,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>The media category of media</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum MediaKeyStruct_media_category
+    public enum PreviewImage_media_key_media_category
     {
         [EnumMember(Value = "PreviewImage")]
         #pragma warning disable CS1591

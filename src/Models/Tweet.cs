@@ -56,6 +56,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Creation time of the Tweet.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Represent a boundary range (start and end zero-based indices) for the portion of text that is displayed for a post. `start` must be smaller than `end`. The start index is inclusive, the end index is exclusive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<int?>? DisplayTextRange { get; set; }
+#nullable restore
+#else
+        public List<int?> DisplayTextRange { get; set; }
+#endif
         /// <summary>The edit_controls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -235,6 +243,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "context_annotations", n => { ContextAnnotations = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ContextAnnotation>(global::Soenneker.X.OpenApiClient.Models.ContextAnnotation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "display_text_range", n => { DisplayTextRange = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "edit_controls", n => { EditControls = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls>(global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls.CreateFromDiscriminatorValue); } },
                 { "edit_history_tweet_ids", n => { EditHistoryTweetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>(global::Soenneker.X.OpenApiClient.Models.FullTextEntities.CreateFromDiscriminatorValue); } },
@@ -270,6 +279,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ContextAnnotation>("context_annotations", ContextAnnotations);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteCollectionOfPrimitiveValues<int?>("display_text_range", DisplayTextRange);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls>("edit_controls", EditControls);
             writer.WriteCollectionOfPrimitiveValues<string>("edit_history_tweet_ids", EditHistoryTweetIds);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>("entities", Entities);

@@ -7,36 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GeoRestrictions : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class GeoRestrictions : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>List of blacklisted country codes</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? BlacklistedCountryCodes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1? GeoRestrictionsMember1 { get; set; }
 #nullable restore
 #else
-        public List<string> BlacklistedCountryCodes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1 GeoRestrictionsMember1 { get; set; }
 #endif
-        /// <summary>List of whitelisted country codes</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WhitelistedCountryCodes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2? GeoRestrictionsMember2 { get; set; }
 #nullable restore
 #else
-        public List<string> WhitelistedCountryCodes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2 GeoRestrictionsMember2 { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictions"/> and sets the default values.
-        /// </summary>
-        public GeoRestrictions()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +37,17 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.GeoRestrictions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GeoRestrictions();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictions();
+            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GeoRestrictionsMember1 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1();
+            }
+            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.GeoRestrictionsMember2 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,11 +55,15 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(GeoRestrictionsMember1 != null)
             {
-                { "blacklisted_country_codes", n => { BlacklistedCountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "whitelisted_country_codes", n => { WhitelistedCountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-            };
+                return GeoRestrictionsMember1.GetFieldDeserializers();
+            }
+            else if(GeoRestrictionsMember2 != null)
+            {
+                return GeoRestrictionsMember2.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -66,9 +72,14 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("blacklisted_country_codes", BlacklistedCountryCodes);
-            writer.WriteCollectionOfPrimitiveValues<string>("whitelisted_country_codes", WhitelistedCountryCodes);
-            writer.WriteAdditionalData(AdditionalData);
+            if(GeoRestrictionsMember1 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1>(null, GeoRestrictionsMember1);
+            }
+            else if(GeoRestrictionsMember2 != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2>(null, GeoRestrictionsMember2);
+            }
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class MediaKeyStruct : IAdditionalDataHolder, IParsable
+    public partial class PreviewImage_media_key : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -17,23 +17,23 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Unique identifier of this media</summary>
         public double? Media { get; set; }
         /// <summary>The media category of media</summary>
-        public global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct_media_category? MediaCategory { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category? MediaCategory { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key"/> and sets the default values.
         /// </summary>
-        public MediaKeyStruct()
+        public PreviewImage_media_key()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct();
+            return new global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -44,7 +44,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "media", n => { Media = n.GetDoubleValue(); } },
-                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct_media_category>(); } },
+                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category>(); } },
             };
         }
         /// <summary>
@@ -55,7 +55,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDoubleValue("media", Media);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaKeyStruct_media_category>("media_category", MediaCategory);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category>("media_category", MediaCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
