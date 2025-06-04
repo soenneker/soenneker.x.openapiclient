@@ -7,45 +7,30 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// The file to upload.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class MediaUploadAppendRequestMember2 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class MediaPayloadByte : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The file to upload.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public byte[]? Media { get; set; }
-#nullable restore
-#else
-        public byte[] Media { get; set; }
-#endif
-        /// <summary>The segment_index property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments? SegmentIndex { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments SegmentIndex { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte"/> and sets the default values.
         /// </summary>
-        public MediaUploadAppendRequestMember2()
+        public MediaPayloadByte()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2();
+            return new global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +40,6 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media", n => { Media = n.GetByteArrayValue(); } },
-                { "segment_index", n => { SegmentIndex = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments>(global::Soenneker.X.OpenApiClient.Models.MediaSegments.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +49,6 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteByteArrayValue("media", Media);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments>("segment_index", SegmentIndex);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

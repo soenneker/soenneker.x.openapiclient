@@ -37,16 +37,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequest();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MediaUploadAppendRequestMember1 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.MediaUploadAppendRequestMember2 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2();
-            }
+            result.MediaUploadAppendRequestMember1 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1();
+            result.MediaUploadAppendRequestMember2 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2();
             return result;
         }
         /// <summary>
@@ -55,13 +48,9 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MediaUploadAppendRequestMember1 != null)
+            if(MediaUploadAppendRequestMember1 != null || MediaUploadAppendRequestMember2 != null)
             {
-                return MediaUploadAppendRequestMember1.GetFieldDeserializers();
-            }
-            else if(MediaUploadAppendRequestMember2 != null)
-            {
-                return MediaUploadAppendRequestMember2.GetFieldDeserializers();
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MediaUploadAppendRequestMember1, MediaUploadAppendRequestMember2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,14 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            if(MediaUploadAppendRequestMember1 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1>(null, MediaUploadAppendRequestMember1);
-            }
-            else if(MediaUploadAppendRequestMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2>(null, MediaUploadAppendRequestMember2);
-            }
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1>(null, MediaUploadAppendRequestMember1, MediaUploadAppendRequestMember2);
         }
     }
 }

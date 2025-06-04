@@ -5,7 +5,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>The type of media.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum MediaUploadConfigRequestOneShot_media_type
+    public enum MediaUploadRequestOneShot_media_type
     {
         [EnumMember(Value = "text/srt")]
         #pragma warning disable CS1591

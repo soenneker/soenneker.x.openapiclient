@@ -22,8 +22,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public byte[] Media { get; set; }
 #endif
-        /// <summary>An integer value representing the media upload segment.</summary>
-        public int? SegmentIndex { get; set; }
+        /// <summary>The segment_index property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaSegments? SegmentIndex { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaSegments SegmentIndex { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1"/> and sets the default values.
         /// </summary>
@@ -50,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "media", n => { Media = n.GetByteArrayValue(); } },
-                { "segment_index", n => { SegmentIndex = n.GetIntValue(); } },
+                { "segment_index", n => { SegmentIndex = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments>(global::Soenneker.X.OpenApiClient.Models.MediaSegments.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("media", Media);
-            writer.WriteIntValue("segment_index", SegmentIndex);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments>("segment_index", SegmentIndex);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
