@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The type of media.</summary>
+    /// <summary>The type of image or subtitle.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum MediaUploadRequestOneShot_media_type
     {
@@ -18,10 +18,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "image/jpeg")]
         #pragma warning disable CS1591
         ImageJpeg,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "image/gif")]
-        #pragma warning disable CS1591
-        ImageGif,
         #pragma warning restore CS1591
         [EnumMember(Value = "image/bmp")]
         #pragma warning disable CS1591

@@ -28,9 +28,9 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
 #endif
-        /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size, video duration) and enable advanced features.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.MediaCategory? MediaCategory { get; set; }
-        /// <summary>The type of media.</summary>
+        /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size) and enable advanced features.</summary>
+        public global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot? MediaCategory { get; set; }
+        /// <summary>The type of image or subtitle.</summary>
         public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type? MediaType { get; set; }
         /// <summary>Whether this media is shared or not.</summary>
         public bool? Shared { get; set; }
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>(global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media.CreateFromDiscriminatorValue); } },
-                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategory>(); } },
+                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>(); } },
                 { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
             };
@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>("media", Media);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategory>("media_category", MediaCategory);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>("media_category", MediaCategory);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>("media_type", MediaType);
             writer.WriteBoolValue("shared", Shared);
         }
