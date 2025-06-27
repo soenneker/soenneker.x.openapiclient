@@ -14,8 +14,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Unique identifier of this media</summary>
-        public double? Media { get; set; }
+        /// <summary>The unique identifier of this Media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Media { get; set; }
+#nullable restore
+#else
+        public string Media { get; set; }
+#endif
         /// <summary>The media category of media</summary>
         public global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category? MediaCategory { get; set; }
         /// <summary>
@@ -24,6 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public PreviewImage_media_key()
         {
             AdditionalData = new Dictionary<string, object>();
+            MediaCategory = global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category.TweetImage;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,7 +50,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media", n => { Media = n.GetDoubleValue(); } },
+                { "media", n => { Media = n.GetStringValue(); } },
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category>(); } },
             };
         }
@@ -54,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("media", Media);
+            writer.WriteStringValue("media", Media);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key_media_category>("media_category", MediaCategory);
             writer.WriteAdditionalData(AdditionalData);
         }

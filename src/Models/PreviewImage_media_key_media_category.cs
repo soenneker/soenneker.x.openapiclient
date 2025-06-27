@@ -7,9 +7,9 @@ namespace Soenneker.X.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum PreviewImage_media_key_media_category
     {
-        [EnumMember(Value = "PreviewImage")]
+        [EnumMember(Value = "TweetImage")]
         #pragma warning disable CS1591
-        PreviewImage,
+        TweetImage,
         #pragma warning restore CS1591
     }
 }
