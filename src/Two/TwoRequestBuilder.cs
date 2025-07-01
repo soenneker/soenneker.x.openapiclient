@@ -12,6 +12,7 @@ using Soenneker.X.OpenApiClient.Two.Insights;
 using Soenneker.X.OpenApiClient.Two.Likes;
 using Soenneker.X.OpenApiClient.Two.Lists;
 using Soenneker.X.OpenApiClient.Two.Media;
+using Soenneker.X.OpenApiClient.Two.Notes;
 using Soenneker.X.OpenApiClient.Two.OpenapiJson;
 using Soenneker.X.OpenApiClient.Two.Spaces;
 using Soenneker.X.OpenApiClient.Two.Trends;
@@ -80,6 +81,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder Media
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The notes property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Notes.NotesRequestBuilder Notes
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Notes.NotesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The openapiJson property</summary>
         public global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiJsonRequestBuilder OpenapiJson
