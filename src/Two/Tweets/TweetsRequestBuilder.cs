@@ -13,6 +13,7 @@ using Soenneker.X.OpenApiClient.Two.Tweets.Label;
 using Soenneker.X.OpenApiClient.Two.Tweets.Sample10;
 using Soenneker.X.OpenApiClient.Two.Tweets.Sample;
 using Soenneker.X.OpenApiClient.Two.Tweets.Search;
+using Soenneker.X.OpenApiClient.Two.Tweets.Unviewable;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -65,6 +66,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.SearchRequestBuilder Search
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unviewable property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Tweets.Unviewable.UnviewableRequestBuilder Unviewable
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Unviewable.UnviewableRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.tweets.item collection</summary>
         /// <param name="position">The ID of the Post to be deleted.</param>
