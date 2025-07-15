@@ -41,8 +41,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Community Note rating status. Only returned when test result is false</summary>
         public global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus? Status { get; set; }
-        /// <summary>Test result information. Only returned when test result is true.</summary>
-        public bool? TestResult { get; set; }
+        /// <summary>The test result of a community note.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.NoteTestResult? TestResult { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.NoteTestResult TestResult { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Note"/> and sets the default values.
         /// </summary>
@@ -72,7 +78,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "info", n => { Info = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteInfo>(global::Soenneker.X.OpenApiClient.Models.NoteInfo.CreateFromDiscriminatorValue); } },
                 { "post_id", n => { PostId = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus>(); } },
-                { "test_result", n => { TestResult = n.GetBoolValue(); } },
+                { "test_result", n => { TestResult = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteTestResult>(global::Soenneker.X.OpenApiClient.Models.NoteTestResult.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -86,7 +92,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteInfo>("info", Info);
             writer.WriteStringValue("post_id", PostId);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus>("status", Status);
-            writer.WriteBoolValue("test_result", TestResult);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteTestResult>("test_result", TestResult);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
