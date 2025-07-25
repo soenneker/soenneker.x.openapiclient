@@ -99,7 +99,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a List.
+        /// Retrieves details of a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2ListsIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -166,7 +166,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns a List.
+        /// Retrieves details of a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -224,7 +224,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
         {
         }
         /// <summary>
-        /// Returns a List.
+        /// Retrieves details of a specific List by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ListsItemRequestBuilderGetQueryParameters 

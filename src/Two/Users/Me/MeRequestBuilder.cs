@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me
         {
         }
         /// <summary>
-        /// This endpoint returns information about the requesting User.
+        /// Retrieves details of the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersMeResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersMeResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersMeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns information about the requesting User.
+        /// Retrieves details of the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me
             return new global::Soenneker.X.OpenApiClient.Two.Users.Me.MeRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint returns information about the requesting User.
+        /// Retrieves details of the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MeRequestBuilderGetQueryParameters 

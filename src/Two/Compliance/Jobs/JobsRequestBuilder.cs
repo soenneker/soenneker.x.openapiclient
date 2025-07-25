@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
         {
         }
         /// <summary>
-        /// Returns recent Compliance Jobs for a given job type and optional job status
+        /// Retrieves a list of Compliance Jobs filtered by job type and optional status.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns recent Compliance Jobs for a given job type and optional job status
+        /// Retrieves a list of Compliance Jobs filtered by job type and optional status.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             return new global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns recent Compliance Jobs for a given job type and optional job status
+        /// Retrieves a list of Compliance Jobs filtered by job type and optional status.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JobsRequestBuilderGetQueryParameters 

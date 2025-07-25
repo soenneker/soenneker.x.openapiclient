@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
         {
         }
         /// <summary>
-        /// Returns a list of Users that are being followed by the provided User ID
+        /// Retrieves a list of Users followed by a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of Users that are being followed by the provided User ID
+        /// Retrieves a list of Users followed by a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of Users that are being followed by the provided User ID
+        /// Retrieves a list of Users followed by a specific User by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowingRequestBuilderGetQueryParameters 

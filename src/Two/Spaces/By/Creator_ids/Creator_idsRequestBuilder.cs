@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.By.Creator_ids
         {
         }
         /// <summary>
-        /// Returns a variety of information about the Spaces created by the provided User IDs
+        /// Retrieves details of Spaces created by specified User IDs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2SpacesByCreatorIdsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.By.Creator_ids
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2SpacesByCreatorIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2SpacesByCreatorIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a variety of information about the Spaces created by the provided User IDs
+        /// Retrieves details of Spaces created by specified User IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.By.Creator_ids
             return new global::Soenneker.X.OpenApiClient.Two.Spaces.By.Creator_ids.Creator_idsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a variety of information about the Spaces created by the provided User IDs
+        /// Retrieves details of Spaces created by specified User IDs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Creator_idsRequestBuilderGetQueryParameters 

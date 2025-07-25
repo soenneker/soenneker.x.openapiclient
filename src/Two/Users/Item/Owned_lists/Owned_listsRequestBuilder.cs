@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists
         {
         }
         /// <summary>
-        /// Get a User&apos;s Owned Lists.
+        /// Retrieves a list of Lists owned by a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdOwnedListsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdOwnedListsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdOwnedListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a User&apos;s Owned Lists.
+        /// Retrieves a list of Lists owned by a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists.Owned_listsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a User&apos;s Owned Lists.
+        /// Retrieves a list of Lists owned by a specific User by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Owned_listsRequestBuilderGetQueryParameters 

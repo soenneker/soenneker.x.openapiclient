@@ -89,7 +89,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
         {
         }
         /// <summary>
-        /// Returns a variety of information about the Post specified by the requested ID.
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +137,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.TweetCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.TweetCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a variety of information about the Post specified by the requested ID.
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -187,7 +187,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.TweetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a variety of information about the Post specified by the requested ID.
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TweetsRequestBuilderGetQueryParameters 

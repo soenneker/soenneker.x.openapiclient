@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
         {
         }
         /// <summary>
-        /// Returns a variety of information about each Post that quotes the Post specified by the requested ID.
+        /// Retrieves a list of Posts that quote a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdQuoteTweetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdQuoteTweetsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdQuoteTweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a variety of information about each Post that quotes the Post specified by the requested ID.
+        /// Retrieves a list of Posts that quote a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets.Quote_tweetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a variety of information about each Post that quotes the Post specified by the requested ID.
+        /// Retrieves a list of Posts that quote a specific Post by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Quote_tweetsRequestBuilderGetQueryParameters 

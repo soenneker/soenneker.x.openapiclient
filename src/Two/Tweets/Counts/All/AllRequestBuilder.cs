@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
         {
         }
         /// <summary>
-        /// Returns Post Counts that match a search query.
+        /// Retrieves the count of Posts matching a search query from the full archive.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsCountsAllResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsCountsAllResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsCountsAllResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns Post Counts that match a search query.
+        /// Retrieves the count of Posts matching a search query from the full archive.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Counts.All.AllRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns Post Counts that match a search query.
+        /// Retrieves the count of Posts matching a search query from the full archive.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AllRequestBuilderGetQueryParameters 

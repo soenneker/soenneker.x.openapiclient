@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
         {
         }
         /// <summary>
-        /// Returns a list of Users that are muted by the provided User ID
+        /// Retrieves a list of Users muted by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMutingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of Users that are muted by the provided User ID
+        /// Retrieves a list of Users muted by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.MutingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of Users that are muted by the provided User ID
+        /// Retrieves a list of Users muted by the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MutingRequestBuilderGetQueryParameters 

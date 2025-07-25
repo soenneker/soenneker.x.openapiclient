@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
         {
         }
         /// <summary>
-        /// Returns the counts of rules from a User&apos;s active rule set, to reflect usage by project and application.
+        /// Retrieves the count of rules in the active rule set for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the counts of rules from a User&apos;s active rule set, to reflect usage by project and application.
+        /// Retrieves the count of rules in the active rule set for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the counts of rules from a User&apos;s active rule set, to reflect usage by project and application.
+        /// Retrieves the count of rules in the active rule set for the filtered stream.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CountsRequestBuilderGetQueryParameters 

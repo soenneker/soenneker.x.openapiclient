@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
         {
         }
         /// <summary>
-        /// Returns DM Events for a DM Conversation
+        /// Retrieves direct message events for a specific conversation.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2DmConversationsIdDmEventsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2DmConversationsIdDmEventsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2DmConversationsIdDmEventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns DM Events for a DM Conversation
+        /// Retrieves direct message events for a specific conversation.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
             return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events.Dm_eventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns DM Events for a DM Conversation
+        /// Retrieves direct message events for a specific conversation.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Dm_eventsRequestBuilderGetQueryParameters 

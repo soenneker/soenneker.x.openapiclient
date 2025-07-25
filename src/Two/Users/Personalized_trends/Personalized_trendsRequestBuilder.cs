@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Personalized_trends
         {
         }
         /// <summary>
-        /// Returns Personalized trends for the authenticated user
+        /// Retrieves personalized trending topics for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersPersonalizedTrendsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Personalized_trends
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersPersonalizedTrendsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersPersonalizedTrendsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns Personalized trends for the authenticated user
+        /// Retrieves personalized trending topics for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Personalized_trends
             return new global::Soenneker.X.OpenApiClient.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns Personalized trends for the authenticated user
+        /// Retrieves personalized trending topics for the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Personalized_trendsRequestBuilderGetQueryParameters 

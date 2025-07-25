@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Usage.Tweets
         {
         }
         /// <summary>
-        /// Returns the Post Usage.
+        /// Retrieves usage statistics for Posts over a specified number of days.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsageTweetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Usage.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsageTweetsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsageTweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the Post Usage.
+        /// Retrieves usage statistics for Posts over a specified number of days.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Usage.Tweets
             return new global::Soenneker.X.OpenApiClient.Two.Usage.Tweets.TweetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the Post Usage.
+        /// Retrieves usage statistics for Posts over a specified number of days.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TweetsRequestBuilderGetQueryParameters 

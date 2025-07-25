@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
         {
         }
         /// <summary>
-        /// Get a User&apos;s List Memberships.
+        /// Retrieves a list of Lists that a specific User is a member of by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdListMembershipsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdListMembershipsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdListMembershipsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a User&apos;s List Memberships.
+        /// Retrieves a list of Lists that a specific User is a member of by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.List_membershipsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a User&apos;s List Memberships.
+        /// Retrieves a list of Lists that a specific User is a member of by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class List_membershipsRequestBuilderGetQueryParameters 

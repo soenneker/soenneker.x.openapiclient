@@ -130,7 +130,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         {
         }
         /// <summary>
-        /// This endpoint returns information about a User. Specify User by ID.
+        /// Retrieves details of a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -153,7 +153,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// This endpoint returns information about a User. Specify User by ID.
+        /// Retrieves details of a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -181,7 +181,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// This endpoint returns information about a User. Specify User by ID.
+        /// Retrieves details of a specific User by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemRequestBuilderGetQueryParameters 

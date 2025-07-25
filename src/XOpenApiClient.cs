@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient
             ApiClientBuilder.RegisterDefaultDeserializer<FormParseNodeFactory>();
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl))
             {
-                RequestAdapter.BaseUrl = "https://api.twitter.com";
+                RequestAdapter.BaseUrl = "https://api.x.com";
             }
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }

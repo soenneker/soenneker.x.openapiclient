@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Followers
         {
         }
         /// <summary>
-        /// Returns a list of Users that follow a List by the provided List ID
+        /// Retrieves a list of Users who follow a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2ListsIdFollowersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Followers
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ListsIdFollowersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ListsIdFollowersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of Users that follow a List by the provided List ID
+        /// Retrieves a list of Users who follow a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Followers
             return new global::Soenneker.X.OpenApiClient.Two.Lists.Item.Followers.FollowersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of Users that follow a List by the provided List ID
+        /// Retrieves a list of Users who follow a specific List by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowersRequestBuilderGetQueryParameters 

@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
         {
         }
         /// <summary>
-        /// Returns Post objects that appears in the provided User ID&apos;s home timeline
+        /// Retrieves a reverse chronological list of Posts in the authenticated User’s Timeline.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdTimelinesReverseChronologicalResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdTimelinesReverseChronologicalResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdTimelinesReverseChronologicalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns Post objects that appears in the provided User ID&apos;s home timeline
+        /// Retrieves a reverse chronological list of Posts in the authenticated User’s Timeline.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronological.Reverse_chronologicalRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns Post objects that appears in the provided User ID&apos;s home timeline
+        /// Retrieves a reverse chronological list of Posts in the authenticated User’s Timeline.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Reverse_chronologicalRequestBuilderGetQueryParameters 

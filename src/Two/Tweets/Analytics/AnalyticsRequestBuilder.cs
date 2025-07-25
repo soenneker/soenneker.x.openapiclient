@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Analytics
         {
         }
         /// <summary>
-        /// Returns analytics of posts.
+        /// Retrieves analytics data for specified Posts within a defined time range.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Analytics"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Analytics
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Analytics>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Analytics.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns analytics of posts.
+        /// Retrieves analytics data for specified Posts within a defined time range.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Analytics
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Analytics.AnalyticsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns analytics of posts.
+        /// Retrieves analytics data for specified Posts within a defined time range.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AnalyticsRequestBuilderGetQueryParameters 

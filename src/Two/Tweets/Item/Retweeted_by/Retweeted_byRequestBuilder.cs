@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
         {
         }
         /// <summary>
-        /// Returns a list of Users that have retweeted the provided Post ID
+        /// Retrieves a list of Users who reposted a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdRetweetedByResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdRetweetedByResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdRetweetedByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a list of Users that have retweeted the provided Post ID
+        /// Retrieves a list of Users who reposted a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.Retweeted_byRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a list of Users that have retweeted the provided Post ID
+        /// Retrieves a list of Users who reposted a specific Post by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Retweeted_byRequestBuilderGetQueryParameters 

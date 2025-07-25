@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Two.OpenapiJson
         {
         }
         /// <summary>
-        /// Full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
+        /// Retrieves the full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Two.OpenapiJson
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiGetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiGetResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
+        /// Retrieves the full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.OpenapiJson
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiResponse.CreateFromDiscriminatorValue, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
+        /// Retrieves the full OpenAPI Specification in JSON format. (See https://github.com/OAI/OpenAPI-Specification/blob/master/README.md)
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
         {
         }
         /// <summary>
-        /// Retrieves the list of Users who purchased a ticket to the given space
+        /// Retrieves a list of Users who purchased tickets to a specific Space by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the list of Users who purchased a ticket to the given space
+        /// Retrieves a list of Users who purchased tickets to a specific Space by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
             return new global::Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers.BuyersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the list of Users who purchased a ticket to the given space
+        /// Retrieves a list of Users who purchased tickets to a specific Space by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BuyersRequestBuilderGetQueryParameters 

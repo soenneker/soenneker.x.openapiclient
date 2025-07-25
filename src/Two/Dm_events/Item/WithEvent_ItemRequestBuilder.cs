@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteDmResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteDmResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns DM Events by event id.
+        /// Retrieves details of a specific direct message event by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2DmEventsEventIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -99,7 +99,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns DM Events by event id.
+        /// Retrieves details of a specific direct message event by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,7 +135,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events.Item
         {
         }
         /// <summary>
-        /// Returns DM Events by event id.
+        /// Retrieves details of a specific direct message event by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithEvent_ItemRequestBuilderGetQueryParameters 

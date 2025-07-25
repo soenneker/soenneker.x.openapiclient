@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
         {
         }
         /// <summary>
-        /// Returns Post objects that mention username associated to the provided User ID
+        /// Retrieves a list of Posts that mention a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMentionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMentionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMentionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns Post objects that mention username associated to the provided User ID
+        /// Retrieves a list of Posts that mention a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Mentions.MentionsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns Post objects that mention username associated to the provided User ID
+        /// Retrieves a list of Posts that mention a specific User by their ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MentionsRequestBuilderGetQueryParameters 
