@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following.Item
         {
         }
         /// <summary>
-        /// Causes the source User to unfollow the target User. The source User must match the User context authorizing the request
+        /// Causes the authenticated user to unfollow a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersFollowingDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersFollowingDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersFollowingDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the source User to unfollow the target User. The source User must match the User context authorizing the request
+        /// Causes the authenticated user to unfollow a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersFollowingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersFollowingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the source User to unfollow the target User. The source User must match the User context authorizing the request
+        /// Causes the authenticated user to unfollow a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

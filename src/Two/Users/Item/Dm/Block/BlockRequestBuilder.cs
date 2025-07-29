@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Dm.Block
         {
         }
         /// <summary>
-        /// Causes DMs to/from the target User (in the path) to be blocked by the authenticated request user
+        /// Blocks direct messages to or from a specific User by their ID for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersDMBlockCreateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Dm.Block
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersDMBlockCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersDMBlockCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes DMs to/from the target User (in the path) to be blocked by the authenticated request user
+        /// Blocks direct messages to or from a specific User by their ID for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

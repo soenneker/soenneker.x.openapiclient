@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists
         {
         }
         /// <summary>
-        /// Creates a new List.
+        /// Creates a new List for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new List.
+        /// Creates a new List for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
         {
         }
         /// <summary>
-        /// Streams 100% of public Posts.
+        /// Streams all public Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Streams 100% of public Posts.
+        /// Streams all public Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.StreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Streams 100% of public Posts.
+        /// Streams all public Posts in real-time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 

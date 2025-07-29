@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
         {
         }
         /// <summary>
-        /// Streams 100% of Japanese Language public Posts.
+        /// Streams all public Japanese-language Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Streams 100% of Japanese Language public Posts.
+        /// Streams all public Japanese-language Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja.JaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Streams 100% of Japanese Language public Posts.
+        /// Streams all public Japanese-language Posts in real-time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class JaRequestBuilderGetQueryParameters 

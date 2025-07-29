@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         {
         }
         /// <summary>
-        /// Returns rules from a User&apos;s active rule set. Users can fetch all of their rules or a subset, specified by the provided rule ids.
+        /// Retrieves the active rule set or a subset of rules for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add or delete rules from a User&apos;s active rule set. Users can provide unique, optionally tagged rules to add. Users can delete their entire rule set or a subset specified by rule ids or values.
+        /// Adds or deletes rules from the active rule set for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns rules from a User&apos;s active rule set. Users can fetch all of their rules or a subset, specified by the provided rule ids.
+        /// Retrieves the active rule set or a subset of rules for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return requestInfo;
         }
         /// <summary>
-        /// Add or delete rules from a User&apos;s active rule set. Users can provide unique, optionally tagged rules to add. Users can delete their entire rule set or a subset specified by rule ids or values.
+        /// Adds or deletes rules from the active rule set for the filtered stream.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -138,7 +138,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns rules from a User&apos;s active rule set. Users can fetch all of their rules or a subset, specified by the provided rule ids.
+        /// Retrieves the active rule set or a subset of rules for the filtered stream.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
@@ -176,7 +176,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         {
         }
         /// <summary>
-        /// Add or delete rules from a User&apos;s active rule set. Users can provide unique, optionally tagged rules to add. Users can delete their entire rule set or a subset specified by rule ids or values.
+        /// Adds or deletes rules from the active rule set for the filtered stream.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderPostQueryParameters 

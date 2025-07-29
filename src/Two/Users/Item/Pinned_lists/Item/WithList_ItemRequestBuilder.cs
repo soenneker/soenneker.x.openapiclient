@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists.Item
         {
         }
         /// <summary>
-        /// Causes a User to remove a pinned List.
+        /// Causes the authenticated user to unpin a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListUnpinResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListUnpinResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListUnpinResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes a User to remove a pinned List.
+        /// Causes the authenticated user to unpin a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

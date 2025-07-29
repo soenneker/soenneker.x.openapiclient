@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         {
         }
         /// <summary>
-        /// Get a list of the current All Activity type subscriptions for the specified webhook.
+        /// Retrieves a list of all active subscriptions for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the current All Activity type subscriptions for the specified webhook.
+        /// Retrieves a list of all active subscriptions for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of the current All Activity type subscriptions for the specified webhook.
+        /// Retrieves a list of all active subscriptions for a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

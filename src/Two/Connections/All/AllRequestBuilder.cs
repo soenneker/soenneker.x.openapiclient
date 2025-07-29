@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Connections.All
         {
         }
         /// <summary>
-        /// Force kills all streaming connections of the authenticated application.
+        /// Terminates all active streaming connections for the authenticated application.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.KillAllConnectionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Connections.All
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.KillAllConnectionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.KillAllConnectionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Force kills all streaming connections of the authenticated application.
+        /// Terminates all active streaming connections for the authenticated application.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

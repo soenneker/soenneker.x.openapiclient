@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Replay.Webhooks.Item.Su
         {
         }
         /// <summary>
-        /// Submits a request to retrieve activities from up to the past five days for all subscriptions associated with the specified webhook during the date and time windows provided.
+        /// Creates a replay job to retrieve activities from up to the past 5 days for all subscriptions associated with a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ReplayJobCreateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Replay.Webhooks.Item.Su
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ReplayJobCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ReplayJobCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Submits a request to retrieve activities from up to the past five days for all subscriptions associated with the specified webhook during the date and time windows provided.
+        /// Creates a replay job to retrieve activities from up to the past 5 days for all subscriptions associated with a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Replay.Webhooks.Item.Su
             return new global::Soenneker.X.OpenApiClient.Two.Account_activity.Replay.Webhooks.Item.Subscriptions.All.AllRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Submits a request to retrieve activities from up to the past five days for all subscriptions associated with the specified webhook during the date and time windows provided.
+        /// Creates a replay job to retrieve activities from up to the past 5 days for all subscriptions associated with a given webhook.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AllRequestBuilderPostQueryParameters 

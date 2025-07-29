@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Members.Item
         {
         }
         /// <summary>
-        /// Causes a User to be removed from the members of a List.
+        /// Removes a User from a specific List by its ID and the User’s ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListMutateResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Members.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListMutateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListMutateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes a User to be removed from the members of a List.
+        /// Removes a User from a specific List by its ID and the User’s ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

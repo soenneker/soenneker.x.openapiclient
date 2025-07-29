@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowedListsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowedListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes a User to follow a List.
+        /// Causes the authenticated user to follow a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListFollowedResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists
             return requestInfo;
         }
         /// <summary>
-        /// Causes a User to follow a List.
+        /// Causes the authenticated user to follow a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

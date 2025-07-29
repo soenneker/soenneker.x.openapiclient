@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item
         {
         }
         /// <summary>
-        /// Causes the User (in the path) to unretweet the specified Post. The User must match the User context authorizing the request
+        /// Causes the authenticated user to unrepost a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersRetweetsDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersRetweetsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User (in the path) to unretweet the specified Post. The User must match the User context authorizing the request
+        /// Causes the authenticated user to unrepost a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersRetweetsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersRetweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User (in the path) to unretweet the specified Post. The User must match the User context authorizing the request
+        /// Causes the authenticated user to unrepost a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

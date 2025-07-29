@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Members
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ListsIdMembersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ListsIdMembersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes a User to become a member of a List.
+        /// Adds a User to a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListMutateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item.Members
             return requestInfo;
         }
         /// <summary>
-        /// Causes a User to become a member of a List.
+        /// Adds a User to a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

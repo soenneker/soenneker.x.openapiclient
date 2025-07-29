@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new webhook config.
+        /// Creates a new webhook configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookConfigCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new webhook config.
+        /// Creates a new webhook configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Finalize
         {
         }
         /// <summary>
-        /// Finalize a media upload request.
+        /// Finalizes a Media upload request.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Finalize
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Finalize a media upload request.
+        /// Finalizes a Media upload request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

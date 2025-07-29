@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Metadata
         {
         }
         /// <summary>
-        /// MetadataCreate
+        /// Creates metadata for a Media file.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MetadataCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Metadata
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MetadataCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MetadataCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// MetadataCreate
+        /// Creates metadata for a Media file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

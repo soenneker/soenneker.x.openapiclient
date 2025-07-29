@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item
         {
         }
         /// <summary>
-        /// Causes the source User to unmute the target User. The source User must match the User context authorizing the request
+        /// Causes the authenticated user to unmute a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the source User to unmute the target User. The source User must match the User context authorizing the request
+        /// Causes the authenticated user to unmute a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

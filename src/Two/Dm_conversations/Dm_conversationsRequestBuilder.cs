@@ -53,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
         {
         }
         /// <summary>
-        /// Creates a new DM Conversation.
+        /// Initiates a new direct message conversation with specified participants.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -78,7 +78,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new DM Conversation.
+        /// Initiates a new direct message conversation with specified participants.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

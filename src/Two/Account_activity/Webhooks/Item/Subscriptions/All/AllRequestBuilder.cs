@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         {
         }
         /// <summary>
-        /// Check if a subscription exists for a given webhook and user.
+        /// Checks a user’s Account Activity subscription for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsGetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check if a subscription exists for a given webhook and user.
+        /// Checks a user’s Account Activity subscription for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Subscribes the provided application to all events for the provided user context for all message types.
+        /// Creates an Account Activity subscription for the user and the given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -112,7 +112,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Check if a subscription exists for a given webhook and user.
+        /// Checks a user’s Account Activity subscription for a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return requestInfo;
         }
         /// <summary>
-        /// Subscribes the provided application to all events for the provided user context for all message types.
+        /// Creates an Account Activity subscription for the user and the given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

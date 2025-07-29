@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMutingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdMutingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User (in the path) to mute the target User. The User (in the path) must match the User context authorizing the request.
+        /// Causes the authenticated user to mute a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MuteUserMutationResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
             return requestInfo;
         }
         /// <summary>
-        /// Causes the User (in the path) to mute the target User. The User (in the path) must match the User context authorizing the request.
+        /// Causes the authenticated user to mute a specific User by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

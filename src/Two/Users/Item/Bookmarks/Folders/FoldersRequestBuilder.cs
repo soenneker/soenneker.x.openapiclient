@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
         {
         }
         /// <summary>
-        /// Returns metadata about Bookmark folders that have been created by the requesting User
+        /// Retrieves a list of Bookmark folders created by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns metadata about Bookmark folders that have been created by the requesting User
+        /// Retrieves a list of Bookmark folders created by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns metadata about Bookmark folders that have been created by the requesting User
+        /// Retrieves a list of Bookmark folders created by the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FoldersRequestBuilderGetQueryParameters 

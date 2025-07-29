@@ -9,6 +9,7 @@ using Soenneker.X.OpenApiClient.Two.Tweets.Compliance;
 using Soenneker.X.OpenApiClient.Two.Tweets.Counts;
 using Soenneker.X.OpenApiClient.Two.Tweets.Firehose;
 using Soenneker.X.OpenApiClient.Two.Tweets.Item;
+using Soenneker.X.OpenApiClient.Two.Tweets.Label;
 using Soenneker.X.OpenApiClient.Two.Tweets.Sample10;
 using Soenneker.X.OpenApiClient.Two.Tweets.Sample;
 using Soenneker.X.OpenApiClient.Two.Tweets.Search;
@@ -44,6 +45,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.FirehoseRequestBuilder Firehose
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.FirehoseRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The label property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Tweets.Label.LabelRequestBuilder Label
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Label.LabelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The sample property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Sample.SampleRequestBuilder Sample
@@ -112,7 +118,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User to create a Post under the authorized account.
+        /// Creates a new Post for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -156,7 +162,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return requestInfo;
         }
         /// <summary>
-        /// Causes the User to create a Post under the authorized account.
+        /// Creates a new Post for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

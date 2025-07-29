@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events.Item
         {
         }
         /// <summary>
-        /// Delete a Dm Event that you own.
+        /// Deletes a specific direct message event by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteDmResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2DmEventsEventIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2DmEventsEventIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a Dm Event that you own.
+        /// Deletes a specific direct message event by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

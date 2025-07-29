@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
         {
         }
         /// <summary>
-        /// Returns the Trend associated with the supplied WoeId.
+        /// Retrieves trending topics for a specific location identified by its WOEID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TrendsByWoeidWoeidResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TrendsByWoeidWoeidResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TrendsByWoeidWoeidResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the Trend associated with the supplied WoeId.
+        /// Retrieves trending topics for a specific location identified by its WOEID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
             return new global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the Trend associated with the supplied WoeId.
+        /// Retrieves trending topics for a specific location identified by its WOEID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithWoeItemRequestBuilderGetQueryParameters 

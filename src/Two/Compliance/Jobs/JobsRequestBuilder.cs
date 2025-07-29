@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a compliance for the given job type
+        /// Creates a new Compliance Job for the specified job type.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse"/></returns>
         /// <param name="body">A request to create a new batch compliance job.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             return requestInfo;
         }
         /// <summary>
-        /// Creates a compliance for the given job type
+        /// Creates a new Compliance Job for the specified job type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">A request to create a new batch compliance job.</param>

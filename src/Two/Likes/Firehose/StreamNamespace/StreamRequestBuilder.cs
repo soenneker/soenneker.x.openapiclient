@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
         {
         }
         /// <summary>
-        /// Streams 100% of public Likes.
+        /// Streams all public Likes in real-time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Streams 100% of public Likes.
+        /// Streams all public Likes in real-time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
             return new global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Streams 100% of public Likes.
+        /// Streams all public Likes in real-time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 

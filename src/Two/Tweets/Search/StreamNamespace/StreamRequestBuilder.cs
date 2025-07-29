@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace
         {
         }
         /// <summary>
-        /// Streams Posts matching the stream&apos;s active rule set.
+        /// Streams Posts in real-time matching the active rule set.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Streams Posts matching the stream&apos;s active rule set.
+        /// Streams Posts in real-time matching the active rule set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -91,7 +91,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.StreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Streams Posts matching the stream&apos;s active rule set.
+        /// Streams Posts in real-time matching the active rule set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 

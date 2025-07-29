@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Likes
         {
         }
         /// <summary>
-        /// Causes the User (in the path) to like the specified Post. The User in the path must match the User context authorizing the request.
+        /// Causes the authenticated user to Like a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersLikesCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Likes
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersLikesCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersLikesCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User (in the path) to like the specified Post. The User in the path must match the User context authorizing the request.
+        /// Causes the authenticated user to Like a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

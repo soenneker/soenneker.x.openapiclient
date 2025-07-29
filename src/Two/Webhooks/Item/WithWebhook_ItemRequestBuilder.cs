@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
         {
         }
         /// <summary>
-        /// Deletes a webhook config.
+        /// Deletes an existing webhook configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookConfigDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookConfigDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookConfigDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a webhook config.
+        /// Deletes an existing webhook configuration.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Manually trigger a CRC check for a webhook.
+        /// Triggers a CRC check for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookConfigPutResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -104,7 +104,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookConfigPutResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookConfigPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Manually trigger a CRC check for a webhook.
+        /// Triggers a CRC check for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -128,7 +128,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookConfigResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a webhook config.
+        /// Deletes an existing webhook configuration.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks.Item
             return requestInfo;
         }
         /// <summary>
-        /// Manually trigger a CRC check for a webhook.
+        /// Triggers a CRC check for a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

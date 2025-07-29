@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item
         {
         }
         /// <summary>
-        /// Returns posts belonging to input bookmarks folder id that have been created by the requesting User
+        /// Retrieves Posts in a specific Bookmark folder by its ID for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns posts belonging to input bookmarks folder id that have been created by the requesting User
+        /// Retrieves Posts in a specific Bookmark folder by its ID for the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Subscriptions.Count
         {
         }
         /// <summary>
-        /// Get a count of subscriptions that are currently active on your account.
+        /// Retrieves a count of currently active Account Activity subscriptions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountGetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Subscriptions.Count
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountGetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a count of subscriptions that are currently active on your account.
+        /// Retrieves a count of currently active Account Activity subscriptions.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Subscriptions.Count
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a count of subscriptions that are currently active on your account.
+        /// Retrieves a count of currently active Account Activity subscriptions.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -52,7 +52,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
         {
         }
         /// <summary>
-        /// Delete a List that you own.
+        /// Deletes a specific List owned by the authenticated user by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a List that you own.
+        /// Deletes a specific List owned by the authenticated user by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -122,7 +122,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ListsIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ListsIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update a List that you own.
+        /// Updates the details of a specific List owned by the authenticated user by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListUpdateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -147,7 +147,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListUpdateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListUpdateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete a List that you own.
+        /// Deletes a specific List owned by the authenticated user by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -185,7 +185,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update a List that you own.
+        /// Updates the details of a specific List owned by the authenticated user by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

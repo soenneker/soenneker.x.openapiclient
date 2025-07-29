@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         {
         }
         /// <summary>
-        /// Deactivates a subscription for the specified webhook and user id.
+        /// Deletes an Account Activity subscription for the given webhook and user ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deactivates a subscription for the specified webhook and user id.
+        /// Deletes an Account Activity subscription for the given webhook and user ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubscriptionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deactivates a subscription for the specified webhook and user id.
+        /// Deletes an Account Activity subscription for the given webhook and user ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

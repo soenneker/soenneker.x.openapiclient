@@ -64,7 +64,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         {
         }
         /// <summary>
-        /// Delete specified Post (in the path) by ID.
+        /// Deletes a specific Post by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete specified Post (in the path) by ID.
+        /// Deletes a specific Post by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -134,7 +134,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete specified Post (in the path) by ID.
+        /// Deletes a specific Post by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

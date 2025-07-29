@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample10.StreamNamespace
         {
         }
         /// <summary>
-        /// Streams a deterministic 10% of public Posts.
+        /// Streams a 10% sample of public Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsSample10StreamResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample10.StreamNamespace
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsSample10StreamResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsSample10StreamResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Streams a deterministic 10% of public Posts.
+        /// Streams a 10% sample of public Posts in real-time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample10.StreamNamespace
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Sample10.StreamNamespace.StreamRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Streams a deterministic 10% of public Posts.
+        /// Streams a 10% sample of public Posts in real-time.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class StreamRequestBuilderGetQueryParameters 

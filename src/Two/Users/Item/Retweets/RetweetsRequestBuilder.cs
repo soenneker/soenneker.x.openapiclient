@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
         {
         }
         /// <summary>
-        /// Causes the User (in the path) to repost the specified Post. The User in the path must match the User context authorizing the request.
+        /// Causes the authenticated user to repost a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User (in the path) to repost the specified Post. The User in the path must match the User context authorizing the request.
+        /// Causes the authenticated user to repost a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

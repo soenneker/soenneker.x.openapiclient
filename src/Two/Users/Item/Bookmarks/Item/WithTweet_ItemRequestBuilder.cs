@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item
         {
         }
         /// <summary>
-        /// Removes a Post from the requesting User&apos;s bookmarked Posts.
+        /// Removes a Post from the authenticated user’s Bookmarks by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes a Post from the requesting User&apos;s bookmarked Posts.
+        /// Removes a Post from the authenticated user’s Bookmarks by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

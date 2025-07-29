@@ -82,6 +82,8 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Settings to indicate who can reply to the Tweet.</summary>
         public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings? ReplySettings { get; set; }
+        /// <summary>Share community post with followers too.</summary>
+        public bool? ShareWithFollowers { get; set; }
         /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -119,6 +121,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "quote_tweet_id", n => { QuoteTweetId = n.GetStringValue(); } },
                 { "reply", n => { Reply = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply.CreateFromDiscriminatorValue); } },
                 { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>(); } },
+                { "share_with_followers", n => { ShareWithFollowers = n.GetBoolValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -140,6 +143,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply>("reply", Reply);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>("reply_settings", ReplySettings);
+            writer.WriteBoolValue("share_with_followers", ShareWithFollowers);
             writer.WriteStringValue("text", Text);
         }
     }

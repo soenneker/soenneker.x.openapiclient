@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Hidden
         {
         }
         /// <summary>
-        /// Hides or unhides a reply to an owned conversation.
+        /// Hides or unhides a reply to a conversation owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetHideResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Hidden
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.TweetHideResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.TweetHideResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Hides or unhides a reply to an owned conversation.
+        /// Hides or unhides a reply to a conversation owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

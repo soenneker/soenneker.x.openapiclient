@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Messages
         {
         }
         /// <summary>
-        /// Creates a new message for a DM Conversation with a participant user by ID
+        /// Sends a new direct message to a specific participant by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Messages
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new message for a DM Conversation with a participant user by ID
+        /// Sends a new direct message to a specific participant by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

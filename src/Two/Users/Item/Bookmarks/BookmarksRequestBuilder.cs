@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a Post (ID in the body) to the requesting User&apos;s (in the path) bookmarks
+        /// Adds a post to the authenticated user’s bookmarks.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             return requestInfo;
         }
         /// <summary>
-        /// Adds a Post (ID in the body) to the requesting User&apos;s (in the path) bookmarks
+        /// Adds a post to the authenticated user’s bookmarks.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

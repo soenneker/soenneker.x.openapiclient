@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
         {
         }
         /// <summary>
-        /// Get 28hr Metrics for Posts.
+        /// Retrieves engagement metrics for specified Posts over the last 28 hours.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get 28hr Metrics for Posts.
+        /// Retrieves engagement metrics for specified Posts over the last 28 hours.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
             return new global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get 28hr Metrics for Posts.
+        /// Retrieves engagement metrics for specified Posts over the last 28 hours.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TwoEighthrRequestBuilderGetQueryParameters 

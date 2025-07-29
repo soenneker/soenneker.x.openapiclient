@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
         {
         }
         /// <summary>
-        /// Get a User&apos;s Pinned Lists.
+        /// Retrieves a list of Lists pinned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdPinnedListsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdPinnedListsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdPinnedListsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes a User to pin a List.
+        /// Causes the authenticated user to pin a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListPinnedResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListPinnedResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListPinnedResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a User&apos;s Pinned Lists.
+        /// Retrieves a list of Lists pinned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
             return requestInfo;
         }
         /// <summary>
-        /// Causes a User to pin a List.
+        /// Causes the authenticated user to pin a specific List by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists.Pinned_listsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get a User&apos;s Pinned Lists.
+        /// Retrieves a list of Lists pinned by the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Pinned_listsRequestBuilderGetQueryParameters 

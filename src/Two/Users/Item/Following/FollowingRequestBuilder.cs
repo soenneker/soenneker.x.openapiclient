@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the User(in the path) to follow, or “request to follow” for protected Users, the target User. The User(in the path) must match the User context authorizing the request
+        /// Causes the authenticated user to follow a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return requestInfo;
         }
         /// <summary>
-        /// Causes the User(in the path) to follow, or “request to follow” for protected Users, the target User. The User(in the path) must match the User context authorizing the request
+        /// Causes the authenticated user to follow a specific user by their ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

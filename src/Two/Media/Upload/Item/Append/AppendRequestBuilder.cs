@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Append
         {
         }
         /// <summary>
-        /// MediaUpload
+        /// Appends data to a Media upload request.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Append
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// MediaUpload
+        /// Appends data to a Media upload request.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

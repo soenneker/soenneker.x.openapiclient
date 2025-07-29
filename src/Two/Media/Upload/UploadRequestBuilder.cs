@@ -53,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
         {
         }
         /// <summary>
-        /// Get MediaUpload Status
+        /// Retrieves the status of a Media upload by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads an image or a subtitle using a single API call.
+        /// Uploads a media file for use in posts or other content.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get MediaUpload Status
+        /// Retrieves the status of a Media upload by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return requestInfo;
         }
         /// <summary>
-        /// Uploads an image or a subtitle using a single API call.
+        /// Uploads a media file for use in posts or other content.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,7 +151,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return new global::Soenneker.X.OpenApiClient.Two.Media.Upload.UploadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get MediaUpload Status
+        /// Retrieves the status of a Media upload by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UploadRequestBuilderGetQueryParameters 

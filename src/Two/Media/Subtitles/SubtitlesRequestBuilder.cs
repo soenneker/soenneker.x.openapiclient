@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Subtitles
         {
         }
         /// <summary>
-        /// SubtitleDelete
+        /// Deletes subtitles for a specific Media file.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubtitlesDeleteResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Subtitles
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubtitlesDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubtitlesDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// SubtitleDelete
+        /// Deletes subtitles for a specific Media file.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubtitlesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Subtitles
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubtitlesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubtitlesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// SubtitleCreate
+        /// Creates subtitles for a specific Media file.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SubtitlesCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -110,7 +110,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Subtitles
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SubtitlesCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SubtitlesCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// SubtitleDelete
+        /// Deletes subtitles for a specific Media file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -132,7 +132,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Subtitles
             return requestInfo;
         }
         /// <summary>
-        /// SubtitleCreate
+        /// Creates subtitles for a specific Media file.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

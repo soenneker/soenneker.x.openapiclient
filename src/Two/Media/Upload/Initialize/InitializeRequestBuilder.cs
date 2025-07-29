@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Initialize
         {
         }
         /// <summary>
-        /// Initialize a media upload request.
+        /// Initializes a media upload.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Initialize
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initialize a media upload request.
+        /// Initializes a media upload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
