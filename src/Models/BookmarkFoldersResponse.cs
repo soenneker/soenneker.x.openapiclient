@@ -17,10 +17,26 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data? Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data>? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data> Data { get; set; }
+#endif
+        /// <summary>The errors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
+#endif
+        /// <summary>The meta property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta? Meta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse"/> and sets the default values.
@@ -47,7 +63,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data>(global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data>(global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta>(global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +75,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
