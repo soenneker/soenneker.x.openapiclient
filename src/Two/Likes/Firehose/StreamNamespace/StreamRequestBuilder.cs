@@ -97,46 +97,24 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
             [QueryParameter("end_time")]
             public DateTimeOffset? EndTime { get; set; }
             /// <summary>A comma separated list of fields to expand.</summary>
-            [Obsolete("This property is deprecated, use ExpansionsAsGetExpansionsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public string[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public string[] Expansions { get; set; }
-#endif
-            /// <summary>A comma separated list of fields to expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[]? ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[] ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of LikeWithTweetAuthor fields to display.</summary>
-            [Obsolete("This property is deprecated, use LikeWithTweetAuthorFieldsAsGetLikeWithTweetAuthorFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("like_with_tweet_author%2Efields")]
-            public string[]? LikeWithTweetAuthorFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("like_with_tweet_author%2Efields")]
-            public string[] LikeWithTweetAuthorFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of LikeWithTweetAuthor fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[]? LikeWithTweetAuthorFieldsAsGetLikeWithTweetAuthorFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[]? LikeWithTweetAuthorFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[] LikeWithTweetAuthorFieldsAsGetLikeWithTweetAuthorFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[] LikeWithTweetAuthorFields { get; set; }
 #endif
             /// <summary>The partition number.</summary>
             [QueryParameter("partition")]
@@ -145,55 +123,25 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
             [QueryParameter("start_time")]
             public DateTimeOffset? StartTime { get; set; }
             /// <summary>A comma separated list of Tweet fields to display.</summary>
-            [Obsolete("This property is deprecated, use TweetFieldsAsGetTweetFieldsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public string[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public string[] TweetFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFieldsAsGetTweetFieldsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[] TweetFieldsAsGetTweetFieldsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of User fields to display.</summary>
-            [Obsolete("This property is deprecated, use UserFieldsAsGetUserFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("user%2Efields")]
-            public string[]? UserFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user%2Efields")]
-            public string[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[] UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[] UserFields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class StreamRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

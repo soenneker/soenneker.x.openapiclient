@@ -116,25 +116,14 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
         public partial class SpacesRequestBuilderGetQueryParameters 
         {
             /// <summary>A comma separated list of fields to expand.</summary>
-            [Obsolete("This property is deprecated, use ExpansionsAsGetExpansionsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public string[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public string[] Expansions { get; set; }
-#endif
-            /// <summary>A comma separated list of fields to expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[]? ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[] ExpansionsAsGetExpansionsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
             /// <summary>The list of Space IDs to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,76 +136,35 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
             public string[] Ids { get; set; }
 #endif
             /// <summary>A comma separated list of Space fields to display.</summary>
-            [Obsolete("This property is deprecated, use SpaceFieldsAsGetSpaceFieldsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("space%2Efields")]
-            public string[]? SpaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[]? SpaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("space%2Efields")]
-            public string[] SpaceFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Space fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("space%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[]? SpaceFieldsAsGetSpaceFieldsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("space%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[] SpaceFieldsAsGetSpaceFieldsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of Topic fields to display.</summary>
-            [Obsolete("This property is deprecated, use TopicFieldsAsGetTopicFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("topic%2Efields")]
-            public string[]? TopicFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("topic%2Efields")]
-            public string[] TopicFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[] SpaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Topic fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("topic%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[]? TopicFieldsAsGetTopicFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[]? TopicFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("topic%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[] TopicFieldsAsGetTopicFieldsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of User fields to display.</summary>
-            [Obsolete("This property is deprecated, use UserFieldsAsGetUserFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("user%2Efields")]
-            public string[]? UserFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user%2Efields")]
-            public string[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[] TopicFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[]? UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[] UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[] UserFields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class SpacesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder.SpacesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

@@ -91,46 +91,24 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
         public partial class List_membershipsRequestBuilderGetQueryParameters 
         {
             /// <summary>A comma separated list of fields to expand.</summary>
-            [Obsolete("This property is deprecated, use ExpansionsAsGetExpansionsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public string[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public string[] Expansions { get; set; }
-#endif
-            /// <summary>A comma separated list of fields to expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[]? ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[] ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of List fields to display.</summary>
-            [Obsolete("This property is deprecated, use ListFieldsAsGetListFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("list%2Efields")]
-            public string[]? ListFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("list%2Efields")]
-            public string[] ListFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of List fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[]? ListFieldsAsGetListFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[]? ListFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[] ListFieldsAsGetListFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[] ListFields { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -146,34 +124,15 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
             public string PaginationToken { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
-            [Obsolete("This property is deprecated, use UserFieldsAsGetUserFieldsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public string[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public string[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[] UserFields { get; set; }
 #endif
-            /// <summary>A comma separated list of User fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[]? UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[] UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
-#endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class List_membershipsRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.List_membershipsRequestBuilder.List_membershipsRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

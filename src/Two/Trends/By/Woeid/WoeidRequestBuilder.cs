@@ -27,19 +27,6 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid
                 return new global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
-        /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.trends.by.woeid.item collection</summary>
-        /// <param name="position">The WOEID of the place to lookup a trend for.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder"/></returns>
-        [Obsolete("This indexer is deprecated and will be removed in the next major version. Use the one with the typed parameter instead.")]
-        public global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder this[string position]
-        {
-            get
-            {
-                var urlTplParams = new Dictionary<string, object>(PathParameters);
-                if (!string.IsNullOrWhiteSpace(position)) urlTplParams.Add("woeid", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder(urlTplParams, RequestAdapter);
-            }
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.WoeidRequestBuilder"/> and sets the default values.
         /// </summary>

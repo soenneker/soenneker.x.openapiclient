@@ -91,25 +91,14 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
         public partial class Retweeted_byRequestBuilderGetQueryParameters 
         {
             /// <summary>A comma separated list of fields to expand.</summary>
-            [Obsolete("This property is deprecated, use ExpansionsAsGetExpansionsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public string[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetExpansionsQueryParameterType[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public string[] Expansions { get; set; }
-#endif
-            /// <summary>A comma separated list of fields to expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetExpansionsQueryParameterType[]? ExpansionsAsGetExpansionsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetExpansionsQueryParameterType[] ExpansionsAsGetExpansionsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetExpansionsQueryParameterType[] Expansions { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -125,55 +114,25 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
             public string PaginationToken { get; set; }
 #endif
             /// <summary>A comma separated list of Tweet fields to display.</summary>
-            [Obsolete("This property is deprecated, use TweetFieldsAsGetTweetFieldsQueryParameterType instead")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public string[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public string[] TweetFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetTweetFieldsQueryParameterType[]? TweetFieldsAsGetTweetFieldsQueryParameterType { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetTweetFieldsQueryParameterType[] TweetFieldsAsGetTweetFieldsQueryParameterType { get; set; }
-#endif
-            /// <summary>A comma separated list of User fields to display.</summary>
-            [Obsolete("This property is deprecated, use UserFieldsAsGetUserFieldsQueryParameterType instead")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("user%2Efields")]
-            public string[]? UserFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user%2Efields")]
-            public string[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetUserFieldsQueryParameterType[]? UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetUserFieldsQueryParameterType[] UserFieldsAsGetUserFieldsQueryParameterType { get; set; }
+            public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.GetUserFieldsQueryParameterType[] UserFields { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class Retweeted_byRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by.Retweeted_byRequestBuilder.Retweeted_byRequestBuilderGetQueryParameters>
-        {
         }
     }
 }
