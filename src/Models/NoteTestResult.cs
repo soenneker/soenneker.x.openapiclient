@@ -8,16 +8,22 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// The test result of a community note.
+    /// The evaluation result of a community note.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteTestResult : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The score given to a written test note.</summary>
-        public double? EvaluatorScore { get; set; }
-        /// <summary>The type of evaluator response.</summary>
+        /// <summary>Score bucket from the evaluator result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EvaluatorScoreBucket { get; set; }
+#nullable restore
+#else
+        public string EvaluatorScoreBucket { get; set; }
+#endif
+        /// <summary>The type of the evaluator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EvaluatorType { get; set; }
@@ -50,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "evaluator_score", n => { EvaluatorScore = n.GetDoubleValue(); } },
+                { "evaluator_score_bucket", n => { EvaluatorScoreBucket = n.GetStringValue(); } },
                 { "evaluator_type", n => { EvaluatorType = n.GetStringValue(); } },
             };
         }
@@ -61,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteDoubleValue("evaluator_score", EvaluatorScore);
+            writer.WriteStringValue("evaluator_score_bucket", EvaluatorScoreBucket);
             writer.WriteStringValue("evaluator_type", EvaluatorType);
             writer.WriteAdditionalData(AdditionalData);
         }

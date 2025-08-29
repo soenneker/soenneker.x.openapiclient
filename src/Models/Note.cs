@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Community Note rating status</summary>
         public global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus? Status { get; set; }
-        /// <summary>The test result of a community note.</summary>
+        /// <summary>The evaluation result of a community note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.NoteTestResult? TestResult { get; set; }
