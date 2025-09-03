@@ -5,7 +5,6 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Tweets.Search.All;
 using Soenneker.X.OpenApiClient.Two.Tweets.Search.Recent;
 using Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace;
-using Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -32,11 +31,6 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.StreamRequestBuilder Stream
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.StreamRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The webhooks property</summary>
-        public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.WebhooksRequestBuilder Webhooks
-        {
-            get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.WebhooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Search.SearchRequestBuilder"/> and sets the default values.

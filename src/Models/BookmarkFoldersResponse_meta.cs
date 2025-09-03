@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The next token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PaginationToken { get; set; }
+        public string? NextToken { get; set; }
 #nullable restore
 #else
-        public string PaginationToken { get; set; }
+        public string NextToken { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse_meta"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "pagination_token", n => { PaginationToken = n.GetStringValue(); } },
+                { "next_token", n => { NextToken = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("pagination_token", PaginationToken);
+            writer.WriteStringValue("next_token", NextToken);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
