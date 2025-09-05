@@ -116,6 +116,10 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
         #pragma warning disable CS1591
         Source,
         #pragma warning restore CS1591
+        [EnumMember(Value = "suggested_source_links")]
+        #pragma warning disable CS1591
+        Suggested_source_links,
+        #pragma warning restore CS1591
         [EnumMember(Value = "text")]
         #pragma warning disable CS1591
         Text,

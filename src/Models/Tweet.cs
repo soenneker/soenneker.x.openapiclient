@@ -188,6 +188,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Source { get; set; }
 #endif
+        /// <summary>The suggested_source_links property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntity>? SuggestedSourceLinks { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntity> SuggestedSourceLinks { get; set; }
+#endif
         /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -261,6 +269,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>(); } },
                 { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>(global::Soenneker.X.OpenApiClient.Models.Tweet_scopes.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
+                { "suggested_source_links", n => { SuggestedSourceLinks = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>(global::Soenneker.X.OpenApiClient.Models.UrlEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "withheld", n => { Withheld = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>(global::Soenneker.X.OpenApiClient.Models.TweetWithheld.CreateFromDiscriminatorValue); } },
@@ -297,6 +306,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>("reply_settings", ReplySettings);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>("scopes", Scopes);
             writer.WriteStringValue("source", Source);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>("suggested_source_links", SuggestedSourceLinks);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("username", Username);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>("withheld", Withheld);
