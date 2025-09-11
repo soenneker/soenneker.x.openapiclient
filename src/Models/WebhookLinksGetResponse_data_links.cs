@@ -30,6 +30,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string BusinessUserId { get; set; }
 #endif
+        /// <summary>The datetime the webhook was linked to the stream</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? CreatedAt { get; set; }
+#nullable restore
+#else
+        public string CreatedAt { get; set; }
+#endif
         /// <summary>Requested fields to be rendered</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -81,6 +89,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "application_id", n => { ApplicationId = n.GetStringValue(); } },
                 { "business_user_id", n => { BusinessUserId = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetStringValue(); } },
                 { "fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "instance_id", n => { InstanceId = n.GetStringValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -95,6 +104,7 @@ namespace Soenneker.X.OpenApiClient.Models
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("application_id", ApplicationId);
             writer.WriteStringValue("business_user_id", BusinessUserId);
+            writer.WriteStringValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<string>("fields", Fields);
             writer.WriteStringValue("instance_id", InstanceId);
             writer.WriteStringValue("webhook_id", WebhookId);
