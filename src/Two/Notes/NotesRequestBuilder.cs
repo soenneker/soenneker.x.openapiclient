@@ -55,18 +55,18 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
         /// <summary>
         /// Creates a community note endpoint for LLM use case.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteNoteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteNoteResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteNoteResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteNoteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteNoteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a community note endpoint for LLM use case.
