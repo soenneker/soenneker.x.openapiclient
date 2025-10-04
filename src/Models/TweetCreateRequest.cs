@@ -36,6 +36,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string DirectMessageDeepLink { get; set; }
 #endif
+        /// <summary>Options for editing an existing Post. When provided, this request will edit the specified Post instead of creating a new one.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options? EditOptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options EditOptions { get; set; }
+#endif
         /// <summary>Exclusive Tweet for super followers.</summary>
         public bool? ForSuperFollowersOnly { get; set; }
         /// <summary>Place ID being attached to the Tweet for geo location.</summary>
@@ -113,6 +121,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "card_uri", n => { CardUri = n.GetStringValue(); } },
                 { "community_id", n => { CommunityId = n.GetStringValue(); } },
                 { "direct_message_deep_link", n => { DirectMessageDeepLink = n.GetStringValue(); } },
+                { "edit_options", n => { EditOptions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options.CreateFromDiscriminatorValue); } },
                 { "for_super_followers_only", n => { ForSuperFollowersOnly = n.GetBoolValue(); } },
                 { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo.CreateFromDiscriminatorValue); } },
                 { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media.CreateFromDiscriminatorValue); } },
@@ -135,6 +144,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("card_uri", CardUri);
             writer.WriteStringValue("community_id", CommunityId);
             writer.WriteStringValue("direct_message_deep_link", DirectMessageDeepLink);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options>("edit_options", EditOptions);
             writer.WriteBoolValue("for_super_followers_only", ForSuperFollowersOnly);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo>("geo", Geo);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media>("media", Media);

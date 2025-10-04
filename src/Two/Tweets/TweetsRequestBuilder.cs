@@ -118,7 +118,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new Post for the authenticated user.
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetCreateResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +162,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new Post for the authenticated user.
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
