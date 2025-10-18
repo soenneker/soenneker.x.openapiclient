@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Account_activity;
+using Soenneker.X.OpenApiClient.Two.Activity;
 using Soenneker.X.OpenApiClient.Two.Communities;
 using Soenneker.X.OpenApiClient.Two.Compliance;
 using Soenneker.X.OpenApiClient.Two.Connections;
@@ -37,6 +38,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Account_activity.Account_activityRequestBuilder Account_activity
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Account_activity.Account_activityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The activity property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder Activity
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The communities property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Communities.CommunitiesRequestBuilder Communities
