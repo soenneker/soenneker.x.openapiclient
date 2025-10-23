@@ -32,5 +32,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ProfileUrlUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "ProfileVerifiedBadgeUpdate")]
+        #pragma warning disable CS1591
+        ProfileVerifiedBadgeUpdate,
+        #pragma warning restore CS1591
     }
 }
