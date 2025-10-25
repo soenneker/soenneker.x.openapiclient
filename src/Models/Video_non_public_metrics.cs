@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
-            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics();
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
-            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("playback_0_count", Playback0Count);
             writer.WriteIntValue("playback_100_count", Playback100Count);
             writer.WriteIntValue("playback_25_count", Playback25Count);
