@@ -22,6 +22,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
+        /// <summary>The unique identifier of an Activity event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EventUuid { get; set; }
+#nullable restore
+#else
+        public string EventUuid { get; set; }
+#endif
         /// <summary>An XAA subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,6 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_type", n => { EventType = n.GetStringValue(); } },
+                { "event_uuid", n => { EventUuid = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload>(global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
@@ -85,6 +94,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("event_type", EventType);
+            writer.WriteStringValue("event_uuid", EventUuid);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>("filter", Filter);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload>("payload", Payload);
             writer.WriteStringValue("tag", Tag);
