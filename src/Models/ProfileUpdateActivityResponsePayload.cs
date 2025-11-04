@@ -7,37 +7,36 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// An XAA subscription.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ActivitySubscriptionFilter : IParsable
+    #pragma warning disable CS1591
+    public partial class ProfileUpdateActivityResponsePayload : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>A keyword to filter on.</summary>
+        /// <summary>The after property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Keyword { get; set; }
+        public string? After { get; set; }
 #nullable restore
 #else
-        public string Keyword { get; set; }
+        public string After { get; set; }
 #endif
-        /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
+        /// <summary>The before property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get; set; }
+        public string? Before { get; set; }
 #nullable restore
 #else
-        public string UserId { get; set; }
+        public string Before { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter();
+            return new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +46,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "keyword", n => { Keyword = n.GetStringValue(); } },
-                { "user_id", n => { UserId = n.GetStringValue(); } },
+                { "after", n => { After = n.GetStringValue(); } },
+                { "before", n => { Before = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +57,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("keyword", Keyword);
-            writer.WriteStringValue("user_id", UserId);
+            writer.WriteStringValue("after", After);
+            writer.WriteStringValue("before", Before);
         }
     }
 }

@@ -41,10 +41,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The payload property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload? Payload { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload Payload { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload Payload { get; set; }
 #endif
         /// <summary>The tag property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,7 +82,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "event_type", n => { EventType = n.GetStringValue(); } },
                 { "event_uuid", n => { EventUuid = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload>(global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload>(global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("event_type", EventType);
             writer.WriteStringValue("event_uuid", EventUuid);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>("filter", Filter);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload>("payload", Payload);
             writer.WriteStringValue("tag", Tag);
             writer.WriteAdditionalData(AdditionalData);
         }

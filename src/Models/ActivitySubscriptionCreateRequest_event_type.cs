@@ -36,5 +36,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ProfileVerifiedBadgeUpdate,
         #pragma warning restore CS1591
+        [EnumMember(Value = "TrendsNew")]
+        #pragma warning disable CS1591
+        TrendsNew,
+        #pragma warning restore CS1591
     }
 }

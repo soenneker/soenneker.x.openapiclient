@@ -9,43 +9,50 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ActivityStreamingResponse_data_payload : IAdditionalDataHolder, IParsable
+    public partial class TrendActivityResponsePayload : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The after property</summary>
+        /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? After { get; set; }
+        public string? Category { get; set; }
 #nullable restore
 #else
-        public string After { get; set; }
+        public string Category { get; set; }
 #endif
-        /// <summary>The before property</summary>
+        /// <summary>The headline property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Before { get; set; }
+        public string? Headline { get; set; }
 #nullable restore
 #else
-        public string Before { get; set; }
+        public string Headline { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload"/> and sets the default values.
-        /// </summary>
-        public ActivityStreamingResponse_data_payload()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>The hook property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Hook { get; set; }
+#nullable restore
+#else
+        public string Hook { get; set; }
+#endif
+        /// <summary>The summary property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponse_data_payload();
+            return new global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +62,10 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "after", n => { After = n.GetStringValue(); } },
-                { "before", n => { Before = n.GetStringValue(); } },
+                { "category", n => { Category = n.GetStringValue(); } },
+                { "headline", n => { Headline = n.GetStringValue(); } },
+                { "hook", n => { Hook = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -66,9 +75,10 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("after", After);
-            writer.WriteStringValue("before", Before);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("category", Category);
+            writer.WriteStringValue("headline", Headline);
+            writer.WriteStringValue("hook", Hook);
+            writer.WriteStringValue("summary", Summary);
         }
     }
 }
