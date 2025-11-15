@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Posts_eligible_for_notesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", pathParameters)
+        public Posts_eligible_for_notesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post_selection*,tweet%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Posts_eligible_for_notesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", rawUrl)
+        public Posts_eligible_for_notesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post_selection*,tweet%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -142,6 +142,16 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #else
             [QueryParameter("poll%2Efields")]
             public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPollFieldsQueryParameterType[] PollFields { get; set; }
+#endif
+            /// <summary>The selection of posts to return. Valid values are &apos;feed_size: small&apos; and &apos;feed_size: large&apos;. Default is &apos;feed_size: small&apos;, only top AI writers have access to large size feed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("post_selection")]
+            public string? PostSelection { get; set; }
+#nullable restore
+#else
+            [QueryParameter("post_selection")]
+            public string PostSelection { get; set; }
 #endif
             /// <summary>If true, return a list of posts that are for the test. If false, return a list of posts that the bots can write proposed notes on the product.</summary>
             [QueryParameter("test_mode")]
