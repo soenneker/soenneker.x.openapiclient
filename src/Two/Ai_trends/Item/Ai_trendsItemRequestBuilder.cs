@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Ai_trends.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ai_trendsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/ai_trends/{id}{?ai_trend%2Efields}", pathParameters)
+        public Ai_trendsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/ai_trends/{id}{?news%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Ai_trends.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Ai_trendsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/ai_trends/{id}{?ai_trend%2Efields}", rawUrl)
+        public Ai_trendsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/ai_trends/{id}{?news%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -90,15 +90,15 @@ namespace Soenneker.X.OpenApiClient.Two.Ai_trends.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Ai_trendsItemRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma separated list of AiTrend fields to display.</summary>
+            /// <summary>A comma separated list of News fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("ai_trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Ai_trends.Item.GetAi_trendFieldsQueryParameterType[]? AiTrendFields { get; set; }
+            [QueryParameter("news%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Two.Ai_trends.Item.GetNewsFieldsQueryParameterType[]? NewsFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("ai_trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Ai_trends.Item.GetAi_trendFieldsQueryParameterType[] AiTrendFields { get; set; }
+            [QueryParameter("news%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Two.Ai_trends.Item.GetNewsFieldsQueryParameterType[] NewsFields { get; set; }
 #endif
         }
     }

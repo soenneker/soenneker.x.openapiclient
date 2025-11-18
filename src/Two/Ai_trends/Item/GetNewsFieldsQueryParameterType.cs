@@ -5,9 +5,13 @@ namespace Soenneker.X.OpenApiClient.Two.Ai_trends.Item
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GetAi_trendFieldsQueryParameterType
+    public enum GetNewsFieldsQueryParameterType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "cluster_posts_results")]
+        #pragma warning disable CS1591
+        Cluster_posts_results,
+        #pragma warning restore CS1591
         [EnumMember(Value = "contexts")]
         #pragma warning disable CS1591
         Contexts,
@@ -19,6 +23,10 @@ namespace Soenneker.X.OpenApiClient.Two.Ai_trends.Item
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "page")]
+        #pragma warning disable CS1591
+        Page,
         #pragma warning restore CS1591
     }
 }

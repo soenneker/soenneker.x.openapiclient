@@ -9,43 +9,37 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class Get2AiTrendsIdResponse : IAdditionalDataHolder, IParsable
+    public partial class News_page : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>An AI generated news story.</summary>
+        /// <summary>The disclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.News? Data { get; set; }
+        public string? Disclaimer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.News Data { get; set; }
+        public string Disclaimer { get; set; }
 #endif
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
-#endif
+        /// <summary>The last_updated_at_ms property</summary>
+        public DateTimeOffset? LastUpdatedAtMs { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Get2AiTrendsIdResponse"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.News_page"/> and sets the default values.
         /// </summary>
-        public Get2AiTrendsIdResponse()
+        public News_page()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2AiTrendsIdResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.News_page"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.Get2AiTrendsIdResponse CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.News_page CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.Get2AiTrendsIdResponse();
+            return new global::Soenneker.X.OpenApiClient.Models.News_page();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,8 +49,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.News>(global::Soenneker.X.OpenApiClient.Models.News.CreateFromDiscriminatorValue); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "disclaimer", n => { Disclaimer = n.GetStringValue(); } },
+                { "last_updated_at_ms", n => { LastUpdatedAtMs = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +60,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.News>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteStringValue("disclaimer", Disclaimer);
+            writer.WriteDateTimeOffsetValue("last_updated_at_ms", LastUpdatedAtMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

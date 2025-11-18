@@ -9,12 +9,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class AiTrend_core : IAdditionalDataHolder, IParsable
+    public partial class News_core : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The ai determined category.</summary>
+        /// <summary>The news category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Category { get; set; }
 #endif
-        /// <summary>The ai generated hook.</summary>
+        /// <summary>The news hook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hook { get; set; }
@@ -46,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>The ai trend summary.</summary>
+        /// <summary>The news summary.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
@@ -55,21 +55,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Summary { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.AiTrend_core"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.News_core"/> and sets the default values.
         /// </summary>
-        public AiTrend_core()
+        public News_core()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.AiTrend_core"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.News_core"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.AiTrend_core CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.News_core CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.AiTrend_core();
+            return new global::Soenneker.X.OpenApiClient.Models.News_core();
         }
         /// <summary>
         /// The deserialization information for the current model
