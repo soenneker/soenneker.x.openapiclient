@@ -8,6 +8,10 @@ namespace Soenneker.X.OpenApiClient.Two.News.Item
     public enum GetNewsFieldsQueryParameterType
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "category")]
+        #pragma warning disable CS1591
+        Category,
+        #pragma warning restore CS1591
         [EnumMember(Value = "cluster_posts_results")]
         #pragma warning disable CS1591
         Cluster_posts_results,
@@ -16,17 +20,33 @@ namespace Soenneker.X.OpenApiClient.Two.News.Item
         #pragma warning disable CS1591
         Contexts,
         #pragma warning restore CS1591
-        [EnumMember(Value = "core")]
+        [EnumMember(Value = "disclaimer")]
         #pragma warning disable CS1591
-        Core,
+        Disclaimer,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "hook")]
+        #pragma warning disable CS1591
+        Hook,
         #pragma warning restore CS1591
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "page")]
+        [EnumMember(Value = "keywords")]
         #pragma warning disable CS1591
-        Page,
+        Keywords,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "name")]
+        #pragma warning disable CS1591
+        Name,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "summary")]
+        #pragma warning disable CS1591
+        Summary,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "updated_at")]
+        #pragma warning disable CS1591
+        Updated_at,
         #pragma warning restore CS1591
     }
 }

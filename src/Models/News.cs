@@ -15,6 +15,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The news category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Category { get; set; }
+#nullable restore
+#else
+        public string Category { get; set; }
+#endif
         /// <summary>The cluster_posts_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,21 +39,39 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.News_contexts Contexts { get; set; }
 #endif
-        /// <summary>The core property</summary>
+        /// <summary>The disclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.News_core? Core { get; set; }
+        public string? Disclaimer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.News_core Core { get; set; }
+        public string Disclaimer { get; set; }
 #endif
-        /// <summary>The page property</summary>
+        /// <summary>The news hook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.News_page? Page { get; set; }
+        public string? Hook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.News_page Page { get; set; }
+        public string Hook { get; set; }
+#endif
+        /// <summary>The keywords property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? Keywords { get; set; }
+#nullable restore
+#else
+        public List<string> Keywords { get; set; }
+#endif
+        /// <summary>The last_updated_at_ms property</summary>
+        public DateTimeOffset? LastUpdatedAtMs { get; set; }
+        /// <summary>The headline.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
 #endif
         /// <summary>Unique identifier of news story.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,6 +80,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public string RestId { get; set; }
+#endif
+        /// <summary>The news summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Summary { get; set; }
+#nullable restore
+#else
+        public string Summary { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.News"/> and sets the default values.
@@ -80,11 +114,16 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "category", n => { Category = n.GetStringValue(); } },
                 { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>(global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.News_contexts>(global::Soenneker.X.OpenApiClient.Models.News_contexts.CreateFromDiscriminatorValue); } },
-                { "core", n => { Core = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.News_core>(global::Soenneker.X.OpenApiClient.Models.News_core.CreateFromDiscriminatorValue); } },
-                { "page", n => { Page = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.News_page>(global::Soenneker.X.OpenApiClient.Models.News_page.CreateFromDiscriminatorValue); } },
+                { "disclaimer", n => { Disclaimer = n.GetStringValue(); } },
+                { "hook", n => { Hook = n.GetStringValue(); } },
+                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "last_updated_at_ms", n => { LastUpdatedAtMs = n.GetDateTimeOffsetValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "rest_id", n => { RestId = n.GetStringValue(); } },
+                { "summary", n => { Summary = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -94,11 +133,16 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("category", Category);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>("cluster_posts_results", ClusterPostsResults);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.News_contexts>("contexts", Contexts);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.News_core>("core", Core);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.News_page>("page", Page);
+            writer.WriteStringValue("disclaimer", Disclaimer);
+            writer.WriteStringValue("hook", Hook);
+            writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
+            writer.WriteDateTimeOffsetValue("last_updated_at_ms", LastUpdatedAtMs);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("rest_id", RestId);
+            writer.WriteStringValue("summary", Summary);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

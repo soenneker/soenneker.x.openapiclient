@@ -9,67 +9,51 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class News_core : IAdditionalDataHolder, IParsable
+    public partial class Get2NewsSearchResponse : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The news category.</summary>
+        /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.News>? Data { get; set; }
 #nullable restore
 #else
-        public string Category { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.News> Data { get; set; }
 #endif
-        /// <summary>The news hook.</summary>
+        /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Hook { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
 #nullable restore
 #else
-        public string Hook { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
 #endif
-        /// <summary>The keywords property</summary>
+        /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse_meta? Meta { get; set; }
 #nullable restore
 #else
-        public List<string> Keywords { get; set; }
-#endif
-        /// <summary>The headline.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Name { get; set; }
-#nullable restore
-#else
-        public string Name { get; set; }
-#endif
-        /// <summary>The news summary.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Summary { get; set; }
-#nullable restore
-#else
-        public string Summary { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse_meta Meta { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.News_core"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse"/> and sets the default values.
         /// </summary>
-        public News_core()
+        public Get2NewsSearchResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.News_core"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.News_core CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.News_core();
+            return new global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,11 +63,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "category", n => { Category = n.GetStringValue(); } },
-                { "hook", n => { Hook = n.GetStringValue(); } },
-                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
-                { "summary", n => { Summary = n.GetStringValue(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News>(global::Soenneker.X.OpenApiClient.Models.News.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse_meta>(global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse_meta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -93,11 +75,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("category", Category);
-            writer.WriteStringValue("hook", Hook);
-            writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
-            writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("summary", Summary);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse_meta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.News.Item;
+using Soenneker.X.OpenApiClient.Two.News.Search;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -15,6 +16,11 @@ namespace Soenneker.X.OpenApiClient.Two.News
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NewsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The search property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder Search
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.news.item collection</summary>
         /// <param name="position">The ID of the news story.</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.News.Item.NewsItemRequestBuilder"/></returns>
