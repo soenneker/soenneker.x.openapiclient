@@ -84,6 +84,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Analytics
         #pragma warning disable CS1591
         Unfollows,
         #pragma warning restore CS1591
+        [EnumMember(Value = "unlikes")]
+        #pragma warning disable CS1591
+        Unlikes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "url_clicks")]
         #pragma warning disable CS1591
         Url_clicks,
