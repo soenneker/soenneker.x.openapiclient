@@ -13,6 +13,8 @@ namespace Soenneker.X.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetCreateRequest_reply : IParsable
     {
+        /// <summary>If set to true, reply metadata will be automatically populated.</summary>
+        public bool? AutoPopulateReplyMetadata { get; set; }
         /// <summary>A list of User Ids to be excluded from the reply Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +49,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "auto_populate_reply_metadata", n => { AutoPopulateReplyMetadata = n.GetBoolValue(); } },
                 { "exclude_reply_user_ids", n => { ExcludeReplyUserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "in_reply_to_tweet_id", n => { InReplyToTweetId = n.GetStringValue(); } },
             };
@@ -58,6 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteBoolValue("auto_populate_reply_metadata", AutoPopulateReplyMetadata);
             writer.WriteCollectionOfPrimitiveValues<string>("exclude_reply_user_ids", ExcludeReplyUserIds);
             writer.WriteStringValue("in_reply_to_tweet_id", InReplyToTweetId);
         }
