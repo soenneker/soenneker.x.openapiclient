@@ -196,6 +196,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.UrlEntity> SuggestedSourceLinks { get; set; }
 #endif
+        /// <summary>Suggested source links and the number of requests that included each link.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts? SuggestedSourceLinksWithCounts { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts SuggestedSourceLinksWithCounts { get; set; }
+#endif
         /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,6 +278,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>(global::Soenneker.X.OpenApiClient.Models.Tweet_scopes.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "suggested_source_links", n => { SuggestedSourceLinks = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>(global::Soenneker.X.OpenApiClient.Models.UrlEntity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "suggested_source_links_with_counts", n => { SuggestedSourceLinksWithCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts>(global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "withheld", n => { Withheld = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>(global::Soenneker.X.OpenApiClient.Models.TweetWithheld.CreateFromDiscriminatorValue); } },
@@ -307,6 +316,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>("scopes", Scopes);
             writer.WriteStringValue("source", Source);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>("suggested_source_links", SuggestedSourceLinks);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts>("suggested_source_links_with_counts", SuggestedSourceLinksWithCounts);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("username", Username);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>("withheld", Withheld);

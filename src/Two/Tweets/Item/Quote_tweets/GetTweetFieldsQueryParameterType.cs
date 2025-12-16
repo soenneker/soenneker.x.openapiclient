@@ -120,6 +120,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
         #pragma warning disable CS1591
         Suggested_source_links,
         #pragma warning restore CS1591
+        [EnumMember(Value = "suggested_source_links_with_counts")]
+        #pragma warning disable CS1591
+        Suggested_source_links_with_counts,
+        #pragma warning restore CS1591
         [EnumMember(Value = "text")]
         #pragma warning disable CS1591
         Text,
