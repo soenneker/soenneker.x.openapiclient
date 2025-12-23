@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload? NewsActivityResponsePayload { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload NewsActivityResponsePayload { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +28,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload ProfileUpdateActivityResponsePayload { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload? TrendActivityResponsePayload { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload TrendActivityResponsePayload { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("../event_type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload();
-            if("ProfileBannerPictureUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("NewsNew".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
+            }
+            else if("ProfileBannerPictureUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
-            }
-            else if("TrendsNew".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.TrendActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ProfileUpdateActivityResponsePayload != null)
+            if(NewsActivityResponsePayload != null)
+            {
+                return NewsActivityResponsePayload.GetFieldDeserializers();
+            }
+            else if(ProfileUpdateActivityResponsePayload != null)
             {
                 return ProfileUpdateActivityResponsePayload.GetFieldDeserializers();
-            }
-            else if(TrendActivityResponsePayload != null)
-            {
-                return TrendActivityResponsePayload.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ProfileUpdateActivityResponsePayload != null)
+            if(NewsActivityResponsePayload != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload>(null, NewsActivityResponsePayload);
+            }
+            else if(ProfileUpdateActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload>(null, ProfileUpdateActivityResponsePayload);
-            }
-            else if(TrendActivityResponsePayload != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload>(null, TrendActivityResponsePayload);
             }
         }
     }
