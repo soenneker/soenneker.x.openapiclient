@@ -8,6 +8,46 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum ActivitySubscriptionCreateRequest_event_type
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "profile.update.bio")]
+        #pragma warning disable CS1591
+        ProfileUpdateBio,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.profile_picture")]
+        #pragma warning disable CS1591
+        ProfileUpdateProfile_picture,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.banner_picture")]
+        #pragma warning disable CS1591
+        ProfileUpdateBanner_picture,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.screenname")]
+        #pragma warning disable CS1591
+        ProfileUpdateScreenname,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.geo")]
+        #pragma warning disable CS1591
+        ProfileUpdateGeo,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.url")]
+        #pragma warning disable CS1591
+        ProfileUpdateUrl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "profile.update.verified_badge")]
+        #pragma warning disable CS1591
+        ProfileUpdateVerified_badge,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "news.new")]
+        #pragma warning disable CS1591
+        NewsNew,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "follow.follow")]
+        #pragma warning disable CS1591
+        FollowFollow,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "follow.unfollow")]
+        #pragma warning disable CS1591
+        FollowUnfollow,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ProfileBioUpdate")]
         #pragma warning disable CS1591
         ProfileBioUpdate,
@@ -35,10 +75,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "ProfileVerifiedBadgeUpdate")]
         #pragma warning disable CS1591
         ProfileVerifiedBadgeUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "NewsNew")]
-        #pragma warning disable CS1591
-        NewsNew,
         #pragma warning restore CS1591
     }
 }

@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload? FollowActivityResponsePayload { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload FollowActivityResponsePayload { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,11 +47,15 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("../event_type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload();
-            if("NewsNew".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("follow.follow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FollowActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload();
+            }
+            else if("news.new".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
             }
-            else if("ProfileBannerPictureUpdate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("profile.update.banner_picture".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
             }
@@ -55,7 +67,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(NewsActivityResponsePayload != null)
+            if(FollowActivityResponsePayload != null)
+            {
+                return FollowActivityResponsePayload.GetFieldDeserializers();
+            }
+            else if(NewsActivityResponsePayload != null)
             {
                 return NewsActivityResponsePayload.GetFieldDeserializers();
             }
@@ -72,7 +88,11 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(NewsActivityResponsePayload != null)
+            if(FollowActivityResponsePayload != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload>(null, FollowActivityResponsePayload);
+            }
+            else if(NewsActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload>(null, NewsActivityResponsePayload);
             }
