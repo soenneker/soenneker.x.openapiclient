@@ -146,7 +146,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
             [QueryParameter("since_id")]
             public string SinceId { get; set; }
 #endif
-            /// <summary>YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Posts will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</summary>
+            /// <summary>YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Posts will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).</summary>
             [QueryParameter("start_time")]
             public DateTimeOffset? StartTime { get; set; }
             /// <summary>Returns results with a Post ID less than (that is, older than) the specified ID.</summary>
