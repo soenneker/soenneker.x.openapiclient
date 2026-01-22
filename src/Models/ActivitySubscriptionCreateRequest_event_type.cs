@@ -48,6 +48,14 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         FollowUnfollow,
         #pragma warning restore CS1591
+        [EnumMember(Value = "chat.received")]
+        #pragma warning disable CS1591
+        ChatReceived,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.sent")]
+        #pragma warning disable CS1591
+        ChatSent,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ProfileBioUpdate")]
         #pragma warning disable CS1591
         ProfileBioUpdate,
