@@ -55,7 +55,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
             }
-            else if("profile.update.banner_picture".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("profile.update.affiliate_badge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
             }
