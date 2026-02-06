@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Account_activity;
 using Soenneker.X.OpenApiClient.Two.Activity;
+using Soenneker.X.OpenApiClient.Two.Chat;
 using Soenneker.X.OpenApiClient.Two.Communities;
 using Soenneker.X.OpenApiClient.Two.Compliance;
 using Soenneker.X.OpenApiClient.Two.Connections;
@@ -13,6 +14,7 @@ using Soenneker.X.OpenApiClient.Two.Evaluate_note;
 using Soenneker.X.OpenApiClient.Two.Insights;
 using Soenneker.X.OpenApiClient.Two.Likes;
 using Soenneker.X.OpenApiClient.Two.Lists;
+using Soenneker.X.OpenApiClient.Two.Marketplace;
 using Soenneker.X.OpenApiClient.Two.Media;
 using Soenneker.X.OpenApiClient.Two.News;
 using Soenneker.X.OpenApiClient.Two.Notes;
@@ -44,6 +46,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder Activity
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The chat property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder Chat
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The communities property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Communities.CommunitiesRequestBuilder Communities
@@ -89,6 +96,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Lists.ListsRequestBuilder Lists
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Lists.ListsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The marketplace property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Marketplace.MarketplaceRequestBuilder Marketplace
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Marketplace.MarketplaceRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The media property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder Media

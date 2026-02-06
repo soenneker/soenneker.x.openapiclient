@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Blocking;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Dm;
@@ -17,6 +18,7 @@ using Soenneker.X.OpenApiClient.Two.Users.Item.Mentions;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Muting;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists;
+using Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Retweets;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Timelines;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Tweets;
@@ -33,6 +35,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The affiliates property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates.AffiliatesRequestBuilder Affiliates
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates.AffiliatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The blocking property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Blocking.BlockingRequestBuilder Blocking
         {
@@ -97,6 +104,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists.Pinned_listsRequestBuilder Pinned_lists
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists.Pinned_listsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The public_keys property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys.Public_keysRequestBuilder Public_keys
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys.Public_keysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The retweets property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.RetweetsRequestBuilder Retweets
