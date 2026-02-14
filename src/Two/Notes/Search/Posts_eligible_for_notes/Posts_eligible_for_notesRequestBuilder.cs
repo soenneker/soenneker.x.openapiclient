@@ -143,7 +143,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             [QueryParameter("poll%2Efields")]
             public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPollFieldsQueryParameterType[] PollFields { get; set; }
 #endif
-            /// <summary>The selection of posts to return. Valid values are &apos;feed_size: small&apos; and &apos;feed_size: large&apos;. Default is &apos;feed_size: small&apos;, only top AI writers have access to large size feed.</summary>
+            /// <summary>The selection of posts to return. Valid values are &apos;feed_size: small&apos;, &apos;feed_size: large&apos;, and &apos;feed_size: xl&apos;. Default is &apos;feed_size: small&apos;, only top AI writers have access to large and xl size feeds.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("post_selection")]
