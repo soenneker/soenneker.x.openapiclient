@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations;
+using Soenneker.X.OpenApiClient.Two.Chat.Media;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder Conversations
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The media property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Media.MediaRequestBuilder Media
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder"/> and sets the default values.

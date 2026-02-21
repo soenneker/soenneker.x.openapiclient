@@ -5,6 +5,8 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,6 +24,16 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The read property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read.ReadRequestBuilder Read
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read.ReadRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The typing property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder Typing
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.WithConversation_ItemRequestBuilder"/> and sets the default values.
