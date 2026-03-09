@@ -72,6 +72,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ChatSent,
         #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation_join")]
+        #pragma warning disable CS1591
+        ChatConversation_join,
+        #pragma warning restore CS1591
         [EnumMember(Value = "ProfileBioUpdate")]
         #pragma warning disable CS1591
         ProfileBioUpdate,
