@@ -27,7 +27,7 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\..\src\Soenneker.X.OpenApiClient.csproj" />
+        <ProjectReference Include="..\..\src\Soenneker.X.OpenApiClient\Soenneker.X.OpenApiClient.csproj" />
     </ItemGroup>
 
     <ItemGroup>
