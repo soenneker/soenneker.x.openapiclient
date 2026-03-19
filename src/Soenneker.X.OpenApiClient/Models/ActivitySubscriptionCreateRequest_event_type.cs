@@ -92,33 +92,5 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         DmRead,
         #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileBioUpdate")]
-        #pragma warning disable CS1591
-        ProfileBioUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfilePictureUpdate")]
-        #pragma warning disable CS1591
-        ProfilePictureUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileBannerPictureUpdate")]
-        #pragma warning disable CS1591
-        ProfileBannerPictureUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileScreennameUpdate")]
-        #pragma warning disable CS1591
-        ProfileScreennameUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileGeoUpdate")]
-        #pragma warning disable CS1591
-        ProfileGeoUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileUrlUpdate")]
-        #pragma warning disable CS1591
-        ProfileUrlUpdate,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "ProfileVerifiedBadgeUpdate")]
-        #pragma warning disable CS1591
-        ProfileVerifiedBadgeUpdate,
-        #pragma warning restore CS1591
     }
 }
