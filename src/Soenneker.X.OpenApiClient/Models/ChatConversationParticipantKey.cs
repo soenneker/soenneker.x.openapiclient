@@ -7,53 +7,54 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// A participant&apos;s encrypted conversation key.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ChatAddPublicKeyResponse_data : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ChatConversationParticipantKey : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Error code when key registration fails.</summary>
+        /// <summary>Conversation key encrypted with this participant&apos;s public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ErrorCode { get; set; }
+        public string? EncryptedConversationKey { get; set; }
 #nullable restore
 #else
-        public string ErrorCode { get; set; }
+        public string EncryptedConversationKey { get; set; }
 #endif
-        /// <summary>Key store token map for key recovery.</summary>
+        /// <summary>Version of the participant&apos;s public key used for encryption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map? TokenMap { get; set; }
+        public string? PublicKeyVersion { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map TokenMap { get; set; }
+        public string PublicKeyVersion { get; set; }
 #endif
-        /// <summary>Public key version.</summary>
+        /// <summary>Participant user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Version { get; set; }
+        public string? UserId { get; set; }
 #nullable restore
 #else
-        public string Version { get; set; }
+        public string UserId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatConversationParticipantKey"/> and sets the default values.
         /// </summary>
-        public ChatAddPublicKeyResponse_data()
+        public ChatConversationParticipantKey()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatConversationParticipantKey"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatConversationParticipantKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatConversationParticipantKey();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,9 +64,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error_code", n => { ErrorCode = n.GetStringValue(); } },
-                { "token_map", n => { TokenMap = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map>(global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map.CreateFromDiscriminatorValue); } },
-                { "version", n => { Version = n.GetStringValue(); } },
+                { "encrypted_conversation_key", n => { EncryptedConversationKey = n.GetStringValue(); } },
+                { "public_key_version", n => { PublicKeyVersion = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,9 +76,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("error_code", ErrorCode);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map>("token_map", TokenMap);
-            writer.WriteStringValue("version", Version);
+            writer.WriteStringValue("encrypted_conversation_key", EncryptedConversationKey);
+            writer.WriteStringValue("public_key_version", PublicKeyVersion);
+            writer.WriteStringValue("user_id", UserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

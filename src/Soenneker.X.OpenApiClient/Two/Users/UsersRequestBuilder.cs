@@ -9,6 +9,7 @@ using Soenneker.X.OpenApiClient.Two.Users.Compliance;
 using Soenneker.X.OpenApiClient.Two.Users.Item;
 using Soenneker.X.OpenApiClient.Two.Users.Me;
 using Soenneker.X.OpenApiClient.Two.Users.Personalized_trends;
+using Soenneker.X.OpenApiClient.Two.Users.Public_keys;
 using Soenneker.X.OpenApiClient.Two.Users.Reposts_of_me;
 using Soenneker.X.OpenApiClient.Two.Users.Search;
 using System.Collections.Generic;
@@ -43,6 +44,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users
         public global::Soenneker.X.OpenApiClient.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder Personalized_trends
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Personalized_trends.Personalized_trendsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The public_keys property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Public_keys.Public_keysRequestBuilder Public_keys
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Public_keys.Public_keysRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The reposts_of_me property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Reposts_of_me.Reposts_of_meRequestBuilder Reposts_of_me

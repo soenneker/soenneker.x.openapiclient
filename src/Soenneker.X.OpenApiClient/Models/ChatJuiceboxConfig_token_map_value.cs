@@ -7,14 +7,15 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// Realm connection details.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ChatAddPublicKeyResponse_data_token_map_token_map_value : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ChatJuiceboxConfig_token_map_value : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Key store realm address.</summary>
+        /// <summary>Realm URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Address { get; set; }
@@ -39,21 +40,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Token { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map_value"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map_value"/> and sets the default values.
         /// </summary>
-        public ChatAddPublicKeyResponse_data_token_map_token_map_value()
+        public ChatJuiceboxConfig_token_map_value()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map_value"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map_value"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map_value CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map_value CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map_value();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map_value();
         }
         /// <summary>
         /// The deserialization information for the current model

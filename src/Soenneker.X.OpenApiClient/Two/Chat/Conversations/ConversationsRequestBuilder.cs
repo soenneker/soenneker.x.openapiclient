@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item;
 using System.Collections.Generic;
 using System.IO;
@@ -18,16 +19,21 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The group property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.GroupRequestBuilder Group
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.conversations.item collection</summary>
-        /// <param name="position">The Chat conversation ID.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.WithConversation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.WithConversation_ItemRequestBuilder this[string position]
+        /// <param name="position">The recipient&apos;s user ID for a 1:1 conversation, or a group conversation ID (prefixed with &apos;g&apos;).</param>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("conversation_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.WithConversation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

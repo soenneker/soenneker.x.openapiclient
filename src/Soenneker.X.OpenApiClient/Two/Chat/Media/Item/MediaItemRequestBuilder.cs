@@ -10,10 +10,10 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Chat.Media.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\chat\media\{conversation_id}
+    /// Builds and executes requests for operations under \2\chat\media\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class WithConversation_ItemRequestBuilder : BaseRequestBuilder
+    public partial class MediaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.media.item.item collection</summary>
         /// <param name="position">The media hash key returned from the upload initialize step.</param>
@@ -28,19 +28,19 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Media.Item
             }
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.WithConversation_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConversation_ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/media/{conversation_id}", pathParameters)
+        public MediaItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/media/{id}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.WithConversation_ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithConversation_ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/media/{conversation_id}", rawUrl)
+        public MediaItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/media/{id}", rawUrl)
         {
         }
     }

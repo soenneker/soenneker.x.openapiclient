@@ -16,6 +16,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the user has pending message requests.</summary>
         public bool? HasMessageRequests { get; set; }
+        /// <summary>Whether there are more conversations to fetch.</summary>
+        public bool? HasMore { get; set; }
         /// <summary>Token to retrieve the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_message_requests", n => { HasMessageRequests = n.GetBoolValue(); } },
+                { "has_more", n => { HasMore = n.GetBoolValue(); } },
                 { "next_token", n => { NextToken = n.GetStringValue(); } },
                 { "result_count", n => { ResultCount = n.GetIntValue(); } },
             };
@@ -64,6 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_message_requests", HasMessageRequests);
+            writer.WriteBoolValue("has_more", HasMore);
             writer.WriteStringValue("next_token", NextToken);
             writer.WriteIntValue("result_count", ResultCount);
             writer.WriteAdditionalData(AdditionalData);

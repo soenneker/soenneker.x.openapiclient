@@ -22,15 +22,15 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Media
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Upload.UploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.media.item collection</summary>
-        /// <param name="position">The Chat conversation ID.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.WithConversation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.WithConversation_ItemRequestBuilder this[string position]
+        /// <param name="position">The recipient&apos;s user ID for a 1:1 conversation, or a group conversation ID (prefixed with &apos;g&apos;).</param>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("conversation_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.WithConversation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

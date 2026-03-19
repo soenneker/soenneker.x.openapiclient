@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Key store token map for key recovery.
+    /// Key recovery configuration for Juicebox-based key storage.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChatAddPublicKeyResponse_data_token_map : IAdditionalDataHolder, IParsable
+    public partial class ChatJuiceboxConfig : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -37,30 +37,30 @@ namespace Soenneker.X.OpenApiClient.Models
         public int? RecoverThreshold { get; set; }
         /// <summary>Threshold required to register the key.</summary>
         public int? RegisterThreshold { get; set; }
-        /// <summary>The token_map property</summary>
+        /// <summary>Per-realm auth tokens for key recovery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map>? TokenMap { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>? TokenMap { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map> TokenMap { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map> TokenMap { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig"/> and sets the default values.
         /// </summary>
-        public ChatAddPublicKeyResponse_data_token_map()
+        public ChatJuiceboxConfig()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "realm_state_string", n => { RealmStateString = n.GetStringValue(); } },
                 { "recover_threshold", n => { RecoverThreshold = n.GetIntValue(); } },
                 { "register_threshold", n => { RegisterThreshold = n.GetIntValue(); } },
-                { "token_map", n => { TokenMap = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map>(global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "token_map", n => { TokenMap = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>(global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("realm_state_string", RealmStateString);
             writer.WriteIntValue("recover_threshold", RecoverThreshold);
             writer.WriteIntValue("register_threshold", RegisterThreshold);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyResponse_data_token_map_token_map>("token_map", TokenMap);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>("token_map", TokenMap);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

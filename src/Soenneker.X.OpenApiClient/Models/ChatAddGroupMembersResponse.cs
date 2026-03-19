@@ -7,38 +7,45 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// Expanded objects requested via expansions parameter.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChatGetConversationsResponse_includes : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class ChatAddGroupMembersResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>User objects for expanded user IDs.</summary>
+        /// <summary>Sequence ID of the conversation key change event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes_users>? Users { get; set; }
+        public string? ConversationKeyChangeSequenceId { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes_users> Users { get; set; }
+        public string ConversationKeyChangeSequenceId { get; set; }
+#endif
+        /// <summary>List of all current member IDs in the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? CurrentMemberIds { get; set; }
+#nullable restore
+#else
+        public List<string> CurrentMemberIds { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddGroupMembersResponse"/> and sets the default values.
         /// </summary>
-        public ChatGetConversationsResponse_includes()
+        public ChatAddGroupMembersResponse()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatAddGroupMembersResponse"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatAddGroupMembersResponse CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatAddGroupMembersResponse();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,7 +55,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes_users>(global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes_users.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "conversation_key_change_sequence_id", n => { ConversationKeyChangeSequenceId = n.GetStringValue(); } },
+                { "current_member_ids", n => { CurrentMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +66,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_includes_users>("users", Users);
+            writer.WriteStringValue("conversation_key_change_sequence_id", ConversationKeyChangeSequenceId);
+            writer.WriteCollectionOfPrimitiveValues<string>("current_member_ids", CurrentMemberIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

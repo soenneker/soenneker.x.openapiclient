@@ -14,16 +14,16 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether there are more messages to fetch.</summary>
-        public bool? HasMore { get; set; }
-        /// <summary>List of conversation key change events needed for decryption.</summary>
+        /// <summary>Conversation key change events needed for decryption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MissingConversationKeyChangeEvents { get; set; }
+        public List<string>? ConversationKeyEvents { get; set; }
 #nullable restore
 #else
-        public List<string> MissingConversationKeyChangeEvents { get; set; }
+        public List<string> ConversationKeyEvents { get; set; }
 #endif
+        /// <summary>Whether there are more messages to fetch.</summary>
+        public bool? HasMore { get; set; }
         /// <summary>Token to retrieve the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,8 +59,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "conversation_key_events", n => { ConversationKeyEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "has_more", n => { HasMore = n.GetBoolValue(); } },
-                { "missing_conversation_key_change_events", n => { MissingConversationKeyChangeEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "next_token", n => { NextToken = n.GetStringValue(); } },
                 { "result_count", n => { ResultCount = n.GetIntValue(); } },
             };
@@ -72,8 +72,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("conversation_key_events", ConversationKeyEvents);
             writer.WriteBoolValue("has_more", HasMore);
-            writer.WriteCollectionOfPrimitiveValues<string>("missing_conversation_key_change_events", MissingConversationKeyChangeEvents);
             writer.WriteStringValue("next_token", NextToken);
             writer.WriteIntValue("result_count", ResultCount);
             writer.WriteAdditionalData(AdditionalData);

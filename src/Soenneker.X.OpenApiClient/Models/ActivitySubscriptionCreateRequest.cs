@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>The event_type property</summary>
         public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest_event_type? EventType { get; set; }
-        /// <summary>An XAA subscription.</summary>
+        /// <summary>An XAA subscription filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter? Filter { get; set; }
