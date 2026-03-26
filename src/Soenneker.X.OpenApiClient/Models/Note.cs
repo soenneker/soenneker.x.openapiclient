@@ -39,6 +39,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string PostId { get; set; }
 #endif
+        /// <summary>The scoring status of a Community Note.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus? ScoringStatus { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus ScoringStatus { get; set; }
+#endif
         /// <summary>Community Note rating status</summary>
         public global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus? Status { get; set; }
         /// <summary>The evaluation result of a community note.</summary>
@@ -77,6 +85,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "info", n => { Info = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteInfo>(global::Soenneker.X.OpenApiClient.Models.NoteInfo.CreateFromDiscriminatorValue); } },
                 { "post_id", n => { PostId = n.GetStringValue(); } },
+                { "scoring_status", n => { ScoringStatus = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus>(global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus>(); } },
                 { "test_result", n => { TestResult = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteTestResult>(global::Soenneker.X.OpenApiClient.Models.NoteTestResult.CreateFromDiscriminatorValue); } },
             };
@@ -91,6 +100,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteInfo>("info", Info);
             writer.WriteStringValue("post_id", PostId);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus>("scoring_status", ScoringStatus);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteRatingStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteTestResult>("test_result", TestResult);
             writer.WriteAdditionalData(AdditionalData);

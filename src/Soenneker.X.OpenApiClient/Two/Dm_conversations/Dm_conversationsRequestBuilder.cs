@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
 using Soenneker.X.OpenApiClient.Two.Dm_conversations.Item;
+using Soenneker.X.OpenApiClient.Two.Dm_conversations.Media;
 using Soenneker.X.OpenApiClient.Two.Dm_conversations.With;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +20,11 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dm_conversationsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The media property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.MediaRequestBuilder Media
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The with property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.WithRequestBuilder With
         {
