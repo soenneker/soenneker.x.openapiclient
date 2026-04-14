@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", pathParameters)
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions?ids={ids}{&max_results*,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,8 +43,31 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", rawUrl)
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions?ids={ids}{&max_results*,pagination_token*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Deletes multiple subscriptions for X activity events by their IDs
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of active subscriptions for XAA
@@ -95,6 +118,25 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Deletes multiple subscriptions for X activity events by their IDs
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/2/activity/subscriptions?ids={ids}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Get a list of active subscriptions for XAA
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -108,7 +150,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -129,7 +171,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/2/activity/subscriptions", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
@@ -143,6 +185,23 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         public global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Deletes multiple subscriptions for X activity events by their IDs
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class SubscriptionsRequestBuilderDeleteQueryParameters 
+        {
+            /// <summary>Comma-separated list of subscription IDs to delete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string[]? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string[] Ids { get; set; }
+#endif
         }
         /// <summary>
         /// Get a list of active subscriptions for XAA

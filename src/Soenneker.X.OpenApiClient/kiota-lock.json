@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "9A8865BD8DE96EC5690FDD83669AE3EFE7D53C324DC86FE976871799026727E1A7710512E2D5879F60CCBE14FD6D23D8F44ED8DA04279250956A65E087A9E4C3",
+  "descriptionHash": "9F5FCBA43110E9B5D8955A4F464056FD696FE1744E022F46E6A234ECCA7D6F8B0FC14E169FA10210E684A244A5D260C3BCBDC341865E8787C1F0584029275E9B",
   "descriptionLocation": "../../openapi.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "XOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.X.OpenApiClient",
