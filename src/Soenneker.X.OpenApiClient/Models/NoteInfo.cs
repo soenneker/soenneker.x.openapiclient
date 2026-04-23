@@ -15,6 +15,8 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Community Note classification type.</summary>
         public global::Soenneker.X.OpenApiClient.Models.NoteClassification? Classification { get; set; }
+        /// <summary>Whether the note is a media note.</summary>
+        public bool? IsMediaNote { get; set; }
         /// <summary>The misleading_tags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -52,6 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "classification", n => { Classification = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteClassification>(); } },
+                { "is_media_note", n => { IsMediaNote = n.GetBoolValue(); } },
                 { "misleading_tags", n => { MisleadingTags = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.MisleadingTags>()?.AsList(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "trustworthy_sources", n => { TrustworthySources = n.GetBoolValue(); } },
@@ -65,6 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.NoteClassification>("classification", Classification);
+            writer.WriteBoolValue("is_media_note", IsMediaNote);
             writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.MisleadingTags>("misleading_tags", MisleadingTags);
             writer.WriteStringValue("text", Text);
             writer.WriteBoolValue("trustworthy_sources", TrustworthySources);
