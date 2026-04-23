@@ -120,6 +120,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Lang { get; set; }
 #endif
+        /// <summary>The matched media notes for the post.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes? MatchedMediaNotes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes MatchedMediaNotes { get; set; }
+#endif
         /// <summary>Nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -267,6 +275,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "in_reply_to_user_id", n => { InReplyToUserId = n.GetStringValue(); } },
                 { "lang", n => { Lang = n.GetStringValue(); } },
+                { "matched_media_notes", n => { MatchedMediaNotes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>(global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes.CreateFromDiscriminatorValue); } },
                 { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics.CreateFromDiscriminatorValue); } },
                 { "note_tweet", n => { NoteTweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>(global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet.CreateFromDiscriminatorValue); } },
                 { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics.CreateFromDiscriminatorValue); } },
@@ -305,6 +314,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("in_reply_to_user_id", InReplyToUserId);
             writer.WriteStringValue("lang", Lang);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>("matched_media_notes", MatchedMediaNotes);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>("non_public_metrics", NonPublicMetrics);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>("note_tweet", NoteTweet);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>("organic_metrics", OrganicMetrics);

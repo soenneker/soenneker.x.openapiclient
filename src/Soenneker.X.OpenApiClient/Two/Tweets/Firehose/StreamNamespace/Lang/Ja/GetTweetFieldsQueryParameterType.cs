@@ -72,6 +72,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
         #pragma warning disable CS1591
         Lang,
         #pragma warning restore CS1591
+        [EnumMember(Value = "matched_media_notes")]
+        #pragma warning disable CS1591
+        Matched_media_notes,
+        #pragma warning restore CS1591
         [EnumMember(Value = "media_metadata")]
         #pragma warning disable CS1591
         Media_metadata,

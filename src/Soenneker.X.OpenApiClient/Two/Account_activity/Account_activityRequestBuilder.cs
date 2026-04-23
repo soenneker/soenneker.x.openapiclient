@@ -2,7 +2,6 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.X.OpenApiClient.Two.Account_activity.Replay;
 using Soenneker.X.OpenApiClient.Two.Account_activity.Subscriptions;
 using Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks;
 using System.Collections.Generic;
@@ -17,11 +16,6 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Account_activityRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The replay property</summary>
-        public global::Soenneker.X.OpenApiClient.Two.Account_activity.Replay.ReplayRequestBuilder Replay
-        {
-            get => new global::Soenneker.X.OpenApiClient.Two.Account_activity.Replay.ReplayRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The subscriptions property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Account_activity.Subscriptions.SubscriptionsRequestBuilder Subscriptions
         {

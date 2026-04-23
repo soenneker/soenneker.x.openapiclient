@@ -13,6 +13,14 @@ namespace Soenneker.X.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetCreateRequest_media : IParsable
     {
+        /// <summary>Description for the media. Rendered on the Post card for video and Amplify content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Description { get; set; }
+#nullable restore
+#else
+        public string Description { get; set; }
+#endif
         /// <summary>A list of Media Ids to be attached to a created Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<string> MediaIds { get; set; }
 #endif
+        /// <summary>The unique identifier of this Media.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewMediaId { get; set; }
+#nullable restore
+#else
+        public string PreviewMediaId { get; set; }
+#endif
         /// <summary>A list of User Ids to be tagged in the media for created Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,6 +44,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> TaggedUserIds { get; set; }
+#endif
+        /// <summary>Title for the media. Rendered on the Post card for video and Amplify content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +71,11 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "media_ids", n => { MediaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "preview_media_id", n => { PreviewMediaId = n.GetStringValue(); } },
                 { "tagged_user_ids", n => { TaggedUserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +85,11 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("media_ids", MediaIds);
+            writer.WriteStringValue("preview_media_id", PreviewMediaId);
             writer.WriteCollectionOfPrimitiveValues<string>("tagged_user_ids", TaggedUserIds);
+            writer.WriteStringValue("title", Title);
         }
     }
 }
