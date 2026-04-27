@@ -13,6 +13,14 @@ namespace Soenneker.X.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetCreateRequest_media : IParsable
     {
+        /// <summary>Call-to-action button rendered on the media entity. Exactly one variant should be set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media_call_to_actions? CallToActions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media_call_to_actions CallToActions { get; set; }
+#endif
         /// <summary>Description for the media. Rendered on the Post card for video and Amplify content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -21,6 +29,8 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
+        /// <summary>When true, the media&apos;s asset URLs do not expire and external syndicated playback is allowed.</summary>
+        public bool? Embeddable { get; set; }
         /// <summary>A list of Media Ids to be attached to a created Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -71,7 +81,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "call_to_actions", n => { CallToActions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media_call_to_actions>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media_call_to_actions.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
+                { "embeddable", n => { Embeddable = n.GetBoolValue(); } },
                 { "media_ids", n => { MediaIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "preview_media_id", n => { PreviewMediaId = n.GetStringValue(); } },
                 { "tagged_user_ids", n => { TaggedUserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -85,7 +97,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media_call_to_actions>("call_to_actions", CallToActions);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("embeddable", Embeddable);
             writer.WriteCollectionOfPrimitiveValues<string>("media_ids", MediaIds);
             writer.WriteStringValue("preview_media_id", PreviewMediaId);
             writer.WriteCollectionOfPrimitiveValues<string>("tagged_user_ids", TaggedUserIds);
