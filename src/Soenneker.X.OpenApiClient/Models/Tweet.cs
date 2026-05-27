@@ -136,6 +136,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics NonPublicMetrics { get; set; }
 #endif
+        /// <summary>The note request suggestions for the post.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions? NoteRequestSuggestions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions NoteRequestSuggestions { get; set; }
+#endif
         /// <summary>The full-content of the Tweet, including text beyond 280 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -277,6 +285,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "lang", n => { Lang = n.GetStringValue(); } },
                 { "matched_media_notes", n => { MatchedMediaNotes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>(global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes.CreateFromDiscriminatorValue); } },
                 { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics.CreateFromDiscriminatorValue); } },
+                { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions>(global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions.CreateFromDiscriminatorValue); } },
                 { "note_tweet", n => { NoteTweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>(global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet.CreateFromDiscriminatorValue); } },
                 { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics.CreateFromDiscriminatorValue); } },
                 { "possibly_sensitive", n => { PossiblySensitive = n.GetBoolValue(); } },
@@ -316,6 +325,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("lang", Lang);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>("matched_media_notes", MatchedMediaNotes);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>("non_public_metrics", NonPublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions>("note_request_suggestions", NoteRequestSuggestions);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>("note_tweet", NoteTweet);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>("organic_metrics", OrganicMetrics);
             writer.WriteBoolValue("possibly_sensitive", PossiblySensitive);

@@ -209,7 +209,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return per page.</summary>
+            /// <summary>The maximum number of results to return per page. Defaults to 1000 when unspecified; use pagination_token (from response meta.next_token) to fetch additional pages.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>

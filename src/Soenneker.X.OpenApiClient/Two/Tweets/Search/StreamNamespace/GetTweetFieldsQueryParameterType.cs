@@ -84,6 +84,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace
         #pragma warning disable CS1591
         Non_public_metrics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "note_request_suggestions")]
+        #pragma warning disable CS1591
+        Note_request_suggestions,
+        #pragma warning restore CS1591
         [EnumMember(Value = "note_tweet")]
         #pragma warning disable CS1591
         Note_tweet,
