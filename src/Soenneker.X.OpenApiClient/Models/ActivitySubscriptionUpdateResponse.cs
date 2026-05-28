@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse_data? Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponseData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse_data Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponseData Data { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse_data>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponseData>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponseData.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponse_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionUpdateResponseData>("data", Data);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

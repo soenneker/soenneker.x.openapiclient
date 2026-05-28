@@ -39,30 +39,30 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Options for editing an existing Post. When provided, this request will edit the specified Post instead of creating a new one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options? EditOptions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestEditOptions? EditOptions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options EditOptions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestEditOptions EditOptions { get; set; }
 #endif
         /// <summary>Exclusive Tweet for super followers.</summary>
         public bool? ForSuperFollowersOnly { get; set; }
         /// <summary>Place ID being attached to the Tweet for geo location.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo? Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestGeo? Geo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestGeo Geo { get; set; }
 #endif
         /// <summary>Whether this Post contains AI-generated media. When true, the Post will be labeled accordingly.</summary>
         public bool? MadeWithAi { get; set; }
         /// <summary>Media information being attached to created Tweet. This is mutually exclusive from Quote Tweet Id, Poll, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestMedia? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestMedia Media { get; set; }
 #endif
         /// <summary>Nullcasted (promoted-only) Posts do not appear in the public timeline and are not served to followers.</summary>
         public bool? Nullcast { get; set; }
@@ -71,10 +71,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Poll options for a Tweet with a poll. This is mutually exclusive from Media, Quote Tweet Id, and Card URI.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_poll? Poll { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll? Poll { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_poll Poll { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll Poll { get; set; }
 #endif
         /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,10 +87,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Tweet information of the Tweet being replied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply? Reply { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply? Reply { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply Reply { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply Reply { get; set; }
 #endif
         /// <summary>Settings to indicate who can reply to the Tweet.</summary>
         public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings? ReplySettings { get; set; }
@@ -125,16 +125,16 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "card_uri", n => { CardUri = n.GetStringValue(); } },
                 { "community_id", n => { CommunityId = n.GetStringValue(); } },
                 { "direct_message_deep_link", n => { DirectMessageDeepLink = n.GetStringValue(); } },
-                { "edit_options", n => { EditOptions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options.CreateFromDiscriminatorValue); } },
+                { "edit_options", n => { EditOptions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestEditOptions>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestEditOptions.CreateFromDiscriminatorValue); } },
                 { "for_super_followers_only", n => { ForSuperFollowersOnly = n.GetBoolValue(); } },
-                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo.CreateFromDiscriminatorValue); } },
+                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestGeo>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestGeo.CreateFromDiscriminatorValue); } },
                 { "made_with_ai", n => { MadeWithAi = n.GetBoolValue(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestMedia>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestMedia.CreateFromDiscriminatorValue); } },
                 { "nullcast", n => { Nullcast = n.GetBoolValue(); } },
                 { "paid_partnership", n => { PaidPartnership = n.GetBoolValue(); } },
-                { "poll", n => { Poll = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_poll>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_poll.CreateFromDiscriminatorValue); } },
+                { "poll", n => { Poll = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll.CreateFromDiscriminatorValue); } },
                 { "quote_tweet_id", n => { QuoteTweetId = n.GetStringValue(); } },
-                { "reply", n => { Reply = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply.CreateFromDiscriminatorValue); } },
+                { "reply", n => { Reply = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply.CreateFromDiscriminatorValue); } },
                 { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>(); } },
                 { "share_with_followers", n => { ShareWithFollowers = n.GetBoolValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
@@ -150,16 +150,16 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("card_uri", CardUri);
             writer.WriteStringValue("community_id", CommunityId);
             writer.WriteStringValue("direct_message_deep_link", DirectMessageDeepLink);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_edit_options>("edit_options", EditOptions);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestEditOptions>("edit_options", EditOptions);
             writer.WriteBoolValue("for_super_followers_only", ForSuperFollowersOnly);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_geo>("geo", Geo);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestGeo>("geo", Geo);
             writer.WriteBoolValue("made_with_ai", MadeWithAi);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_media>("media", Media);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestMedia>("media", Media);
             writer.WriteBoolValue("nullcast", Nullcast);
             writer.WriteBoolValue("paid_partnership", PaidPartnership);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_poll>("poll", Poll);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll>("poll", Poll);
             writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply>("reply", Reply);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply>("reply", Reply);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>("reply_settings", ReplySettings);
             writer.WriteBoolValue("share_with_followers", ShareWithFollowers);
             writer.WriteStringValue("text", Text);

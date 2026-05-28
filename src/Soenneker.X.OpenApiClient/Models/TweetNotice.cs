@@ -59,10 +59,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetNotice_tweet? Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoticeTweet? Tweet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetNotice_tweet Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoticeTweet Tweet { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.TweetNotice"/> and sets the default values.
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "event_type", n => { EventType = n.GetStringValue(); } },
                 { "extended_details_url", n => { ExtendedDetailsUrl = n.GetStringValue(); } },
                 { "label_title", n => { LabelTitle = n.GetStringValue(); } },
-                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNotice_tweet>(global::Soenneker.X.OpenApiClient.Models.TweetNotice_tweet.CreateFromDiscriminatorValue); } },
+                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoticeTweet>(global::Soenneker.X.OpenApiClient.Models.TweetNoticeTweet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("event_type", EventType);
             writer.WriteStringValue("extended_details_url", ExtendedDetailsUrl);
             writer.WriteStringValue("label_title", LabelTitle);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNotice_tweet>("tweet", Tweet);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoticeTweet>("tweet", Tweet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

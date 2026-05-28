@@ -19,10 +19,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The favorite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema_favorite? Favorite { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite? Favorite { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema_favorite Favorite { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite Favorite { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
-                { "favorite", n => { Favorite = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema_favorite>(global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema_favorite.CreateFromDiscriminatorValue); } },
+                { "favorite", n => { Favorite = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite>(global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchema_favorite>("favorite", Favorite);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite>("favorite", Favorite);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

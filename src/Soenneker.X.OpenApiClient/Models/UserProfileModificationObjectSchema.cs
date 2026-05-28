@@ -35,10 +35,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema_user? User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchemaUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema_user User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchemaUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
                 { "new_value", n => { NewValue = n.GetStringValue(); } },
                 { "profile_field", n => { ProfileField = n.GetStringValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema_user>(global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchemaUser>(global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchemaUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
             writer.WriteStringValue("new_value", NewValue);
             writer.WriteStringValue("profile_field", ProfileField);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema_user>("user", User);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchemaUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19,10 +19,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema_user? User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchemaUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema_user User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchemaUser User { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema_user>(global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserComplianceSchemaUser>(global::Soenneker.X.OpenApiClient.Models.UserComplianceSchemaUser.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema_user>("user", User);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserComplianceSchemaUser>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

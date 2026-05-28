@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public bool? ScreenCaptureBlockingEnabled { get; set; }
         /// <summary>Whether screen capture detection is enabled for this conversation.</summary>
         public bool? ScreenCaptureDetectionEnabled { get; set; }
-        /// <summary>The type of conversation: &apos;direct&apos; or &apos;group&apos;.</summary>
+        /// <summary>&quot;The type of conversation: &apos;direct&apos; or &apos;group&apos;.&quot;</summary>
         public global::Soenneker.X.OpenApiClient.Models.ChatConversation_type? Type { get; set; }
         /// <summary>ISO 8601 timestamp when the group was last updated. Only present for group conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

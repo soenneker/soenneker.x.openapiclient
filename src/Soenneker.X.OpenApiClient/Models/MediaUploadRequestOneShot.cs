@@ -23,10 +23,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UnionBranch? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UnionBranch Media { get; set; }
 #endif
         /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size) and enable advanced features.</summary>
         public global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot? MediaCategory { get; set; }
@@ -53,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>(global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UnionBranch>(global::Soenneker.X.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>(); } },
                 { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
@@ -67,67 +67,10 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media>("media", Media);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UnionBranch>("media", Media);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>("media_category", MediaCategory);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>("media_type", MediaType);
             writer.WriteBoolValue("shared", Shared);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class MediaUploadRequestOneShot_media : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary? MediaPayloadBinary { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary MediaPayloadBinary { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte? MediaPayloadByte { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte MediaPayloadByte { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot.MediaUploadRequestOneShot_media();
-                result.MediaPayloadBinary = new global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary();
-                result.MediaPayloadByte = new global::Soenneker.X.OpenApiClient.Models.MediaPayloadByte();
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(MediaPayloadBinary != null || MediaPayloadByte != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MediaPayloadBinary, MediaPayloadByte);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPayloadBinary>(null, MediaPayloadBinary, MediaPayloadByte);
-            }
         }
     }
 }

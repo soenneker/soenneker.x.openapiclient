@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_data? Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_data Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseData Data { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,10 +33,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_meta? Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_meta Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseMeta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse"/> and sets the default values.
@@ -63,9 +63,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_data>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseData>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseData.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_meta>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseMeta>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,9 +75,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

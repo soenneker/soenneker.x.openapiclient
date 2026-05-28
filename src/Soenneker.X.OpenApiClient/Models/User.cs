@@ -18,10 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Metadata about a user&apos;s affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.User_affiliation? Affiliation { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserAffiliation? Affiliation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.User_affiliation Affiliation { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserAffiliation Affiliation { get; set; }
 #endif
         /// <summary>Returns detailed information about the relationship between two users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +44,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A list of metadata found in the User&apos;s profile description.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.User_entities? Entities { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserEntities? Entities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.User_entities Entities { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserEntities Entities { get; set; }
 #endif
         /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,14 +110,14 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A list of metrics for this User.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.User_public_metrics? PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics? PublicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.User_public_metrics PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics PublicMetrics { get; set; }
 #endif
         /// <summary>Indicates if you can send a DM to this User</summary>
         public bool? ReceivesYourDm { get; set; }
-        /// <summary>The X Blue subscription type of the user, eg: Basic, Premium, PremiumPlus or None.</summary>
+        /// <summary>&quot;The X Blue subscription type of the user, eg: Basic, Premium, PremiumPlus or None.&quot;</summary>
         public global::Soenneker.X.OpenApiClient.Models.User_subscription_type? SubscriptionType { get; set; }
         /// <summary>The URL specified in the User&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Indicate if this User is a verified X User.</summary>
         public bool? Verified { get; set; }
-        /// <summary>The X Blue verified type of the user, eg: blue, government, business or none.</summary>
+        /// <summary>&quot;The X Blue verified type of the user, eg: blue, government, business or none.&quot;</summary>
         public global::Soenneker.X.OpenApiClient.Models.User_verified_type? VerifiedType { get; set; }
         /// <summary>Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -172,11 +172,11 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "affiliation", n => { Affiliation = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.User_affiliation>(global::Soenneker.X.OpenApiClient.Models.User_affiliation.CreateFromDiscriminatorValue); } },
+                { "affiliation", n => { Affiliation = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>(global::Soenneker.X.OpenApiClient.Models.UserAffiliation.CreateFromDiscriminatorValue); } },
                 { "connection_status", n => { ConnectionStatus = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.User_connection_status>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.User_entities>(global::Soenneker.X.OpenApiClient.Models.User_entities.CreateFromDiscriminatorValue); } },
+                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntities>(global::Soenneker.X.OpenApiClient.Models.UserEntities.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "most_recent_tweet_id", n => { MostRecentTweetId = n.GetStringValue(); } },
@@ -185,7 +185,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "profile_banner_url", n => { ProfileBannerUrl = n.GetStringValue(); } },
                 { "profile_image_url", n => { ProfileImageUrl = n.GetStringValue(); } },
                 { "protected", n => { Protected = n.GetBoolValue(); } },
-                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.User_public_metrics>(global::Soenneker.X.OpenApiClient.Models.User_public_metrics.CreateFromDiscriminatorValue); } },
+                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics.CreateFromDiscriminatorValue); } },
                 { "receives_your_dm", n => { ReceivesYourDm = n.GetBoolValue(); } },
                 { "subscription_type", n => { SubscriptionType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.User_subscription_type>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
@@ -202,11 +202,11 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.User_affiliation>("affiliation", Affiliation);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>("affiliation", Affiliation);
             writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.User_connection_status>("connection_status", ConnectionStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.User_entities>("entities", Entities);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntities>("entities", Entities);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("most_recent_tweet_id", MostRecentTweetId);
@@ -215,7 +215,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("profile_banner_url", ProfileBannerUrl);
             writer.WriteStringValue("profile_image_url", ProfileImageUrl);
             writer.WriteBoolValue("protected", Protected);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.User_public_metrics>("public_metrics", PublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>("public_metrics", PublicMetrics);
             writer.WriteBoolValue("receives_your_dm", ReceivesYourDm);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.User_subscription_type>("subscription_type", SubscriptionType);
             writer.WriteStringValue("url", Url);

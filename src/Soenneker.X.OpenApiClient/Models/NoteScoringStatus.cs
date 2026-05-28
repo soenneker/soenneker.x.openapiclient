@@ -20,10 +20,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Rating count stats per model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus_rating_counts_per_model? RatingCountsPerModel { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel? RatingCountsPerModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus_rating_counts_per_model RatingCountsPerModel { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel RatingCountsPerModel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_access", n => { HasAccess = n.GetBoolValue(); } },
-                { "rating_counts_per_model", n => { RatingCountsPerModel = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus_rating_counts_per_model>(global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus_rating_counts_per_model.CreateFromDiscriminatorValue); } },
+                { "rating_counts_per_model", n => { RatingCountsPerModel = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel>(global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_access", HasAccess);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus_rating_counts_per_model>("rating_counts_per_model", RatingCountsPerModel);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel>("rating_counts_per_model", RatingCountsPerModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

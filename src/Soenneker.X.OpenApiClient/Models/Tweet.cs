@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Specifies the type of attachments (if any) present in this Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_attachments? Attachments { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetAttachments? Attachments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_attachments Attachments { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetAttachments Attachments { get; set; }
 #endif
         /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,10 +67,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The edit_controls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls? EditControls { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetEditControls? EditControls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls EditControls { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetEditControls EditControls { get; set; }
 #endif
         /// <summary>A list of Tweet Ids in this Tweet chain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -91,10 +91,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The location tagged on the Tweet, if the user provided one.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_geo? Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetGeo? Geo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_geo Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetGeo Geo { get; set; }
 #endif
         /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -123,60 +123,60 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The matched media notes for the post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes? MatchedMediaNotes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetMatchedMediaNotes? MatchedMediaNotes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes MatchedMediaNotes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetMatchedMediaNotes MatchedMediaNotes { get; set; }
 #endif
         /// <summary>Nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics? NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNonPublicMetrics? NonPublicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNonPublicMetrics NonPublicMetrics { get; set; }
 #endif
         /// <summary>The note request suggestions for the post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions? NoteRequestSuggestions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions? NoteRequestSuggestions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions NoteRequestSuggestions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions NoteRequestSuggestions { get; set; }
 #endif
         /// <summary>The full-content of the Tweet, including text beyond 280 characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet? NoteTweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet? NoteTweet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet NoteTweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet NoteTweet { get; set; }
 #endif
         /// <summary>Organic nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics? OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics? OrganicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics OrganicMetrics { get; set; }
 #endif
         /// <summary>Indicates if this Tweet contains URLs marked as sensitive, for example content suitable for mature audiences.</summary>
         public bool? PossiblySensitive { get; set; }
         /// <summary>Promoted nonpublic engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_promoted_metrics? PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics? PromotedMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_promoted_metrics PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics PromotedMetrics { get; set; }
 #endif
         /// <summary>Engagement metrics for the Tweet at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_public_metrics? PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics? PublicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_public_metrics PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics PublicMetrics { get; set; }
 #endif
         /// <summary>A list of Posts this Tweet refers to. For example, if the parent Tweet is a Retweet, a Quoted Tweet or a Reply, it will include the related Tweet referenced to by its parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -191,10 +191,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The scopes for this tweet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_scopes? Scopes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetScopes? Scopes { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_scopes Scopes { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetScopes Scopes { get; set; }
 #endif
         /// <summary>This is deprecated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -215,10 +215,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Suggested source links and the number of requests that included each link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts? SuggestedSourceLinksWithCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetSuggestedSourceLinksWithCounts? SuggestedSourceLinksWithCounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts SuggestedSourceLinksWithCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetSuggestedSourceLinksWithCounts SuggestedSourceLinksWithCounts { get; set; }
 #endif
         /// <summary>The content of the Tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -269,34 +269,34 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachments", n => { Attachments = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_attachments>(global::Soenneker.X.OpenApiClient.Models.Tweet_attachments.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetAttachments>(global::Soenneker.X.OpenApiClient.Models.TweetAttachments.CreateFromDiscriminatorValue); } },
                 { "author_id", n => { AuthorId = n.GetStringValue(); } },
                 { "community_id", n => { CommunityId = n.GetStringValue(); } },
                 { "context_annotations", n => { ContextAnnotations = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ContextAnnotation>(global::Soenneker.X.OpenApiClient.Models.ContextAnnotation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "display_text_range", n => { DisplayTextRange = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
-                { "edit_controls", n => { EditControls = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls>(global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls.CreateFromDiscriminatorValue); } },
+                { "edit_controls", n => { EditControls = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditControls>(global::Soenneker.X.OpenApiClient.Models.TweetEditControls.CreateFromDiscriminatorValue); } },
                 { "edit_history_tweet_ids", n => { EditHistoryTweetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>(global::Soenneker.X.OpenApiClient.Models.FullTextEntities.CreateFromDiscriminatorValue); } },
-                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_geo>(global::Soenneker.X.OpenApiClient.Models.Tweet_geo.CreateFromDiscriminatorValue); } },
+                { "geo", n => { Geo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetGeo>(global::Soenneker.X.OpenApiClient.Models.TweetGeo.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "in_reply_to_user_id", n => { InReplyToUserId = n.GetStringValue(); } },
                 { "lang", n => { Lang = n.GetStringValue(); } },
-                { "matched_media_notes", n => { MatchedMediaNotes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>(global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes.CreateFromDiscriminatorValue); } },
-                { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics.CreateFromDiscriminatorValue); } },
-                { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions>(global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions.CreateFromDiscriminatorValue); } },
-                { "note_tweet", n => { NoteTweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>(global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet.CreateFromDiscriminatorValue); } },
-                { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics.CreateFromDiscriminatorValue); } },
+                { "matched_media_notes", n => { MatchedMediaNotes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetMatchedMediaNotes>(global::Soenneker.X.OpenApiClient.Models.TweetMatchedMediaNotes.CreateFromDiscriminatorValue); } },
+                { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNonPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetNonPublicMetrics.CreateFromDiscriminatorValue); } },
+                { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions>(global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions.CreateFromDiscriminatorValue); } },
+                { "note_tweet", n => { NoteTweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet>(global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet.CreateFromDiscriminatorValue); } },
+                { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics.CreateFromDiscriminatorValue); } },
                 { "possibly_sensitive", n => { PossiblySensitive = n.GetBoolValue(); } },
-                { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_promoted_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_promoted_metrics.CreateFromDiscriminatorValue); } },
-                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Tweet_public_metrics.CreateFromDiscriminatorValue); } },
+                { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics.CreateFromDiscriminatorValue); } },
+                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics.CreateFromDiscriminatorValue); } },
                 { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets>(global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>(); } },
-                { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>(global::Soenneker.X.OpenApiClient.Models.Tweet_scopes.CreateFromDiscriminatorValue); } },
+                { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetScopes>(global::Soenneker.X.OpenApiClient.Models.TweetScopes.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
                 { "suggested_source_links", n => { SuggestedSourceLinks = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>(global::Soenneker.X.OpenApiClient.Models.UrlEntity.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "suggested_source_links_with_counts", n => { SuggestedSourceLinksWithCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts>(global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts.CreateFromDiscriminatorValue); } },
+                { "suggested_source_links_with_counts", n => { SuggestedSourceLinksWithCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetSuggestedSourceLinksWithCounts>(global::Soenneker.X.OpenApiClient.Models.TweetSuggestedSourceLinksWithCounts.CreateFromDiscriminatorValue); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "withheld", n => { Withheld = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>(global::Soenneker.X.OpenApiClient.Models.TweetWithheld.CreateFromDiscriminatorValue); } },
@@ -309,34 +309,34 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_attachments>("attachments", Attachments);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetAttachments>("attachments", Attachments);
             writer.WriteStringValue("author_id", AuthorId);
             writer.WriteStringValue("community_id", CommunityId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ContextAnnotation>("context_annotations", ContextAnnotations);
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfPrimitiveValues<int?>("display_text_range", DisplayTextRange);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_edit_controls>("edit_controls", EditControls);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditControls>("edit_controls", EditControls);
             writer.WriteCollectionOfPrimitiveValues<string>("edit_history_tweet_ids", EditHistoryTweetIds);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>("entities", Entities);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_geo>("geo", Geo);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetGeo>("geo", Geo);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("in_reply_to_user_id", InReplyToUserId);
             writer.WriteStringValue("lang", Lang);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_matched_media_notes>("matched_media_notes", MatchedMediaNotes);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_non_public_metrics>("non_public_metrics", NonPublicMetrics);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_request_suggestions>("note_request_suggestions", NoteRequestSuggestions);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_note_tweet>("note_tweet", NoteTweet);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_organic_metrics>("organic_metrics", OrganicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetMatchedMediaNotes>("matched_media_notes", MatchedMediaNotes);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNonPublicMetrics>("non_public_metrics", NonPublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions>("note_request_suggestions", NoteRequestSuggestions);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet>("note_tweet", NoteTweet);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics>("organic_metrics", OrganicMetrics);
             writer.WriteBoolValue("possibly_sensitive", PossiblySensitive);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_promoted_metrics>("promoted_metrics", PromotedMetrics);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_public_metrics>("public_metrics", PublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>("promoted_metrics", PromotedMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>("public_metrics", PublicMetrics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets>("referenced_tweets", ReferencedTweets);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>("reply_settings", ReplySettings);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_scopes>("scopes", Scopes);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetScopes>("scopes", Scopes);
             writer.WriteStringValue("source", Source);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>("suggested_source_links", SuggestedSourceLinks);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet_suggested_source_links_with_counts>("suggested_source_links_with_counts", SuggestedSourceLinksWithCounts);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetSuggestedSourceLinksWithCounts>("suggested_source_links_with_counts", SuggestedSourceLinksWithCounts);
             writer.WriteStringValue("text", Text);
             writer.WriteStringValue("username", Username);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld>("withheld", Withheld);

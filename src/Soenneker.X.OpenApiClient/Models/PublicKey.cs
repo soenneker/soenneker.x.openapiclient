@@ -15,6 +15,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>DER-encoded signature proving the signing key is bound to the identity key (base64 encoded).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? IdentityPublicKeySignature { get; set; }
+#nullable restore
+#else
+        public string IdentityPublicKeySignature { get; set; }
+#endif
         /// <summary>Identity public key (base64 encoded).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -34,10 +42,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Juicebox configuration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PublicKey_token_map? TokenMap { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap? TokenMap { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PublicKey_token_map TokenMap { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap TokenMap { get; set; }
 #endif
         /// <summary>Public key version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,9 +80,10 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "identity_public_key_signature", n => { IdentityPublicKeySignature = n.GetStringValue(); } },
                 { "public_key", n => { PublicKeyProp = n.GetStringValue(); } },
                 { "signing_public_key", n => { SigningPublicKey = n.GetStringValue(); } },
-                { "token_map", n => { TokenMap = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PublicKey_token_map>(global::Soenneker.X.OpenApiClient.Models.PublicKey_token_map.CreateFromDiscriminatorValue); } },
+                { "token_map", n => { TokenMap = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap>(global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -85,9 +94,10 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("identity_public_key_signature", IdentityPublicKeySignature);
             writer.WriteStringValue("public_key", PublicKeyProp);
             writer.WriteStringValue("signing_public_key", SigningPublicKey);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PublicKey_token_map>("token_map", TokenMap);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap>("token_map", TokenMap);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

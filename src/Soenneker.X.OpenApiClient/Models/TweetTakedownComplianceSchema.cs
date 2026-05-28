@@ -27,10 +27,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchema_tweet? Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchemaTweet? Tweet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchema_tweet Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchemaTweet Tweet { get; set; }
 #endif
         /// <summary>The withheld_in_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
                 { "quote_tweet_id", n => { QuoteTweetId = n.GetStringValue(); } },
-                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchema_tweet>(global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchema_tweet.CreateFromDiscriminatorValue); } },
+                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchemaTweet>(global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchemaTweet.CreateFromDiscriminatorValue); } },
                 { "withheld_in_countries", n => { WithheldInCountries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
             writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchema_tweet>("tweet", Tweet);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetTakedownComplianceSchemaTweet>("tweet", Tweet);
             writer.WriteCollectionOfPrimitiveValues<string>("withheld_in_countries", WithheldInCountries);
             writer.WriteAdditionalData(AdditionalData);
         }

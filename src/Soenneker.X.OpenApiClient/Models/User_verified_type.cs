@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The X Blue verified type of the user, eg: blue, government, business or none.</summary>
+    /// <summary>&quot;The X Blue verified type of the user, eg: blue, government, business or none.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum User_verified_type
     {

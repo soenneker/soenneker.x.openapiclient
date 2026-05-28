@@ -33,10 +33,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse_meta? Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponseMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse_meta Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponseMeta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.WebhookConfig>(global::Soenneker.X.OpenApiClient.Models.WebhookConfig.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse_meta>(global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponseMeta>(global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.WebhookConfig>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponse_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2WebhooksResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

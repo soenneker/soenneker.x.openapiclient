@@ -18,10 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse_data? Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponseData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse_data Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponseData Data { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse_data>(global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse_data.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponseData>(global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponseData.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponse_data>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendResponseData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -18,10 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>IDs and values of all deleted user-specified stream filtering rules.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest_delete? Delete { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequestDelete? Delete { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest_delete Delete { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequestDelete Delete { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delete", n => { Delete = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest_delete>(global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest_delete.CreateFromDiscriminatorValue); } },
+                { "delete", n => { Delete = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequestDelete>(global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequestDelete.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequest_delete>("delete", Delete);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DeleteRulesRequestDelete>("delete", Delete);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

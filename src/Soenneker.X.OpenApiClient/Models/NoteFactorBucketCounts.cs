@@ -20,20 +20,20 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Helpful tag counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_helpful_tag_counts? HelpfulTagCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsHelpfulTagCounts? HelpfulTagCounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_helpful_tag_counts HelpfulTagCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsHelpfulTagCounts HelpfulTagCounts { get; set; }
 #endif
         /// <summary>The count of not helpful ratings.</summary>
         public int? NotHelpfulCount { get; set; }
         /// <summary>Not helpful tag counts.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_not_helpful_tag_counts? NotHelpfulTagCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsNotHelpfulTagCounts? NotHelpfulTagCounts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_not_helpful_tag_counts NotHelpfulTagCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsNotHelpfulTagCounts NotHelpfulTagCounts { get; set; }
 #endif
         /// <summary>The count of somewhat helpful ratings.</summary>
         public int? SomewhatHelpfulCount { get; set; }
@@ -63,9 +63,9 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "helpful_count", n => { HelpfulCount = n.GetIntValue(); } },
-                { "helpful_tag_counts", n => { HelpfulTagCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_helpful_tag_counts>(global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_helpful_tag_counts.CreateFromDiscriminatorValue); } },
+                { "helpful_tag_counts", n => { HelpfulTagCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsHelpfulTagCounts>(global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsHelpfulTagCounts.CreateFromDiscriminatorValue); } },
                 { "not_helpful_count", n => { NotHelpfulCount = n.GetIntValue(); } },
-                { "not_helpful_tag_counts", n => { NotHelpfulTagCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_not_helpful_tag_counts>(global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_not_helpful_tag_counts.CreateFromDiscriminatorValue); } },
+                { "not_helpful_tag_counts", n => { NotHelpfulTagCounts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsNotHelpfulTagCounts>(global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsNotHelpfulTagCounts.CreateFromDiscriminatorValue); } },
                 { "somewhat_helpful_count", n => { SomewhatHelpfulCount = n.GetIntValue(); } },
             };
         }
@@ -77,9 +77,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("helpful_count", HelpfulCount);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_helpful_tag_counts>("helpful_tag_counts", HelpfulTagCounts);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsHelpfulTagCounts>("helpful_tag_counts", HelpfulTagCounts);
             writer.WriteIntValue("not_helpful_count", NotHelpfulCount);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCounts_not_helpful_tag_counts>("not_helpful_tag_counts", NotHelpfulTagCounts);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteFactorBucketCountsNotHelpfulTagCounts>("not_helpful_tag_counts", NotHelpfulTagCounts);
             writer.WriteIntValue("somewhat_helpful_count", SomewhatHelpfulCount);
             writer.WriteAdditionalData(AdditionalData);
         }

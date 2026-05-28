@@ -19,10 +19,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema_user? User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchemaUser? User { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema_user User { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchemaUser User { get; set; }
 #endif
         /// <summary>The withheld_in_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
-                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema_user>(global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema_user.CreateFromDiscriminatorValue); } },
+                { "user", n => { User = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchemaUser>(global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchemaUser.CreateFromDiscriminatorValue); } },
                 { "withheld_in_countries", n => { WithheldInCountries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema_user>("user", User);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchemaUser>("user", User);
             writer.WriteCollectionOfPrimitiveValues<string>("withheld_in_countries", WithheldInCountries);
             writer.WriteAdditionalData(AdditionalData);
         }

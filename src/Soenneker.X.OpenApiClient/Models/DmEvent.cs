@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Specifies the type of attachments (if any) present in this DM.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.DmEvent_attachments? Attachments { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DmEventAttachments? Attachments { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.DmEvent_attachments Attachments { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DmEventAttachments Attachments { get; set; }
 #endif
         /// <summary>The cashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -137,7 +137,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attachments", n => { Attachments = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEvent_attachments>(global::Soenneker.X.OpenApiClient.Models.DmEvent_attachments.CreateFromDiscriminatorValue); } },
+                { "attachments", n => { Attachments = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventAttachments>(global::Soenneker.X.OpenApiClient.Models.DmEventAttachments.CreateFromDiscriminatorValue); } },
                 { "cashtags", n => { Cashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>(global::Soenneker.X.OpenApiClient.Models.CashtagEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dm_conversation_id", n => { DmConversationId = n.GetStringValue(); } },
@@ -159,7 +159,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEvent_attachments>("attachments", Attachments);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventAttachments>("attachments", Attachments);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>("cashtags", Cashtags);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("dm_conversation_id", DmConversationId);

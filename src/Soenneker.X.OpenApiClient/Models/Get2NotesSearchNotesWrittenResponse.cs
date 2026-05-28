@@ -33,10 +33,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse_meta? Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponseMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse_meta Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponseMeta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse"/> and sets the default values.
@@ -65,7 +65,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Note>(global::Soenneker.X.OpenApiClient.Models.Note.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse_meta>(global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponseMeta>(global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Note>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponse_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchNotesWrittenResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

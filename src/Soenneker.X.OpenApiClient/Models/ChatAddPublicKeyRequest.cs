@@ -19,10 +19,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Public key registration payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequest_public_key? PublicKey { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequestPublicKey? PublicKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequest_public_key PublicKey { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequestPublicKey PublicKey { get; set; }
 #endif
         /// <summary>Public key version.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "generate_version", n => { GenerateVersion = n.GetBoolValue(); } },
-                { "public_key", n => { PublicKey = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequest_public_key>(global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequest_public_key.CreateFromDiscriminatorValue); } },
+                { "public_key", n => { PublicKey = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequestPublicKey>(global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequestPublicKey.CreateFromDiscriminatorValue); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("generate_version", GenerateVersion);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequest_public_key>("public_key", PublicKey);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatAddPublicKeyRequestPublicKey>("public_key", PublicKey);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);
         }

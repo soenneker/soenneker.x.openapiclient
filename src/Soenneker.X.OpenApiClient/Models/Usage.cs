@@ -28,10 +28,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The daily usage breakdown for a project</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Usage_daily_project_usage? DailyProjectUsage { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage? DailyProjectUsage { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Usage_daily_project_usage DailyProjectUsage { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage DailyProjectUsage { get; set; }
 #endif
         /// <summary>Total number of Posts that can be read in this project per month</summary>
         public int? ProjectCap { get; set; }
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "cap_reset_day", n => { CapResetDay = n.GetIntValue(); } },
                 { "daily_client_app_usage", n => { DailyClientAppUsage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage>(global::Soenneker.X.OpenApiClient.Models.ClientAppUsage.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "daily_project_usage", n => { DailyProjectUsage = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Usage_daily_project_usage>(global::Soenneker.X.OpenApiClient.Models.Usage_daily_project_usage.CreateFromDiscriminatorValue); } },
+                { "daily_project_usage", n => { DailyProjectUsage = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage>(global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage.CreateFromDiscriminatorValue); } },
                 { "project_cap", n => { ProjectCap = n.GetIntValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
                 { "project_usage", n => { ProjectUsage = n.GetIntValue(); } },
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("cap_reset_day", CapResetDay);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage>("daily_client_app_usage", DailyClientAppUsage);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Usage_daily_project_usage>("daily_project_usage", DailyProjectUsage);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage>("daily_project_usage", DailyProjectUsage);
             writer.WriteIntValue("project_cap", ProjectCap);
             writer.WriteStringValue("project_id", ProjectId);
             writer.WriteIntValue("project_usage", ProjectUsage);

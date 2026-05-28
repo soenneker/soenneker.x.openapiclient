@@ -34,10 +34,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The contexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.News_contexts? Contexts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsContexts? Contexts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.News_contexts Contexts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsContexts Contexts { get; set; }
 #endif
         /// <summary>The disclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>(global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.News_contexts>(global::Soenneker.X.OpenApiClient.Models.News_contexts.CreateFromDiscriminatorValue); } },
+                { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>(global::Soenneker.X.OpenApiClient.Models.NewsContexts.CreateFromDiscriminatorValue); } },
                 { "disclaimer", n => { Disclaimer = n.GetStringValue(); } },
                 { "hook", n => { Hook = n.GetStringValue(); } },
                 { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
@@ -135,7 +135,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>("cluster_posts_results", ClusterPostsResults);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.News_contexts>("contexts", Contexts);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>("contexts", Contexts);
             writer.WriteStringValue("disclaimer", Disclaimer);
             writer.WriteStringValue("hook", Hook);
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);

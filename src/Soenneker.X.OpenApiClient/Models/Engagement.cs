@@ -26,10 +26,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The measurement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Engagement_measurement? Measurement { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement? Measurement { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Engagement_measurement Measurement { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement Measurement { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Engagement"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Engagement_errors>(global::Soenneker.X.OpenApiClient.Models.Engagement_errors.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "measurement", n => { Measurement = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Engagement_measurement>(global::Soenneker.X.OpenApiClient.Models.Engagement_measurement.CreateFromDiscriminatorValue); } },
+                { "measurement", n => { Measurement = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Engagement_errors>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Engagement_measurement>("measurement", Measurement);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement>("measurement", Measurement);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

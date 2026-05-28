@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The type of conversation: &apos;direct&apos; or &apos;group&apos;.</summary>
+    /// <summary>&quot;The type of conversation: &apos;direct&apos; or &apos;group&apos;.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ChatConversation_type
     {

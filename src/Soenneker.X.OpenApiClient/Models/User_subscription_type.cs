@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The X Blue subscription type of the user, eg: Basic, Premium, PremiumPlus or None.</summary>
+    /// <summary>&quot;The X Blue subscription type of the user, eg: Basic, Premium, PremiumPlus or None.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum User_subscription_type
     {

@@ -35,10 +35,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema_tweet? Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchemaTweet? Tweet { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema_tweet Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchemaTweet Tweet { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema"/> and sets the default values.
@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "edit_tweet_ids", n => { EditTweetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "event_at", n => { EventAt = n.GetDateTimeOffsetValue(); } },
                 { "initial_tweet_id", n => { InitialTweetId = n.GetStringValue(); } },
-                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema_tweet>(global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema_tweet.CreateFromDiscriminatorValue); } },
+                { "tweet", n => { Tweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchemaTweet>(global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchemaTweet.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("edit_tweet_ids", EditTweetIds);
             writer.WriteDateTimeOffsetValue("event_at", EventAt);
             writer.WriteStringValue("initial_tweet_id", InitialTweetId);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchema_tweet>("tweet", Tweet);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetEditComplianceObjectSchemaTweet>("tweet", Tweet);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

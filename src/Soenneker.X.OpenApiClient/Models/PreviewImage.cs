@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key? MediaKey { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey? MediaKey { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key MediaKey { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey MediaKey { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PreviewImage"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media_key", n => { MediaKey = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key>(global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key.CreateFromDiscriminatorValue); } },
+                { "media_key", n => { MediaKey = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey>(global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PreviewImage_media_key>("media_key", MediaKey);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey>("media_key", MediaKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

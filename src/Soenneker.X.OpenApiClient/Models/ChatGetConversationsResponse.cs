@@ -41,10 +41,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_meta? Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponseMeta? Meta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_meta Meta { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponseMeta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse"/> and sets the default values.
@@ -74,7 +74,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatConversation>(global::Soenneker.X.OpenApiClient.Models.ChatConversation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includes", n => { Includes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>(global::Soenneker.X.OpenApiClient.Models.Expansions.CreateFromDiscriminatorValue); } },
-                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_meta>(global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_meta.CreateFromDiscriminatorValue); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponseMeta>(global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatConversation>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>("includes", Includes);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse_meta>("meta", Meta);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,10 +25,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The metadata property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest_metadata? Metadata { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequestMetadata? Metadata { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest_metadata Metadata { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequestMetadata Metadata { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest_metadata>(global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest_metadata.CreateFromDiscriminatorValue); } },
+                { "metadata", n => { Metadata = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequestMetadata>(global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequestMetadata.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequest_metadata>("metadata", Metadata);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MetadataCreateRequestMetadata>("metadata", Metadata);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

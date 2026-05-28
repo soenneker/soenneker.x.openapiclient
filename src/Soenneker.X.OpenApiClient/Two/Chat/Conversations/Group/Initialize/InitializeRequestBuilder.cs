@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.Initialize
         {
         }
         /// <summary>
-        /// Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`
+        /// &quot;Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.Initialize
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`
+        /// &quot;Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
