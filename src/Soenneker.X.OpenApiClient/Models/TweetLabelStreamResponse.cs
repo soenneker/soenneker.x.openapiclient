@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetLabelStreamResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1? TweetLabelStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1? TweetLabelStreamResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1 TweetLabelStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1 TweetLabelStreamResponseOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2? TweetLabelStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2? TweetLabelStreamResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2 TweetLabelStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2 TweetLabelStreamResponseOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponse();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TweetLabelStreamResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TweetLabelStreamResponseMember1 = new global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1();
+                result.TweetLabelStreamResponseOneOf1 = new global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TweetLabelStreamResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TweetLabelStreamResponseMember2 = new global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2();
+                result.TweetLabelStreamResponseOneOf2 = new global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TweetLabelStreamResponseMember1 != null)
+            if(TweetLabelStreamResponseOneOf1 != null)
             {
-                return TweetLabelStreamResponseMember1.GetFieldDeserializers();
+                return TweetLabelStreamResponseOneOf1.GetFieldDeserializers();
             }
-            else if(TweetLabelStreamResponseMember2 != null)
+            else if(TweetLabelStreamResponseOneOf2 != null)
             {
-                return TweetLabelStreamResponseMember2.GetFieldDeserializers();
+                return TweetLabelStreamResponseOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TweetLabelStreamResponseMember1 != null)
+            if(TweetLabelStreamResponseOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember1>(null, TweetLabelStreamResponseMember1);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf1>(null, TweetLabelStreamResponseOneOf1);
             }
-            else if(TweetLabelStreamResponseMember2 != null)
+            else if(TweetLabelStreamResponseOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseMember2>(null, TweetLabelStreamResponseMember2);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetLabelStreamResponseOneOf2>(null, TweetLabelStreamResponseOneOf2);
             }
         }
     }

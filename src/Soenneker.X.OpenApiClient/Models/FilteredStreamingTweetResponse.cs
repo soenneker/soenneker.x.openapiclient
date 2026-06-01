@@ -42,10 +42,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The list of rules which matched the Tweet</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse_matching_rules>? MatchingRules { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponseMatchingRulesItem>? MatchingRules { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse_matching_rules> MatchingRules { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponseMatchingRulesItem> MatchingRules { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet>(global::Soenneker.X.OpenApiClient.Models.Tweet.CreateFromDiscriminatorValue); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "includes", n => { Includes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>(global::Soenneker.X.OpenApiClient.Models.Expansions.CreateFromDiscriminatorValue); } },
-                { "matching_rules", n => { MatchingRules = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse_matching_rules>(global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse_matching_rules.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "matching_rules", n => { MatchingRules = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponseMatchingRulesItem>(global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponseMatchingRulesItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>("includes", Includes);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponse_matching_rules>("matching_rules", MatchingRules);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FilteredStreamingTweetResponseMatchingRulesItem>("matching_rules", MatchingRules);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

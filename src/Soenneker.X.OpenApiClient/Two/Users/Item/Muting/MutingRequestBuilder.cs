@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.muting.item collection</summary>
         /// <param name="position">The ID of the User that the source User is requesting to unmute.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTarget_user_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTarget_user_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTargetUserItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTargetUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("target_user_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTarget_user_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("targetUserId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.Item.WithTargetUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -154,11 +154,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -177,21 +177,21 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Muting
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Muting.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

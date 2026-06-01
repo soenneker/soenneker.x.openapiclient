@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size, video duration) and enable advanced features.</summary>
         public global::Soenneker.X.OpenApiClient.Models.MediaCategory? MediaCategory { get; set; }
         /// <summary>The type of media.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequest_media_type? MediaType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequestMediaType? MediaType { get; set; }
         /// <summary>Whether this media is shared or not.</summary>
         public bool? Shared { get; set; }
         /// <summary>The total size of the media upload in bytes.</summary>
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategory>(); } },
-                { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequest_media_type>(); } },
+                { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequestMediaType>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
                 { "total_bytes", n => { TotalBytes = n.GetIntValue(); } },
             };
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategory>("media_category", MediaCategory);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequest_media_type>("media_type", MediaType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadConfigRequestMediaType>("media_type", MediaType);
             writer.WriteBoolValue("shared", Shared);
             writer.WriteIntValue("total_bytes", TotalBytes);
         }

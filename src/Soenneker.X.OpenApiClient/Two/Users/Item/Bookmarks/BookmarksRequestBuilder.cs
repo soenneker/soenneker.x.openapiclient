@@ -26,14 +26,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.bookmarks.item collection</summary>
         /// <param name="position">The ID of the Post that the source User is removing from bookmarks.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweet_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweet_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweetItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tweet_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweet_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tweetId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -160,11 +160,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -173,11 +173,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -193,41 +193,41 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetPlaceFieldsQueryParameterType[]? PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[]? PlaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetPlaceFieldsQueryParameterType[] PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[] PlaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Poll fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetPollFieldsQueryParameterType[]? PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[]? PollFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetPollFieldsQueryParameterType[] PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
             /// <summary>A comma separated list of Tweet fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

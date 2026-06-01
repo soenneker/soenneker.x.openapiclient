@@ -23,14 +23,14 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Media { get; set; }
 #endif
         /// <summary>The media category of media</summary>
-        public global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey_media_category? MediaCategory { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKeyMediaCategory? MediaCategory { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey"/> and sets the default values.
         /// </summary>
         public PreviewImageMediaKey()
         {
             AdditionalData = new Dictionary<string, object>();
-            MediaCategory = global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey_media_category.TweetImage;
+            MediaCategory = global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKeyMediaCategory.TweetImage;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "media", n => { Media = n.GetStringValue(); } },
-                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey_media_category>(); } },
+                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKeyMediaCategory>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("media", Media);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKey_media_category>("media_category", MediaCategory);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKeyMediaCategory>("media_category", MediaCategory);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

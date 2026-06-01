@@ -149,11 +149,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A list of User IDs, comma-separated. You can specify up to 100 IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -169,21 +169,21 @@ namespace Soenneker.X.OpenApiClient.Two.Users
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

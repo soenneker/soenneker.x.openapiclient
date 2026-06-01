@@ -16,10 +16,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem_errors>? Errors { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemAllOf2ErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem_errors> Errors { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemAllOf2ErrorsItem> Errors { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem_errors>(global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemAllOf2ErrorsItem>(global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemAllOf2ErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -50,7 +50,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem_errors>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemAllOf2ErrorsItem>("errors", Errors);
         }
     }
 }

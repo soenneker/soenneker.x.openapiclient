@@ -97,11 +97,11 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("note%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written.GetNoteFieldsQueryParameterType[]? NoteFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.NoteFieldsParameterItem[]? NoteFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("note%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written.GetNoteFieldsQueryParameterType[] NoteFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.NoteFieldsParameterItem[] NoteFields { get; set; }
 #endif
             /// <summary>Pagination token to get next set of posts eligible for notes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

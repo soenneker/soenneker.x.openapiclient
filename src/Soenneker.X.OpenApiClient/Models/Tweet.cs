@@ -181,10 +181,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A list of Posts this Tweet refers to. For example, if the parent Tweet is a Retweet, a Quoted Tweet or a Reply, it will include the related Tweet referenced to by its parent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets>? ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.TweetReferencedTweetsItem>? ReferencedTweets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets> ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.TweetReferencedTweetsItem> ReferencedTweets { get; set; }
 #endif
         /// <summary>Shows who can reply a Tweet. Fields returned are everyone, mentioned_users, subscribers, verified and following.</summary>
         public global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers? ReplySettings { get; set; }
@@ -291,7 +291,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "possibly_sensitive", n => { PossiblySensitive = n.GetBoolValue(); } },
                 { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics.CreateFromDiscriminatorValue); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics.CreateFromDiscriminatorValue); } },
-                { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets>(global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.TweetReferencedTweetsItem>(global::Soenneker.X.OpenApiClient.Models.TweetReferencedTweetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>(); } },
                 { "scopes", n => { Scopes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetScopes>(global::Soenneker.X.OpenApiClient.Models.TweetScopes.CreateFromDiscriminatorValue); } },
                 { "source", n => { Source = n.GetStringValue(); } },
@@ -331,7 +331,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("possibly_sensitive", PossiblySensitive);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>("promoted_metrics", PromotedMetrics);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>("public_metrics", PublicMetrics);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet_referenced_tweets>("referenced_tweets", ReferencedTweets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.TweetReferencedTweetsItem>("referenced_tweets", ReferencedTweets);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ReplySettingsWithVerifiedUsers>("reply_settings", ReplySettings);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetScopes>("scopes", Scopes);
             writer.WriteStringValue("source", Source);

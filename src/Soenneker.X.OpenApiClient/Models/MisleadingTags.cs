@@ -9,23 +9,23 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "disputed_claim_as_fact")]
         #pragma warning disable CS1591
-        Disputed_claim_as_fact,
+        DisputedClaimAsFact,
         #pragma warning restore CS1591
         [EnumMember(Value = "factual_error")]
         #pragma warning disable CS1591
-        Factual_error,
+        FactualError,
         #pragma warning restore CS1591
         [EnumMember(Value = "manipulated_media")]
         #pragma warning disable CS1591
-        Manipulated_media,
+        ManipulatedMedia,
         #pragma warning restore CS1591
         [EnumMember(Value = "misinterpreted_satire")]
         #pragma warning disable CS1591
-        Misinterpreted_satire,
+        MisinterpretedSatire,
         #pragma warning restore CS1591
         [EnumMember(Value = "missing_important_context")]
         #pragma warning disable CS1591
-        Missing_important_context,
+        MissingImportantContext,
         #pragma warning restore CS1591
         [EnumMember(Value = "other")]
         #pragma warning disable CS1591
@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "outdated_information")]
         #pragma warning disable CS1591
-        Outdated_information,
+        OutdatedInformation,
         #pragma warning restore CS1591
     }
 }

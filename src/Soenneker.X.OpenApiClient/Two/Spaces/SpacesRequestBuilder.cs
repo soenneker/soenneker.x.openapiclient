@@ -119,11 +119,11 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SpaceExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SpaceExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>The list of Space IDs to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,31 +139,31 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("space%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[]? SpaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SpaceFieldsParameterItem[]? SpaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("space%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetSpaceFieldsQueryParameterType[] SpaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SpaceFieldsParameterItem[] SpaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Topic fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("topic%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[]? TopicFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TopicFieldsParameterItem[]? TopicFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("topic%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetTopicFieldsQueryParameterType[] TopicFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TopicFieldsParameterItem[] TopicFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Spaces.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

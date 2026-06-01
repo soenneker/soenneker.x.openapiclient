@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Personalized_trends
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("personalized_trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Personalized_trends.GetPersonalized_trendFieldsQueryParameterType[]? PersonalizedTrendFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PersonalizedTrendFieldsParameterItem[]? PersonalizedTrendFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("personalized_trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Personalized_trends.GetPersonalized_trendFieldsQueryParameterType[] PersonalizedTrendFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PersonalizedTrendFieldsParameterItem[] PersonalizedTrendFields { get; set; }
 #endif
         }
     }

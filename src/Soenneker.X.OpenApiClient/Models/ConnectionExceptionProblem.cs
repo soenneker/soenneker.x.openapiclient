@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class ConnectionExceptionProblem : global::Soenneker.X.OpenApiClient.Models.Problem, IParsable
     {
         /// <summary>The connection_issue property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblem_connection_issue? ConnectionIssue { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblemConnectionIssue? ConnectionIssue { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "connection_issue", n => { ConnectionIssue = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblem_connection_issue>(); } },
+                { "connection_issue", n => { ConnectionIssue = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblemConnectionIssue>(); } },
             };
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblem_connection_issue>("connection_issue", ConnectionIssue);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblemConnectionIssue>("connection_issue", ConnectionIssue);
         }
     }
 }

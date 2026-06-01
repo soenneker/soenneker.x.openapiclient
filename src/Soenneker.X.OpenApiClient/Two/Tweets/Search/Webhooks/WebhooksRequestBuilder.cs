@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.tweets.search.webhooks.item collection</summary>
         /// <param name="position">The webhook ID to link to your FilteredStream ruleset.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhook_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhook_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("webhook_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhook_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("webhookId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

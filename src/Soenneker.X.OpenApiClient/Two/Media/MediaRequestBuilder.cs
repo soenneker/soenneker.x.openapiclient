@@ -44,14 +44,14 @@ namespace Soenneker.X.OpenApiClient.Two.Media
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.media.item collection</summary>
         /// <param name="position">A single Media Key.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMedia_keyItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMedia_keyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMediaKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMediaKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("media_key", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMedia_keyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("mediaKey", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMediaKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -131,11 +131,11 @@ namespace Soenneker.X.OpenApiClient.Two.Media
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>A comma separated list of Media Keys. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

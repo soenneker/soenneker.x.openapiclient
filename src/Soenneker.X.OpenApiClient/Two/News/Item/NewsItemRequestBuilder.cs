@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.News.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("news%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.News.Item.GetNewsFieldsQueryParameterType[]? NewsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.NewsFieldsParameterItem[]? NewsFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("news%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.News.Item.GetNewsFieldsQueryParameterType[] NewsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.NewsFieldsParameterItem[] NewsFields { get; set; }
 #endif
         }
     }

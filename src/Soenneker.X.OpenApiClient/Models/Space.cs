@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>When the Space was started as a date string.</summary>
         public DateTimeOffset? StartedAt { get; set; }
         /// <summary>The current state of the Space.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.Space_state? State { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.SpaceState? State { get; set; }
         /// <summary>The number of people who have either purchased a ticket or set a reminder for this Space.</summary>
         public int? SubscriberCount { get; set; }
         /// <summary>The title of the Space.</summary>
@@ -89,10 +89,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The topics of a Space, as selected by its creator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Space_topics>? Topics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.SpaceTopicsItem>? Topics { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Space_topics> Topics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.SpaceTopicsItem> Topics { get; set; }
 #endif
         /// <summary>When the Space was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -133,10 +133,10 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "scheduled_start", n => { ScheduledStart = n.GetDateTimeOffsetValue(); } },
                 { "speaker_ids", n => { SpeakerIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "started_at", n => { StartedAt = n.GetDateTimeOffsetValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.Space_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.SpaceState>(); } },
                 { "subscriber_count", n => { SubscriberCount = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Space_topics>(global::Soenneker.X.OpenApiClient.Models.Space_topics.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SpaceTopicsItem>(global::Soenneker.X.OpenApiClient.Models.SpaceTopicsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -159,10 +159,10 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("scheduled_start", ScheduledStart);
             writer.WriteCollectionOfPrimitiveValues<string>("speaker_ids", SpeakerIds);
             writer.WriteDateTimeOffsetValue("started_at", StartedAt);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.Space_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.SpaceState>("state", State);
             writer.WriteIntValue("subscriber_count", SubscriberCount);
             writer.WriteStringValue("title", Title);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Space_topics>("topics", Topics);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SpaceTopicsItem>("topics", Topics);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

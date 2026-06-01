@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TweetComplianceStreamResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1? TweetComplianceStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1? TweetComplianceStreamResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1 TweetComplianceStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1 TweetComplianceStreamResponseOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2? TweetComplianceStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2? TweetComplianceStreamResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2 TweetComplianceStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2 TweetComplianceStreamResponseOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponse();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("TweetComplianceStreamResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TweetComplianceStreamResponseMember1 = new global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1();
+                result.TweetComplianceStreamResponseOneOf1 = new global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("TweetComplianceStreamResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TweetComplianceStreamResponseMember2 = new global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2();
+                result.TweetComplianceStreamResponseOneOf2 = new global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TweetComplianceStreamResponseMember1 != null)
+            if(TweetComplianceStreamResponseOneOf1 != null)
             {
-                return TweetComplianceStreamResponseMember1.GetFieldDeserializers();
+                return TweetComplianceStreamResponseOneOf1.GetFieldDeserializers();
             }
-            else if(TweetComplianceStreamResponseMember2 != null)
+            else if(TweetComplianceStreamResponseOneOf2 != null)
             {
-                return TweetComplianceStreamResponseMember2.GetFieldDeserializers();
+                return TweetComplianceStreamResponseOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(TweetComplianceStreamResponseMember1 != null)
+            if(TweetComplianceStreamResponseOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember1>(null, TweetComplianceStreamResponseMember1);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf1>(null, TweetComplianceStreamResponseOneOf1);
             }
-            else if(TweetComplianceStreamResponseMember2 != null)
+            else if(TweetComplianceStreamResponseOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseMember2>(null, TweetComplianceStreamResponseMember2);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetComplianceStreamResponseOneOf2>(null, TweetComplianceStreamResponseOneOf2);
             }
         }
     }

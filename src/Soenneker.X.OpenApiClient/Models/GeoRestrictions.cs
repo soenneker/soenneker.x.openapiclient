@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class GeoRestrictions : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1? GeoRestrictionsMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1? GeoRestrictionsOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1 GeoRestrictionsMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1 GeoRestrictionsOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2? GeoRestrictionsMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2? GeoRestrictionsOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2 GeoRestrictionsMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2 GeoRestrictionsOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictions();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("GeoRestrictionsOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoRestrictionsMember1 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1();
+                result.GeoRestrictionsOneOf1 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("GeoRestrictionsOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.GeoRestrictionsMember2 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2();
+                result.GeoRestrictionsOneOf2 = new global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(GeoRestrictionsMember1 != null)
+            if(GeoRestrictionsOneOf1 != null)
             {
-                return GeoRestrictionsMember1.GetFieldDeserializers();
+                return GeoRestrictionsOneOf1.GetFieldDeserializers();
             }
-            else if(GeoRestrictionsMember2 != null)
+            else if(GeoRestrictionsOneOf2 != null)
             {
-                return GeoRestrictionsMember2.GetFieldDeserializers();
+                return GeoRestrictionsOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(GeoRestrictionsMember1 != null)
+            if(GeoRestrictionsOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember1>(null, GeoRestrictionsMember1);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf1>(null, GeoRestrictionsOneOf1);
             }
-            else if(GeoRestrictionsMember2 != null)
+            else if(GeoRestrictionsOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsMember2>(null, GeoRestrictionsMember2);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoRestrictionsOneOf2>(null, GeoRestrictionsOneOf2);
             }
         }
     }

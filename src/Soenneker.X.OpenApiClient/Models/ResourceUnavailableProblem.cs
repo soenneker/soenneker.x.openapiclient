@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem_resource_type? ResourceType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemAllOf2ResourceType? ResourceType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "parameter", n => { Parameter = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemAllOf2ResourceType>(); } },
             };
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Soenneker.X.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("parameter", Parameter);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem_resource_type>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemAllOf2ResourceType>("resource_type", ResourceType);
         }
     }
 }

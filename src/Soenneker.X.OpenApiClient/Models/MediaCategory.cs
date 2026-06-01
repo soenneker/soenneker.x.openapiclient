@@ -9,31 +9,31 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "amplify_video")]
         #pragma warning disable CS1591
-        Amplify_video,
+        AmplifyVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "tweet_gif")]
         #pragma warning disable CS1591
-        Tweet_gif,
+        TweetGif,
         #pragma warning restore CS1591
         [EnumMember(Value = "tweet_image")]
         #pragma warning disable CS1591
-        Tweet_image,
+        TweetImage,
         #pragma warning restore CS1591
         [EnumMember(Value = "tweet_video")]
         #pragma warning disable CS1591
-        Tweet_video,
+        TweetVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "dm_gif")]
         #pragma warning disable CS1591
-        Dm_gif,
+        DmGif,
         #pragma warning restore CS1591
         [EnumMember(Value = "dm_image")]
         #pragma warning disable CS1591
-        Dm_image,
+        DmImage,
         #pragma warning restore CS1591
         [EnumMember(Value = "dm_video")]
         #pragma warning disable CS1591
-        Dm_video,
+        DmVideo,
         #pragma warning restore CS1591
         [EnumMember(Value = "subtitles")]
         #pragma warning disable CS1591

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\dm_conversations\with\{participant_id}\dm_events
+    /// Builds and executes requests for operations under \2\dm_conversations\with\{participantId}\dm_events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dm_eventsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participant_id}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", pathParameters)
+        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participantId}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participant_id}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", rawUrl)
+        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participantId}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -94,31 +94,31 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dm_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetDm_eventFieldsQueryParameterType[]? DmEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventFieldsParameterItem[]? DmEventFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("dm_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetDm_eventFieldsQueryParameterType[] DmEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventFieldsParameterItem[] DmEventFields { get; set; }
 #endif
             /// <summary>The set of event_types to include in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("event_types")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetEvent_typesQueryParameterType[]? EventTypes { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsByParticipantIdEventTypesParameterItem[]? EventTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("event_types")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetEvent_typesQueryParameterType[] EventTypes { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsByParticipantIdEventTypesParameterItem[] EventTypes { get; set; }
 #endif
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -127,11 +127,11 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -147,21 +147,21 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Dm_events.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

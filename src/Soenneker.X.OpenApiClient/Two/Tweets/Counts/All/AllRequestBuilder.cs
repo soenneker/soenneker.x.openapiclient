@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
             public DateTimeOffset? EndTime { get; set; }
             /// <summary>The granularity for the search counts results.</summary>
             [QueryParameter("granularity")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Counts.All.GetGranularityQueryParameterType? Granularity { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetPostsCountsAllGranularityParameter? Granularity { get; set; }
             /// <summary>This parameter is used to get the next &apos;page&apos; of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -130,11 +130,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.All
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("search_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Counts.All.GetSearch_countFieldsQueryParameterType[]? SearchCountFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SearchCountFieldsParameterItem[]? SearchCountFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("search_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Counts.All.GetSearch_countFieldsQueryParameterType[] SearchCountFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.SearchCountFieldsParameterItem[] SearchCountFields { get; set; }
 #endif
             /// <summary>Returns results with a Post ID greater than (that is, more recent than) the specified ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

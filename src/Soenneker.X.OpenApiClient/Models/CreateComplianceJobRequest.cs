@@ -26,7 +26,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>If true, this endpoint will return a pre-signed URL with resumable uploads enabled.</summary>
         public bool? Resumable { get; set; }
         /// <summary>Type of compliance job to list.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest_type? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequestType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "resumable", n => { Resumable = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequestType>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteBoolValue("resumable", Resumable);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequestType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

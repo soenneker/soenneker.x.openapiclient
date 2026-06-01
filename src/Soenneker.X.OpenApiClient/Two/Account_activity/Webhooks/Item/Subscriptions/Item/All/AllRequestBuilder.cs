@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.All
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhook_id}\subscriptions\{user_id}\all
+    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhookId}\subscriptions\{userId}\all
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AllRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AllRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions/{user_id}/all", pathParameters)
+        public AllRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions/{userId}/all", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions/{user_id}/all", rawUrl)
+        public AllRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions/{userId}/all", rawUrl)
         {
         }
         /// <summary>

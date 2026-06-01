@@ -17,14 +17,14 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.with.item collection</summary>
         /// <param name="position">The ID of the participant user for the One to One DM conversation.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipant_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipant_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipantItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipantItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("participant_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipant_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("participantId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipantItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class OperationalDisconnectProblem : global::Soenneker.X.OpenApiClient.Models.Problem, IParsable
     {
         /// <summary>The disconnect_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblem_disconnect_type? DisconnectType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblemDisconnectType? DisconnectType { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "disconnect_type", n => { DisconnectType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblem_disconnect_type>(); } },
+                { "disconnect_type", n => { DisconnectType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblemDisconnectType>(); } },
             };
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblem_disconnect_type>("disconnect_type", DisconnectType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblemDisconnectType>("disconnect_type", DisconnectType);
         }
     }
 }

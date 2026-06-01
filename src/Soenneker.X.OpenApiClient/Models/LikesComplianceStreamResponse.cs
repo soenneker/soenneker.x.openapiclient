@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LikesComplianceStreamResponse : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1? LikesComplianceStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1? LikesComplianceStreamResponseOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1 LikesComplianceStreamResponseMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1 LikesComplianceStreamResponseOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2? LikesComplianceStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2? LikesComplianceStreamResponseOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2 LikesComplianceStreamResponseMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2 LikesComplianceStreamResponseOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("LikesComplianceStreamResponseOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LikesComplianceStreamResponseMember1 = new global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1();
+                result.LikesComplianceStreamResponseOneOf1 = new global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("LikesComplianceStreamResponseOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LikesComplianceStreamResponseMember2 = new global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2();
+                result.LikesComplianceStreamResponseOneOf2 = new global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(LikesComplianceStreamResponseMember1 != null)
+            if(LikesComplianceStreamResponseOneOf1 != null)
             {
-                return LikesComplianceStreamResponseMember1.GetFieldDeserializers();
+                return LikesComplianceStreamResponseOneOf1.GetFieldDeserializers();
             }
-            else if(LikesComplianceStreamResponseMember2 != null)
+            else if(LikesComplianceStreamResponseOneOf2 != null)
             {
-                return LikesComplianceStreamResponseMember2.GetFieldDeserializers();
+                return LikesComplianceStreamResponseOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(LikesComplianceStreamResponseMember1 != null)
+            if(LikesComplianceStreamResponseOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember1>(null, LikesComplianceStreamResponseMember1);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf1>(null, LikesComplianceStreamResponseOneOf1);
             }
-            else if(LikesComplianceStreamResponseMember2 != null)
+            else if(LikesComplianceStreamResponseOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseMember2>(null, LikesComplianceStreamResponseMember2);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponseOneOf2>(null, LikesComplianceStreamResponseOneOf2);
             }
         }
     }

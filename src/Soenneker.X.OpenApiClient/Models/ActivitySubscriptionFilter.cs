@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class ActivitySubscriptionFilter : IParsable
     {
         /// <summary>Optional direction filter for directional events.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter_direction? Direction { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterDirection? Direction { get; set; }
         /// <summary>A keyword to filter on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,7 +49,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter_direction>(); } },
+                { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterDirection>(); } },
                 { "keyword", n => { Keyword = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -61,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter_direction>("direction", Direction);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterDirection>("direction", Direction);
             writer.WriteStringValue("keyword", Keyword);
             writer.WriteStringValue("user_id", UserId);
         }

@@ -95,16 +95,16 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Analytics
             public DateTimeOffset? EndTime { get; set; }
             /// <summary>The granularity for the search counts results.</summary>
             [QueryParameter("granularity")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.Analytics.GetGranularityQueryParameterType? Granularity { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetMediaAnalyticsGranularityParameter? Granularity { get; set; }
             /// <summary>A comma separated list of MediaAnalytics fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media_analytics%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.Analytics.GetMedia_analyticsFieldsQueryParameterType[]? MediaAnalyticsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsFieldsParameterItem[]? MediaAnalyticsFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media_analytics%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.Analytics.GetMedia_analyticsFieldsQueryParameterType[] MediaAnalyticsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsFieldsParameterItem[] MediaAnalyticsFields { get; set; }
 #endif
             /// <summary>A comma separated list of Media Keys. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

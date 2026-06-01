@@ -26,7 +26,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<string> CountryCodes { get; set; }
 #endif
         /// <summary>Indicates whether the content being withheld is the `tweet` or a `user`.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.TweetWithheld_scope? Scope { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetWithheldScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.TweetWithheld"/> and sets the default values.
         /// </summary>
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "copyright", n => { Copyright = n.GetBoolValue(); } },
                 { "country_codes", n => { CountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld_scope>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheldScope>(); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("copyright", Copyright);
             writer.WriteCollectionOfPrimitiveValues<string>("country_codes", CountryCodes);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheld_scope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetWithheldScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

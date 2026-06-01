@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("community%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Communities.Search.GetCommunityFieldsQueryParameterType[]? CommunityFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.CommunityFieldsParameterItem[]? CommunityFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("community%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Communities.Search.GetCommunityFieldsQueryParameterType[] CommunityFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.CommunityFieldsParameterItem[] CommunityFields { get; set; }
 #endif
             /// <summary>The maximum number of search results to be returned by a request.</summary>
             [QueryParameter("max_results")]

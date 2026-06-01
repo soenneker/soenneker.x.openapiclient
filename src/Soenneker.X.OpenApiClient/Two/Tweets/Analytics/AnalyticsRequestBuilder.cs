@@ -94,18 +94,18 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Analytics
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("analytics%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Analytics.GetAnalyticsFieldsQueryParameterType[]? AnalyticsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.AnalyticsFieldsParameterItem[]? AnalyticsFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("analytics%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Analytics.GetAnalyticsFieldsQueryParameterType[] AnalyticsFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.AnalyticsFieldsParameterItem[] AnalyticsFields { get; set; }
 #endif
             /// <summary>YYYY-MM-DDTHH:mm:ssZ. The UTC timestamp representing the end of the time range.</summary>
             [QueryParameter("end_time")]
             public DateTimeOffset? EndTime { get; set; }
             /// <summary>The granularity for the search counts results.</summary>
             [QueryParameter("granularity")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Analytics.GetGranularityQueryParameterType? Granularity { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetPostsAnalyticsGranularityParameter? Granularity { get; set; }
             /// <summary>A comma separated list of Post IDs. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

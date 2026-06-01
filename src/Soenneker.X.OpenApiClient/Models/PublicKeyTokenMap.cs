@@ -28,10 +28,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>List of Juicebox realms.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap_realms>? Realms { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMapRealmsItem>? Realms { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap_realms> Realms { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMapRealmsItem> Realms { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap"/> and sets the default values.
@@ -60,7 +60,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "key_store_token_map_json", n => { KeyStoreTokenMapJson = n.GetStringValue(); } },
                 { "max_guess_count", n => { MaxGuessCount = n.GetIntValue(); } },
-                { "realms", n => { Realms = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap_realms>(global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap_realms.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "realms", n => { Realms = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMapRealmsItem>(global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMapRealmsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("key_store_token_map_json", KeyStoreTokenMapJson);
             writer.WriteIntValue("max_guess_count", MaxGuessCount);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMap_realms>("realms", Realms);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PublicKeyTokenMapRealmsItem>("realms", Realms);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

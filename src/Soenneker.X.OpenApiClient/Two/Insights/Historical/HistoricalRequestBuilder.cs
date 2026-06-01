@@ -97,24 +97,24 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.Historical
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("engagement%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.Historical.GetEngagementFieldsQueryParameterType[]? EngagementFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.EngagementFieldsParameterItem[]? EngagementFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("engagement%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.Historical.GetEngagementFieldsQueryParameterType[] EngagementFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.EngagementFieldsParameterItem[] EngagementFields { get; set; }
 #endif
             /// <summary>granularity of metrics response.</summary>
             [QueryParameter("granularity")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.Historical.GetGranularityQueryParameterType? Granularity { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsightsHistoricalGranularityParameter? Granularity { get; set; }
             /// <summary>request metrics for historical request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("requested_metrics")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.Historical.GetRequested_metricsQueryParameterType[]? RequestedMetrics { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsightsHistoricalRequestedMetricsParameterItem[]? RequestedMetrics { get; set; }
 #nullable restore
 #else
             [QueryParameter("requested_metrics")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.Historical.GetRequested_metricsQueryParameterType[] RequestedMetrics { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsightsHistoricalRequestedMetricsParameterItem[] RequestedMetrics { get; set; }
 #endif
             /// <summary>YYYY-MM-DDTHH:mm:ssZ. The UTC timestamp representing the start of the time range.</summary>
             [QueryParameter("start_time")]

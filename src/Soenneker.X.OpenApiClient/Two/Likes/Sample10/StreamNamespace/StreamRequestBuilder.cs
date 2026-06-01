@@ -100,31 +100,31 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of LikeWithTweetAuthor fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[]? LikeWithTweetAuthorFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorFieldsParameterItem[]? LikeWithTweetAuthorFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetLike_with_tweet_authorFieldsQueryParameterType[] LikeWithTweetAuthorFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorFieldsParameterItem[] LikeWithTweetAuthorFields { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>The partition number.</summary>
             [QueryParameter("partition")]
@@ -136,21 +136,21 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Likes.Sample10.StreamNamespace.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("rules_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.GetRules_countFieldsQueryParameterType[]? RulesCountFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.RulesCountFieldsParameterItem[]? RulesCountFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("rules_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.GetRules_countFieldsQueryParameterType[] RulesCountFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.RulesCountFieldsParameterItem[] RulesCountFields { get; set; }
 #endif
         }
     }

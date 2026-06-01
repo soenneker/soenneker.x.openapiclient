@@ -26,14 +26,14 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.connections.item collection</summary>
         /// <param name="position">The endpoint ID to terminate connections for.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpoint_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpoint_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpointItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpointItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("endpoint_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpoint_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("endpointId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpointItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -160,21 +160,21 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("connection%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Connections.GetConnectionFieldsQueryParameterType[]? ConnectionFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ConnectionFieldsParameterItem[]? ConnectionFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("connection%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Connections.GetConnectionFieldsQueryParameterType[] ConnectionFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ConnectionFieldsParameterItem[] ConnectionFields { get; set; }
 #endif
             /// <summary>Filter by streaming endpoint. Specify one or more endpoint names to filter results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endpoints")]
-            public global::Soenneker.X.OpenApiClient.Two.Connections.GetEndpointsQueryParameterType[]? Endpoints { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryEndpointsParameterItem[]? Endpoints { get; set; }
 #nullable restore
 #else
             [QueryParameter("endpoints")]
-            public global::Soenneker.X.OpenApiClient.Two.Connections.GetEndpointsQueryParameterType[] Endpoints { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryEndpointsParameterItem[] Endpoints { get; set; }
 #endif
             /// <summary>The maximum number of results to return per page.</summary>
             [QueryParameter("max_results")]
@@ -191,7 +191,7 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
 #endif
             /// <summary>Filter by connection status. Use &apos;active&apos; for current connections, &apos;inactive&apos; for historical/disconnected connections, or &apos;all&apos; for both.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.X.OpenApiClient.Two.Connections.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryStatusParameter? Status { get; set; }
         }
     }
 }

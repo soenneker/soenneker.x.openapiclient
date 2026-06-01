@@ -17,18 +17,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The creator_subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_creator_subscriptions?>? CreatorSubscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyCreatorSubscriptionsItem?>? CreatorSubscriptions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_creator_subscriptions?> CreatorSubscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyCreatorSubscriptionsItem?> CreatorSubscriptions { get; set; }
 #endif
         /// <summary>The x_subscriptions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_x_subscriptions?>? XSubscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyXSubscriptionsItem?>? XSubscriptions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_x_subscriptions?> XSubscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyXSubscriptionsItem?> XSubscriptions { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.AudiencePolicy"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "creator_subscriptions", n => { CreatorSubscriptions = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_creator_subscriptions>()?.AsList(); } },
-                { "x_subscriptions", n => { XSubscriptions = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_x_subscriptions>()?.AsList(); } },
+                { "creator_subscriptions", n => { CreatorSubscriptions = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyCreatorSubscriptionsItem>()?.AsList(); } },
+                { "x_subscriptions", n => { XSubscriptions = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyXSubscriptionsItem>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_creator_subscriptions>("creator_subscriptions", CreatorSubscriptions);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicy_x_subscriptions>("x_subscriptions", XSubscriptions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyCreatorSubscriptionsItem>("creator_subscriptions", CreatorSubscriptions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.AudiencePolicyXSubscriptionsItem>("x_subscriptions", XSubscriptions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

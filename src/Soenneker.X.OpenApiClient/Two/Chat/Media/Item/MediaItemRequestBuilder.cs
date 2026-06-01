@@ -17,14 +17,14 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Media.Item
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.media.item.item collection</summary>
         /// <param name="position">The media hash key returned from the upload initialize step.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMedia_hash_keyItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMedia_hash_keyItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMediaHashKeyItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMediaHashKeyItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("media_hash_key", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMedia_hash_keyItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("mediaHashKey", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMediaHashKeyItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

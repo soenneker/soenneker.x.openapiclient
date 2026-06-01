@@ -24,7 +24,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<string> Options { get; set; }
 #endif
         /// <summary>Settings to indicate who can reply to the Tweet.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll_reply_settings? ReplySettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPollReplySettings? ReplySettings { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +45,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "duration_minutes", n => { DurationMinutes = n.GetIntValue(); } },
                 { "options", n => { Options = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll_reply_settings>(); } },
+                { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPollReplySettings>(); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("duration_minutes", DurationMinutes);
             writer.WriteCollectionOfPrimitiveValues<string>("options", Options);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll_reply_settings>("reply_settings", ReplySettings);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPollReplySettings>("reply_settings", ReplySettings);
         }
     }
 }

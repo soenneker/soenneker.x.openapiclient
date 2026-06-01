@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.All.List
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhook_id}\subscriptions\all\list
+    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhookId}\subscriptions\all\list
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ListRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions/all/list", pathParameters)
+        public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions/all/list", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions/all/list", rawUrl)
+        public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions/all/list", rawUrl)
         {
         }
         /// <summary>

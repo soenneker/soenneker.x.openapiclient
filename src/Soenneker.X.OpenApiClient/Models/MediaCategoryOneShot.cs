@@ -9,11 +9,11 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "tweet_image")]
         #pragma warning disable CS1591
-        Tweet_image,
+        TweetImage,
         #pragma warning restore CS1591
         [EnumMember(Value = "dm_image")]
         #pragma warning disable CS1591
-        Dm_image,
+        DmImage,
         #pragma warning restore CS1591
         [EnumMember(Value = "subtitles")]
         #pragma warning disable CS1591

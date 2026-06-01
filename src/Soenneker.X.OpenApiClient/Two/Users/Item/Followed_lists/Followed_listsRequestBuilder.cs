@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.followed_lists.item collection</summary>
         /// <param name="position">The ID of the List to unfollow.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithList_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithList_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithListItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithListItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("list_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithList_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("listId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.Item.WithListItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -154,21 +154,21 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of List fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetListFieldsQueryParameterType[]? ListFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListFieldsParameterItem[]? ListFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetListFieldsQueryParameterType[] ListFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListFieldsParameterItem[] ListFields { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -187,11 +187,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

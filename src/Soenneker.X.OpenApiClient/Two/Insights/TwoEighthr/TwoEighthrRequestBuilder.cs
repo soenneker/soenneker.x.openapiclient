@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
         /// <summary>
         /// Retrieves engagement metrics for specified Posts over the last 28 hours.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2Insights28HrResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2Insights28HrResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2Insights28HrResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.TwoEighthrRequestBuilder.TwoEighthrRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2Insights28hrResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2Insights28HrResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2Insights28HrResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves engagement metrics for specified Posts over the last 28 hours.
@@ -94,24 +94,24 @@ namespace Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("engagement%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.GetEngagementFieldsQueryParameterType[]? EngagementFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.EngagementFieldsParameterItem[]? EngagementFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("engagement%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.GetEngagementFieldsQueryParameterType[] EngagementFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.EngagementFieldsParameterItem[] EngagementFields { get; set; }
 #endif
             /// <summary>granularity of metrics response.</summary>
             [QueryParameter("granularity")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.GetGranularityQueryParameterType? Granularity { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsights28HrGranularityParameter? Granularity { get; set; }
             /// <summary>request metrics for historical request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("requested_metrics")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.GetRequested_metricsQueryParameterType[]? RequestedMetrics { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsights28HrRequestedMetricsParameterItem[]? RequestedMetrics { get; set; }
 #nullable restore
 #else
             [QueryParameter("requested_metrics")]
-            public global::Soenneker.X.OpenApiClient.Two.Insights.TwoEighthr.GetRequested_metricsQueryParameterType[] RequestedMetrics { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetInsights28HrRequestedMetricsParameterItem[] RequestedMetrics { get; set; }
 #endif
             /// <summary>List of PostIds for 28hr metrics.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

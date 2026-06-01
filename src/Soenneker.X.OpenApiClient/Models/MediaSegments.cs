@@ -8,26 +8,20 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2"/>
+    /// Composed type wrapper for classes <see cref="int"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaSegments : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="int"/></summary>
+        public int? Integer { get; set; }
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1? MediaSegmentsBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1 MediaSegmentsBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2? MediaSegmentsBranch2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2 MediaSegmentsBranch2 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,15 +31,15 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaSegments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.MediaSegments();
-            if("MediaSegments_1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if(parseNode.GetIntValue() is int integerValue)
             {
-                result.MediaSegmentsBranch1 = new global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1();
+                result.Integer = integerValue;
             }
-            else if("MediaSegments_2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if(parseNode.GetStringValue() is string stringValue)
             {
-                result.MediaSegmentsBranch2 = new global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2();
+                result.String = stringValue;
             }
             return result;
         }
@@ -55,14 +49,6 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MediaSegmentsBranch1 != null)
-            {
-                return MediaSegmentsBranch1.GetFieldDeserializers();
-            }
-            else if(MediaSegmentsBranch2 != null)
-            {
-                return MediaSegmentsBranch2.GetFieldDeserializers();
-            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -72,13 +58,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(MediaSegmentsBranch1 != null)
+            if(Integer != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch1>(null, MediaSegmentsBranch1);
+                writer.WriteIntValue(null, Integer);
             }
-            else if(MediaSegmentsBranch2 != null)
+            else if(String != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaSegments_Branch2>(null, MediaSegmentsBranch2);
+                writer.WriteStringValue(null, String);
             }
         }
     }

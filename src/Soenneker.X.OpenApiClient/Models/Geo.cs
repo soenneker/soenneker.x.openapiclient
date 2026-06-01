@@ -33,13 +33,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The properties property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Geo_properties? Properties { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoPropertiesProperty? Properties { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Geo_properties Properties { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoPropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.Geo_type? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GeoType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Geo"/> and sets the default values.
         /// </summary>
@@ -67,8 +67,8 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "bbox", n => { Bbox = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "geometry", n => { Geometry = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Point>(global::Soenneker.X.OpenApiClient.Models.Point.CreateFromDiscriminatorValue); } },
-                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Geo_properties>(global::Soenneker.X.OpenApiClient.Models.Geo_properties.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.Geo_type>(); } },
+                { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoPropertiesProperty>(global::Soenneker.X.OpenApiClient.Models.GeoPropertiesProperty.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.GeoType>(); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("bbox", Bbox);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Point>("geometry", Geometry);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Geo_properties>("properties", Properties);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.Geo_type>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GeoPropertiesProperty>("properties", Properties);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.GeoType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

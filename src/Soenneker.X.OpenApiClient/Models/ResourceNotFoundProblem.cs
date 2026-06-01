@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem_resource_type? ResourceType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblemAllOf2ResourceType? ResourceType { get; set; }
         /// <summary>Value will match the schema of the field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "parameter", n => { Parameter = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem_resource_type>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblemAllOf2ResourceType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("parameter", Parameter);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem_resource_type>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblemAllOf2ResourceType>("resource_type", ResourceType);
             writer.WriteStringValue("value", Value);
         }
     }

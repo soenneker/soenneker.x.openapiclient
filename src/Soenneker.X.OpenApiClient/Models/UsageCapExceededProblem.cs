@@ -14,9 +14,9 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class UsageCapExceededProblem : global::Soenneker.X.OpenApiClient.Models.Problem, IParsable
     {
         /// <summary>The period property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_period? Period { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Period? Period { get; set; }
         /// <summary>The scope property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_scope? Scope { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Scope? Scope { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -35,8 +35,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "period", n => { Period = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_period>(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_scope>(); } },
+                { "period", n => { Period = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Period>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Scope>(); } },
             };
         }
         /// <summary>
@@ -47,8 +47,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_period>("period", Period);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem_scope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Period>("period", Period);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblemAllOf2Scope>("scope", Scope);
         }
     }
 }

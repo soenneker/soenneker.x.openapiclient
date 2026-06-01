@@ -13,7 +13,7 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The event_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest_event_type? EventType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequestEventType? EventType { get; set; }
         /// <summary>An XAA subscription filter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest_event_type>(); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequestEventType>(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -69,7 +69,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest_event_type>("event_type", EventType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequestEventType>("event_type", EventType);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilter>("filter", Filter);
             writer.WriteStringValue("tag", Tag);
             writer.WriteStringValue("webhook_id", WebhookId);

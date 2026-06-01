@@ -32,14 +32,14 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.item collection</summary>
         /// <param name="position">The DM Conversation ID.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_conversation_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_conversation_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dm_conversation_%2Did", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_conversation_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dmConversation%2Did", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

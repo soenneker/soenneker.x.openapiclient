@@ -94,21 +94,21 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of List fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[]? ListFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListFieldsParameterItem[]? ListFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("list%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetListFieldsQueryParameterType[] ListFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ListFieldsParameterItem[] ListFields { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -127,11 +127,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.List_memberships.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("chat_message_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.GetChat_message_eventFieldsQueryParameterType[]? ChatMessageEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventFieldsParameterItem[]? ChatMessageEventFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("chat_message_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.GetChat_message_eventFieldsQueryParameterType[] ChatMessageEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventFieldsParameterItem[] ChatMessageEventFields { get; set; }
 #endif
             /// <summary>Maximum number of message events to return.</summary>
             [QueryParameter("max_results")]

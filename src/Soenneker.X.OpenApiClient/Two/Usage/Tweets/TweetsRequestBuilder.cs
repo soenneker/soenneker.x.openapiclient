@@ -97,11 +97,11 @@ namespace Soenneker.X.OpenApiClient.Two.Usage.Tweets
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("usage%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Usage.Tweets.GetUsageFieldsQueryParameterType[]? UsageFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UsageFieldsParameterItem[]? UsageFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("usage%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Usage.Tweets.GetUsageFieldsQueryParameterType[] UsageFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UsageFieldsParameterItem[] UsageFields { get; set; }
 #endif
         }
     }

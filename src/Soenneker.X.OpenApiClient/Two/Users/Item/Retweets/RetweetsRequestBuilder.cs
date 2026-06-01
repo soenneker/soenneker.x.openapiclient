@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.retweets.item collection</summary>
         /// <param name="position">The ID of the Post that the User is requesting to unretweet.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSource_tweet_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSource_tweet_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSourceTweetItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSourceTweetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("source_tweet_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSource_tweet_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("sourceTweetId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSourceTweetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

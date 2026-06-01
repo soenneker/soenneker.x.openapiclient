@@ -13,7 +13,7 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The conversation type that is being created.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest_conversation_type? ConversationType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequestConversationType? ConversationType { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_type", n => { ConversationType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest_conversation_type>(); } },
+                { "conversation_type", n => { ConversationType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequestConversationType>(); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateMessageRequest>(global::Soenneker.X.OpenApiClient.Models.CreateMessageRequest.CreateFromDiscriminatorValue); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -60,7 +60,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest_conversation_type>("conversation_type", ConversationType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequestConversationType>("conversation_type", ConversationType);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateMessageRequest>("message", Message);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
         }

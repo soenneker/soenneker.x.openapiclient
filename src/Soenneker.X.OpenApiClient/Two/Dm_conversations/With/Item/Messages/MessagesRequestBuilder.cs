@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Messages
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\dm_conversations\with\{participant_id}\messages
+    /// Builds and executes requests for operations under \2\dm_conversations\with\{participantId}\messages
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MessagesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Messages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participant_id}/messages", pathParameters)
+        public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participantId}/messages", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.Messages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participant_id}/messages", rawUrl)
+        public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/with/{participantId}/messages", rawUrl)
         {
         }
         /// <summary>

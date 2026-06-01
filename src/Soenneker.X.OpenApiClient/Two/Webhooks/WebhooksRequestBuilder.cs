@@ -26,14 +26,14 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.webhooks.item collection</summary>
         /// <param name="position">The ID of the webhook to delete.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhook_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhook_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("webhook_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhook_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("webhookId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Webhooks.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -160,11 +160,11 @@ namespace Soenneker.X.OpenApiClient.Two.Webhooks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("webhook_config%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Webhooks.GetWebhook_configFieldsQueryParameterType[]? WebhookConfigFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.WebhookConfigFieldsParameterItem[]? WebhookConfigFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("webhook_config%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Webhooks.GetWebhook_configFieldsQueryParameterType[] WebhookConfigFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.WebhookConfigFieldsParameterItem[] WebhookConfigFields { get; set; }
 #endif
         }
     }

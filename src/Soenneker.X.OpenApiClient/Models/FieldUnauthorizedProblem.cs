@@ -22,9 +22,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Field { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_resource_type? ResourceType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemResourceType? ResourceType { get; set; }
         /// <summary>The section property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_section? Section { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemSection? Section { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -44,8 +44,8 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_resource_type>(); } },
-                { "section", n => { Section = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_section>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemResourceType>(); } },
+                { "section", n => { Section = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemSection>(); } },
             };
         }
         /// <summary>
@@ -57,8 +57,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("field", Field);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_resource_type>("resource_type", ResourceType);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem_section>("section", Section);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemResourceType>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemSection>("section", Section);
         }
     }
 }

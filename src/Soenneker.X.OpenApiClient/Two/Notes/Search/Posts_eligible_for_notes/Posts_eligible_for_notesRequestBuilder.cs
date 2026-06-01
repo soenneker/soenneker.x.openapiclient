@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>Max results to return.</summary>
             [QueryParameter("max_results")]
@@ -107,11 +107,11 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>Pagination token to get next set of posts eligible for notes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,21 +127,21 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPlaceFieldsQueryParameterType[]? PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[]? PlaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPlaceFieldsQueryParameterType[] PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[] PlaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Poll fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPollFieldsQueryParameterType[]? PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[]? PollFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetPollFieldsQueryParameterType[] PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
             /// <summary>&quot;The selection of posts to return. Valid values are &apos;feed_size: [small|large|xl|xxl], feed_lang: [en|es|...|all]&apos;. Default (if not specified) is &apos;feed_size: small, feed_lang: en&apos;. Only top AI writers have access to large, xl, and xxl size feeds.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,21 +160,21 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

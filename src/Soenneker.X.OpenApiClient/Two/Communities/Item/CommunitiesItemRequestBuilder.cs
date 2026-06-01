@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("community%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Communities.Item.GetCommunityFieldsQueryParameterType[]? CommunityFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.CommunityFieldsParameterItem[]? CommunityFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("community%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Communities.Item.GetCommunityFieldsQueryParameterType[] CommunityFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.CommunityFieldsParameterItem[] CommunityFields { get; set; }
 #endif
         }
     }

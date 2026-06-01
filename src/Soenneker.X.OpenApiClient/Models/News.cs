@@ -26,10 +26,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The cluster_posts_results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>? ClusterPostsResults { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>? ClusterPostsResults { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results> ClusterPostsResults { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem> ClusterPostsResults { get; set; }
 #endif
         /// <summary>The contexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "category", n => { Category = n.GetStringValue(); } },
-                { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>(global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>(global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>(global::Soenneker.X.OpenApiClient.Models.NewsContexts.CreateFromDiscriminatorValue); } },
                 { "disclaimer", n => { Disclaimer = n.GetStringValue(); } },
                 { "hook", n => { Hook = n.GetStringValue(); } },
@@ -134,7 +134,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.News_cluster_posts_results>("cluster_posts_results", ClusterPostsResults);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>("cluster_posts_results", ClusterPostsResults);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>("contexts", Contexts);
             writer.WriteStringValue("disclaimer", Disclaimer);
             writer.WriteStringValue("hook", Hook);

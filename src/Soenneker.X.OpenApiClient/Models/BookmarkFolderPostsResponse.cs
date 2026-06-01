@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse_data>? Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseDataItem>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse_data> Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseDataItem> Data { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse_data>(global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse_data.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseDataItem>(global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseMeta>(global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseMeta.CreateFromDiscriminatorValue); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponse_data>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseDataItem>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.BookmarkFolderPostsResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);

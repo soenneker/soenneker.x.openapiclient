@@ -97,11 +97,11 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.GetTrendFieldsQueryParameterType[]? TrendFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TrendFieldsParameterItem[]? TrendFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("trend%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.GetTrendFieldsQueryParameterType[] TrendFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TrendFieldsParameterItem[] TrendFields { get; set; }
 #endif
         }
     }

@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Likes
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.likes.item collection</summary>
         /// <param name="position">The ID of the Post that the User is requesting to unlike.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweet_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweet_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweetItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweetItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("tweet_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweet_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("tweetId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Likes.Item.WithTweetItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

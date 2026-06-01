@@ -40,10 +40,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Per-realm auth tokens for key recovery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>? TokenMap { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfigTokenMapItem>? TokenMap { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map> TokenMap { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfigTokenMapItem> TokenMap { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "realm_state_string", n => { RealmStateString = n.GetStringValue(); } },
                 { "recover_threshold", n => { RecoverThreshold = n.GetIntValue(); } },
                 { "register_threshold", n => { RegisterThreshold = n.GetIntValue(); } },
-                { "token_map", n => { TokenMap = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>(global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "token_map", n => { TokenMap = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfigTokenMapItem>(global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfigTokenMapItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -90,7 +90,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("realm_state_string", RealmStateString);
             writer.WriteIntValue("recover_threshold", RecoverThreshold);
             writer.WriteIntValue("register_threshold", RegisterThreshold);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig_token_map>("token_map", TokenMap);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfigTokenMapItem>("token_map", TokenMap);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

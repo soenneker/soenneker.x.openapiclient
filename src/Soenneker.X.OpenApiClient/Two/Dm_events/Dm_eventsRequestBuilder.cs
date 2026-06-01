@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_events.item collection</summary>
         /// <param name="position">The ID of the direct-message event to delete.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEvent_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEvent_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEventItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("event_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEvent_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("eventId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -107,31 +107,31 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("dm_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetDm_eventFieldsQueryParameterType[]? DmEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventFieldsParameterItem[]? DmEventFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("dm_event%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetDm_eventFieldsQueryParameterType[] DmEventFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventFieldsParameterItem[] DmEventFields { get; set; }
 #endif
             /// <summary>The set of event_types to include in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("event_types")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetEvent_typesQueryParameterType[]? EventTypes { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsEventTypesParameterItem[]? EventTypes { get; set; }
 #nullable restore
 #else
             [QueryParameter("event_types")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetEvent_typesQueryParameterType[] EventTypes { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsEventTypesParameterItem[] EventTypes { get; set; }
 #endif
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.DmEventExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
@@ -140,11 +140,11 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -160,21 +160,21 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Dm_events.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

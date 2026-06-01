@@ -94,11 +94,11 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("compliance_job%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.Item.GetCompliance_jobFieldsQueryParameterType[]? ComplianceJobFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[]? ComplianceJobFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("compliance_job%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.Item.GetCompliance_jobFieldsQueryParameterType[] ComplianceJobFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[] ComplianceJobFields { get; set; }
 #endif
         }
     }

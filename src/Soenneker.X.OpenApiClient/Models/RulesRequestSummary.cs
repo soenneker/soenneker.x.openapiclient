@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RulesRequestSummary : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1? RulesRequestSummaryMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1? RulesRequestSummaryOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1 RulesRequestSummaryMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1 RulesRequestSummaryOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2? RulesRequestSummaryMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2? RulesRequestSummaryOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2 RulesRequestSummaryMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2 RulesRequestSummaryOneOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,13 +39,13 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.RulesRequestSummary();
-            if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("RulesRequestSummaryOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesRequestSummaryMember1 = new global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1();
+                result.RulesRequestSummaryOneOf1 = new global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("RulesRequestSummaryOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.RulesRequestSummaryMember2 = new global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2();
+                result.RulesRequestSummaryOneOf2 = new global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2();
             }
             return result;
         }
@@ -55,13 +55,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(RulesRequestSummaryMember1 != null)
+            if(RulesRequestSummaryOneOf1 != null)
             {
-                return RulesRequestSummaryMember1.GetFieldDeserializers();
+                return RulesRequestSummaryOneOf1.GetFieldDeserializers();
             }
-            else if(RulesRequestSummaryMember2 != null)
+            else if(RulesRequestSummaryOneOf2 != null)
             {
-                return RulesRequestSummaryMember2.GetFieldDeserializers();
+                return RulesRequestSummaryOneOf2.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -72,13 +72,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(RulesRequestSummaryMember1 != null)
+            if(RulesRequestSummaryOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember1>(null, RulesRequestSummaryMember1);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf1>(null, RulesRequestSummaryOneOf1);
             }
-            else if(RulesRequestSummaryMember2 != null)
+            else if(RulesRequestSummaryOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryMember2>(null, RulesRequestSummaryMember2);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RulesRequestSummaryOneOf2>(null, RulesRequestSummaryOneOf2);
             }
         }
     }

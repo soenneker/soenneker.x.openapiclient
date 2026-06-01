@@ -17,14 +17,14 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.account_activity.webhooks.item collection</summary>
         /// <param name="position">The webhook ID to check subscription against.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhook_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhook_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("webhook_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhook_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("webhookId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhookItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

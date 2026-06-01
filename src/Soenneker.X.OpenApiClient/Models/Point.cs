@@ -24,7 +24,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<double?> Coordinates { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.Point_type? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PointType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Point"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "coordinates", n => { Coordinates = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.Point_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PointType>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("coordinates", Coordinates);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.Point_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PointType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

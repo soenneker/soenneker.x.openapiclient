@@ -17,14 +17,14 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Media
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.media.item collection</summary>
         /// <param name="position">The unique identifier of the Direct Message event containing the media.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDm_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDm_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDmItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDmItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("dm_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDm_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("dmId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDmItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

@@ -93,7 +93,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply Reply { get; set; }
 #endif
         /// <summary>Settings to indicate who can reply to the Tweet.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings? ReplySettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReplySettings? ReplySettings { get; set; }
         /// <summary>Share community post with followers too.</summary>
         public bool? ShareWithFollowers { get; set; }
         /// <summary>The content of the Tweet.</summary>
@@ -135,7 +135,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "poll", n => { Poll = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll.CreateFromDiscriminatorValue); } },
                 { "quote_tweet_id", n => { QuoteTweetId = n.GetStringValue(); } },
                 { "reply", n => { Reply = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply>(global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply.CreateFromDiscriminatorValue); } },
-                { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>(); } },
+                { "reply_settings", n => { ReplySettings = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReplySettings>(); } },
                 { "share_with_followers", n => { ShareWithFollowers = n.GetBoolValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -160,7 +160,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestPoll>("poll", Poll);
             writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReply>("reply", Reply);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequest_reply_settings>("reply_settings", ReplySettings);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.TweetCreateRequestReplySettings>("reply_settings", ReplySettings);
             writer.WriteBoolValue("share_with_followers", ShareWithFollowers);
             writer.WriteStringValue("text", Text);
         }

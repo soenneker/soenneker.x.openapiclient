@@ -11,7 +11,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhook_id}\subscriptions
+    /// Builds and executes requests for operations under \2\account_activity\webhooks\{webhookId}\subscriptions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
@@ -23,14 +23,14 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.account_activity.webhooks.item.subscriptions.item collection</summary>
         /// <param name="position">User ID to unsubscribe from.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUser_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUser_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUserItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUserItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("user_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUser_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("userId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUserItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -38,7 +38,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions", pathParameters)
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions", pathParameters)
         {
         }
         /// <summary>
@@ -46,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhook_id}/subscriptions", rawUrl)
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/account_activity/webhooks/{webhookId}/subscriptions", rawUrl)
         {
         }
     }

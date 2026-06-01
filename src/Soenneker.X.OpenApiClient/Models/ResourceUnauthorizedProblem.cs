@@ -30,9 +30,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_resource_type? ResourceType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2ResourceType? ResourceType { get; set; }
         /// <summary>The section property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_section? Section { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2Section? Section { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -61,8 +61,8 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "parameter", n => { Parameter = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_resource_type>(); } },
-                { "section", n => { Section = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_section>(); } },
+                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2ResourceType>(); } },
+                { "section", n => { Section = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2Section>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -76,8 +76,8 @@ namespace Soenneker.X.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteStringValue("parameter", Parameter);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_resource_type>("resource_type", ResourceType);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem_section>("section", Section);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2ResourceType>("resource_type", ResourceType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblemAllOf2Section>("section", Section);
             writer.WriteStringValue("value", Value);
         }
     }

@@ -106,21 +106,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetMediaFieldsQueryParameterType[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetMediaFieldsQueryParameterType[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>The partition number.</summary>
             [QueryParameter("partition")]
@@ -129,21 +129,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetPlaceFieldsQueryParameterType[]? PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[]? PlaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetPlaceFieldsQueryParameterType[] PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[] PlaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Poll fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetPollFieldsQueryParameterType[]? PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[]? PollFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetPollFieldsQueryParameterType[] PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
             /// <summary>YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.</summary>
             [QueryParameter("start_time")]
@@ -152,21 +152,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetTweetFieldsQueryParameterType[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

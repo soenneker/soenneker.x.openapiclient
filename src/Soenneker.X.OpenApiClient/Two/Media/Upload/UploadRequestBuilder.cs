@@ -158,7 +158,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
         {
             /// <summary>The command for the media upload request.</summary>
             [QueryParameter("command")]
-            public global::Soenneker.X.OpenApiClient.Two.Media.Upload.GetCommandQueryParameterType? Command { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusCommandParameter? Command { get; set; }
             /// <summary>Media id for the requested media upload status.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

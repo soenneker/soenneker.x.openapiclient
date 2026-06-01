@@ -19,10 +19,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseData_results>? Results { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseDataResultsItem>? Results { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseData_results> Results { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseDataResultsItem> Results { get; set; }
 #endif
         /// <summary>The successful_kills property</summary>
         public int? SuccessfulKills { get; set; }
@@ -52,7 +52,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "failed_kills", n => { FailedKills = n.GetIntValue(); } },
-                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseData_results>(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseData_results.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "results", n => { Results = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseDataResultsItem>(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseDataResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "successful_kills", n => { SuccessfulKills = n.GetIntValue(); } },
             };
         }
@@ -64,7 +64,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("failed_kills", FailedKills);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseData_results>("results", Results);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByEndpointResponseDataResultsItem>("results", Results);
             writer.WriteIntValue("successful_kills", SuccessfulKills);
             writer.WriteAdditionalData(AdditionalData);
         }

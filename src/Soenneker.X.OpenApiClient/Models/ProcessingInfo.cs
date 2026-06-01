@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Percent of upload progress</summary>
         public int? ProgressPercent { get; set; }
         /// <summary>State of upload</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ProcessingInfo_state? State { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ProcessingInfoState? State { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ProcessingInfo"/> and sets the default values.
         /// </summary>
@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "check_after_secs", n => { CheckAfterSecs = n.GetIntValue(); } },
                 { "progress_percent", n => { ProgressPercent = n.GetIntValue(); } },
-                { "state", n => { State = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfo_state>(); } },
+                { "state", n => { State = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfoState>(); } },
             };
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("check_after_secs", CheckAfterSecs);
             writer.WriteIntValue("progress_percent", ProgressPercent);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfo_state>("state", State);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfoState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

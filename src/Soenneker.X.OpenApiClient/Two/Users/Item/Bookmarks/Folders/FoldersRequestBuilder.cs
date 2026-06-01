@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.bookmarks.folders.item collection</summary>
         /// <param name="position">The ID of the Bookmark Folder that the authenticated User is trying to fetch Posts for.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolder_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolder_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolderItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolderItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("folder_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolder_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("folderId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolderItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

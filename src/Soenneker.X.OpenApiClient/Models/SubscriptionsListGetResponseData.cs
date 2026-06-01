@@ -26,10 +26,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>List of active subscriptions for the webhook</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseData_subscriptions>? Subscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseDataSubscriptionsItem>? Subscriptions { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseData_subscriptions> Subscriptions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseDataSubscriptionsItem> Subscriptions { get; set; }
 #endif
         /// <summary>The associated webhook ID</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "application_id", n => { ApplicationId = n.GetStringValue(); } },
-                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseData_subscriptions>(global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseData_subscriptions.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "subscriptions", n => { Subscriptions = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseDataSubscriptionsItem>(global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseDataSubscriptionsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
                 { "webhook_url", n => { WebhookUrl = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("application_id", ApplicationId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseData_subscriptions>("subscriptions", Subscriptions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.SubscriptionsListGetResponseDataSubscriptionsItem>("subscriptions", Subscriptions);
             writer.WriteStringValue("webhook_id", WebhookId);
             writer.WriteStringValue("webhook_url", WebhookUrl);
             writer.WriteAdditionalData(AdditionalData);

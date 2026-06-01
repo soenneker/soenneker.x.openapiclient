@@ -20,14 +20,14 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.activity.subscriptions.item collection</summary>
         /// <param name="position">The ID of the subscription to delete.</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscription_ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscription_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("subscription_id", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscription_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("subscriptionId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscriptionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

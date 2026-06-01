@@ -141,11 +141,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("public_key%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys.GetPublic_keyFieldsQueryParameterType[]? PublicKeyFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PublicKeyFieldsParameterItem[]? PublicKeyFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("public_key%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys.GetPublic_keyFieldsQueryParameterType[] PublicKeyFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PublicKeyFieldsParameterItem[] PublicKeyFields { get; set; }
 #endif
         }
     }

@@ -18,10 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Engagement_errors>? Errors { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementErrorsItem>? Errors { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Engagement_errors> Errors { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementErrorsItem> Errors { get; set; }
 #endif
         /// <summary>The measurement property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Engagement_errors>(global::Soenneker.X.OpenApiClient.Models.Engagement_errors.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementErrorsItem>(global::Soenneker.X.OpenApiClient.Models.EngagementErrorsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "measurement", n => { Measurement = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Engagement_errors>("errors", Errors);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementErrorsItem>("errors", Errors);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement>("measurement", Measurement);
             writer.WriteAdditionalData(AdditionalData);
         }

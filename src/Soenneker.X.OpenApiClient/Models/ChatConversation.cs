@@ -86,7 +86,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Whether screen capture detection is enabled for this conversation.</summary>
         public bool? ScreenCaptureDetectionEnabled { get; set; }
         /// <summary>&quot;The type of conversation: &apos;direct&apos; or &apos;group&apos;.&quot;</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ChatConversation_type? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatConversationType? Type { get; set; }
         /// <summary>ISO 8601 timestamp when the group was last updated. Only present for group conversations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,7 +131,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "screen_capture_blocking_enabled", n => { ScreenCaptureBlockingEnabled = n.GetBoolValue(); } },
                 { "screen_capture_detection_enabled", n => { ScreenCaptureDetectionEnabled = n.GetBoolValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ChatConversation_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
@@ -153,7 +153,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
             writer.WriteBoolValue("screen_capture_blocking_enabled", ScreenCaptureBlockingEnabled);
             writer.WriteBoolValue("screen_capture_detection_enabled", ScreenCaptureDetectionEnabled);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ChatConversation_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationType>("type", Type);
             writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

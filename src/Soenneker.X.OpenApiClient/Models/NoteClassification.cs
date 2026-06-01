@@ -9,11 +9,11 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "misinformed_or_potentially_misleading")]
         #pragma warning disable CS1591
-        Misinformed_or_potentially_misleading,
+        MisinformedOrPotentiallyMisleading,
         #pragma warning restore CS1591
         [EnumMember(Value = "not_misleading")]
         #pragma warning disable CS1591
-        Not_misleading,
+        NotMisleading,
         #pragma warning restore CS1591
     }
 }

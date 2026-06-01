@@ -8,26 +8,26 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf2"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaUploadAppendRequest : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1? MediaUploadAppendRequestMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1? MediaUploadAppendRequestAnyOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1 MediaUploadAppendRequestMember1 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1 MediaUploadAppendRequestAnyOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2? MediaUploadAppendRequestMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf2? MediaUploadAppendRequestAnyOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2 MediaUploadAppendRequestMember2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf2 MediaUploadAppendRequestAnyOf2 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,8 +38,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequest();
-            result.MediaUploadAppendRequestMember1 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1();
-            result.MediaUploadAppendRequestMember2 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember2();
+            result.MediaUploadAppendRequestAnyOf1 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1();
+            result.MediaUploadAppendRequestAnyOf2 = new global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf2();
             return result;
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(MediaUploadAppendRequestMember1 != null || MediaUploadAppendRequestMember2 != null)
+            if(MediaUploadAppendRequestAnyOf1 != null || MediaUploadAppendRequestAnyOf2 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MediaUploadAppendRequestMember1, MediaUploadAppendRequestMember2);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(MediaUploadAppendRequestAnyOf1, MediaUploadAppendRequestAnyOf2);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -61,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestMember1>(null, MediaUploadAppendRequestMember1, MediaUploadAppendRequestMember2);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadAppendRequestAnyOf1>(null, MediaUploadAppendRequestAnyOf1, MediaUploadAppendRequestAnyOf2);
         }
     }
 }

@@ -83,10 +83,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A list of Posts this DM refers to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.DmEvent_referenced_tweets>? ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>? ReferencedTweets { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.DmEvent_referenced_tweets> ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem> ReferencedTweets { get; set; }
 #endif
         /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -146,7 +146,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>(global::Soenneker.X.OpenApiClient.Models.MentionEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEvent_referenced_tweets>(global::Soenneker.X.OpenApiClient.Models.DmEvent_referenced_tweets.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>(global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sender_id", n => { SenderId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
                 { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm>(global::Soenneker.X.OpenApiClient.Models.UrlEntityDm.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>("mentions", Mentions);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEvent_referenced_tweets>("referenced_tweets", ReferencedTweets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>("referenced_tweets", ReferencedTweets);
             writer.WriteStringValue("sender_id", SenderId);
             writer.WriteStringValue("text", Text);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm>("urls", Urls);

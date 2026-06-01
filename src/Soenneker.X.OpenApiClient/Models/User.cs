@@ -26,10 +26,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Returns detailed information about the relationship between two users.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.User_connection_status?>? ConnectionStatus { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem?>? ConnectionStatus { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.User_connection_status?> ConnectionStatus { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem?> ConnectionStatus { get; set; }
 #endif
         /// <summary>Creation time of this User.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -118,7 +118,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Indicates if you can send a DM to this User</summary>
         public bool? ReceivesYourDm { get; set; }
         /// <summary>&quot;The X Blue subscription type of the user, eg: Basic, Premium, PremiumPlus or None.&quot;</summary>
-        public global::Soenneker.X.OpenApiClient.Models.User_subscription_type? SubscriptionType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserSubscriptionType? SubscriptionType { get; set; }
         /// <summary>The URL specified in the User&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -138,7 +138,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Indicate if this User is a verified X User.</summary>
         public bool? Verified { get; set; }
         /// <summary>&quot;The X Blue verified type of the user, eg: blue, government, business or none.&quot;</summary>
-        public global::Soenneker.X.OpenApiClient.Models.User_verified_type? VerifiedType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserVerifiedType? VerifiedType { get; set; }
         /// <summary>Indicates withholding details for [withheld content](https://help.twitter.com/en/rules-and-policies/tweet-withheld-by-country).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,7 +173,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "affiliation", n => { Affiliation = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>(global::Soenneker.X.OpenApiClient.Models.UserAffiliation.CreateFromDiscriminatorValue); } },
-                { "connection_status", n => { ConnectionStatus = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.User_connection_status>()?.AsList(); } },
+                { "connection_status", n => { ConnectionStatus = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem>()?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntities>(global::Soenneker.X.OpenApiClient.Models.UserEntities.CreateFromDiscriminatorValue); } },
@@ -187,11 +187,11 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "protected", n => { Protected = n.GetBoolValue(); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics.CreateFromDiscriminatorValue); } },
                 { "receives_your_dm", n => { ReceivesYourDm = n.GetBoolValue(); } },
-                { "subscription_type", n => { SubscriptionType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.User_subscription_type>(); } },
+                { "subscription_type", n => { SubscriptionType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UserSubscriptionType>(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "username", n => { Username = n.GetStringValue(); } },
                 { "verified", n => { Verified = n.GetBoolValue(); } },
-                { "verified_type", n => { VerifiedType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.User_verified_type>(); } },
+                { "verified_type", n => { VerifiedType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UserVerifiedType>(); } },
                 { "withheld", n => { Withheld = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserWithheld>(global::Soenneker.X.OpenApiClient.Models.UserWithheld.CreateFromDiscriminatorValue); } },
             };
         }
@@ -203,7 +203,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>("affiliation", Affiliation);
-            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.User_connection_status>("connection_status", ConnectionStatus);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem>("connection_status", ConnectionStatus);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntities>("entities", Entities);
@@ -217,11 +217,11 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("protected", Protected);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>("public_metrics", PublicMetrics);
             writer.WriteBoolValue("receives_your_dm", ReceivesYourDm);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.User_subscription_type>("subscription_type", SubscriptionType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UserSubscriptionType>("subscription_type", SubscriptionType);
             writer.WriteStringValue("url", Url);
             writer.WriteStringValue("username", Username);
             writer.WriteBoolValue("verified", Verified);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.User_verified_type>("verified_type", VerifiedType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UserVerifiedType>("verified_type", VerifiedType);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserWithheld>("withheld", Withheld);
             writer.WriteAdditionalData(AdditionalData);
         }

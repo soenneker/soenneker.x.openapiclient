@@ -23,15 +23,15 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UnionBranch? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMedia? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UnionBranch Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMedia Media { get; set; }
 #endif
         /// <summary>A string enum value which identifies a media use-case. This identifier is used to enforce use-case specific constraints (e.g. file size) and enable advanced features.</summary>
         public global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot? MediaCategory { get; set; }
         /// <summary>The type of image or subtitle.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type? MediaType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMediaType? MediaType { get; set; }
         /// <summary>Whether this media is shared or not.</summary>
         public bool? Shared { get; set; }
         /// <summary>
@@ -53,9 +53,9 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "additional_owners", n => { AdditionalOwners = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UnionBranch>(global::Soenneker.X.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMedia>(global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMedia.CreateFromDiscriminatorValue); } },
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>(); } },
-                { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>(); } },
+                { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMediaType>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
             };
         }
@@ -67,9 +67,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("additional_owners", AdditionalOwners);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UnionBranch>("media", Media);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMedia>("media", Media);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaCategoryOneShot>("media_category", MediaCategory);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot_media_type>("media_type", MediaType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShotMediaType>("media_type", MediaType);
             writer.WriteBoolValue("shared", Shared);
         }
     }

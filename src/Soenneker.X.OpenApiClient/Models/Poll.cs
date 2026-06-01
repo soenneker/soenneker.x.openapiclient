@@ -36,7 +36,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<global::Soenneker.X.OpenApiClient.Models.PollOption> Options { get; set; }
 #endif
         /// <summary>The voting_status property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.Poll_voting_status? VotingStatus { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PollVotingStatus? VotingStatus { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Poll"/> and sets the default values.
         /// </summary>
@@ -66,7 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "end_datetime", n => { EndDatetime = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "options", n => { Options = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PollOption>(global::Soenneker.X.OpenApiClient.Models.PollOption.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "voting_status", n => { VotingStatus = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.Poll_voting_status>(); } },
+                { "voting_status", n => { VotingStatus = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PollVotingStatus>(); } },
             };
         }
         /// <summary>
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("end_datetime", EndDatetime);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.PollOption>("options", Options);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.Poll_voting_status>("voting_status", VotingStatus);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PollVotingStatus>("voting_status", VotingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

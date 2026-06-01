@@ -130,31 +130,31 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("chat_conversation%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetChat_conversationFieldsQueryParameterType[]? ChatConversationFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatConversationFieldsParameterItem[]? ChatConversationFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("chat_conversation%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetChat_conversationFieldsQueryParameterType[] ChatConversationFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatConversationFieldsParameterItem[] ChatConversationFields { get; set; }
 #endif
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetExpansionsQueryParameterType[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatConversationExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetExpansionsQueryParameterType[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ChatConversationExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetUserFieldsQueryParameterType[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.GetUserFieldsQueryParameterType[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

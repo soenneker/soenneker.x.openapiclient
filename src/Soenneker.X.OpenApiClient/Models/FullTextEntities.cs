@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The annotations property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.FullTextEntities_annotations>? Annotations { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.FullTextEntitiesAnnotationsItem>? Annotations { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.FullTextEntities_annotations> Annotations { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.FullTextEntitiesAnnotationsItem> Annotations { get; set; }
 #endif
         /// <summary>The cashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FullTextEntities_annotations>(global::Soenneker.X.OpenApiClient.Models.FullTextEntities_annotations.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "annotations", n => { Annotations = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FullTextEntitiesAnnotationsItem>(global::Soenneker.X.OpenApiClient.Models.FullTextEntitiesAnnotationsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "cashtags", n => { Cashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>(global::Soenneker.X.OpenApiClient.Models.CashtagEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hashtags", n => { Hashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.HashtagEntity>(global::Soenneker.X.OpenApiClient.Models.HashtagEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>(global::Soenneker.X.OpenApiClient.Models.MentionEntity.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -93,7 +93,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FullTextEntities_annotations>("annotations", Annotations);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.FullTextEntitiesAnnotationsItem>("annotations", Annotations);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>("cashtags", Cashtags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.HashtagEntity>("hashtags", Hashtags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>("mentions", Mentions);

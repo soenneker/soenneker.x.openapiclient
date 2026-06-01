@@ -17,18 +17,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics? NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2NonPublicMetrics? NonPublicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2NonPublicMetrics NonPublicMetrics { get; set; }
 #endif
         /// <summary>Organic nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Video_organic_metrics? OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2OrganicMetrics? OrganicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Video_organic_metrics OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2OrganicMetrics OrganicMetrics { get; set; }
 #endif
         /// <summary>The preview_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,18 +41,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Promoted nonpublic engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Video_promoted_metrics? PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PromotedMetrics? PromotedMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Video_promoted_metrics PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PromotedMetrics PromotedMetrics { get; set; }
 #endif
         /// <summary>Engagement metrics for the Media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Video_public_metrics? PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PublicMetrics? PublicMetrics { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.Video_public_metrics PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PublicMetrics PublicMetrics { get; set; }
 #endif
         /// <summary>An array of all available variants of the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,11 +81,11 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
-                { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics.CreateFromDiscriminatorValue); } },
-                { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_organic_metrics>(global::Soenneker.X.OpenApiClient.Models.Video_organic_metrics.CreateFromDiscriminatorValue); } },
+                { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2NonPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.VideoAllOf2NonPublicMetrics.CreateFromDiscriminatorValue); } },
+                { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2OrganicMetrics>(global::Soenneker.X.OpenApiClient.Models.VideoAllOf2OrganicMetrics.CreateFromDiscriminatorValue); } },
                 { "preview_image_url", n => { PreviewImageUrl = n.GetStringValue(); } },
-                { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_promoted_metrics>(global::Soenneker.X.OpenApiClient.Models.Video_promoted_metrics.CreateFromDiscriminatorValue); } },
-                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_public_metrics>(global::Soenneker.X.OpenApiClient.Models.Video_public_metrics.CreateFromDiscriminatorValue); } },
+                { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PromotedMetrics.CreateFromDiscriminatorValue); } },
+                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PublicMetrics>(global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PublicMetrics.CreateFromDiscriminatorValue); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Variant>(global::Soenneker.X.OpenApiClient.Models.Variant.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -98,11 +98,11 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteIntValue("duration_ms", DurationMs);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_non_public_metrics>("non_public_metrics", NonPublicMetrics);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_organic_metrics>("organic_metrics", OrganicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2NonPublicMetrics>("non_public_metrics", NonPublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2OrganicMetrics>("organic_metrics", OrganicMetrics);
             writer.WriteStringValue("preview_image_url", PreviewImageUrl);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_promoted_metrics>("promoted_metrics", PromotedMetrics);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Video_public_metrics>("public_metrics", PublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PromotedMetrics>("promoted_metrics", PromotedMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.VideoAllOf2PublicMetrics>("public_metrics", PublicMetrics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Variant>("variants", Variants);
         }
     }

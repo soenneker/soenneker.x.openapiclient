@@ -9,31 +9,31 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "currently_rated_helpful")]
         #pragma warning disable CS1591
-        Currently_rated_helpful,
+        CurrentlyRatedHelpful,
         #pragma warning restore CS1591
         [EnumMember(Value = "currently_rated_not_helpful")]
         #pragma warning disable CS1591
-        Currently_rated_not_helpful,
+        CurrentlyRatedNotHelpful,
         #pragma warning restore CS1591
         [EnumMember(Value = "firm_reject")]
         #pragma warning disable CS1591
-        Firm_reject,
+        FirmReject,
         #pragma warning restore CS1591
         [EnumMember(Value = "insufficient_consensus")]
         #pragma warning disable CS1591
-        Insufficient_consensus,
+        InsufficientConsensus,
         #pragma warning restore CS1591
         [EnumMember(Value = "minimum_ratings_not_met")]
         #pragma warning disable CS1591
-        Minimum_ratings_not_met,
+        MinimumRatingsNotMet,
         #pragma warning restore CS1591
         [EnumMember(Value = "needs_more_ratings")]
         #pragma warning disable CS1591
-        Needs_more_ratings,
+        NeedsMoreRatings,
         #pragma warning restore CS1591
         [EnumMember(Value = "needs_your_help")]
         #pragma warning disable CS1591
-        Needs_your_help,
+        NeedsYourHelp,
         #pragma warning restore CS1591
     }
 }

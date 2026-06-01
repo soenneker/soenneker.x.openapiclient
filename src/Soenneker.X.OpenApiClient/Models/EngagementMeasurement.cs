@@ -17,18 +17,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The metrics_time_series property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_time_series>? MetricsTimeSeries { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTimeSeriesItem>? MetricsTimeSeries { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_time_series> MetricsTimeSeries { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTimeSeriesItem> MetricsTimeSeries { get; set; }
 #endif
         /// <summary>The metrics_total property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_total>? MetricsTotal { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTotalItem>? MetricsTotal { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_total> MetricsTotal { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTotalItem> MetricsTotal { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "metrics_time_series", n => { MetricsTimeSeries = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_time_series>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_time_series.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "metrics_total", n => { MetricsTotal = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_total>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_total.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metrics_time_series", n => { MetricsTimeSeries = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTimeSeriesItem>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTimeSeriesItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "metrics_total", n => { MetricsTotal = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTotalItem>(global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTotalItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_time_series>("metrics_time_series", MetricsTimeSeries);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurement_metrics_total>("metrics_total", MetricsTotal);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTimeSeriesItem>("metrics_time_series", MetricsTimeSeries);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.EngagementMeasurementMetricsTotalItem>("metrics_total", MetricsTotal);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

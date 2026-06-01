@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class ClientForbiddenProblem : global::Soenneker.X.OpenApiClient.Models.Problem, IParsable
     {
         /// <summary>The reason property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblem_reason? Reason { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblemReason? Reason { get; set; }
         /// <summary>The registration_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblem_reason>(); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblemReason>(); } },
                 { "registration_url", n => { RegistrationUrl = n.GetStringValue(); } },
             };
         }
@@ -53,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblem_reason>("reason", Reason);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblemReason>("reason", Reason);
             writer.WriteStringValue("registration_url", RegistrationUrl);
         }
     }

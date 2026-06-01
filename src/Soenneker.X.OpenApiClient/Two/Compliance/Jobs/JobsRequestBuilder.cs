@@ -154,18 +154,18 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("compliance_job%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.GetCompliance_jobFieldsQueryParameterType[]? ComplianceJobFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[]? ComplianceJobFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("compliance_job%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.GetCompliance_jobFieldsQueryParameterType[] ComplianceJobFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[] ComplianceJobFields { get; set; }
 #endif
             /// <summary>Status of Compliance Job to list.</summary>
             [QueryParameter("status")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.GetStatusQueryParameterType? Status { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsStatusParameter? Status { get; set; }
             /// <summary>Type of Compliance Job to list.</summary>
             [QueryParameter("type")]
-            public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.GetTypeQueryParameterType? Type { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsTypeParameter? Type { get; set; }
         }
     }
 }
