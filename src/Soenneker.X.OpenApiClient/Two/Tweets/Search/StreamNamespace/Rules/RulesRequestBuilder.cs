@@ -28,7 +28,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids*,max_results*,pagination_token*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids*,max_results*,pagination_token*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

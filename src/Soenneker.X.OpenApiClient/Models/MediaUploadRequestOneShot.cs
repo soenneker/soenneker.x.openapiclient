@@ -35,6 +35,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Whether this media is shared or not.</summary>
         public bool? Shared { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot"/> and sets the default values.
+        /// </summary>
+        public MediaUploadRequestOneShot()
+        {
+            Shared = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestOneShot"/></returns>

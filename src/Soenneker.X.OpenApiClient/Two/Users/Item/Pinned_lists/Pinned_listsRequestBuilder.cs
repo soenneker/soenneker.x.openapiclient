@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Pinned_listsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/pinned_lists{?expansions,list%2Efields,user%2Efields}", pathParameters)
+        public Pinned_listsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Pinned_listsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/pinned_lists{?expansions,list%2Efields,user%2Efields}", rawUrl)
+        public Pinned_listsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", pathParameters)
+        public BookmarksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", rawUrl)
+        public BookmarksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "", rawUrl)
         {
         }
         /// <summary>

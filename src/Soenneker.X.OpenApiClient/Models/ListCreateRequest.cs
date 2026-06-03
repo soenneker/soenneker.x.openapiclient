@@ -38,6 +38,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public ListCreateRequest()
         {
             AdditionalData = new Dictionary<string, object>();
+            Private = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

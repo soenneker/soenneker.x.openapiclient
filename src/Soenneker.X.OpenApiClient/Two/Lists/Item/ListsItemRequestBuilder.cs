@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/lists/{id}{?expansions,list%2Efields,user%2Efields}", pathParameters)
+        public ListsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/lists/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Two.Lists.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ListsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/lists/{id}{?expansions,list%2Efields,user%2Efields}", rawUrl)
+        public ListsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/lists/{id}", rawUrl)
         {
         }
         /// <summary>
