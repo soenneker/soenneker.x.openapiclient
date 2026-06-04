@@ -93,7 +93,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/2/tweets/search/webhooks/{webhookId}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -112,7 +112,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder.WithWebhookItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/2/tweets/search/webhooks/{webhookId}{?expansions*,media%2Efields*,place%2Efields*,poll%2Efields*,tweet%2Efields*,user%2Efields*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

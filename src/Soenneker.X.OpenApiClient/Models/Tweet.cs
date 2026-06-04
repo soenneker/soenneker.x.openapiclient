@@ -160,6 +160,8 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics OrganicMetrics { get; set; }
 #endif
+        /// <summary>Indicates if this Post is a paid partnership, i.e. it has been disclosed by the author as containing paid promotion.</summary>
+        public bool? PaidPartnership { get; set; }
         /// <summary>Indicates if this Tweet contains URLs marked as sensitive, for example content suitable for mature audiences.</summary>
         public bool? PossiblySensitive { get; set; }
         /// <summary>Promoted nonpublic engagement metrics for the Tweet at the time of the request.</summary>
@@ -288,6 +290,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "note_request_suggestions", n => { NoteRequestSuggestions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions>(global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions.CreateFromDiscriminatorValue); } },
                 { "note_tweet", n => { NoteTweet = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet>(global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet.CreateFromDiscriminatorValue); } },
                 { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics.CreateFromDiscriminatorValue); } },
+                { "paid_partnership", n => { PaidPartnership = n.GetBoolValue(); } },
                 { "possibly_sensitive", n => { PossiblySensitive = n.GetBoolValue(); } },
                 { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics.CreateFromDiscriminatorValue); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics.CreateFromDiscriminatorValue); } },
@@ -328,6 +331,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteRequestSuggestions>("note_request_suggestions", NoteRequestSuggestions);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetNoteTweet>("note_tweet", NoteTweet);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetOrganicMetrics>("organic_metrics", OrganicMetrics);
+            writer.WriteBoolValue("paid_partnership", PaidPartnership);
             writer.WriteBoolValue("possibly_sensitive", PossiblySensitive);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPromotedMetrics>("promoted_metrics", PromotedMetrics);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TweetPublicMetrics>("public_metrics", PublicMetrics);

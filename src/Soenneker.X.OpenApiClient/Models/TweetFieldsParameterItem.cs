@@ -96,6 +96,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         OrganicMetrics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "paid_partnership")]
+        #pragma warning disable CS1591
+        PaidPartnership,
+        #pragma warning restore CS1591
         [EnumMember(Value = "possibly_sensitive")]
         #pragma warning disable CS1591
         PossiblySensitive,
