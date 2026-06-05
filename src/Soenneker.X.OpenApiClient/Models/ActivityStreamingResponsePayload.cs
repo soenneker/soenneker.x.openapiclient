@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
@@ -29,6 +29,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload NewsActivityResponsePayload { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload? PostDeleteActivityResponsePayload { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload PostDeleteActivityResponsePayload { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -36,6 +44,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload ProfileUpdateActivityResponsePayload { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Tweet? Tweet { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Tweet Tweet { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +71,17 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
             }
+            else if("post.delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.PostDeleteActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload();
+            }
             else if("profile.update.affiliate_badge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
+            }
+            else if("post.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Tweet = new global::Soenneker.X.OpenApiClient.Models.Tweet();
             }
             return result;
         }
@@ -75,9 +99,17 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 return NewsActivityResponsePayload.GetFieldDeserializers();
             }
+            else if(PostDeleteActivityResponsePayload != null)
+            {
+                return PostDeleteActivityResponsePayload.GetFieldDeserializers();
+            }
             else if(ProfileUpdateActivityResponsePayload != null)
             {
                 return ProfileUpdateActivityResponsePayload.GetFieldDeserializers();
+            }
+            else if(Tweet != null)
+            {
+                return Tweet.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -96,9 +128,17 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload>(null, NewsActivityResponsePayload);
             }
+            else if(PostDeleteActivityResponsePayload != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload>(null, PostDeleteActivityResponsePayload);
+            }
             else if(ProfileUpdateActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload>(null, ProfileUpdateActivityResponsePayload);
+            }
+            else if(Tweet != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet>(null, Tweet);
             }
         }
     }

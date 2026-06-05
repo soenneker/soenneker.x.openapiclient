@@ -13004,6 +13004,12 @@
           },
           {
             "$ref": "#/components/schemas/FollowActivityResponsePayload"
+          },
+          {
+            "$ref": "#/components/schemas/Tweet"
+          },
+          {
+            "$ref": "#/components/schemas/PostDeleteActivityResponsePayload"
           }
         ],
         "properties": {
@@ -13019,6 +13025,8 @@
             "follow.follow": "#/components/schemas/FollowActivityResponsePayload",
             "follow.unfollow": "#/components/schemas/FollowActivityResponsePayload",
             "news.new": "#/components/schemas/NewsActivityResponsePayload",
+            "post.create": "#/components/schemas/Tweet",
+            "post.delete": "#/components/schemas/PostDeleteActivityResponsePayload",
             "profile.update.affiliate_badge": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "profile.update.banner_picture": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "profile.update.bio": "#/components/schemas/ProfileUpdateActivityResponsePayload",
@@ -13030,7 +13038,9 @@
             "profile.update.verified_badge": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "ProfileUpdateActivityResponsePayload": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "NewsActivityResponsePayload": "#/components/schemas/NewsActivityResponsePayload",
-            "FollowActivityResponsePayload": "#/components/schemas/FollowActivityResponsePayload"
+            "FollowActivityResponsePayload": "#/components/schemas/FollowActivityResponsePayload",
+            "Tweet": "#/components/schemas/Tweet",
+            "PostDeleteActivityResponsePayload": "#/components/schemas/PostDeleteActivityResponsePayload"
           }
         }
       },
@@ -18097,6 +18107,9 @@
           "filter": {
             "$ref": "#/components/schemas/ActivitySubscriptionFilter"
           },
+          "includes": {
+            "$ref": "#/components/schemas/Expansions"
+          },
           "payload": {
             "$ref": "#/components/schemas/ActivityStreamingResponsePayload"
           },
@@ -19571,6 +19584,27 @@
           "type": "number"
         },
         "description": "A [GeoJson Position](https://tools.ietf.org/html/rfc7946#section-3.1.1) in the format \u0060[longitude,latitude]\u0060."
+      },
+      "PostDeleteActivityResponsePayload": {
+        "required": [
+          "id",
+          "author_id"
+        ],
+        "type": "object",
+        "properties": {
+          "author_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers."
+          },
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers."
+          }
+        },
+        "additionalProperties": false,
+        "description": "The identity of a deleted Post."
       },
       "PreviewImage": {
         "required": [
@@ -25462,7 +25496,9 @@
           "dm.sent",
           "dm.received",
           "dm.indicate_typing",
-          "dm.read"
+          "dm.read",
+          "post.create",
+          "post.delete"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -25553,6 +25589,14 @@
             {
               "value": "dm.read",
               "name": "DmRead"
+            },
+            {
+              "value": "post.create",
+              "name": "PostCreate"
+            },
+            {
+              "value": "post.delete",
+              "name": "PostDelete"
             }
           ]
         }

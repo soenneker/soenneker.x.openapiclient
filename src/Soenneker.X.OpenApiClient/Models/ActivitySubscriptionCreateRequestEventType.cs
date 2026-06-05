@@ -92,5 +92,13 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         DmRead,
         #pragma warning restore CS1591
+        [EnumMember(Value = "post.create")]
+        #pragma warning disable CS1591
+        PostCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "post.delete")]
+        #pragma warning disable CS1591
+        PostDelete,
+        #pragma warning restore CS1591
     }
 }
