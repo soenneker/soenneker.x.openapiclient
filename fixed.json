@@ -26154,7 +26154,9 @@
           "tweet",
           "media",
           "list",
-          "space"
+          "space",
+          "place",
+          "poll"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -26181,6 +26183,14 @@
             {
               "value": "space",
               "name": "Space"
+            },
+            {
+              "value": "place",
+              "name": "Place"
+            },
+            {
+              "value": "poll",
+              "name": "Poll"
             }
           ]
         }

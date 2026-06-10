@@ -28,5 +28,13 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Space,
         #pragma warning restore CS1591
+        [EnumMember(Value = "place")]
+        #pragma warning disable CS1591
+        Place,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "poll")]
+        #pragma warning disable CS1591
+        Poll,
+        #pragma warning restore CS1591
     }
 }
