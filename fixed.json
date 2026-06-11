@@ -12,7 +12,7 @@
       "name": "X Developer Agreement and Policy",
       "url": "https://developer.x.com/en/developer-terms/agreement-and-policy.html"
     },
-    "version": "2.165"
+    "version": "2.166"
   },
   "servers": [
     {
@@ -715,6 +715,124 @@
         "security": [
           {
             "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/articles/draft": {
+      "post": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Create draft Article",
+        "description": "Creates a new Article draft that can later be published.",
+        "operationId": "ArticleCreateDraft",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ArticleDraftCreateRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticleDraftCreateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "tweet.read",
+              "tweet.write",
+              "users.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/articles/{articleId}/publish": {
+      "post": {
+        "tags": [
+          "Articles"
+        ],
+        "summary": "Publish Article",
+        "description": "Publishes a draft Article, making it publicly visible.",
+        "operationId": "ArticlePublish",
+        "parameters": [
+          {
+            "name": "articleId",
+            "in": "path",
+            "description": "The ID of the draft article to publish.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ArticlePublishResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "tweet.read",
+              "tweet.write",
+              "users.read"
+            ]
+          },
+          {
+            "UserToken": []
           }
         ]
       }
@@ -12966,11 +13084,12 @@
   },
   "components": {
     "schemas": {
-      "DeleteDmResponseData": {
+      "ChatSendTypingIndicatorResponseData": {
         "type": "object",
         "properties": {
-          "deleted": {
-            "type": "boolean"
+          "success": {
+            "type": "boolean",
+            "description": "Whether the typing indicator was sent successfully."
           }
         }
       },
@@ -13187,13 +13306,12 @@
           }
         }
       },
-      "CreateNoteResponseData": {
+      "ChatSendMessageResponseData": {
         "type": "object",
         "properties": {
-          "id": {
-            "pattern": "^[0-9]{1,19}$",
+          "encoded_message_event": {
             "type": "string",
-            "description": "The unique identifier of this Community Note."
+            "description": "Base64-encoded response message event."
           }
         }
       },
@@ -13289,22 +13407,28 @@
         },
         "description": "A request to add a user-specified stream filtering rule."
       },
-      "CreateDmEventResponseData": {
+      "ChatMediaUploadInitializeResponseData": {
         "required": [
-          "dm_conversation_id",
-          "dm_event_id"
+          "session_id",
+          "media_hash_key",
+          "conversation_id"
         ],
         "type": "object",
         "properties": {
-          "dm_conversation_id": {
-            "pattern": "^([0-9]{1,19}-[0-9]{1,19}|[0-9]{15,19})$",
+          "conversation_id": {
             "type": "string",
-            "description": "Unique identifier of a DM conversation. This can either be a numeric string, or a pair of numeric strings separated by a \u0027-\u0027 character in the case of one-on-one DM Conversations."
+            "description": "Conversation id associated with the upload.",
+            "example": "1603419216513746946:1603419216513746946"
           },
-          "dm_event_id": {
-            "pattern": "^[0-9]{1,19}$",
+          "media_hash_key": {
             "type": "string",
-            "description": "Unique identifier of a DM Event."
+            "description": "Media hash key returned by XChat.",
+            "example": "rByqeHiVlD"
+          },
+          "session_id": {
+            "type": "string",
+            "description": "Resume/session id for the upload.",
+            "example": "735401"
           }
         }
       },
@@ -13393,6 +13517,68 @@
         },
         "description": "A count of user-provided stream filtering rules at the client application level."
       },
+      "ArticleDraftCreateRequest": {
+        "required": [
+          "title",
+          "content_state"
+        ],
+        "type": "object",
+        "properties": {
+          "content_state": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentState"
+          },
+          "cover_media": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestCoverMedia"
+          },
+          "title": {
+            "minLength": 1,
+            "type": "string",
+            "description": "The title of the article."
+          }
+        }
+      },
+      "ArticleDraftCreateResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ArticleDraftCreateResponseData"
+          },
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "ChatMediaUploadFinalizeResponseData": {
+        "required": [
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Whether the finalize request succeeded."
+          }
+        }
+      },
+      "ArticlePublishResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ArticlePublishResponseData"
+          },
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
       "AudiencePolicy": {
         "type": "object",
         "properties": {
@@ -13410,12 +13596,12 @@
           }
         }
       },
-      "ChatSendTypingIndicatorResponseData": {
+      "ChatMarkConversationReadResponseData": {
         "type": "object",
         "properties": {
           "success": {
             "type": "boolean",
-            "description": "Whether the typing indicator was sent successfully."
+            "description": "Whether the conversation was marked as read successfully."
           }
         }
       },
@@ -13432,12 +13618,15 @@
           }
         }
       },
-      "ChatSendMessageResponseData": {
+      "ChatJuiceboxConfigTokenMapItem": {
         "type": "object",
         "properties": {
-          "encoded_message_event": {
+          "key": {
             "type": "string",
-            "description": "Base64-encoded response message event."
+            "description": "Realm identifier."
+          },
+          "value": {
+            "$ref": "#/components/schemas/ChatJuiceboxConfigTokenMapItemValue"
           }
         }
       },
@@ -13721,28 +13910,12 @@
         },
         "description": "A Chat conversation resource representing either a direct or group conversation."
       },
-      "ChatMediaUploadInitializeResponseData": {
-        "required": [
-          "session_id",
-          "media_hash_key",
-          "conversation_id"
-        ],
+      "ChatInitializeGroupResponseData": {
         "type": "object",
         "properties": {
           "conversation_id": {
             "type": "string",
-            "description": "Conversation id associated with the upload.",
-            "example": "1603419216513746946:1603419216513746946"
-          },
-          "media_hash_key": {
-            "type": "string",
-            "description": "Media hash key returned by XChat.",
-            "example": "rByqeHiVlD"
-          },
-          "session_id": {
-            "type": "string",
-            "description": "Resume/session id for the upload.",
-            "example": "735401"
+            "description": "The unique identifier for the initialized group conversation. This ID is prefixed with \u0027g\u0027 (e.g., \u0027g1234567890123456789\u0027). Use this ID when calling POST /chat/conversations to create the group."
           }
         }
       },
@@ -14278,15 +14451,12 @@
           }
         }
       },
-      "ChatMediaUploadFinalizeResponseData": {
-        "required": [
-          "success"
-        ],
+      "ChatInitializeConversationKeysResponseData": {
         "type": "object",
         "properties": {
-          "success": {
-            "type": "boolean",
-            "description": "Whether the finalize request succeeded."
+          "sequence_id": {
+            "type": "string",
+            "description": "Sequence ID of the conversation key change event. Use this to track key changes in the conversation event stream."
           }
         }
       },
@@ -14364,12 +14534,24 @@
         },
         "description": "A X Community is a curated group of Posts."
       },
-      "ChatMarkConversationReadResponseData": {
+      "ChatGetConversationsResponseMeta": {
         "type": "object",
         "properties": {
-          "success": {
+          "has_message_requests": {
             "type": "boolean",
-            "description": "Whether the conversation was marked as read successfully."
+            "description": "Whether the user has pending message requests."
+          },
+          "has_more": {
+            "type": "boolean",
+            "description": "Whether there are more conversations to fetch."
+          },
+          "next_token": {
+            "type": "string",
+            "description": "Token to retrieve the next page of results."
+          },
+          "result_count": {
+            "type": "integer",
+            "description": "The number of conversations returned."
           }
         }
       },
@@ -14429,15 +14611,27 @@
           }
         }
       },
-      "ChatJuiceboxConfigTokenMapItem": {
+      "ChatGetConversationResponseMeta": {
         "type": "object",
         "properties": {
-          "key": {
-            "type": "string",
-            "description": "Realm identifier."
+          "conversation_key_events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Conversation key change events needed for decryption."
           },
-          "value": {
-            "$ref": "#/components/schemas/ChatJuiceboxConfigTokenMapItemValue"
+          "has_more": {
+            "type": "boolean",
+            "description": "Whether there are more messages to fetch."
+          },
+          "next_token": {
+            "type": "string",
+            "description": "Token to retrieve the next page of results."
+          },
+          "result_count": {
+            "type": "integer",
+            "description": "The number of message events returned."
           }
         }
       },
@@ -14632,12 +14826,16 @@
         },
         "description": "Represents the data for the context annotation entity."
       },
-      "ChatInitializeGroupResponseData": {
+      "ChatCreateConversationResponseData": {
         "type": "object",
         "properties": {
           "conversation_id": {
             "type": "string",
-            "description": "The unique identifier for the initialized group conversation. This ID is prefixed with \u0027g\u0027 (e.g., \u0027g1234567890123456789\u0027). Use this ID when calling POST /chat/conversations to create the group."
+            "description": "The ID of the created conversation."
+          },
+          "conversation_key_change_sequence_id": {
+            "type": "string",
+            "description": "Sequence ID of the conversation key change event, if applicable."
           }
         }
       },
@@ -14826,14 +15024,35 @@
           }
         }
       },
-      "ChatInitializeConversationKeysResponseData": {
+      "ChatAddPublicKeyRequestPublicKey": {
         "type": "object",
         "properties": {
-          "sequence_id": {
+          "identity_public_key_signature": {
             "type": "string",
-            "description": "Sequence ID of the conversation key change event. Use this to track key changes in the conversation event stream."
+            "description": "Signature over the identity public key."
+          },
+          "public_key": {
+            "type": "string",
+            "description": "Identity public key (base64 encoded)."
+          },
+          "public_key_fingerprint": {
+            "type": "string",
+            "description": "Fingerprint of the identity public key."
+          },
+          "registration_method": {
+            "type": "string",
+            "description": "Registration method for the public key."
+          },
+          "signing_public_key": {
+            "type": "string",
+            "description": "Signing public key (base64 encoded)."
+          },
+          "signing_public_key_signature": {
+            "type": "string",
+            "description": "Signature over the signing public key."
           }
-        }
+        },
+        "description": "Public key registration payload."
       },
       "DeleteDmResponse": {
         "type": "object",
@@ -14919,24 +15138,11 @@
         },
         "description": "Attachments to a DM Event."
       },
-      "ChatGetConversationsResponseMeta": {
+      "BookmarkMutationResponseData": {
         "type": "object",
         "properties": {
-          "has_message_requests": {
-            "type": "boolean",
-            "description": "Whether the user has pending message requests."
-          },
-          "has_more": {
-            "type": "boolean",
-            "description": "Whether there are more conversations to fetch."
-          },
-          "next_token": {
-            "type": "string",
-            "description": "Token to retrieve the next page of results."
-          },
-          "result_count": {
-            "type": "integer",
-            "description": "The number of conversations returned."
+          "bookmarked": {
+            "type": "boolean"
           }
         }
       },
@@ -15024,27 +15230,12 @@
           }
         }
       },
-      "ChatGetConversationResponseMeta": {
+      "BookmarkFoldersResponseMeta": {
         "type": "object",
         "properties": {
-          "conversation_key_events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "Conversation key change events needed for decryption."
-          },
-          "has_more": {
-            "type": "boolean",
-            "description": "Whether there are more messages to fetch."
-          },
           "next_token": {
             "type": "string",
-            "description": "Token to retrieve the next page of results."
-          },
-          "result_count": {
-            "type": "integer",
-            "description": "The number of message events returned."
+            "description": "The next token."
           }
         }
       },
@@ -15072,16 +15263,16 @@
         },
         "description": "Participants for the DM Conversation."
       },
-      "ChatCreateConversationResponseData": {
+      "BookmarkFoldersResponseDataItem": {
         "type": "object",
         "properties": {
-          "conversation_id": {
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
             "type": "string",
-            "description": "The ID of the created conversation."
+            "description": "The unique identifier of this Bookmark folder."
           },
-          "conversation_key_change_sequence_id": {
-            "type": "string",
-            "description": "Sequence ID of the conversation key change event, if applicable."
+          "name": {
+            "type": "string"
           }
         }
       },
@@ -15100,41 +15291,22 @@
           }
         }
       },
-      "ChatAddPublicKeyRequestPublicKey": {
+      "BookmarkFolderPostsResponseMeta": {
         "type": "object",
         "properties": {
-          "identity_public_key_signature": {
+          "next_token": {
             "type": "string",
-            "description": "Signature over the identity public key."
-          },
-          "public_key": {
-            "type": "string",
-            "description": "Identity public key (base64 encoded)."
-          },
-          "public_key_fingerprint": {
-            "type": "string",
-            "description": "Fingerprint of the identity public key."
-          },
-          "registration_method": {
-            "type": "string",
-            "description": "Registration method for the public key."
-          },
-          "signing_public_key": {
-            "type": "string",
-            "description": "Signing public key (base64 encoded)."
-          },
-          "signing_public_key_signature": {
-            "type": "string",
-            "description": "Signature over the signing public key."
+            "description": "The next token."
           }
-        },
-        "description": "Public key registration payload."
+        }
       },
-      "BookmarkMutationResponseData": {
+      "BookmarkFolderPostsResponseDataItem": {
         "type": "object",
         "properties": {
-          "bookmarked": {
-            "type": "boolean"
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers."
           }
         }
       },
@@ -15155,14 +15327,18 @@
         },
         "description": "The rule you have submitted is a duplicate."
       },
-      "BookmarkFoldersResponseMeta": {
+      "ArticlePublishResponseData": {
+        "required": [
+          "post_id"
+        ],
         "type": "object",
         "properties": {
-          "next_token": {
+          "post_id": {
             "type": "string",
-            "description": "The next token."
+            "description": "The ID of the post created for the published Article."
           }
-        }
+        },
+        "description": "The published Article\u0027s seed post."
       },
       "Engagement": {
         "type": "object",
@@ -17357,18 +17533,24 @@
         },
         "description": "Represent the portion of text recognized as a Hashtag, and its start and end position within the text."
       },
-      "BookmarkFoldersResponseDataItem": {
+      "ArticleDraftCreateResponseData": {
+        "required": [
+          "id",
+          "title"
+        ],
         "type": "object",
         "properties": {
           "id": {
             "pattern": "^[0-9]{1,19}$",
             "type": "string",
-            "description": "The unique identifier of this Bookmark folder."
+            "description": "The unique identifier of this Article."
           },
-          "name": {
-            "type": "string"
+          "title": {
+            "type": "string",
+            "description": "The title of the draft Article."
           }
-        }
+        },
+        "description": "The newly created draft Article."
       },
       "InvalidRequestProblem": {
         "type": "object",
@@ -17397,24 +17579,47 @@
         ],
         "description": "The rule you have submitted is invalid."
       },
-      "BookmarkFolderPostsResponseMeta": {
+      "ArticleDraftCreateRequestCoverMedia": {
+        "required": [
+          "media_category",
+          "media_id"
+        ],
         "type": "object",
         "properties": {
-          "next_token": {
+          "media_category": {
             "type": "string",
-            "description": "The next token."
+            "description": "The media category (e.g., TWEET_IMAGE)."
+          },
+          "media_id": {
+            "type": "string",
+            "description": "The media ID from the media upload endpoint."
           }
-        }
+        },
+        "description": "Optional cover media for the article."
       },
-      "BookmarkFolderPostsResponseDataItem": {
+      "ArticleDraftCreateRequestContentState": {
+        "required": [
+          "blocks",
+          "entities"
+        ],
         "type": "object",
         "properties": {
-          "id": {
-            "pattern": "^[0-9]{1,19}$",
-            "type": "string",
-            "description": "Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers."
+          "blocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItem"
+            },
+            "description": "The text blocks that make up the article body."
+          },
+          "entities": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItem"
+            },
+            "description": "Non-text entities referenced by blocks (links, embedded posts, images)."
           }
-        }
+        },
+        "description": "DraftJS content state representing the article body."
       },
       "KillAllConnectionsResponse": {
         "type": "object",
@@ -22728,6 +22933,43 @@
           }
         }
       },
+      "CreateDmEventResponseData": {
+        "required": [
+          "dm_conversation_id",
+          "dm_event_id"
+        ],
+        "type": "object",
+        "properties": {
+          "dm_conversation_id": {
+            "pattern": "^([0-9]{1,19}-[0-9]{1,19}|[0-9]{15,19})$",
+            "type": "string",
+            "description": "Unique identifier of a DM conversation. This can either be a numeric string, or a pair of numeric strings separated by a \u0027-\u0027 character in the case of one-on-one DM Conversations."
+          },
+          "dm_event_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of a DM Event."
+          }
+        }
+      },
+      "CreateNoteResponseData": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "The unique identifier of this Community Note."
+          }
+        }
+      },
+      "DeleteDmResponseData": {
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean"
+          }
+        }
+      },
       "DeleteNoteResponseData": {
         "required": [
           "deleted"
@@ -25034,6 +25276,63 @@
         },
         "description": "Realm connection details."
       },
+      "ArticleDraftCreateRequestContentStateBlocksItem": {
+        "required": [
+          "text",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataProperty"
+          },
+          "depth": {
+            "type": "integer",
+            "description": "Nesting depth for list items."
+          },
+          "entity_ranges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem"
+            },
+            "description": "References to entries in entities."
+          },
+          "inline_style_ranges": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem"
+            },
+            "description": "Inline formatting ranges."
+          },
+          "key": {
+            "type": "string",
+            "description": "Optional block key."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text content of this block."
+          },
+          "type": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemType"
+          }
+        }
+      },
+      "ArticleDraftCreateRequestContentStateEntitiesItem": {
+        "required": [
+          "key",
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "string",
+            "description": "The entity key referenced by entity_ranges."
+          },
+          "value": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValue"
+          }
+        }
+      },
       "EngagementMeasurementMetricsTimeSeriesItem": {
         "type": "object",
         "properties": {
@@ -25338,6 +25637,72 @@
           }
         }
       },
+      "ArticleDraftCreateRequestContentStateBlocksItemData": {
+        "type": "object",
+        "description": "Block-level metadata for mentions, hashtags, cashtags, and URLs."
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem": {
+        "required": [
+          "key",
+          "offset",
+          "length"
+        ],
+        "type": "object",
+        "properties": {
+          "key": {
+            "type": "integer",
+            "description": "Index into the entities array."
+          },
+          "length": {
+            "type": "integer",
+            "description": "Length of the entity range."
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Start offset in the text."
+          }
+        }
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem": {
+        "required": [
+          "offset",
+          "length",
+          "style"
+        ],
+        "type": "object",
+        "properties": {
+          "length": {
+            "type": "integer",
+            "description": "Length of the styled range."
+          },
+          "offset": {
+            "type": "integer",
+            "description": "Start offset in the text."
+          },
+          "style": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle"
+          }
+        }
+      },
+      "ArticleDraftCreateRequestContentStateEntitiesItemValue": {
+        "required": [
+          "type",
+          "mutability",
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueData"
+          },
+          "mutability": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueMutability"
+          },
+          "type": {
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueType"
+          }
+        }
+      },
       "EngagementMeasurementMetricsTimeSeriesItemValue": {
         "type": "object",
         "properties": {
@@ -25410,6 +25775,35 @@
         "additionalProperties": false,
         "description": "Watch Now CTA."
       },
+      "ArticleDraftCreateRequestContentStateEntitiesItemValueData": {
+        "type": "object",
+        "properties": {
+          "caption": {
+            "type": "string",
+            "description": "Caption text."
+          },
+          "markdown": {
+            "type": "string",
+            "description": "Markdown content."
+          },
+          "media_items": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem"
+            },
+            "description": "Media keys. Used with type IMAGE."
+          },
+          "post_id": {
+            "type": "string",
+            "description": "The ID of the post to embed. Used with type POST."
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL. Used with type LINK."
+          }
+        },
+        "description": "Entity payload. Fields depend on the entity type."
+      },
       "EngagementMeasurementMetricsTimeSeriesItemValueMetricValuesItem": {
         "type": "object",
         "properties": {
@@ -25426,6 +25820,23 @@
         "properties": {
           "iso8601_time": {
             "type": "string"
+          }
+        }
+      },
+      "ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem": {
+        "required": [
+          "media_category",
+          "media_id"
+        ],
+        "type": "object",
+        "properties": {
+          "media_category": {
+            "type": "string",
+            "description": "The media category."
+          },
+          "media_id": {
+            "type": "string",
+            "description": "The media ID."
           }
         }
       },
@@ -25473,6 +25884,10 @@
             "type": "string"
           }
         }
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemDataProperty": {
+        "type": "object",
+        "description": "Block-level metadata for mentions, hashtags, cashtags, and URLs."
       },
       "ActivitySubscriptionCreateRequestEventType": {
         "enum": [
@@ -26154,9 +26569,7 @@
           "tweet",
           "media",
           "list",
-          "space",
-          "place",
-          "poll"
+          "space"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -26183,14 +26596,6 @@
             {
               "value": "space",
               "name": "Space"
-            },
-            {
-              "value": "place",
-              "name": "Place"
-            },
-            {
-              "value": "poll",
-              "name": "Poll"
             }
           ]
         }
@@ -26488,6 +26893,143 @@
           ]
         }
       },
+      "ArticleDraftCreateRequestContentStateBlocksItemType": {
+        "enum": [
+          "unstyled",
+          "header-one",
+          "header-two",
+          "header-three",
+          "unordered-list-item",
+          "ordered-list-item",
+          "blockquote",
+          "atomic"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The block type.",
+        "x-ms-enum": {
+          "name": "ArticleDraftCreateRequestContentStateBlocksItemType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "unstyled",
+              "name": "Unstyled"
+            },
+            {
+              "value": "header-one",
+              "name": "HeaderOne"
+            },
+            {
+              "value": "header-two",
+              "name": "HeaderTwo"
+            },
+            {
+              "value": "header-three",
+              "name": "HeaderThree"
+            },
+            {
+              "value": "unordered-list-item",
+              "name": "UnorderedListItem"
+            },
+            {
+              "value": "ordered-list-item",
+              "name": "OrderedListItem"
+            },
+            {
+              "value": "blockquote",
+              "name": "Blockquote"
+            },
+            {
+              "value": "atomic",
+              "name": "Atomic"
+            }
+          ]
+        }
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle": {
+        "enum": [
+          "bold",
+          "italic",
+          "strikethrough"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The inline style.",
+        "x-ms-enum": {
+          "name": "ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "bold",
+              "name": "Bold"
+            },
+            {
+              "value": "italic",
+              "name": "Italic"
+            },
+            {
+              "value": "strikethrough",
+              "name": "Strikethrough"
+            }
+          ]
+        }
+      },
+      "ArticleDraftCreateRequestContentStateEntitiesItemValueMutability": {
+        "enum": [
+          "immutable",
+          "mutable",
+          "segmented"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Whether the entity can be edited.",
+        "x-ms-enum": {
+          "name": "ArticleDraftCreateRequestContentStateEntitiesItemValueMutability",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "immutable",
+              "name": "Immutable"
+            },
+            {
+              "value": "mutable",
+              "name": "Mutable"
+            },
+            {
+              "value": "segmented",
+              "name": "Segmented"
+            }
+          ]
+        }
+      },
+      "ArticleDraftCreateRequestContentStateEntitiesItemValueType": {
+        "enum": [
+          "post",
+          "link",
+          "image"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "The entity type.",
+        "x-ms-enum": {
+          "name": "ArticleDraftCreateRequestContentStateEntitiesItemValueType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "post",
+              "name": "Post"
+            },
+            {
+              "value": "link",
+              "name": "Link"
+            },
+            {
+              "value": "image",
+              "name": "Image"
+            }
+          ]
+        }
+      },
       "AnalyticsFieldsParameterItem": {
         "enum": [
           "app_install_attempts",
@@ -26606,6 +27148,60 @@
             {
               "value": "user_profile_clicks",
               "name": "UserProfileClicks"
+            }
+          ]
+        }
+      },
+      "ArticleExpansionsParameterItem": {
+        "enum": [
+          "media_key"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ArticleExpansionsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "media_key",
+              "name": "MediaKey"
+            }
+          ]
+        }
+      },
+      "ArticleFieldsParameterItem": {
+        "enum": [
+          "id",
+          "media_key",
+          "plain_text",
+          "preview_text",
+          "title"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ArticleFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "id",
+              "name": "Id"
+            },
+            {
+              "value": "media_key",
+              "name": "MediaKey"
+            },
+            {
+              "value": "plain_text",
+              "name": "PlainText"
+            },
+            {
+              "value": "preview_text",
+              "name": "PreviewText"
+            },
+            {
+              "value": "title",
+              "name": "Title"
             }
           ]
         }
@@ -29301,6 +29897,46 @@
           ]
         }
       },
+      "ArticleExpansionsParameter": {
+        "name": "expansions",
+        "in": "query",
+        "description": "A comma separated list of fields to expand.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ArticleExpansionsParameterItem"
+          },
+          "description": "The list of fields you can expand for a [Article](#Article) object. If the field has an ID, it can be expanded into a full object.",
+          "example": [
+            "media_key"
+          ]
+        }
+      },
+      "ArticleFieldsParameter": {
+        "name": "article.fields",
+        "in": "query",
+        "description": "A comma separated list of Article fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ArticleFieldsParameterItem"
+          },
+          "description": "The fields available for a Article object.",
+          "example": [
+            "id",
+            "media_key",
+            "plain_text",
+            "preview_text",
+            "title"
+          ]
+        }
+      },
       "ChatConversationExpansionsParameter": {
         "name": "expansions",
         "in": "query",
@@ -30375,6 +31011,14 @@
       "externalDocs": {
         "description": "Find out more",
         "url": "https://docs.x.com/x-api/enterprise-gnip-2.0/fundamentals/account-activity"
+      }
+    },
+    {
+      "name": "Articles",
+      "description": "Endpoints related to retrieving, creating \u0026 modifying Articles",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://developer.x.com/en/docs/twitter-api/tweets/lookup"
       }
     },
     {

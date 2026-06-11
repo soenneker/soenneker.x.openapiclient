@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Account_activity;
 using Soenneker.X.OpenApiClient.Two.Activity;
+using Soenneker.X.OpenApiClient.Two.Articles;
 using Soenneker.X.OpenApiClient.Two.Chat;
 using Soenneker.X.OpenApiClient.Two.Communities;
 using Soenneker.X.OpenApiClient.Two.Compliance;
@@ -45,6 +46,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder Activity
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Activity.ActivityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The articles property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Articles.ArticlesRequestBuilder Articles
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Articles.ArticlesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chat property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder Chat
