@@ -9,24 +9,15 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem : IAdditionalDataHolder, IParsable
+    public partial class ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Index into the entities array.</summary>
         public int? Key { get; set; }
         /// <summary>Length of the entity range.</summary>
         public int? Length { get; set; }
         /// <summary>Start offset in the text.</summary>
         public int? Offset { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +51,6 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteIntValue("key", Key);
             writer.WriteIntValue("length", Length);
             writer.WriteIntValue("offset", Offset);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

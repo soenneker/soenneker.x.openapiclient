@@ -9,11 +9,9 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ArticleDraftCreateRequestContentStateEntitiesItemValue : IAdditionalDataHolder, IParsable
+    public partial class ArticleDraftCreateRequestContentStateEntitiesItemValue : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Entity payload. Fields depend on the entity type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,13 +24,6 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueMutability? Mutability { get; set; }
         /// <summary>The entity type.</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueType? Type { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValue"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequestContentStateEntitiesItemValue()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -66,7 +57,6 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueData>("data", Data);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueMutability>("mutability", Mutability);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -7,37 +7,32 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// A reference to uploaded media, identified by category and ID.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem : IParsable
+    #pragma warning disable CS1591
+    public partial class ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>The media category (e.g., TWEET_IMAGE).</summary>
+        /// <summary>Start index of the tagged span.</summary>
+        public int? FromIndex { get; set; }
+        /// <summary>The tagged text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaCategory { get; set; }
+        public string? Text { get; set; }
 #nullable restore
 #else
-        public string MediaCategory { get; set; }
+        public string Text { get; set; }
 #endif
-        /// <summary>The media ID from the media upload endpoint.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? MediaId { get; set; }
-#nullable restore
-#else
-        public string MediaId { get; set; }
-#endif
+        /// <summary>End index of the tagged span.</summary>
+        public int? ToIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem();
+            return new global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -47,8 +42,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "media_category", n => { MediaCategory = n.GetStringValue(); } },
-                { "media_id", n => { MediaId = n.GetStringValue(); } },
+                { "from_index", n => { FromIndex = n.GetIntValue(); } },
+                { "text", n => { Text = n.GetStringValue(); } },
+                { "to_index", n => { ToIndex = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -58,8 +54,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("media_category", MediaCategory);
-            writer.WriteStringValue("media_id", MediaId);
+            writer.WriteIntValue("from_index", FromIndex);
+            writer.WriteStringValue("text", Text);
+            writer.WriteIntValue("to_index", ToIndex);
         }
     }
 }

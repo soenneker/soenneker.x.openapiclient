@@ -100,5 +100,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         PostDelete,
         #pragma warning restore CS1591
+        [EnumMember(Value = "like.create")]
+        #pragma warning disable CS1591
+        LikeCreate,
+        #pragma warning restore CS1591
     }
 }

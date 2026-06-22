@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload FollowActivityResponsePayload { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor? LikeWithTweetAuthor { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor LikeWithTweetAuthor { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -67,6 +75,10 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.FollowActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload();
             }
+            else if("like.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.LikeWithTweetAuthor = new global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor();
+            }
             else if("news.new".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
@@ -94,6 +106,10 @@ namespace Soenneker.X.OpenApiClient.Models
             if(FollowActivityResponsePayload != null)
             {
                 return FollowActivityResponsePayload.GetFieldDeserializers();
+            }
+            else if(LikeWithTweetAuthor != null)
+            {
+                return LikeWithTweetAuthor.GetFieldDeserializers();
             }
             else if(NewsActivityResponsePayload != null)
             {
@@ -123,6 +139,10 @@ namespace Soenneker.X.OpenApiClient.Models
             if(FollowActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload>(null, FollowActivityResponsePayload);
+            }
+            else if(LikeWithTweetAuthor != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor>(null, LikeWithTweetAuthor);
             }
             else if(NewsActivityResponsePayload != null)
             {

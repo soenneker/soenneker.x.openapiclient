@@ -9,24 +9,15 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem : IAdditionalDataHolder, IParsable
+    public partial class ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Length of the styled range.</summary>
         public int? Length { get; set; }
         /// <summary>Start offset in the text.</summary>
         public int? Offset { get; set; }
         /// <summary>The inline style.</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle? Style { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,7 +51,6 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteIntValue("length", Length);
             writer.WriteIntValue("offset", Offset);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle>("style", Style);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

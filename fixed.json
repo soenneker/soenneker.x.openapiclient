@@ -529,6 +529,7 @@
           },
           {
             "OAuth2UserToken": [
+              "like.read",
               "tweet.read"
             ]
           },
@@ -591,6 +592,7 @@
           {
             "OAuth2UserToken": [
               "dm.read",
+              "like.read",
               "tweet.read"
             ]
           },
@@ -13125,6 +13127,9 @@
           },
           {
             "$ref": "#/components/schemas/PostDeleteActivityResponsePayload"
+          },
+          {
+            "$ref": "#/components/schemas/LikeWithTweetAuthor"
           }
         ],
         "properties": {
@@ -13139,6 +13144,7 @@
           "mapping": {
             "follow.follow": "#/components/schemas/FollowActivityResponsePayload",
             "follow.unfollow": "#/components/schemas/FollowActivityResponsePayload",
+            "like.create": "#/components/schemas/LikeWithTweetAuthor",
             "news.new": "#/components/schemas/NewsActivityResponsePayload",
             "post.create": "#/components/schemas/Tweet",
             "post.delete": "#/components/schemas/PostDeleteActivityResponsePayload",
@@ -13155,7 +13161,8 @@
             "NewsActivityResponsePayload": "#/components/schemas/NewsActivityResponsePayload",
             "FollowActivityResponsePayload": "#/components/schemas/FollowActivityResponsePayload",
             "Tweet": "#/components/schemas/Tweet",
-            "PostDeleteActivityResponsePayload": "#/components/schemas/PostDeleteActivityResponsePayload"
+            "PostDeleteActivityResponsePayload": "#/components/schemas/PostDeleteActivityResponsePayload",
+            "LikeWithTweetAuthor": "#/components/schemas/LikeWithTweetAuthor"
           }
         }
       },
@@ -13531,7 +13538,8 @@
             "type": "string",
             "description": "The title of the article."
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ArticleDraftCreateResponse": {
         "type": "object",
@@ -17591,7 +17599,8 @@
             "description": "The media ID from the media upload endpoint."
           }
         },
-        "description": "Optional cover media for the article."
+        "additionalProperties": false,
+        "description": "A reference to uploaded media, identified by category and ID."
       },
       "ArticleDraftCreateRequestContentState": {
         "required": [
@@ -17615,6 +17624,7 @@
             "description": "Non-text entities referenced by blocks (links, embedded posts, images)."
           }
         },
+        "additionalProperties": false,
         "description": "DraftJS content state representing the article body."
       },
       "KillAllConnectionsResponse": {
@@ -25280,11 +25290,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataProperty"
-          },
-          "depth": {
-            "type": "integer",
-            "description": "Nesting depth for list items."
+            "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemData"
           },
           "entity_ranges": {
             "type": "array",
@@ -25311,7 +25317,9 @@
           "type": {
             "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemType"
           }
-        }
+        },
+        "additionalProperties": false,
+        "description": "A DraftJS content block."
       },
       "ArticleDraftCreateRequestContentStateEntitiesItem": {
         "required": [
@@ -25327,7 +25335,8 @@
           "value": {
             "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValue"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "EngagementMeasurementMetricsTimeSeriesItem": {
         "type": "object",
@@ -25635,6 +25644,37 @@
       },
       "ArticleDraftCreateRequestContentStateBlocksItemData": {
         "type": "object",
+        "properties": {
+          "cashtags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataCashtagsItem"
+            },
+            "description": "Cashtag spans in this block."
+          },
+          "hashtags": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataHashtagsItem"
+            },
+            "description": "Hashtag spans in this block."
+          },
+          "mentions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem"
+            },
+            "description": "Mention spans in this block."
+          },
+          "urls": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemDataUrlsItem"
+            },
+            "description": "URL spans in this block."
+          }
+        },
+        "additionalProperties": false,
         "description": "Block-level metadata for mentions, hashtags, cashtags, and URLs."
       },
       "ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem": {
@@ -25646,18 +25686,22 @@
         "type": "object",
         "properties": {
           "key": {
+            "minimum": 0,
             "type": "integer",
             "description": "Index into the entities array."
           },
           "length": {
+            "minimum": 0,
             "type": "integer",
             "description": "Length of the entity range."
           },
           "offset": {
+            "minimum": 0,
             "type": "integer",
             "description": "Start offset in the text."
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem": {
         "required": [
@@ -25668,17 +25712,20 @@
         "type": "object",
         "properties": {
           "length": {
+            "minimum": 0,
             "type": "integer",
             "description": "Length of the styled range."
           },
           "offset": {
+            "minimum": 0,
             "type": "integer",
             "description": "Start offset in the text."
           },
           "style": {
             "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItemStyle"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "ArticleDraftCreateRequestContentStateEntitiesItemValue": {
         "required": [
@@ -25697,7 +25744,8 @@
           "type": {
             "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueType"
           }
-        }
+        },
+        "additionalProperties": false
       },
       "EngagementMeasurementMetricsTimeSeriesItemValue": {
         "type": "object",
@@ -25771,12 +25819,116 @@
         "additionalProperties": false,
         "description": "Watch Now CTA."
       },
+      "ArticleDraftCreateRequestContentStateBlocksItemDataCashtagsItem": {
+        "required": [
+          "from_index",
+          "to_index",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "from_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Start index of the tagged span."
+          },
+          "text": {
+            "type": "string",
+            "description": "The tagged text."
+          },
+          "to_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "End index of the tagged span."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemDataHashtagsItem": {
+        "required": [
+          "from_index",
+          "to_index",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "from_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Start index of the tagged span."
+          },
+          "text": {
+            "type": "string",
+            "description": "The tagged text."
+          },
+          "to_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "End index of the tagged span."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemDataMentionsItem": {
+        "required": [
+          "from_index",
+          "to_index",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "from_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Start index of the tagged span."
+          },
+          "text": {
+            "type": "string",
+            "description": "The tagged text."
+          },
+          "to_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "End index of the tagged span."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ArticleDraftCreateRequestContentStateBlocksItemDataUrlsItem": {
+        "required": [
+          "from_index",
+          "to_index",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "from_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Start index of the tagged span."
+          },
+          "text": {
+            "type": "string",
+            "description": "The tagged text."
+          },
+          "to_index": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "End index of the tagged span."
+          }
+        },
+        "additionalProperties": false
+      },
       "ArticleDraftCreateRequestContentStateEntitiesItemValueData": {
         "type": "object",
         "properties": {
           "caption": {
             "type": "string",
             "description": "Caption text."
+          },
+          "entity_key": {
+            "type": "string",
+            "description": "Opaque entity key."
           },
           "markdown": {
             "type": "string",
@@ -25787,17 +25939,18 @@
             "items": {
               "$ref": "#/components/schemas/ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem"
             },
-            "description": "Media keys. Used with type IMAGE."
+            "description": "Media keys. Used with type image."
           },
           "post_id": {
             "type": "string",
-            "description": "The ID of the post to embed. Used with type POST."
+            "description": "The ID of the post to embed. Used with type post."
           },
           "url": {
             "type": "string",
-            "description": "The URL. Used with type LINK."
+            "description": "The URL. Used with type link."
           }
         },
+        "additionalProperties": false,
         "description": "Entity payload. Fields depend on the entity type."
       },
       "EngagementMeasurementMetricsTimeSeriesItemValueMetricValuesItem": {
@@ -25828,13 +25981,15 @@
         "properties": {
           "media_category": {
             "type": "string",
-            "description": "The media category."
+            "description": "The media category (e.g., TWEET_IMAGE)."
           },
           "media_id": {
             "type": "string",
-            "description": "The media ID."
+            "description": "The media ID from the media upload endpoint."
           }
-        }
+        },
+        "additionalProperties": false,
+        "description": "A reference to uploaded media, identified by category and ID."
       },
       "ChatMediaDownload200Response": {
         "type": "string",
@@ -25881,10 +26036,6 @@
           }
         }
       },
-      "ArticleDraftCreateRequestContentStateBlocksItemDataProperty": {
-        "type": "object",
-        "description": "Block-level metadata for mentions, hashtags, cashtags, and URLs."
-      },
       "ActivitySubscriptionCreateRequestEventType": {
         "enum": [
           "profile.update.bio",
@@ -25909,7 +26060,8 @@
           "dm.indicate_typing",
           "dm.read",
           "post.create",
-          "post.delete"
+          "post.delete",
+          "like.create"
         ],
         "type": "string",
         "additionalProperties": false,
@@ -26008,6 +26160,10 @@
             {
               "value": "post.delete",
               "name": "PostDelete"
+            },
+            {
+              "value": "like.create",
+              "name": "LikeCreate"
             }
           ]
         }

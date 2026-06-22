@@ -9,11 +9,9 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ArticleDraftCreateRequest : IAdditionalDataHolder, IParsable
+    public partial class ArticleDraftCreateRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>DraftJS content state representing the article body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,7 +20,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentState ContentState { get; set; }
 #endif
-        /// <summary>Optional cover media for the article.</summary>
+        /// <summary>A reference to uploaded media, identified by category and ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestCoverMedia? CoverMedia { get; set; }
@@ -38,13 +36,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Title { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequest"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequest()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -78,7 +69,6 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentState>("content_state", ContentState);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestCoverMedia>("cover_media", CoverMedia);
             writer.WriteStringValue("title", Title);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

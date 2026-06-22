@@ -7,23 +7,20 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// A DraftJS content block.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class ArticleDraftCreateRequestContentStateBlocksItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class ArticleDraftCreateRequestContentStateBlocksItem : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Block-level metadata for mentions, hashtags, cashtags, and URLs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataProperty? Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemData? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataProperty Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemData Data { get; set; }
 #endif
-        /// <summary>Nesting depth for list items.</summary>
-        public int? Depth { get; set; }
         /// <summary>References to entries in entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -59,13 +56,6 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The block type.</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemType? Type { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItem"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequestContentStateBlocksItem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItem"/></returns>
@@ -83,8 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataProperty>(global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataProperty.CreateFromDiscriminatorValue); } },
-                { "depth", n => { Depth = n.GetIntValue(); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemData>(global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemData.CreateFromDiscriminatorValue); } },
                 { "entity_ranges", n => { EntityRanges = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem>(global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "inline_style_ranges", n => { InlineStyleRanges = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem>(global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "key", n => { Key = n.GetStringValue(); } },
@@ -99,14 +88,12 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemDataProperty>("data", Data);
-            writer.WriteIntValue("depth", Depth);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemEntityRangesItem>("entity_ranges", EntityRanges);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemInlineStyleRangesItem>("inline_style_ranges", InlineStyleRanges);
             writer.WriteStringValue("key", Key);
             writer.WriteStringValue("text", Text);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateBlocksItemType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

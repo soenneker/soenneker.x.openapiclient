@@ -11,10 +11,8 @@ namespace Soenneker.X.OpenApiClient.Models
     /// Entity payload. Fields depend on the entity type.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ArticleDraftCreateRequestContentStateEntitiesItemValueData : IAdditionalDataHolder, IParsable
+    public partial class ArticleDraftCreateRequestContentStateEntitiesItemValueData : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Caption text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,6 +20,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public string Caption { get; set; }
+#endif
+        /// <summary>Opaque entity key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EntityKey { get; set; }
+#nullable restore
+#else
+        public string EntityKey { get; set; }
 #endif
         /// <summary>Markdown content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -31,7 +37,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Markdown { get; set; }
 #endif
-        /// <summary>Media keys. Used with type IMAGE.</summary>
+        /// <summary>Media keys. Used with type image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem>? MediaItems { get; set; }
@@ -39,7 +45,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem> MediaItems { get; set; }
 #endif
-        /// <summary>The ID of the post to embed. Used with type POST.</summary>
+        /// <summary>The ID of the post to embed. Used with type post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PostId { get; set; }
@@ -47,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string PostId { get; set; }
 #endif
-        /// <summary>The URL. Used with type LINK.</summary>
+        /// <summary>The URL. Used with type link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -55,13 +61,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueData"/> and sets the default values.
-        /// </summary>
-        public ArticleDraftCreateRequestContentStateEntitiesItemValueData()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -81,6 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "caption", n => { Caption = n.GetStringValue(); } },
+                { "entity_key", n => { EntityKey = n.GetStringValue(); } },
                 { "markdown", n => { Markdown = n.GetStringValue(); } },
                 { "media_items", n => { MediaItems = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem>(global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "post_id", n => { PostId = n.GetStringValue(); } },
@@ -95,11 +95,11 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("caption", Caption);
+            writer.WriteStringValue("entity_key", EntityKey);
             writer.WriteStringValue("markdown", Markdown);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleDraftCreateRequestContentStateEntitiesItemValueDataMediaItemsItem>("media_items", MediaItems);
             writer.WriteStringValue("post_id", PostId);
             writer.WriteStringValue("url", Url);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
