@@ -23,15 +23,15 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string EncodedMessageEventDetail { get; set; }
 #endif
-        /// <summary>Message event signature for verification.</summary>
+        /// <summary>Message event signature supplied with an action signature.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventSignature? MessageEventSignature { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature? MessageEventSignature { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventSignature MessageEventSignature { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature MessageEventSignature { get; set; }
 #endif
-        /// <summary>ID of the message being signed.</summary>
+        /// <summary>Client-generated ID of the message being signed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MessageId { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
-        /// <summary>Cryptographic signature payload.</summary>
+        /// <summary>Payload string the client signed; used only in server-side failure logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SignaturePayload { get; set; }
@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "encoded_message_event_detail", n => { EncodedMessageEventDetail = n.GetStringValue(); } },
-                { "message_event_signature", n => { MessageEventSignature = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMessageEventSignature>(global::Soenneker.X.OpenApiClient.Models.ChatMessageEventSignature.CreateFromDiscriminatorValue); } },
+                { "message_event_signature", n => { MessageEventSignature = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature>(global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature.CreateFromDiscriminatorValue); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
                 { "signature_payload", n => { SignaturePayload = n.GetStringValue(); } },
             };
@@ -86,7 +86,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("encoded_message_event_detail", EncodedMessageEventDetail);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMessageEventSignature>("message_event_signature", MessageEventSignature);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature>("message_event_signature", MessageEventSignature);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteStringValue("signature_payload", SignaturePayload);
             writer.WriteAdditionalData(AdditionalData);

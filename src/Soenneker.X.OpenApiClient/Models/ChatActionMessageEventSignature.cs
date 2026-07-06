@@ -8,38 +8,22 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// A user&apos;s public key with associated key recovery configuration.
+    /// Message event signature supplied with an action signature.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class PublicKey : IAdditionalDataHolder, IParsable
+    public partial class ChatActionMessageEventSignature : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>DER-encoded signature proving the signing key is bound to the identity key (base64 encoded).</summary>
+        /// <summary>List of signing key information for message verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublicKeySignature { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatMessageSigningKeyInfo>? MessageSigningKeyInfoList { get; set; }
 #nullable restore
 #else
-        public string IdentityPublicKeySignature { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ChatMessageSigningKeyInfo> MessageSigningKeyInfoList { get; set; }
 #endif
-        /// <summary>Key recovery configuration for Juicebox-based key storage.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig? JuiceboxConfig { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig JuiceboxConfig { get; set; }
-#endif
-        /// <summary>Identity public key (base64 encoded).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? PublicKeyProp { get; set; }
-#nullable restore
-#else
-        public string PublicKeyProp { get; set; }
-#endif
-        /// <summary>Public key version.</summary>
+        /// <summary>The version of the public key used for signing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicKeyVersion { get; set; }
@@ -47,7 +31,23 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string PublicKeyVersion { get; set; }
 #endif
-        /// <summary>Signing public key (base64 encoded).</summary>
+        /// <summary>The signature of the message event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Signature { get; set; }
+#nullable restore
+#else
+        public string Signature { get; set; }
+#endif
+        /// <summary>The version of the signature algorithm.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? SignatureVersion { get; set; }
+#nullable restore
+#else
+        public string SignatureVersion { get; set; }
+#endif
+        /// <summary>The public key used for signing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SigningPublicKey { get; set; }
@@ -56,21 +56,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public string SigningPublicKey { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PublicKey"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature"/> and sets the default values.
         /// </summary>
-        public PublicKey()
+        public ChatActionMessageEventSignature()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.PublicKey"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.PublicKey CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.PublicKey();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatActionMessageEventSignature();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -80,10 +80,10 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "identity_public_key_signature", n => { IdentityPublicKeySignature = n.GetStringValue(); } },
-                { "juicebox_config", n => { JuiceboxConfig = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig>(global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig.CreateFromDiscriminatorValue); } },
-                { "public_key", n => { PublicKeyProp = n.GetStringValue(); } },
+                { "message_signing_key_info_list", n => { MessageSigningKeyInfoList = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatMessageSigningKeyInfo>(global::Soenneker.X.OpenApiClient.Models.ChatMessageSigningKeyInfo.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "public_key_version", n => { PublicKeyVersion = n.GetStringValue(); } },
+                { "signature", n => { Signature = n.GetStringValue(); } },
+                { "signature_version", n => { SignatureVersion = n.GetStringValue(); } },
                 { "signing_public_key", n => { SigningPublicKey = n.GetStringValue(); } },
             };
         }
@@ -94,10 +94,10 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("identity_public_key_signature", IdentityPublicKeySignature);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatJuiceboxConfig>("juicebox_config", JuiceboxConfig);
-            writer.WriteStringValue("public_key", PublicKeyProp);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ChatMessageSigningKeyInfo>("message_signing_key_info_list", MessageSigningKeyInfoList);
             writer.WriteStringValue("public_key_version", PublicKeyVersion);
+            writer.WriteStringValue("signature", Signature);
+            writer.WriteStringValue("signature_version", SignatureVersion);
             writer.WriteStringValue("signing_public_key", SigningPublicKey);
             writer.WriteAdditionalData(AdditionalData);
         }

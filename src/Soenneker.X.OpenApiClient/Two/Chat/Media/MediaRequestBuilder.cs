@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Media
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Media.Upload.UploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.media.item collection</summary>
-        /// <param name="position">The recipient&apos;s user ID for a 1:1 conversation, or a group conversation ID (prefixed with &apos;g&apos;).</param>
+        /// <param name="position">The recipient&apos;s user ID for a 1:1 conversation, the hyphen-separated 1:1 conversation ID (e.g. &apos;123-456&apos;), or a group conversation ID (prefixed with &apos;g&apos;).</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.MediaItemRequestBuilder this[string position]
         {

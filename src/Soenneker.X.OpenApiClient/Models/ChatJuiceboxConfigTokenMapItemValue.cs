@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Address { get; set; }
 #endif
-        /// <summary>Realm public key.</summary>
+        /// <summary>Realm public key. Only returned when registering a key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? PublicKey { get; set; }

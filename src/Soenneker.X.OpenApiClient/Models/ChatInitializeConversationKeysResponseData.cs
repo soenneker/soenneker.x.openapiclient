@@ -14,6 +14,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>&quot;Canonical ID of the conversation the keys were added to: the hyphen-joined participant pair for a one-to-one (for example `123-456`), or the g-prefixed ID for a group. Use this ID for subsequent requests and to match conversation events.&quot;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConversationId { get; set; }
+#nullable restore
+#else
+        public string ConversationId { get; set; }
+#endif
         /// <summary>Sequence ID of the conversation key change event. Use this to track key changes in the conversation event stream.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,6 +55,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
                 { "sequence_id", n => { SequenceId = n.GetStringValue(); } },
             };
         }
@@ -57,6 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteStringValue("sequence_id", SequenceId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Maximum guess count for key recovery.</summary>
         public int? MaxGuessCount { get; set; }
-        /// <summary>Serialized realm state for key recovery.</summary>
+        /// <summary>Serialized realm state for key recovery. Only returned when registering a key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RealmStateString { get; set; }
@@ -33,9 +33,9 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string RealmStateString { get; set; }
 #endif
-        /// <summary>Threshold required to recover the key.</summary>
+        /// <summary>Threshold required to recover the key. Only returned when registering a key.</summary>
         public int? RecoverThreshold { get; set; }
-        /// <summary>Threshold required to register the key.</summary>
+        /// <summary>Threshold required to register the key. Only returned when registering a key.</summary>
         public int? RegisterThreshold { get; set; }
         /// <summary>Per-realm auth tokens for key recovery.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

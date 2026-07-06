@@ -15,7 +15,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The conversation ID this message belongs to.</summary>
+        /// <summary>&quot;The conversation ID this message belongs to, in the form embedded in events: the colon-separated participant pair for a 1:1 conversation (e.g. &apos;123:456&apos;), or a &apos;g&apos;-prefixed ID for a group.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }

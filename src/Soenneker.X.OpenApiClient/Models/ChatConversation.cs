@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string GroupName { get; set; }
 #endif
-        /// <summary>The unique identifier for this conversation.</summary>
+        /// <summary>&quot;The unique identifier for this conversation: the hyphen-separated participant pair for a 1:1 conversation (e.g. &apos;123-456&apos;), or a &apos;g&apos;-prefixed ID for a group.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
