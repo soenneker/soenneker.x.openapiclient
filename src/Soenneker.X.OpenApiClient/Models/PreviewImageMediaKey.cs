@@ -30,7 +30,6 @@ namespace Soenneker.X.OpenApiClient.Models
         public PreviewImageMediaKey()
         {
             AdditionalData = new Dictionary<string, object>();
-            MediaCategory = global::Soenneker.X.OpenApiClient.Models.PreviewImageMediaKeyMediaCategory.TweetImage;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

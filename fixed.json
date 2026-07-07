@@ -26985,7 +26985,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "The media category of media",
-        "default": "TweetImage",
         "example": "TweetImage"
       },
       "TweetReferencedTweetsItemType": {
@@ -29442,7 +29441,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "active",
         "x-ms-enum": {
           "name": "GetConnectionHistoryStatusParameter",
           "modelAsString": false,
@@ -29747,7 +29745,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "daily",
         "x-ms-enum": {
           "name": "GetMediaAnalyticsGranularityParameter",
           "modelAsString": false,
@@ -29792,7 +29789,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "all",
         "x-ms-enum": {
           "name": "SearchSpacesStateParameter",
           "modelAsString": false,
@@ -29821,7 +29817,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "total",
         "x-ms-enum": {
           "name": "GetPostsAnalyticsGranularityParameter",
           "modelAsString": false,
@@ -29853,7 +29848,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "hour",
         "x-ms-enum": {
           "name": "GetPostsCountsAllGranularityParameter",
           "modelAsString": false,
@@ -29881,7 +29875,6 @@
         ],
         "type": "string",
         "additionalProperties": false,
-        "default": "hour",
         "x-ms-enum": {
           "name": "GetPostsCountsRecentGranularityParameter",
           "modelAsString": false,
