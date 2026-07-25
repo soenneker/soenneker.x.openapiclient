@@ -18,7 +18,7 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "contexts")]
         #pragma warning disable CS1591
-        Contexts,
+        Contexts3,
         #pragma warning restore CS1591
         [EnumMember(Value = "disclaimer")]
         #pragma warning disable CS1591

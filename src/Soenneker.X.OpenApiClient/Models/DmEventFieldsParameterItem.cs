@@ -32,18 +32,6 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
-        [EnumMember(Value = "participant_ids")]
-        #pragma warning disable CS1591
-        ParticipantIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "referenced_tweets")]
-        #pragma warning disable CS1591
-        ReferencedTweets,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "sender_id")]
-        #pragma warning disable CS1591
-        SenderId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "text")]
         #pragma warning disable CS1591
         Text,

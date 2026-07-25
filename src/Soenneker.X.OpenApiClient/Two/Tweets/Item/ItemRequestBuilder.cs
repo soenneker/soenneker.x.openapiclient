@@ -52,7 +52,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", pathParameters)
+        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -60,23 +60,23 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", rawUrl)
+        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a specific Post by its ID, if owned by the authenticated user.
+        /// Delete Posts
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -84,22 +84,22 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.TweetDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves details of a specific Post by its ID.
+        /// Get Posts by ID
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -107,10 +107,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a specific Post by its ID, if owned by the authenticated user.
+        /// Delete Posts
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Retrieves details of a specific Post by its ID.
+        /// Get Posts by ID
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves details of a specific Post by its ID.
+        /// Get Posts by ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemRequestBuilderGetQueryParameters 
@@ -166,11 +166,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -202,15 +202,15 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             [QueryParameter("poll%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

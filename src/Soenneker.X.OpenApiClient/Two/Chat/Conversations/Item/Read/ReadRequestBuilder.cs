@@ -36,18 +36,18 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read
         /// <summary>
         /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Marks a specific Chat conversation as read on behalf of the authenticated user. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
@@ -66,11 +66,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.ChatMarkConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

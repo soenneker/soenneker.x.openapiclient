@@ -3,10 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>Type of connection between users.</summary>
+    /// <summary>A connection between the authenticated User and this User.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UserConnectionStatusItem
     {
+        [EnumMember(Value = "blocking")]
+        #pragma warning disable CS1591
+        Blocking,
+        #pragma warning restore CS1591
         [EnumMember(Value = "follow_request_received")]
         #pragma warning disable CS1591
         FollowRequestReceived,
@@ -14,10 +18,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "follow_request_sent")]
         #pragma warning disable CS1591
         FollowRequestSent,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "blocking")]
-        #pragma warning disable CS1591
-        Blocking,
         #pragma warning restore CS1591
         [EnumMember(Value = "followed_by")]
         #pragma warning disable CS1591

@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid
     public partial class WoeidRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.trends.by.woeid.item collection</summary>
-        /// <param name="position">The WOEID of the place to lookup a trend for.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder this[int position]
         {

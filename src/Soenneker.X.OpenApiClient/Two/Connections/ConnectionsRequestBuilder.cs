@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             get => new global::Soenneker.X.OpenApiClient.Two.Connections.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.connections.item collection</summary>
-        /// <param name="position">The endpoint ID to terminate connections for.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpointItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Connections.Item.WithEndpointItemRequestBuilder this[string position]
         {
@@ -55,18 +55,18 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
         /// <summary>
         /// Terminates multiple streaming connections by their UUIDs for the authenticated application.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -75,22 +75,22 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns active and historical streaming connections with disconnect reasons for the authenticated application.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2ConnectionsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2ConnectionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2ConnectionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Connections.ConnectionsRequestBuilder.ConnectionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -98,7 +98,7 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ConnectionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ConnectionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Terminates multiple streaming connections by their UUIDs for the authenticated application.
@@ -108,11 +108,11 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.KillConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteConnectionsByUuidsRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -166,7 +166,6 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             [QueryParameter("connection%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.ConnectionFieldsParameterItem[] ConnectionFields { get; set; }
 #endif
-            /// <summary>Filter by streaming endpoint. Specify one or more endpoint names to filter results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("endpoints")]
@@ -176,10 +175,8 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             [QueryParameter("endpoints")]
             public global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryEndpointsParameterItem[] Endpoints { get; set; }
 #endif
-            /// <summary>The maximum number of results to return per page.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>Token for paginating through results. Use the value from &apos;next_token&apos; in the previous response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -189,7 +186,6 @@ namespace Soenneker.X.OpenApiClient.Two.Connections
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
 #endif
-            /// <summary>Filter by connection status. Use &apos;active&apos; for current connections, &apos;inactive&apos; for historical/disconnected connections, or &apos;all&apos; for both.</summary>
             [QueryParameter("status")]
             public global::Soenneker.X.OpenApiClient.Models.GetConnectionHistoryStatusParameter? Status { get; set; }
         }

@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
     public partial class Dm_eventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_events.item collection</summary>
-        /// <param name="position">The ID of the direct-message event to delete.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEventItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Dm_events.Item.WithEventItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", pathParameters)
+        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -43,23 +43,23 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,tweet%2Efields,user%2Efields}", rawUrl)
+        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a list of recent direct message events across all conversations.
+        /// Get Direct Messages Events
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2DmEventsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2DmEventsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2DmEventsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder.Dm_eventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,10 +67,10 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2DmEventsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2DmEventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetDirectMessagesEventsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of recent direct message events across all conversations.
+        /// Get Direct Messages Events
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             return new global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of recent direct message events across all conversations.
+        /// Get Direct Messages Events
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Dm_eventsRequestBuilderGetQueryParameters 
@@ -113,7 +113,6 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             [QueryParameter("dm_event%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.DmEventFieldsParameterItem[] DmEventFields { get; set; }
 #endif
-            /// <summary>The set of event_types to include in the results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("event_types")]
@@ -133,7 +132,6 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.DmEventExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>A comma separated list of Media fields to display.</summary>
@@ -146,7 +144,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             [QueryParameter("media%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
-            /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -156,15 +154,15 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_events
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.conversations.item collection</summary>
-        /// <param name="position">The conversation ID. For 1:1 conversations, use the recipient user ID or dash-separated canonical ID. For group conversations, use the group ID (prefixed with &apos;g&apos;).</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder this[string position]
         {
@@ -55,17 +55,17 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
         /// <summary>
         /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder.ConversationsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ChatGetConversationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
@@ -129,10 +129,8 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.ChatConversationExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>Maximum number of conversations to return.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>Token for pagination to retrieve the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]

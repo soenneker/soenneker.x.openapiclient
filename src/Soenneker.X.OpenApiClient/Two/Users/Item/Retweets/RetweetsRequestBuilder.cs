@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
     public partial class RetweetsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.retweets.item collection</summary>
-        /// <param name="position">The ID of the Post that the User is requesting to unretweet.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSourceTweetItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.Item.WithSourceTweetItemRequestBuilder this[string position]
         {
@@ -49,18 +49,18 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
         /// <summary>
         /// Causes the authenticated user to repost a specific Post by its ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.RepostPostResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.RepostPostResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.RepostPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.RepostPostResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.RepostPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -69,7 +69,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.RepostPostResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.RepostPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Causes the authenticated user to repost a specific Post by its ID.
@@ -79,11 +79,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Retweets
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.RepostPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UsersRetweetsCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.RepostPostRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

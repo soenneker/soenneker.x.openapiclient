@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
     public partial class JobsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.compliance.jobs.item collection</summary>
-        /// <param name="position">The ID of the Compliance Job to retrieve.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.Item.JobsItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.Item.JobsItemRequestBuilder this[string position]
         {
@@ -49,17 +49,17 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
         /// <summary>
         /// Retrieves a list of Compliance Jobs filtered by job type and optional status.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2ComplianceJobsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new Compliance Job for the specified job type.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse"/></returns>
-        /// <param name="body">A request to create a new batch compliance job.</param>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsResponse"/></returns>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,7 +92,7 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of Compliance Jobs filtered by job type and optional status.
@@ -117,15 +117,15 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
         /// Creates a new Compliance Job for the specified job type.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">A request to create a new batch compliance job.</param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateComplianceJobsRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Compliance.Jobs.JobsRequestBuilder.JobsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -160,12 +160,27 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             [QueryParameter("compliance_job%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[] ComplianceJobFields { get; set; }
 #endif
-            /// <summary>Status of Compliance Job to list.</summary>
             [QueryParameter("status")]
             public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsStatusParameter? Status { get; set; }
-            /// <summary>Type of Compliance Job to list.</summary>
             [QueryParameter("type")]
             public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsTypeParameter? Type { get; set; }
+        }
+        /// <summary>
+        /// Creates a new Compliance Job for the specified job type.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class JobsRequestBuilderPostQueryParameters 
+        {
+            /// <summary>A comma separated list of ComplianceJob fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("compliance_job%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[]? ComplianceJobFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("compliance_job%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[] ComplianceJobFields { get; set; }
+#endif
         }
     }
 }

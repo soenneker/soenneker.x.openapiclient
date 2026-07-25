@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
     public partial class FollowingRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.following.item collection</summary>
-        /// <param name="position">The ID of the User that the source User is requesting to unfollow.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.Item.WithTargetUserItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.Item.WithTargetUserItemRequestBuilder this[string position]
         {
@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,tweet%2Efields,user%2Efields}", pathParameters)
+        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -43,23 +43,23 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,tweet%2Efields,user%2Efields}", rawUrl)
+        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a list of Users followed by a specific User by their ID.
+        /// Get Users Following
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersFollowingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersFollowingResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersFollowingResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,23 +67,23 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersFollowingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Causes the authenticated user to follow a specific user by their ID.
+        /// Follow User
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.FollowUserResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.FollowUserResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.FollowUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.FollowUserResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.FollowUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -92,10 +92,10 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.FollowUserResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.FollowUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of Users followed by a specific User by their ID.
+        /// Get Users Following
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,18 +114,18 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return requestInfo;
         }
         /// <summary>
-        /// Causes the authenticated user to follow a specific user by their ID.
+        /// Follow User
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.FollowUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UsersFollowingCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.FollowUserRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of Users followed by a specific User by their ID.
+        /// Get Users Following
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowingRequestBuilderGetQueryParameters 
@@ -160,10 +160,9 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -173,15 +172,15 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

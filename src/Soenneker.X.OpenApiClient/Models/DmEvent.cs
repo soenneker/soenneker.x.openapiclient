@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Specifies the type of attachments (if any) present in this DM.</summary>
+        /// <summary>Media and card attachments present in this Direct Message event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.DmEventAttachments? Attachments { get; set; }
@@ -22,23 +22,23 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.DmEventAttachments Attachments { get; set; }
 #endif
-        /// <summary>The cashtags property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>? Cashtags { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.CashtagEntity> Cashtags { get; set; }
-#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Unique identifier of a DM conversation. This can either be a numeric string, or a pair of numeric strings separated by a &apos;-&apos; character in the case of one-on-one DM Conversations.</summary>
+        /// <summary>The dm_conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DmConversationId { get; set; }
 #nullable restore
 #else
         public string DmConversationId { get; set; }
+#endif
+        /// <summary>A list of metadata entities (hashtags, cashtags, mentions, URLs) found in the Direct Message text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.DmEventEntities? Entities { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.DmEventEntities Entities { get; set; }
 #endif
         /// <summary>The event_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,15 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string EventType { get; set; }
 #endif
-        /// <summary>The hashtags property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.HashtagEntity>? Hashtags { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.HashtagEntity> Hashtags { get; set; }
-#endif
-        /// <summary>Unique identifier of a DM Event.</summary>
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -64,15 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The mentions property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.MentionEntity>? Mentions { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.MentionEntity> Mentions { get; set; }
-#endif
-        /// <summary>A list of participants for a ParticipantsJoin or ParticipantsLeave event_type.</summary>
+        /// <summary>The participant_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? ParticipantIds { get; set; }
@@ -80,15 +64,15 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<string> ParticipantIds { get; set; }
 #endif
-        /// <summary>A list of Posts this DM refers to.</summary>
+        /// <summary>The referenced_posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>? ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedPostsItem>? ReferencedPosts { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem> ReferencedTweets { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedPostsItem> ReferencedPosts { get; set; }
 #endif
-        /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
+        /// <summary>The sender_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SenderId { get; set; }
@@ -103,14 +87,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public string Text { get; set; }
-#endif
-        /// <summary>The urls property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm>? Urls { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm> Urls { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DmEvent"/> and sets the default values.
@@ -138,18 +114,15 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "attachments", n => { Attachments = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventAttachments>(global::Soenneker.X.OpenApiClient.Models.DmEventAttachments.CreateFromDiscriminatorValue); } },
-                { "cashtags", n => { Cashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>(global::Soenneker.X.OpenApiClient.Models.CashtagEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "dm_conversation_id", n => { DmConversationId = n.GetStringValue(); } },
+                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventEntities>(global::Soenneker.X.OpenApiClient.Models.DmEventEntities.CreateFromDiscriminatorValue); } },
                 { "event_type", n => { EventType = n.GetStringValue(); } },
-                { "hashtags", n => { Hashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.HashtagEntity>(global::Soenneker.X.OpenApiClient.Models.HashtagEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "mentions", n => { Mentions = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>(global::Soenneker.X.OpenApiClient.Models.MentionEntity.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "referenced_tweets", n => { ReferencedTweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>(global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "referenced_posts", n => { ReferencedPosts = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedPostsItem>(global::Soenneker.X.OpenApiClient.Models.DmEventReferencedPostsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "sender_id", n => { SenderId = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
-                { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm>(global::Soenneker.X.OpenApiClient.Models.UrlEntityDm.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -160,18 +133,15 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventAttachments>("attachments", Attachments);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.CashtagEntity>("cashtags", Cashtags);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("dm_conversation_id", DmConversationId);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DmEventEntities>("entities", Entities);
             writer.WriteStringValue("event_type", EventType);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.HashtagEntity>("hashtags", Hashtags);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MentionEntity>("mentions", Mentions);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedTweetsItem>("referenced_tweets", ReferencedTweets);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventReferencedPostsItem>("referenced_posts", ReferencedPosts);
             writer.WriteStringValue("sender_id", SenderId);
             writer.WriteStringValue("text", Text);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntityDm>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

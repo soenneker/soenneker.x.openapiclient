@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media
             get => new global::Soenneker.X.OpenApiClient.Two.Media.Upload.UploadRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.media.item collection</summary>
-        /// <param name="position">A single Media Key.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMediaKeyItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Media.Item.WithMediaKeyItemRequestBuilder this[string position]
         {
@@ -71,19 +71,19 @@ namespace Soenneker.X.OpenApiClient.Two.Media
         {
         }
         /// <summary>
-        /// Retrieves details of Media files by their media keys.
+        /// Get Media by media keys
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2MediaResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetMediaByMediaKeysResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2MediaResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetMediaByMediaKeysResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2MediaResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetMediaByMediaKeysResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder.MediaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -91,10 +91,10 @@ namespace Soenneker.X.OpenApiClient.Two.Media
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2MediaResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2MediaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetMediaByMediaKeysResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetMediaByMediaKeysResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves details of Media files by their media keys.
+        /// Get Media by media keys
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -122,7 +122,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media
             return new global::Soenneker.X.OpenApiClient.Two.Media.MediaRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves details of Media files by their media keys.
+        /// Get Media by media keys
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class MediaRequestBuilderGetQueryParameters 
@@ -137,7 +137,6 @@ namespace Soenneker.X.OpenApiClient.Two.Media
             [QueryParameter("media%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
-            /// <summary>A comma separated list of Media Keys. Up to 100 are allowed in a single request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media_keys")]

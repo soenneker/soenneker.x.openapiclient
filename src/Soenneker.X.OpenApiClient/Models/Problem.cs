@@ -8,46 +8,83 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// An HTTP Problem Details object, as defined in IETF RFC 7807 (https://tools.ietf.org/html/rfc7807).
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class Problem : IAdditionalDataHolder, IParsable
+    public partial class Problem : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The detail property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Detail { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem? DisallowedResourceProblem { get; set; }
 #nullable restore
 #else
-        public string Detail { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem DisallowedResourceProblem { get; set; }
 #endif
-        /// <summary>The status property</summary>
-        public int? Status { get; set; }
-        /// <summary>The title property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem? FieldHydrationFailureProblem { get; set; }
 #nullable restore
 #else
-        public string Title { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem FieldHydrationFailureProblem { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem? FieldUnauthorizedProblem { get; set; }
 #nullable restore
 #else
-        public string Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem FieldUnauthorizedProblem { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Problem"/> and sets the default values.
-        /// </summary>
-        public Problem()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem? InternalErrorProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem InternalErrorProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem? InvalidRequestProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem InvalidRequestProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem? NotAuthorizedForFieldProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem NotAuthorizedForFieldProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem? NotAuthorizedForResourceProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem NotAuthorizedForResourceProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem? ResourceNotFoundProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem ResourceNotFoundProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem? ResourceUnavailableProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem ResourceUnavailableProblem { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,28 +94,44 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            return mappingValue switch
+            var result = new global::Soenneker.X.OpenApiClient.Models.Problem();
+            if("DisallowedResourceProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                "about:blank" => new global::Soenneker.X.OpenApiClient.Models.GenericProblem(),
-                "https://api.twitter.com/2/problems/client-disconnected" => new global::Soenneker.X.OpenApiClient.Models.ClientDisconnectedProblem(),
-                "https://api.twitter.com/2/problems/client-forbidden" => new global::Soenneker.X.OpenApiClient.Models.ClientForbiddenProblem(),
-                "https://api.twitter.com/2/problems/conflict" => new global::Soenneker.X.OpenApiClient.Models.ConflictProblem(),
-                "https://api.twitter.com/2/problems/disallowed-resource" => new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem(),
-                "https://api.twitter.com/2/problems/duplicate-rules" => new global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem(),
-                "https://api.twitter.com/2/problems/invalid-request" => new global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem(),
-                "https://api.twitter.com/2/problems/invalid-rules" => new global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem(),
-                "https://api.twitter.com/2/problems/noncompliant-rules" => new global::Soenneker.X.OpenApiClient.Models.NonCompliantRulesProblem(),
-                "https://api.twitter.com/2/problems/not-authorized-for-field" => new global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem(),
-                "https://api.twitter.com/2/problems/not-authorized-for-resource" => new global::Soenneker.X.OpenApiClient.Models.ResourceUnauthorizedProblem(),
-                "https://api.twitter.com/2/problems/operational-disconnect" => new global::Soenneker.X.OpenApiClient.Models.OperationalDisconnectProblem(),
-                "https://api.twitter.com/2/problems/resource-not-found" => new global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem(),
-                "https://api.twitter.com/2/problems/resource-unavailable" => new global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem(),
-                "https://api.twitter.com/2/problems/rule-cap" => new global::Soenneker.X.OpenApiClient.Models.RulesCapProblem(),
-                "https://api.twitter.com/2/problems/streaming-connection" => new global::Soenneker.X.OpenApiClient.Models.ConnectionExceptionProblem(),
-                "https://api.twitter.com/2/problems/unsupported-authentication" => new global::Soenneker.X.OpenApiClient.Models.UnsupportedAuthenticationProblem(),
-                "https://api.twitter.com/2/problems/usage-capped" => new global::Soenneker.X.OpenApiClient.Models.UsageCapExceededProblem(),
-                _ => new global::Soenneker.X.OpenApiClient.Models.Problem(),
-            };
+                result.DisallowedResourceProblem = new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem();
+            }
+            else if("FieldHydrationFailureProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldHydrationFailureProblem = new global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem();
+            }
+            else if("FieldUnauthorizedProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.FieldUnauthorizedProblem = new global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem();
+            }
+            else if("https://api.x.com/2/problems/internal-error".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InternalErrorProblem = new global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem();
+            }
+            else if("https://api.x.com/2/problems/invalid-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InvalidRequestProblem = new global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem();
+            }
+            else if("https://api.x.com/2/problems/not-authorized-for-field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NotAuthorizedForFieldProblem = new global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem();
+            }
+            else if("https://api.x.com/2/problems/not-authorized-for-resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.NotAuthorizedForResourceProblem = new global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem();
+            }
+            else if("https://api.x.com/2/problems/resource-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceNotFoundProblem = new global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem();
+            }
+            else if("https://api.x.com/2/problems/resource-unavailable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ResourceUnavailableProblem = new global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -86,13 +139,43 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(DisallowedResourceProblem != null)
             {
-                { "detail", n => { Detail = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetIntValue(); } },
-                { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetStringValue(); } },
-            };
+                return DisallowedResourceProblem.GetFieldDeserializers();
+            }
+            else if(FieldHydrationFailureProblem != null)
+            {
+                return FieldHydrationFailureProblem.GetFieldDeserializers();
+            }
+            else if(FieldUnauthorizedProblem != null)
+            {
+                return FieldUnauthorizedProblem.GetFieldDeserializers();
+            }
+            else if(InternalErrorProblem != null)
+            {
+                return InternalErrorProblem.GetFieldDeserializers();
+            }
+            else if(InvalidRequestProblem != null)
+            {
+                return InvalidRequestProblem.GetFieldDeserializers();
+            }
+            else if(NotAuthorizedForFieldProblem != null)
+            {
+                return NotAuthorizedForFieldProblem.GetFieldDeserializers();
+            }
+            else if(NotAuthorizedForResourceProblem != null)
+            {
+                return NotAuthorizedForResourceProblem.GetFieldDeserializers();
+            }
+            else if(ResourceNotFoundProblem != null)
+            {
+                return ResourceNotFoundProblem.GetFieldDeserializers();
+            }
+            else if(ResourceUnavailableProblem != null)
+            {
+                return ResourceUnavailableProblem.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -101,11 +184,42 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("detail", Detail);
-            writer.WriteIntValue("status", Status);
-            writer.WriteStringValue("title", Title);
-            writer.WriteStringValue("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            if(DisallowedResourceProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem>(null, DisallowedResourceProblem);
+            }
+            else if(FieldHydrationFailureProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem>(null, FieldHydrationFailureProblem);
+            }
+            else if(FieldUnauthorizedProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem>(null, FieldUnauthorizedProblem);
+            }
+            else if(InternalErrorProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem>(null, InternalErrorProblem);
+            }
+            else if(InvalidRequestProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem>(null, InvalidRequestProblem);
+            }
+            else if(NotAuthorizedForFieldProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem>(null, NotAuthorizedForFieldProblem);
+            }
+            else if(NotAuthorizedForResourceProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem>(null, NotAuthorizedForResourceProblem);
+            }
+            else if(ResourceNotFoundProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem>(null, ResourceNotFoundProblem);
+            }
+            else if(ResourceUnavailableProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem>(null, ResourceUnavailableProblem);
+            }
         }
     }
 }

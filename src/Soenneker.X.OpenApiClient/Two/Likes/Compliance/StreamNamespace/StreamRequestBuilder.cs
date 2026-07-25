@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace
         /// <summary>
         /// Streams all compliance data related to Likes for Users.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamLikesComplianceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamLikesComplianceResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamLikesComplianceResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Compliance.StreamNamespace
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.LikesComplianceStreamResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamLikesComplianceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamLikesComplianceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Streams all compliance data related to Likes for Users.

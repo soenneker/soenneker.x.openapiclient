@@ -8,22 +8,22 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// The scoring status of a Community Note.
+    /// Per-model scoring breakdown for the Community Note.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteScoringStatus : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the user has access to the scoring status of the Community Note.</summary>
+        /// <summary>Whether the caller has access to the scoring details.</summary>
         public bool? HasAccess { get; set; }
-        /// <summary>Rating count stats per model.</summary>
+        /// <summary>Rating counts broken down per scoring model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel? RatingCountsPerModel { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? RatingCountsPerModel { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel RatingCountsPerModel { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> RatingCountsPerModel { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus"/> and sets the default values.
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "has_access", n => { HasAccess = n.GetBoolValue(); } },
-                { "rating_counts_per_model", n => { RatingCountsPerModel = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel>(global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel.CreateFromDiscriminatorValue); } },
+                { "rating_counts_per_model", n => { RatingCountsPerModel = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>(global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_access", HasAccess);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModel>("rating_counts_per_model", RatingCountsPerModel);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>("rating_counts_per_model", RatingCountsPerModel);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

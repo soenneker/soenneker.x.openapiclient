@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.Item
     public partial class WithMediaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.media.item.item.item collection</summary>
-        /// <param name="position">The resource identifier of the media file, including file extension (e.g. &apos;hVJQTwig.jpg&apos;).</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.Item.Item.WithResourceItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.Item.Item.WithResourceItemRequestBuilder this[string position]
         {

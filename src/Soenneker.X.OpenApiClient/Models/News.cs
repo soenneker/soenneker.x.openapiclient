@@ -7,15 +7,14 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// An AI generated news story.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class News : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The news category.</summary>
+        /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Category { get; set; }
@@ -34,10 +33,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The contexts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NewsContexts? Contexts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsContextsProperty? Contexts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NewsContexts Contexts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsContextsProperty Contexts { get; set; }
 #endif
         /// <summary>The disclaimer property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Disclaimer { get; set; }
 #endif
-        /// <summary>The news hook.</summary>
+        /// <summary>The hook property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Hook { get; set; }
@@ -55,17 +54,23 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Hook { get; set; }
 #endif
+        /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
         /// <summary>The keywords property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Keywords { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsKeywordsProperty? Keywords { get; set; }
 #nullable restore
 #else
-        public List<string> Keywords { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NewsKeywordsProperty Keywords { get; set; }
 #endif
-        /// <summary>The last_updated_at_ms property</summary>
-        public DateTimeOffset? LastUpdatedAtMs { get; set; }
-        /// <summary>The headline.</summary>
+        /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Name { get; set; }
@@ -73,21 +78,21 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Unique identifier of news story.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? RestId { get; set; }
-#nullable restore
-#else
-        public string RestId { get; set; }
-#endif
-        /// <summary>The news summary.</summary>
+        /// <summary>The summary property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Summary { get; set; }
 #nullable restore
 #else
         public string Summary { get; set; }
+#endif
+        /// <summary>The updated_at property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UpdatedAt { get; set; }
+#nullable restore
+#else
+        public string UpdatedAt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.News"/> and sets the default values.
@@ -116,14 +121,14 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>(global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>(global::Soenneker.X.OpenApiClient.Models.NewsContexts.CreateFromDiscriminatorValue); } },
+                { "contexts", n => { Contexts = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContextsProperty>(global::Soenneker.X.OpenApiClient.Models.NewsContextsProperty.CreateFromDiscriminatorValue); } },
                 { "disclaimer", n => { Disclaimer = n.GetStringValue(); } },
                 { "hook", n => { Hook = n.GetStringValue(); } },
-                { "keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "last_updated_at_ms", n => { LastUpdatedAtMs = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "keywords", n => { Keywords = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsKeywordsProperty>(global::Soenneker.X.OpenApiClient.Models.NewsKeywordsProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "rest_id", n => { RestId = n.GetStringValue(); } },
                 { "summary", n => { Summary = n.GetStringValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -135,14 +140,14 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>("cluster_posts_results", ClusterPostsResults);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContexts>("contexts", Contexts);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsContextsProperty>("contexts", Contexts);
             writer.WriteStringValue("disclaimer", Disclaimer);
             writer.WriteStringValue("hook", Hook);
-            writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
-            writer.WriteDateTimeOffsetValue("last_updated_at_ms", LastUpdatedAtMs);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsKeywordsProperty>("keywords", Keywords);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("rest_id", RestId);
             writer.WriteStringValue("summary", Summary);
+            writer.WriteStringValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

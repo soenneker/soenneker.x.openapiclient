@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules/counts{?rules_count%2Efields}", pathParameters)
+        public CountsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules/counts{?rules_count%2Efields*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules/counts{?rules_count%2Efields}", rawUrl)
+        public CountsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules/counts{?rules_count%2Efields*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the count of rules in the active rule set for the filtered stream.
+        /// Get Rule Counts
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder.CountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder.CountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder.CountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder.CountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2TweetsSearchStreamRulesCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the count of rules in the active rule set for the filtered stream.
+        /// Get Rule Counts
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,20 +85,19 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Coun
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.Counts.CountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the count of rules in the active rule set for the filtered stream.
+        /// Get Rule Counts
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CountsRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma separated list of RulesCount fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("rules_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.RulesCountFieldsParameterItem[]? RulesCountFields { get; set; }
+            public string? RulesCountFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("rules_count%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.RulesCountFieldsParameterItem[] RulesCountFields { get; set; }
+            public string RulesCountFields { get; set; }
 #endif
         }
     }

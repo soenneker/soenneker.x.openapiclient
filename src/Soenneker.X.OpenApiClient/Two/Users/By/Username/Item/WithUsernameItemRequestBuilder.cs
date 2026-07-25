@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/by/username/{username}{?expansions,tweet%2Efields,user%2Efields}", pathParameters)
+        public WithUsernameItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/by/username/{username}{?expansions,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithUsernameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/by/username/{username}{?expansions,tweet%2Efields,user%2Efields}", rawUrl)
+        public WithUsernameItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/by/username/{username}{?expansions,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves details of a specific User by their username.
+        /// Get Users by Username
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersByUsernameUsernameResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersByUsernameResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersByUsernameUsernameResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder.WithUsernameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByUsernameResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder.WithUsernameItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersByUsernameUsernameResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder.WithUsernameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByUsernameResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder.WithUsernameItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersByUsernameUsernameResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersByUsernameUsernameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersByUsernameResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersByUsernameResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves details of a specific User by their username.
+        /// Get Users by Username
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username.Item
             return new global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves details of a specific User by their username.
+        /// Get Users by Username
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithUsernameItemRequestBuilderGetQueryParameters 
@@ -100,15 +100,15 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username.Item
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

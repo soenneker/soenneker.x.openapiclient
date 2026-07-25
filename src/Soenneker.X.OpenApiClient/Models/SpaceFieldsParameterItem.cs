@@ -12,25 +12,13 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         CreatedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "creator_id")]
-        #pragma warning disable CS1591
-        CreatorId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "ended_at")]
         #pragma warning disable CS1591
         EndedAt,
         #pragma warning restore CS1591
-        [EnumMember(Value = "host_ids")]
-        #pragma warning disable CS1591
-        HostIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "id")]
         #pragma warning disable CS1591
         Id,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "invited_user_ids")]
-        #pragma warning disable CS1591
-        InvitedUserIds,
         #pragma warning restore CS1591
         [EnumMember(Value = "is_ticketed")]
         #pragma warning disable CS1591
@@ -48,10 +36,6 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ScheduledStart,
         #pragma warning restore CS1591
-        [EnumMember(Value = "speaker_ids")]
-        #pragma warning disable CS1591
-        SpeakerIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "started_at")]
         #pragma warning disable CS1591
         StartedAt,
@@ -67,10 +51,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "title")]
         #pragma warning disable CS1591
         Title,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "topic_ids")]
-        #pragma warning disable CS1591
-        TopicIds,
         #pragma warning restore CS1591
         [EnumMember(Value = "updated_at")]
         #pragma warning disable CS1591

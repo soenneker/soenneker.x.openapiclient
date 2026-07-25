@@ -8,17 +8,17 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum UserExpansionsParameterItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "affiliation.user_id")]
+        [EnumMember(Value = "affiliation")]
         #pragma warning disable CS1591
-        AffiliationUserId,
+        Affiliation,
         #pragma warning restore CS1591
-        [EnumMember(Value = "most_recent_tweet_id")]
+        [EnumMember(Value = "most_recent_post_id")]
         #pragma warning disable CS1591
-        MostRecentTweetId,
+        MostRecentPostId,
         #pragma warning restore CS1591
-        [EnumMember(Value = "pinned_tweet_id")]
+        [EnumMember(Value = "pinned_post_id")]
         #pragma warning disable CS1591
-        PinnedTweetId,
+        PinnedPostId,
         #pragma warning restore CS1591
     }
 }

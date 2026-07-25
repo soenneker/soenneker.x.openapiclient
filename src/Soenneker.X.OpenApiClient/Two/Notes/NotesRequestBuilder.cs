@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Notes.Evaluate;
 using Soenneker.X.OpenApiClient.Two.Notes.Item;
 using Soenneker.X.OpenApiClient.Two.Notes.Search;
 using System.Collections.Generic;
@@ -19,13 +20,18 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NotesRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The evaluate property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Notes.Evaluate.EvaluateRequestBuilder Evaluate
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Notes.Evaluate.EvaluateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The search property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Notes.Search.SearchRequestBuilder Search
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Notes.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.notes.item collection</summary>
-        /// <param name="position">The community note id to delete.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Notes.Item.NotesItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Notes.Item.NotesItemRequestBuilder this[string position]
         {
@@ -53,20 +59,20 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
         {
         }
         /// <summary>
-        /// Creates a community note endpoint for LLM use case.
+        /// Create Community Notes
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -75,21 +81,21 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateNoteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a community note endpoint for LLM use case.
+        /// Create Community Notes
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateNoteRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

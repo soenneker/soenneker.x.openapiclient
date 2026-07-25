@@ -15,7 +15,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The badge URL corresponding to the affiliation.</summary>
+        /// <summary>URL of the affiliation badge image shown on the User&apos;s profile.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? BadgeUrl { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string BadgeUrl { get; set; }
 #endif
-        /// <summary>The description of the affiliation.</summary>
+        /// <summary>Description of the affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The URL, if available, to details about an affiliation.</summary>
+        /// <summary>URL associated with the affiliation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Url { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Url { get; set; }
 #endif
-        /// <summary>The user_id property</summary>
+        /// <summary>A list of unique identifiers of the accounts this User is affiliated with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? UserId { get; set; }

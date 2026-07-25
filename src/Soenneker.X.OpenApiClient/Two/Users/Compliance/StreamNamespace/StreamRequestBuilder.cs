@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace
         /// <summary>
         /// Streams all compliance data related to Users.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UserComplianceStreamResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamUsersComplianceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UserComplianceStreamResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamUsersComplianceResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.UserComplianceStreamResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamUsersComplianceResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Compliance.StreamNamespace
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UserComplianceStreamResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UserComplianceStreamResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamUsersComplianceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamUsersComplianceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Streams all compliance data related to Users.

@@ -7,28 +7,37 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf2"/>
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ChatMediaUploadAppendRequest : IComposedTypeWrapper, IParsable
+    #pragma warning disable CS1591
+    public partial class ChatMediaUploadAppendRequest : IParsable
+    #pragma warning restore CS1591
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1"/></summary>
+        /// <summary>The XChat conversation the upload belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1? ChatMediaUploadAppendRequestAnyOf1 { get; set; }
+        public string? ConversationId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1 ChatMediaUploadAppendRequestAnyOf1 { get; set; }
+        public string ConversationId { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf2"/></summary>
+        /// <summary>&quot;The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf2? ChatMediaUploadAppendRequestAnyOf2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia? Media { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf2 ChatMediaUploadAppendRequestAnyOf2 { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia Media { get; set; }
 #endif
+        /// <summary>The media hash key returned by the initialize step.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MediaHashKey { get; set; }
+#nullable restore
+#else
+        public string MediaHashKey { get; set; }
+#endif
+        /// <summary>The index of this segment in the upload sequence.</summary>
+        public int? SegmentIndex { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,10 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var result = new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest();
-            result.ChatMediaUploadAppendRequestAnyOf1 = new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1();
-            result.ChatMediaUploadAppendRequestAnyOf2 = new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf2();
-            return result;
+            return new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,11 +54,13 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(ChatMediaUploadAppendRequestAnyOf1 != null || ChatMediaUploadAppendRequestAnyOf2 != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ChatMediaUploadAppendRequestAnyOf1, ChatMediaUploadAppendRequestAnyOf2);
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
+                { "media", n => { Media = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia>(global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia.CreateFromDiscriminatorValue); } },
+                { "media_hash_key", n => { MediaHashKey = n.GetStringValue(); } },
+                { "segment_index", n => { SegmentIndex = n.GetIntValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -61,7 +69,10 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestAnyOf1>(null, ChatMediaUploadAppendRequestAnyOf1, ChatMediaUploadAppendRequestAnyOf2);
+            writer.WriteStringValue("conversation_id", ConversationId);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia>("media", Media);
+            writer.WriteStringValue("media_hash_key", MediaHashKey);
+            writer.WriteIntValue("segment_index", SegmentIndex);
         }
     }
 }

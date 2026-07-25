@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
         /// <summary>
         /// Streams all public Likes in real-time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingLikeResponseV2.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Streams all public Likes in real-time.
@@ -100,31 +100,31 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of LikeWithTweetAuthor fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorFieldsParameterItem[]? LikeWithTweetAuthorFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseLikeWithTweetAuthorFieldsParameterItem[]? LikeWithTweetAuthorFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("like_with_tweet_author%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthorFieldsParameterItem[] LikeWithTweetAuthorFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseLikeWithTweetAuthorFieldsParameterItem[] LikeWithTweetAuthorFields { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseMediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseMediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>The partition number.</summary>
             [QueryParameter("partition")]
@@ -136,21 +136,21 @@ namespace Soenneker.X.OpenApiClient.Two.Likes.Firehose.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseTweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseTweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseUserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamLikesFirehoseUserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

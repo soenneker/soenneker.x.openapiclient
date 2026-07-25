@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Whether the finalize request succeeded.</summary>
+        /// <summary>Whether the upload was finalized.</summary>
         public bool? Success { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadFinalizeResponseData"/> and sets the default values.

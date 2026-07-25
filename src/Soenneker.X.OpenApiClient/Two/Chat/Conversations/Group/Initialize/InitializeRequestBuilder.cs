@@ -34,19 +34,19 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.Initialize
         {
         }
         /// <summary>
-        /// &quot;Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`&quot;
+        /// Initializes a new Chat group conversation and returns a unique conversation ID. Use the returned conversation_id in a subsequent POST /chat/conversations/group call to fully create and configure the group.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.InitializeChatGroupResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.InitializeChatGroupResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.InitializeChatGroupResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.Initialize
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ChatInitializeGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.InitializeChatGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.InitializeChatGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Initializes a new XChat group conversation and returns a unique conversation ID.This endpoint is the first step in creating a group chat. The returned conversation_id should be used in subsequent calls to POST /chat/conversations/group to fully create and configure the group with members, admins, encryption keys, and other settings.**Workflow:**1. Call this endpoint to get a `conversation_id`2. Use that `conversation_id` when calling `POST /chat/conversations/group` to create the group**Authentication:**- Requires OAuth 1.0a User Context or OAuth 2.0 User Context- Required scope: `dm.write`&quot;
+        /// Initializes a new Chat group conversation and returns a unique conversation ID. Use the returned conversation_id in a subsequent POST /chat/conversations/group call to fully create and configure the group.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

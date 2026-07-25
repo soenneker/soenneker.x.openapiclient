@@ -5,14 +5,13 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Account_activity;
 using Soenneker.X.OpenApiClient.Two.Activity;
 using Soenneker.X.OpenApiClient.Two.Articles;
+using Soenneker.X.OpenApiClient.Two.Broadcasts;
 using Soenneker.X.OpenApiClient.Two.Chat;
 using Soenneker.X.OpenApiClient.Two.Communities;
 using Soenneker.X.OpenApiClient.Two.Compliance;
 using Soenneker.X.OpenApiClient.Two.Connections;
 using Soenneker.X.OpenApiClient.Two.Dm_conversations;
 using Soenneker.X.OpenApiClient.Two.Dm_events;
-using Soenneker.X.OpenApiClient.Two.Evaluate_note;
-using Soenneker.X.OpenApiClient.Two.Insights;
 using Soenneker.X.OpenApiClient.Two.Likes;
 using Soenneker.X.OpenApiClient.Two.Lists;
 using Soenneker.X.OpenApiClient.Two.Media;
@@ -52,6 +51,11 @@ namespace Soenneker.X.OpenApiClient.Two
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Articles.ArticlesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The broadcasts property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.BroadcastsRequestBuilder Broadcasts
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.BroadcastsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The chat property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder Chat
         {
@@ -81,16 +85,6 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder Dm_events
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Dm_events.Dm_eventsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The evaluate_note property</summary>
-        public global::Soenneker.X.OpenApiClient.Two.Evaluate_note.Evaluate_noteRequestBuilder Evaluate_note
-        {
-            get => new global::Soenneker.X.OpenApiClient.Two.Evaluate_note.Evaluate_noteRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The insights property</summary>
-        public global::Soenneker.X.OpenApiClient.Two.Insights.InsightsRequestBuilder Insights
-        {
-            get => new global::Soenneker.X.OpenApiClient.Two.Insights.InsightsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The likes property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Likes.LikesRequestBuilder Likes

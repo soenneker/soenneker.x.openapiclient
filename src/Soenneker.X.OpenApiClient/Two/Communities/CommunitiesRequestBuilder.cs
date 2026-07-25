@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Communities
             get => new global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.communities.item collection</summary>
-        /// <param name="position">The ID of the Community.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Communities.Item.CommunitiesItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Communities.Item.CommunitiesItemRequestBuilder this[string position]
         {

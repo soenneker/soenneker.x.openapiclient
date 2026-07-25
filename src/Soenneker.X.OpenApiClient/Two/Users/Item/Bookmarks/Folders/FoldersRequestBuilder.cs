@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
     public partial class FoldersRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.bookmarks.folders.item collection</summary>
-        /// <param name="position">The ID of the Bookmark Folder that the authenticated User is trying to fetch Posts for.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolderItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item.WithFolderItemRequestBuilder this[string position]
         {
@@ -47,19 +47,19 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
         {
         }
         /// <summary>
-        /// Retrieves a list of Bookmark folders created by the authenticated user.
+        /// Get Users Bookmark Folders
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarkFoldersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarkFoldersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarkFoldersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder.FoldersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -67,10 +67,35 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.BookmarkFoldersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarkFoldersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarkFoldersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of Bookmark folders created by the authenticated user.
+        /// Creates a new Bookmark folder for the authenticated user.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Get Users Bookmark Folders
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,6 +114,28 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
             return requestInfo;
         }
         /// <summary>
+        /// Creates a new Bookmark folder for the authenticated user.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkFolderRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder"/></returns>
@@ -98,15 +145,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of Bookmark folders created by the authenticated user.
+        /// Get Users Bookmark Folders
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FoldersRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]

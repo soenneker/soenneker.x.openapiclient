@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.activity.subscriptions.item collection</summary>
-        /// <param name="position">The ID of the subscription to delete.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[string position]
         {
@@ -49,17 +49,17 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         /// <summary>
         /// Deletes multiple subscriptions for X activity events by their IDs
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse> DeleteAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -67,22 +67,22 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of active subscriptions for XAA
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Activity.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -90,23 +90,23 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionGetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a subscription for an X activity event
+        /// &quot;Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported.&quot;
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -115,7 +115,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes multiple subscriptions for X activity events by their IDs
@@ -156,18 +156,18 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             return requestInfo;
         }
         /// <summary>
-        /// Creates a subscription for an X activity event
+        /// &quot;Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionCreateRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -192,7 +192,6 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderDeleteQueryParameters 
         {
-            /// <summary>Comma-separated list of subscription IDs to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -209,10 +208,9 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum number of results to return per page. Defaults to 1000 when unspecified; use pagination_token (from response meta.next_token) to fetch additional pages.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]

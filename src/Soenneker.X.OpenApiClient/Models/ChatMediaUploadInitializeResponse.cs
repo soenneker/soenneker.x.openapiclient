@@ -7,11 +7,10 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// Response from initializing a Chat media upload.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class ChatMediaUploadInitializeResponse : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -22,6 +21,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadInitializeResponseData Data { get; set; }
+#endif
+        /// <summary>The errors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadInitializeResponse"/> and sets the default values.
@@ -49,6 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadInitializeResponseData>(global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadInitializeResponseData.CreateFromDiscriminatorValue); } },
+                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -59,6 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadInitializeResponseData>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -15,16 +15,18 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of Users who are following this User.</summary>
-        public int? FollowersCount { get; set; }
-        /// <summary>Number of Users this User is following.</summary>
-        public int? FollowingCount { get; set; }
-        /// <summary>The number of likes created by this User.</summary>
-        public int? LikeCount { get; set; }
-        /// <summary>The number of lists that include this User.</summary>
-        public int? ListedCount { get; set; }
-        /// <summary>The number of Posts (including Retweets) posted by this User.</summary>
-        public int? TweetCount { get; set; }
+        /// <summary>Number of Users who follow this User.</summary>
+        public long? FollowersCount { get; set; }
+        /// <summary>Number of Users this User follows.</summary>
+        public long? FollowingCount { get; set; }
+        /// <summary>Number of Posts this User has liked.</summary>
+        public long? LikeCount { get; set; }
+        /// <summary>Number of Lists that include this User.</summary>
+        public long? ListedCount { get; set; }
+        /// <summary>Number of media items posted by this User.</summary>
+        public long? MediaCount { get; set; }
+        /// <summary>Number of Posts (including Reposts) created by this User.</summary>
+        public long? PostCount { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics"/> and sets the default values.
         /// </summary>
@@ -50,11 +52,12 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "followers_count", n => { FollowersCount = n.GetIntValue(); } },
-                { "following_count", n => { FollowingCount = n.GetIntValue(); } },
-                { "like_count", n => { LikeCount = n.GetIntValue(); } },
-                { "listed_count", n => { ListedCount = n.GetIntValue(); } },
-                { "tweet_count", n => { TweetCount = n.GetIntValue(); } },
+                { "followers_count", n => { FollowersCount = n.GetLongValue(); } },
+                { "following_count", n => { FollowingCount = n.GetLongValue(); } },
+                { "like_count", n => { LikeCount = n.GetLongValue(); } },
+                { "listed_count", n => { ListedCount = n.GetLongValue(); } },
+                { "media_count", n => { MediaCount = n.GetLongValue(); } },
+                { "post_count", n => { PostCount = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -64,11 +67,12 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("followers_count", FollowersCount);
-            writer.WriteIntValue("following_count", FollowingCount);
-            writer.WriteIntValue("like_count", LikeCount);
-            writer.WriteIntValue("listed_count", ListedCount);
-            writer.WriteIntValue("tweet_count", TweetCount);
+            writer.WriteLongValue("followers_count", FollowersCount);
+            writer.WriteLongValue("following_count", FollowingCount);
+            writer.WriteLongValue("like_count", LikeCount);
+            writer.WriteLongValue("listed_count", ListedCount);
+            writer.WriteLongValue("media_count", MediaCount);
+            writer.WriteLongValue("post_count", PostCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

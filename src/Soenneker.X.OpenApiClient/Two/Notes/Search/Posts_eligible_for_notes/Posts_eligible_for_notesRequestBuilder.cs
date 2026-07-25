@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Posts_eligible_for_notesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post_selection*,tweet%2Efields,user%2Efields}", pathParameters)
+        public Posts_eligible_for_notesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,post_selection*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Posts_eligible_for_notesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post_selection*,tweet%2Efields,user%2Efields}", rawUrl)
+        public Posts_eligible_for_notesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/notes/search/posts_eligible_for_notes?test_mode={test_mode}{&expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,post_selection*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns all the posts that are eligible for community notes.
+        /// Search Eligible Posts
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchPostsEligibleForNotesResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SearchEligiblePostsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchPostsEligibleForNotesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.Posts_eligible_for_notesRequestBuilder.Posts_eligible_for_notesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchEligiblePostsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.Posts_eligible_for_notesRequestBuilder.Posts_eligible_for_notesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchPostsEligibleForNotesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.Posts_eligible_for_notesRequestBuilder.Posts_eligible_for_notesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchEligiblePostsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.Posts_eligible_for_notesRequestBuilder.Posts_eligible_for_notesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchPostsEligibleForNotesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2NotesSearchPostsEligibleForNotesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SearchEligiblePostsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SearchEligiblePostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns all the posts that are eligible for community notes.
+        /// Search Eligible Posts
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             return new global::Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes.Posts_eligible_for_notesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns all the posts that are eligible for community notes.
+        /// Search Eligible Posts
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Posts_eligible_for_notesRequestBuilderGetQueryParameters 
@@ -94,13 +94,12 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>Max results to return.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>A comma separated list of Media fields to display.</summary>
@@ -113,7 +112,6 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             [QueryParameter("media%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
-            /// <summary>Pagination token to get next set of posts eligible for notes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -143,7 +141,16 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             [QueryParameter("poll%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
-            /// <summary>&quot;The selection of posts to return. Valid values are &apos;feed_size: [small|large|xl|xxl], feed_lang: [en|es|...|all]&apos;. Default (if not specified) is &apos;feed_size: small, feed_lang: en&apos;. Only top AI writers have access to large, xl, and xxl size feeds.&quot;</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
+#endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("post_selection")]
@@ -153,19 +160,8 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Posts_eligible_for_notes
             [QueryParameter("post_selection")]
             public string PostSelection { get; set; }
 #endif
-            /// <summary>If true, return a list of posts that are for the test. If false, return a list of posts that the bots can write proposed notes on the product.</summary>
             [QueryParameter("test_mode")]
             public bool? TestMode { get; set; }
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
-#endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

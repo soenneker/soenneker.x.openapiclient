@@ -14,9 +14,9 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of seconds after which upload session expires.</summary>
+        /// <summary>Seconds until the upload session expires.</summary>
         public int? ExpiresAfterSecs { get; set; }
-        /// <summary>The unique identifier of this Media.</summary>
+        /// <summary>Unique identifier of the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -24,7 +24,15 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>The Media Key identifier for this attachment.</summary>
+        /// <summary>The image property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage? Image { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage Image { get; set; }
+#endif
+        /// <summary>The media key for the uploaded media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaKey { get; set; }
@@ -35,13 +43,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The processing_info property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ProcessingInfo? ProcessingInfo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataProcessingInfo? ProcessingInfo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ProcessingInfo ProcessingInfo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataProcessingInfo ProcessingInfo { get; set; }
 #endif
-        /// <summary>Size of the upload</summary>
+        /// <summary>Total size of the media in bytes.</summary>
         public int? Size { get; set; }
+        /// <summary>The video property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataVideo? Video { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataVideo Video { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseData"/> and sets the default values.
         /// </summary>
@@ -69,9 +85,11 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "expires_after_secs", n => { ExpiresAfterSecs = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "image", n => { Image = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage>(global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage.CreateFromDiscriminatorValue); } },
                 { "media_key", n => { MediaKey = n.GetStringValue(); } },
-                { "processing_info", n => { ProcessingInfo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfo>(global::Soenneker.X.OpenApiClient.Models.ProcessingInfo.CreateFromDiscriminatorValue); } },
+                { "processing_info", n => { ProcessingInfo = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataProcessingInfo>(global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataProcessingInfo.CreateFromDiscriminatorValue); } },
                 { "size", n => { Size = n.GetIntValue(); } },
+                { "video", n => { Video = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataVideo>(global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataVideo.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,9 +101,11 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("expires_after_secs", ExpiresAfterSecs);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage>("image", Image);
             writer.WriteStringValue("media_key", MediaKey);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProcessingInfo>("processing_info", ProcessingInfo);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataProcessingInfo>("processing_info", ProcessingInfo);
             writer.WriteIntValue("size", Size);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataVideo>("video", Video);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

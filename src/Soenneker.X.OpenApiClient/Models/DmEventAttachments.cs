@@ -8,14 +8,14 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Specifies the type of attachments (if any) present in this DM.
+    /// Media and card attachments present in this Direct Message event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmEventAttachments : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>A list of card IDs (if cards are attached).</summary>
+        /// <summary>IDs of cards attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? CardIds { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<string> CardIds { get; set; }
 #endif
-        /// <summary>A list of Media Keys for each one of the media attachments (if media are attached).</summary>
+        /// <summary>Media keys of media (including audio) attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaKeys { get; set; }

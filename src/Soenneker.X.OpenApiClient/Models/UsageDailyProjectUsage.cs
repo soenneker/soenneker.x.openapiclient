@@ -8,22 +8,28 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// The daily usage breakdown for a project
+    /// Project-level daily Post usage for the caller&apos;s project.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageDailyProjectUsage : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The unique identifier for this project</summary>
-        public int? ProjectId { get; set; }
-        /// <summary>The usage value</summary>
+        /// <summary>Unique identifier of the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageFields>? Usage { get; set; }
+        public string? ProjectId { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageFields> Usage { get; set; }
+        public string ProjectId { get; set; }
+#endif
+        /// <summary>Daily usage entries for the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsageUsageItem>? Usage { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsageUsageItem> Usage { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage"/> and sets the default values.
@@ -50,8 +56,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "project_id", n => { ProjectId = n.GetIntValue(); } },
-                { "usage", n => { Usage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageFields>(global::Soenneker.X.OpenApiClient.Models.UsageFields.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "project_id", n => { ProjectId = n.GetStringValue(); } },
+                { "usage", n => { Usage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsageUsageItem>(global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsageUsageItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -61,8 +67,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("project_id", ProjectId);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageFields>("usage", Usage);
+            writer.WriteStringValue("project_id", ProjectId);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsageUsageItem>("usage", Usage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

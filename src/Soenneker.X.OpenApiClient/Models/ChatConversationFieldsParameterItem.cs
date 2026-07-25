@@ -8,10 +8,6 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum ChatConversationFieldsParameterItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "admin_ids")]
-        #pragma warning disable CS1591
-        AdminIds,
-        #pragma warning restore CS1591
         [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
         CreatedAt,
@@ -32,17 +28,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         IsMuted,
         #pragma warning restore CS1591
-        [EnumMember(Value = "member_ids")]
+        [EnumMember(Value = "message_ttl_ms")]
         #pragma warning disable CS1591
-        MemberIds,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "message_ttl_msec")]
-        #pragma warning disable CS1591
-        MessageTtlMsec,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "participant_ids")]
-        #pragma warning disable CS1591
-        ParticipantIds,
+        MessageTtlMs,
         #pragma warning restore CS1591
         [EnumMember(Value = "screen_capture_blocking_enabled")]
         #pragma warning disable CS1591

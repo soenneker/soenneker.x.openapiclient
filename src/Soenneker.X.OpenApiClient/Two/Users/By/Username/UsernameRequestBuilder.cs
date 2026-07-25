@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.By.Username
     public partial class UsernameRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.by.username.item collection</summary>
-        /// <param name="position">A username.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Users.By.Username.Item.WithUsernameItemRequestBuilder this[string position]
         {

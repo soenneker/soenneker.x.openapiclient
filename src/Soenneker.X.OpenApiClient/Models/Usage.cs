@@ -7,25 +7,24 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// Usage per client app
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    #pragma warning disable CS1591
     public partial class Usage : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Number of days left for the Tweet cap to reset</summary>
+        /// <summary>The cap_reset_day property</summary>
         public int? CapResetDay { get; set; }
-        /// <summary>The daily usage breakdown for each Client Application a project</summary>
+        /// <summary>Per-client-app daily Post usage for the caller&apos;s project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage>? DailyClientAppUsage { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>? DailyClientAppUsage { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage> DailyClientAppUsage { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem> DailyClientAppUsage { get; set; }
 #endif
-        /// <summary>The daily usage breakdown for a project</summary>
+        /// <summary>Project-level daily Post usage for the caller&apos;s project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage? DailyProjectUsage { get; set; }
@@ -33,9 +32,15 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage DailyProjectUsage { get; set; }
 #endif
-        /// <summary>Total number of Posts that can be read in this project per month</summary>
-        public int? ProjectCap { get; set; }
-        /// <summary>The unique identifier for this project</summary>
+        /// <summary>The project_cap property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectCap { get; set; }
+#nullable restore
+#else
+        public string ProjectCap { get; set; }
+#endif
+        /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ProjectId { get; set; }
@@ -43,8 +48,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string ProjectId { get; set; }
 #endif
-        /// <summary>The number of Posts read in this project</summary>
-        public int? ProjectUsage { get; set; }
+        /// <summary>The project_usage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ProjectUsage { get; set; }
+#nullable restore
+#else
+        public string ProjectUsage { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Usage"/> and sets the default values.
         /// </summary>
@@ -71,11 +82,11 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cap_reset_day", n => { CapResetDay = n.GetIntValue(); } },
-                { "daily_client_app_usage", n => { DailyClientAppUsage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage>(global::Soenneker.X.OpenApiClient.Models.ClientAppUsage.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "daily_client_app_usage", n => { DailyClientAppUsage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>(global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "daily_project_usage", n => { DailyProjectUsage = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage>(global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage.CreateFromDiscriminatorValue); } },
-                { "project_cap", n => { ProjectCap = n.GetIntValue(); } },
+                { "project_cap", n => { ProjectCap = n.GetStringValue(); } },
                 { "project_id", n => { ProjectId = n.GetStringValue(); } },
-                { "project_usage", n => { ProjectUsage = n.GetIntValue(); } },
+                { "project_usage", n => { ProjectUsage = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -86,11 +97,11 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("cap_reset_day", CapResetDay);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ClientAppUsage>("daily_client_app_usage", DailyClientAppUsage);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>("daily_client_app_usage", DailyClientAppUsage);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage>("daily_project_usage", DailyProjectUsage);
-            writer.WriteIntValue("project_cap", ProjectCap);
+            writer.WriteStringValue("project_cap", ProjectCap);
             writer.WriteStringValue("project_id", ProjectId);
-            writer.WriteIntValue("project_usage", ProjectUsage);
+            writer.WriteStringValue("project_usage", ProjectUsage);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Post"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
@@ -21,13 +21,13 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload FollowActivityResponsePayload { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor? LikeWithTweetAuthor { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor? LikeWithPostAuthor { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor LikeWithTweetAuthor { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor LikeWithPostAuthor { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -36,6 +36,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload NewsActivityResponsePayload { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.Post"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Post? Post { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Post Post { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -53,14 +61,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload ProfileUpdateActivityResponsePayload { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.Tweet"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.Tweet? Tweet { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.Tweet Tweet { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -77,11 +77,15 @@ namespace Soenneker.X.OpenApiClient.Models
             }
             else if("like.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LikeWithTweetAuthor = new global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor();
+                result.LikeWithPostAuthor = new global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor();
             }
             else if("news.new".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
+            }
+            else if("Post".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.Post = new global::Soenneker.X.OpenApiClient.Models.Post();
             }
             else if("post.delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -90,10 +94,6 @@ namespace Soenneker.X.OpenApiClient.Models
             else if("profile.update.affiliate_badge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
-            }
-            else if("post.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.Tweet = new global::Soenneker.X.OpenApiClient.Models.Tweet();
             }
             return result;
         }
@@ -107,13 +107,17 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 return FollowActivityResponsePayload.GetFieldDeserializers();
             }
-            else if(LikeWithTweetAuthor != null)
+            else if(LikeWithPostAuthor != null)
             {
-                return LikeWithTweetAuthor.GetFieldDeserializers();
+                return LikeWithPostAuthor.GetFieldDeserializers();
             }
             else if(NewsActivityResponsePayload != null)
             {
                 return NewsActivityResponsePayload.GetFieldDeserializers();
+            }
+            else if(Post != null)
+            {
+                return Post.GetFieldDeserializers();
             }
             else if(PostDeleteActivityResponsePayload != null)
             {
@@ -122,10 +126,6 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(ProfileUpdateActivityResponsePayload != null)
             {
                 return ProfileUpdateActivityResponsePayload.GetFieldDeserializers();
-            }
-            else if(Tweet != null)
-            {
-                return Tweet.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -140,13 +140,17 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload>(null, FollowActivityResponsePayload);
             }
-            else if(LikeWithTweetAuthor != null)
+            else if(LikeWithPostAuthor != null)
             {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikeWithTweetAuthor>(null, LikeWithTweetAuthor);
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor>(null, LikeWithPostAuthor);
             }
             else if(NewsActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload>(null, NewsActivityResponsePayload);
+            }
+            else if(Post != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Post>(null, Post);
             }
             else if(PostDeleteActivityResponsePayload != null)
             {
@@ -155,10 +159,6 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(ProfileUpdateActivityResponsePayload != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload>(null, ProfileUpdateActivityResponsePayload);
-            }
-            else if(Tweet != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Tweet>(null, Tweet);
             }
         }
     }

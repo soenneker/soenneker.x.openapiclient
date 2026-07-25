@@ -31,7 +31,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
             get => new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.WithRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.item collection</summary>
-        /// <param name="position">The DM Conversation ID.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder this[string position]
         {
@@ -61,18 +61,18 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
         /// <summary>
         /// Initiates a new direct message conversation with specified participants.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateDmEventResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Initiates a new direct message conversation with specified participants.
@@ -91,11 +91,11 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateDmConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

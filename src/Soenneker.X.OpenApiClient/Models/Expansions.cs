@@ -38,6 +38,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.Poll> Polls { get; set; }
 #endif
+        /// <summary>The posts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.Post>? Posts { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.Post> Posts { get; set; }
+#endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -45,14 +53,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.Topic> Topics { get; set; }
-#endif
-        /// <summary>The tweets property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Tweet>? Tweets { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.Tweet> Tweets { get; set; }
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,8 +90,8 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Media>(global::Soenneker.X.OpenApiClient.Models.Media.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "places", n => { Places = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Place>(global::Soenneker.X.OpenApiClient.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "polls", n => { Polls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Poll>(global::Soenneker.X.OpenApiClient.Models.Poll.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "posts", n => { Posts = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Post>(global::Soenneker.X.OpenApiClient.Models.Post.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "topics", n => { Topics = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Topic>(global::Soenneker.X.OpenApiClient.Models.Topic.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "tweets", n => { Tweets = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet>(global::Soenneker.X.OpenApiClient.Models.Tweet.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "users", n => { Users = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.User>(global::Soenneker.X.OpenApiClient.Models.User.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -105,8 +105,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Media>("media", Media);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Place>("places", Places);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Poll>("polls", Polls);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Post>("posts", Posts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Topic>("topics", Topics);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Tweet>("tweets", Tweets);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.User>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }

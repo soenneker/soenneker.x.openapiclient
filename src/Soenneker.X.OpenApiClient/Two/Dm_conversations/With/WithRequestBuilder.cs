@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.With
     public partial class WithRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.with.item collection</summary>
-        /// <param name="position">The ID of the participant user for the One to One DM conversation.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipantItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.With.Item.WithParticipantItemRequestBuilder this[string position]
         {

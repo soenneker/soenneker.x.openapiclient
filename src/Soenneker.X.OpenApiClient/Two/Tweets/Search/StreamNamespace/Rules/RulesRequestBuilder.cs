@@ -28,7 +28,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids*,max_results*,pagination_token*}", pathParameters)
+        public RulesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids,max_results*,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,23 +36,23 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids*,max_results*,pagination_token*}", rawUrl)
+        public RulesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/stream/rules{?delete_all*,dry_run*,ids,max_results*,pagination_token*}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves the active rule set or a subset of rules for the filtered stream.
+        /// Returns the active filtered-stream rules for the authenticated app. Provide `ids` to fetch specific rules; omit it to list all rules.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetRulesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetRulesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetRulesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,23 +60,23 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.RulesLookupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetRulesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetRulesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds or deletes rules from the active rule set for the filtered stream.
+        /// Adds or deletes rules from the active rule set for the filtered stream. Exactly one of `add`, `delete`, or `?delete_all=true` must be specified. Use `?dry_run=true` to validate without committing.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateRulesResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateRulesResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.UpdateRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateRulesResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.UpdateRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -85,10 +85,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateRulesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateRulesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the active rule set or a subset of rules for the filtered stream.
+        /// Returns the active filtered-stream rules for the authenticated app. Provide `ids` to fetch specific rules; omit it to list all rules.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,18 +107,18 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return requestInfo;
         }
         /// <summary>
-        /// Adds or deletes rules from the active rule set for the filtered stream.
+        /// Adds or deletes rules from the active rule set for the filtered stream. Exactly one of `add`, `delete`, or `?delete_all=true` must be specified. Use `?dry_run=true` to validate without committing.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.AddOrDeleteRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateRulesRequest body, Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder.RulesRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -138,12 +138,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules.RulesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the active rule set or a subset of rules for the filtered stream.
+        /// Returns the active filtered-stream rules for the authenticated app. Provide `ids` to fetch specific rules; omit it to list all rules.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderGetQueryParameters 
         {
-            /// <summary>A comma-separated list of Rule IDs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]
@@ -153,10 +152,9 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
             [QueryParameter("ids")]
             public string[] Ids { get; set; }
 #endif
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This value is populated by passing the &apos;next_token&apos; returned in a request to paginate through results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -168,15 +166,13 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.StreamNamespace.Rules
 #endif
         }
         /// <summary>
-        /// Adds or deletes rules from the active rule set for the filtered stream.
+        /// Adds or deletes rules from the active rule set for the filtered stream. Exactly one of `add`, `delete`, or `?delete_all=true` must be specified. Use `?dry_run=true` to validate without committing.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RulesRequestBuilderPostQueryParameters 
         {
-            /// <summary>Delete All can be used to delete all of the rules associated this client app, it should be specified with no other parameters. Once deleted, rules cannot be recovered.</summary>
             [QueryParameter("delete_all")]
             public bool? DeleteAll { get; set; }
-            /// <summary>Dry Run can be used with both the add and delete action, with the expected result given, but without actually taking any action in the system (meaning the end state will always be as it was when the request was submitted). This is particularly useful to validate rule changes.</summary>
             [QueryParameter("dry_run")]
             public bool? DryRun { get; set; }
         }

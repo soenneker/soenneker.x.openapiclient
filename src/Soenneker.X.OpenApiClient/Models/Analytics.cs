@@ -14,22 +14,70 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
+        /// <summary>The app_install_attempts property</summary>
+        public int? AppInstallAttempts { get; set; }
+        /// <summary>The app_opens property</summary>
+        public int? AppOpens { get; set; }
+        /// <summary>The bookmarks property</summary>
+        public int? Bookmarks { get; set; }
+        /// <summary>The detail_expands property</summary>
+        public int? DetailExpands { get; set; }
+        /// <summary>The email_tweet property</summary>
+        public int? EmailTweet { get; set; }
+        /// <summary>The engagements property</summary>
+        public int? Engagements { get; set; }
+        /// <summary>The follows property</summary>
+        public int? Follows { get; set; }
+        /// <summary>The hashtag_clicks property</summary>
+        public int? HashtagClicks { get; set; }
+        /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.AnalyticsDataItem>? Data { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.AnalyticsDataItem> Data { get; set; }
+        public string Id { get; set; }
 #endif
-        /// <summary>The errors property</summary>
+        /// <summary>The impressions property</summary>
+        public int? Impressions { get; set; }
+        /// <summary>The likes property</summary>
+        public int? Likes { get; set; }
+        /// <summary>The media_views property</summary>
+        public int? MediaViews { get; set; }
+        /// <summary>The permalink_clicks property</summary>
+        public int? PermalinkClicks { get; set; }
+        /// <summary>The quote_tweets property</summary>
+        public int? QuoteTweets { get; set; }
+        /// <summary>The replies property</summary>
+        public int? Replies { get; set; }
+        /// <summary>The retweets property</summary>
+        public int? Retweets { get; set; }
+        /// <summary>The shares property</summary>
+        public int? Shares { get; set; }
+        /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
+        public string? Timestamp { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
+        public string Timestamp { get; set; }
 #endif
+        /// <summary>Time-bucketed engagement metrics for the Post, one entry per granularity bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItem>? TimestampedMetrics { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItem> TimestampedMetrics { get; set; }
+#endif
+        /// <summary>The unfollows property</summary>
+        public int? Unfollows { get; set; }
+        /// <summary>The unlikes property</summary>
+        public int? Unlikes { get; set; }
+        /// <summary>The url_clicks property</summary>
+        public int? UrlClicks { get; set; }
+        /// <summary>The user_profile_clicks property</summary>
+        public int? UserProfileClicks { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Analytics"/> and sets the default values.
         /// </summary>
@@ -55,8 +103,29 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AnalyticsDataItem>(global::Soenneker.X.OpenApiClient.Models.AnalyticsDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "app_install_attempts", n => { AppInstallAttempts = n.GetIntValue(); } },
+                { "app_opens", n => { AppOpens = n.GetIntValue(); } },
+                { "bookmarks", n => { Bookmarks = n.GetIntValue(); } },
+                { "detail_expands", n => { DetailExpands = n.GetIntValue(); } },
+                { "email_tweet", n => { EmailTweet = n.GetIntValue(); } },
+                { "engagements", n => { Engagements = n.GetIntValue(); } },
+                { "follows", n => { Follows = n.GetIntValue(); } },
+                { "hashtag_clicks", n => { HashtagClicks = n.GetIntValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "impressions", n => { Impressions = n.GetIntValue(); } },
+                { "likes", n => { Likes = n.GetIntValue(); } },
+                { "media_views", n => { MediaViews = n.GetIntValue(); } },
+                { "permalink_clicks", n => { PermalinkClicks = n.GetIntValue(); } },
+                { "quote_tweets", n => { QuoteTweets = n.GetIntValue(); } },
+                { "replies", n => { Replies = n.GetIntValue(); } },
+                { "retweets", n => { Retweets = n.GetIntValue(); } },
+                { "shares", n => { Shares = n.GetIntValue(); } },
+                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
+                { "timestamped_metrics", n => { TimestampedMetrics = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItem>(global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unfollows", n => { Unfollows = n.GetIntValue(); } },
+                { "unlikes", n => { Unlikes = n.GetIntValue(); } },
+                { "url_clicks", n => { UrlClicks = n.GetIntValue(); } },
+                { "user_profile_clicks", n => { UserProfileClicks = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +135,29 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AnalyticsDataItem>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteIntValue("app_install_attempts", AppInstallAttempts);
+            writer.WriteIntValue("app_opens", AppOpens);
+            writer.WriteIntValue("bookmarks", Bookmarks);
+            writer.WriteIntValue("detail_expands", DetailExpands);
+            writer.WriteIntValue("email_tweet", EmailTweet);
+            writer.WriteIntValue("engagements", Engagements);
+            writer.WriteIntValue("follows", Follows);
+            writer.WriteIntValue("hashtag_clicks", HashtagClicks);
+            writer.WriteStringValue("id", Id);
+            writer.WriteIntValue("impressions", Impressions);
+            writer.WriteIntValue("likes", Likes);
+            writer.WriteIntValue("media_views", MediaViews);
+            writer.WriteIntValue("permalink_clicks", PermalinkClicks);
+            writer.WriteIntValue("quote_tweets", QuoteTweets);
+            writer.WriteIntValue("replies", Replies);
+            writer.WriteIntValue("retweets", Retweets);
+            writer.WriteIntValue("shares", Shares);
+            writer.WriteStringValue("timestamp", Timestamp);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItem>("timestamped_metrics", TimestampedMetrics);
+            writer.WriteIntValue("unfollows", Unfollows);
+            writer.WriteIntValue("unlikes", Unlikes);
+            writer.WriteIntValue("url_clicks", UrlClicks);
+            writer.WriteIntValue("user_profile_clicks", UserProfileClicks);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

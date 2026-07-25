@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Media
     public partial class MediaRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.dm_conversations.media.item collection</summary>
-        /// <param name="position">The unique identifier of the Direct Message event containing the media.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDmItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Media.Item.WithDmItemRequestBuilder this[string position]
         {

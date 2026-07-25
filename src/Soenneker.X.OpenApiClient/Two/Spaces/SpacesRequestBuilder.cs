@@ -31,7 +31,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
             get => new global::Soenneker.X.OpenApiClient.Two.Spaces.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.spaces.item collection</summary>
-        /// <param name="position">The ID of the Space to be retrieved.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Spaces.Item.SpacesItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Spaces.Item.SpacesItemRequestBuilder this[string position]
         {
@@ -59,19 +59,19 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
         {
         }
         /// <summary>
-        /// Retrieves details of multiple Spaces by their IDs.
+        /// Get Spaces by IDs
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2SpacesResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetSpacesByIdsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2SpacesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder.SpacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetSpacesByIdsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder.SpacesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2SpacesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder.SpacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetSpacesByIdsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder.SpacesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -79,10 +79,10 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2SpacesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2SpacesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetSpacesByIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetSpacesByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves details of multiple Spaces by their IDs.
+        /// Get Spaces by IDs
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -110,7 +110,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
             return new global::Soenneker.X.OpenApiClient.Two.Spaces.SpacesRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves details of multiple Spaces by their IDs.
+        /// Get Spaces by IDs
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SpacesRequestBuilderGetQueryParameters 
@@ -125,7 +125,6 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.SpaceExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>The list of Space IDs to return.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("ids")]

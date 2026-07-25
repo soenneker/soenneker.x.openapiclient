@@ -34,19 +34,19 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
         {
         }
         /// <summary>
-        /// Retrieves a list of Communities matching the specified search query.
+        /// Search Communities
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2CommunitiesSearchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SearchCommunitiesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2CommunitiesSearchResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchCommunitiesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2CommunitiesSearchResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchCommunitiesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2CommunitiesSearchResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2CommunitiesSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SearchCommunitiesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SearchCommunitiesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of Communities matching the specified search query.
+        /// Search Communities
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
             return new global::Soenneker.X.OpenApiClient.Two.Communities.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of Communities matching the specified search query.
+        /// Search Communities
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
@@ -100,10 +100,8 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
             [QueryParameter("community%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.CommunityFieldsParameterItem[] CommunityFields { get; set; }
 #endif
-            /// <summary>The maximum number of search results to be returned by a request.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This parameter is used to get the next &apos;page&apos; of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("next_token")]
@@ -113,7 +111,6 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
             [QueryParameter("next_token")]
             public string NextToken { get; set; }
 #endif
-            /// <summary>This parameter is used to get the next &apos;page&apos; of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -123,7 +120,6 @@ namespace Soenneker.X.OpenApiClient.Two.Communities.Search
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
 #endif
-            /// <summary>Query to search communities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

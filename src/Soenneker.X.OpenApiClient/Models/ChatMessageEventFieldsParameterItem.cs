@@ -16,9 +16,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ConversationToken,
         #pragma warning restore CS1591
-        [EnumMember(Value = "created_at_msec")]
+        [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
-        CreatedAtMsec,
+        CreatedAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "encoded_event")]
         #pragma warning disable CS1591

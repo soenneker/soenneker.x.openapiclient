@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.News
             get => new global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.news.item collection</summary>
-        /// <param name="position">The ID of the news story.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.News.Item.NewsItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.News.Item.NewsItemRequestBuilder this[string position]
         {

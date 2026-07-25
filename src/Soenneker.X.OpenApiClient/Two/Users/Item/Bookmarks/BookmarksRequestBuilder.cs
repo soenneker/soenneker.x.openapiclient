@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.FoldersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item.bookmarks.item collection</summary>
-        /// <param name="position">The ID of the Post that the source User is removing from bookmarks.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweetItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Item.WithTweetItemRequestBuilder this[string position]
         {
@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", pathParameters)
+        public BookmarksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -49,23 +49,23 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BookmarksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,tweet%2Efields,user%2Efields}", rawUrl)
+        public BookmarksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks{?expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a list of Posts bookmarked by the authenticated user.
+        /// Get Users Bookmarks
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarksResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarksResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarksResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder.BookmarksRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -73,23 +73,23 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2UsersIdBookmarksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarksResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersBookmarksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds a post to the authenticated user’s bookmarks.
+        /// Create Users Bookmark
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.BookmarkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponse?> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.BookmarkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponse> PostAsync(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -98,10 +98,10 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.BookmarkMutationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of Posts bookmarked by the authenticated user.
+        /// Get Users Bookmarks
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,18 +120,18 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             return requestInfo;
         }
         /// <summary>
-        /// Adds a post to the authenticated user’s bookmarks.
+        /// Create Users Bookmark
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.BookmarkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.BookmarkAddRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -151,7 +151,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of Posts bookmarked by the authenticated user.
+        /// Get Users Bookmarks
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BookmarksRequestBuilderGetQueryParameters 
@@ -160,13 +160,12 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>A comma separated list of Media fields to display.</summary>
@@ -179,7 +178,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             [QueryParameter("media%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
-            /// <summary>This parameter is used to get the next &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -209,15 +208,15 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks
             [QueryParameter("poll%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

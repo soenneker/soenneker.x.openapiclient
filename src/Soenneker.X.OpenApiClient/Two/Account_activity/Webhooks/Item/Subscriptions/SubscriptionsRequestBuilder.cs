@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             get => new global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.All.AllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.account_activity.webhooks.item.subscriptions.item collection</summary>
-        /// <param name="position">User ID to unsubscribe from.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUserItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscriptions.Item.WithUserItemRequestBuilder this[string position]
         {

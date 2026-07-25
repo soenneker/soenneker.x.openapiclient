@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace
         /// <summary>
         /// Streams a 1% sample of public Posts in real-time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace.StreamRequestBuilder.StreamRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Streams a 1% sample of public Posts in real-time.
@@ -97,61 +97,61 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Sample.StreamNamespace
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleMediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleMediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>A comma separated list of Place fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[]? PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSamplePlaceFieldsParameterItem[]? PlaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[] PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSamplePlaceFieldsParameterItem[] PlaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Poll fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[]? PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSamplePollFieldsParameterItem[]? PollFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSamplePollFieldsParameterItem[] PollFields { get; set; }
 #endif
             /// <summary>A comma separated list of Tweet fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleTweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleTweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleUserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsSampleUserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

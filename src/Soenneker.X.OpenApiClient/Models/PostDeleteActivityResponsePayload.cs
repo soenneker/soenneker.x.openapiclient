@@ -13,7 +13,7 @@ namespace Soenneker.X.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostDeleteActivityResponsePayload : IParsable
     {
-        /// <summary>Unique identifier of this User. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
+        /// <summary>Unique identifier of a User</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? AuthorId { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string AuthorId { get; set; }
 #endif
-        /// <summary>Unique identifier of this Tweet. This is returned as a string in order to avoid complications with languages and tools that cannot handle large integers.</summary>
+        /// <summary>Unique identifier of a Post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }

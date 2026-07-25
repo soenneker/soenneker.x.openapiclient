@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Expanded details for the URL specified in the User&apos;s profile, with start and end indices.
+    /// Entities for the User&apos;s profile website URL.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserEntitiesUrl : IAdditionalDataHolder, IParsable
@@ -18,10 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntity>? Urls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrlUrlsItem>? Urls { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UrlEntity> Urls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrlUrlsItem> Urls { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrl"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>(global::Soenneker.X.OpenApiClient.Models.UrlEntity.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "urls", n => { Urls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrlUrlsItem>(global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrlUrlsItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UrlEntity>("urls", Urls);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrlUrlsItem>("urls", Urls);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

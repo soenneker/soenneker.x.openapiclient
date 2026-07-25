@@ -15,15 +15,15 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Entities found in the User&apos;s bio.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.FullTextEntities? Description { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserEntitiesDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.FullTextEntities Description { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserEntitiesDescription Description { get; set; }
 #endif
-        /// <summary>Expanded details for the URL specified in the User&apos;s profile, with start and end indices.</summary>
+        /// <summary>Entities for the User&apos;s profile website URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrl? Url { get; set; }
@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>(global::Soenneker.X.OpenApiClient.Models.FullTextEntities.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntitiesDescription>(global::Soenneker.X.OpenApiClient.Models.UserEntitiesDescription.CreateFromDiscriminatorValue); } },
                 { "url", n => { Url = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrl>(global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrl.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FullTextEntities>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntitiesDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserEntitiesUrl>("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }

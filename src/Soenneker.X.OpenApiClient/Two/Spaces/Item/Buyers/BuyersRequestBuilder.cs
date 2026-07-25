@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BuyersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/spaces/{id}/buyers{?expansions,max_results*,pagination_token*,tweet%2Efields,user%2Efields}", pathParameters)
+        public BuyersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/spaces/{id}/buyers{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BuyersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/spaces/{id}/buyers{?expansions,max_results*,pagination_token*,tweet%2Efields,user%2Efields}", rawUrl)
+        public BuyersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/spaces/{id}/buyers{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
         /// Retrieves a list of Users who purchased tickets to a specific Space by its ID.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetSpacesBuyersResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers.BuyersRequestBuilder.BuyersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetSpacesBuyersResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers.BuyersRequestBuilder.BuyersRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers.BuyersRequestBuilder.BuyersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetSpacesBuyersResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers.BuyersRequestBuilder.BuyersRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2SpacesIdBuyersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetSpacesBuyersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetSpacesBuyersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieves a list of Users who purchased tickets to a specific Space by its ID.
@@ -100,10 +100,9 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            /// <summary>The maximum number of results.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            /// <summary>This parameter is used to get a specified &apos;page&apos; of results.</summary>
+            /// <summary>A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
@@ -113,15 +112,15 @@ namespace Soenneker.X.OpenApiClient.Two.Spaces.Item.Buyers
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
 #endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
+            /// <summary>A comma separated list of Post fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[]? PostFields { get; set; }
 #nullable restore
 #else
-            [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            [QueryParameter("post%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

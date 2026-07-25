@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWebhookItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/webhooks/{webhookId}{?expansions*,media%2Efields*,place%2Efields*,poll%2Efields*,tweet%2Efields*,user%2Efields*}", pathParameters)
+        public WithWebhookItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/webhooks/{webhookId}", pathParameters)
         {
         }
         /// <summary>
@@ -30,23 +30,23 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithWebhookItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/webhooks/{webhookId}{?expansions*,media%2Efields*,place%2Efields*,poll%2Efields*,tweet%2Efields*,user%2Efields*}", rawUrl)
+        public WithWebhookItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/search/webhooks/{webhookId}", rawUrl)
         {
         }
         /// <summary>
-        /// Deletes a link from FilteredStream events to the given webhook.
+        /// Deletes the link delivering FilteredStream events to the given webhook.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookLinksDeleteResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteWebhooksStreamLinkResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.WebhookLinksDeleteResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteWebhooksStreamLinkResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.WebhookLinksDeleteResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteWebhooksStreamLinkResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,22 +54,22 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookLinksDeleteResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookLinksDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteWebhooksStreamLinkResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteWebhooksStreamLinkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a link to deliver FilteredStream events to the given webhook.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.WebhookLinksCreateResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.WebhookLinksCreateResponse?> PostAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder.WithWebhookItemRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.WebhookLinksCreateResponse> PostAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder.WithWebhookItemRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -77,10 +77,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.WebhookLinksCreateResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.WebhookLinksCreateResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a link from FilteredStream events to the given webhook.
+        /// Deletes the link delivering FilteredStream events to the given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -105,11 +105,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder.WithWebhookItemRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder.WithWebhookItemRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
@@ -125,73 +125,6 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Search.Webhooks.Item.WithWebhookItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Creates a link to deliver FilteredStream events to the given webhook.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class WithWebhookItemRequestBuilderPostQueryParameters 
-        {
-            /// <summary>A comma separated list of fields to expand.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("expansions")]
-            public string? Expansions { get; set; }
-#nullable restore
-#else
-            [QueryParameter("expansions")]
-            public string Expansions { get; set; }
-#endif
-            /// <summary>A comma separated list of Media fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("media%2Efields")]
-            public string? MediaFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("media%2Efields")]
-            public string MediaFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Place fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("place%2Efields")]
-            public string? PlaceFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("place%2Efields")]
-            public string PlaceFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Poll fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("poll%2Efields")]
-            public string? PollFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("poll%2Efields")]
-            public string PollFields { get; set; }
-#endif
-            /// <summary>A comma separated list of Tweet fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("tweet%2Efields")]
-            public string? TweetFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("tweet%2Efields")]
-            public string TweetFields { get; set; }
-#endif
-            /// <summary>A comma separated list of User fields to display.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("user%2Efields")]
-            public string? UserFields { get; set; }
-#nullable restore
-#else
-            [QueryParameter("user%2Efields")]
-            public string UserFields { get; set; }
-#endif
         }
     }
 }

@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks
     public partial class WebhooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.account_activity.webhooks.item collection</summary>
-        /// <param name="position">The webhook ID to check subscription against.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhookItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.WithWebhookItemRequestBuilder this[string position]
         {

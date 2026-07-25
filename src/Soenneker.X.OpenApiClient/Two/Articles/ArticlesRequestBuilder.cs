@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Articles
             get => new global::Soenneker.X.OpenApiClient.Two.Articles.Draft.DraftRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.articles.item collection</summary>
-        /// <param name="position">The ID of the draft article to publish.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Articles.Item.WithArticleItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Articles.Item.WithArticleItemRequestBuilder this[string position]
         {

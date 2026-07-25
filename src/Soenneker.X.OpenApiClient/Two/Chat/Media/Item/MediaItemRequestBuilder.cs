@@ -16,7 +16,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Media.Item
     public partial class MediaItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.media.item.item collection</summary>
-        /// <param name="position">The media hash key returned from the upload initialize step.</param>
+        /// <param name="position">Unique identifier of the item</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMediaHashKeyItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Media.Item.Item.WithMediaHashKeyItemRequestBuilder this[string position]
         {

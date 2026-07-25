@@ -36,17 +36,17 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
         /// <summary>
         /// Streams all public Japanese-language Posts in real-time.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja.JaRequestBuilder.JaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja.JaRequestBuilder.JaRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja.JaRequestBuilder.JaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja.JaRequestBuilder.JaRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamingTweetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Streams all public Japanese-language Posts in real-time.
@@ -100,21 +100,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[]? Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaExpansionsParameterItem[]? Expansions { get; set; }
 #nullable restore
 #else
             [QueryParameter("expansions")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetExpansionsParameterItem[] Expansions { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaExpansionsParameterItem[] Expansions { get; set; }
 #endif
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[]? MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaMediaFieldsParameterItem[]? MediaFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("media%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.MediaFieldsParameterItem[] MediaFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaMediaFieldsParameterItem[] MediaFields { get; set; }
 #endif
             /// <summary>The partition number.</summary>
             [QueryParameter("partition")]
@@ -123,21 +123,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[]? PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaPlaceFieldsParameterItem[]? PlaceFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("place%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PlaceFieldsParameterItem[] PlaceFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaPlaceFieldsParameterItem[] PlaceFields { get; set; }
 #endif
             /// <summary>A comma separated list of Poll fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[]? PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaPollFieldsParameterItem[]? PollFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("poll%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.PollFieldsParameterItem[] PollFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaPollFieldsParameterItem[] PollFields { get; set; }
 #endif
             /// <summary>YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Posts will be provided.</summary>
             [QueryParameter("start_time")]
@@ -146,21 +146,21 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Firehose.StreamNamespace.Lang.Ja
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[]? TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaTweetFieldsParameterItem[]? TweetFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("tweet%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.TweetFieldsParameterItem[] TweetFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaTweetFieldsParameterItem[] TweetFields { get; set; }
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaUserFieldsParameterItem[]? UserFields { get; set; }
 #nullable restore
 #else
             [QueryParameter("user%2Efields")]
-            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
+            public global::Soenneker.X.OpenApiClient.Models.StreamPostsFirehoseJaUserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

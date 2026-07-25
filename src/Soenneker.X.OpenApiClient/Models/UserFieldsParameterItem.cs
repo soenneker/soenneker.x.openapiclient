@@ -8,10 +8,6 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum UserFieldsParameterItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "affiliation")]
-        #pragma warning disable CS1591
-        Affiliation,
-        #pragma warning restore CS1591
         [EnumMember(Value = "confirmed_email")]
         #pragma warning disable CS1591
         ConfirmedEmail,
@@ -44,10 +40,6 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Location,
         #pragma warning restore CS1591
-        [EnumMember(Value = "most_recent_tweet_id")]
-        #pragma warning disable CS1591
-        MostRecentTweetId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "name")]
         #pragma warning disable CS1591
         Name,
@@ -55,10 +47,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "parody")]
         #pragma warning disable CS1591
         Parody,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "pinned_tweet_id")]
-        #pragma warning disable CS1591
-        PinnedTweetId,
         #pragma warning restore CS1591
         [EnumMember(Value = "profile_banner_url")]
         #pragma warning disable CS1591
@@ -79,6 +67,10 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "receives_your_dm")]
         #pragma warning disable CS1591
         ReceivesYourDm,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subscribes_to_you")]
+        #pragma warning disable CS1591
+        SubscribesToYou,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription")]
         #pragma warning disable CS1591

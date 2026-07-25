@@ -34,19 +34,19 @@ namespace Soenneker.X.OpenApiClient.Two.News.Search
         {
         }
         /// <summary>
-        /// Retrieves a list of News stories matching the specified search query.
+        /// Search News
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SearchNewsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchNewsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.SearchNewsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -54,10 +54,10 @@ namespace Soenneker.X.OpenApiClient.Two.News.Search
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.Get2NewsSearchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SearchNewsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SearchNewsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of News stories matching the specified search query.
+        /// Search News
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,15 +85,13 @@ namespace Soenneker.X.OpenApiClient.Two.News.Search
             return new global::Soenneker.X.OpenApiClient.Two.News.Search.SearchRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of News stories matching the specified search query.
+        /// Search News
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SearchRequestBuilderGetQueryParameters 
         {
-            /// <summary>The maximum age of the News story to search for.</summary>
             [QueryParameter("max_age_hours")]
             public int? MaxAgeHours { get; set; }
-            /// <summary>The number of results to return.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>A comma separated list of News fields to display.</summary>
@@ -106,7 +104,6 @@ namespace Soenneker.X.OpenApiClient.Two.News.Search
             [QueryParameter("news%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.NewsFieldsParameterItem[] NewsFields { get; set; }
 #endif
-            /// <summary>The search query.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("query")]

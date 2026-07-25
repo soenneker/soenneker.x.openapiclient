@@ -48,6 +48,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Timestamp,
         #pragma warning restore CS1591
+        [EnumMember(Value = "timestamped_metrics")]
+        #pragma warning disable CS1591
+        TimestampedMetrics,
+        #pragma warning restore CS1591
         [EnumMember(Value = "video_views")]
         #pragma warning disable CS1591
         VideoViews,

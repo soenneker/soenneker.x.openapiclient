@@ -32,10 +32,6 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Name,
         #pragma warning restore CS1591
-        [EnumMember(Value = "owner_id")]
-        #pragma warning disable CS1591
-        OwnerId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "private")]
         #pragma warning disable CS1591
         PrivateValue,

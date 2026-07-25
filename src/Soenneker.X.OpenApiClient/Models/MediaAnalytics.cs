@@ -14,22 +14,50 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
+        /// <summary>The cta_url_clicks property</summary>
+        public int? CtaUrlClicks { get; set; }
+        /// <summary>The cta_watch_clicks property</summary>
+        public int? CtaWatchClicks { get; set; }
+        /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsDataItem>? Data { get; set; }
+        public string? MediaKey { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsDataItem> Data { get; set; }
+        public string MediaKey { get; set; }
 #endif
-        /// <summary>The errors property</summary>
+        /// <summary>The playback25 property</summary>
+        public int? Playback25 { get; set; }
+        /// <summary>The playback50 property</summary>
+        public int? Playback50 { get; set; }
+        /// <summary>The playback75 property</summary>
+        public int? Playback75 { get; set; }
+        /// <summary>The playback_complete property</summary>
+        public int? PlaybackComplete { get; set; }
+        /// <summary>The playback_start property</summary>
+        public int? PlaybackStart { get; set; }
+        /// <summary>The play_from_tap property</summary>
+        public int? PlayFromTap { get; set; }
+        /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
+        public string? Timestamp { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
+        public string Timestamp { get; set; }
 #endif
+        /// <summary>Time-bucketed video metrics for the media, one entry per granularity bucket.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>? TimestampedMetrics { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem> TimestampedMetrics { get; set; }
+#endif
+        /// <summary>The video_views property</summary>
+        public int? VideoViews { get; set; }
+        /// <summary>The watch_time_ms property</summary>
+        public int? WatchTimeMs { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaAnalytics"/> and sets the default values.
         /// </summary>
@@ -55,8 +83,19 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsDataItem>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsDataItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "cta_url_clicks", n => { CtaUrlClicks = n.GetIntValue(); } },
+                { "cta_watch_clicks", n => { CtaWatchClicks = n.GetIntValue(); } },
+                { "media_key", n => { MediaKey = n.GetStringValue(); } },
+                { "play_from_tap", n => { PlayFromTap = n.GetIntValue(); } },
+                { "playback25", n => { Playback25 = n.GetIntValue(); } },
+                { "playback50", n => { Playback50 = n.GetIntValue(); } },
+                { "playback75", n => { Playback75 = n.GetIntValue(); } },
+                { "playback_complete", n => { PlaybackComplete = n.GetIntValue(); } },
+                { "playback_start", n => { PlaybackStart = n.GetIntValue(); } },
+                { "timestamp", n => { Timestamp = n.GetStringValue(); } },
+                { "timestamped_metrics", n => { TimestampedMetrics = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "video_views", n => { VideoViews = n.GetIntValue(); } },
+                { "watch_time_ms", n => { WatchTimeMs = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +105,19 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsDataItem>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteIntValue("cta_url_clicks", CtaUrlClicks);
+            writer.WriteIntValue("cta_watch_clicks", CtaWatchClicks);
+            writer.WriteStringValue("media_key", MediaKey);
+            writer.WriteIntValue("playback25", Playback25);
+            writer.WriteIntValue("playback50", Playback50);
+            writer.WriteIntValue("playback75", Playback75);
+            writer.WriteIntValue("playback_complete", PlaybackComplete);
+            writer.WriteIntValue("playback_start", PlaybackStart);
+            writer.WriteIntValue("play_from_tap", PlayFromTap);
+            writer.WriteStringValue("timestamp", Timestamp);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>("timestamped_metrics", TimestampedMetrics);
+            writer.WriteIntValue("video_views", VideoViews);
+            writer.WriteIntValue("watch_time_ms", WatchTimeMs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

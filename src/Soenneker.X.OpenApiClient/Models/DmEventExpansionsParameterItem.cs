@@ -10,15 +10,15 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         [EnumMember(Value = "attachments.media_keys")]
         #pragma warning disable CS1591
-        AttachmentsMediaKeys,
+        AttachmentsMediaKeys1,
         #pragma warning restore CS1591
         [EnumMember(Value = "participant_ids")]
         #pragma warning disable CS1591
         ParticipantIds,
         #pragma warning restore CS1591
-        [EnumMember(Value = "referenced_tweets.id")]
+        [EnumMember(Value = "referenced_posts")]
         #pragma warning disable CS1591
-        ReferencedTweetsId,
+        ReferencedPosts,
         #pragma warning restore CS1591
         [EnumMember(Value = "sender_id")]
         #pragma warning disable CS1591

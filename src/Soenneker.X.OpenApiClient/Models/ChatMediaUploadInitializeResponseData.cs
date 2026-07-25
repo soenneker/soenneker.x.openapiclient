@@ -14,7 +14,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;Conversation ID associated with the upload: the colon-separated participant pair for a 1:1 conversation, or a &apos;g&apos;-prefixed ID for a group.&quot;</summary>
+        /// <summary>Canonical ID of the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationId { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>Media hash key returned by XChat.</summary>
+        /// <summary>Hash key addressing the uploaded media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaHashKey { get; set; }
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string MediaHashKey { get; set; }
 #endif
-        /// <summary>Resume/session id for the upload.</summary>
+        /// <summary>Upload session ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SessionId { get; set; }

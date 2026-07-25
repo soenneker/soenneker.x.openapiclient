@@ -14,15 +14,65 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The height of the media in pixels.</summary>
+        /// <summary>The alt_text property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AltText { get; set; }
+#nullable restore
+#else
+        public string AltText { get; set; }
+#endif
+        /// <summary>The duration_ms property</summary>
+        public int? DurationMs { get; set; }
+        /// <summary>The height property</summary>
         public int? Height { get; set; }
-        /// <summary>The Media Key identifier for this attachment.</summary>
+        /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? MediaKey { get; set; }
 #nullable restore
 #else
         public string MediaKey { get; set; }
+#endif
+        /// <summary>Nonpublic engagement metrics for the media at the time of the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics? NonPublicMetrics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics NonPublicMetrics { get; set; }
+#endif
+        /// <summary>Organic nonpublic engagement metrics for the media at the time of the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics? OrganicMetrics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics OrganicMetrics { get; set; }
+#endif
+        /// <summary>The preview_image_url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? PreviewImageUrl { get; set; }
+#nullable restore
+#else
+        public string PreviewImageUrl { get; set; }
+#endif
+        /// <summary>Promoted nonpublic engagement metrics for the media at the time of the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics? PromotedMetrics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics PromotedMetrics { get; set; }
+#endif
+        /// <summary>Public engagement metrics for the media at the time of the request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics? PublicMetrics { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics PublicMetrics { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +82,23 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
-        /// <summary>The width of the media in pixels.</summary>
+        /// <summary>The url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Url { get; set; }
+#nullable restore
+#else
+        public string Url { get; set; }
+#endif
+        /// <summary>Each media object may have multiple display or playback variants, with different resolutions or formats.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>? Variants { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem> Variants { get; set; }
+#endif
+        /// <summary>The width property</summary>
         public int? Width { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Media"/> and sets the default values.
@@ -49,14 +115,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.Media CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-            return mappingValue switch
-            {
-                "animated_gif" => new global::Soenneker.X.OpenApiClient.Models.AnimatedGif(),
-                "photo" => new global::Soenneker.X.OpenApiClient.Models.Photo(),
-                "video" => new global::Soenneker.X.OpenApiClient.Models.Video(),
-                _ => new global::Soenneker.X.OpenApiClient.Models.Media(),
-            };
+            return new global::Soenneker.X.OpenApiClient.Models.Media();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,9 +125,18 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "alt_text", n => { AltText = n.GetStringValue(); } },
+                { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "height", n => { Height = n.GetIntValue(); } },
                 { "media_key", n => { MediaKey = n.GetStringValue(); } },
+                { "non_public_metrics", n => { NonPublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics.CreateFromDiscriminatorValue); } },
+                { "organic_metrics", n => { OrganicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics.CreateFromDiscriminatorValue); } },
+                { "preview_image_url", n => { PreviewImageUrl = n.GetStringValue(); } },
+                { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics.CreateFromDiscriminatorValue); } },
+                { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "url", n => { Url = n.GetStringValue(); } },
+                { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>(global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -79,9 +147,18 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("alt_text", AltText);
+            writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteIntValue("height", Height);
             writer.WriteStringValue("media_key", MediaKey);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics>("non_public_metrics", NonPublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics>("organic_metrics", OrganicMetrics);
+            writer.WriteStringValue("preview_image_url", PreviewImageUrl);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics>("promoted_metrics", PromotedMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics>("public_metrics", PublicMetrics);
             writer.WriteStringValue("type", Type);
+            writer.WriteStringValue("url", Url);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>("variants", Variants);
             writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

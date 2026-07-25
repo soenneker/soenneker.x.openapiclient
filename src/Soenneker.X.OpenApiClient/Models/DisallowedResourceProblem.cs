@@ -7,12 +7,21 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// A problem that indicates that the resource requested violates the precepts of this API.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DisallowedResourceProblem : global::Soenneker.X.OpenApiClient.Models.Problem, IParsable
+    #pragma warning disable CS1591
+    public partial class DisallowedResourceProblem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The detail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Detail { get; set; }
+#nullable restore
+#else
+        public string Detail { get; set; }
+#endif
         /// <summary>The resource_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -22,15 +31,46 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ResourceId { get; set; }
 #endif
         /// <summary>The resource_type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemResourceType? ResourceType { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ResourceType { get; set; }
+#nullable restore
+#else
+        public string ResourceType { get; set; }
+#endif
         /// <summary>The section property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemSection? Section { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Section { get; set; }
+#nullable restore
+#else
+        public string Section { get; set; }
+#endif
+        /// <summary>The status property</summary>
+        public int? Status { get; set; }
+        /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Title { get; set; }
+#nullable restore
+#else
+        public string Title { get; set; }
+#endif
+        /// <summary>The type property</summary>
+        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType? Type { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/> and sets the default values.
+        /// </summary>
+        public DisallowedResourceProblem()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             return new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem();
@@ -39,26 +79,34 @@ namespace Soenneker.X.OpenApiClient.Models
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
+            return new Dictionary<string, Action<IParseNode>>
             {
+                { "detail", n => { Detail = n.GetStringValue(); } },
                 { "resource_id", n => { ResourceId = n.GetStringValue(); } },
-                { "resource_type", n => { ResourceType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemResourceType>(); } },
-                { "section", n => { Section = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemSection>(); } },
+                { "resource_type", n => { ResourceType = n.GetStringValue(); } },
+                { "section", n => { Section = n.GetStringValue(); } },
+                { "status", n => { Status = n.GetIntValue(); } },
+                { "title", n => { Title = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public override void Serialize(ISerializationWriter writer)
+        public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
+            writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("resource_id", ResourceId);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemResourceType>("resource_type", ResourceType);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemSection>("section", Section);
+            writer.WriteStringValue("resource_type", ResourceType);
+            writer.WriteStringValue("section", Section);
+            writer.WriteIntValue("status", Status);
+            writer.WriteStringValue("title", Title);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType>("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }
