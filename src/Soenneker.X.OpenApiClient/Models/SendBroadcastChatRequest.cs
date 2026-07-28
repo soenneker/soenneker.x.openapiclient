@@ -12,6 +12,14 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class SendBroadcastChatRequest : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Message id to reply to, returned as timestamp when sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReplyTo { get; set; }
+#nullable restore
+#else
+        public string ReplyTo { get; set; }
+#endif
         /// <summary>The chat message text.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,6 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "reply_to", n => { ReplyTo = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
         }
@@ -48,6 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("reply_to", ReplyTo);
             writer.WriteStringValue("text", Text);
         }
     }
