@@ -12,7 +12,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class CreateActivitySubscriptionRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Activity event type in dot notation.</summary>
+        /// <summary>Activity event type in dot notation. `chat.conversation_join` is a deprecated alias of `chat.conversation.join`; responses always use the canonical name.</summary>
         public global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequestEventType? EventType { get; set; }
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

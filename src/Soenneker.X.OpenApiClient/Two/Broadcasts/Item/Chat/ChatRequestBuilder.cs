@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Item;
+using Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Mutes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,23 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ChatRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The mutes property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Mutes.MutesRequestBuilder Mutes
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Mutes.MutesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.broadcasts.item.chat.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Item.WithMessageItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Item.WithMessageItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("messageId", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Item.WithMessageItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder"/> and sets the default values.
         /// </summary>

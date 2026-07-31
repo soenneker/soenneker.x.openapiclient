@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>Activity event type in dot notation.</summary>
+    /// <summary>Activity event type in dot notation. `chat.conversation_join` is a deprecated alias of `chat.conversation.join`; responses always use the canonical name.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum CreateActivitySubscriptionRequestEventType
     {
@@ -71,9 +71,37 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ChatSent,
         #pragma warning restore CS1591
-        [EnumMember(Value = "chat.conversation_join")]
+        [EnumMember(Value = "chat.conversation.join")]
         #pragma warning disable CS1591
         ChatConversationJoin,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation_join")]
+        #pragma warning disable CS1591
+        ChatConversationJoin1,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation.member_added")]
+        #pragma warning disable CS1591
+        ChatConversationMemberAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation.member_removed")]
+        #pragma warning disable CS1591
+        ChatConversationMemberRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation.admin_added")]
+        #pragma warning disable CS1591
+        ChatConversationAdminAdded,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.conversation.admin_removed")]
+        #pragma warning disable CS1591
+        ChatConversationAdminRemoved,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.update.group_name")]
+        #pragma warning disable CS1591
+        ChatUpdateGroupName,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "chat.update.restrictions")]
+        #pragma warning disable CS1591
+        ChatUpdateRestrictions,
         #pragma warning restore CS1591
         [EnumMember(Value = "dm.sent")]
         #pragma warning disable CS1591
