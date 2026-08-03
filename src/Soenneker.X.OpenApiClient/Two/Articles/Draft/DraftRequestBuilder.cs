@@ -37,7 +37,7 @@ namespace Soenneker.X.OpenApiClient.Two.Articles.Draft
         /// Creates a new Article draft that can later be published.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Create a draft Article.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Two.Articles.Draft
         /// Creates a new Article draft that can later be published.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">Create a draft Article.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
