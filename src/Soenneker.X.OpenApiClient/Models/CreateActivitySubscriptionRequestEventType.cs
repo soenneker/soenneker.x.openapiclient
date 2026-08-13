@@ -63,6 +63,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         SpacesEnd,
         #pragma warning restore CS1591
+        [EnumMember(Value = "broadcast.chat")]
+        #pragma warning disable CS1591
+        BroadcastChat,
+        #pragma warning restore CS1591
         [EnumMember(Value = "chat.received")]
         #pragma warning disable CS1591
         ChatReceived,
@@ -130,6 +134,18 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "post.mention.create")]
         #pragma warning disable CS1591
         PostMentionCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "post.reply.create")]
+        #pragma warning disable CS1591
+        PostReplyCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "post.quote.create")]
+        #pragma warning disable CS1591
+        PostQuoteCreate,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "post.repost.create")]
+        #pragma warning disable CS1591
+        PostRepostCreate,
         #pragma warning restore CS1591
         [EnumMember(Value = "like.create")]
         #pragma warning disable CS1591
