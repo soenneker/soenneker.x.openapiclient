@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat", pathParameters)
+        public ChatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,max_results*,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -49,8 +49,31 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat", rawUrl)
+        public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,max_results*,pagination_token*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Returns newest-first chat messages for a broadcast owned by the authenticated user.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder.ChatRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder.ChatRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Posts a chat message to a running broadcast, attributed to the authenticated user.
@@ -76,6 +99,25 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SendBroadcastChatResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SendBroadcastChatResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Returns newest-first chat messages for a broadcast owned by the authenticated user.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder.ChatRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder.ChatRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Posts a chat message to a running broadcast, attributed to the authenticated user.
@@ -107,6 +149,35 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
         public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Returns newest-first chat messages for a broadcast owned by the authenticated user.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ChatRequestBuilderGetQueryParameters 
+        {
+            /// <summary>A comma separated list of BroadcastChatMessage fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("broadcast_chat_message%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessageFieldsParameterItem[]? BroadcastChatMessageFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("broadcast_chat_message%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessageFieldsParameterItem[] BroadcastChatMessageFields { get; set; }
+#endif
+            [QueryParameter("max_results")]
+            public int? MaxResults { get; set; }
+            /// <summary>A 64-bit signed integer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("pagination_token")]
+            public string? PaginationToken { get; set; }
+#nullable restore
+#else
+            [QueryParameter("pagination_token")]
+            public string PaginationToken { get; set; }
+#endif
         }
     }
 }
