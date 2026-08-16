@@ -5,12 +5,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum GetMediaUploadStatusCommandParameter
+    public enum HttpsColonSlashSlashApiXCom2ProblemsInvalidRequestType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "STATUS")]
+        [EnumMember(Value = "https://api.x.com/2/problems/invalid-request")]
         #pragma warning disable CS1591
-        Status,
+        HttpsColonSlashSlashApiXCom2ProblemsInvalidRequest,
         #pragma warning restore CS1591
     }
 }

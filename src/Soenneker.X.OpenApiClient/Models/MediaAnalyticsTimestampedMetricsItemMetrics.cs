@@ -15,7 +15,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? CtaUrlClicks { get; set; }
@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks CtaUrlClicks { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks? CtaWatchClicks { get; set; }
@@ -31,7 +31,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks CtaWatchClicks { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25? Playback25 { get; set; }
@@ -39,7 +39,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25 Playback25 { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50? Playback50 { get; set; }
@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50 Playback50 { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75? Playback75 { get; set; }
@@ -55,7 +55,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75 Playback75 { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete? PlaybackComplete { get; set; }
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete PlaybackComplete { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart? PlaybackStart { get; set; }
@@ -71,7 +71,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart PlaybackStart { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap? PlayFromTap { get; set; }
@@ -79,7 +79,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap PlayFromTap { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews? VideoViews { get; set; }
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews VideoViews { get; set; }
 #endif
-        /// <summary>&quot;A video metric counter: an integer when the backend value parses as a number, otherwise the original string.&quot;</summary>
+        /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs? WatchTimeMs { get; set; }

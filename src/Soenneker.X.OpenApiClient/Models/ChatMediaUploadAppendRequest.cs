@@ -20,7 +20,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>&quot;The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies.&quot;</summary>
+        /// <summary>The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia? Media { get; set; }

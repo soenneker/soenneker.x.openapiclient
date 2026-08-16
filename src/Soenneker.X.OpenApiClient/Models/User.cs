@@ -138,7 +138,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.UserSubscription Subscription { get; set; }
 #endif
-        /// <summary>&quot;The X Blue subscription type of the user, e.g.: Basic, Premium, PremiumPlus or None.&quot;</summary>
+        /// <summary>The X Blue subscription type of the user, e.g.: Basic, Premium, PremiumPlus or None.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SubscriptionType { get; set; }
@@ -166,7 +166,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public bool? Verified { get; set; }
         /// <summary>The number of verified followers of this User.</summary>
         public int? VerifiedFollowersCount { get; set; }
-        /// <summary>&quot;The X Blue verified type of the user, e.g.: blue, government, business or none.&quot;</summary>
+        /// <summary>The X Blue verified type of the user, e.g.: blue, government, business or none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? VerifiedType { get; set; }

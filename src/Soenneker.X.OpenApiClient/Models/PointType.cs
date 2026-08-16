@@ -3,14 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>The GeoJSON geometry type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public enum InvalidRequestProblemType
-    #pragma warning restore CS1591
+    public enum PointType
     {
-        [EnumMember(Value = "https://api.x.com/2/problems/invalid-request")]
+        [EnumMember(Value = "Point")]
         #pragma warning disable CS1591
-        HttpsColonSlashSlashApiXCom2ProblemsInvalidRequest,
+        Point,
         #pragma warning restore CS1591
     }
 }

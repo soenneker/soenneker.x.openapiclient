@@ -49,7 +49,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsResourceUnavailableType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/> and sets the default values.
         /// </summary>
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "resource_type", n => { ResourceType = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsResourceUnavailableType>(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("resource_type", ResourceType);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsResourceUnavailableType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

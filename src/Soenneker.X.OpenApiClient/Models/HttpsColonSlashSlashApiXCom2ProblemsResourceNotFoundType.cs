@@ -5,12 +5,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum ListExpansionsParameterItem
+    public enum HttpsColonSlashSlashApiXCom2ProblemsResourceNotFoundType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "owner_id")]
+        [EnumMember(Value = "https://api.x.com/2/problems/resource-not-found")]
         #pragma warning disable CS1591
-        OwnerId,
+        HttpsColonSlashSlashApiXCom2ProblemsResourceNotFound,
         #pragma warning restore CS1591
     }
 }

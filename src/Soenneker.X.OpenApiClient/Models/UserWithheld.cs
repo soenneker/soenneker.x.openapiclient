@@ -24,7 +24,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<string> CountryCodes { get; set; }
 #endif
         /// <summary>The scope of the withholding. Only present, with the value &quot;user&quot;, when the entire User is withheld.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UserWithheldScope? Scope { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UserScope? Scope { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserWithheld"/> and sets the default values.
         /// </summary>
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "country_codes", n => { CountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UserWithheldScope>(); } },
+                { "scope", n => { Scope = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UserScope>(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("country_codes", CountryCodes);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UserWithheldScope>("scope", Scope);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UserScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

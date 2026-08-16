@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsDisallowedResourceType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "section", n => { Section = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsDisallowedResourceType>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("section", Section);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsDisallowedResourceType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -5,7 +5,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>The scope of the withholding. Only present, with the value &quot;user&quot;, when the entire User is withheld.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum UserWithheldScope
+    public enum UserScope
     {
         [EnumMember(Value = "user")]
         #pragma warning disable CS1591

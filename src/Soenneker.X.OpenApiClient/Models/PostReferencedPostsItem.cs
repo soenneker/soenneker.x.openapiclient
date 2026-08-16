@@ -26,10 +26,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>How this Post references the other Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemTypeWrapper? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemType? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemTypeWrapper Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemType Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItem"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemTypeWrapper>(global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemType>(global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemTypeWrapper>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PostReferencedPostsItemType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

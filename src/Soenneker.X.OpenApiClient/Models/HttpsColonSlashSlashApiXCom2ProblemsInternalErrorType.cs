@@ -5,12 +5,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum NotAuthorizedForResourceProblemType
+    public enum HttpsColonSlashSlashApiXCom2ProblemsInternalErrorType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "https://api.x.com/2/problems/not-authorized-for-resource")]
+        [EnumMember(Value = "https://api.x.com/2/problems/internal-error")]
         #pragma warning disable CS1591
-        HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForResource,
+        HttpsColonSlashSlashApiXCom2ProblemsInternalError,
         #pragma warning restore CS1591
     }
 }

@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInvalidRequestType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -79,7 +79,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "parameter", n => { Parameter = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInvalidRequestType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -94,7 +94,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("parameter", Parameter);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInvalidRequestType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -37,7 +37,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.PostLabelData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.PostLabelData();
             if("PostNoticeSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

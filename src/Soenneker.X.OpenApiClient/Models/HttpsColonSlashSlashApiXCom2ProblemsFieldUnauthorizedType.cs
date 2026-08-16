@@ -5,12 +5,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum NotAuthorizedForFieldProblemType
+    public enum HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorizedType
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "https://api.x.com/2/problems/not-authorized-for-field")]
+        [EnumMember(Value = "https://api.x.com/2/problems/field-unauthorized")]
         #pragma warning disable CS1591
-        HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForField,
+        HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorized,
         #pragma warning restore CS1591
     }
 }

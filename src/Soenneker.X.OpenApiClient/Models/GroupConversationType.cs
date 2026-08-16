@@ -5,7 +5,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>The conversation type to create. Supports `Group` only.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum CreateDirectMessagesConversationRequestConversationType
+    public enum GroupConversationType
     {
         [EnumMember(Value = "Group")]
         #pragma warning disable CS1591

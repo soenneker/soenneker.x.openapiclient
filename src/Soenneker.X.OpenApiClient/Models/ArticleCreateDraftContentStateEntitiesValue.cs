@@ -20,7 +20,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData Data { get; set; }
 #endif
-        /// <summary>&quot;Whether the entity can be edited. Recommended: immutable for post, image, divider, latex; mutable for link and markdown (matches the in-app Articles composer).&quot;</summary>
+        /// <summary>Whether the entity can be edited. Recommended: immutable for post, image, divider, latex; mutable for link and markdown (matches the in-app Articles composer).</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueMutability? Mutability { get; set; }
         /// <summary>The entity type. markdown carries code blocks, GFM tables, and other Markdown;          emoji maps to backend TWEMOJI (Twemoji is internal); divider is a horizontal rule;          latex renders TeX from the block text. Tables are not a separate enum value — use          type markdown with a pipe table in data.markdown.</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType? Type { get; set; }

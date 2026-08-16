@@ -96,7 +96,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.CreatePostsRequestReplySettings? ReplySettings { get; set; }
         /// <summary>Share an exclusive (super-follower) tweet with all followers.</summary>
         public bool? ShareWithFollowers { get; set; }
-        /// <summary>&quot;Text of the tweet. Required unless media is provided.  Defaulted to an empty string so it is always sent: the backend&apos;s `tweet_text` variable is non-null and rejects an absent value.&quot;</summary>
+        /// <summary>Text of the tweet. Required unless media is provided.  Defaulted to an empty string so it is always sent: the backend&apos;s `tweet_text` variable is non-null and rejects an absent value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get; set; }

@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForFieldType? Type { get; set; }
         /// <summary>The value property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -115,7 +115,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "section", n => { Section = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForFieldType>(); } },
                 { "value", n => { Value = n.GetStringValue(); } },
             };
         }
@@ -134,7 +134,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("section", Section);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForFieldType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

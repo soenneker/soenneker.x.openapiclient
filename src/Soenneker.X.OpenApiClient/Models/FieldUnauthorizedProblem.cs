@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorizedType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "section", n => { Section = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorizedType>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("section", Section);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorizedType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

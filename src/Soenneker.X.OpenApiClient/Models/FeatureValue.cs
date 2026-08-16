@@ -3,13 +3,14 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The GeoJSON geometry type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PostGeoCoordinatesType
+    #pragma warning disable CS1591
+    public enum FeatureValue
+    #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Point")]
+        [EnumMember(Value = "Feature")]
         #pragma warning disable CS1591
-        Point,
+        Feature,
         #pragma warning restore CS1591
     }
 }

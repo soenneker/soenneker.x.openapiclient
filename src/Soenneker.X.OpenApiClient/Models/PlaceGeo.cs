@@ -34,10 +34,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The GeoJSON feature type.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoTypeWrapper? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoTypeWrapper Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PlaceGeo"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "bbox", n => { Bbox = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty>(global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoTypeWrapper>(global::Soenneker.X.OpenApiClient.Models.PlaceGeoTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>(global::Soenneker.X.OpenApiClient.Models.PlaceGeoType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -78,7 +78,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("bbox", Bbox);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty>("properties", Properties);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoTypeWrapper>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

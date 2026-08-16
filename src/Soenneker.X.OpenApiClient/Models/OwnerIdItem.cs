@@ -5,12 +5,12 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum PlaceGeoTypeWrapperValue
+    public enum OwnerIdItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "Feature")]
+        [EnumMember(Value = "owner_id")]
         #pragma warning disable CS1591
-        Feature,
+        OwnerId,
         #pragma warning restore CS1591
     }
 }

@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled.Item.Live
         {
         }
         /// <summary>
-        /// &quot;Publishes a schedule that was created or updated with `manual_publish: true`. Without that flag the coordinator auto-publishes at start and this call is rejected.&quot;
+        /// Publishes a schedule that was created or updated with `manual_publish: true`. Without that flag the coordinator auto-publishes at start and this call is rejected.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GoLiveScheduledBroadcastResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled.Item.Live
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GoLiveScheduledBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GoLiveScheduledBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Publishes a schedule that was created or updated with `manual_publish: true`. Without that flag the coordinator auto-publishes at start and this call is rejected.&quot;
+        /// Publishes a schedule that was created or updated with `manual_publish: true`. Without that flag the coordinator auto-publishes at start and this call is rejected.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

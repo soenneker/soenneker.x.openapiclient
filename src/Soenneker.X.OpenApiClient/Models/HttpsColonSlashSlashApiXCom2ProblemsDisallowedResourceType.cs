@@ -5,7 +5,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public enum DisallowedResourceProblemType
+    public enum HttpsColonSlashSlashApiXCom2ProblemsDisallowedResourceType
     #pragma warning restore CS1591
     {
         [EnumMember(Value = "https://api.x.com/2/problems/disallowed-resource")]

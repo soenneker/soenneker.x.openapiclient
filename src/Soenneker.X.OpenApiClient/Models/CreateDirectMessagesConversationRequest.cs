@@ -13,7 +13,7 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning restore CS1591
     {
         /// <summary>The conversation type to create. Supports `Group` only.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequestConversationType? ConversationType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GroupConversationType? ConversationType { get; set; }
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -48,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "conversation_type", n => { ConversationType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequestConversationType>(); } },
+                { "conversation_type", n => { ConversationType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.GroupConversationType>(); } },
                 { "message", n => { Message = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage>(global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage.CreateFromDiscriminatorValue); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -60,7 +60,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequestConversationType>("conversation_type", ConversationType);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.GroupConversationType>("conversation_type", ConversationType);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage>("message", Message);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
         }

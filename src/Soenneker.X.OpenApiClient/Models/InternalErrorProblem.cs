@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.InternalErrorProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInternalErrorType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/> and sets the default values.
         /// </summary>
@@ -62,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "detail", n => { Detail = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.InternalErrorProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInternalErrorType>(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("detail", Detail);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.InternalErrorProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsInternalErrorType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

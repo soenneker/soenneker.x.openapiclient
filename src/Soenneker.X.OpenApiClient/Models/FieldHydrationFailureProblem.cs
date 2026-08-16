@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>The type property</summary>
-        public global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblemType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldHydrationFailureType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/> and sets the default values.
         /// </summary>
@@ -89,7 +89,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "section", n => { Section = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetIntValue(); } },
                 { "title", n => { Title = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblemType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldHydrationFailureType>(); } },
             };
         }
         /// <summary>
@@ -105,7 +105,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("section", Section);
             writer.WriteIntValue("status", Status);
             writer.WriteStringValue("title", Title);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblemType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.HttpsColonSlashSlashApiXCom2ProblemsFieldHydrationFailureType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
