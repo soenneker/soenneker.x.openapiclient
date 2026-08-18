@@ -8,10 +8,6 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum BroadcastChatMessageFieldsParameterItem
     #pragma warning restore CS1591
     {
-        [EnumMember(Value = "author_id")]
-        #pragma warning disable CS1591
-        AuthorId,
-        #pragma warning restore CS1591
         [EnumMember(Value = "author_name")]
         #pragma warning disable CS1591
         AuthorName,

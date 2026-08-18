@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,max_results*,pagination_token*}", pathParameters)
+        public ChatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,max_results*,pagination_token*}", rawUrl)
+        public ChatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}/chat{?broadcast_chat_message%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -166,6 +166,16 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
             [QueryParameter("broadcast_chat_message%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessageFieldsParameterItem[] BroadcastChatMessageFields { get; set; }
 #endif
+            /// <summary>A comma separated list of fields to expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.AuthorIdItem[]? Expansions { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.AuthorIdItem[] Expansions { get; set; }
+#endif
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             /// <summary>A 64-bit signed integer.</summary>
@@ -177,6 +187,16 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat
 #else
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
+#endif
+            /// <summary>A comma separated list of User fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
 #endif
         }
     }

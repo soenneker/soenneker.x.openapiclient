@@ -30,6 +30,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
 #endif
+        /// <summary>The includes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Expansions? Includes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Expansions Includes { get; set; }
+#endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,6 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessage>(global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessage.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "includes", n => { Includes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>(global::Soenneker.X.OpenApiClient.Models.Expansions.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponseMeta>(global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,6 +86,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.BroadcastChatMessage>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>("includes", Includes);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GetBroadcastChatResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
