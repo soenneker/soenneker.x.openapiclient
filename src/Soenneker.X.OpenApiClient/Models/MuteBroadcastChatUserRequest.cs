@@ -12,6 +12,14 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class MuteBroadcastChatUserRequest : IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The Unix timestamp in milliseconds when the mute expires. Omit this field to mute indefinitely.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? EndAtMs { get; set; }
+#nullable restore
+#else
+        public string EndAtMs { get; set; }
+#endif
         /// <summary>A chat message to remove while muting the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -46,6 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "end_at_ms", n => { EndAtMs = n.GetStringValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
@@ -57,6 +66,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("end_at_ms", EndAtMs);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteStringValue("user_id", UserId);
         }

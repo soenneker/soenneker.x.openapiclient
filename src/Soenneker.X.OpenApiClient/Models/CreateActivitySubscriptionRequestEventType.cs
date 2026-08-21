@@ -63,6 +63,14 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         SpacesEnd,
         #pragma warning restore CS1591
+        [EnumMember(Value = "broadcast.start")]
+        #pragma warning disable CS1591
+        BroadcastStart,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "broadcast.end")]
+        #pragma warning disable CS1591
+        BroadcastEnd,
+        #pragma warning restore CS1591
         [EnumMember(Value = "broadcast.chat")]
         #pragma warning disable CS1591
         BroadcastChat,

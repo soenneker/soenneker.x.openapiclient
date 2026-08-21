@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Mutes
         {
         }
         /// <summary>
-        /// Prevents a user from posting further messages in a running broadcast chat. The authenticated user must own the broadcast.
+        /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must own the broadcast.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MuteBroadcastChatUserResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -72,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.Mutes
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MuteBroadcastChatUserResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MuteBroadcastChatUserResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Prevents a user from posting further messages in a running broadcast chat. The authenticated user must own the broadcast.
+        /// Prevents a user from posting further messages in a running broadcast chat. When `end_at_ms` is provided, the mute expires at that time. The authenticated user must own the broadcast.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

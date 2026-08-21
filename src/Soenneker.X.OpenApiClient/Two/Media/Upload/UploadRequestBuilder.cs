@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads a media file for use in posts or other content.
+        /// Uploads a media file for use in posts, direct messages, or ads. The response carries the media identifiers, including the media_key used to reference the asset in later calls.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -120,7 +120,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return requestInfo;
         }
         /// <summary>
-        /// Uploads a media file for use in posts or other content.
+        /// Uploads a media file for use in posts, direct messages, or ads. The response carries the media identifiers, including the media_key used to reference the asset in later calls.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
