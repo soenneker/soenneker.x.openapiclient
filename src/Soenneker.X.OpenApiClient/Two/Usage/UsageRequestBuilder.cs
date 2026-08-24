@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.X.OpenApiClient.Two.Usage.Credits;
 using Soenneker.X.OpenApiClient.Two.Usage.Tweets;
 using System.Collections.Generic;
 using System.IO;
@@ -15,6 +16,11 @@ namespace Soenneker.X.OpenApiClient.Two.Usage
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The credits property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Usage.Credits.CreditsRequestBuilder Credits
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Usage.Credits.CreditsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The tweets property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Usage.Tweets.TweetsRequestBuilder Tweets
         {
