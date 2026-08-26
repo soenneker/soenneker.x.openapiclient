@@ -68,6 +68,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ReceivesYourDm,
         #pragma warning restore CS1591
+        [EnumMember(Value = "subscriber_count")]
+        #pragma warning disable CS1591
+        SubscriberCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "subscribes_to_you")]
         #pragma warning disable CS1591
         SubscribesToYou,

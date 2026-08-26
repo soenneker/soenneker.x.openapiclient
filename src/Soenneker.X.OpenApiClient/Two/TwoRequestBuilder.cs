@@ -2,9 +2,11 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.X.OpenApiClient.Two.Account;
 using Soenneker.X.OpenApiClient.Two.Account_activity;
 using Soenneker.X.OpenApiClient.Two.Activity;
 using Soenneker.X.OpenApiClient.Two.Articles;
+using Soenneker.X.OpenApiClient.Two.Bots;
 using Soenneker.X.OpenApiClient.Two.Broadcasts;
 using Soenneker.X.OpenApiClient.Two.Chat;
 using Soenneker.X.OpenApiClient.Two.Communities;
@@ -36,6 +38,11 @@ namespace Soenneker.X.OpenApiClient.Two
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TwoRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The account property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Account.AccountRequestBuilder Account
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Account.AccountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The account_activity property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Account_activity.Account_activityRequestBuilder Account_activity
         {
@@ -50,6 +57,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Articles.ArticlesRequestBuilder Articles
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Articles.ArticlesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The bots property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Bots.BotsRequestBuilder Bots
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Bots.BotsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The broadcasts property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Broadcasts.BroadcastsRequestBuilder Broadcasts

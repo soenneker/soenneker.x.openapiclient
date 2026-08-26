@@ -12,7 +12,7 @@
       "name": "X Developer Agreement and Policy",
       "url": "https://developer.x.com/en/developer-terms/agreement-and-policy.html"
     },
-    "version": "2.167"
+    "version": "2.168"
   },
   "servers": [
     {
@@ -21,6 +21,92 @@
     }
   ],
   "paths": {
+    "/2/account": {
+      "get": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Get developer account",
+        "description": "Returns the authenticated user\u0027s X Developer Platform account. A user without an account gets a resource-not-found error entry.",
+        "operationId": "GetDeveloperAccount",
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetDeveloperAccountResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "developer.read"
+            ]
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Account"
+        ],
+        "summary": "Ensure developer account",
+        "description": "Creates an X Developer Platform account for the authenticated user if they do not already have one, and returns it. Idempotent: when the user already has an account it is returned unchanged with \u0060created\u0060 false.",
+        "operationId": "EnsureAccount",
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EnsureAccountResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "developer.write"
+            ]
+          }
+        ]
+      }
+    },
     "/2/account_activity/subscriptions/count": {
       "get": {
         "tags": [
@@ -110,9 +196,9 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "dm.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -180,10 +266,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read",
               "users.read",
-              "tweet.read"
+              "dm.write",
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -807,6 +893,332 @@
           },
           {
             "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/bots": {
+      "get": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Get Bots",
+        "operationId": "GetBots",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/UserFieldsParameter"
+          },
+          {
+            "$ref": "#/components/parameters/UserExpansionsParameter"
+          },
+          {
+            "$ref": "#/components/parameters/PostFieldsParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetBotsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Create a bot",
+        "description": "Creates a bot account in the calling app\u0027s project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project\u0027s bots returns that bot with a freshly minted token, revoking the previous one \u2014 safe to retry when a response was lost, since the replaced token was never seen.",
+        "operationId": "CreateBot",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateBotRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBotResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/bots/{id}": {
+      "delete": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Delete Bot",
+        "operationId": "DeleteBot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteBotResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Update Bot",
+        "operationId": "UpdateBot",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBotRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateBotResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/bots/{id}/token": {
+      "delete": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Revoke Bot Token",
+        "operationId": "RevokeBotToken",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RevokeBotTokenResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Bots"
+        ],
+        "summary": "Rotate Bot Token",
+        "operationId": "RotateBotToken",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/RotateBotTokenRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/RotateBotTokenResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
           }
         ]
       }
@@ -1622,8 +2034,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1690,8 +2102,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1831,9 +2243,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -2036,9 +2448,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -2182,9 +2594,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -2256,8 +2668,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -2328,9 +2740,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -2401,9 +2813,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -3025,6 +3437,63 @@
       }
     },
     "/2/compliance/jobs/{id}": {
+      "delete": {
+        "tags": [
+          "Compliance"
+        ],
+        "summary": "Cancel Compliance Job",
+        "description": "Cancels a Compliance Job that has not finished processing; its status becomes failed and a new job of the same type can be created.",
+        "externalDocs": {
+          "url": "https://developer.twitter.com/en/docs/twitter-api/compliance/batch-compliance/introduction"
+        },
+        "operationId": "DeleteComplianceJobsById",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/ComplianceJobFieldsParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteComplianceJobsByIdResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      },
       "get": {
         "tags": [
           "Compliance"
@@ -3056,6 +3525,152 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/GetComplianceJobsByIdResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/compliance/jobs/{id}/download": {
+      "get": {
+        "tags": [
+          "Compliance"
+        ],
+        "summary": "Download Compliance Job Results",
+        "description": "Downloads the results file of a completed Compliance Job using the signed URL returned at job creation.",
+        "externalDocs": {
+          "url": "https://developer.twitter.com/en/docs/twitter-api/compliance/batch-compliance/introduction"
+        },
+        "operationId": "DownloadComplianceJobResults",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Signed download token from the job\u0027s download_url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/ComplianceJobFieldsParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/octet-stream": {
+                "schema": {
+                  "$ref": "#/components/schemas/DownloadComplianceJobResults200OctetStreamResponseSchema"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/compliance/jobs/{id}/upload": {
+      "put": {
+        "tags": [
+          "Compliance"
+        ],
+        "summary": "Upload Compliance Job Submission",
+        "description": "Uploads the newline-delimited ID file for a Compliance Job using the signed URL returned at job creation.",
+        "externalDocs": {
+          "url": "https://developer.twitter.com/en/docs/twitter-api/compliance/batch-compliance/introduction"
+        },
+        "operationId": "UploadComplianceJobSubmission",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          },
+          {
+            "name": "token",
+            "in": "query",
+            "description": "Signed upload token from the job\u0027s upload_url.",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/ComplianceJobFieldsParameter"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/octet-stream": {
+              "schema": {
+                "$ref": "#/components/schemas/UploadComplianceJobSubmissionOctetStreamRequestRequestBody"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UploadComplianceJobSubmissionResponse"
                 }
               }
             }
@@ -3363,8 +3978,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3614,9 +4229,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3794,9 +4409,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -3897,9 +4512,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -4028,8 +4643,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -4471,8 +5086,8 @@
             "OAuth2UserToken": [
               "list.write",
               "users.read",
-              "tweet.read",
-              "list.read"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -4597,9 +5212,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "list.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -4670,9 +5285,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -4757,8 +5372,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -4845,8 +5460,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
+              "list.read",
               "tweet.read"
             ]
           },
@@ -4914,9 +5529,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4984,9 +5599,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -5080,9 +5695,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.read",
               "users.read",
-              "tweet.read",
-              "list.read"
+              "tweet.read"
             ]
           },
           {
@@ -5892,8 +6507,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -6409,9 +7024,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "space.read"
+              "space.read",
+              "tweet.read"
             ]
           },
           {
@@ -6580,9 +7195,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "space.read"
+              "space.read",
+              "users.read"
             ]
           },
           {
@@ -6651,8 +7266,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "space.read"
             ]
           },
@@ -6840,9 +7455,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "space.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6993,8 +7608,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -7051,9 +7666,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "tweet.write"
             ]
           },
           {
@@ -9562,8 +10177,8 @@
           {
             "OAuth2UserToken": [
               "tweet.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -9635,8 +10250,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -9724,9 +10339,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "like.read",
               "tweet.read",
-              "like.read"
+              "users.read"
             ]
           },
           {
@@ -9922,8 +10537,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10094,9 +10709,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "tweet.moderate.write"
+              "tweet.moderate.write",
+              "users.read"
             ]
           },
           {
@@ -10563,8 +11178,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10688,8 +11303,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -10861,8 +11476,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11014,8 +11629,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11101,8 +11716,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "block.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -11196,8 +11811,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "bookmark.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -11262,8 +11877,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "bookmark.write",
+              "tweet.read",
               "users.read"
             ]
           }
@@ -11483,9 +12098,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "bookmark.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11554,8 +12169,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "bookmark.write",
-              "tweet.read"
+              "tweet.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -11608,9 +12223,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -11752,9 +12367,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "list.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -11821,8 +12436,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -11892,8 +12507,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "list.write"
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -11977,9 +12592,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "follows.read"
             ]
           },
           {
@@ -12135,9 +12750,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "follows.write"
             ]
           },
           {
@@ -12230,8 +12845,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "like.read"
             ]
           },
@@ -12298,9 +12913,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "like.write"
             ]
           },
           {
@@ -12364,8 +12979,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -12582,8 +13197,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -12669,8 +13284,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "mute.read"
             ]
           },
@@ -12735,9 +13350,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "mute.write",
-              "tweet.read"
+              "mute.write"
             ]
           },
           {
@@ -12821,8 +13436,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -12891,8 +13506,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -12961,9 +13576,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13031,9 +13646,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -13096,9 +13711,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -13166,9 +13781,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -13665,9 +14280,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "follows.write"
+              "follows.write",
+              "tweet.read"
             ]
           },
           {
@@ -13736,8 +14351,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "mute.write"
+              "mute.write",
+              "tweet.read"
             ]
           },
           {
@@ -15981,6 +16596,85 @@
         },
         "additionalProperties": false
       },
+      "CreateBotRequest": {
+        "required": [
+          "handle"
+        ],
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "The bot\u0027s display name; defaults to the handle."
+          },
+          "handle": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string",
+            "description": "The bot\u0027s handle (X screen name): 1-15 characters, letters, numbers, or underscores."
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Scopes for the bot\u0027s bearer token; defaults to the standard bot scope set (dm.read, dm.write, tweet.read, users.read, media.write)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreateBotResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateBotResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "CreateBotResponseData": {
+        "required": [
+          "id",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of the bot\u0027s User account."
+          },
+          "name": {
+            "type": "string",
+            "description": "The bot\u0027s display name."
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Scopes granted to the bot\u0027s bearer token."
+          },
+          "token": {
+            "type": "string",
+            "description": "The bot\u0027s bearer token. Returned exactly once; store it securely."
+          },
+          "token_expires_at_ms": {
+            "type": "integer",
+            "description": "Expiry of the bot\u0027s bearer token, in epoch milliseconds."
+          },
+          "username": {
+            "type": "string",
+            "description": "The bot\u0027s X handle (screen name)."
+          }
+        }
+      },
       "CreateChatConversationActionSignatures": {
         "required": [
           "message_id",
@@ -17688,6 +18382,32 @@
         },
         "additionalProperties": false
       },
+      "DeleteBotResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DeleteBotResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "DeleteBotResponseData": {
+        "required": [
+          "deleted"
+        ],
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "description": "Whether the bot was deleted."
+          }
+        }
+      },
       "DeleteBroadcastChatMessageResponse": {
         "type": "object",
         "properties": {
@@ -17880,6 +18600,20 @@
           "deleted": {
             "type": "boolean",
             "description": "Indicates whether the Community Note was deleted."
+          }
+        }
+      },
+      "DeleteComplianceJobsByIdResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ComplianceJob"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
           }
         }
       },
@@ -18376,6 +19110,37 @@
         "type": "array",
         "items": {
           "$ref": "#/components/schemas/DmEventReferencedPostsItem"
+        }
+      },
+      "EnsureAccountResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/EnsureAccountResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "EnsureAccountResponseData": {
+        "required": [
+          "account_id",
+          "created"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "description": "Unique identifier of the developer account."
+          },
+          "created": {
+            "type": "boolean",
+            "description": "Whether this request created the account."
+          }
         }
       },
       "Error": {
@@ -18878,6 +19643,29 @@
         },
         "additionalProperties": false
       },
+      "GetBotsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/User"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          },
+          "includes": {
+            "$ref": "#/components/schemas/Expansions"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetBotsResponseMeta"
+          }
+        }
+      },
       "GetBroadcastChatResponse": {
         "type": "object",
         "properties": {
@@ -19040,6 +19828,42 @@
           },
           "meta": {
             "$ref": "#/components/schemas/GetConnectionHistoryResponseMeta"
+          }
+        }
+      },
+      "GetDeveloperAccountResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetDeveloperAccountResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "GetDeveloperAccountResponseData": {
+        "required": [
+          "account_id",
+          "name",
+          "created_at"
+        ],
+        "type": "object",
+        "properties": {
+          "account_id": {
+            "type": "string",
+            "description": "Unique identifier of the developer account."
+          },
+          "created_at": {
+            "type": "string",
+            "description": "Creation time of the account (ISO 8601)."
+          },
+          "name": {
+            "type": "string",
+            "description": "Display name of the developer account."
           }
         }
       },
@@ -23102,6 +23926,96 @@
           }
         }
       },
+      "RevokeBotTokenResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RevokeBotTokenResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "RevokeBotTokenResponseData": {
+        "required": [
+          "revoked"
+        ],
+        "type": "object",
+        "properties": {
+          "revoked": {
+            "type": "boolean",
+            "description": "Whether the bot\u0027s token was revoked."
+          }
+        }
+      },
+      "RotateBotTokenRequest": {
+        "type": "object",
+        "properties": {
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Scopes for the new bearer token; defaults to the standard bot scope set (dm.read, dm.write, tweet.read, users.read, media.write)."
+          }
+        },
+        "additionalProperties": false
+      },
+      "RotateBotTokenResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/RotateBotTokenResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "RotateBotTokenResponseData": {
+        "required": [
+          "id",
+          "token"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of the bot\u0027s User account."
+          },
+          "name": {
+            "type": "string",
+            "description": "The bot\u0027s display name."
+          },
+          "scopes": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Scopes granted to the new bearer token."
+          },
+          "token": {
+            "type": "string",
+            "description": "The bot\u0027s new bearer token. Returned exactly once; store it securely. Every previously issued token for this bot is invalidated."
+          },
+          "token_expires_at_ms": {
+            "type": "integer",
+            "description": "Expiry of the new bearer token, in epoch milliseconds."
+          },
+          "username": {
+            "type": "string",
+            "description": "The bot\u0027s X handle (screen name)."
+          }
+        }
+      },
       "MediaVariantsItem": {
         "type": "object",
         "properties": {
@@ -24222,6 +25136,53 @@
         },
         "additionalProperties": false
       },
+      "UpdateBotRequest": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "maxLength": 50,
+            "minLength": 1,
+            "type": "string",
+            "description": "New display name."
+          },
+          "dm_permission": {
+            "$ref": "#/components/schemas/UpdateBotRequestDmPermission"
+          },
+          "handle": {
+            "maxLength": 15,
+            "minLength": 1,
+            "type": "string",
+            "description": "New handle (X screen name): 1-15 characters, letters, numbers, or underscores."
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateBotResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateBotResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UpdateBotResponseData": {
+        "required": [
+          "updated"
+        ],
+        "type": "object",
+        "properties": {
+          "updated": {
+            "type": "boolean",
+            "description": "Whether the bot was updated."
+          }
+        }
+      },
       "UpdateListsRequest": {
         "type": "object",
         "properties": {
@@ -24507,6 +25468,34 @@
           }
         }
       },
+      "UploadComplianceJobSubmissionRequest": {
+        "required": [
+          "submission"
+        ],
+        "type": "object",
+        "properties": {
+          "submission": {
+            "type": "string",
+            "description": "The newline-delimited ID file, forwarded verbatim.",
+            "format": "binary"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UploadComplianceJobSubmissionResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ComplianceJob"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
       "Usage": {
         "type": "object",
         "properties": {
@@ -24634,6 +25623,10 @@
           "receives_your_dm": {
             "type": "boolean",
             "description": "Indicates if you can send a DM to this User."
+          },
+          "subscriber_count": {
+            "type": "integer",
+            "description": "The number of Premium subscribers of this User."
           },
           "subscribes_to_you": {
             "type": "boolean",
@@ -25709,6 +26702,19 @@
           }
         },
         "description": "A URL entity."
+      },
+      "GetBotsResponseMeta": {
+        "type": "object",
+        "properties": {
+          "max_bots": {
+            "type": "integer"
+          },
+          "result_count": {
+            "type": "integer",
+            "description": "Number of items in the data array.",
+            "format": "int32"
+          }
+        }
       },
       "GetBroadcastChatResponseMeta": {
         "type": "object",
@@ -27758,6 +28764,14 @@
         "type": "string",
         "format": "binary"
       },
+      "DownloadComplianceJobResults200OctetStreamResponse": {
+        "type": "string",
+        "format": "binary"
+      },
+      "UploadComplianceJobSubmissionOctetStreamRequest": {
+        "type": "string",
+        "format": "binary"
+      },
       "DmConversationsMediaDownload200OctetStreamResponse": {
         "type": "string",
         "format": "binary"
@@ -27795,6 +28809,14 @@
         "type": "object"
       },
       "ChatMediaDownload200OctetStreamResponseSchema": {
+        "type": "string",
+        "format": "binary"
+      },
+      "DownloadComplianceJobResults200OctetStreamResponseSchema": {
+        "type": "string",
+        "format": "binary"
+      },
+      "UploadComplianceJobSubmissionOctetStreamRequestRequestBody": {
         "type": "string",
         "format": "binary"
       },
@@ -28866,6 +29888,34 @@
             {
               "value": "https://api.x.com/2/problems/resource-unavailable",
               "name": "HttpsColonSlashSlashApiXCom2ProblemsResourceUnavailable"
+            }
+          ]
+        }
+      },
+      "UpdateBotRequestDmPermission": {
+        "enum": [
+          "everyone",
+          "premium",
+          "no_one"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Who may send Direct Messages to the bot.",
+        "x-ms-enum": {
+          "name": "UpdateBotRequestDmPermission",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "everyone",
+              "name": "Everyone"
+            },
+            {
+              "value": "premium",
+              "name": "Premium"
+            },
+            {
+              "value": "no_one",
+              "name": "NoOne"
             }
           ]
         }
@@ -30683,6 +31733,7 @@
           "protected",
           "public_metrics",
           "receives_your_dm",
+          "subscriber_count",
           "subscribes_to_you",
           "subscription",
           "subscription_type",
@@ -30758,6 +31809,10 @@
             {
               "value": "receives_your_dm",
               "name": "ReceivesYourDm"
+            },
+            {
+              "value": "subscriber_count",
+              "name": "SubscriberCount"
             },
             {
               "value": "subscribes_to_you",
@@ -37394,6 +38449,8 @@
               "bookmark.write": "Create and delete your bookmarks.",
               "broadcast.read": "View your live broadcasts and their chat.",
               "broadcast.write": "Manage your live broadcasts and send chat messages on your behalf.",
+              "developer.read": "View your developer accounts, apps, and settings.",
+              "developer.write": "Create and manage your X Developer Platform account.",
               "dm.read": "Read all your Direct Messages.",
               "dm.write": "Send and manage your Direct Messages.",
               "follows.read": "View accounts you follow and accounts following you.",
@@ -37424,6 +38481,14 @@
   },
   "tags": [
     {
+      "name": "Account",
+      "description": "Endpoints for managing the authenticated user\u0027s X Developer Platform account",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "https://docs.x.com/x-api/introduction"
+      }
+    },
+    {
       "name": "Account Activity",
       "description": "Endpoints relating to retrieving, managing Account Activity subscriptions",
       "externalDocs": {
@@ -37446,6 +38511,9 @@
         "description": "Find out more",
         "url": "https://docs.x.com/x-api/articles/introduction"
       }
+    },
+    {
+      "name": "Bots"
     },
     {
       "name": "Broadcasts",
