@@ -20,7 +20,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string DisplayName { get; set; }
 #endif
-        /// <summary>The bot&apos;s handle (X screen name): 1-15 characters, letters, numbers, or underscores.</summary>
+        /// <summary>The bot&apos;s handle (X screen name): 5-15 characters, letters, numbers, or underscores.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Handle { get; set; }

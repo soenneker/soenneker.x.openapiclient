@@ -9,36 +9,35 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class UpdateBotRequest : IParsable
+    public partial class EnsureAccountRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>New display name.</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Optional provisioning-credit metadata (an opaque string, e.g. a subscription tier) to claim for the account, attributed to the calling app. Omit to just ensure the account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public string? Metadata { get; set; }
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public string Metadata { get; set; }
 #endif
-        /// <summary>Who may send Direct Messages to the bot.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UpdateBotRequestDmPermission? DmPermission { get; set; }
-        /// <summary>New handle (X screen name): 5-15 characters, letters, numbers, or underscores.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Handle { get; set; }
-#nullable restore
-#else
-        public string Handle { get; set; }
-#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.EnsureAccountRequest"/> and sets the default values.
+        /// </summary>
+        public EnsureAccountRequest()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateBotRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.EnsureAccountRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.UpdateBotRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.EnsureAccountRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateBotRequest();
+            return new global::Soenneker.X.OpenApiClient.Models.EnsureAccountRequest();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -48,9 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "dm_permission", n => { DmPermission = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateBotRequestDmPermission>(); } },
-                { "handle", n => { Handle = n.GetStringValue(); } },
+                { "metadata", n => { Metadata = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,9 +57,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("display_name", DisplayName);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateBotRequestDmPermission>("dm_permission", DmPermission);
-            writer.WriteStringValue("handle", Handle);
+            writer.WriteStringValue("metadata", Metadata);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

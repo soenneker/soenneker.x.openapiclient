@@ -22,6 +22,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Keyword { get; set; }
 #endif
+        /// <summary>Optional event-specific string predicates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterQualifiersProperty? Qualifiers { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterQualifiersProperty Qualifiers { get; set; }
+#endif
         /// <summary>User the subscription is scoped to. For mute.* and block.* events, this must be the authenticated source user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -50,6 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterDirection>(); } },
                 { "keyword", n => { Keyword = n.GetStringValue(); } },
+                { "qualifiers", n => { Qualifiers = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterQualifiersProperty>(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterQualifiersProperty.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -62,6 +71,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterDirection>("direction", Direction);
             writer.WriteStringValue("keyword", Keyword);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilterQualifiersProperty>("qualifiers", Qualifiers);
             writer.WriteStringValue("user_id", UserId);
         }
     }
