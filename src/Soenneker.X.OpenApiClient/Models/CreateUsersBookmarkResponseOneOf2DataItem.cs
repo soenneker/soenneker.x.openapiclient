@@ -7,23 +7,16 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>
-    /// At least one of `tweet_id`, `tweet_ids` is required.
-    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CreateUsersBookmarkRequest : IAdditionalDataHolder, IParsable
+    #pragma warning disable CS1591
+    public partial class CreateUsersBookmarkResponseOneOf2DataItem : IAdditionalDataHolder, IParsable
+    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Optional ID of the Bookmark folder to add the Post(s) to. When omitted, Posts are added to the user&apos;s top-level Bookmarks only. A bulk request uses this one folder for every ID.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? FolderId { get; set; }
-#nullable restore
-#else
-        public string FolderId { get; set; }
-#endif
-        /// <summary>The ID of the Post to add to the user&apos;s Bookmarks. Mutually exclusive with `tweet_ids`.</summary>
+        /// <summary>Indicates whether the Post is bookmarked by the user.</summary>
+        public bool? Bookmarked { get; set; }
+        /// <summary>The Post ID that was bookmarked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TweetId { get; set; }
@@ -31,30 +24,22 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string TweetId { get; set; }
 #endif
-        /// <summary>Post IDs to add to the user&apos;s Bookmarks. At most 25. Mutually exclusive with `tweet_id`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<string>? TweetIds { get; set; }
-#nullable restore
-#else
-        public List<string> TweetIds { get; set; }
-#endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponseOneOf2DataItem"/> and sets the default values.
         /// </summary>
-        public CreateUsersBookmarkRequest()
+        public CreateUsersBookmarkResponseOneOf2DataItem()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponseOneOf2DataItem"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponseOneOf2DataItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkRequest();
+            return new global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponseOneOf2DataItem();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -64,9 +49,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "folder_id", n => { FolderId = n.GetStringValue(); } },
+                { "bookmarked", n => { Bookmarked = n.GetBoolValue(); } },
                 { "tweet_id", n => { TweetId = n.GetStringValue(); } },
-                { "tweet_ids", n => { TweetIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
         /// <summary>
@@ -76,9 +60,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("folder_id", FolderId);
+            writer.WriteBoolValue("bookmarked", Bookmarked);
             writer.WriteStringValue("tweet_id", TweetId);
-            writer.WriteCollectionOfPrimitiveValues<string>("tweet_ids", TweetIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

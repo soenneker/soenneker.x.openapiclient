@@ -8,12 +8,12 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="byte[]"/>, <see cref="byte[]"/>
+    /// Composed type wrapper for classes <see cref="byte"/> array, <see cref="byte"/> array
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaUploadRequestMedia : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="byte[]"/></summary>
+        /// <summary>Composed type representation for type <see cref="byte"/> array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Base64 { get; set; }
@@ -21,7 +21,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public byte[] Base64 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="byte[]"/></summary>
+        /// <summary>Composed type representation for type <see cref="byte"/> array</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public byte[]? Binary { get; set; }

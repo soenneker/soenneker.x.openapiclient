@@ -90,8 +90,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Recent
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecentRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("end_time")]
             public DateTimeOffset? EndTime { get; set; }
+            #pragma warning restore CS1591
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -102,8 +104,10 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Recent
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.PostExpansionsParameterItem[] Expansions { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
+            #pragma warning restore CS1591
             /// <summary>A comma separated list of Media fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -166,35 +170,49 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Search.Recent
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("query")]
             public string? Query { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("query")]
             public string Query { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("since_id")]
             public string? SinceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("since_id")]
             public string SinceId { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("sort_order")]
             public global::Soenneker.X.OpenApiClient.Models.SearchPostsRecentSortOrderParameter? SortOrder { get; set; }
+            #pragma warning restore CS1591
             /// <summary>Must be within the last 7 days.</summary>
             [QueryParameter("start_time")]
             public DateTimeOffset? StartTime { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("until_id")]
             public string? UntilId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("until_id")]
             public string UntilId { get; set; }
+            #pragma warning restore CS1591
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

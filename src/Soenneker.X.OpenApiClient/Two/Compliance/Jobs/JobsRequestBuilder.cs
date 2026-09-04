@@ -160,10 +160,14 @@ namespace Soenneker.X.OpenApiClient.Two.Compliance.Jobs
             [QueryParameter("compliance_job%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.ComplianceJobFieldsParameterItem[] ComplianceJobFields { get; set; }
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("status")]
             public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsStatusParameter? Status { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("type")]
             public global::Soenneker.X.OpenApiClient.Models.GetComplianceJobsTypeParameter? Type { get; set; }
+            #pragma warning restore CS1591
         }
         /// <summary>
         /// Creates a new Compliance Job for the specified job type.

@@ -157,10 +157,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -215,10 +215,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "dm.write",
               "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.read"
             ]
           },
           {
@@ -688,6 +688,12 @@
       "delete": {
         "security": [
           {
+            "OAuth2UserToken": []
+          },
+          {
+            "UserToken": []
+          },
+          {
             "BearerToken": []
           }
         ],
@@ -742,6 +748,12 @@
       },
       "put": {
         "security": [
+          {
+            "OAuth2UserToken": []
+          },
+          {
+            "UserToken": []
+          },
           {
             "BearerToken": []
           }
@@ -1434,8 +1446,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1616,8 +1628,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2374,9 +2386,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -2535,9 +2547,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -2609,9 +2621,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -2684,8 +2696,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -2831,9 +2843,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -2906,8 +2918,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -3247,8 +3259,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -3343,9 +3355,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4092,8 +4104,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -4226,8 +4238,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4349,9 +4361,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -4420,8 +4432,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -4489,9 +4501,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -4613,9 +4625,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -4727,8 +4739,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read"
+              "dm.read",
+              "dm.write"
             ]
           },
           {
@@ -5470,10 +5482,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
               "list.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -5529,9 +5541,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -5659,8 +5671,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "list.write"
             ]
           },
@@ -5732,9 +5744,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -5826,9 +5838,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -5988,8 +6000,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "list.write",
-              "tweet.read"
+              "tweet.read",
+              "list.write"
             ]
           },
           {
@@ -6594,8 +6606,8 @@
         "tags": [
           "Media"
         ],
-        "summary": "Upload a media file and get back its identifiers, including a media_key. The media field carries the file content base64-encoded in JSON bodies (raw bytes in multipart bodies); media_category is tweet_image, tweet_video, or tweet_gif for posts and ads, dm_image/dm_video/dm_gif for DMs, or subtitles. For X Ads accounts, register the returned media_key via create_media_library_item to add it to the account's media library and use it in campaigns.",
-        "description": "Uploads a media file for use in posts, direct messages, or ads. The response carries the media identifiers, including the media_key used to reference the asset in later calls.",
+        "summary": "Upload media",
+        "description": "Uploads a media file for use in posts, direct messages, or ads. The response carries the media identifiers, including the media_key used to reference the asset in later calls. The media field carries the file content base64-encoded in JSON bodies (raw bytes in multipart bodies); media_category is tweet_image, tweet_video, or tweet_gif for posts and ads, dm_image/dm_video/dm_gif for DMs, or subtitles. For X Ads accounts, register the returned media_key via create_media_library_item to add it to the account's media library and use it in campaigns.",
         "externalDocs": {
           "url": "https://docs.x.com/x-api/media/media-upload"
         },
@@ -7000,8 +7012,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -7531,9 +7543,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "space.read",
               "users.read",
-              "space.read"
+              "tweet.read"
             ]
           },
           {
@@ -7609,9 +7621,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "space.read",
               "tweet.read",
-              "space.read"
+              "users.read"
             ]
           },
           {
@@ -7715,8 +7727,8 @@
           {
             "OAuth2UserToken": [
               "space.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -8057,8 +8069,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8140,9 +8152,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "tweet.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -8198,8 +8210,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11005,8 +11017,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11836,9 +11848,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.write",
               "users.read",
-              "tweet.read",
-              "tweet.write"
+              "tweet.read"
             ]
           },
           {
@@ -11893,8 +11905,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11972,9 +11984,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "like.read"
             ]
           },
           {
@@ -12186,8 +12198,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12383,9 +12395,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.moderate.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "tweet.moderate.write"
             ]
           },
           {
@@ -12560,8 +12572,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12636,8 +12648,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12935,8 +12947,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12987,9 +12999,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -13150,8 +13162,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13241,8 +13253,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13404,8 +13416,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "block.read",
-              "tweet.read"
+              "tweet.read",
+              "block.read"
             ]
           },
           {
@@ -13494,8 +13506,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "bookmark.read",
-              "tweet.read"
+              "tweet.read",
+              "bookmark.read"
             ]
           },
           {
@@ -13600,7 +13612,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Create Users Bookmark",
+        "summary": "Create Bookmark",
+        "description": "Adds one or more Posts to the authenticated user's Bookmarks. Supply `tweet_id` for a single Post, or `tweet_ids` (at most 25) to bookmark several in one request. Optional `folder_id` applies to every Post in the request. Billing and rate limits still apply per HTTP request.",
         "operationId": "createUsersBookmark",
         "parameters": [
           {
@@ -13657,8 +13670,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -13736,8 +13749,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ],
@@ -13802,8 +13815,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "bookmark.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -13963,8 +13976,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -14022,8 +14035,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14080,9 +14093,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14241,8 +14254,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -14314,8 +14327,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "follows.read"
+              "follows.read",
+              "users.read"
             ]
           },
           {
@@ -14408,8 +14421,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "follows.read"
+              "follows.read",
+              "users.read"
             ]
           },
           {
@@ -14499,8 +14512,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "follows.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -14568,9 +14581,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "like.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14668,9 +14681,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "like.write",
               "tweet.read",
-              "like.write"
+              "users.read"
             ]
           },
           {
@@ -15043,9 +15056,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "mute.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "mute.read"
             ]
           },
           {
@@ -15294,9 +15307,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "list.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -15360,9 +15373,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -15506,8 +15519,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -15643,8 +15656,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "tweet.write"
+              "tweet.write",
+              "tweet.read"
             ]
           },
           {
@@ -15715,9 +15728,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "tweet.write"
             ]
           },
           {
@@ -16112,8 +16125,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.write",
               "users.read",
+              "follows.write",
               "tweet.read"
             ]
           },
@@ -16184,8 +16197,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "mute.write"
             ]
           },
@@ -16255,6 +16268,12 @@
       "get": {
         "security": [
           {
+            "OAuth2UserToken": []
+          },
+          {
+            "UserToken": []
+          },
+          {
             "BearerToken": []
           }
         ],
@@ -16302,6 +16321,9 @@
       },
       "post": {
         "security": [
+          {
+            "OAuth2UserToken": []
+          },
           {
             "UserToken": []
           },
@@ -16416,6 +16438,9 @@
       "delete": {
         "security": [
           {
+            "OAuth2UserToken": []
+          },
+          {
             "UserToken": []
           },
           {
@@ -16473,6 +16498,9 @@
       },
       "put": {
         "security": [
+          {
+            "OAuth2UserToken": []
+          },
           {
             "UserToken": []
           },
@@ -20267,49 +20295,108 @@
         }
       },
       "CreateUsersBookmarkRequest": {
-        "type": "object",
-        "required": [
-          "tweet_id"
+        "anyOf": [
+          {
+            "required": [
+              "tweet_id"
+            ]
+          },
+          {
+            "required": [
+              "tweet_ids"
+            ]
+          }
         ],
+        "type": "object",
+        "description": "At least one of `tweet_id`, `tweet_ids` is required.",
         "properties": {
           "folder_id": {
             "type": "string",
-            "description": "Optional ID of the Bookmark folder to add the Post to. When omitted, the Post is added to the user's top-level Bookmarks only.",
+            "description": "Optional ID of the Bookmark folder to add the Post(s) to. When omitted, Posts are added to the user's top-level Bookmarks only. A bulk request uses this one folder for every ID.",
             "pattern": "^[0-9]{1,19}$"
           },
           "tweet_id": {
             "type": "string",
-            "description": "The ID of the Post to add to the user's Bookmarks.",
+            "description": "The ID of the Post to add to the user's Bookmarks. Mutually exclusive with `tweet_ids`.",
             "pattern": "^[0-9]{1,19}$"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CreateUsersBookmarkResponse": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreateUsersBookmarkResponseData"
           },
-          "errors": {
+          "tweet_ids": {
             "type": "array",
+            "description": "Post IDs to add to the user's Bookmarks. At most 25. Mutually exclusive with `tweet_id`.",
+            "minItems": 1,
+            "maxItems": 25,
             "items": {
-              "$ref": "#/components/schemas/Problem"
+              "type": "string",
+              "pattern": "^[0-9]{1,19}$"
             }
           }
         }
       },
-      "CreateUsersBookmarkResponseData": {
-        "type": "object",
-        "required": [
-          "bookmarked"
-        ],
-        "properties": {
-          "bookmarked": {
-            "type": "boolean",
-            "description": "Indicates whether the Post is bookmarked by the user."
+      "CreateUsersBookmarkResponse": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "object",
+                "required": [
+                  "bookmarked"
+                ],
+                "properties": {
+                  "bookmarked": {
+                    "type": "boolean",
+                    "description": "Indicates whether the Post is bookmarked by the user."
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "array",
+                "description": "Successfully bookmarked Posts, in request order.",
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "tweet_id",
+                    "bookmarked"
+                  ],
+                  "properties": {
+                    "bookmarked": {
+                      "type": "boolean",
+                      "description": "Indicates whether the Post is bookmarked by the user."
+                    },
+                    "tweet_id": {
+                      "type": "string",
+                      "description": "The Post ID that was bookmarked."
+                    }
+                  }
+                }
+              },
+              "errors": {
+                "type": "array",
+                "description": "Per-id failures; remaining IDs are still bookmarked.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "detail": {
+                      "type": "string"
+                    },
+                    "title": {
+                      "type": "string"
+                    },
+                    "tweet_id": {
+                      "type": "string",
+                      "description": "Post ID the failure applies to."
+                    }
+                  }
+                }
+              }
+            }
           }
-        }
+        ]
       },
       "CreateWebhookReplayJobRequest": {
         "type": "object",
