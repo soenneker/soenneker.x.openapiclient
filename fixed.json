@@ -205,10 +205,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "dm.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -276,10 +276,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read",
-              "dm.read"
+              "dm.read",
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -601,8 +601,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "like.read"
+              "like.read",
+              "tweet.read"
             ]
           },
           {
@@ -618,7 +618,7 @@
           "Activity"
         ],
         "summary": "Create X activity subscription",
-        "description": "Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. Optional filter.qualifiers further narrow supported chat, follow, unfollow, and like events.",
+        "description": "Creates a subscription for an X activity event. OAuth2 user-context tokens must hold the scope matching the requested event_type: dm.read for chat.* and dm.* events, like.read for like.* events, mute.read for mute.* events, block.read for block.* events, follows.read for subscriptions.* events, and tweet.read for all other event types. Mute and block subscriptions are actor-only: filter.user_id must identify the authenticated user and direction is not supported. subscriptions.* events require a user-context token and filter.user_id must identify the authenticated user. Optional filter.qualifiers further narrow supported chat, follow, unfollow, like, and subscriptions events.",
         "externalDocs": {
           "url": "https://docs.x.com/x-api/activity/create-x-activity-subscription"
         },
@@ -1646,8 +1646,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2205,8 +2205,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -2267,8 +2267,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -2471,9 +2471,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -2545,8 +2545,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -2617,9 +2617,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -2690,9 +2690,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -2764,8 +2764,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -2836,8 +2836,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -2900,8 +2900,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -3323,8 +3323,8 @@
           {
             "OAuth2UserToken": [
               "list.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4001,8 +4001,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4183,8 +4183,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -4252,8 +4252,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -4320,9 +4320,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -4432,9 +4432,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -4535,9 +4535,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4595,8 +4595,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read"
+              "dm.read",
+              "dm.write"
             ]
           },
           {
@@ -5108,8 +5108,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
               "users.read",
+              "list.read",
               "list.write"
             ]
           },
@@ -5170,8 +5170,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5235,8 +5235,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "list.read"
             ]
           },
@@ -5308,9 +5308,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -5394,9 +5394,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -5484,8 +5484,8 @@
           {
             "OAuth2UserToken": [
               "list.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5552,9 +5552,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5622,8 +5622,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -5718,8 +5718,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -6598,8 +6598,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -7047,9 +7047,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "space.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -7124,9 +7124,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "space.read",
               "tweet.read",
-              "space.read"
+              "users.read"
             ]
           },
           {
@@ -7218,9 +7218,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -7289,9 +7289,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "space.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -7381,9 +7381,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "space.read",
               "users.read",
-              "tweet.read",
-              "space.read"
+              "tweet.read"
             ]
           }
         ]
@@ -7478,8 +7478,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "space.read"
             ]
           },
@@ -7631,8 +7631,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -7689,9 +7689,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "tweet.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -10208,9 +10208,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "tweet.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10282,8 +10282,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10371,9 +10371,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "like.read"
             ]
           },
           {
@@ -10480,8 +10480,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10667,8 +10667,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10741,9 +10741,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "tweet.moderate.write",
-              "users.read"
+              "tweet.moderate.write"
             ]
           },
           {
@@ -10994,8 +10994,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11210,8 +11210,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11262,8 +11262,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11335,8 +11335,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -11661,8 +11661,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11749,6 +11749,72 @@
           {
             "OAuth2UserToken": [
               "block.read",
+              "tweet.read",
+              "users.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Users ID Block",
+        "operationId": "UsersIdBlock",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UsersIdBlockRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersIdBlockResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "block.write",
               "users.read",
               "tweet.read"
             ]
@@ -11910,9 +11976,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -11984,8 +12050,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.read"
+              "bookmark.read",
+              "users.read"
             ]
           },
           {
@@ -12132,8 +12198,8 @@
           {
             "OAuth2UserToken": [
               "bookmark.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12201,9 +12267,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "bookmark.write",
-              "tweet.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -12256,9 +12322,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -12400,9 +12466,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -12469,9 +12535,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -12539,9 +12605,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -12625,9 +12691,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12714,8 +12780,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.read",
               "tweet.read",
+              "follows.read",
               "users.read"
             ]
           },
@@ -12783,9 +12849,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "follows.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -12878,9 +12944,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "like.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -12946,9 +13012,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "like.write",
               "users.read",
-              "tweet.read",
-              "like.write"
+              "tweet.read"
             ]
           },
           {
@@ -13012,9 +13078,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "like.write"
             ]
           },
           {
@@ -13097,9 +13163,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -13230,8 +13296,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13540,8 +13606,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "list.read"
+              "list.read",
+              "users.read"
             ]
           },
           {
@@ -13609,8 +13675,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "list.write"
             ]
           },
@@ -13679,9 +13745,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.write",
               "tweet.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -13744,9 +13810,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -13814,9 +13880,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -13886,9 +13952,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "tweet.write",
               "users.read",
-              "tweet.write"
+              "tweet.read"
             ]
           },
           {
@@ -14241,8 +14307,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14250,6 +14316,76 @@
           },
           {
             "BearerToken": []
+          }
+        ]
+      }
+    },
+    "/2/users/{sourceUserId}/blocking/{targetUserId}": {
+      "delete": {
+        "tags": [
+          "Users"
+        ],
+        "summary": "Unblock User",
+        "description": "Causes the source User to unblock the target User.",
+        "externalDocs": {
+          "url": "https://developer.twitter.com/en/docs/twitter-api/users/blocks/api-reference/delete-users-user_id-blocking"
+        },
+        "operationId": "UsersIdUnblock",
+        "parameters": [
+          {
+            "name": "sourceUserId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "targetUserId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UsersIdUnblockResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "users.read",
+              "tweet.read",
+              "block.write"
+            ]
+          },
+          {
+            "UserToken": []
           }
         ]
       }
@@ -14313,9 +14449,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "follows.write"
             ]
           },
           {
@@ -14383,9 +14519,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "mute.write",
               "users.read",
-              "tweet.read",
-              "mute.write"
+              "tweet.read"
             ]
           },
           {
@@ -14957,6 +15093,8 @@
             "profile.update.screenname": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "profile.update.url": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "profile.update.verified_badge": "#/components/schemas/ProfileUpdateActivityResponsePayload",
+            "subscriptions.subscribe": "#/components/schemas/FollowActivityResponsePayload",
+            "subscriptions.unsubscribe": "#/components/schemas/FollowActivityResponsePayload",
             "ProfileUpdateActivityResponsePayload": "#/components/schemas/ProfileUpdateActivityResponsePayload",
             "NewsActivityResponsePayload": "#/components/schemas/NewsActivityResponsePayload",
             "FollowActivityResponsePayload": "#/components/schemas/FollowActivityResponsePayload",
@@ -17936,8 +18074,7 @@
       "CreateScheduledBroadcastRequest": {
         "required": [
           "source_id",
-          "scheduled_start_ms",
-          "scheduled_end_ms"
+          "scheduled_start_ms"
         ],
         "type": "object",
         "properties": {
@@ -17972,7 +18109,7 @@
           "scheduled_end_ms": {
             "pattern": "^[0-9]{1,19}$",
             "type": "string",
-            "description": "End time, ms since Unix epoch (decimal string)."
+            "description": "Optional end time, ms since Unix epoch (decimal string). Omit for an open-ended broadcast."
           },
           "scheduled_start_ms": {
             "pattern": "^[0-9]{1,19}$",
@@ -26150,6 +26287,71 @@
           }
         }
       },
+      "UsersIdBlockRequest": {
+        "required": [
+          "target_user_id"
+        ],
+        "type": "object",
+        "properties": {
+          "target_user_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsersIdBlockResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UsersIdBlockResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UsersIdBlockResponseData": {
+        "required": [
+          "blocking"
+        ],
+        "type": "object",
+        "properties": {
+          "blocking": {
+            "type": "boolean",
+            "description": "Indicates whether the user is blocked by the source user."
+          }
+        }
+      },
+      "UsersIdUnblockResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UsersIdUnblockResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UsersIdUnblockResponseData": {
+        "required": [
+          "blocking"
+        ],
+        "type": "object",
+        "properties": {
+          "blocking": {
+            "type": "boolean",
+            "description": "Indicates whether the source User is blocking the target User."
+          }
+        }
+      },
       "ValidateAccountActivitySubscriptionResponse": {
         "type": "object",
         "properties": {
@@ -29312,6 +29514,8 @@
           "news.new",
           "follow.follow",
           "follow.unfollow",
+          "subscriptions.subscribe",
+          "subscriptions.unsubscribe",
           "spaces.start",
           "spaces.end",
           "broadcast.start",
@@ -29397,6 +29601,14 @@
             {
               "value": "follow.unfollow",
               "name": "FollowUnfollow"
+            },
+            {
+              "value": "subscriptions.subscribe",
+              "name": "SubscriptionsSubscribe"
+            },
+            {
+              "value": "subscriptions.unsubscribe",
+              "name": "SubscriptionsUnsubscribe"
             },
             {
               "value": "spaces.start",

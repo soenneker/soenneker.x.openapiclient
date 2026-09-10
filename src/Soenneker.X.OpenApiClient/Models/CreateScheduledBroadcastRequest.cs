@@ -50,7 +50,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrence Recurrence { get; set; }
 #endif
-        /// <summary>End time, ms since Unix epoch (decimal string).</summary>
+        /// <summary>Optional end time, ms since Unix epoch (decimal string). Omit for an open-ended broadcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ScheduledEndMs { get; set; }

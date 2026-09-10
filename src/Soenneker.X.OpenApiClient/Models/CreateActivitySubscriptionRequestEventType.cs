@@ -55,6 +55,14 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         FollowUnfollow,
         #pragma warning restore CS1591
+        [EnumMember(Value = "subscriptions.subscribe")]
+        #pragma warning disable CS1591
+        SubscriptionsSubscribe,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subscriptions.unsubscribe")]
+        #pragma warning disable CS1591
+        SubscriptionsUnsubscribe,
+        #pragma warning restore CS1591
         [EnumMember(Value = "spaces.start")]
         #pragma warning disable CS1591
         SpacesStart,
