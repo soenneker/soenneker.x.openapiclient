@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Problem : IComposedTypeWrapper, IParsable
@@ -69,6 +69,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem NotAuthorizedForResourceProblem { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem? RecipientNotMessageableProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem RecipientNotMessageableProblem { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -123,6 +131,10 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.NotAuthorizedForResourceProblem = new global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem();
             }
+            else if("https://api.x.com/2/problems/recipient-not-messageable".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.RecipientNotMessageableProblem = new global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem();
+            }
             else if("https://api.x.com/2/problems/resource-not-found".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ResourceNotFoundProblem = new global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem();
@@ -166,6 +178,10 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(NotAuthorizedForResourceProblem != null)
             {
                 return NotAuthorizedForResourceProblem.GetFieldDeserializers();
+            }
+            else if(RecipientNotMessageableProblem != null)
+            {
+                return RecipientNotMessageableProblem.GetFieldDeserializers();
             }
             else if(ResourceNotFoundProblem != null)
             {
@@ -211,6 +227,10 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(NotAuthorizedForResourceProblem != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem>(null, NotAuthorizedForResourceProblem);
+            }
+            else if(RecipientNotMessageableProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem>(null, RecipientNotMessageableProblem);
             }
             else if(ResourceNotFoundProblem != null)
             {

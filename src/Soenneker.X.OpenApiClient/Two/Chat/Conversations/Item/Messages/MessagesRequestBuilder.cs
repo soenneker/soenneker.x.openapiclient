@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages
         {
         }
         /// <summary>
-        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -65,7 +65,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
