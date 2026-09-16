@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Broadcasts.Chat;
 using Soenneker.X.OpenApiClient.Two.Broadcasts.Item;
 using Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled;
 using System.Collections.Generic;
@@ -19,6 +20,11 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BroadcastsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The chat property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.ChatRequestBuilder Chat
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The scheduled property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled.ScheduledRequestBuilder Scheduled
         {
