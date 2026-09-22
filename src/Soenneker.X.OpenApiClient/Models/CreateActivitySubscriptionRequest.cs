@@ -14,6 +14,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Activity event type in dot notation. `chat.conversation_join` is a deprecated alias of `chat.conversation.join`; responses always use the canonical name.</summary>
         public global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequestEventType? EventType { get; set; }
+        /// <summary>Optional RFC 3339 expiration time. Re-creating the same subscription refreshes this value; omitting it makes the subscription permanent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ExpiresAt { get; set; }
+#nullable restore
+#else
+        public string ExpiresAt { get; set; }
+#endif
         /// <summary>The filter property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,6 +65,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequestEventType>(); } },
+                { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },
                 { "filter", n => { Filter = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilter>(global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilter.CreateFromDiscriminatorValue); } },
                 { "tag", n => { Tag = n.GetStringValue(); } },
                 { "webhook_id", n => { WebhookId = n.GetStringValue(); } },
@@ -70,6 +79,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionRequestEventType>("event_type", EventType);
+            writer.WriteStringValue("expires_at", ExpiresAt);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateActivitySubscriptionFilter>("filter", Filter);
             writer.WriteStringValue("tag", Tag);
             writer.WriteStringValue("webhook_id", WebhookId);

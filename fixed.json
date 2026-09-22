@@ -171,7 +171,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a WebhookConfig"
             }
           }
         ],
@@ -205,10 +207,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "dm.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -232,7 +234,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a WebhookConfig"
             }
           }
         ],
@@ -276,10 +280,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -301,7 +305,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a WebhookConfig"
             }
           }
         ],
@@ -356,7 +362,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a WebhookConfig"
             }
           },
           {
@@ -364,7 +372,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -1438,8 +1448,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1498,8 +1508,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1634,8 +1644,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1700,8 +1710,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1823,8 +1833,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1882,8 +1892,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2096,8 +2106,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2564,8 +2574,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -2649,8 +2659,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -2721,9 +2731,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -2794,8 +2804,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -2868,8 +2878,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -2940,9 +2950,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -3013,9 +3023,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -3077,8 +3087,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -3462,7 +3472,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Community"
             }
           },
           {
@@ -4177,8 +4189,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -4359,8 +4371,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
+              "dm.read",
               "tweet.read"
             ]
           },
@@ -4429,8 +4441,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -4498,8 +4510,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4609,8 +4621,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.read"
             ]
           },
@@ -4712,9 +4724,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.read",
               "users.read",
-              "tweet.read",
-              "dm.read"
+              "tweet.read"
             ]
           },
           {
@@ -4772,8 +4784,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
-              "dm.write"
+              "dm.write",
+              "dm.read"
             ]
           },
           {
@@ -4843,8 +4855,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.read"
             ]
           },
@@ -5287,10 +5299,10 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "list.read",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -5316,7 +5328,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           }
         ],
@@ -5351,8 +5365,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5372,7 +5386,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           },
           {
@@ -5416,8 +5432,8 @@
           {
             "OAuth2UserToken": [
               "list.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5444,7 +5460,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           }
         ],
@@ -5489,8 +5507,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5512,7 +5530,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           },
           {
@@ -5574,9 +5594,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -5601,7 +5621,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           },
           {
@@ -5688,7 +5710,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           }
         ],
@@ -5732,9 +5756,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5760,7 +5784,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           },
           {
@@ -5768,7 +5794,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -5802,9 +5830,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -5826,7 +5854,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           },
           {
@@ -5898,9 +5928,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "list.read",
               "users.read",
-              "list.read"
+              "tweet.read"
             ]
           },
           {
@@ -6267,7 +6297,9 @@
             "in": "query",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Media"
             }
           },
           {
@@ -6778,8 +6810,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -7096,7 +7128,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Note"
             }
           }
         ],
@@ -7228,8 +7262,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "space.read",
-              "users.read"
+              "users.read",
+              "space.read"
             ]
           },
           {
@@ -7304,9 +7338,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "space.read"
             ]
           },
           {
@@ -7398,9 +7432,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "space.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -7469,9 +7503,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "space.read",
               "users.read",
-              "space.read"
+              "tweet.read"
             ]
           },
           {
@@ -7561,9 +7595,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "space.read",
-              "tweet.read"
+              "space.read"
             ]
           }
         ]
@@ -7658,9 +7692,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "space.read",
               "users.read",
-              "space.read"
+              "tweet.read"
             ]
           },
           {
@@ -7869,9 +7903,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "tweet.write",
-              "users.read"
+              "tweet.write"
             ]
           },
           {
@@ -9672,8 +9706,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10364,7 +10398,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           }
         ],
@@ -10420,7 +10456,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           },
           {
@@ -10498,7 +10536,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           },
           {
@@ -10561,8 +10601,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -10585,7 +10625,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           },
           {
@@ -10696,7 +10738,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           },
           {
@@ -10785,7 +10829,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           },
           {
@@ -10857,8 +10903,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10887,7 +10933,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           }
         ],
@@ -10931,9 +10979,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "tweet.moderate.write"
+              "tweet.moderate.write",
+              "users.read"
             ]
           },
           {
@@ -11108,8 +11156,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11184,8 +11232,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11254,8 +11302,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11613,8 +11661,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "timeline.read"
+              "timeline.read",
+              "tweet.read"
             ]
           },
           {
@@ -11722,7 +11770,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -11791,7 +11841,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -11878,7 +11930,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -11940,8 +11994,8 @@
           {
             "OAuth2UserToken": [
               "block.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11961,7 +12015,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12006,8 +12062,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "block.write"
+              "block.write",
+              "users.read"
             ]
           },
           {
@@ -12029,7 +12085,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12100,9 +12158,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "bookmark.read"
             ]
           },
           {
@@ -12123,7 +12181,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12167,9 +12227,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "bookmark.write",
               "users.read",
-              "bookmark.write"
+              "tweet.read"
             ]
           }
         ]
@@ -12188,7 +12248,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12263,7 +12325,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12307,8 +12371,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -12327,7 +12391,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12416,7 +12482,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12424,7 +12492,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           }
         ],
@@ -12458,9 +12528,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -12479,7 +12549,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12513,8 +12585,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -12537,7 +12609,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12572,8 +12646,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -12595,7 +12669,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12657,9 +12733,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "list.read"
+              "list.read",
+              "users.read"
             ]
           },
           {
@@ -12682,7 +12758,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -12726,9 +12804,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12754,7 +12832,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12762,7 +12842,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           }
         ],
@@ -12796,9 +12878,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.write",
               "tweet.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -12820,7 +12902,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12882,8 +12966,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -12909,7 +12993,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -12996,7 +13082,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -13040,8 +13128,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -13064,7 +13152,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13135,8 +13225,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "like.read"
             ]
           },
@@ -13159,7 +13249,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -13203,8 +13295,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.write",
               "users.read",
+              "like.write",
               "tweet.read"
             ]
           },
@@ -13227,7 +13319,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13235,7 +13329,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a Post"
             }
           }
         ],
@@ -13269,8 +13365,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -13293,7 +13389,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13354,9 +13452,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "list.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -13382,7 +13480,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13513,7 +13613,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13574,9 +13676,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "mute.read",
               "tweet.read",
-              "mute.read"
+              "users.read"
             ]
           },
           {
@@ -13596,7 +13698,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -13640,9 +13744,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "mute.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "mute.write"
             ]
           },
           {
@@ -13664,7 +13768,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13726,8 +13832,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
+              "list.read",
               "tweet.read"
             ]
           },
@@ -13753,7 +13859,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13797,8 +13905,8 @@
           {
             "OAuth2UserToken": [
               "list.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13822,7 +13930,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -13867,8 +13977,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.write",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -13894,7 +14004,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -13902,7 +14014,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a List"
             }
           }
         ],
@@ -13936,9 +14050,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.write"
             ]
           },
           {
@@ -13964,7 +14078,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14001,9 +14117,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -14027,7 +14143,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -14071,9 +14189,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -14099,7 +14217,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -14143,9 +14263,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "tweet.write"
+              "tweet.write",
+              "users.read"
             ]
           },
           {
@@ -14171,7 +14291,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14214,9 +14336,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14239,7 +14361,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14380,7 +14504,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14528,7 +14654,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14536,7 +14664,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -14598,7 +14728,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14606,7 +14738,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -14640,8 +14774,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "follows.write"
             ]
           },
@@ -14668,7 +14802,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           },
           {
@@ -14676,7 +14812,9 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User"
             }
           }
         ],
@@ -14710,9 +14848,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "mute.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15016,13 +15154,11 @@
   },
   "components": {
     "schemas": {
-      "CreateUsersBookmarkResponseOneOf1": {
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/CreateUsersBookmarkResponseOneOf1Data"
-          }
-        }
+      "ActivityEventId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "The unique identifier of an Activity event.",
+        "example": "1146654567674912769"
       },
       "ActivityStreamResponse": {
         "type": "object",
@@ -15861,19 +15997,10 @@
           }
         }
       },
-      "ChatMediaUploadAppendRequestMedia": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string",
-            "format": "binary"
-          },
-          {
-            "type": "string",
-            "format": "byte"
-          }
-        ],
-        "description": "The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies."
+      "AnalyticsId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a Analytics"
       },
       "AnalyticsTimestampedMetrics": {
         "type": "array",
@@ -16770,19 +16897,10 @@
           }
         }
       },
-      "AppendMediaUploadRequestMedia": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "string",
-            "format": "binary"
-          },
-          {
-            "type": "string",
-            "format": "byte"
-          }
-        ],
-        "description": "The media chunk to upload."
+      "CommunityId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a Community"
       },
       "ComplianceJob": {
         "type": "object",
@@ -16844,31 +16962,11 @@
           }
         }
       },
-      "UsageDailyClientAppUsageItem": {
-        "required": [
-          "usage_result_count"
-        ],
-        "type": "object",
-        "properties": {
-          "client_app_id": {
-            "type": "string",
-            "description": "Unique identifier of the client app.",
-            "nullable": true
-          },
-          "usage": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/UsageDailyClientAppUsageItemUsageItem"
-            },
-            "description": "Daily usage entries for this client app."
-          },
-          "usage_result_count": {
-            "type": "integer",
-            "description": "Number of daily usage entries returned for this client app.",
-            "format": "int64"
-          }
-        },
-        "description": "Per-client-app daily Post usage entry."
+      "CountryCode": {
+        "pattern": "^[A-Z]{2}$",
+        "type": "string",
+        "description": "A two-letter ISO 3166-1 alpha-2 country code.",
+        "example": "US"
       },
       "CreateAccountActivitySubscriptionRequest": {
         "type": "object"
@@ -16929,6 +17027,10 @@
           "event_type": {
             "$ref": "#/components/schemas/CreateActivitySubscriptionRequestEventType"
           },
+          "expires_at": {
+            "type": "string",
+            "description": "Optional RFC 3339 expiration time. Re-creating the same subscription refreshes this value; omitting it makes the subscription permanent."
+          },
           "filter": {
             "$ref": "#/components/schemas/CreateActivitySubscriptionFilter"
           },
@@ -16978,6 +17080,10 @@
           "event_type": {
             "type": "string",
             "description": "Activity event type in dot notation."
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "Subscription expiration time."
           },
           "filter": {
             "$ref": "#/components/schemas/CreateActivitySubscriptionResponseDataSubscriptionFilter"
@@ -20056,6 +20162,10 @@
             "type": "string",
             "description": "Activity event type in dot notation."
           },
+          "expires_at": {
+            "type": "string",
+            "description": "Subscription expiration time."
+          },
           "filter": {
             "$ref": "#/components/schemas/GetActivitySubscriptionsResponseDataFilter"
           },
@@ -22163,24 +22273,12 @@
           }
         }
       },
-      "RulesCountAllProjectClientAppsItem": {
-        "required": [
-          "rule_count"
-        ],
-        "type": "object",
-        "properties": {
-          "client_app_id": {
-            "type": "string",
-            "description": "Unique identifier of the client application.",
-            "nullable": true
-          },
-          "rule_count": {
-            "type": "integer",
-            "description": "Number of rules configured for the client application.",
-            "format": "int64"
-          }
-        },
-        "description": "A count of filtered-stream rules for a single client application."
+      "Keyword": {
+        "maxLength": 150,
+        "minLength": 1,
+        "type": "string",
+        "description": "A keyword to filter on.",
+        "example": "The President"
       },
       "LikeComplianceSchema": {
         "required": [
@@ -22193,22 +22291,11 @@
           }
         }
       },
-      "PostSuggestedSourceLinksWithCountsItem": {
-        "type": "object",
-        "properties": {
-          "count": {
-            "type": "integer",
-            "description": "Number of times this source link was suggested.",
-            "format": "int64",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "description": "The suggested source URL.",
-            "nullable": true
-          }
-        },
-        "description": "A suggested source URL for this Post with the number of times it was suggested."
+      "LikeId": {
+        "pattern": "^[A-Za-z0-9_]{1,40}$",
+        "type": "string",
+        "description": "The unique identifier of this Like.",
+        "example": "8ba4f34e6235d905a46bac021d98e923"
       },
       "LikePostRequest": {
         "required": [
@@ -22334,69 +22421,21 @@
           }
         }
       },
-      "PostReferencedPostsItem": {
-        "required": [
-          "type",
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of the referenced Post."
-          },
-          "type": {
-            "$ref": "#/components/schemas/PostReferencedPostsItemType"
-          }
-        },
-        "description": "A reference from this Post to another Post (repost, quote, or reply)."
+      "ListFollowerCount": {
+        "type": "integer",
+        "description": "The number of users who follow this List.",
+        "format": "int64"
       },
-      "PostNoteRequestSuggestionsItem": {
-        "type": "object",
-        "properties": {
-          "source_link": {
-            "type": "string",
-            "description": "A suggested source link supporting the note request.",
-            "nullable": true
-          },
-          "suggestion": {
-            "type": "string",
-            "description": "The text of the note request suggestion.",
-            "nullable": true
-          },
-          "suggestion_id": {
-            "type": "string",
-            "description": "The unique identifier of the note request suggestion.",
-            "nullable": true
-          }
-        },
-        "description": "A Community-Notes request suggestion for this Post."
+      "ListId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a List",
+        "example": "1146654567674912769"
       },
-      "PostMediaMetadataItem": {
-        "type": "object",
-        "properties": {
-          "alt_text": {
-            "type": "string",
-            "description": "Alternative text describing the media for accessibility.",
-            "nullable": true
-          },
-          "description": {
-            "type": "string",
-            "description": "Description of the media.",
-            "nullable": true
-          },
-          "media_key": {
-            "type": "string",
-            "description": "The unique identifier of the media.",
-            "nullable": true
-          },
-          "title": {
-            "type": "string",
-            "description": "Title of the media.",
-            "nullable": true
-          }
-        },
-        "description": "Metadata for one media item attached to this Post."
+      "ListMemberCount": {
+        "type": "integer",
+        "description": "The number of members in this List.",
+        "format": "int64"
       },
       "ListScheduledBroadcastsResponse": {
         "type": "object",
@@ -22621,21 +22660,10 @@
         },
         "description": "Time-bucketed video metrics for the media, one entry per granularity bucket."
       },
-      "PostMatchedMediaNotesItem": {
-        "type": "object",
-        "properties": {
-          "match_status": {
-            "type": "string",
-            "description": "The status of the media note match.",
-            "nullable": true
-          },
-          "note_id": {
-            "type": "string",
-            "description": "The matched note\u0027s unique identifier.",
-            "nullable": true
-          }
-        },
-        "description": "A Community-Notes media match for this Post."
+      "MediaId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a Media"
       },
       "MediaNonPublicMetrics": {
         "type": "object",
@@ -23141,21 +23169,10 @@
           }
         }
       },
-      "PostContextAnnotationsItem": {
-        "required": [
-          "domain",
-          "entity"
-        ],
-        "type": "object",
-        "properties": {
-          "domain": {
-            "$ref": "#/components/schemas/PostContextAnnotationsItemDomain"
-          },
-          "entity": {
-            "$ref": "#/components/schemas/PostContextAnnotationsItemEntity"
-          }
-        },
-        "description": "A single inferred annotation about the Post (domain and entity context)."
+      "NoteId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a Note"
       },
       "NoteInfo": {
         "type": "object",
@@ -23814,30 +23831,11 @@
         },
         "description": "The location tagged on the Post, if the user provided one."
       },
-      "PollOptionsItem": {
-        "required": [
-          "position",
-          "label",
-          "votes"
-        ],
-        "type": "object",
-        "properties": {
-          "label": {
-            "type": "string",
-            "description": "The text label of this poll option."
-          },
-          "position": {
-            "type": "integer",
-            "description": "The 1-based position of this option within the poll.",
-            "format": "int64"
-          },
-          "votes": {
-            "type": "integer",
-            "description": "The number of votes this option has received.",
-            "format": "int64"
-          }
-        },
-        "description": "A single option (choice) available in a poll."
+      "PostId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a Post",
+        "example": "1346889436626259968"
       },
       "PostLabelData": {
         "type": "object",
@@ -24268,18 +24266,10 @@
           }
         }
       },
-      "NewsClusterPostsResultsItem": {
-        "required": [
-          "post_id"
-        ],
-        "type": "object",
-        "properties": {
-          "post_id": {
-            "type": "string",
-            "description": "Unique identifier of the Post."
-          }
-        },
-        "description": "A Post belonging to this news story\u0027s cluster."
+      "PublicKeyId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a PublicKey"
       },
       "RecipientNotMessageableProblem": {
         "required": [
@@ -24556,40 +24546,16 @@
           }
         }
       },
-      "MediaVariantsItem": {
-        "type": "object",
-        "properties": {
-          "bit_rate": {
-            "type": "integer",
-            "description": "The bit rate of this variant, in bits per second. Absent for playlist variants.",
-            "format": "int64",
-            "nullable": true
-          },
-          "content_type": {
-            "type": "string",
-            "description": "The MIME type of this variant, for example \u0022video/mp4\u0022 or \u0022application/x-mpegURL\u0022.",
-            "nullable": true
-          },
-          "url": {
-            "type": "string",
-            "description": "The URL to this media variant.",
-            "nullable": true
-          }
-        },
-        "description": "A single playback or display variant of a media object."
+      "RuleId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of this rule.",
+        "example": "120897978112909812"
       },
-      "MediaAnalyticsTimestampedMetricsItem": {
-        "type": "object",
-        "properties": {
-          "metrics": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetrics"
-          },
-          "timestamp": {
-            "type": "string",
-            "description": "Start of the metrics bucket, as an ISO 8601 date-time.",
-            "nullable": true
-          }
-        }
+      "RuleTag": {
+        "type": "string",
+        "description": "A tag meant for the labeling of user provided rules.",
+        "example": "Non-retweeted coffee Posts"
       },
       "RulesCount": {
         "type": "object",
@@ -25636,6 +25602,10 @@
             "type": "string",
             "description": "Activity event type in dot notation."
           },
+          "expires_at": {
+            "type": "string",
+            "description": "Subscription expiration time."
+          },
           "filter": {
             "$ref": "#/components/schemas/UpdateActivitySubscriptionResponseDataSubscriptionFilter"
           },
@@ -26347,18 +26317,11 @@
         },
         "description": "A list of metadata found in the User\u0027s profile description."
       },
-      "DmEventReferencedPostsItem": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "string",
-            "description": "Unique identifier of the referenced Post."
-          }
-        },
-        "description": "A reference from this event to a Post."
+      "UserId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a User",
+        "example": "2244994945"
       },
       "UserProfileModificationComplianceSchema": {
         "required": [
@@ -26734,6 +26697,11 @@
           }
         }
       },
+      "WebhookConfigId": {
+        "pattern": "^[0-9]{1,19}$",
+        "type": "string",
+        "description": "Unique identifier of a WebhookConfig"
+      },
       "AnalyticsTimestampedMetricsItem": {
         "type": "object",
         "properties": {
@@ -26744,6 +26712,286 @@
             "type": "string",
             "description": "Start of the metrics bucket, as an ISO 8601 date-time.",
             "nullable": true
+          }
+        }
+      },
+      "DmEventReferencedPostsItem": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the referenced Post."
+          }
+        },
+        "description": "A reference from this event to a Post."
+      },
+      "MediaAnalyticsTimestampedMetricsItem": {
+        "type": "object",
+        "properties": {
+          "metrics": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetrics"
+          },
+          "timestamp": {
+            "type": "string",
+            "description": "Start of the metrics bucket, as an ISO 8601 date-time.",
+            "nullable": true
+          }
+        }
+      },
+      "MediaVariantsItem": {
+        "type": "object",
+        "properties": {
+          "bit_rate": {
+            "type": "integer",
+            "description": "The bit rate of this variant, in bits per second. Absent for playlist variants.",
+            "format": "int64",
+            "nullable": true
+          },
+          "content_type": {
+            "type": "string",
+            "description": "The MIME type of this variant, for example \u0022video/mp4\u0022 or \u0022application/x-mpegURL\u0022.",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The URL to this media variant.",
+            "nullable": true
+          }
+        },
+        "description": "A single playback or display variant of a media object."
+      },
+      "NewsClusterPostsResultsItem": {
+        "required": [
+          "post_id"
+        ],
+        "type": "object",
+        "properties": {
+          "post_id": {
+            "type": "string",
+            "description": "Unique identifier of the Post."
+          }
+        },
+        "description": "A Post belonging to this news story\u0027s cluster."
+      },
+      "PollOptionsItem": {
+        "required": [
+          "position",
+          "label",
+          "votes"
+        ],
+        "type": "object",
+        "properties": {
+          "label": {
+            "type": "string",
+            "description": "The text label of this poll option."
+          },
+          "position": {
+            "type": "integer",
+            "description": "The 1-based position of this option within the poll.",
+            "format": "int64"
+          },
+          "votes": {
+            "type": "integer",
+            "description": "The number of votes this option has received.",
+            "format": "int64"
+          }
+        },
+        "description": "A single option (choice) available in a poll."
+      },
+      "PostContextAnnotationsItem": {
+        "required": [
+          "domain",
+          "entity"
+        ],
+        "type": "object",
+        "properties": {
+          "domain": {
+            "$ref": "#/components/schemas/PostContextAnnotationsItemDomain"
+          },
+          "entity": {
+            "$ref": "#/components/schemas/PostContextAnnotationsItemEntity"
+          }
+        },
+        "description": "A single inferred annotation about the Post (domain and entity context)."
+      },
+      "PostMatchedMediaNotesItem": {
+        "type": "object",
+        "properties": {
+          "match_status": {
+            "type": "string",
+            "description": "The status of the media note match.",
+            "nullable": true
+          },
+          "note_id": {
+            "type": "string",
+            "description": "The matched note\u0027s unique identifier.",
+            "nullable": true
+          }
+        },
+        "description": "A Community-Notes media match for this Post."
+      },
+      "PostMediaMetadataItem": {
+        "type": "object",
+        "properties": {
+          "alt_text": {
+            "type": "string",
+            "description": "Alternative text describing the media for accessibility.",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "description": "Description of the media.",
+            "nullable": true
+          },
+          "media_key": {
+            "type": "string",
+            "description": "The unique identifier of the media.",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "description": "Title of the media.",
+            "nullable": true
+          }
+        },
+        "description": "Metadata for one media item attached to this Post."
+      },
+      "PostNoteRequestSuggestionsItem": {
+        "type": "object",
+        "properties": {
+          "source_link": {
+            "type": "string",
+            "description": "A suggested source link supporting the note request.",
+            "nullable": true
+          },
+          "suggestion": {
+            "type": "string",
+            "description": "The text of the note request suggestion.",
+            "nullable": true
+          },
+          "suggestion_id": {
+            "type": "string",
+            "description": "The unique identifier of the note request suggestion.",
+            "nullable": true
+          }
+        },
+        "description": "A Community-Notes request suggestion for this Post."
+      },
+      "PostReferencedPostsItem": {
+        "required": [
+          "type",
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique identifier of the referenced Post."
+          },
+          "type": {
+            "$ref": "#/components/schemas/PostReferencedPostsItemType"
+          }
+        },
+        "description": "A reference from this Post to another Post (repost, quote, or reply)."
+      },
+      "PostSuggestedSourceLinksWithCountsItem": {
+        "type": "object",
+        "properties": {
+          "count": {
+            "type": "integer",
+            "description": "Number of times this source link was suggested.",
+            "format": "int64",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "description": "The suggested source URL.",
+            "nullable": true
+          }
+        },
+        "description": "A suggested source URL for this Post with the number of times it was suggested."
+      },
+      "RulesCountAllProjectClientAppsItem": {
+        "required": [
+          "rule_count"
+        ],
+        "type": "object",
+        "properties": {
+          "client_app_id": {
+            "type": "string",
+            "description": "Unique identifier of the client application.",
+            "nullable": true
+          },
+          "rule_count": {
+            "type": "integer",
+            "description": "Number of rules configured for the client application.",
+            "format": "int64"
+          }
+        },
+        "description": "A count of filtered-stream rules for a single client application."
+      },
+      "UsageDailyClientAppUsageItem": {
+        "required": [
+          "usage_result_count"
+        ],
+        "type": "object",
+        "properties": {
+          "client_app_id": {
+            "type": "string",
+            "description": "Unique identifier of the client app.",
+            "nullable": true
+          },
+          "usage": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/UsageDailyClientAppUsageItemUsageItem"
+            },
+            "description": "Daily usage entries for this client app."
+          },
+          "usage_result_count": {
+            "type": "integer",
+            "description": "Number of daily usage entries returned for this client app.",
+            "format": "int64"
+          }
+        },
+        "description": "Per-client-app daily Post usage entry."
+      },
+      "AppendMediaUploadRequestMedia": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "binary"
+          },
+          {
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "description": "The media chunk to upload."
+      },
+      "ChatMediaUploadAppendRequestMedia": {
+        "type": "object",
+        "anyOf": [
+          {
+            "type": "string",
+            "format": "binary"
+          },
+          {
+            "type": "string",
+            "format": "byte"
+          }
+        ],
+        "description": "The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies."
+      },
+      "CreateUsersBookmarkResponseOneOf1": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateUsersBookmarkResponseOneOf1Data"
           }
         }
       },
@@ -26766,20 +27014,6 @@
           }
         }
       },
-      "PostReferencedPostsItemType": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapper"
-          }
-        ],
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapperValue"
-          }
-        },
-        "description": "How this Post references the other Post."
-      },
       "MediaUploadRequestMedia": {
         "type": "object",
         "anyOf": [
@@ -26794,52 +27028,6 @@
         ],
         "description": "The media file to upload: base64-encoded in JSON bodies, raw bytes in multipart bodies."
       },
-      "PostContextAnnotationsItemDomain": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/PostContextAnnotationsItemDomainOneOf1"
-          }
-        ],
-        "properties": {
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "description": "The domain (broad category) this annotation belongs to."
-      },
-      "PostContextAnnotationsItemEntity": {
-        "type": "object",
-        "oneOf": [
-          {
-            "$ref": "#/components/schemas/PostContextAnnotationsItemEntityOneOf1"
-          }
-        ],
-        "properties": {
-          "description": {
-            "type": "string",
-            "nullable": true
-          },
-          "id": {
-            "type": "string",
-            "nullable": true
-          },
-          "name": {
-            "type": "string",
-            "nullable": true
-          }
-        },
-        "description": "The specific entity recognized within the domain."
-      },
       "PlaceGeoType": {
         "type": "object",
         "oneOf": [
@@ -26853,6 +27041,114 @@
           }
         },
         "description": "The GeoJSON feature type."
+      },
+      "StreamLabelsComplianceResponseOneOf1": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PostLabelData"
+          }
+        },
+        "description": "Tweet Label event."
+      },
+      "StreamLabelsComplianceResponseOneOf2": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "StreamLikesComplianceResponseOneOf1": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/LikeComplianceSchema"
+          }
+        },
+        "description": "Compliance event."
+      },
+      "StreamLikesComplianceResponseOneOf2": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "StreamPostsComplianceResponseOneOf1": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/PostComplianceData"
+          }
+        },
+        "description": "Compliance event."
+      },
+      "StreamPostsComplianceResponseOneOf2": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "StreamUsersComplianceResponseOneOf1": {
+        "required": [
+          "data"
+        ],
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UserComplianceData"
+          }
+        },
+        "description": "User compliance event."
+      },
+      "StreamUsersComplianceResponseOneOf2": {
+        "required": [
+          "errors"
+        ],
+        "type": "object",
+        "properties": {
+          "errors": {
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
       },
       "MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks": {
         "type": "object",
@@ -26984,113 +27280,65 @@
         ],
         "description": "A video metric counter: an integer when the backend value parses as a number, otherwise the original string."
       },
-      "StreamLabelsComplianceResponseOneOf1": {
-        "required": [
-          "data"
-        ],
+      "PostContextAnnotationsItemDomain": {
         "type": "object",
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PostContextAnnotationsItemDomainOneOf1"
+          }
+        ],
         "properties": {
-          "data": {
-            "$ref": "#/components/schemas/PostLabelData"
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
           }
         },
-        "description": "Tweet Label event."
+        "description": "The domain (broad category) this annotation belongs to."
       },
-      "StreamLabelsComplianceResponseOneOf2": {
-        "required": [
-          "errors"
-        ],
+      "PostContextAnnotationsItemEntity": {
         "type": "object",
-        "properties": {
-          "errors": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Problem"
-            }
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PostContextAnnotationsItemEntityOneOf1"
           }
-        }
-      },
-      "StreamLikesComplianceResponseOneOf1": {
-        "required": [
-          "data"
         ],
-        "type": "object",
         "properties": {
-          "data": {
-            "$ref": "#/components/schemas/LikeComplianceSchema"
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "id": {
+            "type": "string",
+            "nullable": true
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
           }
         },
-        "description": "Compliance event."
+        "description": "The specific entity recognized within the domain."
       },
-      "StreamLikesComplianceResponseOneOf2": {
-        "required": [
-          "errors"
-        ],
+      "PostReferencedPostsItemType": {
         "type": "object",
-        "properties": {
-          "errors": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Problem"
-            }
+        "oneOf": [
+          {
+            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapper"
           }
-        }
-      },
-      "StreamPostsComplianceResponseOneOf1": {
-        "required": [
-          "data"
         ],
-        "type": "object",
         "properties": {
-          "data": {
-            "$ref": "#/components/schemas/PostComplianceData"
+          "value": {
+            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapperValue"
           }
         },
-        "description": "Compliance event."
-      },
-      "StreamPostsComplianceResponseOneOf2": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Problem"
-            }
-          }
-        }
-      },
-      "StreamUsersComplianceResponseOneOf1": {
-        "required": [
-          "data"
-        ],
-        "type": "object",
-        "properties": {
-          "data": {
-            "$ref": "#/components/schemas/UserComplianceData"
-          }
-        },
-        "description": "User compliance event."
-      },
-      "StreamUsersComplianceResponseOneOf2": {
-        "required": [
-          "errors"
-        ],
-        "type": "object",
-        "properties": {
-          "errors": {
-            "minItems": 1,
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Problem"
-            }
-          }
-        }
+        "description": "How this Post references the other Post."
       },
       "PostContextAnnotationsItemDomainOneOf1": {
         "type": "object",
@@ -27128,18 +27376,6 @@
         },
         "description": "A domain or entity referenced by a context annotation."
       },
-      "CreateUsersBookmarkResponseOneOf1Data": {
-        "required": [
-          "bookmarked"
-        ],
-        "type": "object",
-        "properties": {
-          "bookmarked": {
-            "type": "boolean",
-            "description": "Indicates whether the Post is bookmarked by the user."
-          }
-        }
-      },
       "ActivityStreamResponseData": {
         "type": "object",
         "properties": {
@@ -27171,24 +27407,6 @@
       },
       "ChatMessageEventMessageEventSignature": {
         "type": "object"
-      },
-      "UsageDailyClientAppUsageItemUsageItem": {
-        "required": [
-          "date"
-        ],
-        "type": "object",
-        "properties": {
-          "date": {
-            "type": "string",
-            "description": "The day of the usage entry, as an ISO 8601 date-time."
-          },
-          "usage": {
-            "type": "string",
-            "description": "Number of Posts used on this day.",
-            "nullable": true
-          }
-        },
-        "description": "A single day\u0027s usage entry."
       },
       "CreateActivitySubscriptionFilterQualifiers": {
         "type": "object",
@@ -28419,43 +28637,6 @@
       "PublicKeyJuiceboxConfig": {
         "type": "object"
       },
-      "MediaAnalyticsTimestampedMetricsItemMetrics": {
-        "type": "object",
-        "properties": {
-          "cta_url_clicks": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
-          },
-          "cta_watch_clicks": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks"
-          },
-          "play_from_tap": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap"
-          },
-          "playback25": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback25"
-          },
-          "playback50": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback50"
-          },
-          "playback75": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback75"
-          },
-          "playback_complete": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete"
-          },
-          "playback_start": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart"
-          },
-          "video_views": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsVideoViews"
-          },
-          "watch_time_ms": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs"
-          }
-        },
-        "description": "Video metric counts for this bucket. Counters are integers when the backend value parses as a number, otherwise the original string is preserved.",
-        "nullable": true
-      },
       "SearchCommunitiesResponseMeta": {
         "type": "object",
         "properties": {
@@ -28854,6 +29035,73 @@
         },
         "description": "Engagement metric counts for this bucket.",
         "nullable": true
+      },
+      "MediaAnalyticsTimestampedMetricsItemMetrics": {
+        "type": "object",
+        "properties": {
+          "cta_url_clicks": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
+          },
+          "cta_watch_clicks": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks"
+          },
+          "play_from_tap": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap"
+          },
+          "playback25": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback25"
+          },
+          "playback50": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback50"
+          },
+          "playback75": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback75"
+          },
+          "playback_complete": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete"
+          },
+          "playback_start": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart"
+          },
+          "video_views": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsVideoViews"
+          },
+          "watch_time_ms": {
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs"
+          }
+        },
+        "description": "Video metric counts for this bucket. Counters are integers when the backend value parses as a number, otherwise the original string is preserved.",
+        "nullable": true
+      },
+      "UsageDailyClientAppUsageItemUsageItem": {
+        "required": [
+          "date"
+        ],
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "description": "The day of the usage entry, as an ISO 8601 date-time."
+          },
+          "usage": {
+            "type": "string",
+            "description": "Number of Posts used on this day.",
+            "nullable": true
+          }
+        },
+        "description": "A single day\u0027s usage entry."
+      },
+      "CreateUsersBookmarkResponseOneOf1Data": {
+        "required": [
+          "bookmarked"
+        ],
+        "type": "object",
+        "properties": {
+          "bookmarked": {
+            "type": "boolean",
+            "description": "Indicates whether the Post is bookmarked by the user."
+          }
+        }
       },
       "CreateUsersBookmarkResponseOneOf2DataItem": {
         "required": [
@@ -29491,17 +29739,6 @@
       "GetOpenApiSpec200Response": {
         "type": "object"
       },
-      "PostReferencedPostsItemTypeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapperValue"
-          }
-        }
-      },
       "PlaceGeoTypeWrapper": {
         "required": [
           "value"
@@ -29510,6 +29747,17 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/FeatureValue"
+          }
+        }
+      },
+      "PostReferencedPostsItemTypeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/PostReferencedPostsItemTypeWrapperValue"
           }
         }
       },
@@ -30745,6 +30993,13 @@
         "additionalProperties": false,
         "description": "The GeoJSON geometry type."
       },
+      "FeatureValue": {
+        "enum": [
+          "Feature"
+        ],
+        "type": "string",
+        "additionalProperties": false
+      },
       "PostReferencedPostsItemTypeWrapperValue": {
         "enum": [
           "retweeted",
@@ -30772,13 +31027,6 @@
             }
           ]
         }
-      },
-      "FeatureValue": {
-        "enum": [
-          "Feature"
-        ],
-        "type": "string",
-        "additionalProperties": false
       },
       "AnalyticsFieldsParameterItem": {
         "enum": [
