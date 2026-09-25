@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members
         {
         }
         /// <summary>
-        /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key.
+        /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key. Adding a user who has a pending join request approves that request; approval needs the same key-rotation body as adding any member.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.AddChatGroupMembersResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.AddChatGroupMembersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.AddChatGroupMembersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key.
+        /// Adds one or more members to an existing encrypted Chat group conversation, rotating the conversation key. Adding a user who has a pending join request approves that request; approval needs the same key-rotation body as adding any member.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
