@@ -83,6 +83,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         BroadcastChat,
         #pragma warning restore CS1591
+        [EnumMember(Value = "broadcast.chat.remove")]
+        #pragma warning disable CS1591
+        BroadcastChatRemove,
+        #pragma warning restore CS1591
         [EnumMember(Value = "chat.received")]
         #pragma warning disable CS1591
         ChatReceived,

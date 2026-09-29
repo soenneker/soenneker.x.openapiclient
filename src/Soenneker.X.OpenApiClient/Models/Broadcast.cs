@@ -24,7 +24,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string BroadcastId { get; set; }
 #endif
-        /// <summary>The chat_option property</summary>
+        /// <summary>Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host&apos;s subscribers, 6 accounts followed by an account the host follows.</summary>
         public int? ChatOption { get; set; }
         /// <summary>The created_at_ms property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
