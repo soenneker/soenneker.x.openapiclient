@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.Remove;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MembersRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The remove property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.MembersRequestBuilder"/> and sets the default values.
         /// </summary>

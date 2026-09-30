@@ -22,6 +22,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<string> AdminIds { get; set; }
 #endif
+        /// <summary>Group actions restricted to admins. true means only admins can perform the action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ChatConversationAdminSettings? AdminSettings { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ChatConversationAdminSettings AdminSettings { get; set; }
+#endif
         /// <summary>The created_at property</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>The group_avatar_url property</summary>
@@ -31,6 +39,22 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public string GroupAvatarUrl { get; set; }
+#endif
+        /// <summary>The group description, encrypted with the conversation key like group_name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupDescription { get; set; }
+#nullable restore
+#else
+        public string GroupDescription { get; set; }
+#endif
+        /// <summary>The conversation key version that group_description is encrypted with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? GroupDescriptionKeyVersion { get; set; }
+#nullable restore
+#else
+        public string GroupDescriptionKeyVersion { get; set; }
 #endif
         /// <summary>The group_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,6 +71,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public string Id { get; set; }
+#endif
+        /// <summary>An active invite link for a group Chat conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite? Invite { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite Invite { get; set; }
 #endif
         /// <summary>The is_muted property</summary>
         public bool? IsMuted { get; set; }
@@ -67,6 +99,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public List<string> ParticipantIds { get; set; }
+#endif
+        /// <summary>Unique identifiers of Users who asked to join this group and are awaiting approval. Returned only to callers who can add members.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? PendingMemberIds { get; set; }
+#nullable restore
+#else
+        public List<string> PendingMemberIds { get; set; }
 #endif
         /// <summary>The screen_capture_blocking_enabled property</summary>
         public bool? ScreenCaptureBlockingEnabled { get; set; }
@@ -108,14 +148,19 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "admin_ids", n => { AdminIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "admin_settings", n => { AdminSettings = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationAdminSettings>(global::Soenneker.X.OpenApiClient.Models.ChatConversationAdminSettings.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "group_avatar_url", n => { GroupAvatarUrl = n.GetStringValue(); } },
+                { "group_description", n => { GroupDescription = n.GetStringValue(); } },
+                { "group_description_key_version", n => { GroupDescriptionKeyVersion = n.GetStringValue(); } },
                 { "group_name", n => { GroupName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
+                { "invite", n => { Invite = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite>(global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite.CreateFromDiscriminatorValue); } },
                 { "is_muted", n => { IsMuted = n.GetBoolValue(); } },
                 { "member_ids", n => { MemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "message_ttl_ms", n => { MessageTtlMs = n.GetIntValue(); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "pending_member_ids", n => { PendingMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "screen_capture_blocking_enabled", n => { ScreenCaptureBlockingEnabled = n.GetBoolValue(); } },
                 { "screen_capture_detection_enabled", n => { ScreenCaptureDetectionEnabled = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -130,14 +175,19 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("admin_ids", AdminIds);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationAdminSettings>("admin_settings", AdminSettings);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("group_avatar_url", GroupAvatarUrl);
+            writer.WriteStringValue("group_description", GroupDescription);
+            writer.WriteStringValue("group_description_key_version", GroupDescriptionKeyVersion);
             writer.WriteStringValue("group_name", GroupName);
             writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite>("invite", Invite);
             writer.WriteBoolValue("is_muted", IsMuted);
             writer.WriteCollectionOfPrimitiveValues<string>("member_ids", MemberIds);
             writer.WriteIntValue("message_ttl_ms", MessageTtlMs);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("pending_member_ids", PendingMemberIds);
             writer.WriteBoolValue("screen_capture_blocking_enabled", ScreenCaptureBlockingEnabled);
             writer.WriteBoolValue("screen_capture_detection_enabled", ScreenCaptureDetectionEnabled);
             writer.WriteStringValue("type", Type);

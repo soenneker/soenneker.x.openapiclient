@@ -4,11 +4,21 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_requests;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_settings;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invite;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Join_requests;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Keys;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Mute;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Screen_capture;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing;
 using System.Collections.Generic;
 using System.IO;
@@ -23,10 +33,40 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ConversationsItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The admin_requests property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_requests.Admin_requestsRequestBuilder Admin_requests
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_requests.Admin_requestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The admin_settings property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_settings.Admin_settingsRequestBuilder Admin_settings
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_settings.Admin_settingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The admins property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder Admins
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The events property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.EventsRequestBuilder Events
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.EventsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The invite property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invite.InviteRequestBuilder Invite
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invite.InviteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The invites property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.InvitesRequestBuilder Invites
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.InvitesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The join_requests property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Join_requests.Join_requestsRequestBuilder Join_requests
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Join_requests.Join_requestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The keys property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Keys.KeysRequestBuilder Keys
@@ -38,15 +78,35 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.MembersRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The message_ttl property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Message_ttlRequestBuilder Message_ttl
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Message_ttlRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The messages property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder Messages
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The mute property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Mute.MuteRequestBuilder Mute
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Mute.MuteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The pinned_messages property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages.Pinned_messagesRequestBuilder Pinned_messages
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages.Pinned_messagesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The read property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read.ReadRequestBuilder Read
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read.ReadRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The screen_capture property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Screen_capture.Screen_captureRequestBuilder Screen_capture
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Screen_capture.Screen_captureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The typing property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder Typing
@@ -68,6 +128,31 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public ConversationsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}{?chat_conversation%2Efields,expansions,user%2Efields}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
@@ -93,6 +178,53 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetChatConversationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Renames an encrypted Chat group conversation, changes its avatar, or sets its description. The client encrypts each value with the conversation key and lists the values it changed in modified_fields.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse?> PutAsync(global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse> PutAsync(global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -109,6 +241,28 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Renames an encrypted Chat group conversation, changes its avatar, or sets its description. The client encrypts each value with the conversation key and lists the values it changed in modified_fields.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

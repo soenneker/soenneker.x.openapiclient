@@ -8,6 +8,10 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum ChatConversationFieldsParameterItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "admin_settings")]
+        #pragma warning disable CS1591
+        AdminSettings,
+        #pragma warning restore CS1591
         [EnumMember(Value = "created_at")]
         #pragma warning disable CS1591
         CreatedAt,
@@ -15,6 +19,14 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "group_avatar_url")]
         #pragma warning disable CS1591
         GroupAvatarUrl,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "group_description")]
+        #pragma warning disable CS1591
+        GroupDescription,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "group_description_key_version")]
+        #pragma warning disable CS1591
+        GroupDescriptionKeyVersion,
         #pragma warning restore CS1591
         [EnumMember(Value = "group_name")]
         #pragma warning disable CS1591
@@ -24,6 +36,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "invite")]
+        #pragma warning disable CS1591
+        Invite,
+        #pragma warning restore CS1591
         [EnumMember(Value = "is_muted")]
         #pragma warning disable CS1591
         IsMuted,
@@ -31,6 +47,10 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "message_ttl_ms")]
         #pragma warning disable CS1591
         MessageTtlMs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "pending_member_ids")]
+        #pragma warning disable CS1591
+        PendingMemberIds,
         #pragma warning restore CS1591
         [EnumMember(Value = "screen_capture_blocking_enabled")]
         #pragma warning disable CS1591

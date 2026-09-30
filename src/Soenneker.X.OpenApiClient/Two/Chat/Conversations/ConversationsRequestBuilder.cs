@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Group.GroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.chat.conversations.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The ID of the conversation: a group ID starting with `g`, the other user&apos;s ID for a 1:1 conversation, or both user IDs of a 1:1 conversation joined by a hyphen.</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder this[string position]
         {
