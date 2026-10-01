@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", pathParameters)
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*,user_id*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*}", rawUrl)
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/activity/subscriptions{?max_results*,pagination_token*,user_id*}", rawUrl)
         {
         }
         /// <summary>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get a list of active subscriptions for XAA
+        /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetActivitySubscriptionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -137,7 +137,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             return requestInfo;
         }
         /// <summary>
-        /// Get a list of active subscriptions for XAA
+        /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -207,7 +207,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
 #endif
         }
         /// <summary>
-        /// Get a list of active subscriptions for XAA
+        /// Get a list of active subscriptions for XAA. Optional user_id narrows the list to subscriptions whose filter.user_id matches; with a user-context token it must identify the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class SubscriptionsRequestBuilderGetQueryParameters 
@@ -225,6 +225,16 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
 #else
             [QueryParameter("pagination_token")]
             public string PaginationToken { get; set; }
+#endif
+            /// <summary>Only return subscriptions whose filter.user_id matches.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user_id")]
+            public string? UserId { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user_id")]
+            public string UserId { get; set; }
 #endif
         }
     }

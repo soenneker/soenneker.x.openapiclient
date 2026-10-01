@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InternalErrorProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForResourceProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.RecipientNotMessageableProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceNotFoundProblem"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ResourceUnavailableProblem"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Problem : IComposedTypeWrapper, IParsable
@@ -20,6 +20,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem DisallowedResourceProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem? DuplicateRuleProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem DuplicateRuleProblem { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -52,6 +60,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem InvalidRequestProblem { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem? InvalidRuleProblem { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem InvalidRuleProblem { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.NotAuthorizedForFieldProblem"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,6 +123,10 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.DisallowedResourceProblem = new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem();
             }
+            else if("DuplicateRuleProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.DuplicateRuleProblem = new global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem();
+            }
             else if("FieldHydrationFailureProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FieldHydrationFailureProblem = new global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem();
@@ -122,6 +142,10 @@ namespace Soenneker.X.OpenApiClient.Models
             else if("https://api.x.com/2/problems/invalid-request".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.InvalidRequestProblem = new global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem();
+            }
+            else if("https://api.twitter.com/2/problems/invalid-rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.InvalidRuleProblem = new global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem();
             }
             else if("https://api.x.com/2/problems/not-authorized-for-field".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -155,6 +179,10 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 return DisallowedResourceProblem.GetFieldDeserializers();
             }
+            else if(DuplicateRuleProblem != null)
+            {
+                return DuplicateRuleProblem.GetFieldDeserializers();
+            }
             else if(FieldHydrationFailureProblem != null)
             {
                 return FieldHydrationFailureProblem.GetFieldDeserializers();
@@ -170,6 +198,10 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(InvalidRequestProblem != null)
             {
                 return InvalidRequestProblem.GetFieldDeserializers();
+            }
+            else if(InvalidRuleProblem != null)
+            {
+                return InvalidRuleProblem.GetFieldDeserializers();
             }
             else if(NotAuthorizedForFieldProblem != null)
             {
@@ -204,6 +236,10 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem>(null, DisallowedResourceProblem);
             }
+            else if(DuplicateRuleProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem>(null, DuplicateRuleProblem);
+            }
             else if(FieldHydrationFailureProblem != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem>(null, FieldHydrationFailureProblem);
@@ -219,6 +255,10 @@ namespace Soenneker.X.OpenApiClient.Models
             else if(InvalidRequestProblem != null)
             {
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.InvalidRequestProblem>(null, InvalidRequestProblem);
+            }
+            else if(InvalidRuleProblem != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.InvalidRuleProblem>(null, InvalidRuleProblem);
             }
             else if(NotAuthorizedForFieldProblem != null)
             {
