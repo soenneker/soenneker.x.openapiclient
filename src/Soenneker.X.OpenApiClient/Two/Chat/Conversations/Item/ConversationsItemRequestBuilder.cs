@@ -130,7 +130,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         {
         }
         /// <summary>
-        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -203,7 +203,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

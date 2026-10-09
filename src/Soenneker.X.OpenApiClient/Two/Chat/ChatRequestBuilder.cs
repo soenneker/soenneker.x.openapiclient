@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations;
 using Soenneker.X.OpenApiClient.Two.Chat.Media;
+using Soenneker.X.OpenApiClient.Two.Chat.Message_requests;
 using Soenneker.X.OpenApiClient.Two.Chat.Settings;
 using System.Collections.Generic;
 using System.IO;
@@ -26,6 +27,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat
         public global::Soenneker.X.OpenApiClient.Two.Chat.Media.MediaRequestBuilder Media
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Media.MediaRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The message_requests property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Message_requestsRequestBuilder Message_requests
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Message_requestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The settings property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Settings.SettingsRequestBuilder Settings
