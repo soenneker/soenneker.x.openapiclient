@@ -7,10 +7,11 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// Who may place audio or video calls to the user.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetChatSettingsResponseDataAvSettingsAvCallPermissions : IParsable
-    #pragma warning restore CS1591
+    public partial class ChatSettingsAvSettingsAvCallPermissions : IAdditionalDataHolder, IParsable
     {
         /// <summary>Whether the user accepts calls from address-book contacts.</summary>
         public bool? AcceptCallsFromAddressbook { get; set; }
@@ -20,15 +21,24 @@ namespace Soenneker.X.OpenApiClient.Models
         public bool? AcceptCallsFromFollowing { get; set; }
         /// <summary>Whether the user accepts calls from verified accounts.</summary>
         public bool? AcceptCallsFromVerified { get; set; }
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions"/> and sets the default values.
+        /// </summary>
+        public ChatSettingsAvSettingsAvCallPermissions()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,6 +65,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("accept_calls_from_everyone", AcceptCallsFromEveryone);
             writer.WriteBoolValue("accept_calls_from_following", AcceptCallsFromFollowing);
             writer.WriteBoolValue("accept_calls_from_verified", AcceptCallsFromVerified);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

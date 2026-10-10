@@ -28,7 +28,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Message_requestsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests/{id}", pathParameters)
+        public Message_requestsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests/{id}{?chat_message_request_detail%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Message_requestsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests/{id}", rawUrl)
+        public Message_requestsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests/{id}{?chat_message_request_detail%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -48,11 +48,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder.Message_requestsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder.Message_requestsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -69,11 +69,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder.Message_requestsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder.Message_requestsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -89,6 +89,23 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item
         public global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Item.Message_requestsItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Retrieves the message request state of a 1:1 Chat conversation and its newest message events. Like opening the request in an X app, reading it marks the returned messages as delivered and updates the unread badge.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class Message_requestsItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>A comma separated list of ChatMessageRequestDetail fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("chat_message_request_detail%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetailFieldsParameterItem[]? ChatMessageRequestDetailFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("chat_message_request_detail%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetailFieldsParameterItem[] ChatMessageRequestDetailFields { get; set; }
+#endif
         }
     }
 }

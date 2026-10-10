@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/invites/{token}", pathParameters)
+        public WithTokenItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/invites/{token}{?chat_group_invite%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/invites/{token}", rawUrl)
+        public WithTokenItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/invites/{token}{?chat_group_invite%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -42,11 +42,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatGroupInviteResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatGroupInviteResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatGroupInviteResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetChatGroupInviteResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -63,11 +63,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder.WithTokenItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -83,6 +83,23 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites.Item.WithTokenItemRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Returns the preview of an encrypted Chat group conversation from its invite link: group name, avatar, member count, and the authenticated user&apos;s join state. The conversation ID and the token both come from the invite link.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class WithTokenItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>A comma separated list of ChatGroupInvite fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("chat_group_invite%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatGroupInviteFieldsParameterItem[]? ChatGroupInviteFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("chat_group_invite%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatGroupInviteFieldsParameterItem[] ChatGroupInviteFields { get; set; }
+#endif
         }
     }
 }

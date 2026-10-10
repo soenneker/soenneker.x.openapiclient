@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Pinned_messagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/pinned_messages{?pagination_token*}", pathParameters)
+        public Pinned_messagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/pinned_messages{?chat_pinned_message%2Efields,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Pinned_messagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/pinned_messages{?pagination_token*}", rawUrl)
+        public Pinned_messagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/pinned_messages{?chat_pinned_message%2Efields,pagination_token*}", rawUrl)
         {
         }
         /// <summary>
@@ -90,6 +90,16 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Pinned_messagesRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma separated list of ChatPinnedMessage fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("chat_pinned_message%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.EncodedEventItem[]? ChatPinnedMessageFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("chat_pinned_message%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.EncodedEventItem[] ChatPinnedMessageFields { get; set; }
+#endif
             /// <summary>The next_token from a previous response, to fetch the next page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

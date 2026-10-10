@@ -9,7 +9,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetChatMessageRequestResponseData : IAdditionalDataHolder, IParsable
+    public partial class ChatMessageRequestDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -41,7 +41,13 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<string> MessageEvents { get; set; }
 #endif
         /// <summary>`received` while the other user&apos;s request is pending, `sent` while the authenticated user&apos;s request is pending, `none` otherwise.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseDataMessageRequestState? MessageRequestState { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? MessageRequestState { get; set; }
+#nullable restore
+#else
+        public string MessageRequestState { get; set; }
+#endif
         /// <summary>The other user in the conversation: the sender when `message_request_state` is `received`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -51,21 +57,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ParticipantId { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseData"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail"/> and sets the default values.
         /// </summary>
-        public GetChatMessageRequestResponseData()
+        public ChatMessageRequestDetail()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseData();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "conversation_key_events", n => { ConversationKeyEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "has_more_events", n => { HasMoreEvents = n.GetBoolValue(); } },
                 { "message_events", n => { MessageEvents = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "message_request_state", n => { MessageRequestState = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseDataMessageRequestState>(); } },
+                { "message_request_state", n => { MessageRequestState = n.GetStringValue(); } },
                 { "participant_id", n => { ParticipantId = n.GetStringValue(); } },
             };
         }
@@ -94,7 +100,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("conversation_key_events", ConversationKeyEvents);
             writer.WriteBoolValue("has_more_events", HasMoreEvents);
             writer.WriteCollectionOfPrimitiveValues<string>("message_events", MessageEvents);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestResponseDataMessageRequestState>("message_request_state", MessageRequestState);
+            writer.WriteStringValue("message_request_state", MessageRequestState);
             writer.WriteStringValue("participant_id", ParticipantId);
             writer.WriteAdditionalData(AdditionalData);
         }

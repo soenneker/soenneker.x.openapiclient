@@ -9,7 +9,7 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class GetChatMessageRequestsResponseData : IAdditionalDataHolder, IParsable
+    public partial class ChatMessageRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -67,21 +67,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<string> SocialProofUserIds { get; set; }
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponseData"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMessageRequest"/> and sets the default values.
         /// </summary>
-        public GetChatMessageRequestsResponseData()
+        public ChatMessageRequest()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponseData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMessageRequest"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponseData();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatMessageRequest();
         }
         /// <summary>
         /// The deserialization information for the current model

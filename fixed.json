@@ -207,9 +207,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read",
               "users.read",
+              "dm.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -280,10 +280,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -622,8 +622,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
-              "tweet.read"
+              "tweet.read",
+              "like.read"
             ]
           },
           {
@@ -1401,9 +1401,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "broadcast.read",
               "users.read",
-              "tweet.read",
-              "broadcast.read"
+              "tweet.read"
             ]
           },
           {
@@ -1654,8 +1654,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1720,8 +1720,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1843,8 +1843,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2116,8 +2116,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2254,8 +2254,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2402,8 +2402,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -2463,8 +2463,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -2587,8 +2587,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -2728,9 +2728,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -2881,9 +2881,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -2965,9 +2965,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -3049,9 +3049,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3124,8 +3124,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -3198,8 +3198,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -3271,9 +3271,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -3355,9 +3355,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -3429,9 +3429,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -3501,9 +3501,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -3543,6 +3543,9 @@
               "pattern": "^[A-Za-z0-9_-]{10}$",
               "type": "string"
             }
+          },
+          {
+            "$ref": "#/components/parameters/ChatGroupInviteFieldsParameter"
           }
         ],
         "responses": {
@@ -3575,8 +3578,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
+              "dm.read",
               "tweet.read"
             ]
           },
@@ -3649,9 +3652,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -3723,9 +3726,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -3796,9 +3799,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -3942,8 +3945,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -4088,8 +4091,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -4162,8 +4165,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4309,8 +4312,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4380,9 +4383,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4421,6 +4424,9 @@
               "pattern": "^[0-9]{1,19}$",
               "type": "string"
             }
+          },
+          {
+            "$ref": "#/components/parameters/ChatPinnedMessageFieldsParameter"
           }
         ],
         "responses": {
@@ -4453,9 +4459,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -4526,9 +4532,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -4600,9 +4606,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4663,8 +4669,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -4987,6 +4993,9 @@
               "pattern": "^[0-9]{1,10}$",
               "type": "string"
             }
+          },
+          {
+            "$ref": "#/components/parameters/ChatMessageRequestFieldsParameter"
           }
         ],
         "responses": {
@@ -5019,8 +5028,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5051,6 +5060,9 @@
               "pattern": "^([0-9]{1,19}|[0-9]{1,19}-[0-9]{1,19})$",
               "type": "string"
             }
+          },
+          {
+            "$ref": "#/components/parameters/ChatMessageRequestDetailFieldsParameter"
           }
         ],
         "responses": {
@@ -5083,9 +5095,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -5147,9 +5159,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -5169,6 +5181,11 @@
           "url": "https://developer.x.com/"
         },
         "operationId": "GetChatSettings",
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/ChatSettingsFieldsParameter"
+          }
+        ],
         "responses": {
           "200": {
             "description": "The request has succeeded.",
@@ -5199,9 +5216,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -5412,8 +5429,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -6089,8 +6106,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -6624,9 +6641,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -7199,10 +7216,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "list.write",
               "users.read",
-              "tweet.read",
-              "list.write"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -7264,9 +7281,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.write"
             ]
           },
           {
@@ -7406,9 +7423,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -7495,8 +7512,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.read"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -7585,9 +7602,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -7657,8 +7674,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.write"
+              "list.write",
+              "tweet.read"
             ]
           },
           {
@@ -7730,8 +7747,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "users.read",
+              "list.write",
               "tweet.read"
             ]
           },
@@ -8642,8 +8659,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -9161,9 +9178,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -9238,9 +9255,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -9332,9 +9349,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "space.read",
               "users.read",
-              "tweet.read",
-              "space.read"
+              "tweet.read"
             ]
           },
           {
@@ -9495,9 +9512,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "space.read"
+              "space.read",
+              "users.read"
             ]
           }
         ]
@@ -9592,9 +9609,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "space.read",
               "tweet.read",
-              "space.read"
+              "users.read"
             ]
           },
           {
@@ -12334,9 +12351,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "tweet.write"
             ]
           },
           {
@@ -12501,9 +12518,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "like.read"
             ]
           },
           {
@@ -12803,8 +12820,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -12879,9 +12896,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.moderate.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "tweet.moderate.write"
             ]
           },
           {
@@ -13056,8 +13073,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13132,8 +13149,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13202,8 +13219,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13349,8 +13366,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13473,9 +13490,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -13647,8 +13664,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13715,8 +13732,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13961,8 +13978,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "block.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -14058,9 +14075,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "bookmark.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -14127,9 +14144,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "bookmark.write",
               "users.read",
-              "bookmark.write"
+              "tweet.read"
             ]
           }
         ]
@@ -14203,8 +14220,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -14428,9 +14445,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "bookmark.write",
-              "tweet.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -14485,9 +14502,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -14545,8 +14562,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -14704,8 +14721,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -14778,9 +14795,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "list.write"
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -14957,8 +14974,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "follows.read"
             ]
           },
@@ -15028,9 +15045,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "follows.write"
             ]
           },
           {
@@ -15126,8 +15143,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "like.read",
-              "tweet.read"
+              "tweet.read",
+              "like.read"
             ]
           },
           {
@@ -15195,9 +15212,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "like.write"
+              "like.write",
+              "users.read"
             ]
           },
           {
@@ -15265,9 +15282,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15352,9 +15369,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "list.read"
+              "list.read",
+              "users.read"
             ]
           },
           {
@@ -15577,8 +15594,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "mute.read",
-              "users.read"
+              "users.read",
+              "mute.read"
             ]
           },
           {
@@ -15644,9 +15661,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "mute.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15732,9 +15749,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -15804,9 +15821,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -15877,8 +15894,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15950,9 +15967,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "list.write",
               "users.read",
-              "list.write"
+              "tweet.read"
             ]
           },
           {
@@ -16018,8 +16035,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -16090,8 +16107,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -16163,8 +16180,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.write"
             ]
           },
@@ -16236,9 +16253,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "tweet.write"
             ]
           },
           {
@@ -16600,9 +16617,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "block.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16675,8 +16692,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "follows.write"
+              "follows.write",
+              "tweet.read"
             ]
           },
           {
@@ -16748,8 +16765,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "mute.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -18952,6 +18969,47 @@
         },
         "description": "Unique identifiers of Users who asked to join this group and are awaiting approval. Returned only to callers who can add members."
       },
+      "ChatGroupInvite": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "description": "ID of the group conversation the link joins."
+          },
+          "expires_at": {
+            "type": "string",
+            "description": "When the link expires (ISO 8601). Absent when the link does not expire."
+          },
+          "group_avatar_url": {
+            "type": "string",
+            "description": "Group avatar URL shown on the invite preview, stored unencrypted. Absent when the backend flags the avatar as NSFW."
+          },
+          "group_name": {
+            "type": "string",
+            "description": "Group name shown on the invite preview, stored unencrypted."
+          },
+          "invite_url": {
+            "type": "string",
+            "description": "Shareable invite link."
+          },
+          "join_state": {
+            "type": "string",
+            "description": "The authenticated user\u0027s relationship to the group: \u0060member\u0060, \u0060not_member\u0060, \u0060removed\u0060, or \u0060requested\u0060."
+          },
+          "member_count": {
+            "type": "integer",
+            "description": "Number of members in the group."
+          },
+          "token": {
+            "type": "string",
+            "description": "Invite token. Together with the conversation ID it identifies the link."
+          },
+          "welcome_message": {
+            "type": "string",
+            "description": "Message shown to people who open the link."
+          }
+        }
+      },
       "ChatMediaUploadAppendRequest": {
         "required": [
           "media",
@@ -19148,6 +19206,174 @@
             "type": "string"
           }
         }
+      },
+      "ChatMessageRequest": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "description": "The 1:1 conversation ID: both user IDs joined by a hyphen."
+          },
+          "conversation_key_events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
+          },
+          "encoded_message_create_event": {
+            "type": "string",
+            "description": "The message that previews the request, with end-to-end encrypted contents."
+          },
+          "has_more_events": {
+            "type": "boolean",
+            "description": "Whether the conversation has older message events than \u0060message_events\u0060."
+          },
+          "message_events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The conversation\u0027s latest message events, newest first, with end-to-end encrypted contents."
+          },
+          "sender_id": {
+            "type": "string",
+            "description": "The user ID of the user who sent the request."
+          },
+          "sender_recently_modified_profile": {
+            "type": "boolean",
+            "description": "Whether the sender recently changed their name or avatar, a possible sign of impersonation."
+          },
+          "social_proof_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of users the authenticated user follows who also follow the sender."
+          }
+        }
+      },
+      "ChatMessageRequestConversationKeyEvents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
+      },
+      "ChatMessageRequestDetail": {
+        "type": "object",
+        "properties": {
+          "conversation_id": {
+            "type": "string",
+            "description": "The 1:1 conversation ID: both user IDs joined by a hyphen."
+          },
+          "conversation_key_events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
+          },
+          "has_more_events": {
+            "type": "boolean",
+            "description": "Whether older message events may exist. Always \u0060true\u0060 when \u0060message_events\u0060 isn\u0027t empty."
+          },
+          "message_events": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "The newest message events, newest first, with end-to-end encrypted contents."
+          },
+          "message_request_state": {
+            "type": "string",
+            "description": "\u0060received\u0060 while the other user\u0027s request is pending, \u0060sent\u0060 while the authenticated user\u0027s request is pending, \u0060none\u0060 otherwise."
+          },
+          "participant_id": {
+            "type": "string",
+            "description": "The other user in the conversation: the sender when \u0060message_request_state\u0060 is \u0060received\u0060."
+          }
+        }
+      },
+      "ChatMessageRequestDetailConversationKeyEvents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
+      },
+      "ChatMessageRequestDetailMessageEvents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The newest message events, newest first, with end-to-end encrypted contents."
+      },
+      "ChatMessageRequestMessageEvents": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "The conversation\u0027s latest message events, newest first, with end-to-end encrypted contents."
+      },
+      "ChatMessageRequestSocialProofUserIds": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "IDs of users the authenticated user follows who also follow the sender."
+      },
+      "ChatPinnedMessage": {
+        "type": "object",
+        "properties": {
+          "encoded_event": {
+            "type": "string",
+            "description": "Base64-encoded Thrift pin event with end-to-end encrypted contents."
+          }
+        }
+      },
+      "ChatSettings": {
+        "type": "object",
+        "properties": {
+          "allow_dms_from": {
+            "type": "string",
+            "description": "Who can send the user messages: \u0060all\u0060 (anyone), \u0060verified\u0060 (verified accounts only), or \u0060following\u0060 (accounts the user follows)."
+          },
+          "always_allow_dms_from_subscribers": {
+            "type": "boolean",
+            "description": "Whether the user\u0027s subscribers can always message them regardless of allow_dms_from."
+          },
+          "av_settings": {
+            "$ref": "#/components/schemas/ChatSettingsAvSettings"
+          },
+          "dm_quality_filter": {
+            "type": "string",
+            "description": "Low-quality message request filter: \u0060enabled\u0060 (low-quality requests go to a separate folder) or \u0060disabled\u0060 (all requests stay in the main inbox)."
+          },
+          "dm_receipt_settings": {
+            "type": "string",
+            "description": "Read receipts: \u0060all_enabled\u0060 (send and receive read receipts) or \u0060all_disabled\u0060 (neither)."
+          }
+        }
+      },
+      "ChatSettingsAvSettings": {
+        "type": "object",
+        "properties": {
+          "av_call_permissions": {
+            "$ref": "#/components/schemas/ChatSettingsAvSettingsAvCallPermissions"
+          },
+          "has_av_calls_enabled": {
+            "type": "boolean",
+            "description": "Whether audio and video calls are enabled.",
+            "nullable": true
+          },
+          "has_enhanced_call_privacy_enabled": {
+            "type": "boolean",
+            "description": "Whether enhanced call privacy is enabled.",
+            "nullable": true
+          }
+        },
+        "description": "Audio and video call settings."
       },
       "Community": {
         "type": "object",
@@ -23394,7 +23620,7 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetChatConversationPinnedMessagesResponseData"
+              "$ref": "#/components/schemas/ChatPinnedMessage"
             }
           },
           "errors": {
@@ -23405,18 +23631,6 @@
           },
           "meta": {
             "$ref": "#/components/schemas/GetChatConversationPinnedMessagesResponseMeta"
-          }
-        }
-      },
-      "GetChatConversationPinnedMessagesResponseData": {
-        "required": [
-          "encoded_event"
-        ],
-        "type": "object",
-        "properties": {
-          "encoded_event": {
-            "type": "string",
-            "description": "Base64-encoded Thrift pin event with end-to-end encrypted contents."
           }
         }
       },
@@ -23487,53 +23701,13 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/GetChatGroupInviteResponseData"
+            "$ref": "#/components/schemas/ChatGroupInvite"
           },
           "errors": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Problem"
             }
-          }
-        }
-      },
-      "GetChatGroupInviteResponseData": {
-        "type": "object",
-        "properties": {
-          "conversation_id": {
-            "type": "string",
-            "description": "ID of the group conversation the link joins."
-          },
-          "expires_at": {
-            "type": "string",
-            "description": "When the link expires (ISO 8601). Absent when the link does not expire."
-          },
-          "group_avatar_url": {
-            "type": "string",
-            "description": "Group avatar URL shown on the invite preview, stored unencrypted. Absent when the backend flags the avatar as NSFW."
-          },
-          "group_name": {
-            "type": "string",
-            "description": "Group name shown on the invite preview, stored unencrypted."
-          },
-          "invite_url": {
-            "type": "string",
-            "description": "Shareable invite link."
-          },
-          "join_state": {
-            "$ref": "#/components/schemas/GetChatGroupInviteResponseDataJoinState"
-          },
-          "member_count": {
-            "type": "integer",
-            "description": "Number of members in the group."
-          },
-          "token": {
-            "type": "string",
-            "description": "Invite token. Together with the conversation ID it identifies the link."
-          },
-          "welcome_message": {
-            "type": "string",
-            "description": "Message shown to people who open the link."
           }
         }
       },
@@ -23541,51 +23715,13 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/GetChatMessageRequestResponseData"
+            "$ref": "#/components/schemas/ChatMessageRequestDetail"
           },
           "errors": {
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Problem"
             }
-          }
-        }
-      },
-      "GetChatMessageRequestResponseData": {
-        "required": [
-          "conversation_id",
-          "participant_id"
-        ],
-        "type": "object",
-        "properties": {
-          "conversation_id": {
-            "type": "string",
-            "description": "The 1:1 conversation ID: both user IDs joined by a hyphen."
-          },
-          "conversation_key_events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
-          },
-          "has_more_events": {
-            "type": "boolean",
-            "description": "Whether older message events may exist. Always \u0060true\u0060 when \u0060message_events\u0060 isn\u0027t empty."
-          },
-          "message_events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The newest message events, newest first, with end-to-end encrypted contents."
-          },
-          "message_request_state": {
-            "$ref": "#/components/schemas/GetChatMessageRequestResponseDataMessageRequestState"
-          },
-          "participant_id": {
-            "type": "string",
-            "description": "The other user in the conversation: the sender when \u0060message_request_state\u0060 is \u0060received\u0060."
           }
         }
       },
@@ -23595,7 +23731,7 @@
           "data": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/GetChatMessageRequestsResponseData"
+              "$ref": "#/components/schemas/ChatMessageRequest"
             }
           },
           "errors": {
@@ -23606,56 +23742,6 @@
           },
           "meta": {
             "$ref": "#/components/schemas/GetChatMessageRequestsResponseMeta"
-          }
-        }
-      },
-      "GetChatMessageRequestsResponseData": {
-        "required": [
-          "conversation_id",
-          "sender_id"
-        ],
-        "type": "object",
-        "properties": {
-          "conversation_id": {
-            "type": "string",
-            "description": "The 1:1 conversation ID: both user IDs joined by a hyphen."
-          },
-          "conversation_key_events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The conversation key change events needed to decrypt \u0060message_events\u0060."
-          },
-          "encoded_message_create_event": {
-            "type": "string",
-            "description": "The message that previews the request, with end-to-end encrypted contents."
-          },
-          "has_more_events": {
-            "type": "boolean",
-            "description": "Whether the conversation has older message events than \u0060message_events\u0060."
-          },
-          "message_events": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "The conversation\u0027s latest message events, newest first, with end-to-end encrypted contents."
-          },
-          "sender_id": {
-            "type": "string",
-            "description": "The user ID of the user who sent the request."
-          },
-          "sender_recently_modified_profile": {
-            "type": "boolean",
-            "description": "Whether the sender recently changed their name or avatar, a possible sign of impersonation."
-          },
-          "social_proof_user_ids": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "IDs of users the authenticated user follows who also follow the sender."
           }
         }
       },
@@ -23686,7 +23772,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseData"
+            "$ref": "#/components/schemas/ChatSettings"
           },
           "errors": {
             "type": "array",
@@ -23695,66 +23781,6 @@
             }
           }
         }
-      },
-      "GetChatSettingsResponseData": {
-        "type": "object",
-        "properties": {
-          "allow_dms_from": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseDataAllowDmsFrom"
-          },
-          "always_allow_dms_from_subscribers": {
-            "type": "boolean",
-            "description": "Whether the user\u0027s subscribers can always message them regardless of allow_dms_from."
-          },
-          "av_settings": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseDataAvSettings"
-          },
-          "dm_quality_filter": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseDataDmQualityFilter"
-          },
-          "dm_receipt_settings": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseDataDmReceiptSettings"
-          }
-        }
-      },
-      "GetChatSettingsResponseDataAvSettings": {
-        "type": "object",
-        "properties": {
-          "av_call_permissions": {
-            "$ref": "#/components/schemas/GetChatSettingsResponseDataAvSettingsAvCallPermissions"
-          },
-          "has_av_calls_enabled": {
-            "type": "boolean",
-            "description": "Whether audio and video calls are enabled."
-          },
-          "has_enhanced_call_privacy_enabled": {
-            "type": "boolean",
-            "description": "Whether enhanced call privacy is enabled."
-          }
-        },
-        "additionalProperties": false
-      },
-      "GetChatSettingsResponseDataAvSettingsAvCallPermissions": {
-        "type": "object",
-        "properties": {
-          "accept_calls_from_addressbook": {
-            "type": "boolean",
-            "description": "Whether the user accepts calls from address-book contacts."
-          },
-          "accept_calls_from_everyone": {
-            "type": "boolean",
-            "description": "Whether the user accepts calls from anyone."
-          },
-          "accept_calls_from_following": {
-            "type": "boolean",
-            "description": "Whether the user accepts calls from accounts they follow."
-          },
-          "accept_calls_from_verified": {
-            "type": "boolean",
-            "description": "Whether the user accepts calls from verified accounts."
-          }
-        },
-        "additionalProperties": false
       },
       "GetCommunitiesByIdResponse": {
         "type": "object",
@@ -32558,6 +32584,33 @@
       "ChatMessageEventMessageEventSignature": {
         "type": "object"
       },
+      "ChatSettingsAvSettingsAvCallPermissions": {
+        "type": "object",
+        "properties": {
+          "accept_calls_from_addressbook": {
+            "type": "boolean",
+            "description": "Whether the user accepts calls from address-book contacts.",
+            "nullable": true
+          },
+          "accept_calls_from_everyone": {
+            "type": "boolean",
+            "description": "Whether the user accepts calls from anyone.",
+            "nullable": true
+          },
+          "accept_calls_from_following": {
+            "type": "boolean",
+            "description": "Whether the user accepts calls from accounts they follow.",
+            "nullable": true
+          },
+          "accept_calls_from_verified": {
+            "type": "boolean",
+            "description": "Whether the user accepts calls from verified accounts.",
+            "nullable": true
+          }
+        },
+        "description": "Who may place audio or video calls to the user.",
+        "nullable": true
+      },
       "CreateActivitySubscriptionFilterQualifiers": {
         "type": "object",
         "description": "Optional event-specific string predicates."
@@ -35783,141 +35836,6 @@
           ]
         }
       },
-      "GetChatGroupInviteResponseDataJoinState": {
-        "enum": [
-          "member",
-          "not_member",
-          "removed",
-          "requested"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "The authenticated user\u0027s relationship to the group.",
-        "x-ms-enum": {
-          "name": "GetChatGroupInviteResponseDataJoinState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "member",
-              "name": "Member"
-            },
-            {
-              "value": "not_member",
-              "name": "NotMember"
-            },
-            {
-              "value": "removed",
-              "name": "Removed"
-            },
-            {
-              "value": "requested",
-              "name": "Requested"
-            }
-          ]
-        }
-      },
-      "GetChatMessageRequestResponseDataMessageRequestState": {
-        "enum": [
-          "none",
-          "received",
-          "sent"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "\u0060received\u0060 while the other user\u0027s request is pending, \u0060sent\u0060 while the authenticated user\u0027s request is pending, \u0060none\u0060 otherwise.",
-        "x-ms-enum": {
-          "name": "GetChatMessageRequestResponseDataMessageRequestState",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "none",
-              "name": "None"
-            },
-            {
-              "value": "received",
-              "name": "Received"
-            },
-            {
-              "value": "sent",
-              "name": "Sent"
-            }
-          ]
-        }
-      },
-      "GetChatSettingsResponseDataAllowDmsFrom": {
-        "enum": [
-          "all",
-          "verified",
-          "following"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Who can send the user messages: \u0060all\u0060 (anyone), \u0060verified\u0060 (verified accounts only), or \u0060following\u0060 (accounts the user follows).",
-        "x-ms-enum": {
-          "name": "GetChatSettingsResponseDataAllowDmsFrom",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "all",
-              "name": "All"
-            },
-            {
-              "value": "verified",
-              "name": "Verified"
-            },
-            {
-              "value": "following",
-              "name": "Following"
-            }
-          ]
-        }
-      },
-      "GetChatSettingsResponseDataDmQualityFilter": {
-        "enum": [
-          "enabled",
-          "disabled"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Low-quality message request filter: \u0060enabled\u0060 (low-quality requests go to a separate folder) or \u0060disabled\u0060 (all requests stay in the main inbox).",
-        "x-ms-enum": {
-          "name": "GetChatSettingsResponseDataDmQualityFilter",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "enabled",
-              "name": "Enabled"
-            },
-            {
-              "value": "disabled",
-              "name": "Disabled"
-            }
-          ]
-        }
-      },
-      "GetChatSettingsResponseDataDmReceiptSettings": {
-        "enum": [
-          "all_enabled",
-          "all_disabled"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Read receipts: \u0060all_enabled\u0060 (send and receive read receipts) or \u0060all_disabled\u0060 (neither).",
-        "x-ms-enum": {
-          "name": "GetChatSettingsResponseDataDmReceiptSettings",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "all_enabled",
-              "name": "AllEnabled"
-            },
-            {
-              "value": "all_disabled",
-              "name": "AllDisabled"
-            }
-          ]
-        }
-      },
       "InitializeMediaUploadRequestMediaCategory": {
         "enum": [
           "amplify_video",
@@ -37022,6 +36940,63 @@
           ]
         }
       },
+      "ChatGroupInviteFieldsParameterItem": {
+        "enum": [
+          "conversation_id",
+          "expires_at",
+          "group_avatar_url",
+          "group_name",
+          "invite_url",
+          "join_state",
+          "member_count",
+          "token",
+          "welcome_message"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ChatGroupInviteFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "conversation_id",
+              "name": "ConversationId"
+            },
+            {
+              "value": "expires_at",
+              "name": "ExpiresAt"
+            },
+            {
+              "value": "group_avatar_url",
+              "name": "GroupAvatarUrl"
+            },
+            {
+              "value": "group_name",
+              "name": "GroupName"
+            },
+            {
+              "value": "invite_url",
+              "name": "InviteUrl"
+            },
+            {
+              "value": "join_state",
+              "name": "JoinState"
+            },
+            {
+              "value": "member_count",
+              "name": "MemberCount"
+            },
+            {
+              "value": "token",
+              "name": "Token"
+            },
+            {
+              "value": "welcome_message",
+              "name": "WelcomeMessage"
+            }
+          ]
+        }
+      },
       "ChatMessageEventFieldsParameterItem": {
         "enum": [
           "conversation_id",
@@ -37075,6 +37050,154 @@
             {
               "value": "sender_id",
               "name": "SenderId"
+            }
+          ]
+        }
+      },
+      "ChatMessageRequestDetailFieldsParameterItem": {
+        "enum": [
+          "conversation_id",
+          "conversation_key_events",
+          "has_more_events",
+          "message_events",
+          "message_request_state",
+          "participant_id"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ChatMessageRequestDetailFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "conversation_id",
+              "name": "ConversationId"
+            },
+            {
+              "value": "conversation_key_events",
+              "name": "ConversationKeyEvents"
+            },
+            {
+              "value": "has_more_events",
+              "name": "HasMoreEvents"
+            },
+            {
+              "value": "message_events",
+              "name": "MessageEvents"
+            },
+            {
+              "value": "message_request_state",
+              "name": "MessageRequestState"
+            },
+            {
+              "value": "participant_id",
+              "name": "ParticipantId"
+            }
+          ]
+        }
+      },
+      "ChatMessageRequestFieldsParameterItem": {
+        "enum": [
+          "conversation_id",
+          "conversation_key_events",
+          "encoded_message_create_event",
+          "has_more_events",
+          "message_events",
+          "sender_id",
+          "sender_recently_modified_profile",
+          "social_proof_user_ids"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ChatMessageRequestFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "conversation_id",
+              "name": "ConversationId"
+            },
+            {
+              "value": "conversation_key_events",
+              "name": "ConversationKeyEvents"
+            },
+            {
+              "value": "encoded_message_create_event",
+              "name": "EncodedMessageCreateEvent"
+            },
+            {
+              "value": "has_more_events",
+              "name": "HasMoreEvents"
+            },
+            {
+              "value": "message_events",
+              "name": "MessageEvents"
+            },
+            {
+              "value": "sender_id",
+              "name": "SenderId"
+            },
+            {
+              "value": "sender_recently_modified_profile",
+              "name": "SenderRecentlyModifiedProfile"
+            },
+            {
+              "value": "social_proof_user_ids",
+              "name": "SocialProofUserIds"
+            }
+          ]
+        }
+      },
+      "EncodedEventItem": {
+        "enum": [
+          "encoded_event"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "EncodedEventItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "encoded_event",
+              "name": "EncodedEvent"
+            }
+          ]
+        }
+      },
+      "ChatSettingsFieldsParameterItem": {
+        "enum": [
+          "allow_dms_from",
+          "always_allow_dms_from_subscribers",
+          "av_settings",
+          "dm_quality_filter",
+          "dm_receipt_settings"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "x-ms-enum": {
+          "name": "ChatSettingsFieldsParameterItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "allow_dms_from",
+              "name": "AllowDmsFrom"
+            },
+            {
+              "value": "always_allow_dms_from_subscribers",
+              "name": "AlwaysAllowDmsFromSubscribers"
+            },
+            {
+              "value": "av_settings",
+              "name": "AvSettings"
+            },
+            {
+              "value": "dm_quality_filter",
+              "name": "DmQualityFilter"
+            },
+            {
+              "value": "dm_receipt_settings",
+              "name": "DmReceiptSettings"
             }
           ]
         }
@@ -44627,6 +44750,21 @@
           "description": "The fields available for a ChatConversation object."
         }
       },
+      "ChatGroupInviteFieldsParameter": {
+        "name": "chat_group_invite.fields",
+        "in": "query",
+        "description": "A comma separated list of ChatGroupInvite fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ChatGroupInviteFieldsParameterItem"
+          },
+          "description": "The fields available for a ChatGroupInvite object."
+        }
+      },
       "ChatMessageEventFieldsParameter": {
         "name": "chat_message_event.fields",
         "in": "query",
@@ -44640,6 +44778,66 @@
             "$ref": "#/components/schemas/ChatMessageEventFieldsParameterItem"
           },
           "description": "The fields available for a ChatMessageEvent object."
+        }
+      },
+      "ChatMessageRequestDetailFieldsParameter": {
+        "name": "chat_message_request_detail.fields",
+        "in": "query",
+        "description": "A comma separated list of ChatMessageRequestDetail fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ChatMessageRequestDetailFieldsParameterItem"
+          },
+          "description": "The fields available for a ChatMessageRequestDetail object."
+        }
+      },
+      "ChatMessageRequestFieldsParameter": {
+        "name": "chat_message_request.fields",
+        "in": "query",
+        "description": "A comma separated list of ChatMessageRequest fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ChatMessageRequestFieldsParameterItem"
+          },
+          "description": "The fields available for a ChatMessageRequest object."
+        }
+      },
+      "ChatPinnedMessageFieldsParameter": {
+        "name": "chat_pinned_message.fields",
+        "in": "query",
+        "description": "A comma separated list of ChatPinnedMessage fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EncodedEventItem"
+          },
+          "description": "The fields available for a ChatPinnedMessage object."
+        }
+      },
+      "ChatSettingsFieldsParameter": {
+        "name": "chat_settings.fields",
+        "in": "query",
+        "description": "A comma separated list of ChatSettings fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/ChatSettingsFieldsParameterItem"
+          },
+          "description": "The fields available for a ChatSettings object."
         }
       },
       "CommunityFieldsParameter": {

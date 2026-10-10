@@ -7,32 +7,42 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// Audio and video call settings.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class GetChatSettingsResponseDataAvSettings : IParsable
-    #pragma warning restore CS1591
+    public partial class ChatSettingsAvSettings : IAdditionalDataHolder, IParsable
     {
-        /// <summary>The av_call_permissions property</summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Who may place audio or video calls to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions? AvCallPermissions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions? AvCallPermissions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions AvCallPermissions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions AvCallPermissions { get; set; }
 #endif
         /// <summary>Whether audio and video calls are enabled.</summary>
         public bool? HasAvCallsEnabled { get; set; }
         /// <summary>Whether enhanced call privacy is enabled.</summary>
         public bool? HasEnhancedCallPrivacyEnabled { get; set; }
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings"/> and sets the default values.
+        /// </summary>
+        public ChatSettingsAvSettings()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettings"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettings CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettings();
+            return new global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +52,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "av_call_permissions", n => { AvCallPermissions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions>(global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions.CreateFromDiscriminatorValue); } },
+                { "av_call_permissions", n => { AvCallPermissions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions>(global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions.CreateFromDiscriminatorValue); } },
                 { "has_av_calls_enabled", n => { HasAvCallsEnabled = n.GetBoolValue(); } },
                 { "has_enhanced_call_privacy_enabled", n => { HasEnhancedCallPrivacyEnabled = n.GetBoolValue(); } },
             };
@@ -54,9 +64,10 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GetChatSettingsResponseDataAvSettingsAvCallPermissions>("av_call_permissions", AvCallPermissions);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions>("av_call_permissions", AvCallPermissions);
             writer.WriteBoolValue("has_av_calls_enabled", HasAvCallsEnabled);
             writer.WriteBoolValue("has_enhanced_call_privacy_enabled", HasEnhancedCallPrivacyEnabled);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

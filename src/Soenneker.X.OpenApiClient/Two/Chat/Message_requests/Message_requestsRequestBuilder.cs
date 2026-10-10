@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Message_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests{?inbox_type*,max_results*,pagination_token*}", pathParameters)
+        public Message_requestsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests{?chat_message_request%2Efields,inbox_type*,max_results*,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Message_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests{?inbox_type*,max_results*,pagination_token*}", rawUrl)
+        public Message_requestsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/message_requests{?chat_message_request%2Efields,inbox_type*,max_results*,pagination_token*}", rawUrl)
         {
         }
         /// <summary>
@@ -103,6 +103,16 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Message_requestsRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma separated list of ChatMessageRequest fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("chat_message_request%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestFieldsParameterItem[]? ChatMessageRequestFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("chat_message_request%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestFieldsParameterItem[] ChatMessageRequestFields { get; set; }
+#endif
             /// <summary>Which message request inbox to list: `you_may_know` (the apps&apos; Priority tab) or `low_quality` (the apps&apos; Hidden tab).</summary>
             [QueryParameter("inbox_type")]
             public global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsInboxTypeParameter? InboxType { get; set; }
