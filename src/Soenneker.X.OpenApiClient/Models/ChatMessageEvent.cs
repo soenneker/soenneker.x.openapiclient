@@ -22,7 +22,15 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string ConversationId { get; set; }
 #endif
-        /// <summary>The conversation_token property</summary>
+        /// <summary>The version of the conversation key that encrypts the event&apos;s contents. Absent when the event is not encrypted, such as a message sent before the conversation was encrypted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ConversationKeyVersion { get; set; }
+#nullable restore
+#else
+        public string ConversationKeyVersion { get; set; }
+#endif
+        /// <summary>Usually present on encrypted events; unencrypted events have none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ConversationToken { get; set; }
@@ -50,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>The is_trusted property</summary>
         public bool? IsTrusted { get; set; }
-        /// <summary>The message_event_signature property</summary>
+        /// <summary>Usually present on encrypted events; unencrypted events have none. Treat an encrypted event without one as unverified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty? MessageEventSignature { get; set; }
@@ -100,6 +108,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "conversation_id", n => { ConversationId = n.GetStringValue(); } },
+                { "conversation_key_version", n => { ConversationKeyVersion = n.GetStringValue(); } },
                 { "conversation_token", n => { ConversationToken = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "encoded_event", n => { EncodedEvent = n.GetStringValue(); } },
@@ -118,6 +127,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conversation_id", ConversationId);
+            writer.WriteStringValue("conversation_key_version", ConversationKeyVersion);
             writer.WriteStringValue("conversation_token", ConversationToken);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("encoded_event", EncodedEvent);

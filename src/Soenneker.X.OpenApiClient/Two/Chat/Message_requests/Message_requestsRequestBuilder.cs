@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
         {
         }
         /// <summary>
-        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
+        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted unless the conversation is unencrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetChatMessageRequestsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
+        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted unless the conversation is unencrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -98,7 +98,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Message_requests
             return new global::Soenneker.X.OpenApiClient.Two.Chat.Message_requests.Message_requestsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
+        /// Retrieves the authenticated user&apos;s pending Chat message requests from one inbox. Message contents are end-to-end encrypted unless the conversation is unencrypted. Accepting or deleting requests between pages can skip or repeat requests, and a page can be empty while `next_token` is set.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Message_requestsRequestBuilderGetQueryParameters 

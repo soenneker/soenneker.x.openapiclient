@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public List<string> ConversationKeyEvents { get; set; }
 #endif
-        /// <summary>The message that previews the request, with end-to-end encrypted contents.</summary>
+        /// <summary>The message that previews the request, as an encoded message event. Its contents are end-to-end encrypted unless the conversation is unencrypted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EncodedMessageCreateEvent { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Whether the conversation has older message events than `message_events`.</summary>
         public bool? HasMoreEvents { get; set; }
-        /// <summary>The conversation&apos;s latest message events, newest first, with end-to-end encrypted contents.</summary>
+        /// <summary>The conversation&apos;s latest message events, newest first, as encoded message events. Their contents are end-to-end encrypted unless the conversation is unencrypted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MessageEvents { get; set; }

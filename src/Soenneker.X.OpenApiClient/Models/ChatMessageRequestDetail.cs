@@ -32,7 +32,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Whether older message events may exist. Always `true` when `message_events` isn&apos;t empty.</summary>
         public bool? HasMoreEvents { get; set; }
-        /// <summary>The newest message events, newest first, with end-to-end encrypted contents.</summary>
+        /// <summary>The newest message events, newest first, as encoded message events. Their contents are end-to-end encrypted unless the conversation is unencrypted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MessageEvents { get; set; }

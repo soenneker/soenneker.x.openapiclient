@@ -12,6 +12,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ConversationId,
         #pragma warning restore CS1591
+        [EnumMember(Value = "conversation_key_version")]
+        #pragma warning disable CS1591
+        ConversationKeyVersion,
+        #pragma warning restore CS1591
         [EnumMember(Value = "conversation_token")]
         #pragma warning disable CS1591
         ConversationToken,
