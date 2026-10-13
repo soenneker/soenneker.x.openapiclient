@@ -80,8 +80,18 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite Invite { get; set; }
 #endif
+        /// <summary>Whether the authenticated user archived this conversation.</summary>
+        public bool? IsArchived { get; set; }
         /// <summary>The is_muted property</summary>
         public bool? IsMuted { get; set; }
+        /// <summary>The event ID you have read up to: the seen_until_sequence_id of your latest read receipt. Absent when you have no read receipt.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LastReadEventId { get; set; }
+#nullable restore
+#else
+        public string LastReadEventId { get; set; }
+#endif
         /// <summary>The member_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -92,6 +102,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>The message_ttl_ms property</summary>
         public int? MessageTtlMs { get; set; }
+        /// <summary>The ID of the latest notifying message in the conversation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? NewestEventId { get; set; }
+#nullable restore
+#else
+        public string NewestEventId { get; set; }
+#endif
         /// <summary>The participant_ids property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -120,6 +138,8 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>Whether the conversation is unread for you: its latest notifying message was sent by someone else after last_read_event_id, or you have no read receipt. Marking the conversation unread does not set it.</summary>
+        public bool? Unread { get; set; }
         /// <summary>The updated_at property</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
@@ -156,14 +176,18 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "group_name", n => { GroupName = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invite", n => { Invite = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite>(global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite.CreateFromDiscriminatorValue); } },
+                { "is_archived", n => { IsArchived = n.GetBoolValue(); } },
                 { "is_muted", n => { IsMuted = n.GetBoolValue(); } },
+                { "last_read_event_id", n => { LastReadEventId = n.GetStringValue(); } },
                 { "member_ids", n => { MemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "message_ttl_ms", n => { MessageTtlMs = n.GetIntValue(); } },
+                { "newest_event_id", n => { NewestEventId = n.GetStringValue(); } },
                 { "participant_ids", n => { ParticipantIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "pending_member_ids", n => { PendingMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "screen_capture_blocking_enabled", n => { ScreenCaptureBlockingEnabled = n.GetBoolValue(); } },
                 { "screen_capture_detection_enabled", n => { ScreenCaptureDetectionEnabled = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "unread", n => { Unread = n.GetBoolValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -183,14 +207,18 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("group_name", GroupName);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatConversationInvite>("invite", Invite);
+            writer.WriteBoolValue("is_archived", IsArchived);
             writer.WriteBoolValue("is_muted", IsMuted);
+            writer.WriteStringValue("last_read_event_id", LastReadEventId);
             writer.WriteCollectionOfPrimitiveValues<string>("member_ids", MemberIds);
             writer.WriteIntValue("message_ttl_ms", MessageTtlMs);
+            writer.WriteStringValue("newest_event_id", NewestEventId);
             writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
             writer.WriteCollectionOfPrimitiveValues<string>("pending_member_ids", PendingMemberIds);
             writer.WriteBoolValue("screen_capture_blocking_enabled", ScreenCaptureBlockingEnabled);
             writer.WriteBoolValue("screen_capture_detection_enabled", ScreenCaptureDetectionEnabled);
             writer.WriteStringValue("type", Type);
+            writer.WriteBoolValue("unread", Unread);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

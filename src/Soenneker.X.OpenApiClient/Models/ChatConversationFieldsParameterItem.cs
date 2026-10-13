@@ -40,13 +40,25 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Invite,
         #pragma warning restore CS1591
+        [EnumMember(Value = "is_archived")]
+        #pragma warning disable CS1591
+        IsArchived,
+        #pragma warning restore CS1591
         [EnumMember(Value = "is_muted")]
         #pragma warning disable CS1591
         IsMuted,
         #pragma warning restore CS1591
+        [EnumMember(Value = "last_read_event_id")]
+        #pragma warning disable CS1591
+        LastReadEventId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "message_ttl_ms")]
         #pragma warning disable CS1591
         MessageTtlMs,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "newest_event_id")]
+        #pragma warning disable CS1591
+        NewestEventId,
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_member_ids")]
         #pragma warning disable CS1591
@@ -63,6 +75,10 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "type")]
         #pragma warning disable CS1591
         Type,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "unread")]
+        #pragma warning disable CS1591
+        Unread,
         #pragma warning restore CS1591
         [EnumMember(Value = "updated_at")]
         #pragma warning disable CS1591

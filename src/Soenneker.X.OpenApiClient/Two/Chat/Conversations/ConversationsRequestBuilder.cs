@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", pathParameters)
+        public ConversationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,unread_only*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -49,11 +49,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,user%2Efields}", rawUrl)
+        public ConversationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations{?chat_conversation%2Efields,expansions,max_results*,pagination_token*,unread_only*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. With unread_only=true, only conversations that are unread for you are returned; a page can then hold fewer than max_results, so keep paging while has_more is true.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetChatConversationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. With unread_only=true, only conversations that are unread for you are returned; a page can then hold fewer than max_results, so keep paging while has_more is true.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             return new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.ConversationsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox.
+        /// Retrieves a list of Chat conversations for the authenticated user&apos;s inbox. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation&apos;s latest notifying message. With unread_only=true, only conversations that are unread for you are returned; a page can then hold fewer than max_results, so keep paging while has_more is true.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversationsRequestBuilderGetQueryParameters 
@@ -146,6 +146,9 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations
             public string PaginationToken { get; set; }
             #pragma warning restore CS1591
 #endif
+            /// <summary>Return only unread conversations. A page can be short; keep paging while has_more.</summary>
+            [QueryParameter("unread_only")]
+            public bool? UnreadOnly { get; set; }
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

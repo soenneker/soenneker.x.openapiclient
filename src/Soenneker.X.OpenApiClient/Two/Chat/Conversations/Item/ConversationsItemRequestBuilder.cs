@@ -7,6 +7,7 @@ using Soenneker.X.OpenApiClient.Models;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_requests;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_settings;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invite;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites;
@@ -20,6 +21,7 @@ using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Screen_capture;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unread;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -47,6 +49,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder Admins
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins.AdminsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The archive property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder Archive
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.EventsRequestBuilder Events
@@ -113,6 +120,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unread property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unread.UnreadRequestBuilder Unread
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unread.UnreadRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -155,7 +167,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatConversationResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -225,7 +237,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -275,7 +287,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.ConversationsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users.
+        /// Returns metadata for a Chat conversation including type, muted status, and group details. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ConversationsItemRequestBuilderGetQueryParameters 
