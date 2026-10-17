@@ -8,6 +8,7 @@ using Soenneker.X.OpenApiClient.Two.Activity;
 using Soenneker.X.OpenApiClient.Two.Articles;
 using Soenneker.X.OpenApiClient.Two.Bots;
 using Soenneker.X.OpenApiClient.Two.Broadcasts;
+using Soenneker.X.OpenApiClient.Two.Calls;
 using Soenneker.X.OpenApiClient.Two.Chat;
 using Soenneker.X.OpenApiClient.Two.Communities;
 using Soenneker.X.OpenApiClient.Two.Compliance;
@@ -67,6 +68,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.Broadcasts.BroadcastsRequestBuilder Broadcasts
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.BroadcastsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The calls property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Calls.CallsRequestBuilder Calls
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Calls.CallsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chat property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.ChatRequestBuilder Chat

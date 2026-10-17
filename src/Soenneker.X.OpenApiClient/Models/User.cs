@@ -12,6 +12,8 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class User : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>The number of followers who were active on X in the last 24 hours. Returned only for the authenticated user when account analytics is enabled. Omitted for accounts with 50 or fewer followers. An estimate for accounts with at least 20,000 followers.</summary>
+        public int? ActiveFollowerCount { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Metadata about a user&apos;s affiliation.</summary>
@@ -209,6 +211,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "active_follower_count", n => { ActiveFollowerCount = n.GetIntValue(); } },
                 { "affiliation", n => { Affiliation = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>(global::Soenneker.X.OpenApiClient.Models.UserAffiliation.CreateFromDiscriminatorValue); } },
                 { "confirmed_email", n => { ConfirmedEmail = n.GetStringValue(); } },
                 { "connection_status", n => { ConnectionStatus = n.GetCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem>()?.AsList(); } },
@@ -246,6 +249,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteIntValue("active_follower_count", ActiveFollowerCount);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>("affiliation", Affiliation);
             writer.WriteStringValue("confirmed_email", ConfirmedEmail);
             writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.UserConnectionStatusItem>("connection_status", ConnectionStatus);

@@ -8,6 +8,10 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum UserFieldsParameterItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "active_follower_count")]
+        #pragma warning disable CS1591
+        ActiveFollowerCount,
+        #pragma warning restore CS1591
         [EnumMember(Value = "confirmed_email")]
         #pragma warning disable CS1591
         ConfirmedEmail,
