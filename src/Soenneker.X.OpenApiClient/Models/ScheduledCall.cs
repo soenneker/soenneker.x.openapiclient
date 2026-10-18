@@ -9,9 +9,11 @@ namespace Soenneker.X.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class ListScheduledCallsResponseData : IParsable
+    public partial class ScheduledCall : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Where the call lives: x (X Calls), or outlook for a Microsoft Outlook calendar the user linked to X, whose calls are changed there.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -55,10 +57,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Everyone invited, except the organizer. Not set for linked calendars.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseDataInvitees>? Invitees { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ScheduledCallInviteesItem>? Invitees { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseDataInvitees> Invitees { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ScheduledCallInviteesItem> Invitees { get; set; }
 #endif
         /// <summary>Link people open to join the call on X.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -125,14 +127,21 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Title { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ScheduledCall"/> and sets the default values.
+        /// </summary>
+        public ScheduledCall()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ScheduledCall"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.X.OpenApiClient.Models.ScheduledCall CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData();
+            return new global::Soenneker.X.OpenApiClient.Models.ScheduledCall();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -147,7 +156,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "end_time", n => { EndTime = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "invitees", n => { Invitees = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseDataInvitees>(global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseDataInvitees.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "invitees", n => { Invitees = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ScheduledCallInviteesItem>(global::Soenneker.X.OpenApiClient.Models.ScheduledCallInviteesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "join_url", n => { JoinUrl = n.GetStringValue(); } },
                 { "occurrence_start_time", n => { OccurrenceStartTime = n.GetStringValue(); } },
                 { "organizer_id", n => { OrganizerId = n.GetStringValue(); } },
@@ -170,7 +179,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("end_time", EndTime);
             writer.WriteStringValue("id", Id);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseDataInvitees>("invitees", Invitees);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ScheduledCallInviteesItem>("invitees", Invitees);
             writer.WriteStringValue("join_url", JoinUrl);
             writer.WriteStringValue("occurrence_start_time", OccurrenceStartTime);
             writer.WriteStringValue("organizer_id", OrganizerId);
@@ -179,6 +188,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("status", Status);
             writer.WriteStringValue("time_zone", TimeZone);
             writer.WriteStringValue("title", Title);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

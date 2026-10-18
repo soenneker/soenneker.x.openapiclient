@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,max_results*,start_time*}", pathParameters)
+        public ScheduledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -43,11 +43,11 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,max_results*,start_time*}", rawUrl)
+        public ScheduledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
-        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days.When both are provided, `start_time` must be earlier than `end_time`.
+        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days. Use scheduled_call.fields to select which fields are returned.When both are provided, `start_time` must be earlier than `end_time`.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ScheduleCallResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ScheduleCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days.When both are provided, `start_time` must be earlier than `end_time`.
+        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days. Use scheduled_call.fields to select which fields are returned.When both are provided, `start_time` must be earlier than `end_time`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
             return new global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.ScheduledRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days.When both are provided, `start_time` must be earlier than `end_time`.
+        /// Returns the X calls on the authenticated user&apos;s calendar, earliest first: events on their X Calls calendar, and events on the Microsoft Outlook calendars they linked to X whose conference is an X call. Calls still running at start_time are included. The window defaults to the next 24 hours and may span at most 7 days. Use scheduled_call.fields to select which fields are returned.When both are provided, `start_time` must be earlier than `end_time`.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduledRequestBuilderGetQueryParameters 
@@ -153,12 +153,42 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
             /// <summary>Calls starting before this time (RFC 3339). Defaults to 24 hours after start_time.</summary>
             [QueryParameter("end_time")]
             public DateTimeOffset? EndTime { get; set; }
+            /// <summary>A comma separated list of fields to expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallExpansionsParameterItem[]? Expansions { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallExpansionsParameterItem[] Expansions { get; set; }
+#endif
             /// <summary>The most calls to return. Defaults to 20.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
+            /// <summary>A comma separated list of ScheduledCall fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("scheduled_call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallFieldsParameterItem[]? ScheduledCallFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("scheduled_call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallFieldsParameterItem[] ScheduledCallFields { get; set; }
+#endif
             /// <summary>Calls still running at this time or starting after it (RFC 3339). Defaults to now.</summary>
             [QueryParameter("start_time")]
             public DateTimeOffset? StartTime { get; set; }
+            /// <summary>A comma separated list of User fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
+#endif
         }
     }
 }

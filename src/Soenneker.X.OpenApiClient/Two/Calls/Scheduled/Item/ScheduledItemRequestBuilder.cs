@@ -28,7 +28,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?notify_invitees*,occurrence_start_time*,scope*}", pathParameters)
+        public ScheduledItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?notify_invitees*,occurrence_start_time*,scope*}", rawUrl)
+        public ScheduledItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CancelScheduledCallResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CancelScheduledCallResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a scheduled call the authenticated user organizes or is invited to, at its occurrence running now or its next one within a year: its time, call, recurrence and who is invited and how they answered. Changes can take a few seconds to show here.
+        /// Returns a scheduled call the authenticated user organizes or is invited to, at its occurrence running now or its next one within a year: its time, call, recurrence and who is invited and how they answered. Changes can take a few seconds to show here. Use scheduled_call.fields to select which fields are returned.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetScheduledCallResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -71,11 +71,11 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetScheduledCallResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetScheduledCallResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item.ScheduledItemRequestBuilder.ScheduledItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetScheduledCallResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetScheduledCallResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item.ScheduledItemRequestBuilder.ScheduledItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -130,17 +130,17 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns a scheduled call the authenticated user organizes or is invited to, at its occurrence running now or its next one within a year: its time, call, recurrence and who is invited and how they answered. Changes can take a few seconds to show here.
+        /// Returns a scheduled call the authenticated user organizes or is invited to, at its occurrence running now or its next one within a year: its time, call, recurrence and who is invited and how they answered. Changes can take a few seconds to show here. Use scheduled_call.fields to select which fields are returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item.ScheduledItemRequestBuilder.ScheduledItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item.ScheduledItemRequestBuilder.ScheduledItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -194,6 +194,43 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
             /// <summary>Which occurrences: all (the default without occurrence_start_time), this (the default with it), or this_and_following.</summary>
             [QueryParameter("scope")]
             public global::Soenneker.X.OpenApiClient.Models.CancelScheduledCallScopeParameter? Scope { get; set; }
+        }
+        /// <summary>
+        /// Returns a scheduled call the authenticated user organizes or is invited to, at its occurrence running now or its next one within a year: its time, call, recurrence and who is invited and how they answered. Changes can take a few seconds to show here. Use scheduled_call.fields to select which fields are returned.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ScheduledItemRequestBuilderGetQueryParameters 
+        {
+            /// <summary>A comma separated list of fields to expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallExpansionsParameterItem[]? Expansions { get; set; }
+#nullable restore
+#else
+            [QueryParameter("expansions")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallExpansionsParameterItem[] Expansions { get; set; }
+#endif
+            /// <summary>A comma separated list of ScheduledCall fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("scheduled_call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallFieldsParameterItem[]? ScheduledCallFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("scheduled_call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.ScheduledCallFieldsParameterItem[] ScheduledCallFields { get; set; }
+#endif
+            /// <summary>A comma separated list of User fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[]? UserFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("user%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.UserFieldsParameterItem[] UserFields { get; set; }
+#endif
         }
     }
 }

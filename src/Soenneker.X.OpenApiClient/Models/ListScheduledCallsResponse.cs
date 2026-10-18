@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData>? Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ScheduledCall>? Data { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData> Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ScheduledCall> Data { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +29,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
+#endif
+        /// <summary>The includes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.Expansions? Includes { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.Expansions Includes { get; set; }
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +71,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData>(global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ScheduledCall>(global::Soenneker.X.OpenApiClient.Models.ScheduledCall.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "includes", n => { Includes = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>(global::Soenneker.X.OpenApiClient.Models.Expansions.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseMeta>(global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +84,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseData>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ScheduledCall>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Expansions>("includes", Includes);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ListScheduledCallsResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }

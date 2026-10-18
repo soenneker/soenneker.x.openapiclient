@@ -2,6 +2,7 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.X.OpenApiClient.Two.Calls.Item;
 using Soenneker.X.OpenApiClient.Two.Calls.Scheduled;
 using System.Collections.Generic;
 using System.IO;
@@ -19,6 +20,18 @@ namespace Soenneker.X.OpenApiClient.Two.Calls
         public global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.ScheduledRequestBuilder Scheduled
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Calls.Scheduled.ScheduledRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.calls.item collection</summary>
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Calls.Item.CallsItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Calls.Item.CallsItemRequestBuilder this[string position]
+        {
+            get
+            {
+                var urlTplParams = new Dictionary<string, object>(PathParameters);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Calls.Item.CallsItemRequestBuilder(urlTplParams, RequestAdapter);
+            }
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Calls.CallsRequestBuilder"/> and sets the default values.
