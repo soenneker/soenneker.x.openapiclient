@@ -14,6 +14,14 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The calls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.X.OpenApiClient.Models.Call>? Calls { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.X.OpenApiClient.Models.Call> Calls { get; set; }
+#endif
         /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -87,6 +95,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Call>(global::Soenneker.X.OpenApiClient.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Media>(global::Soenneker.X.OpenApiClient.Models.Media.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "places", n => { Places = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Place>(global::Soenneker.X.OpenApiClient.Models.Place.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "polls", n => { Polls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Poll>(global::Soenneker.X.OpenApiClient.Models.Poll.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -102,6 +111,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Call>("calls", Calls);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Media>("media", Media);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Place>("places", Places);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Poll>("polls", Polls);

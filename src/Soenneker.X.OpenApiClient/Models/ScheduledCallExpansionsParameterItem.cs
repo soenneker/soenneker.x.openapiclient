@@ -8,6 +8,10 @@ namespace Soenneker.X.OpenApiClient.Models
     public enum ScheduledCallExpansionsParameterItem
     #pragma warning restore CS1591
     {
+        [EnumMember(Value = "call_id")]
+        #pragma warning disable CS1591
+        CallId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "invitees")]
         #pragma warning disable CS1591
         Invitees,

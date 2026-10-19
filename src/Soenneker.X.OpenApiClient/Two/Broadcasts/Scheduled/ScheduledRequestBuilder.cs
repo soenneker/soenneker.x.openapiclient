@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListScheduledBroadcastsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListScheduledBroadcastsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Schedules a one-off or recurring broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
+        /// Schedules a broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled
             return requestInfo;
         }
         /// <summary>
-        /// Schedules a one-off or recurring broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
+        /// Schedules a broadcast for the authenticated user. A `source_id` (ingest) is required at create time.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", pathParameters)
+        public ScheduledRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?call%2Efields,end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", rawUrl)
+        public ScheduledRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled{?call%2Efields,end_time*,expansions,max_results*,scheduled_call%2Efields,start_time*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -150,6 +150,16 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduledRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma separated list of Call fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.CallFieldsParameterItem[]? CallFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.CallFieldsParameterItem[] CallFields { get; set; }
+#endif
             /// <summary>Calls starting before this time (RFC 3339). Defaults to 24 hours after start_time.</summary>
             [QueryParameter("end_time")]
             public DateTimeOffset? EndTime { get; set; }

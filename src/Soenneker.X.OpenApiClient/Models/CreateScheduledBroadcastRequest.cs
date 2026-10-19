@@ -74,7 +74,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string SourceId { get; set; }
 #endif
-        /// <summary>Optional telecast id (numeric string).</summary>
+        /// <summary>Deprecated: telecast associations are being retired and this field will be ignored.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? TelecastId { get; set; }

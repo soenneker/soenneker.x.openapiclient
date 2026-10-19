@@ -42,7 +42,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>If true, do not auto-publish at start; call POST .../live when ready.</summary>
         public bool? ManualPublish { get; set; }
-        /// <summary>When true, shift the head of a recurring series.</summary>
+        /// <summary>Deprecated: recurring schedules are being retired and `true` will be rejected.</summary>
         public bool? RollForward { get; set; }
         /// <summary>Numeric scheduler id from create/list/get.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -28,7 +28,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", pathParameters)
+        public ScheduledItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?call%2Efields,expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -36,7 +36,7 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ScheduledItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", rawUrl)
+        public ScheduledItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/calls/scheduled/{id}{?call%2Efields,expansions,notify_invitees*,occurrence_start_time*,scheduled_call%2Efields,scope*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -201,6 +201,16 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Scheduled.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ScheduledItemRequestBuilderGetQueryParameters 
         {
+            /// <summary>A comma separated list of Call fields to display.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.CallFieldsParameterItem[]? CallFields { get; set; }
+#nullable restore
+#else
+            [QueryParameter("call%2Efields")]
+            public global::Soenneker.X.OpenApiClient.Models.CallFieldsParameterItem[] CallFields { get; set; }
+#endif
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
