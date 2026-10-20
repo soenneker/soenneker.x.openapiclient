@@ -46,6 +46,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string MessageId { get; set; }
 #endif
+        /// <summary>Version of the Chat XDK that produced the payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? XdkVersion { get; set; }
+#nullable restore
+#else
+        public string XdkVersion { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.SendChatMessageRequest"/> and sets the default values.
         /// </summary>
@@ -75,6 +83,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "encoded_message_create_event", n => { EncodedMessageCreateEvent = n.GetStringValue(); } },
                 { "encoded_message_event_signature", n => { EncodedMessageEventSignature = n.GetStringValue(); } },
                 { "message_id", n => { MessageId = n.GetStringValue(); } },
+                { "xdk_version", n => { XdkVersion = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,6 +97,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("encoded_message_create_event", EncodedMessageCreateEvent);
             writer.WriteStringValue("encoded_message_event_signature", EncodedMessageEventSignature);
             writer.WriteStringValue("message_id", MessageId);
+            writer.WriteStringValue("xdk_version", XdkVersion);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
