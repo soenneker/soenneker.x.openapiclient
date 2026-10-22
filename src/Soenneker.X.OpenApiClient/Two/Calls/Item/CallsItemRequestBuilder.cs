@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Calls.Item.Join;
+using Soenneker.X.OpenApiClient.Two.Calls.Item.Leave;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,16 @@ namespace Soenneker.X.OpenApiClient.Two.Calls.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CallsItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The join property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Calls.Item.Join.JoinRequestBuilder Join
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Calls.Item.Join.JoinRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The leave property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Calls.Item.Leave.LeaveRequestBuilder Leave
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Calls.Item.Leave.LeaveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Calls.Item.CallsItemRequestBuilder"/> and sets the default values.
         /// </summary>
