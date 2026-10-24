@@ -32,13 +32,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty Properties { get; set; }
 #endif
         /// <summary>The GeoJSON feature type.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PlaceGeo"/> and sets the default values.
         /// </summary>
@@ -66,7 +60,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "bbox", n => { Bbox = n.GetCollectionOfPrimitiveValues<double?>()?.AsList(); } },
                 { "properties", n => { Properties = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty>(global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>(global::Soenneker.X.OpenApiClient.Models.PlaceGeoType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>(); } },
             };
         }
         /// <summary>
@@ -78,7 +72,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<double?>("bbox", Bbox);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty>("properties", Properties);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

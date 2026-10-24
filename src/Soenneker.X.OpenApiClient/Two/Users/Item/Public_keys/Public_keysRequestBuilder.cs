@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\public_keys
+    /// Builds and executes requests for operations under \2\users\{id}\public_keys
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Public_keysRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/public_keys{?public_key%2Efields}", pathParameters)
+        public Public_keysRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/public_keys{?public_key%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Public_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/public_keys{?public_key%2Efields}", rawUrl)
+        public Public_keysRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/public_keys{?public_key%2Efields}", rawUrl)
         {
         }
         /// <summary>

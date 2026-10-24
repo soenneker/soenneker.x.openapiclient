@@ -62,14 +62,14 @@ namespace Soenneker.X.OpenApiClient.Two.Users
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.users.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

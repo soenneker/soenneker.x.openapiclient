@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\affiliates
+    /// Builds and executes requests for operations under \2\users\{id}\affiliates
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AffiliatesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AffiliatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/affiliates{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
+        public AffiliatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/affiliates{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AffiliatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/affiliates{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
+        public AffiliatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/affiliates{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

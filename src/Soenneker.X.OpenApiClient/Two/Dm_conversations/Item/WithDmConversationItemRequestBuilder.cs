@@ -11,10 +11,10 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\dm_conversations\{dmConversation-id}
+    /// Builds and executes requests for operations under \2\dm_conversations\{dmConversationId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DmConversationItemRequestBuilder : BaseRequestBuilder
+    public partial class WithDmConversationItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The dm_events property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events.Dm_eventsRequestBuilder Dm_events
@@ -27,19 +27,19 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item
             get => new global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Messages.MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.WithDmConversationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmConversationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversation%2Did}", pathParameters)
+        public WithDmConversationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversationId}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.DmConversationItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.WithDmConversationItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public DmConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversation%2Did}", rawUrl)
+        public WithDmConversationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversationId}", rawUrl)
         {
         }
     }

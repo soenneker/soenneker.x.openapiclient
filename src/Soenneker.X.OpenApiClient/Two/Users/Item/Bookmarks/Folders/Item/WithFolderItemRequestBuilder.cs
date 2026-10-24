@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\bookmarks\folders\{folderId}
+    /// Builds and executes requests for operations under \2\users\{id}\bookmarks\folders\{folderId}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithFolderItemRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks/folders/{folderId}{?max_results*,pagination_token*}", pathParameters)
+        public WithFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/bookmarks/folders/{folderId}{?max_results*,pagination_token*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.Folders.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/bookmarks/folders/{folderId}{?max_results*,pagination_token*}", rawUrl)
+        public WithFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/bookmarks/folders/{folderId}{?max_results*,pagination_token*}", rawUrl)
         {
         }
         /// <summary>

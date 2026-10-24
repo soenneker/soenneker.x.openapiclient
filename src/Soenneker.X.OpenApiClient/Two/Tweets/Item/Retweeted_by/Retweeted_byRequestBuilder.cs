@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\tweets\{-id}\retweeted_by
+    /// Builds and executes requests for operations under \2\tweets\{id}\retweeted_by
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Retweeted_byRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Retweeted_byRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}/retweeted_by{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
+        public Retweeted_byRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}/retweeted_by{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweeted_by
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Retweeted_byRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}/retweeted_by{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
+        public Retweeted_byRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}/retweeted_by{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

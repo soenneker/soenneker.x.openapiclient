@@ -4,6 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Users.Me.Followers;
+using Soenneker.X.OpenApiClient.Two.Users.Me.Following;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +19,16 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MeRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The followers property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Me.Followers.FollowersRequestBuilder Followers
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Me.Followers.FollowersRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The following property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Me.Following.FollowingRequestBuilder Following
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Me.Following.FollowingRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Me.MeRequestBuilder"/> and sets the default values.
         /// </summary>

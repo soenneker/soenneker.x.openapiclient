@@ -30,10 +30,10 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}
+    /// Builds and executes requests for operations under \2\users\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemRequestBuilder : BaseRequestBuilder
+    public partial class UsersItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The affiliates property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates.AffiliatesRequestBuilder Affiliates
@@ -126,19 +126,19 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Tweets.TweetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}{?expansions,post%2Efields,user%2Efields}", pathParameters)
+        public UsersItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}{?expansions,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}{?expansions,post%2Efields,user%2Efields}", rawUrl)
+        public UsersItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}{?expansions,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -150,11 +150,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder.UsersItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetUsersByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder.UsersItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -171,11 +171,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder.UsersItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder.UsersItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -186,17 +186,17 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.X.OpenApiClient.Two.Users.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.X.OpenApiClient.Two.Users.Item.UsersItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get Users by ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemRequestBuilderGetQueryParameters 
+        public partial class UsersItemRequestBuilderGetQueryParameters 
         {
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

@@ -83,7 +83,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
             }
-            else if("Post".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("post.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.Post = new global::Soenneker.X.OpenApiClient.Models.Post();
             }

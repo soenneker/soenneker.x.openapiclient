@@ -13,7 +13,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\following
+    /// Builds and executes requests for operations under \2\users\{id}\following
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowingRequestBuilder : BaseRequestBuilder
@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
+        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
+        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/following{?expansions,max_results*,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

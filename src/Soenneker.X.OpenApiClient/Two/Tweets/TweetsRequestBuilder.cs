@@ -68,14 +68,14 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.tweets.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder"/></returns>
-        public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder"/></returns>
+        public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("%2Did", position);
-                return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("id", position);
+                return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

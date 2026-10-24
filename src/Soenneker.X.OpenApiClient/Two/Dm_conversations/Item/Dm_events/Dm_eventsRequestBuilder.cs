@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\dm_conversations\{dmConversation-id}\dm_events
+    /// Builds and executes requests for operations under \2\dm_conversations\{dmConversationId}\dm_events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Dm_eventsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversation%2Did}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
+        public Dm_eventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversationId}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Dm_conversations.Item.Dm_events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversation%2Did}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
+        public Dm_eventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/dm_conversations/{dmConversationId}/dm_events{?dm_event%2Efields,event_types,expansions,max_results*,media%2Efields,pagination_token*,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

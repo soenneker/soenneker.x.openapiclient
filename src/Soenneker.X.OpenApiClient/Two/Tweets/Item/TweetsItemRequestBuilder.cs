@@ -17,10 +17,10 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\tweets\{-id}
+    /// Builds and executes requests for operations under \2\tweets\{id}
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ItemRequestBuilder : BaseRequestBuilder
+    public partial class TweetsItemRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The hidden property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Hidden.HiddenRequestBuilder Hidden
@@ -48,19 +48,19 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             get => new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.Retweets.RetweetsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
+        public TweetsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
+        public TweetsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}{?expansions,media%2Efields,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>
@@ -95,11 +95,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder.TweetsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder.TweetsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -135,11 +135,11 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder.TweetsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder.ItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder.TweetsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
@@ -150,17 +150,17 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder"/></returns>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
-        public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder WithUrl(string rawUrl)
+        public global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder WithUrl(string rawUrl)
         {
-            return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.ItemRequestBuilder(rawUrl, RequestAdapter);
+            return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
         /// Get Posts by ID
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ItemRequestBuilderGetQueryParameters 
+        public partial class TweetsItemRequestBuilderGetQueryParameters 
         {
             /// <summary>A comma separated list of fields to expand.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

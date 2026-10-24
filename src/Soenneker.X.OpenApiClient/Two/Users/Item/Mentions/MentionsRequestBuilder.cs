@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\mentions
+    /// Builds and executes requests for operations under \2\users\{id}\mentions
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MentionsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MentionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/mentions{?end_time*,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", pathParameters)
+        public MentionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/mentions{?end_time*,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Mentions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public MentionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/mentions{?end_time*,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", rawUrl)
+        public MentionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/mentions{?end_time*,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

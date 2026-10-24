@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronological
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\timelines\reverse_chronological
+    /// Builds and executes requests for operations under \2\users\{id}\timelines\reverse_chronological
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Reverse_chronologicalRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Reverse_chronologicalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/timelines/reverse_chronological{?end_time*,exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", pathParameters)
+        public Reverse_chronologicalRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/timelines/reverse_chronological{?end_time*,exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.Reverse_chronologic
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Reverse_chronologicalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/timelines/reverse_chronological{?end_time*,exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", rawUrl)
+        public Reverse_chronologicalRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/timelines/reverse_chronological{?end_time*,exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,since_id*,start_time*,until_id*,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

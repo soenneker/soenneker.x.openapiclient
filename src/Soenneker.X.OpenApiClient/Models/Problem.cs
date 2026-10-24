@@ -119,19 +119,19 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.X.OpenApiClient.Models.Problem();
-            if("DisallowedResourceProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("https://api.x.com/2/problems/disallowed-resource".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DisallowedResourceProblem = new global::Soenneker.X.OpenApiClient.Models.DisallowedResourceProblem();
             }
-            else if("DuplicateRuleProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("https://api.twitter.com/2/problems/duplicate-rules".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.DuplicateRuleProblem = new global::Soenneker.X.OpenApiClient.Models.DuplicateRuleProblem();
             }
-            else if("FieldHydrationFailureProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("https://api.x.com/2/problems/field-hydration-failure".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FieldHydrationFailureProblem = new global::Soenneker.X.OpenApiClient.Models.FieldHydrationFailureProblem();
             }
-            else if("FieldUnauthorizedProblem".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("https://api.x.com/2/problems/field-unauthorized".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.FieldUnauthorizedProblem = new global::Soenneker.X.OpenApiClient.Models.FieldUnauthorizedProblem();
             }

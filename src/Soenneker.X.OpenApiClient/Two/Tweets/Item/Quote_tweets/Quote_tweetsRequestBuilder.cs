@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\tweets\{-id}\quote_tweets
+    /// Builds and executes requests for operations under \2\tweets\{id}\quote_tweets
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Quote_tweetsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Quote_tweetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}/quote_tweets{?exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
+        public Quote_tweetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}/quote_tweets{?exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item.Quote_tweets
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public Quote_tweetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{%2Did}/quote_tweets{?exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
+        public Quote_tweetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/tweets/{id}/quote_tweets{?exclude,expansions,max_results*,media%2Efields,pagination_token*,place%2Efields,poll%2Efields,post%2Efields,user%2Efields}", rawUrl)
         {
         }
         /// <summary>

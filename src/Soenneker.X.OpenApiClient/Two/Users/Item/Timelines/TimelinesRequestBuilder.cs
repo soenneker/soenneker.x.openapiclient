@@ -10,7 +10,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines
 {
     /// <summary>
-    /// Builds and executes requests for operations under \2\users\{-id}\timelines
+    /// Builds and executes requests for operations under \2\users\{id}\timelines
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TimelinesRequestBuilder : BaseRequestBuilder
@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/timelines", pathParameters)
+        public TimelinesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/timelines", pathParameters)
         {
         }
         /// <summary>
@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Timelines
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TimelinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{%2Did}/timelines", rawUrl)
+        public TimelinesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/users/{id}/timelines", rawUrl)
         {
         }
     }
