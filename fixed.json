@@ -207,9 +207,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
               "tweet.read",
-              "users.read",
               "dm.read"
             ]
           },
@@ -280,10 +280,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read",
+              "dm.read",
               "dm.write",
-              "dm.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -576,7 +576,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "A base32hex-encoded pagination token that decodes to 9 bytes.",
             "schema": {
               "minLength": 16,
               "type": "string"
@@ -1402,8 +1402,8 @@
           {
             "OAuth2UserToken": [
               "broadcast.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -1518,7 +1518,83 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
+              "broadcast.read",
+              "broadcast.write"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/broadcasts/chat/mutes": {
+      "get": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Get muted chat users",
+        "description": "Returns the users muted in the authenticated broadcaster\u0027s chat, with the expiry time of timed mutes. Mutes apply to all of their broadcasts. Expired timed mutes are omitted. Use \u0060expansions=user_id\u0060 to include the muted users.",
+        "operationId": "GetChatMutedUsers",
+        "parameters": [
+          {
+            "name": "max_results",
+            "in": "query",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pagination_token",
+            "in": "query",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "$ref": "#/components/parameters/BroadcastChatMuteFieldsParameter"
+          },
+          {
+            "$ref": "#/components/parameters/BroadcastChatMuteExpansionsParameter"
+          },
+          {
+            "$ref": "#/components/parameters/UserFieldsParameter"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetChatMutedUsersResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
               "broadcast.read"
             ]
           },
@@ -1721,8 +1797,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1844,8 +1920,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2186,8 +2262,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2255,8 +2331,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -3012,8 +3088,8 @@
         "tags": [
           "Chat"
         ],
-        "summary": "Get Chat Conversations; unread state via chat_conversation.fields=unread,last_read_event_id,newest_event_id",
-        "description": "Retrieves a list of Chat conversations for the authenticated user\u0027s inbox. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation\u0027s latest notifying message. With unread_only=true, only conversations that are unread for you are returned; a page can then hold fewer than max_results, so keep paging while has_more is true.",
+        "summary": "Get Chat Conversations, newest first. All filters must match (AND). A page can hold fewer than max_results while meta.next_token is set: keep paging. Read state: chat_conversation.fields=unread,last_read_event_id,newest_event_id",
+        "description": "Retrieves a list of Chat conversations for the authenticated user\u0027s inbox, most recently active first. The unread, last_read_event_id and newest_event_id fields give your read state, computed from your latest read receipt and each conversation\u0027s latest notifying message.\n\nThe filters unread_only, type, is_archived, is_muted, participant_ids, participant_query, start_time and end_time are optional and combine with AND. participant_query keeps conversations where another participant\u0027s username, or a word of their display name, starts with the query, ignoring case and accents; with a leading @ it matches usernames only. It considers the 100 people who best match the query, uses only public profile information, and never matches group names, nicknames or messages. start_time and end_time apply to the time of each conversation\u0027s latest message. Each page covers max_results conversations and returns those that match, so a page can hold fewer than max_results, or none, while has_more is true: keep paging with next_token. Once a page reaches a conversation whose latest message is older than start_time, has_more is false.\n\nA pagination_token only works with the same filters as the request that returned it; with other filters, the request fails with a 400.\n\nWhen both are provided, \u0060start_time\u0060 must be earlier than \u0060end_time\u0060.",
         "externalDocs": {
           "url": "https://developer.x.com/"
         },
@@ -3022,6 +3098,7 @@
           {
             "name": "max_results",
             "in": "query",
+            "description": "Conversations covered per page (1-1000, default 200). Filtered pages can return fewer.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -3033,6 +3110,7 @@
           {
             "name": "pagination_token",
             "in": "query",
+            "description": "meta.next_token from the previous page. Send the same filters with it, or the request fails.",
             "schema": {
               "type": "string"
             }
@@ -3044,6 +3122,74 @@
             "schema": {
               "type": "boolean",
               "default": false
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "description": "Only direct (1:1) or only group conversations. Omit for both.",
+            "schema": {
+              "$ref": "#/components/schemas/GetChatConversationsTypeParameter"
+            }
+          },
+          {
+            "name": "is_archived",
+            "in": "query",
+            "description": "true: only archived; false: only not archived. Omit for both.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "is_muted",
+            "in": "query",
+            "description": "true: only muted; false: only not muted. Omit for both.",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "participant_ids",
+            "in": "query",
+            "description": "Comma-separated numeric user IDs (1-10), all in the chat. Names or @handles: use participant_query.",
+            "explode": false,
+            "schema": {
+              "maxItems": 10,
+              "minItems": 1,
+              "uniqueItems": true,
+              "type": "array",
+              "items": {
+                "pattern": "^[0-9]{1,19}$",
+                "type": "string"
+              }
+            }
+          },
+          {
+            "name": "participant_query",
+            "in": "query",
+            "description": "Name or @username prefix (1-50 chars); keeps chats where any other participant matches it.",
+            "schema": {
+              "maxLength": 50,
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          {
+            "name": "start_time",
+            "in": "query",
+            "description": "ISO 8601, e.g. 2026-10-16T00:00:00Z. Chats whose latest message is at or after this time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
+            }
+          },
+          {
+            "name": "end_time",
+            "in": "query",
+            "description": "ISO 8601, e.g. 2026-10-17T00:00:00Z. Chats whose latest message is before this time.",
+            "schema": {
+              "type": "string",
+              "format": "date-time"
             }
           },
           {
@@ -3086,8 +3232,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -3148,8 +3294,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -3272,8 +3418,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -3341,8 +3487,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "tweet.read",
+              "dm.read",
               "users.read"
             ]
           },
@@ -3413,9 +3559,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -3495,8 +3641,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -3566,9 +3712,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -3650,9 +3796,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -3734,9 +3880,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -3808,8 +3954,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -3882,9 +4028,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -3956,9 +4102,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -4102,9 +4248,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -4188,9 +4334,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -4334,9 +4480,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -4411,9 +4557,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -4486,8 +4632,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4559,8 +4705,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -4632,9 +4778,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4706,8 +4852,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4722,7 +4868,7 @@
           "Chat"
         ],
         "summary": "Remove members from a Chat group conversation",
-        "description": "Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller.",
+        "description": "Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller. When the removal rotates the conversation key, send group_key_rotation_data and the action signatures for the removal and the key change, in that order.",
         "externalDocs": {
           "url": "https://developer.x.com/"
         },
@@ -4779,8 +4925,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5071,8 +5217,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5144,9 +5290,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5292,8 +5438,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.read"
             ]
           },
@@ -5365,9 +5511,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5439,8 +5585,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -5503,8 +5649,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5565,8 +5711,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -5924,9 +6070,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5991,9 +6137,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6112,9 +6258,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6172,9 +6318,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -6324,9 +6470,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "list.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -7002,9 +7148,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -7184,9 +7330,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -7254,9 +7400,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -7322,8 +7468,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -7435,8 +7581,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -7537,9 +7683,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -7597,8 +7743,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read"
+              "dm.read",
+              "dm.write"
             ]
           },
           {
@@ -7669,8 +7815,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -8112,10 +8258,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
-              "users.read",
               "tweet.read",
-              "list.read"
+              "list.read",
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -8178,9 +8324,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -8322,8 +8468,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "users.read",
+              "list.write",
               "tweet.read"
             ]
           },
@@ -8411,9 +8557,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8576,8 +8722,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -8651,9 +8797,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -8750,8 +8896,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
+              "list.read",
               "tweet.read"
             ]
           },
@@ -9632,8 +9778,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10292,8 +10438,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -10368,9 +10514,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "space.read"
+              "space.read",
+              "users.read"
             ]
           },
           {
@@ -10539,9 +10685,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "space.read"
             ]
           },
           {
@@ -10611,8 +10757,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "space.read",
-              "tweet.read"
+              "tweet.read",
+              "space.read"
             ]
           },
           {
@@ -10702,9 +10848,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "space.read"
             ]
           }
         ]
@@ -10799,8 +10945,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "space.read"
             ]
           },
@@ -10953,8 +11099,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11011,9 +11157,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "tweet.write",
               "users.read",
-              "tweet.write"
+              "tweet.read"
             ]
           },
           {
@@ -12814,8 +12960,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13177,7 +13323,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "A base32hex-encoded pagination token that decodes to 8 bytes.",
             "schema": {
               "maxLength": 16,
               "minLength": 16,
@@ -13543,8 +13689,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -13713,8 +13859,8 @@
           {
             "OAuth2UserToken": [
               "like.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -13916,8 +14062,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14017,8 +14163,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14095,8 +14241,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.moderate.write",
-              "tweet.read"
+              "tweet.read",
+              "tweet.moderate.write"
             ]
           },
           {
@@ -14587,6 +14733,7 @@
           {
             "name": "max_results",
             "in": "query",
+            "description": "The maximum number of users to return.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -14597,7 +14744,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.",
             "schema": {
               "minLength": 16,
               "type": "string"
@@ -14643,9 +14790,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "follows.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -14666,6 +14813,7 @@
           {
             "name": "max_results",
             "in": "query",
+            "description": "The maximum number of users to return.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -14676,7 +14824,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.",
             "schema": {
               "minLength": 16,
               "type": "string"
@@ -14722,9 +14870,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "follows.read",
-              "tweet.read"
+              "follows.read"
             ]
           },
           {
@@ -14935,8 +15083,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "timeline.read",
-              "tweet.read"
+              "tweet.read",
+              "timeline.read"
             ]
           },
           {
@@ -15270,9 +15418,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "block.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -15339,9 +15487,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "block.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -15437,9 +15585,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -15508,8 +15656,8 @@
           {
             "OAuth2UserToken": [
               "bookmark.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           }
         ]
@@ -15584,8 +15732,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.read"
+              "bookmark.read",
+              "users.read"
             ]
           },
           {
@@ -15653,8 +15801,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.write"
+              "bookmark.write",
+              "users.read"
             ]
           }
         ]
@@ -15813,9 +15961,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "bookmark.write",
-              "users.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -15871,9 +16019,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -15932,8 +16080,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -16022,8 +16170,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.read"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -16093,8 +16241,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -16169,9 +16317,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "list.write"
+              "list.write",
+              "tweet.read"
             ]
           },
           {
@@ -16202,6 +16350,7 @@
           {
             "name": "max_results",
             "in": "query",
+            "description": "The maximum number of users to return.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -16212,7 +16361,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.",
             "schema": {
               "minLength": 16,
               "type": "string"
@@ -16258,9 +16407,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "follows.read",
               "tweet.read",
-              "users.read",
-              "follows.read"
+              "users.read"
             ]
           },
           {
@@ -16294,6 +16443,7 @@
           {
             "name": "max_results",
             "in": "query",
+            "description": "The maximum number of users to return.",
             "schema": {
               "maximum": 1000,
               "minimum": 1,
@@ -16304,7 +16454,7 @@
           {
             "name": "pagination_token",
             "in": "query",
-            "description": "A base32hex-encoded pagination token.",
+            "description": "The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.",
             "schema": {
               "minLength": 16,
               "type": "string"
@@ -16350,9 +16500,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "follows.read",
               "users.read",
-              "tweet.read",
-              "follows.read"
+              "tweet.read"
             ]
           },
           {
@@ -16422,8 +16572,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "follows.write"
             ]
           },
@@ -16520,8 +16670,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "like.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -16663,8 +16813,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -16752,8 +16902,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "list.read",
-              "tweet.read"
+              "tweet.read",
+              "list.read"
             ]
           },
           {
@@ -16887,8 +17037,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16978,8 +17128,8 @@
           {
             "OAuth2UserToken": [
               "mute.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -17046,9 +17196,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "mute.write",
               "tweet.read",
-              "users.read",
-              "mute.write"
+              "users.read"
             ]
           },
           {
@@ -17136,8 +17286,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -17208,9 +17358,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "list.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -17281,9 +17431,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.write",
               "tweet.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -17357,9 +17507,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -17425,9 +17575,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -17498,8 +17648,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -17647,9 +17797,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "tweet.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -17792,8 +17942,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -18016,8 +18166,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "block.write",
-              "tweet.read"
+              "tweet.read",
+              "block.write"
             ]
           },
           {
@@ -18091,8 +18241,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -18167,8 +18317,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "mute.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -18612,7 +18762,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/AddChatGroupAdminsActionSignaturesMessageEventSignature"
@@ -18693,7 +18843,7 @@
             "items": {
               "$ref": "#/components/schemas/AddChatGroupAdminsActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "user_ids": {
             "minItems": 1,
@@ -18745,7 +18895,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/AddChatGroupMembersActionSignaturesMessageEventSignature"
@@ -18843,7 +18993,7 @@
             "items": {
               "$ref": "#/components/schemas/AddChatGroupMembersActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "conversation_key_version": {
             "type": "string",
@@ -18942,7 +19092,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/AddConversationKeysActionSignaturesMessageEventSignature"
@@ -19041,7 +19191,7 @@
             "items": {
               "$ref": "#/components/schemas/AddConversationKeysActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "base64_encoded_key_rotation": {
             "type": "string",
@@ -19336,7 +19486,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/ApproveChatGroupAdminRequestActionSignaturesMessageEventSignature"
@@ -19414,7 +19564,7 @@
             "items": {
               "$ref": "#/components/schemas/ApproveChatGroupAdminRequestActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -19457,7 +19607,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/ArchiveChatConversationActionSignaturesMessageEventSignature"
@@ -19535,7 +19685,7 @@
             "items": {
               "$ref": "#/components/schemas/ArchiveChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -20132,6 +20282,19 @@
           },
           "text": {
             "type": "string"
+          }
+        }
+      },
+      "BroadcastChatMute": {
+        "type": "object",
+        "properties": {
+          "end_at_ms": {
+            "type": "string",
+            "description": "The Unix timestamp in milliseconds when the mute expires. Absent for indefinite mutes."
+          },
+          "user_id": {
+            "type": "string",
+            "description": "The muted user\u0027s ID."
           }
         }
       },
@@ -21211,7 +21374,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/CreateChatConversationActionSignaturesMessageEventSignature"
@@ -21312,7 +21475,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "base64_encoded_key_rotation": {
             "type": "string",
@@ -21407,7 +21570,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/CreateChatGroupAdminRequestActionSignaturesMessageEventSignature"
@@ -21485,7 +21648,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateChatGroupAdminRequestActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -21528,7 +21691,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/CreateChatGroupJoinRequestActionSignaturesMessageEventSignature"
@@ -21609,7 +21772,7 @@
             "items": {
               "$ref": "#/components/schemas/CreateChatGroupJoinRequestActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "token": {
             "pattern": "^[A-Za-z0-9_-]{10}$",
@@ -23315,7 +23478,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/DeleteChatConversationActionSignaturesMessageEventSignature"
@@ -23397,7 +23560,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/DeleteChatConversationMessageTtlActionSignaturesMessageEventSignature"
@@ -23475,7 +23638,7 @@
             "items": {
               "$ref": "#/components/schemas/DeleteChatConversationMessageTtlActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -23514,7 +23677,7 @@
             "items": {
               "$ref": "#/components/schemas/DeleteChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -23557,7 +23720,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/DeleteChatMessagesActionSignaturesMessageEventSignature"
@@ -23640,7 +23803,7 @@
             "items": {
               "$ref": "#/components/schemas/DeleteChatMessagesActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "delete_message_action": {
             "$ref": "#/components/schemas/DeleteChatMessagesRequestDeleteMessageAction"
@@ -24117,7 +24280,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/DisableChatGroupInviteActionSignaturesMessageEventSignature"
@@ -24195,7 +24358,7 @@
             "items": {
               "$ref": "#/components/schemas/DisableChatGroupInviteActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -24254,6 +24417,204 @@
           },
           "type": {
             "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDisallowedResourceType"
+          }
+        }
+      },
+      "DmBadAttachmentProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadAttachmentType"
+          }
+        }
+      },
+      "DmBadCtaProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadCtaType"
+          }
+        }
+      },
+      "DmBadCustomProfileProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadCustomProfileType"
+          }
+        }
+      },
+      "DmBadMediaProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadMediaType"
+          }
+        }
+      },
+      "DmBadQuickReplyProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadQuickReplyType"
+          }
+        }
+      },
+      "DmBadUrlProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmBadUrlType"
+          }
+        }
+      },
+      "DmConversationNameTooLongProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmConversationNameTooLongType"
+          }
+        }
+      },
+      "DmConversationNotFoundProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmConversationNotFoundType"
+          }
+        }
+      },
+      "DmDuplicateProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmDuplicateType"
           }
         }
       },
@@ -24361,6 +24722,754 @@
           "$ref": "#/components/schemas/DmEventReferencedPostsItem"
         }
       },
+      "DmInactiveDeviceProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmInactiveDeviceType"
+          }
+        }
+      },
+      "DmNotDeliveredProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmNotDeliveredType"
+          }
+        }
+      },
+      "DmNotFoundProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmNotFoundType"
+          }
+        }
+      },
+      "DmNotOwnerProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmNotOwnerType"
+          }
+        }
+      },
+      "DmParticipantNotAddedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotAddedType"
+          }
+        }
+      },
+      "DmParticipantNotFoundProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotFoundType"
+          }
+        }
+      },
+      "DmParticipantRestrictedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmParticipantRestrictedType"
+          }
+        }
+      },
+      "DmParticipantUnavailableProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmParticipantUnavailableType"
+          }
+        }
+      },
+      "DmRateLimitedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRateLimitedType"
+          }
+        }
+      },
+      "DmRecipientBlocksSenderProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientBlocksSenderType"
+          }
+        }
+      },
+      "DmRecipientCannotReceiveProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientCannotReceiveType"
+          }
+        }
+      },
+      "DmRecipientEncryptedUnavailableProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientEncryptedUnavailableType"
+          }
+        }
+      },
+      "DmRecipientNotAcceptingProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotAcceptingType"
+          }
+        }
+      },
+      "DmRecipientNotFoundProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotFoundType"
+          }
+        }
+      },
+      "DmRecipientRestrictsGroupsProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientRestrictsGroupsType"
+          }
+        }
+      },
+      "DmRecipientUnavailableProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRecipientUnavailableType"
+          }
+        }
+      },
+      "DmRequestInProgressProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmRequestInProgressType"
+          }
+        }
+      },
+      "DmSafetyLimitedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSafetyLimitedType"
+          }
+        }
+      },
+      "DmSafetyRejectedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSafetyRejectedType"
+          }
+        }
+      },
+      "DmSenderBlocksRecipientProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderBlocksRecipientType"
+          }
+        }
+      },
+      "DmSenderDeclinedDmsProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderDeclinedDmsType"
+          }
+        }
+      },
+      "DmSenderDmsClosedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderDmsClosedType"
+          }
+        }
+      },
+      "DmSenderEncryptedUnavailableProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderEncryptedUnavailableType"
+          }
+        }
+      },
+      "DmSenderNotInConversationProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotInConversationType"
+          }
+        }
+      },
+      "DmSenderNotPermittedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotPermittedType"
+          }
+        }
+      },
+      "DmSenderNotVerifiedProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotVerifiedType"
+          }
+        }
+      },
+      "DmSenderPhoneRequiredProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderPhoneRequiredType"
+          }
+        }
+      },
+      "DmSenderReadOnlyProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderReadOnlyType"
+          }
+        }
+      },
+      "DmSenderUnavailableProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmSenderUnavailableType"
+          }
+        }
+      },
+      "DmTextEmptyProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmTextEmptyType"
+          }
+        }
+      },
+      "DmTextTooLongProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmTextTooLongType"
+          }
+        }
+      },
+      "DmTooFewParticipantsProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmTooFewParticipantsType"
+          }
+        }
+      },
+      "DmTooManyParticipantsProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmTooManyParticipantsType"
+          }
+        }
+      },
+      "DmUnsupportedMessageProblem": {
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsDmUnsupportedMessageType"
+          }
+        }
+      },
       "DuplicateRuleProblem": {
         "required": [
           "type",
@@ -24398,7 +25507,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/EnableChatGroupInviteActionSignaturesMessageEventSignature"
@@ -24476,7 +25585,7 @@
             "items": {
               "$ref": "#/components/schemas/EnableChatGroupInviteActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "affiliate_user_id": {
             "pattern": "^[0-9]{1,19}$",
@@ -25367,6 +26476,29 @@
           },
           "meta": {
             "$ref": "#/components/schemas/GetChatModeratorsResponseMeta"
+          }
+        }
+      },
+      "GetChatMutedUsersResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BroadcastChatMute"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          },
+          "includes": {
+            "$ref": "#/components/schemas/Expansions"
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetChatMutedUsersResponseMeta"
           }
         }
       },
@@ -27977,7 +29109,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/MarkChatConversationReadActionSignaturesMessageEventSignature"
@@ -28535,7 +29667,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/MuteChatConversationActionSignaturesMessageEventSignature"
@@ -28613,7 +29745,7 @@
             "items": {
               "$ref": "#/components/schemas/MuteChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -29830,6 +30962,135 @@
             "$ref": "#/components/schemas/InternalErrorProblem"
           },
           {
+            "$ref": "#/components/schemas/DmBadAttachmentProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmBadCtaProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmBadCustomProfileProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmBadMediaProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmBadQuickReplyProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmBadUrlProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmConversationNameTooLongProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmConversationNotFoundProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmDuplicateProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmInactiveDeviceProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmNotDeliveredProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmNotFoundProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmNotOwnerProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmParticipantNotAddedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmParticipantNotFoundProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmParticipantRestrictedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmParticipantUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRateLimitedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientBlocksSenderProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientCannotReceiveProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientEncryptedUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientNotAcceptingProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientNotFoundProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientRestrictsGroupsProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRecipientUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmRequestInProgressProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSafetyLimitedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSafetyRejectedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderBlocksRecipientProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderDeclinedDmsProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderDmsClosedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderEncryptedUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderNotInConversationProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderNotPermittedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderNotVerifiedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderPhoneRequiredProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderReadOnlyProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmSenderUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmTextEmptyProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmTextTooLongProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmTooFewParticipantsProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmTooManyParticipantsProblem"
+          },
+          {
+            "$ref": "#/components/schemas/DmUnsupportedMessageProblem"
+          },
+          {
             "$ref": "#/components/schemas/DuplicateRuleProblem"
           },
           {
@@ -29847,6 +31108,49 @@
             "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
             "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
             "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
+            "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
+            "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
+            "https://api.x.com/2/problems/dm-bad-custom-profile": "#/components/schemas/DmBadCustomProfileProblem",
+            "https://api.x.com/2/problems/dm-bad-media": "#/components/schemas/DmBadMediaProblem",
+            "https://api.x.com/2/problems/dm-bad-quick-reply": "#/components/schemas/DmBadQuickReplyProblem",
+            "https://api.x.com/2/problems/dm-bad-url": "#/components/schemas/DmBadUrlProblem",
+            "https://api.x.com/2/problems/dm-conversation-name-too-long": "#/components/schemas/DmConversationNameTooLongProblem",
+            "https://api.x.com/2/problems/dm-conversation-not-found": "#/components/schemas/DmConversationNotFoundProblem",
+            "https://api.x.com/2/problems/dm-duplicate": "#/components/schemas/DmDuplicateProblem",
+            "https://api.x.com/2/problems/dm-inactive-device": "#/components/schemas/DmInactiveDeviceProblem",
+            "https://api.x.com/2/problems/dm-not-delivered": "#/components/schemas/DmNotDeliveredProblem",
+            "https://api.x.com/2/problems/dm-not-found": "#/components/schemas/DmNotFoundProblem",
+            "https://api.x.com/2/problems/dm-not-owner": "#/components/schemas/DmNotOwnerProblem",
+            "https://api.x.com/2/problems/dm-participant-not-added": "#/components/schemas/DmParticipantNotAddedProblem",
+            "https://api.x.com/2/problems/dm-participant-not-found": "#/components/schemas/DmParticipantNotFoundProblem",
+            "https://api.x.com/2/problems/dm-participant-restricted": "#/components/schemas/DmParticipantRestrictedProblem",
+            "https://api.x.com/2/problems/dm-participant-unavailable": "#/components/schemas/DmParticipantUnavailableProblem",
+            "https://api.x.com/2/problems/dm-rate-limited": "#/components/schemas/DmRateLimitedProblem",
+            "https://api.x.com/2/problems/dm-recipient-blocks-sender": "#/components/schemas/DmRecipientBlocksSenderProblem",
+            "https://api.x.com/2/problems/dm-recipient-cannot-receive": "#/components/schemas/DmRecipientCannotReceiveProblem",
+            "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable": "#/components/schemas/DmRecipientEncryptedUnavailableProblem",
+            "https://api.x.com/2/problems/dm-recipient-not-accepting": "#/components/schemas/DmRecipientNotAcceptingProblem",
+            "https://api.x.com/2/problems/dm-recipient-not-found": "#/components/schemas/DmRecipientNotFoundProblem",
+            "https://api.x.com/2/problems/dm-recipient-restricts-groups": "#/components/schemas/DmRecipientRestrictsGroupsProblem",
+            "https://api.x.com/2/problems/dm-recipient-unavailable": "#/components/schemas/DmRecipientUnavailableProblem",
+            "https://api.x.com/2/problems/dm-request-in-progress": "#/components/schemas/DmRequestInProgressProblem",
+            "https://api.x.com/2/problems/dm-safety-limited": "#/components/schemas/DmSafetyLimitedProblem",
+            "https://api.x.com/2/problems/dm-safety-rejected": "#/components/schemas/DmSafetyRejectedProblem",
+            "https://api.x.com/2/problems/dm-sender-blocks-recipient": "#/components/schemas/DmSenderBlocksRecipientProblem",
+            "https://api.x.com/2/problems/dm-sender-declined-dms": "#/components/schemas/DmSenderDeclinedDmsProblem",
+            "https://api.x.com/2/problems/dm-sender-dms-closed": "#/components/schemas/DmSenderDmsClosedProblem",
+            "https://api.x.com/2/problems/dm-sender-encrypted-unavailable": "#/components/schemas/DmSenderEncryptedUnavailableProblem",
+            "https://api.x.com/2/problems/dm-sender-not-in-conversation": "#/components/schemas/DmSenderNotInConversationProblem",
+            "https://api.x.com/2/problems/dm-sender-not-permitted": "#/components/schemas/DmSenderNotPermittedProblem",
+            "https://api.x.com/2/problems/dm-sender-not-verified": "#/components/schemas/DmSenderNotVerifiedProblem",
+            "https://api.x.com/2/problems/dm-sender-phone-required": "#/components/schemas/DmSenderPhoneRequiredProblem",
+            "https://api.x.com/2/problems/dm-sender-read-only": "#/components/schemas/DmSenderReadOnlyProblem",
+            "https://api.x.com/2/problems/dm-sender-unavailable": "#/components/schemas/DmSenderUnavailableProblem",
+            "https://api.x.com/2/problems/dm-text-empty": "#/components/schemas/DmTextEmptyProblem",
+            "https://api.x.com/2/problems/dm-text-too-long": "#/components/schemas/DmTextTooLongProblem",
+            "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
+            "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
+            "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
             "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
             "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
             "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
@@ -29930,7 +31234,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/RejectChatGroupAdminRequestActionSignaturesMessageEventSignature"
@@ -30008,7 +31312,7 @@
             "items": {
               "$ref": "#/components/schemas/RejectChatGroupAdminRequestActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -30051,7 +31355,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/RejectChatGroupJoinRequestsActionSignaturesMessageEventSignature"
@@ -30132,7 +31436,7 @@
             "items": {
               "$ref": "#/components/schemas/RejectChatGroupJoinRequestsActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "user_ids": {
             "minItems": 1,
@@ -30184,7 +31488,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/RemoveChatGroupAdminsActionSignaturesMessageEventSignature"
@@ -30265,7 +31569,7 @@
             "items": {
               "$ref": "#/components/schemas/RemoveChatGroupAdminsActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "user_ids": {
             "minItems": 1,
@@ -30317,7 +31621,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/RemoveChatGroupMembersActionSignaturesMessageEventSignature"
@@ -30387,6 +31691,83 @@
           }
         }
       },
+      "RemoveChatGroupMembersGroupKeyRotationData": {
+        "type": "object",
+        "properties": {
+          "base64_encoded_key_rotation": {
+            "type": "string",
+            "description": "Base64-encoded key rotation payload."
+          },
+          "conversation_key_version": {
+            "type": "string",
+            "description": "Version of the new rotated conversation key."
+          },
+          "conversation_participant_keys": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoveChatGroupMembersGroupKeyRotationDataConversationParticipantKeys"
+            },
+            "description": "Encrypted conversation keys for each participant."
+          },
+          "encrypted_avatar": {
+            "type": "string",
+            "description": "Re-encrypted group avatar with new conversation key."
+          },
+          "encrypted_description": {
+            "type": "string",
+            "description": "Re-encrypted group description with new conversation key."
+          },
+          "encrypted_title": {
+            "type": "string",
+            "description": "Re-encrypted group title with new conversation key."
+          },
+          "rotated_pmk_bundle": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle"
+            },
+            "description": "Message keys re-encrypted with the rotated conversation key."
+          }
+        }
+      },
+      "RemoveChatGroupMembersGroupKeyRotationDataConversationParticipantKeys": {
+        "type": "object",
+        "properties": {
+          "encrypted_conversation_key": {
+            "type": "string",
+            "description": "Conversation key encrypted with this participant\u0027s public key."
+          },
+          "public_key_version": {
+            "type": "string",
+            "description": "Version of the participant\u0027s public key used for encryption."
+          },
+          "user_id": {
+            "type": "string",
+            "description": "Participant user ID."
+          }
+        }
+      },
+      "RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle": {
+        "required": [
+          "base64_encoded_encrypted_pmk",
+          "message_sequence_id"
+        ],
+        "type": "object",
+        "properties": {
+          "base64_encoded_encrypted_pmk": {
+            "type": "string",
+            "description": "Base64-encoded message key, encrypted with the new conversation key."
+          },
+          "message_sequence_id": {
+            "type": "string",
+            "description": "Sequence ID of the message the key belongs to."
+          },
+          "pme_sequence_id": {
+            "type": "string",
+            "description": "Sequence ID of the key\u0027s origin event."
+          }
+        }
+      },
       "RemoveChatGroupMembersRequest": {
         "required": [
           "user_ids"
@@ -30398,7 +31779,10 @@
             "items": {
               "$ref": "#/components/schemas/RemoveChatGroupMembersActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
+          },
+          "group_key_rotation_data": {
+            "$ref": "#/components/schemas/RemoveChatGroupMembersGroupKeyRotationData"
           },
           "user_ids": {
             "minItems": 1,
@@ -31690,7 +33074,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UnarchiveChatConversationActionSignaturesMessageEventSignature"
@@ -31768,7 +33152,7 @@
             "items": {
               "$ref": "#/components/schemas/UnarchiveChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -31959,7 +33343,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UnmuteChatConversationActionSignaturesMessageEventSignature"
@@ -32037,7 +33421,7 @@
             "items": {
               "$ref": "#/components/schemas/UnmuteChatConversationActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false
@@ -32307,7 +33691,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UpdateChatConversationMessageTtlActionSignaturesMessageEventSignature"
@@ -32388,7 +33772,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateChatConversationMessageTtlActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "message_ttl_ms": {
             "pattern": "^[0-9]{1,19}$",
@@ -32436,7 +33820,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UpdateChatConversationScreenCaptureBlockingActionSignaturesMessageEventSignature"
@@ -32518,7 +33902,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UpdateChatConversationScreenCaptureDetectionActionSignaturesMessageEventSignature"
@@ -32612,7 +33996,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateChatConversationScreenCaptureBlockingActionSignatures"
             },
-            "description": "Cryptographic signatures for the screenshot blocking change."
+            "description": "Signatures for the screenshot blocking change, forwarded in the order they are sent."
           },
           "detection": {
             "type": "boolean",
@@ -32623,7 +34007,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateChatConversationScreenCaptureDetectionActionSignatures"
             },
-            "description": "Cryptographic signatures for the screenshot detection change."
+            "description": "Signatures for the screenshot detection change, forwarded in the order they are sent."
           }
         },
         "additionalProperties": false,
@@ -32668,7 +34052,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UpdateChatGroupActionSignaturesMessageEventSignature"
@@ -32750,7 +34134,7 @@
             "minLength": 1,
             "pattern": "^[A-Za-z0-9\u002B/=_-]\u002B$",
             "type": "string",
-            "description": "Base64-encoded message event detail."
+            "description": "Base64-encoded Thrift MessageEventDetail for the signed action."
           },
           "message_event_signature": {
             "$ref": "#/components/schemas/UpdateChatGroupAdminSettingsActionSignaturesMessageEventSignature"
@@ -32860,7 +34244,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateChatGroupAdminSettingsActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "add_member": {
             "type": "boolean",
@@ -32945,7 +34329,7 @@
             "items": {
               "$ref": "#/components/schemas/UpdateChatGroupActionSignatures"
             },
-            "description": "Cryptographic signatures for the action."
+            "description": "Signatures for this action, forwarded in the order they are sent."
           },
           "base64_encoded_key_rotation": {
             "type": "string",
@@ -35443,6 +36827,20 @@
       "GetChatModeratorsResponseMeta": {
         "type": "object",
         "properties": {
+          "result_count": {
+            "type": "integer",
+            "description": "Number of items in the data array.",
+            "format": "int32"
+          }
+        }
+      },
+      "GetChatMutedUsersResponseMeta": {
+        "type": "object",
+        "properties": {
+          "next_token": {
+            "type": "string",
+            "description": "Pagination token for the next page of results."
+          },
           "result_count": {
             "type": "integer",
             "description": "Number of items in the data array.",
@@ -38373,6 +39771,694 @@
           ]
         }
       },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadAttachmentType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-attachment"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadAttachmentType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-attachment",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadAttachment"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadCtaType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-cta"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCtaType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-cta",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCta"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadCustomProfileType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-custom-profile"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCustomProfileType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-custom-profile",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCustomProfile"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadMediaType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-media"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadMediaType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-media",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadMedia"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadQuickReplyType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-quick-reply"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadQuickReplyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-quick-reply",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadQuickReply"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmBadUrlType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-bad-url"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadUrlType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-bad-url",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadUrl"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNameTooLongType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-conversation-name-too-long"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNameTooLongType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-conversation-name-too-long",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNameTooLong"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNotFoundType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-conversation-not-found"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNotFoundType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-conversation-not-found",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNotFound"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmDuplicateType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-duplicate"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmDuplicateType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-duplicate",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmDuplicate"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmInactiveDeviceType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-inactive-device"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmInactiveDeviceType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-inactive-device",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmInactiveDevice"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmNotDeliveredType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-not-delivered"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotDeliveredType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-not-delivered",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotDelivered"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmNotFoundType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-not-found"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotFoundType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-not-found",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotFound"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmNotOwnerType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-not-owner"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotOwnerType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-not-owner",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotOwner"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotAddedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-participant-not-added"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotAddedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-participant-not-added",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotAdded"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotFoundType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-participant-not-found"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotFoundType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-participant-not-found",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotFound"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantRestrictedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-participant-restricted"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantRestrictedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-participant-restricted",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantRestricted"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-participant-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-participant-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantUnavailable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRateLimitedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-rate-limited"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRateLimitedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-rate-limited",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRateLimited"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientBlocksSenderType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-blocks-sender"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientBlocksSenderType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-blocks-sender",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientBlocksSender"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientCannotReceiveType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-cannot-receive"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientCannotReceiveType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-cannot-receive",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientCannotReceive"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientEncryptedUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientEncryptedUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientEncryptedUnavailable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotAcceptingType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-not-accepting"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotAcceptingType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-not-accepting",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotAccepting"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotFoundType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-not-found"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotFoundType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-not-found",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotFound"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientRestrictsGroupsType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-restricts-groups"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientRestrictsGroupsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-restricts-groups",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientRestrictsGroups"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-recipient-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-recipient-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientUnavailable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmRequestInProgressType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-request-in-progress"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRequestInProgressType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-request-in-progress",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRequestInProgress"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyLimitedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-safety-limited"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyLimitedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-safety-limited",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyLimited"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyRejectedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-safety-rejected"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyRejectedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-safety-rejected",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyRejected"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderBlocksRecipientType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-blocks-recipient"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderBlocksRecipientType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-blocks-recipient",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderBlocksRecipient"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDeclinedDmsType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-declined-dms"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDeclinedDmsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-declined-dms",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDeclinedDms"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDmsClosedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-dms-closed"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDmsClosedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-dms-closed",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDmsClosed"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderEncryptedUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-encrypted-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderEncryptedUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-encrypted-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderEncryptedUnavailable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotInConversationType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-not-in-conversation"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotInConversationType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-not-in-conversation",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotInConversation"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotPermittedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-not-permitted"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotPermittedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-not-permitted",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotPermitted"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotVerifiedType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-not-verified"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotVerifiedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-not-verified",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotVerified"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderPhoneRequiredType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-phone-required"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderPhoneRequiredType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-phone-required",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderPhoneRequired"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderReadOnlyType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-read-only"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderReadOnlyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-read-only",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderReadOnly"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmSenderUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-sender-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-sender-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderUnavailable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmTextEmptyType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-text-empty"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextEmptyType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-text-empty",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextEmpty"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmTextTooLongType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-text-too-long"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextTooLongType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-text-too-long",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextTooLong"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmTooFewParticipantsType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-too-few-participants"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooFewParticipantsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-too-few-participants",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooFewParticipants"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmTooManyParticipantsType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-too-many-participants"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooManyParticipantsType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-too-many-participants",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooManyParticipants"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsDmUnsupportedMessageType": {
+        "enum": [
+          "https://api.x.com/2/problems/dm-unsupported-message"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsDmUnsupportedMessageType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/dm-unsupported-message",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsDmUnsupportedMessage"
+            }
+          ]
+        }
+      },
       "HttpsColonSlashSlashApiTwitterCom2ProblemsDuplicateRulesType": {
         "enum": [
           "https://api.twitter.com/2/problems/duplicate-rules"
@@ -39394,6 +41480,38 @@
             {
               "value": "text",
               "name": "Text"
+            }
+          ]
+        }
+      },
+      "UserIdItem": {
+        "enum": [
+          "user_id"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "UserIdItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "user_id",
+              "name": "UserId"
+            }
+          ]
+        }
+      },
+      "EndAtMsItem": {
+        "enum": [
+          "end_at_ms"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "EndAtMsItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "end_at_ms",
+              "name": "EndAtMs"
             }
           ]
         }
@@ -41478,6 +43596,27 @@
             {
               "value": "this_and_following",
               "name": "ThisAndFollowing"
+            }
+          ]
+        }
+      },
+      "GetChatConversationsTypeParameter": {
+        "enum": [
+          "direct",
+          "group"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetChatConversationsTypeParameter",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "direct",
+              "name": "Direct"
+            },
+            {
+              "value": "group",
+              "name": "Group"
             }
           ]
         }
@@ -47525,6 +49664,35 @@
             "$ref": "#/components/schemas/BroadcastChatMessageFieldsParameterItem"
           },
           "description": "The fields available for a BroadcastChatMessage object."
+        }
+      },
+      "BroadcastChatMuteExpansionsParameter": {
+        "name": "expansions",
+        "in": "query",
+        "description": "A comma separated list of fields to expand.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/UserIdItem"
+          }
+        }
+      },
+      "BroadcastChatMuteFieldsParameter": {
+        "name": "broadcast_chat_mute.fields",
+        "in": "query",
+        "description": "A comma separated list of BroadcastChatMute fields to display.",
+        "explode": false,
+        "schema": {
+          "minItems": 1,
+          "uniqueItems": true,
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/EndAtMsItem"
+          },
+          "description": "The fields available for a BroadcastChatMute object."
         }
       },
       "BroadcastFieldsParameter": {

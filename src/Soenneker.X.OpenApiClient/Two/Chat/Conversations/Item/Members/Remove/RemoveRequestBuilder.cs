@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.Remove
         {
         }
         /// <summary>
-        /// Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller.
+        /// Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller. When the removal rotates the conversation key, send group_key_rotation_data and the action signatures for the removal and the key change, in that order.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Members.Remove
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller.
+        /// Removes one or more members from an existing encrypted Chat group conversation. To leave a group, pass your own user ID. Leaving does not delete the conversation for the caller. When the removal rotates the conversation key, send group_key_rotation_data and the action signatures for the removal and the key change, in that order.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

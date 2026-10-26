@@ -216,7 +216,7 @@ namespace Soenneker.X.OpenApiClient.Two.Activity.Subscriptions
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
             #pragma warning restore CS1591
-            /// <summary>A base32hex-encoded pagination token.</summary>
+            /// <summary>A base32hex-encoded pagination token that decodes to 9 bytes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]

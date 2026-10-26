@@ -15,7 +15,7 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Whether participants are prevented from taking screenshots.</summary>
         public bool? Blocking { get; set; }
-        /// <summary>Cryptographic signatures for the screenshot blocking change.</summary>
+        /// <summary>Signatures for the screenshot blocking change, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>? BlockingActionSignatures { get; set; }
@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Whether participants are notified when someone takes a screenshot.</summary>
         public bool? Detection { get; set; }
-        /// <summary>Cryptographic signatures for the screenshot detection change.</summary>
+        /// <summary>Signatures for the screenshot detection change, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>? DetectionActionSignatures { get; set; }

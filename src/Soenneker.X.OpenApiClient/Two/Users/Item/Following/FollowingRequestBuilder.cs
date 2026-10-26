@@ -160,11 +160,10 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Following
             [QueryParameter("expansions")]
             public global::Soenneker.X.OpenApiClient.Models.UserExpansionsParameterItem[] Expansions { get; set; }
 #endif
-            #pragma warning disable CS1591
+            /// <summary>The maximum number of users to return.</summary>
             [QueryParameter("max_results")]
             public int? MaxResults { get; set; }
-            #pragma warning restore CS1591
-            /// <summary>A base32hex-encoded pagination token.</summary>
+            /// <summary>The next_token or previous_token from a previous response, to fetch that page. A base32hex-encoded pagination token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]

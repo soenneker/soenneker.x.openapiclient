@@ -12,7 +12,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class CreateChatGroupAdminRequestRequest : IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Cryptographic signatures for the action.</summary>
+        /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.CreateChatGroupAdminRequestActionSignatures>? ActionSignatures { get; set; }

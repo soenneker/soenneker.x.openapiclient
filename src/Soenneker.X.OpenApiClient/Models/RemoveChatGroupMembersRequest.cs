@@ -12,7 +12,7 @@ namespace Soenneker.X.OpenApiClient.Models
     public partial class RemoveChatGroupMembersRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>Cryptographic signatures for the action.</summary>
+        /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>? ActionSignatures { get; set; }
@@ -22,6 +22,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The group_key_rotation_data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData? GroupKeyRotationData { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData GroupKeyRotationData { get; set; }
+#endif
         /// <summary>List of user IDs to remove from the group conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,6 +64,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action_signatures", n => { ActionSignatures = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>(global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "group_key_rotation_data", n => { GroupKeyRotationData = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData>(global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData.CreateFromDiscriminatorValue); } },
                 { "user_ids", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -67,6 +76,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>("action_signatures", ActionSignatures);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData>("group_key_rotation_data", GroupKeyRotationData);
             writer.WriteCollectionOfPrimitiveValues<string>("user_ids", UserIds);
             writer.WriteAdditionalData(AdditionalData);
         }

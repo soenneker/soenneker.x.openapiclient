@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Moderators;
+using Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Mutes;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Chat
         public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Moderators.ModeratorsRequestBuilder Moderators
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Moderators.ModeratorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The mutes property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Mutes.MutesRequestBuilder Mutes
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Mutes.MutesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.ChatRequestBuilder"/> and sets the default values.
