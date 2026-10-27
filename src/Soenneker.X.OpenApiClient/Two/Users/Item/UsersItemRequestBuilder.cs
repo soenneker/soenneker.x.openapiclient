@@ -20,6 +20,7 @@ using Soenneker.X.OpenApiClient.Two.Users.Item.Owned_lists;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Pinned_lists;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Retweets;
+using Soenneker.X.OpenApiClient.Two.Users.Item.Sources;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Timelines;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Tweets;
 using System.Collections.Generic;
@@ -114,6 +115,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.RetweetsRequestBuilder Retweets
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Retweets.RetweetsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The sources property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Sources.SourcesRequestBuilder Sources
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Sources.SourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The timelines property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Timelines.TimelinesRequestBuilder Timelines
