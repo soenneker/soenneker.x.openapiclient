@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
         {
         }
         /// <summary>
-        /// Deletes one of the authenticated user&apos;s stream sources. Success is an empty object.
+        /// Deletes one of the authenticated user&apos;s stream sources.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteSourceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteSourceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteSourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one of the authenticated user&apos;s stream sources. Poll it after starting an encoder and wait for `is_stream_active` before going live.
+        /// Returns one of the authenticated user&apos;s stream sources.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetSourceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -105,7 +105,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateSourceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateSourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes one of the authenticated user&apos;s stream sources. Success is an empty object.
+        /// Deletes one of the authenticated user&apos;s stream sources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +124,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns one of the authenticated user&apos;s stream sources. Poll it after starting an encoder and wait for `is_stream_active` before going live.
+        /// Returns one of the authenticated user&apos;s stream sources.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

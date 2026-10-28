@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
 using Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat;
+using Soenneker.X.OpenApiClient.Two.Broadcasts.Item.State;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -23,6 +24,11 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.Chat.ChatRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The state property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.State.StateRequestBuilder State
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.State.StateRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Broadcasts.Item.BroadcastsItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -38,6 +44,29 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public BroadcastsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/broadcasts/{id}{?broadcast%2Efields}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Deletes one of the authenticated user&apos;s broadcasts, scheduled or ended, including its replay. A running broadcast must be ended first.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteBroadcastResponse"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteBroadcastResponse?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteBroadcastResponse> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a broadcast owned by the authenticated user.
@@ -61,6 +90,25 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Deletes one of the authenticated user&apos;s broadcasts, scheduled or ended, including its replay. A running broadcast must be ended first.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
         }
         /// <summary>
         /// Returns a broadcast owned by the authenticated user.

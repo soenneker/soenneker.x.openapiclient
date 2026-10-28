@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources
         {
         }
         /// <summary>
-        /// Returns the authenticated user&apos;s RTMP/RTMPS stream sources (empty array if none). A source&apos;s `id` is also its stream key and is the `source_id` a scheduled broadcast binds to.
+        /// Returns the authenticated user&apos;s RTMP/RTMPS stream sources. A source&apos;s `id` is the `source_id` a scheduled broadcast binds to.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ListSourcesResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.ListSourcesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the source `id` as the stream key.
+        /// Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the source&apos;s stream key.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateSourceResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateSourceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateSourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the authenticated user&apos;s RTMP/RTMPS stream sources (empty array if none). A source&apos;s `id` is also its stream key and is the `source_id` a scheduled broadcast binds to.
+        /// Returns the authenticated user&apos;s RTMP/RTMPS stream sources. A source&apos;s `id` is the `source_id` a scheduled broadcast binds to.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources
             return requestInfo;
         }
         /// <summary>
-        /// Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the source `id` as the stream key.
+        /// Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the source&apos;s stream key.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

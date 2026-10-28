@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Blocking
         {
         }
         /// <summary>
-        /// Get Users Blocking
+        /// Returns the Users that the given User is blocking.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersBlockingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Blocking
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersBlockingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersBlockingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Users ID Block
+        /// Causes the source User to block the target User.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UsersIdBlockResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Blocking
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UsersIdBlockResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UsersIdBlockResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Users Blocking
+        /// Returns the Users that the given User is blocking.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Blocking
             return requestInfo;
         }
         /// <summary>
-        /// Users ID Block
+        /// Causes the source User to block the target User.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Blocking
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Blocking.BlockingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Users Blocking
+        /// Returns the Users that the given User is blocking.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BlockingRequestBuilderGetQueryParameters 

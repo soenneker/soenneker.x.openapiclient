@@ -17,10 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData? Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData>? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData Data { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData> Data { get; set; }
 #endif
         /// <summary>The errors property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,6 +29,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #nullable restore
 #else
         public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
+#endif
+        /// <summary>The meta property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseMeta? Meta { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseMeta Meta { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ListSourcesResponse"/> and sets the default values.
@@ -55,8 +63,9 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData>(global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData>(global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseMeta>(global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseMeta.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +75,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData>("data", Data);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData>("data", Data);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseMeta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

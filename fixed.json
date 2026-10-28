@@ -12,7 +12,7 @@
       "name": "X Developer Agreement and Policy",
       "url": "https://developer.x.com/en/developer-terms/agreement-and-policy.html"
     },
-    "version": "2.172"
+    "version": "2.173"
   },
   "servers": [
     {
@@ -280,10 +280,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "dm.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -1401,8 +1401,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
               "tweet.read",
+              "broadcast.read",
               "users.read"
             ]
           },
@@ -1458,8 +1458,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1518,8 +1518,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1719,8 +1719,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1855,8 +1855,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1922,8 +1922,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2045,8 +2045,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2104,8 +2104,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2115,6 +2115,63 @@
       }
     },
     "/2/broadcasts/{id}": {
+      "delete": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Delete a broadcast",
+        "description": "Deletes one of the authenticated user\u0027s broadcasts, scheduled or ended, including its replay. A running broadcast must be ended first.",
+        "operationId": "DeleteBroadcast",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9]{1,24}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteBroadcastResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read",
+              "broadcast.write"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      },
       "get": {
         "tags": [
           "Broadcasts"
@@ -2387,8 +2444,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2456,8 +2513,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2526,6 +2583,75 @@
             "OAuth2UserToken": [
               "broadcast.read",
               "broadcast.write"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/broadcasts/{id}/state": {
+      "put": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "End a broadcast",
+        "description": "Ends one of the authenticated user\u0027s broadcasts. Only \u0060state: END\u0060 is supported.",
+        "operationId": "UpdateBroadcastState",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9]{1,24}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateBroadcastStateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateBroadcastStateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -3542,9 +3668,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -3612,8 +3738,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "users.read",
+              "dm.read",
               "tweet.read"
             ]
           },
@@ -3684,9 +3810,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -3765,9 +3891,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -3837,9 +3963,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -3921,9 +4047,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -4005,9 +4131,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4079,9 +4205,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -4153,9 +4279,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -4227,9 +4353,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -4373,9 +4499,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -4533,9 +4659,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4605,9 +4731,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -4757,8 +4883,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -4904,8 +5030,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -4976,8 +5102,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -5049,9 +5175,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5123,9 +5249,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -5195,9 +5321,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -5268,9 +5394,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -5341,9 +5467,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5415,8 +5541,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -5487,8 +5613,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5636,9 +5762,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5773,9 +5899,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5837,8 +5963,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -6196,8 +6322,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -6262,9 +6388,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -6326,8 +6452,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -6443,9 +6569,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -6595,9 +6721,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "list.read",
               "users.read",
-              "list.read"
+              "tweet.read"
             ]
           },
           {
@@ -7273,8 +7399,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -7455,9 +7581,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -7593,9 +7719,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -7705,8 +7831,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "tweet.read",
+              "dm.read",
               "users.read"
             ]
           },
@@ -7808,9 +7934,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -7868,8 +7994,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read"
+              "dm.read",
+              "dm.write"
             ]
           },
           {
@@ -7939,9 +8065,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -8385,8 +8511,8 @@
             "OAuth2UserToken": [
               "list.read",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -8449,9 +8575,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "list.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -8518,8 +8644,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "list.read"
+              "list.read",
+              "users.read"
             ]
           },
           {
@@ -8774,9 +8900,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -8846,9 +8972,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "list.write"
+              "list.write",
+              "tweet.read"
             ]
           },
           {
@@ -8922,9 +9048,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -9021,9 +9147,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "list.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -9835,8 +9961,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -9903,8 +10029,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10288,13 +10414,60 @@
         }
       }
     },
+    "/2/region": {
+      "get": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Get the ingest region",
+        "description": "Returns the ingest region nearest the server handling the request. Pass it as \u0060region\u0060 when creating a stream source to ingest there.",
+        "operationId": "GetRegion",
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetRegionResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
     "/2/sources": {
       "get": {
         "tags": [
           "Broadcasts"
         ],
         "summary": "List stream sources",
-        "description": "Returns the authenticated user\u0027s RTMP/RTMPS stream sources (empty array if none). A source\u0027s \u0060id\u0060 is also its stream key and is the \u0060source_id\u0060 a scheduled broadcast binds to.",
+        "description": "Returns the authenticated user\u0027s RTMP/RTMPS stream sources. A source\u0027s \u0060id\u0060 is the \u0060source_id\u0060 a scheduled broadcast binds to.",
         "operationId": "ListSources",
         "responses": {
           "200": {
@@ -10339,7 +10512,7 @@
           "Broadcasts"
         ],
         "summary": "Create a stream source",
-        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to \u0060rtmps_url\u0060 with the source \u0060id\u0060 as the stream key.",
+        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to \u0060rtmps_url\u0060 with the source\u0027s stream key.",
         "operationId": "CreateSource",
         "requestBody": {
           "content": {
@@ -10352,7 +10525,7 @@
           "required": true
         },
         "responses": {
-          "200": {
+          "201": {
             "description": "The request has succeeded.",
             "content": {
               "application/json": {
@@ -10397,7 +10570,7 @@
           "Broadcasts"
         ],
         "summary": "Delete a stream source",
-        "description": "Deletes one of the authenticated user\u0027s stream sources. Success is an empty object.",
+        "description": "Deletes one of the authenticated user\u0027s stream sources.",
         "operationId": "DeleteSource",
         "parameters": [
           {
@@ -10454,7 +10627,7 @@
           "Broadcasts"
         ],
         "summary": "Get a stream source",
-        "description": "Returns one of the authenticated user\u0027s stream sources. Poll it after starting an encoder and wait for \u0060is_stream_active\u0060 before going live.",
+        "description": "Returns one of the authenticated user\u0027s stream sources.",
         "operationId": "GetSource",
         "parameters": [
           {
@@ -10563,8 +10736,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -10639,9 +10812,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "space.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -10716,9 +10889,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "space.read"
             ]
           },
           {
@@ -10810,9 +10983,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "space.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -10882,8 +11055,8 @@
           {
             "OAuth2UserToken": [
               "space.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10973,8 +11146,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "space.read"
             ]
           }
@@ -11070,9 +11243,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -11224,8 +11397,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11282,9 +11455,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.write",
               "tweet.read",
-              "tweet.write"
+              "users.read"
             ]
           },
           {
@@ -13085,8 +13258,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13983,9 +14156,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "like.read"
+              "like.read",
+              "users.read"
             ]
           },
           {
@@ -14187,8 +14360,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14288,8 +14461,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14365,9 +14538,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.moderate.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "tweet.moderate.write"
             ]
           },
           {
@@ -14689,8 +14862,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14915,8 +15088,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "follows.read"
             ]
           },
@@ -14995,9 +15168,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "follows.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -15120,9 +15293,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -15208,8 +15381,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "timeline.read"
+              "timeline.read",
+              "tweet.read"
             ]
           },
           {
@@ -15294,8 +15467,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15471,7 +15644,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Get Users Blocking",
+        "summary": "Get blocked Users",
+        "description": "Returns the Users that the given User is blocking.",
         "operationId": "GetUsersBlocking",
         "parameters": [
           {
@@ -15557,7 +15731,8 @@
         "tags": [
           "Users"
         ],
-        "summary": "Users ID Block",
+        "summary": "Block User",
+        "description": "Causes the source User to block the target User.",
         "operationId": "UsersIdBlock",
         "parameters": [
           {
@@ -15781,8 +15956,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "bookmark.write"
+              "bookmark.write",
+              "tweet.read"
             ]
           }
         ]
@@ -16011,8 +16186,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "bookmark.read"
+              "bookmark.read",
+              "tweet.read"
             ]
           },
           {
@@ -16094,6 +16269,361 @@
         ]
       }
     },
+    "/2/users/{id}/broadcasts": {
+      "get": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "List a user\u0027s broadcasts",
+        "description": "Returns the authenticated user\u0027s broadcasts, 100 per page. \u0060id\u0060 must be the authenticated user. Deprecated: use GET /2/broadcasts.",
+        "operationId": "ListUserBroadcasts",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User",
+              "example": "2244994945"
+            }
+          },
+          {
+            "name": "pagination_token",
+            "in": "query",
+            "description": "\u0060next_token.offset\u0060 from the previous page.",
+            "schema": {
+              "minLength": 1,
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ListUserBroadcastsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Create a broadcast on a user\u0027s source",
+        "description": "Creates a broadcast on one of the authenticated user\u0027s sources. \u0060id\u0060 must be the authenticated user. The broadcast is \u0060NOT_STARTED\u0060 and posts nothing until it is published with PUT /2/users/:id/broadcasts/:broadcast_id/state; one that is never published is deleted after 7 days. When the source already has a running broadcast, that broadcast is returned.",
+        "operationId": "CreateUserBroadcast",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User",
+              "example": "2244994945"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateUserBroadcastRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateUserBroadcastResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.write",
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/users/{id}/broadcasts/{broadcastId}": {
+      "delete": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Delete a user\u0027s broadcast",
+        "description": "Deletes one of the authenticated user\u0027s broadcasts. \u0060id\u0060 must be the authenticated user. Deprecated: use DELETE /2/broadcasts/:id.",
+        "operationId": "DeleteUserBroadcast",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User",
+              "example": "2244994945"
+            }
+          },
+          {
+            "name": "broadcastId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9]{1,24}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeleteUserBroadcastResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.write",
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      },
+      "get": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Get a user\u0027s broadcast",
+        "description": "Returns one of the authenticated user\u0027s broadcasts. \u0060id\u0060 must be the authenticated user. Deprecated: use GET /2/broadcasts/:id.",
+        "operationId": "GetUserBroadcast",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User",
+              "example": "2244994945"
+            }
+          },
+          {
+            "name": "broadcastId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9]{1,24}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetUserBroadcastResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/users/{id}/broadcasts/{broadcastId}/state": {
+      "put": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Publish or end a user\u0027s broadcast",
+        "description": "Publishes or ends one of the authenticated user\u0027s broadcasts. \u0060id\u0060 must be the authenticated user. \u0060PUBLISH\u0060 takes a broadcast created with POST /2/users/:id/broadcasts live once its source is receiving video, and posts it unless \u0060should_not_tweet\u0060 is true. \u0060END\u0060 ends the broadcast. Deprecated: use PUT /2/broadcasts/:id/state to end a broadcast.",
+        "operationId": "UpdateUserBroadcastState",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string",
+              "description": "Unique identifier of a User",
+              "example": "2244994945"
+            }
+          },
+          {
+            "name": "broadcastId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "pattern": "^[a-zA-Z0-9]{1,24}$",
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateUserBroadcastStateRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/UpdateUserBroadcastStateResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.write",
+              "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
     "/2/users/{id}/dm/block": {
       "post": {
         "tags": [
@@ -16144,9 +16674,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16366,9 +16896,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "users.read",
-              "tweet.read",
-              "list.write"
+              "tweet.read"
             ]
           },
           {
@@ -16442,9 +16972,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16532,9 +17062,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "follows.read",
               "tweet.read",
-              "follows.read"
+              "users.read"
             ]
           },
           {
@@ -16697,9 +17227,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "follows.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16796,8 +17326,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "like.read"
+              "like.read",
+              "tweet.read"
             ]
           },
           {
@@ -16866,9 +17396,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "like.write",
-              "users.read"
+              "like.write"
             ]
           },
           {
@@ -16939,8 +17469,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "like.write",
-              "tweet.read"
+              "tweet.read",
+              "like.write"
             ]
           },
           {
@@ -17252,8 +17782,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "mute.read"
             ]
           },
@@ -17322,8 +17852,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "mute.write"
+              "mute.write",
+              "tweet.read"
             ]
           },
           {
@@ -17410,9 +17940,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -17483,9 +18013,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -17557,8 +18087,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.write"
+              "list.write",
+              "tweet.read"
             ]
           },
           {
@@ -17632,9 +18162,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "list.write"
             ]
           },
           {
@@ -17701,8 +18231,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -17773,9 +18303,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -18052,8 +18582,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -18122,8 +18652,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -18267,8 +18797,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -18634,8 +19164,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "block.write"
             ]
           },
@@ -18710,9 +19240,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "follows.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -18786,9 +19316,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "mute.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "mute.write"
             ]
           },
           {
@@ -23469,48 +23999,29 @@
       },
       "CreateSourceResponseData": {
         "required": [
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/CreateSourceResponseDataSource"
-          }
-        }
-      },
-      "CreateSourceResponseDataSource": {
-        "required": [
           "id"
         ],
         "type": "object",
         "properties": {
-          "creation_time": {
-            "type": "integer",
-            "description": "Creation time, ms since Unix epoch."
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
           },
           "id": {
             "type": "string",
-            "description": "Source id; also the RTMP stream key."
+            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether the source is currently receiving video."
+            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
           },
           "name": {
             "type": "string",
             "description": "Label for the source."
           },
-          "owner_id": {
-            "type": "integer",
-            "description": "Owner\u0027s numeric user id. Exceeds the exact integer range of many JSON parsers."
-          },
-          "rtmp_region": {
+          "region": {
             "type": "string",
-            "description": "Ingest region, e.g. \u0060us-east-1\u0060."
-          },
-          "rtmp_stream_key": {
-            "type": "string",
-            "description": "Stream key; equal to \u0060id\u0060."
+            "description": "Ingest region: \u0060atla\u0060 or \u0060pdxa\u0060 for on-prem sources, the AWS region (e.g. \u0060us-east-1\u0060) for sources created before the move to on-prem."
           },
           "rtmp_url": {
             "type": "string",
@@ -23519,8 +24030,179 @@
           "rtmps_url": {
             "type": "string",
             "description": "RTMPS ingest URL (port 443)."
+          },
+          "stream_key": {
+            "type": "string",
+            "description": "RTMP stream key."
+          }
+        }
+      },
+      "CreateUserBroadcastRequest": {
+        "required": [
+          "source_id"
+        ],
+        "type": "object",
+        "properties": {
+          "is_low_latency": {
+            "type": "boolean",
+            "description": "Ignored."
+          },
+          "region": {
+            "type": "string",
+            "description": "Ignored: the source sets the region."
+          },
+          "source_id": {
+            "pattern": "^[a-zA-Z0-9]{1,32}$",
+            "type": "string",
+            "description": "The source\u0027s \u0060rtmp_stream_key\u0060."
+          }
+        }
+      },
+      "CreateUserBroadcastResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreateUserBroadcastResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "CreateUserBroadcastResponseData": {
+        "required": [
+          "broadcast",
+          "video_access",
+          "share_url"
+        ],
+        "type": "object",
+        "properties": {
+          "broadcast": {
+            "$ref": "#/components/schemas/CreateUserBroadcastResponseDataBroadcast"
+          },
+          "share_url": {
+            "type": "string",
+            "description": "The broadcast\u0027s watch page."
+          },
+          "video_access": {
+            "$ref": "#/components/schemas/CreateUserBroadcastResponseDataVideoAccess"
+          }
+        }
+      },
+      "CreateUserBroadcastResponseDataBroadcast": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "available_for_replay": {
+            "type": "boolean",
+            "description": "Whether a replay is available."
+          },
+          "broadcast_id": {
+            "type": "string",
+            "description": "Broadcast id."
+          },
+          "chat_option": {
+            "type": "integer",
+            "description": "Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host\u0027s subscribers, 6 accounts followed by an account the host follows."
+          },
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
+          },
+          "end_ms": {
+            "type": "string",
+            "description": "End time, milliseconds since Unix epoch (decimal string)."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Video height in pixels."
+          },
+          "id": {
+            "type": "string",
+            "description": "Broadcast id; equal to \u0060broadcast_id\u0060."
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Thumbnail URL."
+          },
+          "image_url_medium": {
+            "type": "string",
+            "description": "Medium thumbnail URL."
+          },
+          "image_url_small": {
+            "type": "string",
+            "description": "Small thumbnail URL."
+          },
+          "is_high_latency": {
+            "type": "boolean",
+            "description": "Whether the broadcast is high latency."
+          },
+          "language": {
+            "type": "string",
+            "description": "Broadcast language."
+          },
+          "media_id": {
+            "type": "string",
+            "description": "Numeric media id from \u0060media_key\u0060."
+          },
+          "media_key": {
+            "type": "string",
+            "description": "Media key of the broadcast\u0027s video."
+          },
+          "scheduled_end_ms": {
+            "type": "string",
+            "description": "Scheduled end time, milliseconds since Unix epoch (decimal string)."
+          },
+          "scheduled_start_ms": {
+            "type": "string",
+            "description": "Scheduled start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "start_ms": {
+            "type": "string",
+            "description": "Start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060NOT_STARTED\u0060, \u0060RUNNING\u0060, \u0060TIMED_OUT\u0060, \u0060ENDED\u0060, \u0060PRE_PUBLISHED\u0060 or \u0060CANCELED\u0060."
+          },
+          "status": {
+            "type": "string",
+            "description": "Broadcast title."
+          },
+          "total_watched": {
+            "type": "string",
+            "description": "Total viewers (decimal string)."
+          },
+          "total_watching": {
+            "type": "string",
+            "description": "Current viewers (decimal string)."
+          },
+          "tweet_id": {
+            "type": "string",
+            "description": "Id of the Post announcing the broadcast."
+          },
+          "twitter_user_id": {
+            "type": "string",
+            "description": "Owner\u0027s user id."
+          },
+          "updated_at_ms": {
+            "type": "string",
+            "description": "Last update time, milliseconds since Unix epoch (decimal string)."
+          },
+          "width": {
+            "type": "integer",
+            "description": "Video width in pixels."
           }
         },
+        "additionalProperties": false
+      },
+      "CreateUserBroadcastResponseDataVideoAccess": {
+        "type": "object",
         "additionalProperties": false
       },
       "CreateUserSourceRequest": {
@@ -24067,6 +24749,32 @@
           "deleted": {
             "type": "boolean",
             "description": "Whether the chat message was removed."
+          }
+        }
+      },
+      "DeleteBroadcastResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DeleteBroadcastResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "DeleteBroadcastResponseData": {
+        "required": [
+          "deleted"
+        ],
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "description": "Whether the broadcast was deleted."
           }
         }
       },
@@ -24781,7 +25489,7 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/DeleteSourceResponseDataProperty"
+            "$ref": "#/components/schemas/DeleteSourceResponseData"
           },
           "errors": {
             "type": "array",
@@ -24792,7 +25500,42 @@
         }
       },
       "DeleteSourceResponseData": {
-        "type": "object"
+        "required": [
+          "deleted"
+        ],
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "description": "Whether the source was deleted."
+          }
+        }
+      },
+      "DeleteUserBroadcastResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DeleteUserBroadcastResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "DeleteUserBroadcastResponseData": {
+        "required": [
+          "success"
+        ],
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "description": "Always \u0060true\u0060 on success."
+          }
+        }
       },
       "DeleteUserSourceResponse": {
         "type": "object",
@@ -27801,6 +28544,32 @@
           }
         }
       },
+      "GetRegionResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetRegionResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "GetRegionResponseData": {
+        "required": [
+          "region"
+        ],
+        "type": "object",
+        "properties": {
+          "region": {
+            "type": "string",
+            "description": "Ingest region: \u0060us-east-1\u0060 or \u0060us-west-2\u0060."
+          }
+        }
+      },
       "GetRuleCountsResponse": {
         "type": "object",
         "properties": {
@@ -28031,48 +28800,29 @@
       },
       "GetSourceResponseData": {
         "required": [
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/GetSourceResponseDataSource"
-          }
-        }
-      },
-      "GetSourceResponseDataSource": {
-        "required": [
           "id"
         ],
         "type": "object",
         "properties": {
-          "creation_time": {
-            "type": "integer",
-            "description": "Creation time, ms since Unix epoch."
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
           },
           "id": {
             "type": "string",
-            "description": "Source id; also the RTMP stream key."
+            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether the source is currently receiving video."
+            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
           },
           "name": {
             "type": "string",
             "description": "Label for the source."
           },
-          "owner_id": {
-            "type": "integer",
-            "description": "Owner\u0027s numeric user id. Exceeds the exact integer range of many JSON parsers."
-          },
-          "rtmp_region": {
+          "region": {
             "type": "string",
-            "description": "Ingest region, e.g. \u0060us-east-1\u0060."
-          },
-          "rtmp_stream_key": {
-            "type": "string",
-            "description": "Stream key; equal to \u0060id\u0060."
+            "description": "Ingest region: \u0060atla\u0060 or \u0060pdxa\u0060 for on-prem sources, the AWS region (e.g. \u0060us-east-1\u0060) for sources created before the move to on-prem."
           },
           "rtmp_url": {
             "type": "string",
@@ -28081,9 +28831,12 @@
           "rtmps_url": {
             "type": "string",
             "description": "RTMPS ingest URL (port 443)."
+          },
+          "stream_key": {
+            "type": "string",
+            "description": "RTMP stream key."
           }
-        },
-        "additionalProperties": false
+        }
       },
       "GetSpacesBuyersResponse": {
         "type": "object",
@@ -28299,6 +29052,140 @@
             }
           }
         }
+      },
+      "GetUserBroadcastResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetUserBroadcastResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "GetUserBroadcastResponseData": {
+        "required": [
+          "broadcast"
+        ],
+        "type": "object",
+        "properties": {
+          "broadcast": {
+            "$ref": "#/components/schemas/GetUserBroadcastResponseDataBroadcast"
+          }
+        }
+      },
+      "GetUserBroadcastResponseDataBroadcast": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "available_for_replay": {
+            "type": "boolean",
+            "description": "Whether a replay is available."
+          },
+          "broadcast_id": {
+            "type": "string",
+            "description": "Broadcast id."
+          },
+          "chat_option": {
+            "type": "integer",
+            "description": "Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host\u0027s subscribers, 6 accounts followed by an account the host follows."
+          },
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
+          },
+          "end_ms": {
+            "type": "string",
+            "description": "End time, milliseconds since Unix epoch (decimal string)."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Video height in pixels."
+          },
+          "id": {
+            "type": "string",
+            "description": "Broadcast id; equal to \u0060broadcast_id\u0060."
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Thumbnail URL."
+          },
+          "image_url_medium": {
+            "type": "string",
+            "description": "Medium thumbnail URL."
+          },
+          "image_url_small": {
+            "type": "string",
+            "description": "Small thumbnail URL."
+          },
+          "is_high_latency": {
+            "type": "boolean",
+            "description": "Whether the broadcast is high latency."
+          },
+          "language": {
+            "type": "string",
+            "description": "Broadcast language."
+          },
+          "media_id": {
+            "type": "string",
+            "description": "Numeric media id from \u0060media_key\u0060."
+          },
+          "media_key": {
+            "type": "string",
+            "description": "Media key of the broadcast\u0027s video."
+          },
+          "scheduled_end_ms": {
+            "type": "string",
+            "description": "Scheduled end time, milliseconds since Unix epoch (decimal string)."
+          },
+          "scheduled_start_ms": {
+            "type": "string",
+            "description": "Scheduled start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "start_ms": {
+            "type": "string",
+            "description": "Start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060NOT_STARTED\u0060, \u0060RUNNING\u0060, \u0060TIMED_OUT\u0060, \u0060ENDED\u0060, \u0060PRE_PUBLISHED\u0060 or \u0060CANCELED\u0060."
+          },
+          "status": {
+            "type": "string",
+            "description": "Broadcast title."
+          },
+          "total_watched": {
+            "type": "string",
+            "description": "Total viewers (decimal string)."
+          },
+          "total_watching": {
+            "type": "string",
+            "description": "Current viewers (decimal string)."
+          },
+          "tweet_id": {
+            "type": "string",
+            "description": "Id of the Post announcing the broadcast."
+          },
+          "twitter_user_id": {
+            "type": "string",
+            "description": "Owner\u0027s user id."
+          },
+          "updated_at_ms": {
+            "type": "string",
+            "description": "Last update time, milliseconds since Unix epoch (decimal string)."
+          },
+          "width": {
+            "type": "integer",
+            "description": "Video width in pixels."
+          }
+        },
+        "additionalProperties": false
       },
       "GetUserSourceResponse": {
         "type": "object",
@@ -29765,7 +30652,67 @@
         "type": "object",
         "properties": {
           "data": {
-            "$ref": "#/components/schemas/ListSourcesResponseData"
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ListSourcesResponseData"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/ListSourcesResponseMeta"
+          }
+        }
+      },
+      "ListSourcesResponseData": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
+          },
+          "id": {
+            "type": "string",
+            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
+          },
+          "is_stream_active": {
+            "type": "boolean",
+            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
+          },
+          "name": {
+            "type": "string",
+            "description": "Label for the source."
+          },
+          "region": {
+            "type": "string",
+            "description": "Ingest region: \u0060atla\u0060 or \u0060pdxa\u0060 for on-prem sources, the AWS region (e.g. \u0060us-east-1\u0060) for sources created before the move to on-prem."
+          },
+          "rtmp_url": {
+            "type": "string",
+            "description": "RTMP ingest URL."
+          },
+          "rtmps_url": {
+            "type": "string",
+            "description": "RTMPS ingest URL (port 443)."
+          },
+          "stream_key": {
+            "type": "string",
+            "description": "RTMP stream key."
+          }
+        }
+      },
+      "ListUserBroadcastsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/ListUserBroadcastsResponseData"
           },
           "errors": {
             "type": "array",
@@ -29775,61 +30722,141 @@
           }
         }
       },
-      "ListSourcesResponseData": {
+      "ListUserBroadcastsResponseData": {
         "required": [
-          "sources"
+          "broadcasts"
         ],
         "type": "object",
         "properties": {
-          "sources": {
+          "broadcasts": {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ListSourcesResponseDataSources"
+              "$ref": "#/components/schemas/ListUserBroadcastsResponseDataBroadcasts"
             }
+          },
+          "next_token": {
+            "$ref": "#/components/schemas/ListUserBroadcastsResponseDataNextToken"
           }
         }
       },
-      "ListSourcesResponseDataSources": {
+      "ListUserBroadcastsResponseDataBroadcasts": {
         "required": [
           "id"
         ],
         "type": "object",
         "properties": {
-          "creation_time": {
+          "available_for_replay": {
+            "type": "boolean",
+            "description": "Whether a replay is available."
+          },
+          "broadcast_id": {
+            "type": "string",
+            "description": "Broadcast id."
+          },
+          "chat_option": {
             "type": "integer",
-            "description": "Creation time, ms since Unix epoch."
+            "description": "Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host\u0027s subscribers, 6 accounts followed by an account the host follows."
+          },
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
+          },
+          "end_ms": {
+            "type": "string",
+            "description": "End time, milliseconds since Unix epoch (decimal string)."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Video height in pixels."
           },
           "id": {
             "type": "string",
-            "description": "Source id; also the RTMP stream key."
+            "description": "Broadcast id; equal to \u0060broadcast_id\u0060."
           },
-          "is_stream_active": {
+          "image_url": {
+            "type": "string",
+            "description": "Thumbnail URL."
+          },
+          "image_url_medium": {
+            "type": "string",
+            "description": "Medium thumbnail URL."
+          },
+          "image_url_small": {
+            "type": "string",
+            "description": "Small thumbnail URL."
+          },
+          "is_high_latency": {
             "type": "boolean",
-            "description": "Whether the source is currently receiving video."
+            "description": "Whether the broadcast is high latency."
           },
-          "name": {
+          "language": {
             "type": "string",
-            "description": "Label for the source."
+            "description": "Broadcast language."
           },
-          "owner_id": {
+          "media_id": {
+            "type": "string",
+            "description": "Numeric media id from \u0060media_key\u0060."
+          },
+          "media_key": {
+            "type": "string",
+            "description": "Media key of the broadcast\u0027s video."
+          },
+          "scheduled_end_ms": {
+            "type": "string",
+            "description": "Scheduled end time, milliseconds since Unix epoch (decimal string)."
+          },
+          "scheduled_start_ms": {
+            "type": "string",
+            "description": "Scheduled start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "start_ms": {
+            "type": "string",
+            "description": "Start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060NOT_STARTED\u0060, \u0060RUNNING\u0060, \u0060TIMED_OUT\u0060, \u0060ENDED\u0060, \u0060PRE_PUBLISHED\u0060 or \u0060CANCELED\u0060."
+          },
+          "status": {
+            "type": "string",
+            "description": "Broadcast title."
+          },
+          "total_watched": {
+            "type": "string",
+            "description": "Total viewers (decimal string)."
+          },
+          "total_watching": {
+            "type": "string",
+            "description": "Current viewers (decimal string)."
+          },
+          "tweet_id": {
+            "type": "string",
+            "description": "Id of the Post announcing the broadcast."
+          },
+          "twitter_user_id": {
+            "type": "string",
+            "description": "Owner\u0027s user id."
+          },
+          "updated_at_ms": {
+            "type": "string",
+            "description": "Last update time, milliseconds since Unix epoch (decimal string)."
+          },
+          "width": {
             "type": "integer",
-            "description": "Owner\u0027s numeric user id. Exceeds the exact integer range of many JSON parsers."
-          },
-          "rtmp_region": {
+            "description": "Video width in pixels."
+          }
+        },
+        "additionalProperties": false
+      },
+      "ListUserBroadcastsResponseDataNextToken": {
+        "required": [
+          "offset"
+        ],
+        "type": "object",
+        "properties": {
+          "offset": {
             "type": "string",
-            "description": "Ingest region, e.g. \u0060us-east-1\u0060."
-          },
-          "rtmp_stream_key": {
-            "type": "string",
-            "description": "Stream key; equal to \u0060id\u0060."
-          },
-          "rtmp_url": {
-            "type": "string",
-            "description": "RTMP ingest URL."
-          },
-          "rtmps_url": {
-            "type": "string",
-            "description": "RTMPS ingest URL (port 443)."
+            "description": "Pass as \u0060pagination_token\u0060 to read the next page."
           }
         },
         "additionalProperties": false
@@ -34616,6 +35643,65 @@
           }
         }
       },
+      "UpdateBroadcastStateRequest": {
+        "required": [
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "chat_option": {
+            "type": "integer",
+            "description": "Not allowed with \u0060END\u0060."
+          },
+          "locale": {
+            "type": "string",
+            "description": "Not allowed with \u0060END\u0060."
+          },
+          "should_not_tweet": {
+            "type": "boolean",
+            "description": "Not allowed with \u0060END\u0060."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060END\u0060. \u0060PUBLISH\u0060 is not supported."
+          },
+          "title": {
+            "type": "string",
+            "description": "Not allowed with \u0060END\u0060."
+          }
+        }
+      },
+      "UpdateBroadcastStateResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateBroadcastStateResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UpdateBroadcastStateResponseData": {
+        "required": [
+          "id",
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Broadcast id."
+          },
+          "state": {
+            "type": "string",
+            "description": "Always \u0060ENDED\u0060."
+          }
+        }
+      },
       "UpdateChatConversationMessageTtlActionSignatures": {
         "required": [
           "message_id",
@@ -35972,48 +37058,29 @@
       },
       "UpdateSourceResponseData": {
         "required": [
-          "source"
-        ],
-        "type": "object",
-        "properties": {
-          "source": {
-            "$ref": "#/components/schemas/UpdateSourceResponseDataSource"
-          }
-        }
-      },
-      "UpdateSourceResponseDataSource": {
-        "required": [
           "id"
         ],
         "type": "object",
         "properties": {
-          "creation_time": {
-            "type": "integer",
-            "description": "Creation time, ms since Unix epoch."
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
           },
           "id": {
             "type": "string",
-            "description": "Source id; also the RTMP stream key."
+            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether the source is currently receiving video."
+            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
           },
           "name": {
             "type": "string",
             "description": "Label for the source."
           },
-          "owner_id": {
-            "type": "integer",
-            "description": "Owner\u0027s numeric user id. Exceeds the exact integer range of many JSON parsers."
-          },
-          "rtmp_region": {
+          "region": {
             "type": "string",
-            "description": "Ingest region, e.g. \u0060us-east-1\u0060."
-          },
-          "rtmp_stream_key": {
-            "type": "string",
-            "description": "Stream key; equal to \u0060id\u0060."
+            "description": "Ingest region: \u0060atla\u0060 or \u0060pdxa\u0060 for on-prem sources, the AWS region (e.g. \u0060us-east-1\u0060) for sources created before the move to on-prem."
           },
           "rtmp_url": {
             "type": "string",
@@ -36022,6 +37089,176 @@
           "rtmps_url": {
             "type": "string",
             "description": "RTMPS ingest URL (port 443)."
+          },
+          "stream_key": {
+            "type": "string",
+            "description": "RTMP stream key."
+          }
+        }
+      },
+      "UpdateUserBroadcastStateRequest": {
+        "required": [
+          "state"
+        ],
+        "type": "object",
+        "properties": {
+          "chat_option": {
+            "type": "integer",
+            "description": "Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host\u0027s subscribers, 6 accounts followed by an account the host follows. \u0060PUBLISH\u0060 only."
+          },
+          "locale": {
+            "type": "string",
+            "description": "Broadcast language. \u0060PUBLISH\u0060 only."
+          },
+          "should_not_tweet": {
+            "type": "boolean",
+            "description": "Skip the announcing Post. Unset keeps the broadcast\u0027s setting, which defaults to posting. \u0060PUBLISH\u0060 only."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060PUBLISH\u0060 or \u0060END\u0060."
+          },
+          "title": {
+            "type": "string",
+            "description": "Broadcast title. \u0060PUBLISH\u0060 only."
+          }
+        }
+      },
+      "UpdateUserBroadcastStateResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/UpdateUserBroadcastStateResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "UpdateUserBroadcastStateResponseData": {
+        "type": "object",
+        "properties": {
+          "broadcast": {
+            "$ref": "#/components/schemas/UpdateUserBroadcastStateResponseDataBroadcast"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "\u0060true\u0060 once \u0060END\u0060 succeeds."
+          },
+          "tweet_error": {
+            "type": "string",
+            "description": "Why the announcing Post failed, on \u0060PUBLISH\u0060. Omitted when the Post went out or \u0060should_not_tweet\u0060 was true."
+          }
+        }
+      },
+      "UpdateUserBroadcastStateResponseDataBroadcast": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "available_for_replay": {
+            "type": "boolean",
+            "description": "Whether a replay is available."
+          },
+          "broadcast_id": {
+            "type": "string",
+            "description": "Broadcast id."
+          },
+          "chat_option": {
+            "type": "integer",
+            "description": "Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host\u0027s subscribers, 6 accounts followed by an account the host follows."
+          },
+          "created_at_ms": {
+            "type": "string",
+            "description": "Creation time, milliseconds since Unix epoch (decimal string)."
+          },
+          "end_ms": {
+            "type": "string",
+            "description": "End time, milliseconds since Unix epoch (decimal string)."
+          },
+          "height": {
+            "type": "integer",
+            "description": "Video height in pixels."
+          },
+          "id": {
+            "type": "string",
+            "description": "Broadcast id; equal to \u0060broadcast_id\u0060."
+          },
+          "image_url": {
+            "type": "string",
+            "description": "Thumbnail URL."
+          },
+          "image_url_medium": {
+            "type": "string",
+            "description": "Medium thumbnail URL."
+          },
+          "image_url_small": {
+            "type": "string",
+            "description": "Small thumbnail URL."
+          },
+          "is_high_latency": {
+            "type": "boolean",
+            "description": "Whether the broadcast is high latency."
+          },
+          "language": {
+            "type": "string",
+            "description": "Broadcast language."
+          },
+          "media_id": {
+            "type": "string",
+            "description": "Numeric media id from \u0060media_key\u0060."
+          },
+          "media_key": {
+            "type": "string",
+            "description": "Media key of the broadcast\u0027s video."
+          },
+          "scheduled_end_ms": {
+            "type": "string",
+            "description": "Scheduled end time, milliseconds since Unix epoch (decimal string)."
+          },
+          "scheduled_start_ms": {
+            "type": "string",
+            "description": "Scheduled start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "start_ms": {
+            "type": "string",
+            "description": "Start time, milliseconds since Unix epoch (decimal string)."
+          },
+          "state": {
+            "type": "string",
+            "description": "\u0060NOT_STARTED\u0060, \u0060RUNNING\u0060, \u0060TIMED_OUT\u0060, \u0060ENDED\u0060, \u0060PRE_PUBLISHED\u0060 or \u0060CANCELED\u0060."
+          },
+          "status": {
+            "type": "string",
+            "description": "Broadcast title."
+          },
+          "total_watched": {
+            "type": "string",
+            "description": "Total viewers (decimal string)."
+          },
+          "total_watching": {
+            "type": "string",
+            "description": "Current viewers (decimal string)."
+          },
+          "tweet_id": {
+            "type": "string",
+            "description": "Id of the Post announcing the broadcast."
+          },
+          "twitter_user_id": {
+            "type": "string",
+            "description": "Owner\u0027s user id."
+          },
+          "updated_at_ms": {
+            "type": "string",
+            "description": "Last update time, milliseconds since Unix epoch (decimal string)."
+          },
+          "width": {
+            "type": "integer",
+            "description": "Video width in pixels."
           }
         },
         "additionalProperties": false
@@ -38581,6 +39818,16 @@
           }
         }
       },
+      "ListSourcesResponseMeta": {
+        "type": "object",
+        "properties": {
+          "result_count": {
+            "type": "integer",
+            "description": "Number of items in the data array.",
+            "format": "int32"
+          }
+        }
+      },
       "NewsContexts": {
         "type": "object"
       },
@@ -40115,9 +41362,6 @@
       "CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty": {
         "type": "object",
         "description": "The subtitles now associated with the media."
-      },
-      "DeleteSourceResponseDataProperty": {
-        "type": "object"
       },
       "DeleteUserSourceResponseDataProperty": {
         "type": "object"
@@ -51374,6 +52618,8 @@
               "like.write": "Like and unlike Posts on your behalf.",
               "list.read": "View Lists, members, and followers of Lists you created or are a member of, including private Lists.",
               "list.write": "Create and manage Lists on your behalf.",
+              "media.library.read": "View your media library, its analytics, and its monetization settings.",
+              "media.library.write": "Add media to your media library and manage its monetization settings.",
               "media.write": "Upload media, such as photos and videos, on your behalf.",
               "mute.read": "View accounts you have muted.",
               "mute.write": "Mute and unmute accounts on your behalf.",

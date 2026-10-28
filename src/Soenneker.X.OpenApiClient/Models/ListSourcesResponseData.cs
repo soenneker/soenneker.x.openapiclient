@@ -14,13 +14,63 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The sources property</summary>
+        /// <summary>Creation time, milliseconds since Unix epoch (decimal string).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseDataSources>? Sources { get; set; }
+        public string? CreatedAtMs { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseDataSources> Sources { get; set; }
+        public string CreatedAtMs { get; set; }
+#endif
+        /// <summary>Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Id { get; set; }
+#nullable restore
+#else
+        public string Id { get; set; }
+#endif
+        /// <summary>Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it.</summary>
+        public bool? IsStreamActive { get; set; }
+        /// <summary>Label for the source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
+        /// <summary>Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Region { get; set; }
+#nullable restore
+#else
+        public string Region { get; set; }
+#endif
+        /// <summary>RTMPS ingest URL (port 443).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RtmpsUrl { get; set; }
+#nullable restore
+#else
+        public string RtmpsUrl { get; set; }
+#endif
+        /// <summary>RTMP ingest URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RtmpUrl { get; set; }
+#nullable restore
+#else
+        public string RtmpUrl { get; set; }
+#endif
+        /// <summary>RTMP stream key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? StreamKey { get; set; }
+#nullable restore
+#else
+        public string StreamKey { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseData"/> and sets the default values.
@@ -47,7 +97,14 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "sources", n => { Sources = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseDataSources>(global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseDataSources.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "created_at_ms", n => { CreatedAtMs = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "is_stream_active", n => { IsStreamActive = n.GetBoolValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "region", n => { Region = n.GetStringValue(); } },
+                { "rtmp_url", n => { RtmpUrl = n.GetStringValue(); } },
+                { "rtmps_url", n => { RtmpsUrl = n.GetStringValue(); } },
+                { "stream_key", n => { StreamKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +114,14 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ListSourcesResponseDataSources>("sources", Sources);
+            writer.WriteStringValue("created_at_ms", CreatedAtMs);
+            writer.WriteStringValue("id", Id);
+            writer.WriteBoolValue("is_stream_active", IsStreamActive);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("region", Region);
+            writer.WriteStringValue("rtmps_url", RtmpsUrl);
+            writer.WriteStringValue("rtmp_url", RtmpUrl);
+            writer.WriteStringValue("stream_key", StreamKey);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

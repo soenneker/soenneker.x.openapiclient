@@ -7,6 +7,7 @@ using Soenneker.X.OpenApiClient.Models;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Affiliates;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Blocking;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks;
+using Soenneker.X.OpenApiClient.Two.Users.Item.Broadcasts;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Dm;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Followed_lists;
 using Soenneker.X.OpenApiClient.Two.Users.Item.Followers;
@@ -50,6 +51,11 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder Bookmarks
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Bookmarks.BookmarksRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The broadcasts property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Users.Item.Broadcasts.BroadcastsRequestBuilder Broadcasts
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Users.Item.Broadcasts.BroadcastsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dm property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Users.Item.Dm.DmRequestBuilder Dm
