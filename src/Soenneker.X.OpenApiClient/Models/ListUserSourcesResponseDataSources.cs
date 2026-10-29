@@ -44,7 +44,7 @@ namespace Soenneker.X.OpenApiClient.Models
 #endif
         /// <summary>Owner&apos;s numeric user id. Exceeds the exact integer range of many JSON parsers.</summary>
         public int? OwnerId { get; set; }
-        /// <summary>Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem.</summary>
+        /// <summary>Ingest region as an AWS region name, e.g. `us-east-1` or `us-west-2`. Accepted as `region` when creating a source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RtmpRegion { get; set; }

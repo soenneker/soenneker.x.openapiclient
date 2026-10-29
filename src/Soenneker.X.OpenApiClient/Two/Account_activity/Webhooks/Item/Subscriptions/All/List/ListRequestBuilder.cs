@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         {
         }
         /// <summary>
-        /// Get Account Activity Subscriptions
+        /// Retrieves a list of all active subscriptions for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Account Activity Subscriptions
+        /// Retrieves a list of all active subscriptions for a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

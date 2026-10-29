@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written
         {
         }
         /// <summary>
-        /// Search Community Notes Written
+        /// Retrieves the Community Notes written by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SearchCommunityNotesWrittenResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SearchCommunityNotesWrittenResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SearchCommunityNotesWrittenResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Search Community Notes Written
+        /// Retrieves the Community Notes written by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written
             return new global::Soenneker.X.OpenApiClient.Two.Notes.Search.Notes_written.Notes_writtenRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Search Community Notes Written
+        /// Retrieves the Community Notes written by the authenticated user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Notes_writtenRequestBuilderGetQueryParameters 

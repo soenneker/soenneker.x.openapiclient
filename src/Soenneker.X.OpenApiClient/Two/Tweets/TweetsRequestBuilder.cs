@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
         {
         }
         /// <summary>
-        /// Get Posts by IDs
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetPostsByIdsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -118,7 +118,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetPostsByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Posts
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Supports paid partnership disclosure via the paid_partnership field.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreatePostsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -143,7 +143,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreatePostsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreatePostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Posts by IDs
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +162,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return requestInfo;
         }
         /// <summary>
-        /// Create Posts
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Supports paid partnership disclosure via the paid_partnership field.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -193,7 +193,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.TweetsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Posts by IDs
+        /// Retrieves details of multiple Posts by their IDs.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TweetsRequestBuilderGetQueryParameters 

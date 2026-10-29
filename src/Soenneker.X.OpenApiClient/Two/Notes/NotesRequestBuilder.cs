@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
         {
         }
         /// <summary>
-        /// Create Community Notes
+        /// Creates a Community Note on a Post. With test_mode set to true, the note is only for testing and is not publicly visible.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -84,7 +84,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Create Community Notes
+        /// Creates a Community Note on a Post. With test_mode set to true, the note is only for testing and is not publicly visible.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

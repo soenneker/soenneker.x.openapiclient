@@ -14,22 +14,8 @@ namespace Soenneker.X.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The data property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GetRegionResponseData? Data { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.X.OpenApiClient.Models.GetRegionResponseData Data { get; set; }
-#endif
-        /// <summary>The errors property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem>? Errors { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.X.OpenApiClient.Models.Problem> Errors { get; set; }
-#endif
+        /// <summary>Ingest region. Pass it as `region` when creating a stream source.</summary>
+        public global::Soenneker.X.OpenApiClient.Models.GetRegionResponseRegion? Region { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetRegionResponse"/> and sets the default values.
         /// </summary>
@@ -55,8 +41,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.GetRegionResponseData>(global::Soenneker.X.OpenApiClient.Models.GetRegionResponseData.CreateFromDiscriminatorValue); } },
-                { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>(global::Soenneker.X.OpenApiClient.Models.Problem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "region", n => { Region = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.GetRegionResponseRegion>(); } },
             };
         }
         /// <summary>
@@ -66,8 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.GetRegionResponseData>("data", Data);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Problem>("errors", Errors);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.GetRegionResponseRegion>("region", Region);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

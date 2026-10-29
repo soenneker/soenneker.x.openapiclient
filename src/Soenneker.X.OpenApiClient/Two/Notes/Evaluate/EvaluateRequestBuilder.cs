@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Evaluate
         {
         }
         /// <summary>
-        /// Evaluate Community Notes
+        /// Evaluates the text of a proposed Community Note on a Post and returns its claim-opinion score.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.EvaluateCommunityNotesResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Notes.Evaluate
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.EvaluateCommunityNotesResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.EvaluateCommunityNotesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Evaluate Community Notes
+        /// Evaluates the text of a proposed Community Note on a Post and returns its claim-opinion score.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

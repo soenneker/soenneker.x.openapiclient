@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots
         {
         }
         /// <summary>
-        /// Get Bots
+        /// Retrieves the bot accounts in the calling app&apos;s project. meta.max_bots is the most bots the project can have.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetBotsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -95,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateBotResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Bots
+        /// Retrieves the bot accounts in the calling app&apos;s project. meta.max_bots is the most bots the project can have.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -145,7 +145,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots
             return new global::Soenneker.X.OpenApiClient.Two.Bots.BotsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Bots
+        /// Retrieves the bot accounts in the calling app&apos;s project. meta.max_bots is the most bots the project can have.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BotsRequestBuilderGetQueryParameters 

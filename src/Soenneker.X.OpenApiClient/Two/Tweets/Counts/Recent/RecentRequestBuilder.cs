@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.Recent
         {
         }
         /// <summary>
-        /// At most one of `pagination_token`, `next_token` may be provided.
+        /// Retrieves the count of Posts from the last 7 days matching a search query.At most one of `pagination_token`, `next_token` may be provided.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetPostsCountsRecentResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.Recent
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetPostsCountsRecentResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetPostsCountsRecentResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// At most one of `pagination_token`, `next_token` may be provided.
+        /// Retrieves the count of Posts from the last 7 days matching a search query.At most one of `pagination_token`, `next_token` may be provided.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Counts.Recent
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Counts.Recent.RecentRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// At most one of `pagination_token`, `next_token` may be provided.
+        /// Retrieves the count of Posts from the last 7 days matching a search query.At most one of `pagination_token`, `next_token` may be provided.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecentRequestBuilderGetQueryParameters 

@@ -64,7 +64,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
         {
         }
         /// <summary>
-        /// Delete Posts
+        /// Deletes a specific Post by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeletePostsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get Posts by ID
+        /// Retrieves details of a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,7 +110,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetPostsByIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Posts
+        /// Deletes a specific Post by its ID, if owned by the authenticated user.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +129,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return requestInfo;
         }
         /// <summary>
-        /// Get Posts by ID
+        /// Retrieves details of a specific Post by its ID.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -157,7 +157,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets.Item
             return new global::Soenneker.X.OpenApiClient.Two.Tweets.Item.TweetsItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get Posts by ID
+        /// Retrieves details of a specific Post by its ID.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class TweetsItemRequestBuilderGetQueryParameters 

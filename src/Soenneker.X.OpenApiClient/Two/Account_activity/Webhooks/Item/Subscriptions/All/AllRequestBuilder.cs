@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
         {
         }
         /// <summary>
-        /// Validate Account Activity Subscription
+        /// Checks a user&apos;s Account Activity subscription for a given webhook.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.ValidateAccountActivitySubscriptionResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account_activity.Webhooks.Item.Subscript
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.CreateAccountActivitySubscriptionResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.CreateAccountActivitySubscriptionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Validate Account Activity Subscription
+        /// Checks a user&apos;s Account Activity subscription for a given webhook.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
         {
         }
         /// <summary>
-        /// Delete Bot
+        /// Deletes a bot account from the calling app&apos;s project.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteBotResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -63,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteBotResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Update Bot
+        /// Updates a bot&apos;s handle, display name, or who may send it Direct Messages.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateBotResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -88,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateBotResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Delete Bot
+        /// Deletes a bot account from the calling app&apos;s project.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -107,7 +107,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
             return requestInfo;
         }
         /// <summary>
-        /// Update Bot
+        /// Updates a bot&apos;s handle, display name, or who may send it Direct Messages.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

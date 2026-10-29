@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me.Following
         {
         }
         /// <summary>
-        /// Same results as `GET /2/users/{id}/following` with the authenticated user&apos;s ID.
+        /// Returns the Users the authenticated user follows. Same results as `GET /2/users/{id}/following` with your own user ID, without looking it up.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersMeFollowingResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me.Following
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersMeFollowingResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersMeFollowingResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Same results as `GET /2/users/{id}/following` with the authenticated user&apos;s ID.
+        /// Returns the Users the authenticated user follows. Same results as `GET /2/users/{id}/following` with your own user ID, without looking it up.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Me.Following
             return new global::Soenneker.X.OpenApiClient.Two.Users.Me.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Same results as `GET /2/users/{id}/following` with the authenticated user&apos;s ID.
+        /// Returns the Users the authenticated user follows. Same results as `GET /2/users/{id}/following` with your own user ID, without looking it up.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class FollowingRequestBuilderGetQueryParameters 
