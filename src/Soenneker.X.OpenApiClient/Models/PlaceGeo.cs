@@ -12,27 +12,42 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaceGeo : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("bbox") is { } nullNodeBbox && nullNodeBbox.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bbox = null;
+            if (parseNode.GetChildNode("properties") is { } nullNodeProperties && nullNodeProperties.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Properties = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The bounding box as [southwest_longitude, southwest_latitude, northeast_longitude, northeast_latitude].</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Bbox { get; set; }
+        public List<double?>? Bbox { get => _explicitNullValueBbox; set { _explicitNullValueBbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox"); else _explicitNullProperties?.Remove("bbox"); } }
+        private List<double?>? _explicitNullValueBbox = default!;
 #nullable restore
 #else
-        public List<double?> Bbox { get; set; }
+        public List<double?> Bbox { get => _explicitNullValueBbox; set { _explicitNullValueBbox = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bbox"); else _explicitNullProperties?.Remove("bbox"); } }
+        private List<double?> _explicitNullValueBbox = default!;
 #endif
         /// <summary>Additional GeoJSON feature properties.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty? Properties { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty? Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty? _explicitNullValueProperties = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty Properties { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty Properties { get => _explicitNullValueProperties; set { _explicitNullValueProperties = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("properties"); else _explicitNullProperties?.Remove("properties"); } }
+        private global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty _explicitNullValueProperties = default!;
 #endif
         /// <summary>The GeoJSON feature type.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PlaceGeoType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.X.OpenApiClient.Models.PlaceGeoType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PlaceGeo"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.PlaceGeo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.PlaceGeo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PlaceGeo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("bbox", Bbox);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoPropertiesProperty>("properties", Properties);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.PlaceGeoType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

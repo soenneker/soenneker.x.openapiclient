@@ -11,38 +11,57 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ArticleCreateDraftContentStateBlocksData : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cashtags") is { } nullNodeCashtags && nullNodeCashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cashtags = null;
+            if (parseNode.GetChildNode("hashtags") is { } nullNodeHashtags && nullNodeHashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hashtags = null;
+            if (parseNode.GetChildNode("mentions") is { } nullNodeMentions && nullNodeMentions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mentions = null;
+            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+        }
+
         /// <summary>Cashtag spans in this block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags>? Cashtags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags>? Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags>? _explicitNullValueCashtags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags> Cashtags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags> Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags> _explicitNullValueCashtags = default!;
 #endif
         /// <summary>Hashtag spans in this block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags>? Hashtags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags>? Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags>? _explicitNullValueHashtags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags> Hashtags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags> Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags> _explicitNullValueHashtags = default!;
 #endif
         /// <summary>Mention spans in this block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions>? Mentions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions>? Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions>? _explicitNullValueMentions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions> Mentions { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions> Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions> _explicitNullValueMentions = default!;
 #endif
         /// <summary>URL spans in this block.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls>? Urls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls> Urls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls> _explicitNullValueUrls = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,7 +71,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,7 +97,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataCashtags>("cashtags", Cashtags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataHashtags>("hashtags", Hashtags);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataMentions>("mentions", Mentions);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls>("urls", Urls);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksDataUrls>("urls", Urls);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

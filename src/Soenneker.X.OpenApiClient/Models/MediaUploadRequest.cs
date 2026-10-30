@@ -11,25 +11,40 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaUploadRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("additional_owners") is { } nullNodeAdditionalOwners && nullNodeAdditionalOwners.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalOwners = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
+        }
+
         /// <summary>Comma-separated list of user IDs who can use this media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalOwners { get; set; }
+        public string? AdditionalOwners { get => _explicitNullValueAdditionalOwners; set { _explicitNullValueAdditionalOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_owners"); else _explicitNullProperties?.Remove("additional_owners"); } }
+        private string? _explicitNullValueAdditionalOwners = default!;
 #nullable restore
 #else
-        public string AdditionalOwners { get; set; }
+        public string AdditionalOwners { get => _explicitNullValueAdditionalOwners; set { _explicitNullValueAdditionalOwners = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_owners"); else _explicitNullProperties?.Remove("additional_owners"); } }
+        private string _explicitNullValueAdditionalOwners = default!;
 #endif
         /// <summary>The media file to upload: base64-encoded in JSON bodies, raw bytes in multipart bodies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>The category of the media being uploaded.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMediaCategory? MediaCategory { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMediaCategory? MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMediaCategory? _explicitNullValueMediaCategory = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaUploadRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaUploadRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.MediaUploadRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("additional_owners", AdditionalOwners);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMedia>("media", Media);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMediaCategory>("media_category", MediaCategory);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.MediaUploadRequestMediaCategory>("media_category", MediaCategory);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

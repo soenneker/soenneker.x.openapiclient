@@ -11,15 +11,30 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateChatSettingsResponseDataAvSettingsAvCallPermissions : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("accept_calls_from_addressbook") is { } nullNodeAcceptCallsFromAddressbook && nullNodeAcceptCallsFromAddressbook.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptCallsFromAddressbook = null;
+            if (parseNode.GetChildNode("accept_calls_from_everyone") is { } nullNodeAcceptCallsFromEveryone && nullNodeAcceptCallsFromEveryone.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptCallsFromEveryone = null;
+            if (parseNode.GetChildNode("accept_calls_from_following") is { } nullNodeAcceptCallsFromFollowing && nullNodeAcceptCallsFromFollowing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptCallsFromFollowing = null;
+            if (parseNode.GetChildNode("accept_calls_from_verified") is { } nullNodeAcceptCallsFromVerified && nullNodeAcceptCallsFromVerified.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AcceptCallsFromVerified = null;
+        }
+
         /// <summary>Whether the user accepts calls from address-book contacts.</summary>
-        public bool? AcceptCallsFromAddressbook { get; set; }
+        public bool? AcceptCallsFromAddressbook { get => _explicitNullValueAcceptCallsFromAddressbook; set { _explicitNullValueAcceptCallsFromAddressbook = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_calls_from_addressbook"); else _explicitNullProperties?.Remove("accept_calls_from_addressbook"); } }
+        private bool? _explicitNullValueAcceptCallsFromAddressbook = default!;
         /// <summary>Whether the user accepts calls from anyone.</summary>
-        public bool? AcceptCallsFromEveryone { get; set; }
+        public bool? AcceptCallsFromEveryone { get => _explicitNullValueAcceptCallsFromEveryone; set { _explicitNullValueAcceptCallsFromEveryone = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_calls_from_everyone"); else _explicitNullProperties?.Remove("accept_calls_from_everyone"); } }
+        private bool? _explicitNullValueAcceptCallsFromEveryone = default!;
         /// <summary>Whether the user accepts calls from accounts they follow.</summary>
-        public bool? AcceptCallsFromFollowing { get; set; }
+        public bool? AcceptCallsFromFollowing { get => _explicitNullValueAcceptCallsFromFollowing; set { _explicitNullValueAcceptCallsFromFollowing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_calls_from_following"); else _explicitNullProperties?.Remove("accept_calls_from_following"); } }
+        private bool? _explicitNullValueAcceptCallsFromFollowing = default!;
         /// <summary>Whether the user accepts calls from verified accounts.</summary>
-        public bool? AcceptCallsFromVerified { get; set; }
+        public bool? AcceptCallsFromVerified { get => _explicitNullValueAcceptCallsFromVerified; set { _explicitNullValueAcceptCallsFromVerified = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("accept_calls_from_verified"); else _explicitNullProperties?.Remove("accept_calls_from_verified"); } }
+        private bool? _explicitNullValueAcceptCallsFromVerified = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -28,7 +43,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +69,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("accept_calls_from_addressbook", AcceptCallsFromAddressbook);
             writer.WriteBoolValue("accept_calls_from_everyone", AcceptCallsFromEveryone);
             writer.WriteBoolValue("accept_calls_from_following", AcceptCallsFromFollowing);
-            writer.WriteBoolValue("accept_calls_from_verified", AcceptCallsFromVerified);
+            writer.WriteBoolValue("accept_calls_from_verified", AcceptCallsFromVerified);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

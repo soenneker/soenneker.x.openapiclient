@@ -11,56 +11,81 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddUserPublicKeyPublicKey : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("identity_public_key_signature") is { } nullNodeIdentityPublicKeySignature && nullNodeIdentityPublicKeySignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityPublicKeySignature = null;
+            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKey && nullNodePublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKey = null;
+            if (parseNode.GetChildNode("public_key_fingerprint") is { } nullNodePublicKeyFingerprint && nullNodePublicKeyFingerprint.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyFingerprint = null;
+            if (parseNode.GetChildNode("registration_method") is { } nullNodeRegistrationMethod && nullNodeRegistrationMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RegistrationMethod = null;
+            if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
+            if (parseNode.GetChildNode("signing_public_key_signature") is { } nullNodeSigningPublicKeySignature && nullNodeSigningPublicKeySignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKeySignature = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signature over the identity public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublicKeySignature { get; set; }
+        public string? IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
+        private string? _explicitNullValueIdentityPublicKeySignature = default!;
 #nullable restore
 #else
-        public string IdentityPublicKeySignature { get; set; }
+        public string IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
+        private string _explicitNullValueIdentityPublicKeySignature = default!;
 #endif
         /// <summary>Identity public key (base64 encoded).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKey { get; set; }
+        public string? PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string? _explicitNullValuePublicKey = default!;
 #nullable restore
 #else
-        public string PublicKey { get; set; }
+        public string PublicKey { get => _explicitNullValuePublicKey; set { _explicitNullValuePublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        private string _explicitNullValuePublicKey = default!;
 #endif
         /// <summary>Fingerprint of the identity public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyFingerprint { get; set; }
+        public string? PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_fingerprint"); else _explicitNullProperties?.Remove("public_key_fingerprint"); } }
+        private string? _explicitNullValuePublicKeyFingerprint = default!;
 #nullable restore
 #else
-        public string PublicKeyFingerprint { get; set; }
+        public string PublicKeyFingerprint { get => _explicitNullValuePublicKeyFingerprint; set { _explicitNullValuePublicKeyFingerprint = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_fingerprint"); else _explicitNullProperties?.Remove("public_key_fingerprint"); } }
+        private string _explicitNullValuePublicKeyFingerprint = default!;
 #endif
         /// <summary>Registration method for the public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RegistrationMethod { get; set; }
+        public string? RegistrationMethod { get => _explicitNullValueRegistrationMethod; set { _explicitNullValueRegistrationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_method"); else _explicitNullProperties?.Remove("registration_method"); } }
+        private string? _explicitNullValueRegistrationMethod = default!;
 #nullable restore
 #else
-        public string RegistrationMethod { get; set; }
+        public string RegistrationMethod { get => _explicitNullValueRegistrationMethod; set { _explicitNullValueRegistrationMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("registration_method"); else _explicitNullProperties?.Remove("registration_method"); } }
+        private string _explicitNullValueRegistrationMethod = default!;
 #endif
         /// <summary>Signing public key (base64 encoded).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningPublicKey { get; set; }
+        public string? SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        private string? _explicitNullValueSigningPublicKey = default!;
 #nullable restore
 #else
-        public string SigningPublicKey { get; set; }
+        public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        private string _explicitNullValueSigningPublicKey = default!;
 #endif
         /// <summary>Signature over the signing public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningPublicKeySignature { get; set; }
+        public string? SigningPublicKeySignature { get => _explicitNullValueSigningPublicKeySignature; set { _explicitNullValueSigningPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key_signature"); else _explicitNullProperties?.Remove("signing_public_key_signature"); } }
+        private string? _explicitNullValueSigningPublicKeySignature = default!;
 #nullable restore
 #else
-        public string SigningPublicKeySignature { get; set; }
+        public string SigningPublicKeySignature { get => _explicitNullValueSigningPublicKeySignature; set { _explicitNullValueSigningPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key_signature"); else _explicitNullProperties?.Remove("signing_public_key_signature"); } }
+        private string _explicitNullValueSigningPublicKeySignature = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyPublicKey"/> and sets the default values.
@@ -77,7 +102,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyPublicKey CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyPublicKey();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyPublicKey(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -108,6 +133,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("registration_method", RegistrationMethod);
             writer.WriteStringValue("signing_public_key", SigningPublicKey);
             writer.WriteStringValue("signing_public_key_signature", SigningPublicKeySignature);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

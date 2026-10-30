@@ -11,19 +11,33 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaUploadResponseDataImage : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("h") is { } nullNodeH && nullNodeH.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) H = null;
+            if (parseNode.GetChildNode("image_type") is { } nullNodeImageType && nullNodeImageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageType = null;
+            if (parseNode.GetChildNode("w") is { } nullNodeW && nullNodeW.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W = null;
+        }
+
         /// <summary>Height in pixels.</summary>
-        public int? H { get; set; }
+        public int? H { get => _explicitNullValueH; set { _explicitNullValueH = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("h"); else _explicitNullProperties?.Remove("h"); } }
+        private int? _explicitNullValueH = default!;
         /// <summary>MIME type of the uploaded image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImageType { get; set; }
+        public string? ImageType { get => _explicitNullValueImageType; set { _explicitNullValueImageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_type"); else _explicitNullProperties?.Remove("image_type"); } }
+        private string? _explicitNullValueImageType = default!;
 #nullable restore
 #else
-        public string ImageType { get; set; }
+        public string ImageType { get => _explicitNullValueImageType; set { _explicitNullValueImageType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_type"); else _explicitNullProperties?.Remove("image_type"); } }
+        private string _explicitNullValueImageType = default!;
 #endif
         /// <summary>Width in pixels.</summary>
-        public int? W { get; set; }
+        public int? W { get => _explicitNullValueW; set { _explicitNullValueW = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("w"); else _explicitNullProperties?.Remove("w"); } }
+        private int? _explicitNullValueW = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.MediaUploadResponseDataImage(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("h", H);
             writer.WriteStringValue("image_type", ImageType);
-            writer.WriteIntValue("w", W);
+            writer.WriteIntValue("w", W);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

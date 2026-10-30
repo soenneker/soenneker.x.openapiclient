@@ -12,24 +12,37 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DmEventAttachments : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("card_ids") is { } nullNodeCardIds && nullNodeCardIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIds = null;
+            if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>IDs of cards attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CardIds { get; set; }
+        public List<string>? CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
+        private List<string>? _explicitNullValueCardIds = default!;
 #nullable restore
 #else
-        public List<string> CardIds { get; set; }
+        public List<string> CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
+        private List<string> _explicitNullValueCardIds = default!;
 #endif
         /// <summary>Media keys of media (including audio) attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get; set; }
+        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        private List<string>? _explicitNullValueMediaKeys = default!;
 #nullable restore
 #else
-        public List<string> MediaKeys { get; set; }
+        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        private List<string> _explicitNullValueMediaKeys = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DmEventAttachments"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.DmEventAttachments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.DmEventAttachments();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.DmEventAttachments(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("card_ids", CardIds);
             writer.WriteCollectionOfPrimitiveValues<string>("media_keys", MediaKeys);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,26 +11,41 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateUserBroadcastStateResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("broadcast") is { } nullNodeBroadcast && nullNodeBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcast = null;
+            if (parseNode.GetChildNode("success") is { } nullNodeSuccess && nullNodeSuccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Success = null;
+            if (parseNode.GetChildNode("tweet_error") is { } nullNodeTweetError && nullNodeTweetError.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetError = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The broadcast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast? Broadcast { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast? Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast? _explicitNullValueBroadcast = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast Broadcast { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast _explicitNullValueBroadcast = default!;
 #endif
         /// <summary>`true` once `END` succeeds.</summary>
-        public bool? Success { get; set; }
+        public bool? Success { get => _explicitNullValueSuccess; set { _explicitNullValueSuccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("success"); else _explicitNullProperties?.Remove("success"); } }
+        private bool? _explicitNullValueSuccess = default!;
         /// <summary>Why the announcing Post failed, on `PUBLISH`. Omitted when the Post went out or `should_not_tweet` was true.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TweetError { get; set; }
+        public string? TweetError { get => _explicitNullValueTweetError; set { _explicitNullValueTweetError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_error"); else _explicitNullProperties?.Remove("tweet_error"); } }
+        private string? _explicitNullValueTweetError = default!;
 #nullable restore
 #else
-        public string TweetError { get; set; }
+        public string TweetError { get => _explicitNullValueTweetError; set { _explicitNullValueTweetError = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_error"); else _explicitNullProperties?.Remove("tweet_error"); } }
+        private string _explicitNullValueTweetError = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseData"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UpdateUserBroadcastStateResponseDataBroadcast>("broadcast", Broadcast);
             writer.WriteBoolValue("success", Success);
             writer.WriteStringValue("tweet_error", TweetError);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,95 +11,138 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Media : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alt_text") is { } nullNodeAltText && nullNodeAltText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AltText = null;
+            if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("height") is { } nullNodeHeight && nullNodeHeight.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Height = null;
+            if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
+            if (parseNode.GetChildNode("non_public_metrics") is { } nullNodeNonPublicMetrics && nullNodeNonPublicMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NonPublicMetrics = null;
+            if (parseNode.GetChildNode("organic_metrics") is { } nullNodeOrganicMetrics && nullNodeOrganicMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrganicMetrics = null;
+            if (parseNode.GetChildNode("preview_image_url") is { } nullNodePreviewImageUrl && nullNodePreviewImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewImageUrl = null;
+            if (parseNode.GetChildNode("promoted_metrics") is { } nullNodePromotedMetrics && nullNodePromotedMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromotedMetrics = null;
+            if (parseNode.GetChildNode("public_metrics") is { } nullNodePublicMetrics && nullNodePublicMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicMetrics = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("variants") is { } nullNodeVariants && nullNodeVariants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Variants = null;
+            if (parseNode.GetChildNode("width") is { } nullNodeWidth && nullNodeWidth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Width = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The alt_text property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AltText { get; set; }
+        public string? AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alt_text"); else _explicitNullProperties?.Remove("alt_text"); } }
+        private string? _explicitNullValueAltText = default!;
 #nullable restore
 #else
-        public string AltText { get; set; }
+        public string AltText { get => _explicitNullValueAltText; set { _explicitNullValueAltText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alt_text"); else _explicitNullProperties?.Remove("alt_text"); } }
+        private string _explicitNullValueAltText = default!;
 #endif
         /// <summary>The duration_ms property</summary>
-        public int? DurationMs { get; set; }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
+        private int? _explicitNullValueDurationMs = default!;
         /// <summary>The height property</summary>
-        public int? Height { get; set; }
+        public int? Height { get => _explicitNullValueHeight; set { _explicitNullValueHeight = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("height"); else _explicitNullProperties?.Remove("height"); } }
+        private int? _explicitNullValueHeight = default!;
         /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get; set; }
+        public string? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        private string? _explicitNullValueMediaKey = default!;
 #nullable restore
 #else
-        public string MediaKey { get; set; }
+        public string MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        private string _explicitNullValueMediaKey = default!;
 #endif
         /// <summary>Nonpublic engagement metrics for the media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics? NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics? NonPublicMetrics { get => _explicitNullValueNonPublicMetrics; set { _explicitNullValueNonPublicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_public_metrics"); else _explicitNullProperties?.Remove("non_public_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics? _explicitNullValueNonPublicMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics NonPublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics NonPublicMetrics { get => _explicitNullValueNonPublicMetrics; set { _explicitNullValueNonPublicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("non_public_metrics"); else _explicitNullProperties?.Remove("non_public_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaNonPublicMetrics _explicitNullValueNonPublicMetrics = default!;
 #endif
         /// <summary>Organic nonpublic engagement metrics for the media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics? OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics? OrganicMetrics { get => _explicitNullValueOrganicMetrics; set { _explicitNullValueOrganicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organic_metrics"); else _explicitNullProperties?.Remove("organic_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics? _explicitNullValueOrganicMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics OrganicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics OrganicMetrics { get => _explicitNullValueOrganicMetrics; set { _explicitNullValueOrganicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("organic_metrics"); else _explicitNullProperties?.Remove("organic_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics _explicitNullValueOrganicMetrics = default!;
 #endif
         /// <summary>The preview_image_url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewImageUrl { get; set; }
+        public string? PreviewImageUrl { get => _explicitNullValuePreviewImageUrl; set { _explicitNullValuePreviewImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_image_url"); else _explicitNullProperties?.Remove("preview_image_url"); } }
+        private string? _explicitNullValuePreviewImageUrl = default!;
 #nullable restore
 #else
-        public string PreviewImageUrl { get; set; }
+        public string PreviewImageUrl { get => _explicitNullValuePreviewImageUrl; set { _explicitNullValuePreviewImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_image_url"); else _explicitNullProperties?.Remove("preview_image_url"); } }
+        private string _explicitNullValuePreviewImageUrl = default!;
 #endif
         /// <summary>Promoted nonpublic engagement metrics for the media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics? PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics? PromotedMetrics { get => _explicitNullValuePromotedMetrics; set { _explicitNullValuePromotedMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promoted_metrics"); else _explicitNullProperties?.Remove("promoted_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics? _explicitNullValuePromotedMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics PromotedMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics PromotedMetrics { get => _explicitNullValuePromotedMetrics; set { _explicitNullValuePromotedMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("promoted_metrics"); else _explicitNullProperties?.Remove("promoted_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics _explicitNullValuePromotedMetrics = default!;
 #endif
         /// <summary>Public engagement metrics for the media at the time of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics? PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics? PublicMetrics { get => _explicitNullValuePublicMetrics; set { _explicitNullValuePublicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_metrics"); else _explicitNullProperties?.Remove("public_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics? _explicitNullValuePublicMetrics = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics PublicMetrics { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics PublicMetrics { get => _explicitNullValuePublicMetrics; set { _explicitNullValuePublicMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_metrics"); else _explicitNullProperties?.Remove("public_metrics"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics _explicitNullValuePublicMetrics = default!;
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Type { get; set; }
+        public string? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string? _explicitNullValueType = default!;
 #nullable restore
 #else
-        public string Type { get; set; }
+        public string Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private string _explicitNullValueType = default!;
 #endif
         /// <summary>The url property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Url { get; set; }
+        public string? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public string Url { get; set; }
+        public string Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private string _explicitNullValueUrl = default!;
 #endif
         /// <summary>Each media object may have multiple display or playback variants, with different resolutions or formats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>? Variants { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>? Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>? _explicitNullValueVariants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem> Variants { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem> Variants { get => _explicitNullValueVariants; set { _explicitNullValueVariants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("variants"); else _explicitNullProperties?.Remove("variants"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem> _explicitNullValueVariants = default!;
 #endif
         /// <summary>The width property</summary>
-        public int? Width { get; set; }
+        public int? Width { get => _explicitNullValueWidth; set { _explicitNullValueWidth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("width"); else _explicitNullProperties?.Remove("width"); } }
+        private int? _explicitNullValueWidth = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Media"/> and sets the default values.
         /// </summary>
@@ -115,7 +158,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.Media CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.Media();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.Media(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -160,6 +203,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("url", Url);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>("variants", Variants);
             writer.WriteIntValue("width", Width);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

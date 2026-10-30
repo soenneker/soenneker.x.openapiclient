@@ -11,98 +11,147 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePostsRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("card_uri") is { } nullNodeCardUri && nullNodeCardUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardUri = null;
+            if (parseNode.GetChildNode("community_id") is { } nullNodeCommunityId && nullNodeCommunityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommunityId = null;
+            if (parseNode.GetChildNode("direct_message_deep_link") is { } nullNodeDirectMessageDeepLink && nullNodeDirectMessageDeepLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DirectMessageDeepLink = null;
+            if (parseNode.GetChildNode("edit_options") is { } nullNodeEditOptions && nullNodeEditOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditOptions = null;
+            if (parseNode.GetChildNode("for_super_followers_only") is { } nullNodeForSuperFollowersOnly && nullNodeForSuperFollowersOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ForSuperFollowersOnly = null;
+            if (parseNode.GetChildNode("geo") is { } nullNodeGeo && nullNodeGeo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Geo = null;
+            if (parseNode.GetChildNode("made_with_ai") is { } nullNodeMadeWithAi && nullNodeMadeWithAi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MadeWithAi = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("nullcast") is { } nullNodeNullcast && nullNodeNullcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Nullcast = null;
+            if (parseNode.GetChildNode("paid_partnership") is { } nullNodePaidPartnership && nullNodePaidPartnership.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaidPartnership = null;
+            if (parseNode.GetChildNode("poll") is { } nullNodePoll && nullNodePoll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Poll = null;
+            if (parseNode.GetChildNode("quote_tweet_id") is { } nullNodeQuoteTweetId && nullNodeQuoteTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteTweetId = null;
+            if (parseNode.GetChildNode("reply") is { } nullNodeReply && nullNodeReply.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reply = null;
+            if (parseNode.GetChildNode("reply_settings") is { } nullNodeReplySettings && nullNodeReplySettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplySettings = null;
+            if (parseNode.GetChildNode("share_with_followers") is { } nullNodeShareWithFollowers && nullNodeShareWithFollowers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareWithFollowers = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+        }
+
         /// <summary>Card URI parameter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardUri { get; set; }
+        public string? CardUri { get => _explicitNullValueCardUri; set { _explicitNullValueCardUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_uri"); else _explicitNullProperties?.Remove("card_uri"); } }
+        private string? _explicitNullValueCardUri = default!;
 #nullable restore
 #else
-        public string CardUri { get; set; }
+        public string CardUri { get => _explicitNullValueCardUri; set { _explicitNullValueCardUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_uri"); else _explicitNullProperties?.Remove("card_uri"); } }
+        private string _explicitNullValueCardUri = default!;
 #endif
         /// <summary>Community to post the tweet to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CommunityId { get; set; }
+        public string? CommunityId { get => _explicitNullValueCommunityId; set { _explicitNullValueCommunityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("community_id"); else _explicitNullProperties?.Remove("community_id"); } }
+        private string? _explicitNullValueCommunityId = default!;
 #nullable restore
 #else
-        public string CommunityId { get; set; }
+        public string CommunityId { get => _explicitNullValueCommunityId; set { _explicitNullValueCommunityId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("community_id"); else _explicitNullProperties?.Remove("community_id"); } }
+        private string _explicitNullValueCommunityId = default!;
 #endif
         /// <summary>Direct message deep link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DirectMessageDeepLink { get; set; }
+        public string? DirectMessageDeepLink { get => _explicitNullValueDirectMessageDeepLink; set { _explicitNullValueDirectMessageDeepLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_message_deep_link"); else _explicitNullProperties?.Remove("direct_message_deep_link"); } }
+        private string? _explicitNullValueDirectMessageDeepLink = default!;
 #nullable restore
 #else
-        public string DirectMessageDeepLink { get; set; }
+        public string DirectMessageDeepLink { get => _explicitNullValueDirectMessageDeepLink; set { _explicitNullValueDirectMessageDeepLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("direct_message_deep_link"); else _explicitNullProperties?.Remove("direct_message_deep_link"); } }
+        private string _explicitNullValueDirectMessageDeepLink = default!;
 #endif
         /// <summary>The edit_options property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions? EditOptions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions? EditOptions { get => _explicitNullValueEditOptions; set { _explicitNullValueEditOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_options"); else _explicitNullProperties?.Remove("edit_options"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions? _explicitNullValueEditOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions EditOptions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions EditOptions { get => _explicitNullValueEditOptions; set { _explicitNullValueEditOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_options"); else _explicitNullProperties?.Remove("edit_options"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions _explicitNullValueEditOptions = default!;
 #endif
         /// <summary>Restrict tweet to super followers.</summary>
-        public bool? ForSuperFollowersOnly { get; set; }
+        public bool? ForSuperFollowersOnly { get => _explicitNullValueForSuperFollowersOnly; set { _explicitNullValueForSuperFollowersOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("for_super_followers_only"); else _explicitNullProperties?.Remove("for_super_followers_only"); } }
+        private bool? _explicitNullValueForSuperFollowersOnly = default!;
         /// <summary>The geo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo? Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo? Geo { get => _explicitNullValueGeo; set { _explicitNullValueGeo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geo"); else _explicitNullProperties?.Remove("geo"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo? _explicitNullValueGeo = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo Geo { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo Geo { get => _explicitNullValueGeo; set { _explicitNullValueGeo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("geo"); else _explicitNullProperties?.Remove("geo"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsGeo _explicitNullValueGeo = default!;
 #endif
         /// <summary>Disclose that the tweet contains AI-generated media.</summary>
-        public bool? MadeWithAi { get; set; }
+        public bool? MadeWithAi { get => _explicitNullValueMadeWithAi; set { _explicitNullValueMadeWithAi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("made_with_ai"); else _explicitNullProperties?.Remove("made_with_ai"); } }
+        private bool? _explicitNullValueMadeWithAi = default!;
         /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>If true, the tweet is not shown in the public timeline.</summary>
-        public bool? Nullcast { get; set; }
+        public bool? Nullcast { get => _explicitNullValueNullcast; set { _explicitNullValueNullcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("nullcast"); else _explicitNullProperties?.Remove("nullcast"); } }
+        private bool? _explicitNullValueNullcast = default!;
         /// <summary>Disclose that the tweet is a paid partnership.</summary>
-        public bool? PaidPartnership { get; set; }
+        public bool? PaidPartnership { get => _explicitNullValuePaidPartnership; set { _explicitNullValuePaidPartnership = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paid_partnership"); else _explicitNullProperties?.Remove("paid_partnership"); } }
+        private bool? _explicitNullValuePaidPartnership = default!;
         /// <summary>The poll property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll? Poll { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll? Poll { get => _explicitNullValuePoll; set { _explicitNullValuePoll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll"); else _explicitNullProperties?.Remove("poll"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll? _explicitNullValuePoll = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll Poll { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll Poll { get => _explicitNullValuePoll; set { _explicitNullValuePoll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll"); else _explicitNullProperties?.Remove("poll"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsPoll _explicitNullValuePoll = default!;
 #endif
         /// <summary>Tweet ID to quote.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuoteTweetId { get; set; }
+        public string? QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        private string? _explicitNullValueQuoteTweetId = default!;
 #nullable restore
 #else
-        public string QuoteTweetId { get; set; }
+        public string QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        private string _explicitNullValueQuoteTweetId = default!;
 #endif
         /// <summary>The reply property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsReply? Reply { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsReply? Reply { get => _explicitNullValueReply; set { _explicitNullValueReply = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply"); else _explicitNullProperties?.Remove("reply"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsReply? _explicitNullValueReply = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsReply Reply { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsReply Reply { get => _explicitNullValueReply; set { _explicitNullValueReply = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply"); else _explicitNullProperties?.Remove("reply"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsReply _explicitNullValueReply = default!;
 #endif
         /// <summary>Who can reply to this tweet.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsRequestReplySettings? ReplySettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsRequestReplySettings? ReplySettings { get => _explicitNullValueReplySettings; set { _explicitNullValueReplySettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reply_settings"); else _explicitNullProperties?.Remove("reply_settings"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsRequestReplySettings? _explicitNullValueReplySettings = default!;
         /// <summary>Share an exclusive (super-follower) tweet with all followers.</summary>
-        public bool? ShareWithFollowers { get; set; }
+        public bool? ShareWithFollowers { get => _explicitNullValueShareWithFollowers; set { _explicitNullValueShareWithFollowers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_followers"); else _explicitNullProperties?.Remove("share_with_followers"); } }
+        private bool? _explicitNullValueShareWithFollowers = default!;
         /// <summary>Text of the tweet. Required unless media is provided.  Defaulted to an empty string so it is always sent: the backend&apos;s `tweet_text` variable is non-null and rejects an absent value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,7 +161,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreatePostsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreatePostsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreatePostsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -162,7 +211,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsReply>("reply", Reply);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsRequestReplySettings>("reply_settings", ReplySettings);
             writer.WriteBoolValue("share_with_followers", ShareWithFollowers);
-            writer.WriteStringValue("text", Text);
+            writer.WriteStringValue("text", Text);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

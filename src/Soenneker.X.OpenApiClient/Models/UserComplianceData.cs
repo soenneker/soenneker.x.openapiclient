@@ -12,7 +12,12 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserComplianceData : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.UserDeleteComplianceSchema"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,41 +102,62 @@ namespace Soenneker.X.OpenApiClient.Models
             var result = new global::Soenneker.X.OpenApiClient.Models.UserComplianceData();
             if("UserDeleteComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserDeleteComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserDeleteComplianceSchema();
+                
             }
             else if("UserProfileModificationComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserProfileModificationComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserProfileModificationComplianceSchema();
+                
             }
             else if("UserProtectComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserProtectComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserProtectComplianceSchema();
+                
             }
             else if("UserScrubGeoSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserScrubGeoSchema = new global::Soenneker.X.OpenApiClient.Models.UserScrubGeoSchema();
+                
             }
             else if("UserSuspendComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserSuspendComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserSuspendComplianceSchema();
+                
             }
             else if("UserUndeleteComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserUndeleteComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserUndeleteComplianceSchema();
+                
             }
             else if("UserUnprotectComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserUnprotectComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserUnprotectComplianceSchema();
+                
             }
             else if("UserUnsuspendComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserUnsuspendComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserUnsuspendComplianceSchema();
+                
             }
             else if("UserWithheldComplianceSchema".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.UserWithheldComplianceSchema = new global::Soenneker.X.OpenApiClient.Models.UserWithheldComplianceSchema();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_protect") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_unprotect") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_delete") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_undelete") != null))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_suspend") != null))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_unsuspend") != null))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_withheld") != null))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("scrub_geo") != null))();
+            bool matchesUnionBranch8 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("user_profile_modification") != null))();
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserProtectComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserProtectComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserUnprotectComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserUnprotectComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserDeleteComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserDeleteComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserUndeleteComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserUndeleteComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserSuspendComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserSuspendComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserUnsuspendComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserUnsuspendComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7 && !matchesUnionBranch8) result.UserWithheldComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserWithheldComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch8) result.UserScrubGeoSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserScrubGeoSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null && matchesUnionBranch8 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.UserProfileModificationComplianceSchema = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserProfileModificationComplianceSchema(), parseNode);
+            if (result.UserDeleteComplianceSchema == null && result.UserProfileModificationComplianceSchema == null && result.UserProtectComplianceSchema == null && result.UserScrubGeoSchema == null && result.UserSuspendComplianceSchema == null && result.UserUndeleteComplianceSchema == null && result.UserUnprotectComplianceSchema == null && result.UserUnsuspendComplianceSchema == null && result.UserWithheldComplianceSchema == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -183,41 +209,62 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (UserDeleteComplianceSchema != null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserDeleteComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserDeleteComplianceSchema); return; }
+            if (UserProfileModificationComplianceSchema != null && UserDeleteComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserProfileModificationComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserProfileModificationComplianceSchema); return; }
+            if (UserProtectComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserProtectComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserProtectComplianceSchema); return; }
+            if (UserScrubGeoSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserScrubGeoSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserScrubGeoSchema); return; }
+            if (UserSuspendComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserSuspendComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserSuspendComplianceSchema); return; }
+            if (UserUndeleteComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserUndeleteComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserUndeleteComplianceSchema); return; }
+            if (UserUnprotectComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnsuspendComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserUnprotectComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserUnprotectComplianceSchema); return; }
+            if (UserUnsuspendComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserWithheldComplianceSchema == null) { if (UserUnsuspendComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserUnsuspendComplianceSchema); return; }
+            if (UserWithheldComplianceSchema != null && UserDeleteComplianceSchema == null && UserProfileModificationComplianceSchema == null && UserProtectComplianceSchema == null && UserScrubGeoSchema == null && UserSuspendComplianceSchema == null && UserUndeleteComplianceSchema == null && UserUnprotectComplianceSchema == null && UserUnsuspendComplianceSchema == null) { if (UserWithheldComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, UserWithheldComplianceSchema); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(UserDeleteComplianceSchema != null)
             {
+                if (UserDeleteComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserDeleteComplianceSchema>(null, UserDeleteComplianceSchema);
             }
             else if(UserProfileModificationComplianceSchema != null)
             {
+                if (UserProfileModificationComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProfileModificationComplianceSchema>(null, UserProfileModificationComplianceSchema);
             }
             else if(UserProtectComplianceSchema != null)
             {
+                if (UserProtectComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserProtectComplianceSchema>(null, UserProtectComplianceSchema);
             }
             else if(UserScrubGeoSchema != null)
             {
+                if (UserScrubGeoSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserScrubGeoSchema>(null, UserScrubGeoSchema);
             }
             else if(UserSuspendComplianceSchema != null)
             {
+                if (UserSuspendComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserSuspendComplianceSchema>(null, UserSuspendComplianceSchema);
             }
             else if(UserUndeleteComplianceSchema != null)
             {
+                if (UserUndeleteComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserUndeleteComplianceSchema>(null, UserUndeleteComplianceSchema);
             }
             else if(UserUnprotectComplianceSchema != null)
             {
+                if (UserUnprotectComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserUnprotectComplianceSchema>(null, UserUnprotectComplianceSchema);
             }
             else if(UserUnsuspendComplianceSchema != null)
             {
+                if (UserUnsuspendComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserUnsuspendComplianceSchema>(null, UserUnsuspendComplianceSchema);
             }
             else if(UserWithheldComplianceSchema != null)
             {
+                if (UserWithheldComplianceSchema is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserWithheldComplianceSchema>(null, UserWithheldComplianceSchema);
             }
         }

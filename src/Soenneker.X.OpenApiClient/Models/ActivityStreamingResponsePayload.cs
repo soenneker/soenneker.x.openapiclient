@@ -12,7 +12,12 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,29 +78,34 @@ namespace Soenneker.X.OpenApiClient.Models
             var result = new global::Soenneker.X.OpenApiClient.Models.ActivityStreamingResponsePayload();
             if("follow.follow".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.FollowActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload();
+                
             }
             else if("like.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.LikeWithPostAuthor = new global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor();
+                
             }
             else if("news.new".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.NewsActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload();
+                
             }
             else if("post.create".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.Post = new global::Soenneker.X.OpenApiClient.Models.Post();
+                
             }
             else if("post.delete".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.PostDeleteActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload();
+                
             }
             else if("profile.update.affiliate_badge".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ProfileUpdateActivityResponsePayload = new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("id") != null && parseNode.GetChildNode("author_id") != null))();
+            if (result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null && matchesUnionBranch0) result.PostDeleteActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload(), parseNode);
+            if (result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -135,29 +145,44 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FollowActivityResponsePayload != null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (FollowActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowActivityResponsePayload); return; }
+            if (LikeWithPostAuthor != null && FollowActivityResponsePayload == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (LikeWithPostAuthor is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LikeWithPostAuthor); return; }
+            if (NewsActivityResponsePayload != null && FollowActivityResponsePayload == null && LikeWithPostAuthor == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (NewsActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NewsActivityResponsePayload); return; }
+            if (Post != null && FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (Post is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Post); return; }
+            if (PostDeleteActivityResponsePayload != null && FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && ProfileUpdateActivityResponsePayload == null) { if (PostDeleteActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostDeleteActivityResponsePayload); return; }
+            if (ProfileUpdateActivityResponsePayload != null && FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null) { if (ProfileUpdateActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ProfileUpdateActivityResponsePayload); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FollowActivityResponsePayload != null)
             {
+                if (FollowActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload>(null, FollowActivityResponsePayload);
             }
             else if(LikeWithPostAuthor != null)
             {
+                if (LikeWithPostAuthor is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor>(null, LikeWithPostAuthor);
             }
             else if(NewsActivityResponsePayload != null)
             {
+                if (NewsActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload>(null, NewsActivityResponsePayload);
             }
             else if(Post != null)
             {
+                if (Post is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.Post>(null, Post);
             }
             else if(PostDeleteActivityResponsePayload != null)
             {
+                if (PostDeleteActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload>(null, PostDeleteActivityResponsePayload);
             }
             else if(ProfileUpdateActivityResponsePayload != null)
             {
+                if (ProfileUpdateActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload>(null, ProfileUpdateActivityResponsePayload);
             }
         }

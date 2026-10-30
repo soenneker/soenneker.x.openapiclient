@@ -11,64 +11,92 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class Expansions : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("calls") is { } nullNodeCalls && nullNodeCalls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Calls = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("places") is { } nullNodePlaces && nullNodePlaces.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Places = null;
+            if (parseNode.GetChildNode("polls") is { } nullNodePolls && nullNodePolls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Polls = null;
+            if (parseNode.GetChildNode("posts") is { } nullNodePosts && nullNodePosts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Posts = null;
+            if (parseNode.GetChildNode("topics") is { } nullNodeTopics && nullNodeTopics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Topics = null;
+            if (parseNode.GetChildNode("users") is { } nullNodeUsers && nullNodeUsers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Users = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The calls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Call>? Calls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Call>? Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Call>? _explicitNullValueCalls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Call> Calls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Call> Calls { get => _explicitNullValueCalls; set { _explicitNullValueCalls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("calls"); else _explicitNullProperties?.Remove("calls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Call> _explicitNullValueCalls = default!;
 #endif
         /// <summary>The media property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Media>? Media { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Media>? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Media>? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Media> Media { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Media> Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Media> _explicitNullValueMedia = default!;
 #endif
         /// <summary>The places property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Place>? Places { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Place>? Places { get => _explicitNullValuePlaces; set { _explicitNullValuePlaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("places"); else _explicitNullProperties?.Remove("places"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Place>? _explicitNullValuePlaces = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Place> Places { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Place> Places { get => _explicitNullValuePlaces; set { _explicitNullValuePlaces = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("places"); else _explicitNullProperties?.Remove("places"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Place> _explicitNullValuePlaces = default!;
 #endif
         /// <summary>The polls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Poll>? Polls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Poll>? Polls { get => _explicitNullValuePolls; set { _explicitNullValuePolls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("polls"); else _explicitNullProperties?.Remove("polls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Poll>? _explicitNullValuePolls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Poll> Polls { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Poll> Polls { get => _explicitNullValuePolls; set { _explicitNullValuePolls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("polls"); else _explicitNullProperties?.Remove("polls"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Poll> _explicitNullValuePolls = default!;
 #endif
         /// <summary>The posts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Post>? Posts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Post>? Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Post>? _explicitNullValuePosts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Post> Posts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Post> Posts { get => _explicitNullValuePosts; set { _explicitNullValuePosts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("posts"); else _explicitNullProperties?.Remove("posts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Post> _explicitNullValuePosts = default!;
 #endif
         /// <summary>The topics property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.Topic>? Topics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Topic>? Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Topic>? _explicitNullValueTopics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.Topic> Topics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.Topic> Topics { get => _explicitNullValueTopics; set { _explicitNullValueTopics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("topics"); else _explicitNullProperties?.Remove("topics"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.Topic> _explicitNullValueTopics = default!;
 #endif
         /// <summary>The users property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.User>? Users { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.User>? Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.User>? _explicitNullValueUsers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.User> Users { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.User> Users { get => _explicitNullValueUsers; set { _explicitNullValueUsers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("users"); else _explicitNullProperties?.Remove("users"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.User> _explicitNullValueUsers = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Expansions"/> and sets the default values.
@@ -85,7 +113,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.Expansions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.Expansions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.Expansions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +146,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Post>("posts", Posts);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Topic>("topics", Topics);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.User>("users", Users);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

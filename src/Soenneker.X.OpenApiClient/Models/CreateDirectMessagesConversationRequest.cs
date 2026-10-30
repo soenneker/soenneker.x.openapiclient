@@ -11,24 +11,39 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateDirectMessagesConversationRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversation_type") is { } nullNodeConversationType && nullNodeConversationType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationType = null;
+            if (parseNode.GetChildNode("message") is { } nullNodeMessage && nullNodeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Message = null;
+            if (parseNode.GetChildNode("participant_ids") is { } nullNodeParticipantIds && nullNodeParticipantIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantIds = null;
+        }
+
         /// <summary>The conversation type to create. Supports `Group` only.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.GroupConversationType? ConversationType { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.GroupConversationType? ConversationType { get => _explicitNullValueConversationType; set { _explicitNullValueConversationType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_type"); else _explicitNullProperties?.Remove("conversation_type"); } }
+        private global::Soenneker.X.OpenApiClient.Models.GroupConversationType? _explicitNullValueConversationType = default!;
         /// <summary>The message property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage? Message { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage? Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage? _explicitNullValueMessage = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage Message { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage Message { get => _explicitNullValueMessage; set { _explicitNullValueMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message"); else _explicitNullProperties?.Remove("message"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage _explicitNullValueMessage = default!;
 #endif
         /// <summary>Participants for the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ParticipantIds { get; set; }
+        public List<string>? ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
+        private List<string>? _explicitNullValueParticipantIds = default!;
 #nullable restore
 #else
-        public List<string> ParticipantIds { get; set; }
+        public List<string> ParticipantIds { get => _explicitNullValueParticipantIds; set { _explicitNullValueParticipantIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_ids"); else _explicitNullProperties?.Remove("participant_ids"); } }
+        private List<string> _explicitNullValueParticipantIds = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.GroupConversationType>("conversation_type", ConversationType);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateDirectMessagesConversationMessage>("message", Message);
-            writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("participant_ids", ParticipantIds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

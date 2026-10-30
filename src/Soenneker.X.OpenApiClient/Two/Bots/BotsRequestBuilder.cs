@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetBotsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetBotsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a bot account in the calling app&apos;s project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project&apos;s bots returns that bot with a freshly minted token, revoking the previous one — safe to retry when a response was lost, since the replaced token was never seen.
+        /// Creates a bot account in the calling app&apos;s project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project&apos;s bots returns that bot with a freshly minted token, revoking the previous one — safe to retry when a response was lost, since the replaced token was never seen. With an OAuth 2.0 user token, the user must be an admin of the project&apos;s developer account. On API Connect, where the request bills the user&apos;s own account, the bot is created in the user&apos;s project instead; its token is still minted for the calling app.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreateBotResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots
             return requestInfo;
         }
         /// <summary>
-        /// Creates a bot account in the calling app&apos;s project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project&apos;s bots returns that bot with a freshly minted token, revoking the previous one — safe to retry when a response was lost, since the replaced token was never seen.
+        /// Creates a bot account in the calling app&apos;s project and returns its bearer token. Idempotent on handle: repeating the request for a handle that already names one of the project&apos;s bots returns that bot with a freshly minted token, revoking the previous one — safe to retry when a response was lost, since the replaced token was never seen. With an OAuth 2.0 user token, the user must be an admin of the project&apos;s developer account. On API Connect, where the request bills the user&apos;s own account, the bot is created in the user&apos;s project instead; its token is still minted for the calling app.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

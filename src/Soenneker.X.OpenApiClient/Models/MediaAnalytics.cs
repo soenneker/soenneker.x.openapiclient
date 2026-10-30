@@ -11,53 +11,89 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class MediaAnalytics : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("cta_url_clicks") is { } nullNodeCtaUrlClicks && nullNodeCtaUrlClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaUrlClicks = null;
+            if (parseNode.GetChildNode("cta_watch_clicks") is { } nullNodeCtaWatchClicks && nullNodeCtaWatchClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaWatchClicks = null;
+            if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
+            if (parseNode.GetChildNode("playback25") is { } nullNodePlayback25 && nullNodePlayback25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback25 = null;
+            if (parseNode.GetChildNode("playback50") is { } nullNodePlayback50 && nullNodePlayback50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback50 = null;
+            if (parseNode.GetChildNode("playback75") is { } nullNodePlayback75 && nullNodePlayback75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback75 = null;
+            if (parseNode.GetChildNode("playback_complete") is { } nullNodePlaybackComplete && nullNodePlaybackComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackComplete = null;
+            if (parseNode.GetChildNode("playback_start") is { } nullNodePlaybackStart && nullNodePlaybackStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackStart = null;
+            if (parseNode.GetChildNode("play_from_tap") is { } nullNodePlayFromTap && nullNodePlayFromTap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayFromTap = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("timestamped_metrics") is { } nullNodeTimestampedMetrics && nullNodeTimestampedMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampedMetrics = null;
+            if (parseNode.GetChildNode("video_views") is { } nullNodeVideoViews && nullNodeVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoViews = null;
+            if (parseNode.GetChildNode("watch_time_ms") is { } nullNodeWatchTimeMs && nullNodeWatchTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchTimeMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cta_url_clicks property</summary>
-        public int? CtaUrlClicks { get; set; }
+        public int? CtaUrlClicks { get => _explicitNullValueCtaUrlClicks; set { _explicitNullValueCtaUrlClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_clicks"); else _explicitNullProperties?.Remove("cta_url_clicks"); } }
+        private int? _explicitNullValueCtaUrlClicks = default!;
         /// <summary>The cta_watch_clicks property</summary>
-        public int? CtaWatchClicks { get; set; }
+        public int? CtaWatchClicks { get => _explicitNullValueCtaWatchClicks; set { _explicitNullValueCtaWatchClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_clicks"); else _explicitNullProperties?.Remove("cta_watch_clicks"); } }
+        private int? _explicitNullValueCtaWatchClicks = default!;
         /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get; set; }
+        public string? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        private string? _explicitNullValueMediaKey = default!;
 #nullable restore
 #else
-        public string MediaKey { get; set; }
+        public string MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        private string _explicitNullValueMediaKey = default!;
 #endif
         /// <summary>The playback25 property</summary>
-        public int? Playback25 { get; set; }
+        public int? Playback25 { get => _explicitNullValuePlayback25; set { _explicitNullValuePlayback25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback25"); else _explicitNullProperties?.Remove("playback25"); } }
+        private int? _explicitNullValuePlayback25 = default!;
         /// <summary>The playback50 property</summary>
-        public int? Playback50 { get; set; }
+        public int? Playback50 { get => _explicitNullValuePlayback50; set { _explicitNullValuePlayback50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback50"); else _explicitNullProperties?.Remove("playback50"); } }
+        private int? _explicitNullValuePlayback50 = default!;
         /// <summary>The playback75 property</summary>
-        public int? Playback75 { get; set; }
+        public int? Playback75 { get => _explicitNullValuePlayback75; set { _explicitNullValuePlayback75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback75"); else _explicitNullProperties?.Remove("playback75"); } }
+        private int? _explicitNullValuePlayback75 = default!;
         /// <summary>The playback_complete property</summary>
-        public int? PlaybackComplete { get; set; }
+        public int? PlaybackComplete { get => _explicitNullValuePlaybackComplete; set { _explicitNullValuePlaybackComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_complete"); else _explicitNullProperties?.Remove("playback_complete"); } }
+        private int? _explicitNullValuePlaybackComplete = default!;
         /// <summary>The playback_start property</summary>
-        public int? PlaybackStart { get; set; }
+        public int? PlaybackStart { get => _explicitNullValuePlaybackStart; set { _explicitNullValuePlaybackStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_start"); else _explicitNullProperties?.Remove("playback_start"); } }
+        private int? _explicitNullValuePlaybackStart = default!;
         /// <summary>The play_from_tap property</summary>
-        public int? PlayFromTap { get; set; }
+        public int? PlayFromTap { get => _explicitNullValuePlayFromTap; set { _explicitNullValuePlayFromTap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_from_tap"); else _explicitNullProperties?.Remove("play_from_tap"); } }
+        private int? _explicitNullValuePlayFromTap = default!;
         /// <summary>The timestamp property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get; set; }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get; set; }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>Time-bucketed video metrics for the media, one entry per granularity bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>? TimestampedMetrics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>? TimestampedMetrics { get => _explicitNullValueTimestampedMetrics; set { _explicitNullValueTimestampedMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_metrics"); else _explicitNullProperties?.Remove("timestamped_metrics"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>? _explicitNullValueTimestampedMetrics = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem> TimestampedMetrics { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem> TimestampedMetrics { get => _explicitNullValueTimestampedMetrics; set { _explicitNullValueTimestampedMetrics = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_metrics"); else _explicitNullProperties?.Remove("timestamped_metrics"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem> _explicitNullValueTimestampedMetrics = default!;
 #endif
         /// <summary>The video_views property</summary>
-        public int? VideoViews { get; set; }
+        public int? VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_views"); else _explicitNullProperties?.Remove("video_views"); } }
+        private int? _explicitNullValueVideoViews = default!;
         /// <summary>The watch_time_ms property</summary>
-        public int? WatchTimeMs { get; set; }
+        public int? WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
+        private int? _explicitNullValueWatchTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaAnalytics"/> and sets the default values.
         /// </summary>
@@ -73,7 +109,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaAnalytics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaAnalytics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.MediaAnalytics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,6 +154,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItem>("timestamped_metrics", TimestampedMetrics);
             writer.WriteIntValue("video_views", VideoViews);
             writer.WriteIntValue("watch_time_ms", WatchTimeMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

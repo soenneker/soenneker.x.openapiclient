@@ -11,23 +11,39 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetUsageCreditsResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("free_balance") is { } nullNodeFreeBalance && nullNodeFreeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeBalance = null;
+            if (parseNode.GetChildNode("free_grants") is { } nullNodeFreeGrants && nullNodeFreeGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeGrants = null;
+            if (parseNode.GetChildNode("prepaid_balance") is { } nullNodePrepaidBalance && nullNodePrepaidBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrepaidBalance = null;
+            if (parseNode.GetChildNode("total_balance") is { } nullNodeTotalBalance && nullNodeTotalBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBalance = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>USD remaining across unexpired free grants.</summary>
-        public double? FreeBalance { get; set; }
+        public double? FreeBalance { get => _explicitNullValueFreeBalance; set { _explicitNullValueFreeBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_balance"); else _explicitNullProperties?.Remove("free_balance"); } }
+        private double? _explicitNullValueFreeBalance = default!;
         /// <summary>Unexpired free grants, soonest expiry first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? FreeGrants { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? _explicitNullValueFreeGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> FreeGrants { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> _explicitNullValueFreeGrants = default!;
 #endif
         /// <summary>Purchased (prepaid) USD balance. May be negative when paid usage has overdrawn this bucket.</summary>
-        public double? PrepaidBalance { get; set; }
+        public double? PrepaidBalance { get => _explicitNullValuePrepaidBalance; set { _explicitNullValuePrepaidBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prepaid_balance"); else _explicitNullProperties?.Remove("prepaid_balance"); } }
+        private double? _explicitNullValuePrepaidBalance = default!;
         /// <summary>Spendable USD remaining, clamped at 0.00: total_balance = max(0, prepaid_balance + free_balance).</summary>
-        public double? TotalBalance { get; set; }
+        public double? TotalBalance { get => _explicitNullValueTotalBalance; set { _explicitNullValueTotalBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_balance"); else _explicitNullProperties?.Remove("total_balance"); } }
+        private double? _explicitNullValueTotalBalance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseData"/> and sets the default values.
         /// </summary>
@@ -43,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,6 +86,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>("free_grants", FreeGrants);
             writer.WriteDoubleValue("prepaid_balance", PrepaidBalance);
             writer.WriteDoubleValue("total_balance", TotalBalance);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

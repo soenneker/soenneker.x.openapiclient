@@ -12,32 +12,48 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PostAttachments : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
+            if (parseNode.GetChildNode("media_source_tweet_id") is { } nullNodeMediaSourceTweetId && nullNodeMediaSourceTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaSourceTweetId = null;
+            if (parseNode.GetChildNode("poll_ids") is { } nullNodePollIds && nullNodePollIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollIds = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Media keys of media attached to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get; set; }
+        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        private List<string>? _explicitNullValueMediaKeys = default!;
 #nullable restore
 #else
-        public List<string> MediaKeys { get; set; }
+        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        private List<string> _explicitNullValueMediaKeys = default!;
 #endif
         /// <summary>IDs of the source Posts the attached media originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaSourceTweetId { get; set; }
+        public List<string>? MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
+        private List<string>? _explicitNullValueMediaSourceTweetId = default!;
 #nullable restore
 #else
-        public List<string> MediaSourceTweetId { get; set; }
+        public List<string> MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
+        private List<string> _explicitNullValueMediaSourceTweetId = default!;
 #endif
         /// <summary>IDs of polls attached to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PollIds { get; set; }
+        public List<string>? PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
+        private List<string>? _explicitNullValuePollIds = default!;
 #nullable restore
 #else
-        public List<string> PollIds { get; set; }
+        public List<string> PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
+        private List<string> _explicitNullValuePollIds = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PostAttachments"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.PostAttachments CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.PostAttachments();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PostAttachments(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("media_keys", MediaKeys);
             writer.WriteCollectionOfPrimitiveValues<string>("media_source_tweet_id", MediaSourceTweetId);
             writer.WriteCollectionOfPrimitiveValues<string>("poll_ids", PollIds);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

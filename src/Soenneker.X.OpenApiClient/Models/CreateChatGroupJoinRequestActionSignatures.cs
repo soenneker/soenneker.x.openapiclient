@@ -11,40 +11,59 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateChatGroupJoinRequestActionSignatures : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("encoded_message_event_detail") is { } nullNodeEncodedMessageEventDetail && nullNodeEncodedMessageEventDetail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedMessageEventDetail = null;
+            if (parseNode.GetChildNode("message_event_signature") is { } nullNodeMessageEventSignature && nullNodeMessageEventSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageEventSignature = null;
+            if (parseNode.GetChildNode("message_id") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
+            if (parseNode.GetChildNode("signature_payload") is { } nullNodeSignaturePayload && nullNodeSignaturePayload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignaturePayload = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64-encoded Thrift MessageEventDetail for the signed action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncodedMessageEventDetail { get; set; }
+        public string? EncodedMessageEventDetail { get => _explicitNullValueEncodedMessageEventDetail; set { _explicitNullValueEncodedMessageEventDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_event_detail"); else _explicitNullProperties?.Remove("encoded_message_event_detail"); } }
+        private string? _explicitNullValueEncodedMessageEventDetail = default!;
 #nullable restore
 #else
-        public string EncodedMessageEventDetail { get; set; }
+        public string EncodedMessageEventDetail { get => _explicitNullValueEncodedMessageEventDetail; set { _explicitNullValueEncodedMessageEventDetail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_event_detail"); else _explicitNullProperties?.Remove("encoded_message_event_detail"); } }
+        private string _explicitNullValueEncodedMessageEventDetail = default!;
 #endif
         /// <summary>The message_event_signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature? MessageEventSignature { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature? MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature? _explicitNullValueMessageEventSignature = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature MessageEventSignature { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature _explicitNullValueMessageEventSignature = default!;
 #endif
         /// <summary>Client-generated ID of the message being signed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId { get; set; }
+        public string? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string? _explicitNullValueMessageId = default!;
 #nullable restore
 #else
-        public string MessageId { get; set; }
+        public string MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string _explicitNullValueMessageId = default!;
 #endif
         /// <summary>Payload string the client signed; used only in server-side failure logs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignaturePayload { get; set; }
+        public string? SignaturePayload { get => _explicitNullValueSignaturePayload; set { _explicitNullValueSignaturePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_payload"); else _explicitNullProperties?.Remove("signature_payload"); } }
+        private string? _explicitNullValueSignaturePayload = default!;
 #nullable restore
 #else
-        public string SignaturePayload { get; set; }
+        public string SignaturePayload { get => _explicitNullValueSignaturePayload; set { _explicitNullValueSignaturePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_payload"); else _explicitNullProperties?.Remove("signature_payload"); } }
+        private string _explicitNullValueSignaturePayload = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignatures"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignatures CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignatures();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignatures(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateChatGroupJoinRequestActionSignaturesMessageEventSignature>("message_event_signature", MessageEventSignature);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteStringValue("signature_payload", SignaturePayload);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,70 +11,101 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class EnableChatGroupInviteRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("affiliate_user_id") is { } nullNodeAffiliateUserId && nullNodeAffiliateUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AffiliateUserId = null;
+            if (parseNode.GetChildNode("decrypted_avatar_url") is { } nullNodeDecryptedAvatarUrl && nullNodeDecryptedAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecryptedAvatarUrl = null;
+            if (parseNode.GetChildNode("decrypted_title") is { } nullNodeDecryptedTitle && nullNodeDecryptedTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DecryptedTitle = null;
+            if (parseNode.GetChildNode("invite_url") is { } nullNodeInviteUrl && nullNodeInviteUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InviteUrl = null;
+            if (parseNode.GetChildNode("validity_duration_msec") is { } nullNodeValidityDurationMsec && nullNodeValidityDurationMsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityDurationMsec = null;
+            if (parseNode.GetChildNode("validity_expiry_timestamp_msec") is { } nullNodeValidityExpiryTimestampMsec && nullNodeValidityExpiryTimestampMsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ValidityExpiryTimestampMsec = null;
+            if (parseNode.GetChildNode("welcome_message") is { } nullNodeWelcomeMessage && nullNodeWelcomeMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WelcomeMessage = null;
+        }
+
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures>? ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures> ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>ID of the affiliate account to associate with the link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AffiliateUserId { get; set; }
+        public string? AffiliateUserId { get => _explicitNullValueAffiliateUserId; set { _explicitNullValueAffiliateUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affiliate_user_id"); else _explicitNullProperties?.Remove("affiliate_user_id"); } }
+        private string? _explicitNullValueAffiliateUserId = default!;
 #nullable restore
 #else
-        public string AffiliateUserId { get; set; }
+        public string AffiliateUserId { get => _explicitNullValueAffiliateUserId; set { _explicitNullValueAffiliateUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("affiliate_user_id"); else _explicitNullProperties?.Remove("affiliate_user_id"); } }
+        private string _explicitNullValueAffiliateUserId = default!;
 #endif
         /// <summary>Group avatar URL (https) to show on the invite preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DecryptedAvatarUrl { get; set; }
+        public string? DecryptedAvatarUrl { get => _explicitNullValueDecryptedAvatarUrl; set { _explicitNullValueDecryptedAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decrypted_avatar_url"); else _explicitNullProperties?.Remove("decrypted_avatar_url"); } }
+        private string? _explicitNullValueDecryptedAvatarUrl = default!;
 #nullable restore
 #else
-        public string DecryptedAvatarUrl { get; set; }
+        public string DecryptedAvatarUrl { get => _explicitNullValueDecryptedAvatarUrl; set { _explicitNullValueDecryptedAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decrypted_avatar_url"); else _explicitNullProperties?.Remove("decrypted_avatar_url"); } }
+        private string _explicitNullValueDecryptedAvatarUrl = default!;
 #endif
         /// <summary>Group name to show on the invite preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DecryptedTitle { get; set; }
+        public string? DecryptedTitle { get => _explicitNullValueDecryptedTitle; set { _explicitNullValueDecryptedTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decrypted_title"); else _explicitNullProperties?.Remove("decrypted_title"); } }
+        private string? _explicitNullValueDecryptedTitle = default!;
 #nullable restore
 #else
-        public string DecryptedTitle { get; set; }
+        public string DecryptedTitle { get => _explicitNullValueDecryptedTitle; set { _explicitNullValueDecryptedTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("decrypted_title"); else _explicitNullProperties?.Remove("decrypted_title"); } }
+        private string _explicitNullValueDecryptedTitle = default!;
 #endif
         /// <summary>Invite link built by the client, in the form https://x.com/i/chat/group_join/&lt;conversation_id&gt;/&lt;token&gt;, where the token is exactly 10 letters, digits, &apos;-&apos; or &apos;_&apos;. The conversation segment must match the path ID. It is part of the signed payload, so it is required when action_signatures is sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InviteUrl { get; set; }
+        public string? InviteUrl { get => _explicitNullValueInviteUrl; set { _explicitNullValueInviteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invite_url"); else _explicitNullProperties?.Remove("invite_url"); } }
+        private string? _explicitNullValueInviteUrl = default!;
 #nullable restore
 #else
-        public string InviteUrl { get; set; }
+        public string InviteUrl { get => _explicitNullValueInviteUrl; set { _explicitNullValueInviteUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("invite_url"); else _explicitNullProperties?.Remove("invite_url"); } }
+        private string _explicitNullValueInviteUrl = default!;
 #endif
         /// <summary>How long the link stays valid, in milliseconds, from the time of the request. With action_signatures, send validity_expiry_timestamp_msec instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidityDurationMsec { get; set; }
+        public string? ValidityDurationMsec { get => _explicitNullValueValidityDurationMsec; set { _explicitNullValueValidityDurationMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_duration_msec"); else _explicitNullProperties?.Remove("validity_duration_msec"); } }
+        private string? _explicitNullValueValidityDurationMsec = default!;
 #nullable restore
 #else
-        public string ValidityDurationMsec { get; set; }
+        public string ValidityDurationMsec { get => _explicitNullValueValidityDurationMsec; set { _explicitNullValueValidityDurationMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_duration_msec"); else _explicitNullProperties?.Remove("validity_duration_msec"); } }
+        private string _explicitNullValueValidityDurationMsec = default!;
 #endif
         /// <summary>When the link expires, in epoch milliseconds. Must be in the future. If validity_duration_msec is also sent, the two must agree within a minute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ValidityExpiryTimestampMsec { get; set; }
+        public string? ValidityExpiryTimestampMsec { get => _explicitNullValueValidityExpiryTimestampMsec; set { _explicitNullValueValidityExpiryTimestampMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_expiry_timestamp_msec"); else _explicitNullProperties?.Remove("validity_expiry_timestamp_msec"); } }
+        private string? _explicitNullValueValidityExpiryTimestampMsec = default!;
 #nullable restore
 #else
-        public string ValidityExpiryTimestampMsec { get; set; }
+        public string ValidityExpiryTimestampMsec { get => _explicitNullValueValidityExpiryTimestampMsec; set { _explicitNullValueValidityExpiryTimestampMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("validity_expiry_timestamp_msec"); else _explicitNullProperties?.Remove("validity_expiry_timestamp_msec"); } }
+        private string _explicitNullValueValidityExpiryTimestampMsec = default!;
 #endif
         /// <summary>Message shown to people who open the link.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WelcomeMessage { get; set; }
+        public string? WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcome_message"); else _explicitNullProperties?.Remove("welcome_message"); } }
+        private string? _explicitNullValueWelcomeMessage = default!;
 #nullable restore
 #else
-        public string WelcomeMessage { get; set; }
+        public string WelcomeMessage { get => _explicitNullValueWelcomeMessage; set { _explicitNullValueWelcomeMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("welcome_message"); else _explicitNullProperties?.Remove("welcome_message"); } }
+        private string _explicitNullValueWelcomeMessage = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,7 +115,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.EnableChatGroupInviteRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -118,7 +149,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("invite_url", InviteUrl);
             writer.WriteStringValue("validity_duration_msec", ValidityDurationMsec);
             writer.WriteStringValue("validity_expiry_timestamp_msec", ValidityExpiryTimestampMsec);
-            writer.WriteStringValue("welcome_message", WelcomeMessage);
+            writer.WriteStringValue("welcome_message", WelcomeMessage);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

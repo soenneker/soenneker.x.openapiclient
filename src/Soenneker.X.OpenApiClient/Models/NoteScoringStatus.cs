@@ -12,18 +12,30 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteScoringStatus : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("has_access") is { } nullNodeHasAccess && nullNodeHasAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAccess = null;
+            if (parseNode.GetChildNode("rating_counts_per_model") is { } nullNodeRatingCountsPerModel && nullNodeRatingCountsPerModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatingCountsPerModel = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the caller has access to the scoring details.</summary>
-        public bool? HasAccess { get; set; }
+        public bool? HasAccess { get => _explicitNullValueHasAccess; set { _explicitNullValueHasAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_access"); else _explicitNullProperties?.Remove("has_access"); } }
+        private bool? _explicitNullValueHasAccess = default!;
         /// <summary>Rating counts broken down per scoring model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? RatingCountsPerModel { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? _explicitNullValueRatingCountsPerModel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> RatingCountsPerModel { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> _explicitNullValueRatingCountsPerModel = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus"/> and sets the default values.
@@ -40,7 +52,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatus(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("has_access", HasAccess);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>("rating_counts_per_model", RatingCountsPerModel);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

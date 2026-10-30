@@ -11,30 +11,46 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePostsMediaCallToActions : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app_install") is { } nullNodeAppInstall && nullNodeAppInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppInstall = null;
+            if (parseNode.GetChildNode("visit_site") is { } nullNodeVisitSite && nullNodeVisitSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisitSite = null;
+            if (parseNode.GetChildNode("watch_now") is { } nullNodeWatchNow && nullNodeWatchNow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchNow = null;
+        }
+
         /// <summary>The app_install property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall? AppInstall { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall? AppInstall { get => _explicitNullValueAppInstall; set { _explicitNullValueAppInstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_install"); else _explicitNullProperties?.Remove("app_install"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall? _explicitNullValueAppInstall = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall AppInstall { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall AppInstall { get => _explicitNullValueAppInstall; set { _explicitNullValueAppInstall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_install"); else _explicitNullProperties?.Remove("app_install"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall _explicitNullValueAppInstall = default!;
 #endif
         /// <summary>The visit_site property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite? VisitSite { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite? VisitSite { get => _explicitNullValueVisitSite; set { _explicitNullValueVisitSite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visit_site"); else _explicitNullProperties?.Remove("visit_site"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite? _explicitNullValueVisitSite = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite VisitSite { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite VisitSite { get => _explicitNullValueVisitSite; set { _explicitNullValueVisitSite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("visit_site"); else _explicitNullProperties?.Remove("visit_site"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite _explicitNullValueVisitSite = default!;
 #endif
         /// <summary>The watch_now property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow? WatchNow { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow? WatchNow { get => _explicitNullValueWatchNow; set { _explicitNullValueWatchNow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_now"); else _explicitNullProperties?.Remove("watch_now"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow? _explicitNullValueWatchNow = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow WatchNow { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow WatchNow { get => _explicitNullValueWatchNow; set { _explicitNullValueWatchNow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_now"); else _explicitNullProperties?.Remove("watch_now"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow _explicitNullValueWatchNow = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +60,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -68,7 +84,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsAppInstall>("app_install", AppInstall);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsVisitSite>("visit_site", VisitSite);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow>("watch_now", WatchNow);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActionsWatchNow>("watch_now", WatchNow);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

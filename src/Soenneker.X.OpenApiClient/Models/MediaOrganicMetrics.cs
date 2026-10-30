@@ -12,21 +12,40 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaOrganicMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("playback_0_count") is { } nullNodePlayback0Count && nullNodePlayback0Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback0Count = null;
+            if (parseNode.GetChildNode("playback_100_count") is { } nullNodePlayback100Count && nullNodePlayback100Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback100Count = null;
+            if (parseNode.GetChildNode("playback_25_count") is { } nullNodePlayback25Count && nullNodePlayback25Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback25Count = null;
+            if (parseNode.GetChildNode("playback_50_count") is { } nullNodePlayback50Count && nullNodePlayback50Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback50Count = null;
+            if (parseNode.GetChildNode("playback_75_count") is { } nullNodePlayback75Count && nullNodePlayback75Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback75Count = null;
+            if (parseNode.GetChildNode("view_count") is { } nullNodeViewCount && nullNodeViewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of users who started playback (0% quartile) of this video.</summary>
-        public long? Playback0Count { get; set; }
+        public long? Playback0Count { get => _explicitNullValuePlayback0Count; set { _explicitNullValuePlayback0Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_0_count"); else _explicitNullProperties?.Remove("playback_0_count"); } }
+        private long? _explicitNullValuePlayback0Count = default!;
         /// <summary>Number of users who completed playback (100% quartile) of this video.</summary>
-        public long? Playback100Count { get; set; }
+        public long? Playback100Count { get => _explicitNullValuePlayback100Count; set { _explicitNullValuePlayback100Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_100_count"); else _explicitNullProperties?.Remove("playback_100_count"); } }
+        private long? _explicitNullValuePlayback100Count = default!;
         /// <summary>Number of users who watched at least 25% of this video.</summary>
-        public long? Playback25Count { get; set; }
+        public long? Playback25Count { get => _explicitNullValuePlayback25Count; set { _explicitNullValuePlayback25Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_25_count"); else _explicitNullProperties?.Remove("playback_25_count"); } }
+        private long? _explicitNullValuePlayback25Count = default!;
         /// <summary>Number of users who watched at least 50% of this video.</summary>
-        public long? Playback50Count { get; set; }
+        public long? Playback50Count { get => _explicitNullValuePlayback50Count; set { _explicitNullValuePlayback50Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_50_count"); else _explicitNullProperties?.Remove("playback_50_count"); } }
+        private long? _explicitNullValuePlayback50Count = default!;
         /// <summary>Number of users who watched at least 75% of this video.</summary>
-        public long? Playback75Count { get; set; }
+        public long? Playback75Count { get => _explicitNullValuePlayback75Count; set { _explicitNullValuePlayback75Count = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_75_count"); else _explicitNullProperties?.Remove("playback_75_count"); } }
+        private long? _explicitNullValuePlayback75Count = default!;
         /// <summary>The number of organic views of this video. Null when the backend returns quartile data without a view count.</summary>
-        public long? ViewCount { get; set; }
+        public long? ViewCount { get => _explicitNullValueViewCount; set { _explicitNullValueViewCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_count"); else _explicitNullProperties?.Remove("view_count"); } }
+        private long? _explicitNullValueViewCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteLongValue("playback_50_count", Playback50Count);
             writer.WriteLongValue("playback_75_count", Playback75Count);
             writer.WriteLongValue("view_count", ViewCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

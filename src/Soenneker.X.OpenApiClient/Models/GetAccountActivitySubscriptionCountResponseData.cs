@@ -11,40 +11,59 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetAccountActivitySubscriptionCountResponseData : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("account_name") is { } nullNodeAccountName && nullNodeAccountName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AccountName = null;
+            if (parseNode.GetChildNode("provisioned_count") is { } nullNodeProvisionedCount && nullNodeProvisionedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProvisionedCount = null;
+            if (parseNode.GetChildNode("subscriptions_count_all") is { } nullNodeSubscriptionsCountAll && nullNodeSubscriptionsCountAll.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionsCountAll = null;
+            if (parseNode.GetChildNode("subscriptions_count_direct_messages") is { } nullNodeSubscriptionsCountDirectMessages && nullNodeSubscriptionsCountDirectMessages.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionsCountDirectMessages = null;
+        }
+
         /// <summary>Name of the subscribing account.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AccountName { get; set; }
+        public string? AccountName { get => _explicitNullValueAccountName; set { _explicitNullValueAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_name"); else _explicitNullProperties?.Remove("account_name"); } }
+        private string? _explicitNullValueAccountName = default!;
 #nullable restore
 #else
-        public string AccountName { get; set; }
+        public string AccountName { get => _explicitNullValueAccountName; set { _explicitNullValueAccountName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account_name"); else _explicitNullProperties?.Remove("account_name"); } }
+        private string _explicitNullValueAccountName = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of subscriptions provisioned for the app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProvisionedCount { get; set; }
+        public string? ProvisionedCount { get => _explicitNullValueProvisionedCount; set { _explicitNullValueProvisionedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_count"); else _explicitNullProperties?.Remove("provisioned_count"); } }
+        private string? _explicitNullValueProvisionedCount = default!;
 #nullable restore
 #else
-        public string ProvisionedCount { get; set; }
+        public string ProvisionedCount { get => _explicitNullValueProvisionedCount; set { _explicitNullValueProvisionedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned_count"); else _explicitNullProperties?.Remove("provisioned_count"); } }
+        private string _explicitNullValueProvisionedCount = default!;
 #endif
         /// <summary>Number of active subscriptions across all event types.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionsCountAll { get; set; }
+        public string? SubscriptionsCountAll { get => _explicitNullValueSubscriptionsCountAll; set { _explicitNullValueSubscriptionsCountAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions_count_all"); else _explicitNullProperties?.Remove("subscriptions_count_all"); } }
+        private string? _explicitNullValueSubscriptionsCountAll = default!;
 #nullable restore
 #else
-        public string SubscriptionsCountAll { get; set; }
+        public string SubscriptionsCountAll { get => _explicitNullValueSubscriptionsCountAll; set { _explicitNullValueSubscriptionsCountAll = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions_count_all"); else _explicitNullProperties?.Remove("subscriptions_count_all"); } }
+        private string _explicitNullValueSubscriptionsCountAll = default!;
 #endif
         /// <summary>Number of active Direct Message subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionsCountDirectMessages { get; set; }
+        public string? SubscriptionsCountDirectMessages { get => _explicitNullValueSubscriptionsCountDirectMessages; set { _explicitNullValueSubscriptionsCountDirectMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions_count_direct_messages"); else _explicitNullProperties?.Remove("subscriptions_count_direct_messages"); } }
+        private string? _explicitNullValueSubscriptionsCountDirectMessages = default!;
 #nullable restore
 #else
-        public string SubscriptionsCountDirectMessages { get; set; }
+        public string SubscriptionsCountDirectMessages { get => _explicitNullValueSubscriptionsCountDirectMessages; set { _explicitNullValueSubscriptionsCountDirectMessages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions_count_direct_messages"); else _explicitNullProperties?.Remove("subscriptions_count_direct_messages"); } }
+        private string _explicitNullValueSubscriptionsCountDirectMessages = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionCountResponseData"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionCountResponseData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionCountResponseData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.GetAccountActivitySubscriptionCountResponseData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("provisioned_count", ProvisionedCount);
             writer.WriteStringValue("subscriptions_count_all", SubscriptionsCountAll);
             writer.WriteStringValue("subscriptions_count_direct_messages", SubscriptionsCountDirectMessages);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

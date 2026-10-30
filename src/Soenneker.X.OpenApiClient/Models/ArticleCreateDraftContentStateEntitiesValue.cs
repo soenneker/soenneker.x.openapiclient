@@ -11,19 +11,33 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ArticleCreateDraftContentStateEntitiesValue : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("mutability") is { } nullNodeMutability && nullNodeMutability.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mutability = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>The data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData? Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData Data { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData _explicitNullValueData = default!;
 #endif
         /// <summary>Whether the entity can be edited. Recommended: immutable for post, image, divider, latex; mutable for link and markdown (matches the in-app Articles composer).</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueMutability? Mutability { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueMutability? Mutability { get => _explicitNullValueMutability; set { _explicitNullValueMutability = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mutability"); else _explicitNullProperties?.Remove("mutability"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueMutability? _explicitNullValueMutability = default!;
         /// <summary>The entity type. markdown carries code blocks, GFM tables, and other Markdown;          emoji maps to backend TWEMOJI (Twemoji is internal); divider is a horizontal rule;          latex renders TeX from the block text. Tables are not a separate enum value — use          type markdown with a pipe table in data.markdown.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType? Type { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValue();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueData>("data", Data);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueMutability>("mutability", Mutability);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntitiesValueType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

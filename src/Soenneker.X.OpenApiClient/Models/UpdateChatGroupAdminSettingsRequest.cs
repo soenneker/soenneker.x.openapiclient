@@ -12,27 +12,49 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateChatGroupAdminSettingsRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("add_member") is { } nullNodeAddMember && nullNodeAddMember.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddMember = null;
+            if (parseNode.GetChildNode("block_screen_capture") is { } nullNodeBlockScreenCapture && nullNodeBlockScreenCapture.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockScreenCapture = null;
+            if (parseNode.GetChildNode("edit_group_info") is { } nullNodeEditGroupInfo && nullNodeEditGroupInfo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditGroupInfo = null;
+            if (parseNode.GetChildNode("edit_message_ttl") is { } nullNodeEditMessageTtl && nullNodeEditMessageTtl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditMessageTtl = null;
+            if (parseNode.GetChildNode("send_message") is { } nullNodeSendMessage && nullNodeSendMessage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SendMessage = null;
+            if (parseNode.GetChildNode("start_call") is { } nullNodeStartCall && nullNodeStartCall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartCall = null;
+        }
+
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures>? ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures> ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>When true, only admins can add members.</summary>
-        public bool? AddMember { get; set; }
+        public bool? AddMember { get => _explicitNullValueAddMember; set { _explicitNullValueAddMember = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("add_member"); else _explicitNullProperties?.Remove("add_member"); } }
+        private bool? _explicitNullValueAddMember = default!;
         /// <summary>When true, only admins can change screen capture blocking. Through the API, only admins can change screen capture in a group, whatever this setting says.</summary>
-        public bool? BlockScreenCapture { get; set; }
+        public bool? BlockScreenCapture { get => _explicitNullValueBlockScreenCapture; set { _explicitNullValueBlockScreenCapture = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("block_screen_capture"); else _explicitNullProperties?.Remove("block_screen_capture"); } }
+        private bool? _explicitNullValueBlockScreenCapture = default!;
         /// <summary>When true, only admins can edit the group name, avatar, and description.</summary>
-        public bool? EditGroupInfo { get; set; }
+        public bool? EditGroupInfo { get => _explicitNullValueEditGroupInfo; set { _explicitNullValueEditGroupInfo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_group_info"); else _explicitNullProperties?.Remove("edit_group_info"); } }
+        private bool? _explicitNullValueEditGroupInfo = default!;
         /// <summary>When true, only admins can change the disappearing-message timer.</summary>
-        public bool? EditMessageTtl { get; set; }
+        public bool? EditMessageTtl { get => _explicitNullValueEditMessageTtl; set { _explicitNullValueEditMessageTtl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edit_message_ttl"); else _explicitNullProperties?.Remove("edit_message_ttl"); } }
+        private bool? _explicitNullValueEditMessageTtl = default!;
         /// <summary>When true, only admins can send messages.</summary>
-        public bool? SendMessage { get; set; }
+        public bool? SendMessage { get => _explicitNullValueSendMessage; set { _explicitNullValueSendMessage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("send_message"); else _explicitNullProperties?.Remove("send_message"); } }
+        private bool? _explicitNullValueSendMessage = default!;
         /// <summary>When true, only admins can start calls.</summary>
-        public bool? StartCall { get; set; }
+        public bool? StartCall { get => _explicitNullValueStartCall; set { _explicitNullValueStartCall = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start_call"); else _explicitNullProperties?.Remove("start_call"); } }
+        private bool? _explicitNullValueStartCall = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -41,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupAdminSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +95,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("edit_group_info", EditGroupInfo);
             writer.WriteBoolValue("edit_message_ttl", EditMessageTtl);
             writer.WriteBoolValue("send_message", SendMessage);
-            writer.WriteBoolValue("start_call", StartCall);
+            writer.WriteBoolValue("start_call", StartCall);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

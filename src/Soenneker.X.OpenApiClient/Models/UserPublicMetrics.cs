@@ -12,21 +12,40 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UserPublicMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("followers_count") is { } nullNodeFollowersCount && nullNodeFollowersCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowersCount = null;
+            if (parseNode.GetChildNode("following_count") is { } nullNodeFollowingCount && nullNodeFollowingCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FollowingCount = null;
+            if (parseNode.GetChildNode("like_count") is { } nullNodeLikeCount && nullNodeLikeCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikeCount = null;
+            if (parseNode.GetChildNode("listed_count") is { } nullNodeListedCount && nullNodeListedCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ListedCount = null;
+            if (parseNode.GetChildNode("media_count") is { } nullNodeMediaCount && nullNodeMediaCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCount = null;
+            if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of Users who follow this User.</summary>
-        public long? FollowersCount { get; set; }
+        public long? FollowersCount { get => _explicitNullValueFollowersCount; set { _explicitNullValueFollowersCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followers_count"); else _explicitNullProperties?.Remove("followers_count"); } }
+        private long? _explicitNullValueFollowersCount = default!;
         /// <summary>Number of Users this User follows.</summary>
-        public long? FollowingCount { get; set; }
+        public long? FollowingCount { get => _explicitNullValueFollowingCount; set { _explicitNullValueFollowingCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following_count"); else _explicitNullProperties?.Remove("following_count"); } }
+        private long? _explicitNullValueFollowingCount = default!;
         /// <summary>Number of Posts this User has liked.</summary>
-        public long? LikeCount { get; set; }
+        public long? LikeCount { get => _explicitNullValueLikeCount; set { _explicitNullValueLikeCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("like_count"); else _explicitNullProperties?.Remove("like_count"); } }
+        private long? _explicitNullValueLikeCount = default!;
         /// <summary>Number of Lists that include this User.</summary>
-        public long? ListedCount { get; set; }
+        public long? ListedCount { get => _explicitNullValueListedCount; set { _explicitNullValueListedCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("listed_count"); else _explicitNullProperties?.Remove("listed_count"); } }
+        private long? _explicitNullValueListedCount = default!;
         /// <summary>Number of media items posted by this User.</summary>
-        public long? MediaCount { get; set; }
+        public long? MediaCount { get => _explicitNullValueMediaCount; set { _explicitNullValueMediaCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_count"); else _explicitNullProperties?.Remove("media_count"); } }
+        private long? _explicitNullValueMediaCount = default!;
         /// <summary>Number of Posts (including Reposts) created by this User.</summary>
-        public long? PostCount { get; set; }
+        public long? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
+        private long? _explicitNullValuePostCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics"/> and sets the default values.
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +92,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteLongValue("listed_count", ListedCount);
             writer.WriteLongValue("media_count", MediaCount);
             writer.WriteLongValue("post_count", PostCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

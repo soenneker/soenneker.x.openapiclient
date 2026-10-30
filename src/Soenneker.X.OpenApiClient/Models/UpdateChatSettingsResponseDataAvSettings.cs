@@ -11,19 +11,33 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class UpdateChatSettingsResponseDataAvSettings : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("av_call_permissions") is { } nullNodeAvCallPermissions && nullNodeAvCallPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvCallPermissions = null;
+            if (parseNode.GetChildNode("has_av_calls_enabled") is { } nullNodeHasAvCallsEnabled && nullNodeHasAvCallsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAvCallsEnabled = null;
+            if (parseNode.GetChildNode("has_enhanced_call_privacy_enabled") is { } nullNodeHasEnhancedCallPrivacyEnabled && nullNodeHasEnhancedCallPrivacyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasEnhancedCallPrivacyEnabled = null;
+        }
+
         /// <summary>The av_call_permissions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions? AvCallPermissions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions? AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions? _explicitNullValueAvCallPermissions = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions AvCallPermissions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions _explicitNullValueAvCallPermissions = default!;
 #endif
         /// <summary>Whether audio and video calls are enabled.</summary>
-        public bool? HasAvCallsEnabled { get; set; }
+        public bool? HasAvCallsEnabled { get => _explicitNullValueHasAvCallsEnabled; set { _explicitNullValueHasAvCallsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_av_calls_enabled"); else _explicitNullProperties?.Remove("has_av_calls_enabled"); } }
+        private bool? _explicitNullValueHasAvCallsEnabled = default!;
         /// <summary>Whether enhanced call privacy is enabled.</summary>
-        public bool? HasEnhancedCallPrivacyEnabled { get; set; }
+        public bool? HasEnhancedCallPrivacyEnabled { get => _explicitNullValueHasEnhancedCallPrivacyEnabled; set { _explicitNullValueHasEnhancedCallPrivacyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_enhanced_call_privacy_enabled"); else _explicitNullProperties?.Remove("has_enhanced_call_privacy_enabled"); } }
+        private bool? _explicitNullValueHasEnhancedCallPrivacyEnabled = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -32,7 +46,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -56,7 +70,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAvSettingsAvCallPermissions>("av_call_permissions", AvCallPermissions);
             writer.WriteBoolValue("has_av_calls_enabled", HasAvCallsEnabled);
-            writer.WriteBoolValue("has_enhanced_call_privacy_enabled", HasEnhancedCallPrivacyEnabled);
+            writer.WriteBoolValue("has_enhanced_call_privacy_enabled", HasEnhancedCallPrivacyEnabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

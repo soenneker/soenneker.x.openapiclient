@@ -11,22 +11,35 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ArticleCreateDraftContentState : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocks") is { } nullNodeBlocks && nullNodeBlocks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocks = null;
+            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+        }
+
         /// <summary>The text blocks that make up the article body.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks>? Blocks { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks>? Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks>? _explicitNullValueBlocks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks> Blocks { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks> Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks> _explicitNullValueBlocks = default!;
 #endif
         /// <summary>Non-text entities referenced by blocks (links, embedded posts, images, emoji,          markdown/code/tables, dividers, LaTeX). Full set matches article storage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>? Entities { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities> Entities { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities> Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities> _explicitNullValueEntities = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -36,7 +49,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentState CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentState();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentState(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -58,7 +71,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks>("blocks", Blocks);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>("entities", Entities);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>("entities", Entities);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

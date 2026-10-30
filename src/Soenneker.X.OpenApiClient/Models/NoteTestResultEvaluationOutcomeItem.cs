@@ -12,24 +12,37 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteTestResultEvaluationOutcomeItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evaluator_score_bucket") is { } nullNodeEvaluatorScoreBucket && nullNodeEvaluatorScoreBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorScoreBucket = null;
+            if (parseNode.GetChildNode("evaluator_type") is { } nullNodeEvaluatorType && nullNodeEvaluatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorType = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The score bucket the evaluator assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorScoreBucket { get; set; }
+        public string? EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
+        private string? _explicitNullValueEvaluatorScoreBucket = default!;
 #nullable restore
 #else
-        public string EvaluatorScoreBucket { get; set; }
+        public string EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
+        private string _explicitNullValueEvaluatorScoreBucket = default!;
 #endif
         /// <summary>The type of evaluator that produced this outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorType { get; set; }
+        public string? EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
+        private string? _explicitNullValueEvaluatorType = default!;
 #nullable restore
 #else
-        public string EvaluatorType { get; set; }
+        public string EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
+        private string _explicitNullValueEvaluatorType = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("evaluator_score_bucket", EvaluatorScoreBucket);
             writer.WriteStringValue("evaluator_type", EvaluatorType);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

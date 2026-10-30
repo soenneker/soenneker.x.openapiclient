@@ -11,24 +11,39 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePostsReply : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("auto_populate_reply_metadata") is { } nullNodeAutoPopulateReplyMetadata && nullNodeAutoPopulateReplyMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AutoPopulateReplyMetadata = null;
+            if (parseNode.GetChildNode("exclude_reply_user_ids") is { } nullNodeExcludeReplyUserIds && nullNodeExcludeReplyUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExcludeReplyUserIds = null;
+            if (parseNode.GetChildNode("in_reply_to_tweet_id") is { } nullNodeInReplyToTweetId && nullNodeInReplyToTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InReplyToTweetId = null;
+        }
+
         /// <summary>If true, reply metadata is automatically populated. Accepted for compatibility; it carries no backend argument and is dropped before the mutation is issued (see `translate_body`).</summary>
-        public bool? AutoPopulateReplyMetadata { get; set; }
+        public bool? AutoPopulateReplyMetadata { get => _explicitNullValueAutoPopulateReplyMetadata; set { _explicitNullValueAutoPopulateReplyMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auto_populate_reply_metadata"); else _explicitNullProperties?.Remove("auto_populate_reply_metadata"); } }
+        private bool? _explicitNullValueAutoPopulateReplyMetadata = default!;
         /// <summary>User IDs to exclude from the reply thread.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ExcludeReplyUserIds { get; set; }
+        public List<string>? ExcludeReplyUserIds { get => _explicitNullValueExcludeReplyUserIds; set { _explicitNullValueExcludeReplyUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_reply_user_ids"); else _explicitNullProperties?.Remove("exclude_reply_user_ids"); } }
+        private List<string>? _explicitNullValueExcludeReplyUserIds = default!;
 #nullable restore
 #else
-        public List<string> ExcludeReplyUserIds { get; set; }
+        public List<string> ExcludeReplyUserIds { get => _explicitNullValueExcludeReplyUserIds; set { _explicitNullValueExcludeReplyUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("exclude_reply_user_ids"); else _explicitNullProperties?.Remove("exclude_reply_user_ids"); } }
+        private List<string> _explicitNullValueExcludeReplyUserIds = default!;
 #endif
         /// <summary>The ID of the tweet being replied to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InReplyToTweetId { get; set; }
+        public string? InReplyToTweetId { get => _explicitNullValueInReplyToTweetId; set { _explicitNullValueInReplyToTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_reply_to_tweet_id"); else _explicitNullProperties?.Remove("in_reply_to_tweet_id"); } }
+        private string? _explicitNullValueInReplyToTweetId = default!;
 #nullable restore
 #else
-        public string InReplyToTweetId { get; set; }
+        public string InReplyToTweetId { get => _explicitNullValueInReplyToTweetId; set { _explicitNullValueInReplyToTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("in_reply_to_tweet_id"); else _explicitNullProperties?.Remove("in_reply_to_tweet_id"); } }
+        private string _explicitNullValueInReplyToTweetId = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreatePostsReply CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreatePostsReply();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreatePostsReply(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,7 +77,8 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("auto_populate_reply_metadata", AutoPopulateReplyMetadata);
             writer.WriteCollectionOfPrimitiveValues<string>("exclude_reply_user_ids", ExcludeReplyUserIds);
-            writer.WriteStringValue("in_reply_to_tweet_id", InReplyToTweetId);
+            writer.WriteStringValue("in_reply_to_tweet_id", InReplyToTweetId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

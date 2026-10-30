@@ -11,17 +11,29 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class GetRuleCountsResponseDataClientAppRulesCount : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_app_id") is { } nullNodeClientAppId && nullNodeClientAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppId = null;
+            if (parseNode.GetChildNode("rule_count") is { } nullNodeRuleCount && nullNodeRuleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleCount = null;
+        }
+
         /// <summary>Unique identifier of the client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppId { get; set; }
+        public string? ClientAppId { get => _explicitNullValueClientAppId; set { _explicitNullValueClientAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_id"); else _explicitNullProperties?.Remove("client_app_id"); } }
+        private string? _explicitNullValueClientAppId = default!;
 #nullable restore
 #else
-        public string ClientAppId { get; set; }
+        public string ClientAppId { get => _explicitNullValueClientAppId; set { _explicitNullValueClientAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_id"); else _explicitNullProperties?.Remove("client_app_id"); } }
+        private string _explicitNullValueClientAppId = default!;
 #endif
         /// <summary>Number of rules configured for the client application.</summary>
-        public int? RuleCount { get; set; }
+        public int? RuleCount { get => _explicitNullValueRuleCount; set { _explicitNullValueRuleCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rule_count"); else _explicitNullProperties?.Remove("rule_count"); } }
+        private int? _explicitNullValueRuleCount = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -30,7 +42,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client_app_id", ClientAppId);
-            writer.WriteIntValue("rule_count", RuleCount);
+            writer.WriteIntValue("rule_count", RuleCount);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

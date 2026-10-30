@@ -12,26 +12,43 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateChatConversationScreenCaptureRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("blocking") is { } nullNodeBlocking && nullNodeBlocking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blocking = null;
+            if (parseNode.GetChildNode("blocking_action_signatures") is { } nullNodeBlockingActionSignatures && nullNodeBlockingActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BlockingActionSignatures = null;
+            if (parseNode.GetChildNode("detection") is { } nullNodeDetection && nullNodeDetection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Detection = null;
+            if (parseNode.GetChildNode("detection_action_signatures") is { } nullNodeDetectionActionSignatures && nullNodeDetectionActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetectionActionSignatures = null;
+        }
+
         /// <summary>Whether participants are prevented from taking screenshots.</summary>
-        public bool? Blocking { get; set; }
+        public bool? Blocking { get => _explicitNullValueBlocking; set { _explicitNullValueBlocking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocking"); else _explicitNullProperties?.Remove("blocking"); } }
+        private bool? _explicitNullValueBlocking = default!;
         /// <summary>Signatures for the screenshot blocking change, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>? BlockingActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>? BlockingActionSignatures { get => _explicitNullValueBlockingActionSignatures; set { _explicitNullValueBlockingActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocking_action_signatures"); else _explicitNullProperties?.Remove("blocking_action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>? _explicitNullValueBlockingActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures> BlockingActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures> BlockingActionSignatures { get => _explicitNullValueBlockingActionSignatures; set { _explicitNullValueBlockingActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocking_action_signatures"); else _explicitNullProperties?.Remove("blocking_action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures> _explicitNullValueBlockingActionSignatures = default!;
 #endif
         /// <summary>Whether participants are notified when someone takes a screenshot.</summary>
-        public bool? Detection { get; set; }
+        public bool? Detection { get => _explicitNullValueDetection; set { _explicitNullValueDetection = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detection"); else _explicitNullProperties?.Remove("detection"); } }
+        private bool? _explicitNullValueDetection = default!;
         /// <summary>Signatures for the screenshot detection change, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>? DetectionActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>? DetectionActionSignatures { get => _explicitNullValueDetectionActionSignatures; set { _explicitNullValueDetectionActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detection_action_signatures"); else _explicitNullProperties?.Remove("detection_action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>? _explicitNullValueDetectionActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures> DetectionActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures> DetectionActionSignatures { get => _explicitNullValueDetectionActionSignatures; set { _explicitNullValueDetectionActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detection_action_signatures"); else _explicitNullProperties?.Remove("detection_action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures> _explicitNullValueDetectionActionSignatures = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -41,7 +58,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -67,7 +84,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("blocking", Blocking);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>("blocking_action_signatures", BlockingActionSignatures);
             writer.WriteBoolValue("detection", Detection);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>("detection_action_signatures", DetectionActionSignatures);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureDetectionActionSignatures>("detection_action_signatures", DetectionActionSignatures);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

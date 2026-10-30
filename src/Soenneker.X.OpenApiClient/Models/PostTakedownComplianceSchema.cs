@@ -11,34 +11,52 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PostTakedownComplianceSchema : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
+            if (parseNode.GetChildNode("quote_tweet_id") is { } nullNodeQuoteTweetId && nullNodeQuoteTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteTweetId = null;
+            if (parseNode.GetChildNode("tweet") is { } nullNodeTweet && nullNodeTweet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tweet = null;
+            if (parseNode.GetChildNode("withheld_in_countries") is { } nullNodeWithheldInCountries && nullNodeWithheldInCountries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WithheldInCountries = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event time.</summary>
-        public DateTimeOffset? EventAt { get; set; }
+        public DateTimeOffset? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
+        private DateTimeOffset? _explicitNullValueEventAt = default!;
         /// <summary>Unique identifier of a Post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuoteTweetId { get; set; }
+        public string? QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        private string? _explicitNullValueQuoteTweetId = default!;
 #nullable restore
 #else
-        public string QuoteTweetId { get; set; }
+        public string QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        private string _explicitNullValueQuoteTweetId = default!;
 #endif
         /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet? Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet? Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
+        private global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet? _explicitNullValueTweet = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet Tweet { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
+        private global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet _explicitNullValueTweet = default!;
 #endif
         /// <summary>The withheld_in_countries property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? WithheldInCountries { get; set; }
+        public List<string>? WithheldInCountries { get => _explicitNullValueWithheldInCountries; set { _explicitNullValueWithheldInCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("withheld_in_countries"); else _explicitNullProperties?.Remove("withheld_in_countries"); } }
+        private List<string>? _explicitNullValueWithheldInCountries = default!;
 #nullable restore
 #else
-        public List<string> WithheldInCountries { get; set; }
+        public List<string> WithheldInCountries { get => _explicitNullValueWithheldInCountries; set { _explicitNullValueWithheldInCountries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("withheld_in_countries"); else _explicitNullProperties?.Remove("withheld_in_countries"); } }
+        private List<string> _explicitNullValueWithheldInCountries = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchema"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchema CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchema();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchema(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("quote_tweet_id", QuoteTweetId);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.PostTakedownComplianceSchemaTweet>("tweet", Tweet);
             writer.WriteCollectionOfPrimitiveValues<string>("withheld_in_countries", WithheldInCountries);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

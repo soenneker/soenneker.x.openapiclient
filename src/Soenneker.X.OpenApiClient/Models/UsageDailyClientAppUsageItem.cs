@@ -12,27 +12,42 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UsageDailyClientAppUsageItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("client_app_id") is { } nullNodeClientAppId && nullNodeClientAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppId = null;
+            if (parseNode.GetChildNode("usage") is { } nullNodeUsage && nullNodeUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Usage = null;
+            if (parseNode.GetChildNode("usage_result_count") is { } nullNodeUsageResultCount && nullNodeUsageResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UsageResultCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique identifier of the client app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientAppId { get; set; }
+        public string? ClientAppId { get => _explicitNullValueClientAppId; set { _explicitNullValueClientAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_id"); else _explicitNullProperties?.Remove("client_app_id"); } }
+        private string? _explicitNullValueClientAppId = default!;
 #nullable restore
 #else
-        public string ClientAppId { get; set; }
+        public string ClientAppId { get => _explicitNullValueClientAppId; set { _explicitNullValueClientAppId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_id"); else _explicitNullProperties?.Remove("client_app_id"); } }
+        private string _explicitNullValueClientAppId = default!;
 #endif
         /// <summary>Daily usage entries for this client app.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem>? Usage { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem>? Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem>? _explicitNullValueUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem> Usage { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem> Usage { get => _explicitNullValueUsage; set { _explicitNullValueUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage"); else _explicitNullProperties?.Remove("usage"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem> _explicitNullValueUsage = default!;
 #endif
         /// <summary>Number of daily usage entries returned for this client app.</summary>
-        public long? UsageResultCount { get; set; }
+        public long? UsageResultCount { get => _explicitNullValueUsageResultCount; set { _explicitNullValueUsageResultCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("usage_result_count"); else _explicitNullProperties?.Remove("usage_result_count"); } }
+        private long? _explicitNullValueUsageResultCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem"/> and sets the default values.
         /// </summary>
@@ -48,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,6 +88,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("client_app_id", ClientAppId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItemUsageItem>("usage", Usage);
             writer.WriteLongValue("usage_result_count", UsageResultCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

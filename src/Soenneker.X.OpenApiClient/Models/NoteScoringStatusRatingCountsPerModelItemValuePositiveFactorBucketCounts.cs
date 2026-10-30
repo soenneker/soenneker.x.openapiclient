@@ -12,31 +12,50 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("helpful_count") is { } nullNodeHelpfulCount && nullNodeHelpfulCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HelpfulCount = null;
+            if (parseNode.GetChildNode("helpful_tag_counts") is { } nullNodeHelpfulTagCounts && nullNodeHelpfulTagCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HelpfulTagCounts = null;
+            if (parseNode.GetChildNode("not_helpful_count") is { } nullNodeNotHelpfulCount && nullNodeNotHelpfulCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotHelpfulCount = null;
+            if (parseNode.GetChildNode("not_helpful_tag_counts") is { } nullNodeNotHelpfulTagCounts && nullNodeNotHelpfulTagCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotHelpfulTagCounts = null;
+            if (parseNode.GetChildNode("somewhat_helpful_count") is { } nullNodeSomewhatHelpfulCount && nullNodeSomewhatHelpfulCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SomewhatHelpfulCount = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The helpful_count property</summary>
-        public long? HelpfulCount { get; set; }
+        public long? HelpfulCount { get => _explicitNullValueHelpfulCount; set { _explicitNullValueHelpfulCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("helpful_count"); else _explicitNullProperties?.Remove("helpful_count"); } }
+        private long? _explicitNullValueHelpfulCount = default!;
         /// <summary>The helpful_tag_counts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem>? HelpfulTagCounts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem>? HelpfulTagCounts { get => _explicitNullValueHelpfulTagCounts; set { _explicitNullValueHelpfulTagCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("helpful_tag_counts"); else _explicitNullProperties?.Remove("helpful_tag_counts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem>? _explicitNullValueHelpfulTagCounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem> HelpfulTagCounts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem> HelpfulTagCounts { get => _explicitNullValueHelpfulTagCounts; set { _explicitNullValueHelpfulTagCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("helpful_tag_counts"); else _explicitNullProperties?.Remove("helpful_tag_counts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsHelpfulTagCountsItem> _explicitNullValueHelpfulTagCounts = default!;
 #endif
         /// <summary>The not_helpful_count property</summary>
-        public long? NotHelpfulCount { get; set; }
+        public long? NotHelpfulCount { get => _explicitNullValueNotHelpfulCount; set { _explicitNullValueNotHelpfulCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_helpful_count"); else _explicitNullProperties?.Remove("not_helpful_count"); } }
+        private long? _explicitNullValueNotHelpfulCount = default!;
         /// <summary>The not_helpful_tag_counts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem>? NotHelpfulTagCounts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem>? NotHelpfulTagCounts { get => _explicitNullValueNotHelpfulTagCounts; set { _explicitNullValueNotHelpfulTagCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_helpful_tag_counts"); else _explicitNullProperties?.Remove("not_helpful_tag_counts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem>? _explicitNullValueNotHelpfulTagCounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem> NotHelpfulTagCounts { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem> NotHelpfulTagCounts { get => _explicitNullValueNotHelpfulTagCounts; set { _explicitNullValueNotHelpfulTagCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("not_helpful_tag_counts"); else _explicitNullProperties?.Remove("not_helpful_tag_counts"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem> _explicitNullValueNotHelpfulTagCounts = default!;
 #endif
         /// <summary>The somewhat_helpful_count property</summary>
-        public long? SomewhatHelpfulCount { get; set; }
+        public long? SomewhatHelpfulCount { get => _explicitNullValueSomewhatHelpfulCount; set { _explicitNullValueSomewhatHelpfulCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("somewhat_helpful_count"); else _explicitNullProperties?.Remove("somewhat_helpful_count"); } }
+        private long? _explicitNullValueSomewhatHelpfulCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts"/> and sets the default values.
         /// </summary>
@@ -52,7 +71,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -81,6 +102,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteLongValue("not_helpful_count", NotHelpfulCount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCountsNotHelpfulTagCountsItem>("not_helpful_tag_counts", NotHelpfulTagCounts);
             writer.WriteLongValue("somewhat_helpful_count", SomewhatHelpfulCount);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

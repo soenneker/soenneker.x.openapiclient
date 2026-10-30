@@ -12,49 +12,96 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AnalyticsTimestampedMetricsItemMetrics : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("app_install_attempts") is { } nullNodeAppInstallAttempts && nullNodeAppInstallAttempts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppInstallAttempts = null;
+            if (parseNode.GetChildNode("app_opens") is { } nullNodeAppOpens && nullNodeAppOpens.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppOpens = null;
+            if (parseNode.GetChildNode("bookmarks") is { } nullNodeBookmarks && nullNodeBookmarks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarks = null;
+            if (parseNode.GetChildNode("detail_expands") is { } nullNodeDetailExpands && nullNodeDetailExpands.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetailExpands = null;
+            if (parseNode.GetChildNode("email_tweet") is { } nullNodeEmailTweet && nullNodeEmailTweet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EmailTweet = null;
+            if (parseNode.GetChildNode("engagements") is { } nullNodeEngagements && nullNodeEngagements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Engagements = null;
+            if (parseNode.GetChildNode("follows") is { } nullNodeFollows && nullNodeFollows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Follows = null;
+            if (parseNode.GetChildNode("hashtag_clicks") is { } nullNodeHashtagClicks && nullNodeHashtagClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HashtagClicks = null;
+            if (parseNode.GetChildNode("impressions") is { } nullNodeImpressions && nullNodeImpressions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Impressions = null;
+            if (parseNode.GetChildNode("likes") is { } nullNodeLikes && nullNodeLikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Likes = null;
+            if (parseNode.GetChildNode("media_views") is { } nullNodeMediaViews && nullNodeMediaViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaViews = null;
+            if (parseNode.GetChildNode("permalink_clicks") is { } nullNodePermalinkClicks && nullNodePermalinkClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PermalinkClicks = null;
+            if (parseNode.GetChildNode("quote_tweets") is { } nullNodeQuoteTweets && nullNodeQuoteTweets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteTweets = null;
+            if (parseNode.GetChildNode("replies") is { } nullNodeReplies && nullNodeReplies.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Replies = null;
+            if (parseNode.GetChildNode("retweets") is { } nullNodeRetweets && nullNodeRetweets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retweets = null;
+            if (parseNode.GetChildNode("shares") is { } nullNodeShares && nullNodeShares.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shares = null;
+            if (parseNode.GetChildNode("unfollows") is { } nullNodeUnfollows && nullNodeUnfollows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unfollows = null;
+            if (parseNode.GetChildNode("unlikes") is { } nullNodeUnlikes && nullNodeUnlikes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Unlikes = null;
+            if (parseNode.GetChildNode("url_clicks") is { } nullNodeUrlClicks && nullNodeUrlClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UrlClicks = null;
+            if (parseNode.GetChildNode("user_profile_clicks") is { } nullNodeUserProfileClicks && nullNodeUserProfileClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserProfileClicks = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The app_install_attempts property</summary>
-        public long? AppInstallAttempts { get; set; }
+        public long? AppInstallAttempts { get => _explicitNullValueAppInstallAttempts; set { _explicitNullValueAppInstallAttempts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_install_attempts"); else _explicitNullProperties?.Remove("app_install_attempts"); } }
+        private long? _explicitNullValueAppInstallAttempts = default!;
         /// <summary>The app_opens property</summary>
-        public long? AppOpens { get; set; }
+        public long? AppOpens { get => _explicitNullValueAppOpens; set { _explicitNullValueAppOpens = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("app_opens"); else _explicitNullProperties?.Remove("app_opens"); } }
+        private long? _explicitNullValueAppOpens = default!;
         /// <summary>The bookmarks property</summary>
-        public long? Bookmarks { get; set; }
+        public long? Bookmarks { get => _explicitNullValueBookmarks; set { _explicitNullValueBookmarks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarks"); else _explicitNullProperties?.Remove("bookmarks"); } }
+        private long? _explicitNullValueBookmarks = default!;
         /// <summary>The detail_expands property</summary>
-        public long? DetailExpands { get; set; }
+        public long? DetailExpands { get => _explicitNullValueDetailExpands; set { _explicitNullValueDetailExpands = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detail_expands"); else _explicitNullProperties?.Remove("detail_expands"); } }
+        private long? _explicitNullValueDetailExpands = default!;
         /// <summary>The email_tweet property</summary>
-        public long? EmailTweet { get; set; }
+        public long? EmailTweet { get => _explicitNullValueEmailTweet; set { _explicitNullValueEmailTweet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email_tweet"); else _explicitNullProperties?.Remove("email_tweet"); } }
+        private long? _explicitNullValueEmailTweet = default!;
         /// <summary>The engagements property</summary>
-        public long? Engagements { get; set; }
+        public long? Engagements { get => _explicitNullValueEngagements; set { _explicitNullValueEngagements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("engagements"); else _explicitNullProperties?.Remove("engagements"); } }
+        private long? _explicitNullValueEngagements = default!;
         /// <summary>The follows property</summary>
-        public long? Follows { get; set; }
+        public long? Follows { get => _explicitNullValueFollows; set { _explicitNullValueFollows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("follows"); else _explicitNullProperties?.Remove("follows"); } }
+        private long? _explicitNullValueFollows = default!;
         /// <summary>The hashtag_clicks property</summary>
-        public long? HashtagClicks { get; set; }
+        public long? HashtagClicks { get => _explicitNullValueHashtagClicks; set { _explicitNullValueHashtagClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtag_clicks"); else _explicitNullProperties?.Remove("hashtag_clicks"); } }
+        private long? _explicitNullValueHashtagClicks = default!;
         /// <summary>The impressions property</summary>
-        public long? Impressions { get; set; }
+        public long? Impressions { get => _explicitNullValueImpressions; set { _explicitNullValueImpressions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("impressions"); else _explicitNullProperties?.Remove("impressions"); } }
+        private long? _explicitNullValueImpressions = default!;
         /// <summary>The likes property</summary>
-        public long? Likes { get; set; }
+        public long? Likes { get => _explicitNullValueLikes; set { _explicitNullValueLikes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("likes"); else _explicitNullProperties?.Remove("likes"); } }
+        private long? _explicitNullValueLikes = default!;
         /// <summary>The media_views property</summary>
-        public long? MediaViews { get; set; }
+        public long? MediaViews { get => _explicitNullValueMediaViews; set { _explicitNullValueMediaViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_views"); else _explicitNullProperties?.Remove("media_views"); } }
+        private long? _explicitNullValueMediaViews = default!;
         /// <summary>The permalink_clicks property</summary>
-        public long? PermalinkClicks { get; set; }
+        public long? PermalinkClicks { get => _explicitNullValuePermalinkClicks; set { _explicitNullValuePermalinkClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permalink_clicks"); else _explicitNullProperties?.Remove("permalink_clicks"); } }
+        private long? _explicitNullValuePermalinkClicks = default!;
         /// <summary>The quote_tweets property</summary>
-        public long? QuoteTweets { get; set; }
+        public long? QuoteTweets { get => _explicitNullValueQuoteTweets; set { _explicitNullValueQuoteTweets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweets"); else _explicitNullProperties?.Remove("quote_tweets"); } }
+        private long? _explicitNullValueQuoteTweets = default!;
         /// <summary>The replies property</summary>
-        public long? Replies { get; set; }
+        public long? Replies { get => _explicitNullValueReplies; set { _explicitNullValueReplies = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("replies"); else _explicitNullProperties?.Remove("replies"); } }
+        private long? _explicitNullValueReplies = default!;
         /// <summary>The retweets property</summary>
-        public long? Retweets { get; set; }
+        public long? Retweets { get => _explicitNullValueRetweets; set { _explicitNullValueRetweets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retweets"); else _explicitNullProperties?.Remove("retweets"); } }
+        private long? _explicitNullValueRetweets = default!;
         /// <summary>The shares property</summary>
-        public long? Shares { get; set; }
+        public long? Shares { get => _explicitNullValueShares; set { _explicitNullValueShares = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shares"); else _explicitNullProperties?.Remove("shares"); } }
+        private long? _explicitNullValueShares = default!;
         /// <summary>The unfollows property</summary>
-        public long? Unfollows { get; set; }
+        public long? Unfollows { get => _explicitNullValueUnfollows; set { _explicitNullValueUnfollows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unfollows"); else _explicitNullProperties?.Remove("unfollows"); } }
+        private long? _explicitNullValueUnfollows = default!;
         /// <summary>The unlikes property</summary>
-        public long? Unlikes { get; set; }
+        public long? Unlikes { get => _explicitNullValueUnlikes; set { _explicitNullValueUnlikes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unlikes"); else _explicitNullProperties?.Remove("unlikes"); } }
+        private long? _explicitNullValueUnlikes = default!;
         /// <summary>The url_clicks property</summary>
-        public long? UrlClicks { get; set; }
+        public long? UrlClicks { get => _explicitNullValueUrlClicks; set { _explicitNullValueUrlClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url_clicks"); else _explicitNullProperties?.Remove("url_clicks"); } }
+        private long? _explicitNullValueUrlClicks = default!;
         /// <summary>The user_profile_clicks property</summary>
-        public long? UserProfileClicks { get; set; }
+        public long? UserProfileClicks { get => _explicitNullValueUserProfileClicks; set { _explicitNullValueUserProfileClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_profile_clicks"); else _explicitNullProperties?.Remove("user_profile_clicks"); } }
+        private long? _explicitNullValueUserProfileClicks = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItemMetrics"/> and sets the default values.
         /// </summary>
@@ -70,7 +117,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItemMetrics CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItemMetrics();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.AnalyticsTimestampedMetricsItemMetrics(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -129,6 +178,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteLongValue("unlikes", Unlikes);
             writer.WriteLongValue("url_clicks", UrlClicks);
             writer.WriteLongValue("user_profile_clicks", UserProfileClicks);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

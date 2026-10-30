@@ -11,48 +11,70 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SendChatMessageRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversation_token") is { } nullNodeConversationToken && nullNodeConversationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationToken = null;
+            if (parseNode.GetChildNode("encoded_message_create_event") is { } nullNodeEncodedMessageCreateEvent && nullNodeEncodedMessageCreateEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedMessageCreateEvent = null;
+            if (parseNode.GetChildNode("encoded_message_event_signature") is { } nullNodeEncodedMessageEventSignature && nullNodeEncodedMessageEventSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedMessageEventSignature = null;
+            if (parseNode.GetChildNode("message_id") is { } nullNodeMessageId && nullNodeMessageId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageId = null;
+            if (parseNode.GetChildNode("xdk_version") is { } nullNodeXdkVersion && nullNodeXdkVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) XdkVersion = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional conversation token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationToken { get; set; }
+        public string? ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        private string? _explicitNullValueConversationToken = default!;
 #nullable restore
 #else
-        public string ConversationToken { get; set; }
+        public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        private string _explicitNullValueConversationToken = default!;
 #endif
         /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncodedMessageCreateEvent { get; set; }
+        public string? EncodedMessageCreateEvent { get => _explicitNullValueEncodedMessageCreateEvent; set { _explicitNullValueEncodedMessageCreateEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_create_event"); else _explicitNullProperties?.Remove("encoded_message_create_event"); } }
+        private string? _explicitNullValueEncodedMessageCreateEvent = default!;
 #nullable restore
 #else
-        public string EncodedMessageCreateEvent { get; set; }
+        public string EncodedMessageCreateEvent { get => _explicitNullValueEncodedMessageCreateEvent; set { _explicitNullValueEncodedMessageCreateEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_create_event"); else _explicitNullProperties?.Remove("encoded_message_create_event"); } }
+        private string _explicitNullValueEncodedMessageCreateEvent = default!;
 #endif
         /// <summary>Base64-encoded Thrift MessageEventSignature for message verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncodedMessageEventSignature { get; set; }
+        public string? EncodedMessageEventSignature { get => _explicitNullValueEncodedMessageEventSignature; set { _explicitNullValueEncodedMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_event_signature"); else _explicitNullProperties?.Remove("encoded_message_event_signature"); } }
+        private string? _explicitNullValueEncodedMessageEventSignature = default!;
 #nullable restore
 #else
-        public string EncodedMessageEventSignature { get; set; }
+        public string EncodedMessageEventSignature { get => _explicitNullValueEncodedMessageEventSignature; set { _explicitNullValueEncodedMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_event_signature"); else _explicitNullProperties?.Remove("encoded_message_event_signature"); } }
+        private string _explicitNullValueEncodedMessageEventSignature = default!;
 #endif
         /// <summary>Unique identifier for this message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageId { get; set; }
+        public string? MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string? _explicitNullValueMessageId = default!;
 #nullable restore
 #else
-        public string MessageId { get; set; }
+        public string MessageId { get => _explicitNullValueMessageId; set { _explicitNullValueMessageId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_id"); else _explicitNullProperties?.Remove("message_id"); } }
+        private string _explicitNullValueMessageId = default!;
 #endif
         /// <summary>Version of the Chat XDK that produced the payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? XdkVersion { get; set; }
+        public string? XdkVersion { get => _explicitNullValueXdkVersion; set { _explicitNullValueXdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xdk_version"); else _explicitNullProperties?.Remove("xdk_version"); } }
+        private string? _explicitNullValueXdkVersion = default!;
 #nullable restore
 #else
-        public string XdkVersion { get; set; }
+        public string XdkVersion { get => _explicitNullValueXdkVersion; set { _explicitNullValueXdkVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("xdk_version"); else _explicitNullProperties?.Remove("xdk_version"); } }
+        private string _explicitNullValueXdkVersion = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.SendChatMessageRequest"/> and sets the default values.
@@ -69,7 +91,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.SendChatMessageRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.SendChatMessageRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.SendChatMessageRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -98,6 +120,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("encoded_message_event_signature", EncodedMessageEventSignature);
             writer.WriteStringValue("message_id", MessageId);
             writer.WriteStringValue("xdk_version", XdkVersion);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

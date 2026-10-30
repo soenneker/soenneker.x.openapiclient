@@ -12,23 +12,41 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateChatSettingsRequest : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("allow_dms_from") is { } nullNodeAllowDmsFrom && nullNodeAllowDmsFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDmsFrom = null;
+            if (parseNode.GetChildNode("always_allow_dms_from_subscribers") is { } nullNodeAlwaysAllowDmsFromSubscribers && nullNodeAlwaysAllowDmsFromSubscribers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlwaysAllowDmsFromSubscribers = null;
+            if (parseNode.GetChildNode("av_settings") is { } nullNodeAvSettings && nullNodeAvSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvSettings = null;
+            if (parseNode.GetChildNode("dm_quality_filter") is { } nullNodeDmQualityFilter && nullNodeDmQualityFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmQualityFilter = null;
+            if (parseNode.GetChildNode("dm_receipt_settings") is { } nullNodeDmReceiptSettings && nullNodeDmReceiptSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmReceiptSettings = null;
+        }
+
         /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows).</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom? AllowDmsFrom { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom? AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom? _explicitNullValueAllowDmsFrom = default!;
         /// <summary>Whether the user&apos;s subscribers can always message them regardless of allow_dms_from.</summary>
-        public bool? AlwaysAllowDmsFromSubscribers { get; set; }
+        public bool? AlwaysAllowDmsFromSubscribers { get => _explicitNullValueAlwaysAllowDmsFromSubscribers; set { _explicitNullValueAlwaysAllowDmsFromSubscribers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always_allow_dms_from_subscribers"); else _explicitNullProperties?.Remove("always_allow_dms_from_subscribers"); } }
+        private bool? _explicitNullValueAlwaysAllowDmsFromSubscribers = default!;
         /// <summary>The av_settings property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings? AvSettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings? AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings? _explicitNullValueAvSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings AvSettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings _explicitNullValueAvSettings = default!;
 #endif
         /// <summary>Low-quality message request filter: `enabled` (low-quality requests go to a separate folder) or `disabled` (all requests stay in the main inbox).</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmQualityFilter? DmQualityFilter { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmQualityFilter? DmQualityFilter { get => _explicitNullValueDmQualityFilter; set { _explicitNullValueDmQualityFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_quality_filter"); else _explicitNullProperties?.Remove("dm_quality_filter"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmQualityFilter? _explicitNullValueDmQualityFilter = default!;
         /// <summary>Read receipts: `all_enabled` (send and receive read receipts) or `all_disabled` (neither).</summary>
-        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmReceiptSettings? DmReceiptSettings { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmReceiptSettings? DmReceiptSettings { get => _explicitNullValueDmReceiptSettings; set { _explicitNullValueDmReceiptSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_receipt_settings"); else _explicitNullProperties?.Remove("dm_receipt_settings"); } }
+        private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmReceiptSettings? _explicitNullValueDmReceiptSettings = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -37,7 +55,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -65,7 +83,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("always_allow_dms_from_subscribers", AlwaysAllowDmsFromSubscribers);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsAvSettings>("av_settings", AvSettings);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmQualityFilter>("dm_quality_filter", DmQualityFilter);
-            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmReceiptSettings>("dm_receipt_settings", DmReceiptSettings);
+            writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestDmReceiptSettings>("dm_receipt_settings", DmReceiptSettings);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

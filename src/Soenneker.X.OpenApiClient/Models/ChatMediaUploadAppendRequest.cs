@@ -11,33 +11,51 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChatMediaUploadAppendRequest : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("media") is { } nullNodeMedia && nullNodeMedia.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Media = null;
+            if (parseNode.GetChildNode("media_hash_key") is { } nullNodeMediaHashKey && nullNodeMediaHashKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaHashKey = null;
+            if (parseNode.GetChildNode("segment_index") is { } nullNodeSegmentIndex && nullNodeSegmentIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIndex = null;
+        }
+
         /// <summary>The XChat conversation the upload belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The media segment bytes: base64-encoded in JSON bodies, raw bytes in multipart bodies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia? Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia? _explicitNullValueMedia = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia Media { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia _explicitNullValueMedia = default!;
 #endif
         /// <summary>The media hash key returned by the initialize step.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaHashKey { get; set; }
+        public string? MediaHashKey { get => _explicitNullValueMediaHashKey; set { _explicitNullValueMediaHashKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_key"); else _explicitNullProperties?.Remove("media_hash_key"); } }
+        private string? _explicitNullValueMediaHashKey = default!;
 #nullable restore
 #else
-        public string MediaHashKey { get; set; }
+        public string MediaHashKey { get => _explicitNullValueMediaHashKey; set { _explicitNullValueMediaHashKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_key"); else _explicitNullProperties?.Remove("media_hash_key"); } }
+        private string _explicitNullValueMediaHashKey = default!;
 #endif
         /// <summary>The index of this segment in the upload sequence.</summary>
-        public int? SegmentIndex { get; set; }
+        public int? SegmentIndex { get => _explicitNullValueSegmentIndex; set { _explicitNullValueSegmentIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_index"); else _explicitNullProperties?.Remove("segment_index"); } }
+        private int? _explicitNullValueSegmentIndex = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -46,7 +64,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,7 +90,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("conversation_id", ConversationId);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ChatMediaUploadAppendRequestMedia>("media", Media);
             writer.WriteStringValue("media_hash_key", MediaHashKey);
-            writer.WriteIntValue("segment_index", SegmentIndex);
+            writer.WriteIntValue("segment_index", SegmentIndex);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

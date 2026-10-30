@@ -11,40 +11,59 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AddConversationKeysRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("base64_encoded_key_rotation") is { } nullNodeBase64EncodedKeyRotation && nullNodeBase64EncodedKeyRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedKeyRotation = null;
+            if (parseNode.GetChildNode("conversation_key_version") is { } nullNodeConversationKeyVersion && nullNodeConversationKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyVersion = null;
+            if (parseNode.GetChildNode("conversation_participant_keys") is { } nullNodeConversationParticipantKeys && nullNodeConversationParticipantKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationParticipantKeys = null;
+        }
+
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures>? ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures> ActionSignatures { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64-encoded key rotation payload for ratchet tree key management.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base64EncodedKeyRotation { get; set; }
+        public string? Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
+        private string? _explicitNullValueBase64EncodedKeyRotation = default!;
 #nullable restore
 #else
-        public string Base64EncodedKeyRotation { get; set; }
+        public string Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
+        private string _explicitNullValueBase64EncodedKeyRotation = default!;
 #endif
         /// <summary>Version of the conversation encryption key (typically a timestamp in milliseconds).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationKeyVersion { get; set; }
+        public string? ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        private string? _explicitNullValueConversationKeyVersion = default!;
 #nullable restore
 #else
-        public string ConversationKeyVersion { get; set; }
+        public string ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        private string _explicitNullValueConversationKeyVersion = default!;
 #endif
         /// <summary>Encrypted conversation keys for each participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys>? ConversationParticipantKeys { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys>? ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys>? _explicitNullValueConversationParticipantKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys> ConversationParticipantKeys { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys> ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys> _explicitNullValueConversationParticipantKeys = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.AddConversationKeysRequest"/> and sets the default values.
@@ -61,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.AddConversationKeysRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.AddConversationKeysRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.AddConversationKeysRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -88,6 +107,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("base64_encoded_key_rotation", Base64EncodedKeyRotation);
             writer.WriteStringValue("conversation_key_version", ConversationKeyVersion);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysConversationParticipantKeys>("conversation_participant_keys", ConversationParticipantKeys);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

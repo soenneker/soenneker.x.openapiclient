@@ -11,56 +11,83 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreatePostsMedia : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("call_to_actions") is { } nullNodeCallToActions && nullNodeCallToActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CallToActions = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("embeddable") is { } nullNodeEmbeddable && nullNodeEmbeddable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Embeddable = null;
+            if (parseNode.GetChildNode("media_ids") is { } nullNodeMediaIds && nullNodeMediaIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaIds = null;
+            if (parseNode.GetChildNode("preview_media_id") is { } nullNodePreviewMediaId && nullNodePreviewMediaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewMediaId = null;
+            if (parseNode.GetChildNode("tagged_user_ids") is { } nullNodeTaggedUserIds && nullNodeTaggedUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaggedUserIds = null;
+            if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
+        }
+
         /// <summary>The call_to_actions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions? CallToActions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions? CallToActions { get => _explicitNullValueCallToActions; set { _explicitNullValueCallToActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_actions"); else _explicitNullProperties?.Remove("call_to_actions"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions? _explicitNullValueCallToActions = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions CallToActions { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions CallToActions { get => _explicitNullValueCallToActions; set { _explicitNullValueCallToActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("call_to_actions"); else _explicitNullProperties?.Remove("call_to_actions"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsMediaCallToActions _explicitNullValueCallToActions = default!;
 #endif
         /// <summary>Description for the media, rendered on the Post card for video and Amplify content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>When true, the media&apos;s asset URLs do not expire and external syndicated playback is allowed.</summary>
-        public bool? Embeddable { get; set; }
+        public bool? Embeddable { get => _explicitNullValueEmbeddable; set { _explicitNullValueEmbeddable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embeddable"); else _explicitNullProperties?.Remove("embeddable"); } }
+        private bool? _explicitNullValueEmbeddable = default!;
         /// <summary>Media IDs to attach to the tweet.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaIds { get; set; }
+        public List<string>? MediaIds { get => _explicitNullValueMediaIds; set { _explicitNullValueMediaIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_ids"); else _explicitNullProperties?.Remove("media_ids"); } }
+        private List<string>? _explicitNullValueMediaIds = default!;
 #nullable restore
 #else
-        public List<string> MediaIds { get; set; }
+        public List<string> MediaIds { get => _explicitNullValueMediaIds; set { _explicitNullValueMediaIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_ids"); else _explicitNullProperties?.Remove("media_ids"); } }
+        private List<string> _explicitNullValueMediaIds = default!;
 #endif
         /// <summary>Media id whose asset is used as the preview image.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewMediaId { get; set; }
+        public string? PreviewMediaId { get => _explicitNullValuePreviewMediaId; set { _explicitNullValuePreviewMediaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_media_id"); else _explicitNullProperties?.Remove("preview_media_id"); } }
+        private string? _explicitNullValuePreviewMediaId = default!;
 #nullable restore
 #else
-        public string PreviewMediaId { get; set; }
+        public string PreviewMediaId { get => _explicitNullValuePreviewMediaId; set { _explicitNullValuePreviewMediaId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_media_id"); else _explicitNullProperties?.Remove("preview_media_id"); } }
+        private string _explicitNullValuePreviewMediaId = default!;
 #endif
         /// <summary>User IDs tagged in the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TaggedUserIds { get; set; }
+        public List<string>? TaggedUserIds { get => _explicitNullValueTaggedUserIds; set { _explicitNullValueTaggedUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tagged_user_ids"); else _explicitNullProperties?.Remove("tagged_user_ids"); } }
+        private List<string>? _explicitNullValueTaggedUserIds = default!;
 #nullable restore
 #else
-        public List<string> TaggedUserIds { get; set; }
+        public List<string> TaggedUserIds { get => _explicitNullValueTaggedUserIds; set { _explicitNullValueTaggedUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tagged_user_ids"); else _explicitNullProperties?.Remove("tagged_user_ids"); } }
+        private List<string> _explicitNullValueTaggedUserIds = default!;
 #endif
         /// <summary>Title for the media, rendered on the Post card for video and Amplify content.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Title { get; set; }
+        public string? Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string? _explicitNullValueTitle = default!;
 #nullable restore
 #else
-        public string Title { get; set; }
+        public string Title { get => _explicitNullValueTitle; set { _explicitNullValueTitle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("title"); else _explicitNullProperties?.Remove("title"); } }
+        private string _explicitNullValueTitle = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,7 +97,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreatePostsMedia(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,7 +129,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("media_ids", MediaIds);
             writer.WriteStringValue("preview_media_id", PreviewMediaId);
             writer.WriteCollectionOfPrimitiveValues<string>("tagged_user_ids", TaggedUserIds);
-            writer.WriteStringValue("title", Title);
+            writer.WriteStringValue("title", Title);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

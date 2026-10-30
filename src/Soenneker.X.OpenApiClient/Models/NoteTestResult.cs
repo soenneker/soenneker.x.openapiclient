@@ -12,16 +12,26 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteTestResult : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("evaluation_outcome") is { } nullNodeEvaluationOutcome && nullNodeEvaluationOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluationOutcome = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Per-evaluator outcomes for the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem>? EvaluationOutcome { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem>? EvaluationOutcome { get => _explicitNullValueEvaluationOutcome; set { _explicitNullValueEvaluationOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_outcome"); else _explicitNullProperties?.Remove("evaluation_outcome"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem>? _explicitNullValueEvaluationOutcome = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem> EvaluationOutcome { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem> EvaluationOutcome { get => _explicitNullValueEvaluationOutcome; set { _explicitNullValueEvaluationOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluation_outcome"); else _explicitNullProperties?.Remove("evaluation_outcome"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem> _explicitNullValueEvaluationOutcome = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteTestResult"/> and sets the default values.
@@ -38,7 +48,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.NoteTestResult CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.NoteTestResult();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NoteTestResult(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,6 +69,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NoteTestResultEvaluationOutcomeItem>("evaluation_outcome", EvaluationOutcome);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

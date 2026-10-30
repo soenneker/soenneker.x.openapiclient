@@ -11,50 +11,74 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class ChatMessageRequestDetail : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("conversation_key_events") is { } nullNodeConversationKeyEvents && nullNodeConversationKeyEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyEvents = null;
+            if (parseNode.GetChildNode("has_more_events") is { } nullNodeHasMoreEvents && nullNodeHasMoreEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMoreEvents = null;
+            if (parseNode.GetChildNode("message_events") is { } nullNodeMessageEvents && nullNodeMessageEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageEvents = null;
+            if (parseNode.GetChildNode("message_request_state") is { } nullNodeMessageRequestState && nullNodeMessageRequestState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageRequestState = null;
+            if (parseNode.GetChildNode("participant_id") is { } nullNodeParticipantId && nullNodeParticipantId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ParticipantId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The 1:1 conversation ID: both user IDs joined by a hyphen.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get; set; }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get; set; }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The conversation key change events needed to decrypt `message_events`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConversationKeyEvents { get; set; }
+        public List<string>? ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
+        private List<string>? _explicitNullValueConversationKeyEvents = default!;
 #nullable restore
 #else
-        public List<string> ConversationKeyEvents { get; set; }
+        public List<string> ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
+        private List<string> _explicitNullValueConversationKeyEvents = default!;
 #endif
         /// <summary>Whether older message events may exist. Always `true` when `message_events` isn&apos;t empty.</summary>
-        public bool? HasMoreEvents { get; set; }
+        public bool? HasMoreEvents { get => _explicitNullValueHasMoreEvents; set { _explicitNullValueHasMoreEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more_events"); else _explicitNullProperties?.Remove("has_more_events"); } }
+        private bool? _explicitNullValueHasMoreEvents = default!;
         /// <summary>The newest message events, newest first, as encoded message events. Their contents are end-to-end encrypted unless the conversation is unencrypted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MessageEvents { get; set; }
+        public List<string>? MessageEvents { get => _explicitNullValueMessageEvents; set { _explicitNullValueMessageEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_events"); else _explicitNullProperties?.Remove("message_events"); } }
+        private List<string>? _explicitNullValueMessageEvents = default!;
 #nullable restore
 #else
-        public List<string> MessageEvents { get; set; }
+        public List<string> MessageEvents { get => _explicitNullValueMessageEvents; set { _explicitNullValueMessageEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_events"); else _explicitNullProperties?.Remove("message_events"); } }
+        private List<string> _explicitNullValueMessageEvents = default!;
 #endif
         /// <summary>`received` while the other user&apos;s request is pending, `sent` while the authenticated user&apos;s request is pending, `none` otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageRequestState { get; set; }
+        public string? MessageRequestState { get => _explicitNullValueMessageRequestState; set { _explicitNullValueMessageRequestState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_request_state"); else _explicitNullProperties?.Remove("message_request_state"); } }
+        private string? _explicitNullValueMessageRequestState = default!;
 #nullable restore
 #else
-        public string MessageRequestState { get; set; }
+        public string MessageRequestState { get => _explicitNullValueMessageRequestState; set { _explicitNullValueMessageRequestState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_request_state"); else _explicitNullProperties?.Remove("message_request_state"); } }
+        private string _explicitNullValueMessageRequestState = default!;
 #endif
         /// <summary>The other user in the conversation: the sender when `message_request_state` is `received`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ParticipantId { get; set; }
+        public string? ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
+        private string? _explicitNullValueParticipantId = default!;
 #nullable restore
 #else
-        public string ParticipantId { get; set; }
+        public string ParticipantId { get => _explicitNullValueParticipantId; set { _explicitNullValueParticipantId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("participant_id"); else _explicitNullProperties?.Remove("participant_id"); } }
+        private string _explicitNullValueParticipantId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail"/> and sets the default values.
@@ -71,7 +95,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ChatMessageRequestDetail(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("message_events", MessageEvents);
             writer.WriteStringValue("message_request_state", MessageRequestState);
             writer.WriteStringValue("participant_id", ParticipantId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

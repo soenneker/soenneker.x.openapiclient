@@ -11,29 +11,48 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateCommunityNotesInfo : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
+            if (parseNode.GetChildNode("is_media_note") is { } nullNodeIsMediaNote && nullNodeIsMediaNote.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsMediaNote = null;
+            if (parseNode.GetChildNode("misleading_tags") is { } nullNodeMisleadingTags && nullNodeMisleadingTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MisleadingTags = null;
+            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("trustworthy_sources") is { } nullNodeTrustworthySources && nullNodeTrustworthySources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustworthySources = null;
+        }
+
         /// <summary>Community Note classification.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoClassification? Classification { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoClassification? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoClassification? _explicitNullValueClassification = default!;
         /// <summary>Whether the note is a media note.</summary>
-        public bool? IsMediaNote { get; set; }
+        public bool? IsMediaNote { get => _explicitNullValueIsMediaNote; set { _explicitNullValueIsMediaNote = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_media_note"); else _explicitNullProperties?.Remove("is_media_note"); } }
+        private bool? _explicitNullValueIsMediaNote = default!;
         /// <summary>Tags describing why the Post is misleading.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?>? MisleadingTags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?>? MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?>? _explicitNullValueMisleadingTags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?> MisleadingTags { get; set; }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?> MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
+        private List<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem?> _explicitNullValueMisleadingTags = default!;
 #endif
         /// <summary>The text summary of the Community Note (must contain a URL).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get; set; }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get; set; }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        private string _explicitNullValueText = default!;
 #endif
         /// <summary>Whether the note cites trustworthy sources.</summary>
-        public bool? TrustworthySources { get; set; }
+        public bool? TrustworthySources { get => _explicitNullValueTrustworthySources; set { _explicitNullValueTrustworthySources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustworthy_sources"); else _explicitNullProperties?.Remove("trustworthy_sources"); } }
+        private bool? _explicitNullValueTrustworthySources = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -42,7 +61,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfo CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfo();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfo(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -70,7 +89,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteBoolValue("is_media_note", IsMediaNote);
             writer.WriteCollectionOfEnumValues<global::Soenneker.X.OpenApiClient.Models.CreateCommunityNotesInfoMisleadingTagsItem>("misleading_tags", MisleadingTags);
             writer.WriteStringValue("text", Text);
-            writer.WriteBoolValue("trustworthy_sources", TrustworthySources);
+            writer.WriteBoolValue("trustworthy_sources", TrustworthySources);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

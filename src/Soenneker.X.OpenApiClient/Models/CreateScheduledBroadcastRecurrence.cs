@@ -11,16 +11,28 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateScheduledBroadcastRecurrence : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("repeats") is { } nullNodeRepeats && nullNodeRepeats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Repeats = null;
+        }
+
         /// <summary>Recurrence frequency.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrenceFrequency? Frequency { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrenceFrequency? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrenceFrequency? _explicitNullValueFrequency = default!;
         /// <summary>Number of repeats (numeric string).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Repeats { get; set; }
+        public string? Repeats { get => _explicitNullValueRepeats; set { _explicitNullValueRepeats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeats"); else _explicitNullProperties?.Remove("repeats"); } }
+        private string? _explicitNullValueRepeats = default!;
 #nullable restore
 #else
-        public string Repeats { get; set; }
+        public string Repeats { get => _explicitNullValueRepeats; set { _explicitNullValueRepeats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeats"); else _explicitNullProperties?.Remove("repeats"); } }
+        private string _explicitNullValueRepeats = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -30,7 +42,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrence CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrence();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrence(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -52,7 +64,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateScheduledBroadcastRecurrenceFrequency>("frequency", Frequency);
-            writer.WriteStringValue("repeats", Repeats);
+            writer.WriteStringValue("repeats", Repeats);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

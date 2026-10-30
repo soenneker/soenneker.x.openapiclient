@@ -12,32 +12,48 @@ namespace Soenneker.X.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class NoteScoringStatusRatingCountsPerModelItemValue : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("negative_factor_bucket_counts") is { } nullNodeNegativeFactorBucketCounts && nullNodeNegativeFactorBucketCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NegativeFactorBucketCounts = null;
+            if (parseNode.GetChildNode("neutral_factor_bucket_counts") is { } nullNodeNeutralFactorBucketCounts && nullNodeNeutralFactorBucketCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NeutralFactorBucketCounts = null;
+            if (parseNode.GetChildNode("positive_factor_bucket_counts") is { } nullNodePositiveFactorBucketCounts && nullNodePositiveFactorBucketCounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositiveFactorBucketCounts = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Helpfulness counts for one rating factor bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts? NegativeFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts? NegativeFactorBucketCounts { get => _explicitNullValueNegativeFactorBucketCounts; set { _explicitNullValueNegativeFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_factor_bucket_counts"); else _explicitNullProperties?.Remove("negative_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts? _explicitNullValueNegativeFactorBucketCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts NegativeFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts NegativeFactorBucketCounts { get => _explicitNullValueNegativeFactorBucketCounts; set { _explicitNullValueNegativeFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("negative_factor_bucket_counts"); else _explicitNullProperties?.Remove("negative_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts _explicitNullValueNegativeFactorBucketCounts = default!;
 #endif
         /// <summary>Helpfulness counts for one rating factor bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts? NeutralFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts? NeutralFactorBucketCounts { get => _explicitNullValueNeutralFactorBucketCounts; set { _explicitNullValueNeutralFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_factor_bucket_counts"); else _explicitNullProperties?.Remove("neutral_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts? _explicitNullValueNeutralFactorBucketCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts NeutralFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts NeutralFactorBucketCounts { get => _explicitNullValueNeutralFactorBucketCounts; set { _explicitNullValueNeutralFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("neutral_factor_bucket_counts"); else _explicitNullProperties?.Remove("neutral_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts _explicitNullValueNeutralFactorBucketCounts = default!;
 #endif
         /// <summary>Helpfulness counts for one rating factor bucket.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts? PositiveFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts? PositiveFactorBucketCounts { get => _explicitNullValuePositiveFactorBucketCounts; set { _explicitNullValuePositiveFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_factor_bucket_counts"); else _explicitNullProperties?.Remove("positive_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts? _explicitNullValuePositiveFactorBucketCounts = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts PositiveFactorBucketCounts { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts PositiveFactorBucketCounts { get => _explicitNullValuePositiveFactorBucketCounts; set { _explicitNullValuePositiveFactorBucketCounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("positive_factor_bucket_counts"); else _explicitNullProperties?.Remove("positive_factor_bucket_counts"); } }
+        private global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts _explicitNullValuePositiveFactorBucketCounts = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValue"/> and sets the default values.
@@ -54,7 +70,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValue CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValue();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValue(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +97,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNegativeFactorBucketCounts>("negative_factor_bucket_counts", NegativeFactorBucketCounts);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValueNeutralFactorBucketCounts>("neutral_factor_bucket_counts", NeutralFactorBucketCounts);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItemValuePositiveFactorBucketCounts>("positive_factor_bucket_counts", PositiveFactorBucketCounts);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

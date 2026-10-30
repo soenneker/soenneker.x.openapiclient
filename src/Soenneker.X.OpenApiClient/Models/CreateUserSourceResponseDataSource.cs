@@ -11,78 +11,117 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class CreateUserSourceResponseDataSource : IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("creation_origin") is { } nullNodeCreationOrigin && nullNodeCreationOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationOrigin = null;
+            if (parseNode.GetChildNode("creation_time") is { } nullNodeCreationTime && nullNodeCreationTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreationTime = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is360") is { } nullNodeIs360 && nullNodeIs360.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Is360 = null;
+            if (parseNode.GetChildNode("is_stream_active") is { } nullNodeIsStreamActive && nullNodeIsStreamActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsStreamActive = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("owner_id") is { } nullNodeOwnerId && nullNodeOwnerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OwnerId = null;
+            if (parseNode.GetChildNode("rtmp_region") is { } nullNodeRtmpRegion && nullNodeRtmpRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpRegion = null;
+            if (parseNode.GetChildNode("rtmp_stream_key") is { } nullNodeRtmpStreamKey && nullNodeRtmpStreamKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpStreamKey = null;
+            if (parseNode.GetChildNode("rtmps_url") is { } nullNodeRtmpsUrl && nullNodeRtmpsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpsUrl = null;
+            if (parseNode.GetChildNode("rtmp_url") is { } nullNodeRtmpUrl && nullNodeRtmpUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpUrl = null;
+            if (parseNode.GetChildNode("video_service") is { } nullNodeVideoService && nullNodeVideoService.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoService = null;
+        }
+
         /// <summary>The creation_origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin? CreationOrigin { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin? CreationOrigin { get => _explicitNullValueCreationOrigin; set { _explicitNullValueCreationOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_origin"); else _explicitNullProperties?.Remove("creation_origin"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin? _explicitNullValueCreationOrigin = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin CreationOrigin { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin CreationOrigin { get => _explicitNullValueCreationOrigin; set { _explicitNullValueCreationOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_origin"); else _explicitNullProperties?.Remove("creation_origin"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceCreationOrigin _explicitNullValueCreationOrigin = default!;
 #endif
         /// <summary>Creation time, ms since Unix epoch.</summary>
-        public int? CreationTime { get; set; }
+        public int? CreationTime { get => _explicitNullValueCreationTime; set { _explicitNullValueCreationTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("creation_time"); else _explicitNullProperties?.Remove("creation_time"); } }
+        private int? _explicitNullValueCreationTime = default!;
         /// <summary>Source id; also the RTMP stream key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether the source streams 360° video.</summary>
-        public bool? Is360 { get; set; }
+        public bool? Is360 { get => _explicitNullValueIs360; set { _explicitNullValueIs360 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is360"); else _explicitNullProperties?.Remove("is360"); } }
+        private bool? _explicitNullValueIs360 = default!;
         /// <summary>Whether an encoder is currently sending video to the source.</summary>
-        public bool? IsStreamActive { get; set; }
+        public bool? IsStreamActive { get => _explicitNullValueIsStreamActive; set { _explicitNullValueIsStreamActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_stream_active"); else _explicitNullProperties?.Remove("is_stream_active"); } }
+        private bool? _explicitNullValueIsStreamActive = default!;
         /// <summary>Label for the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Owner&apos;s numeric user id. Exceeds the exact integer range of many JSON parsers.</summary>
-        public int? OwnerId { get; set; }
+        public int? OwnerId { get => _explicitNullValueOwnerId; set { _explicitNullValueOwnerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("owner_id"); else _explicitNullProperties?.Remove("owner_id"); } }
+        private int? _explicitNullValueOwnerId = default!;
         /// <summary>Ingest region as an AWS region name, e.g. `us-east-1` or `us-west-2`. Accepted as `region` when creating a source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RtmpRegion { get; set; }
+        public string? RtmpRegion { get => _explicitNullValueRtmpRegion; set { _explicitNullValueRtmpRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_region"); else _explicitNullProperties?.Remove("rtmp_region"); } }
+        private string? _explicitNullValueRtmpRegion = default!;
 #nullable restore
 #else
-        public string RtmpRegion { get; set; }
+        public string RtmpRegion { get => _explicitNullValueRtmpRegion; set { _explicitNullValueRtmpRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_region"); else _explicitNullProperties?.Remove("rtmp_region"); } }
+        private string _explicitNullValueRtmpRegion = default!;
 #endif
         /// <summary>Stream key; equal to `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RtmpStreamKey { get; set; }
+        public string? RtmpStreamKey { get => _explicitNullValueRtmpStreamKey; set { _explicitNullValueRtmpStreamKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_stream_key"); else _explicitNullProperties?.Remove("rtmp_stream_key"); } }
+        private string? _explicitNullValueRtmpStreamKey = default!;
 #nullable restore
 #else
-        public string RtmpStreamKey { get; set; }
+        public string RtmpStreamKey { get => _explicitNullValueRtmpStreamKey; set { _explicitNullValueRtmpStreamKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_stream_key"); else _explicitNullProperties?.Remove("rtmp_stream_key"); } }
+        private string _explicitNullValueRtmpStreamKey = default!;
 #endif
         /// <summary>RTMPS ingest URL (port 443).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RtmpsUrl { get; set; }
+        public string? RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }
+        private string? _explicitNullValueRtmpsUrl = default!;
 #nullable restore
 #else
-        public string RtmpsUrl { get; set; }
+        public string RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }
+        private string _explicitNullValueRtmpsUrl = default!;
 #endif
         /// <summary>RTMP ingest URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RtmpUrl { get; set; }
+        public string? RtmpUrl { get => _explicitNullValueRtmpUrl; set { _explicitNullValueRtmpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_url"); else _explicitNullProperties?.Remove("rtmp_url"); } }
+        private string? _explicitNullValueRtmpUrl = default!;
 #nullable restore
 #else
-        public string RtmpUrl { get; set; }
+        public string RtmpUrl { get => _explicitNullValueRtmpUrl; set { _explicitNullValueRtmpUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_url"); else _explicitNullProperties?.Remove("rtmp_url"); } }
+        private string _explicitNullValueRtmpUrl = default!;
 #endif
         /// <summary>The video_service property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService? VideoService { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService? VideoService { get => _explicitNullValueVideoService; set { _explicitNullValueVideoService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_service"); else _explicitNullProperties?.Remove("video_service"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService? _explicitNullValueVideoService = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService VideoService { get; set; }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService VideoService { get => _explicitNullValueVideoService; set { _explicitNullValueVideoService = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_service"); else _explicitNullProperties?.Remove("video_service"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService _explicitNullValueVideoService = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,7 +131,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSource CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSource();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSource(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -134,7 +173,8 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("rtmp_stream_key", RtmpStreamKey);
             writer.WriteStringValue("rtmps_url", RtmpsUrl);
             writer.WriteStringValue("rtmp_url", RtmpUrl);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService>("video_service", VideoService);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateUserSourceResponseDataSourceVideoService>("video_service", VideoService);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

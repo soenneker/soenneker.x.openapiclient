@@ -11,32 +11,48 @@ namespace Soenneker.X.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("base64_encoded_encrypted_pmk") is { } nullNodeBase64EncodedEncryptedPmk && nullNodeBase64EncodedEncryptedPmk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedEncryptedPmk = null;
+            if (parseNode.GetChildNode("message_sequence_id") is { } nullNodeMessageSequenceId && nullNodeMessageSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageSequenceId = null;
+            if (parseNode.GetChildNode("pme_sequence_id") is { } nullNodePmeSequenceId && nullNodePmeSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PmeSequenceId = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Base64-encoded message key, encrypted with the new conversation key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base64EncodedEncryptedPmk { get; set; }
+        public string? Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
+        private string? _explicitNullValueBase64EncodedEncryptedPmk = default!;
 #nullable restore
 #else
-        public string Base64EncodedEncryptedPmk { get; set; }
+        public string Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
+        private string _explicitNullValueBase64EncodedEncryptedPmk = default!;
 #endif
         /// <summary>Sequence ID of the message the key belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageSequenceId { get; set; }
+        public string? MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
+        private string? _explicitNullValueMessageSequenceId = default!;
 #nullable restore
 #else
-        public string MessageSequenceId { get; set; }
+        public string MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
+        private string _explicitNullValueMessageSequenceId = default!;
 #endif
         /// <summary>Sequence ID of the key&apos;s origin event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PmeSequenceId { get; set; }
+        public string? PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
+        private string? _explicitNullValuePmeSequenceId = default!;
 #nullable restore
 #else
-        public string PmeSequenceId { get; set; }
+        public string PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
+        private string _explicitNullValuePmeSequenceId = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle"/> and sets the default values.
@@ -53,7 +69,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public static global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationDataRotatedPmkBundle(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("base64_encoded_encrypted_pmk", Base64EncodedEncryptedPmk);
             writer.WriteStringValue("message_sequence_id", MessageSequenceId);
             writer.WriteStringValue("pme_sequence_id", PmeSequenceId);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
