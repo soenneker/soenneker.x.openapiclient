@@ -18,9 +18,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("folder_id") is { } nullNodeFolderId && nullNodeFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderId = null;
-            if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
-            if (parseNode.GetChildNode("tweet_ids") is { } nullNodeTweetIds && nullNodeTweetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetIds = null;
+            if (parseNode.GetChildNode("folder_id") is null) { _explicitNullValueFolderId = default!; _explicitNullProperties?.Remove("folder_id"); }
+            else if (parseNode.GetChildNode("folder_id") is { } nullNodeFolderId && nullNodeFolderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FolderId = null;
+            if (parseNode.GetChildNode("tweet_id") is null) { _explicitNullValueTweetId = default!; _explicitNullProperties?.Remove("tweet_id"); }
+            else if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
+            if (parseNode.GetChildNode("tweet_ids") is null) { _explicitNullValueTweetIds = default!; _explicitNullProperties?.Remove("tweet_ids"); }
+            else if (parseNode.GetChildNode("tweet_ids") is { } nullNodeTweetIds && nullNodeTweetIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Optional ID of the Bookmark folder to add the Post(s) to. When omitted, Posts are added to the user&apos;s top-level Bookmarks only. A bulk request uses this one folder for every ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
+        public string? FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; AdditionalData?.Remove("folder_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
         private string? _explicitNullValueFolderId = default!;
 #nullable restore
 #else
-        public string FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
+        public string FolderId { get => _explicitNullValueFolderId; set { _explicitNullValueFolderId = value; AdditionalData?.Remove("folder_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("folder_id"); else _explicitNullProperties?.Remove("folder_id"); } }
         private string _explicitNullValueFolderId = default!;
 #endif
         /// <summary>The ID of the Post to add to the user&apos;s Bookmarks. Mutually exclusive with `tweet_ids`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
+        public string? TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; AdditionalData?.Remove("tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
         private string? _explicitNullValueTweetId = default!;
 #nullable restore
 #else
-        public string TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
+        public string TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; AdditionalData?.Remove("tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
         private string _explicitNullValueTweetId = default!;
 #endif
         /// <summary>Post IDs to add to the user&apos;s Bookmarks. At most 25. Mutually exclusive with `tweet_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? TweetIds { get => _explicitNullValueTweetIds; set { _explicitNullValueTweetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_ids"); else _explicitNullProperties?.Remove("tweet_ids"); } }
+        public List<string>? TweetIds { get => _explicitNullValueTweetIds; set { _explicitNullValueTweetIds = value; AdditionalData?.Remove("tweet_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_ids"); else _explicitNullProperties?.Remove("tweet_ids"); } }
         private List<string>? _explicitNullValueTweetIds = default!;
 #nullable restore
 #else
-        public List<string> TweetIds { get => _explicitNullValueTweetIds; set { _explicitNullValueTweetIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_ids"); else _explicitNullProperties?.Remove("tweet_ids"); } }
+        public List<string> TweetIds { get => _explicitNullValueTweetIds; set { _explicitNullValueTweetIds = value; AdditionalData?.Remove("tweet_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_ids"); else _explicitNullProperties?.Remove("tweet_ids"); } }
         private List<string> _explicitNullValueTweetIds = default!;
 #endif
         /// <summary>

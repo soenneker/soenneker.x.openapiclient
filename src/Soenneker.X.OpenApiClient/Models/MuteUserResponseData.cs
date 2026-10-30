@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("muting") is { } nullNodeMuting && nullNodeMuting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Muting = null;
+            if (parseNode.GetChildNode("muting") is null) { _explicitNullValueMuting = default!; _explicitNullProperties?.Remove("muting"); }
+            else if (parseNode.GetChildNode("muting") is { } nullNodeMuting && nullNodeMuting.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Muting = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the source User is muting the target User.</summary>
-        public bool? Muting { get => _explicitNullValueMuting; set { _explicitNullValueMuting = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("muting"); else _explicitNullProperties?.Remove("muting"); } }
+        public bool? Muting { get => _explicitNullValueMuting; set { _explicitNullValueMuting = value; AdditionalData?.Remove("muting"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("muting"); else _explicitNullProperties?.Remove("muting"); } }
         private bool? _explicitNullValueMuting = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MuteUserResponseData"/> and sets the default values.

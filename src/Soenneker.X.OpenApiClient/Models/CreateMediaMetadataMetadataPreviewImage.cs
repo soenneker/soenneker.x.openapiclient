@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
+            if (parseNode.GetChildNode("media_key") is null) { _explicitNullValueMediaKey = default!; _explicitNullProperties?.Remove("media_key"); }
+            else if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; AdditionalData?.Remove("media_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty? _explicitNullValueMediaKey = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; AdditionalData?.Remove("media_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataPreviewImageMediaKeyProperty _explicitNullValueMediaKey = default!;
 #endif
         /// <summary>

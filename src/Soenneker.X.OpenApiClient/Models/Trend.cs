@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("trend_name") is { } nullNodeTrendName && nullNodeTrendName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendName = null;
-            if (parseNode.GetChildNode("tweet_count") is { } nullNodeTweetCount && nullNodeTweetCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetCount = null;
+            if (parseNode.GetChildNode("trend_name") is null) { _explicitNullValueTrendName = default!; _explicitNullProperties?.Remove("trend_name"); }
+            else if (parseNode.GetChildNode("trend_name") is { } nullNodeTrendName && nullNodeTrendName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendName = null;
+            if (parseNode.GetChildNode("tweet_count") is null) { _explicitNullValueTweetCount = default!; _explicitNullProperties?.Remove("tweet_count"); }
+            else if (parseNode.GetChildNode("tweet_count") is { } nullNodeTweetCount && nullNodeTweetCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The trend_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
+        public string? TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; AdditionalData?.Remove("trend_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
         private string? _explicitNullValueTrendName = default!;
 #nullable restore
 #else
-        public string TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
+        public string TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; AdditionalData?.Remove("trend_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
         private string _explicitNullValueTrendName = default!;
 #endif
         /// <summary>The tweet_count property</summary>
-        public int? TweetCount { get => _explicitNullValueTweetCount; set { _explicitNullValueTweetCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_count"); else _explicitNullProperties?.Remove("tweet_count"); } }
+        public int? TweetCount { get => _explicitNullValueTweetCount; set { _explicitNullValueTweetCount = value; AdditionalData?.Remove("tweet_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_count"); else _explicitNullProperties?.Remove("tweet_count"); } }
         private int? _explicitNullValueTweetCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.Trend"/> and sets the default values.

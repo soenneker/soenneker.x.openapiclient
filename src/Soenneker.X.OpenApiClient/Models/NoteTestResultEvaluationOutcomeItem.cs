@@ -18,8 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("evaluator_score_bucket") is { } nullNodeEvaluatorScoreBucket && nullNodeEvaluatorScoreBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorScoreBucket = null;
-            if (parseNode.GetChildNode("evaluator_type") is { } nullNodeEvaluatorType && nullNodeEvaluatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorType = null;
+            if (parseNode.GetChildNode("evaluator_score_bucket") is null) { _explicitNullValueEvaluatorScoreBucket = default!; _explicitNullProperties?.Remove("evaluator_score_bucket"); }
+            else if (parseNode.GetChildNode("evaluator_score_bucket") is { } nullNodeEvaluatorScoreBucket && nullNodeEvaluatorScoreBucket.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorScoreBucket = null;
+            if (parseNode.GetChildNode("evaluator_type") is null) { _explicitNullValueEvaluatorType = default!; _explicitNullProperties?.Remove("evaluator_type"); }
+            else if (parseNode.GetChildNode("evaluator_type") is { } nullNodeEvaluatorType && nullNodeEvaluatorType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EvaluatorType = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The score bucket the evaluator assigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
+        public string? EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; AdditionalData?.Remove("evaluator_score_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
         private string? _explicitNullValueEvaluatorScoreBucket = default!;
 #nullable restore
 #else
-        public string EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
+        public string EvaluatorScoreBucket { get => _explicitNullValueEvaluatorScoreBucket; set { _explicitNullValueEvaluatorScoreBucket = value; AdditionalData?.Remove("evaluator_score_bucket"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_score_bucket"); else _explicitNullProperties?.Remove("evaluator_score_bucket"); } }
         private string _explicitNullValueEvaluatorScoreBucket = default!;
 #endif
         /// <summary>The type of evaluator that produced this outcome.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
+        public string? EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; AdditionalData?.Remove("evaluator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
         private string? _explicitNullValueEvaluatorType = default!;
 #nullable restore
 #else
-        public string EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
+        public string EvaluatorType { get => _explicitNullValueEvaluatorType; set { _explicitNullValueEvaluatorType = value; AdditionalData?.Remove("evaluator_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("evaluator_type"); else _explicitNullProperties?.Remove("evaluator_type"); } }
         private string _explicitNullValueEvaluatorType = default!;
 #endif
         /// <summary>

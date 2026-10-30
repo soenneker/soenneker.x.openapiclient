@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("total_subscriptions") is { } nullNodeTotalSubscriptions && nullNodeTotalSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSubscriptions = null;
+            if (parseNode.GetChildNode("total_subscriptions") is null) { _explicitNullValueTotalSubscriptions = default!; _explicitNullProperties?.Remove("total_subscriptions"); }
+            else if (parseNode.GetChildNode("total_subscriptions") is { } nullNodeTotalSubscriptions && nullNodeTotalSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalSubscriptions = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Subscriptions remaining after deletion.</summary>
-        public int? TotalSubscriptions { get => _explicitNullValueTotalSubscriptions; set { _explicitNullValueTotalSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_subscriptions"); else _explicitNullProperties?.Remove("total_subscriptions"); } }
+        public int? TotalSubscriptions { get => _explicitNullValueTotalSubscriptions; set { _explicitNullValueTotalSubscriptions = value; AdditionalData?.Remove("total_subscriptions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_subscriptions"); else _explicitNullProperties?.Remove("total_subscriptions"); } }
         private int? _explicitNullValueTotalSubscriptions = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteActivitySubscriptionsByIdsResponseMeta"/> and sets the default values.

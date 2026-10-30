@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associated_metadata") is { } nullNodeAssociatedMetadata && nullNodeAssociatedMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedMetadata = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("associated_metadata") is null) { _explicitNullValueAssociatedMetadata = default!; _explicitNullProperties?.Remove("associated_metadata"); }
+            else if (parseNode.GetChildNode("associated_metadata") is { } nullNodeAssociatedMetadata && nullNodeAssociatedMetadata.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedMetadata = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The metadata now associated with the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty? AssociatedMetadata { get => _explicitNullValueAssociatedMetadata; set { _explicitNullValueAssociatedMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_metadata"); else _explicitNullProperties?.Remove("associated_metadata"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty? AssociatedMetadata { get => _explicitNullValueAssociatedMetadata; set { _explicitNullValueAssociatedMetadata = value; AdditionalData?.Remove("associated_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_metadata"); else _explicitNullProperties?.Remove("associated_metadata"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty? _explicitNullValueAssociatedMetadata = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty AssociatedMetadata { get => _explicitNullValueAssociatedMetadata; set { _explicitNullValueAssociatedMetadata = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_metadata"); else _explicitNullProperties?.Remove("associated_metadata"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty AssociatedMetadata { get => _explicitNullValueAssociatedMetadata; set { _explicitNullValueAssociatedMetadata = value; AdditionalData?.Remove("associated_metadata"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_metadata"); else _explicitNullProperties?.Remove("associated_metadata"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataResponseDataAssociatedMetadataProperty _explicitNullValueAssociatedMetadata = default!;
 #endif
         /// <summary>The media id the metadata was attached to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

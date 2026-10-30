@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("claim_opinion_score") is { } nullNodeClaimOpinionScore && nullNodeClaimOpinionScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimOpinionScore = null;
+            if (parseNode.GetChildNode("claim_opinion_score") is null) { _explicitNullValueClaimOpinionScore = default!; _explicitNullProperties?.Remove("claim_opinion_score"); }
+            else if (parseNode.GetChildNode("claim_opinion_score") is { } nullNodeClaimOpinionScore && nullNodeClaimOpinionScore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClaimOpinionScore = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The evaluated claim-opinion score for the note.</summary>
-        public double? ClaimOpinionScore { get => _explicitNullValueClaimOpinionScore; set { _explicitNullValueClaimOpinionScore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_opinion_score"); else _explicitNullProperties?.Remove("claim_opinion_score"); } }
+        public double? ClaimOpinionScore { get => _explicitNullValueClaimOpinionScore; set { _explicitNullValueClaimOpinionScore = value; AdditionalData?.Remove("claim_opinion_score"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("claim_opinion_score"); else _explicitNullProperties?.Remove("claim_opinion_score"); } }
         private double? _explicitNullValueClaimOpinionScore = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.EvaluateCommunityNotesResponseData"/> and sets the default values.

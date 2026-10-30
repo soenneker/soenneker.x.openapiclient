@@ -17,32 +17,36 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("free_balance") is { } nullNodeFreeBalance && nullNodeFreeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeBalance = null;
-            if (parseNode.GetChildNode("free_grants") is { } nullNodeFreeGrants && nullNodeFreeGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeGrants = null;
-            if (parseNode.GetChildNode("prepaid_balance") is { } nullNodePrepaidBalance && nullNodePrepaidBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrepaidBalance = null;
-            if (parseNode.GetChildNode("total_balance") is { } nullNodeTotalBalance && nullNodeTotalBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBalance = null;
+            if (parseNode.GetChildNode("free_balance") is null) { _explicitNullValueFreeBalance = default!; _explicitNullProperties?.Remove("free_balance"); }
+            else if (parseNode.GetChildNode("free_balance") is { } nullNodeFreeBalance && nullNodeFreeBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeBalance = null;
+            if (parseNode.GetChildNode("free_grants") is null) { _explicitNullValueFreeGrants = default!; _explicitNullProperties?.Remove("free_grants"); }
+            else if (parseNode.GetChildNode("free_grants") is { } nullNodeFreeGrants && nullNodeFreeGrants.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FreeGrants = null;
+            if (parseNode.GetChildNode("prepaid_balance") is null) { _explicitNullValuePrepaidBalance = default!; _explicitNullProperties?.Remove("prepaid_balance"); }
+            else if (parseNode.GetChildNode("prepaid_balance") is { } nullNodePrepaidBalance && nullNodePrepaidBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrepaidBalance = null;
+            if (parseNode.GetChildNode("total_balance") is null) { _explicitNullValueTotalBalance = default!; _explicitNullProperties?.Remove("total_balance"); }
+            else if (parseNode.GetChildNode("total_balance") is { } nullNodeTotalBalance && nullNodeTotalBalance.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TotalBalance = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>USD remaining across unexpired free grants.</summary>
-        public double? FreeBalance { get => _explicitNullValueFreeBalance; set { _explicitNullValueFreeBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_balance"); else _explicitNullProperties?.Remove("free_balance"); } }
+        public double? FreeBalance { get => _explicitNullValueFreeBalance; set { _explicitNullValueFreeBalance = value; AdditionalData?.Remove("free_balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_balance"); else _explicitNullProperties?.Remove("free_balance"); } }
         private double? _explicitNullValueFreeBalance = default!;
         /// <summary>Unexpired free grants, soonest expiry first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; AdditionalData?.Remove("free_grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants>? _explicitNullValueFreeGrants = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> FreeGrants { get => _explicitNullValueFreeGrants; set { _explicitNullValueFreeGrants = value; AdditionalData?.Remove("free_grants"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("free_grants"); else _explicitNullProperties?.Remove("free_grants"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseDataFreeGrants> _explicitNullValueFreeGrants = default!;
 #endif
         /// <summary>Purchased (prepaid) USD balance. May be negative when paid usage has overdrawn this bucket.</summary>
-        public double? PrepaidBalance { get => _explicitNullValuePrepaidBalance; set { _explicitNullValuePrepaidBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prepaid_balance"); else _explicitNullProperties?.Remove("prepaid_balance"); } }
+        public double? PrepaidBalance { get => _explicitNullValuePrepaidBalance; set { _explicitNullValuePrepaidBalance = value; AdditionalData?.Remove("prepaid_balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("prepaid_balance"); else _explicitNullProperties?.Remove("prepaid_balance"); } }
         private double? _explicitNullValuePrepaidBalance = default!;
         /// <summary>Spendable USD remaining, clamped at 0.00: total_balance = max(0, prepaid_balance + free_balance).</summary>
-        public double? TotalBalance { get => _explicitNullValueTotalBalance; set { _explicitNullValueTotalBalance = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_balance"); else _explicitNullProperties?.Remove("total_balance"); } }
+        public double? TotalBalance { get => _explicitNullValueTotalBalance; set { _explicitNullValueTotalBalance = value; AdditionalData?.Remove("total_balance"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_balance"); else _explicitNullProperties?.Remove("total_balance"); } }
         private double? _explicitNullValueTotalBalance = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsageCreditsResponseData"/> and sets the default values.

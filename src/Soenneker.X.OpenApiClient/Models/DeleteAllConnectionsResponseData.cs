@@ -17,28 +17,31 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("failed_kills") is { } nullNodeFailedKills && nullNodeFailedKills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedKills = null;
-            if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
-            if (parseNode.GetChildNode("successful_kills") is { } nullNodeSuccessfulKills && nullNodeSuccessfulKills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulKills = null;
+            if (parseNode.GetChildNode("failed_kills") is null) { _explicitNullValueFailedKills = default!; _explicitNullProperties?.Remove("failed_kills"); }
+            else if (parseNode.GetChildNode("failed_kills") is { } nullNodeFailedKills && nullNodeFailedKills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FailedKills = null;
+            if (parseNode.GetChildNode("results") is null) { _explicitNullValueResults = default!; _explicitNullProperties?.Remove("results"); }
+            else if (parseNode.GetChildNode("results") is { } nullNodeResults && nullNodeResults.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Results = null;
+            if (parseNode.GetChildNode("successful_kills") is null) { _explicitNullValueSuccessfulKills = default!; _explicitNullProperties?.Remove("successful_kills"); }
+            else if (parseNode.GetChildNode("successful_kills") is { } nullNodeSuccessfulKills && nullNodeSuccessfulKills.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuccessfulKills = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Number of connections that could not be terminated.</summary>
-        public int? FailedKills { get => _explicitNullValueFailedKills; set { _explicitNullValueFailedKills = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_kills"); else _explicitNullProperties?.Remove("failed_kills"); } }
+        public int? FailedKills { get => _explicitNullValueFailedKills; set { _explicitNullValueFailedKills = value; AdditionalData?.Remove("failed_kills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("failed_kills"); else _explicitNullProperties?.Remove("failed_kills"); } }
         private int? _explicitNullValueFailedKills = default!;
         /// <summary>The results property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults>? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults>? Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults>? _explicitNullValueResults = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults> Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults> Results { get => _explicitNullValueResults; set { _explicitNullValueResults = value; AdditionalData?.Remove("results"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("results"); else _explicitNullProperties?.Remove("results"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseDataResults> _explicitNullValueResults = default!;
 #endif
         /// <summary>Number of connections successfully terminated.</summary>
-        public int? SuccessfulKills { get => _explicitNullValueSuccessfulKills; set { _explicitNullValueSuccessfulKills = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful_kills"); else _explicitNullProperties?.Remove("successful_kills"); } }
+        public int? SuccessfulKills { get => _explicitNullValueSuccessfulKills; set { _explicitNullValueSuccessfulKills = value; AdditionalData?.Remove("successful_kills"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("successful_kills"); else _explicitNullProperties?.Remove("successful_kills"); } }
         private int? _explicitNullValueSuccessfulKills = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteAllConnectionsResponseData"/> and sets the default values.

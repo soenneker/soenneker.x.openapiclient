@@ -18,49 +18,54 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("liked_tweet_id") is { } nullNodeLikedTweetId && nullNodeLikedTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikedTweetId = null;
-            if (parseNode.GetChildNode("timestamp_ms") is { } nullNodeTimestampMs && nullNodeTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampMs = null;
-            if (parseNode.GetChildNode("tweet_author_id") is { } nullNodeTweetAuthorId && nullNodeTweetAuthorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetAuthorId = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("liked_tweet_id") is null) { _explicitNullValueLikedTweetId = default!; _explicitNullProperties?.Remove("liked_tweet_id"); }
+            else if (parseNode.GetChildNode("liked_tweet_id") is { } nullNodeLikedTweetId && nullNodeLikedTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LikedTweetId = null;
+            if (parseNode.GetChildNode("timestamp_ms") is null) { _explicitNullValueTimestampMs = default!; _explicitNullProperties?.Remove("timestamp_ms"); }
+            else if (parseNode.GetChildNode("timestamp_ms") is { } nullNodeTimestampMs && nullNodeTimestampMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampMs = null;
+            if (parseNode.GetChildNode("tweet_author_id") is null) { _explicitNullValueTweetAuthorId = default!; _explicitNullProperties?.Remove("tweet_author_id"); }
+            else if (parseNode.GetChildNode("tweet_author_id") is { } nullNodeTweetAuthorId && nullNodeTweetAuthorId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetAuthorId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Creation time of the Tweet.</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The unique identifier of this Like.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Unique identifier of a Post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LikedTweetId { get => _explicitNullValueLikedTweetId; set { _explicitNullValueLikedTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked_tweet_id"); else _explicitNullProperties?.Remove("liked_tweet_id"); } }
+        public string? LikedTweetId { get => _explicitNullValueLikedTweetId; set { _explicitNullValueLikedTweetId = value; AdditionalData?.Remove("liked_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked_tweet_id"); else _explicitNullProperties?.Remove("liked_tweet_id"); } }
         private string? _explicitNullValueLikedTweetId = default!;
 #nullable restore
 #else
-        public string LikedTweetId { get => _explicitNullValueLikedTweetId; set { _explicitNullValueLikedTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked_tweet_id"); else _explicitNullProperties?.Remove("liked_tweet_id"); } }
+        public string LikedTweetId { get => _explicitNullValueLikedTweetId; set { _explicitNullValueLikedTweetId = value; AdditionalData?.Remove("liked_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked_tweet_id"); else _explicitNullProperties?.Remove("liked_tweet_id"); } }
         private string _explicitNullValueLikedTweetId = default!;
 #endif
         /// <summary>Timestamp in milliseconds of creation.</summary>
-        public int? TimestampMs { get => _explicitNullValueTimestampMs; set { _explicitNullValueTimestampMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_ms"); else _explicitNullProperties?.Remove("timestamp_ms"); } }
+        public int? TimestampMs { get => _explicitNullValueTimestampMs; set { _explicitNullValueTimestampMs = value; AdditionalData?.Remove("timestamp_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_ms"); else _explicitNullProperties?.Remove("timestamp_ms"); } }
         private int? _explicitNullValueTimestampMs = default!;
         /// <summary>Unique identifier of a User</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TweetAuthorId { get => _explicitNullValueTweetAuthorId; set { _explicitNullValueTweetAuthorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_author_id"); else _explicitNullProperties?.Remove("tweet_author_id"); } }
+        public string? TweetAuthorId { get => _explicitNullValueTweetAuthorId; set { _explicitNullValueTweetAuthorId = value; AdditionalData?.Remove("tweet_author_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_author_id"); else _explicitNullProperties?.Remove("tweet_author_id"); } }
         private string? _explicitNullValueTweetAuthorId = default!;
 #nullable restore
 #else
-        public string TweetAuthorId { get => _explicitNullValueTweetAuthorId; set { _explicitNullValueTweetAuthorId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_author_id"); else _explicitNullProperties?.Remove("tweet_author_id"); } }
+        public string TweetAuthorId { get => _explicitNullValueTweetAuthorId; set { _explicitNullValueTweetAuthorId = value; AdditionalData?.Remove("tweet_author_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_author_id"); else _explicitNullProperties?.Remove("tweet_author_id"); } }
         private string _explicitNullValueTweetAuthorId = default!;
 #endif
         /// <summary>

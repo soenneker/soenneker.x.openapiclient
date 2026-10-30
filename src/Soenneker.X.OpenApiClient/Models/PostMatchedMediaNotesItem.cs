@@ -18,8 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("match_status") is { } nullNodeMatchStatus && nullNodeMatchStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchStatus = null;
-            if (parseNode.GetChildNode("note_id") is { } nullNodeNoteId && nullNodeNoteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteId = null;
+            if (parseNode.GetChildNode("match_status") is null) { _explicitNullValueMatchStatus = default!; _explicitNullProperties?.Remove("match_status"); }
+            else if (parseNode.GetChildNode("match_status") is { } nullNodeMatchStatus && nullNodeMatchStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MatchStatus = null;
+            if (parseNode.GetChildNode("note_id") is null) { _explicitNullValueNoteId = default!; _explicitNullProperties?.Remove("note_id"); }
+            else if (parseNode.GetChildNode("note_id") is { } nullNodeNoteId && nullNodeNoteId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NoteId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The status of the media note match.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MatchStatus { get => _explicitNullValueMatchStatus; set { _explicitNullValueMatchStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_status"); else _explicitNullProperties?.Remove("match_status"); } }
+        public string? MatchStatus { get => _explicitNullValueMatchStatus; set { _explicitNullValueMatchStatus = value; AdditionalData?.Remove("match_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_status"); else _explicitNullProperties?.Remove("match_status"); } }
         private string? _explicitNullValueMatchStatus = default!;
 #nullable restore
 #else
-        public string MatchStatus { get => _explicitNullValueMatchStatus; set { _explicitNullValueMatchStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_status"); else _explicitNullProperties?.Remove("match_status"); } }
+        public string MatchStatus { get => _explicitNullValueMatchStatus; set { _explicitNullValueMatchStatus = value; AdditionalData?.Remove("match_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("match_status"); else _explicitNullProperties?.Remove("match_status"); } }
         private string _explicitNullValueMatchStatus = default!;
 #endif
         /// <summary>The matched note&apos;s unique identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NoteId { get => _explicitNullValueNoteId; set { _explicitNullValueNoteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note_id"); else _explicitNullProperties?.Remove("note_id"); } }
+        public string? NoteId { get => _explicitNullValueNoteId; set { _explicitNullValueNoteId = value; AdditionalData?.Remove("note_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note_id"); else _explicitNullProperties?.Remove("note_id"); } }
         private string? _explicitNullValueNoteId = default!;
 #nullable restore
 #else
-        public string NoteId { get => _explicitNullValueNoteId; set { _explicitNullValueNoteId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note_id"); else _explicitNullProperties?.Remove("note_id"); } }
+        public string NoteId { get => _explicitNullValueNoteId; set { _explicitNullValueNoteId = value; AdditionalData?.Remove("note_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("note_id"); else _explicitNullProperties?.Remove("note_id"); } }
         private string _explicitNullValueNoteId = default!;
 #endif
         /// <summary>

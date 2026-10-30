@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("broadcast") is { } nullNodeBroadcast && nullNodeBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcast = null;
-            if (parseNode.GetChildNode("share_url") is { } nullNodeShareUrl && nullNodeShareUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareUrl = null;
-            if (parseNode.GetChildNode("video_access") is { } nullNodeVideoAccess && nullNodeVideoAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoAccess = null;
+            if (parseNode.GetChildNode("broadcast") is null) { _explicitNullValueBroadcast = default!; _explicitNullProperties?.Remove("broadcast"); }
+            else if (parseNode.GetChildNode("broadcast") is { } nullNodeBroadcast && nullNodeBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcast = null;
+            if (parseNode.GetChildNode("share_url") is null) { _explicitNullValueShareUrl = default!; _explicitNullProperties?.Remove("share_url"); }
+            else if (parseNode.GetChildNode("share_url") is { } nullNodeShareUrl && nullNodeShareUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShareUrl = null;
+            if (parseNode.GetChildNode("video_access") is null) { _explicitNullValueVideoAccess = default!; _explicitNullProperties?.Remove("video_access"); }
+            else if (parseNode.GetChildNode("video_access") is { } nullNodeVideoAccess && nullNodeVideoAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoAccess = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The broadcast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast? Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast? Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; AdditionalData?.Remove("broadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast? _explicitNullValueBroadcast = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; AdditionalData?.Remove("broadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataBroadcast _explicitNullValueBroadcast = default!;
 #endif
         /// <summary>The broadcast&apos;s watch page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ShareUrl { get => _explicitNullValueShareUrl; set { _explicitNullValueShareUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_url"); else _explicitNullProperties?.Remove("share_url"); } }
+        public string? ShareUrl { get => _explicitNullValueShareUrl; set { _explicitNullValueShareUrl = value; AdditionalData?.Remove("share_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_url"); else _explicitNullProperties?.Remove("share_url"); } }
         private string? _explicitNullValueShareUrl = default!;
 #nullable restore
 #else
-        public string ShareUrl { get => _explicitNullValueShareUrl; set { _explicitNullValueShareUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_url"); else _explicitNullProperties?.Remove("share_url"); } }
+        public string ShareUrl { get => _explicitNullValueShareUrl; set { _explicitNullValueShareUrl = value; AdditionalData?.Remove("share_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_url"); else _explicitNullProperties?.Remove("share_url"); } }
         private string _explicitNullValueShareUrl = default!;
 #endif
         /// <summary>The video_access property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess? VideoAccess { get => _explicitNullValueVideoAccess; set { _explicitNullValueVideoAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_access"); else _explicitNullProperties?.Remove("video_access"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess? VideoAccess { get => _explicitNullValueVideoAccess; set { _explicitNullValueVideoAccess = value; AdditionalData?.Remove("video_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_access"); else _explicitNullProperties?.Remove("video_access"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess? _explicitNullValueVideoAccess = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess VideoAccess { get => _explicitNullValueVideoAccess; set { _explicitNullValueVideoAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_access"); else _explicitNullProperties?.Remove("video_access"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess VideoAccess { get => _explicitNullValueVideoAccess; set { _explicitNullValueVideoAccess = value; AdditionalData?.Remove("video_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_access"); else _explicitNullProperties?.Remove("video_access"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateUserBroadcastResponseDataVideoAccess _explicitNullValueVideoAccess = default!;
 #endif
         /// <summary>

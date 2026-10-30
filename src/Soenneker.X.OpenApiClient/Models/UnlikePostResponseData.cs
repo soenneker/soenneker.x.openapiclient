@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("liked") is { } nullNodeLiked && nullNodeLiked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Liked = null;
+            if (parseNode.GetChildNode("liked") is null) { _explicitNullValueLiked = default!; _explicitNullProperties?.Remove("liked"); }
+            else if (parseNode.GetChildNode("liked") is { } nullNodeLiked && nullNodeLiked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Liked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the Post is liked.</summary>
-        public bool? Liked { get => _explicitNullValueLiked; set { _explicitNullValueLiked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked"); else _explicitNullProperties?.Remove("liked"); } }
+        public bool? Liked { get => _explicitNullValueLiked; set { _explicitNullValueLiked = value; AdditionalData?.Remove("liked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("liked"); else _explicitNullProperties?.Remove("liked"); } }
         private bool? _explicitNullValueLiked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UnlikePostResponseData"/> and sets the default values.

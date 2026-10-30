@@ -17,19 +17,22 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
-            if (parseNode.GetChildNode("group_key_rotation_data") is { } nullNodeGroupKeyRotationData && nullNodeGroupKeyRotationData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupKeyRotationData = null;
-            if (parseNode.GetChildNode("user_ids") is { } nullNodeUserIds && nullNodeUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIds = null;
+            if (parseNode.GetChildNode("action_signatures") is null) { _explicitNullValueActionSignatures = default!; _explicitNullProperties?.Remove("action_signatures"); }
+            else if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("group_key_rotation_data") is null) { _explicitNullValueGroupKeyRotationData = default!; _explicitNullProperties?.Remove("group_key_rotation_data"); }
+            else if (parseNode.GetChildNode("group_key_rotation_data") is { } nullNodeGroupKeyRotationData && nullNodeGroupKeyRotationData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupKeyRotationData = null;
+            if (parseNode.GetChildNode("user_ids") is null) { _explicitNullValueUserIds = default!; _explicitNullProperties?.Remove("user_ids"); }
+            else if (parseNode.GetChildNode("user_ids") is { } nullNodeUserIds && nullNodeUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserIds = null;
         }
 
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -37,21 +40,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The group_key_rotation_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData? GroupKeyRotationData { get => _explicitNullValueGroupKeyRotationData; set { _explicitNullValueGroupKeyRotationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_key_rotation_data"); else _explicitNullProperties?.Remove("group_key_rotation_data"); } }
+        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData? GroupKeyRotationData { get => _explicitNullValueGroupKeyRotationData; set { _explicitNullValueGroupKeyRotationData = value; AdditionalData?.Remove("group_key_rotation_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_key_rotation_data"); else _explicitNullProperties?.Remove("group_key_rotation_data"); } }
         private global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData? _explicitNullValueGroupKeyRotationData = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData GroupKeyRotationData { get => _explicitNullValueGroupKeyRotationData; set { _explicitNullValueGroupKeyRotationData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_key_rotation_data"); else _explicitNullProperties?.Remove("group_key_rotation_data"); } }
+        public global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData GroupKeyRotationData { get => _explicitNullValueGroupKeyRotationData; set { _explicitNullValueGroupKeyRotationData = value; AdditionalData?.Remove("group_key_rotation_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_key_rotation_data"); else _explicitNullProperties?.Remove("group_key_rotation_data"); } }
         private global::Soenneker.X.OpenApiClient.Models.RemoveChatGroupMembersGroupKeyRotationData _explicitNullValueGroupKeyRotationData = default!;
 #endif
         /// <summary>List of user IDs to remove from the group conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
+        public List<string>? UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; AdditionalData?.Remove("user_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
         private List<string>? _explicitNullValueUserIds = default!;
 #nullable restore
 #else
-        public List<string> UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
+        public List<string> UserIds { get => _explicitNullValueUserIds; set { _explicitNullValueUserIds = value; AdditionalData?.Remove("user_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_ids"); else _explicitNullProperties?.Remove("user_ids"); } }
         private List<string> _explicitNullValueUserIds = default!;
 #endif
         /// <summary>

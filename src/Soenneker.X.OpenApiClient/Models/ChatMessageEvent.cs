@@ -17,16 +17,26 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
-            if (parseNode.GetChildNode("conversation_key_version") is { } nullNodeConversationKeyVersion && nullNodeConversationKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyVersion = null;
-            if (parseNode.GetChildNode("conversation_token") is { } nullNodeConversationToken && nullNodeConversationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationToken = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("encoded_event") is { } nullNodeEncodedEvent && nullNodeEncodedEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedEvent = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_trusted") is { } nullNodeIsTrusted && nullNodeIsTrusted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTrusted = null;
-            if (parseNode.GetChildNode("message_event_signature") is { } nullNodeMessageEventSignature && nullNodeMessageEventSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageEventSignature = null;
-            if (parseNode.GetChildNode("previous_id") is { } nullNodePreviousId && nullNodePreviousId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousId = null;
-            if (parseNode.GetChildNode("sender_id") is { } nullNodeSenderId && nullNodeSenderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderId = null;
+            if (parseNode.GetChildNode("conversation_id") is null) { _explicitNullValueConversationId = default!; _explicitNullProperties?.Remove("conversation_id"); }
+            else if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("conversation_key_version") is null) { _explicitNullValueConversationKeyVersion = default!; _explicitNullProperties?.Remove("conversation_key_version"); }
+            else if (parseNode.GetChildNode("conversation_key_version") is { } nullNodeConversationKeyVersion && nullNodeConversationKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyVersion = null;
+            if (parseNode.GetChildNode("conversation_token") is null) { _explicitNullValueConversationToken = default!; _explicitNullProperties?.Remove("conversation_token"); }
+            else if (parseNode.GetChildNode("conversation_token") is { } nullNodeConversationToken && nullNodeConversationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationToken = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("encoded_event") is null) { _explicitNullValueEncodedEvent = default!; _explicitNullProperties?.Remove("encoded_event"); }
+            else if (parseNode.GetChildNode("encoded_event") is { } nullNodeEncodedEvent && nullNodeEncodedEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedEvent = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_trusted") is null) { _explicitNullValueIsTrusted = default!; _explicitNullProperties?.Remove("is_trusted"); }
+            else if (parseNode.GetChildNode("is_trusted") is { } nullNodeIsTrusted && nullNodeIsTrusted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsTrusted = null;
+            if (parseNode.GetChildNode("message_event_signature") is null) { _explicitNullValueMessageEventSignature = default!; _explicitNullProperties?.Remove("message_event_signature"); }
+            else if (parseNode.GetChildNode("message_event_signature") is { } nullNodeMessageEventSignature && nullNodeMessageEventSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageEventSignature = null;
+            if (parseNode.GetChildNode("previous_id") is null) { _explicitNullValuePreviousId = default!; _explicitNullProperties?.Remove("previous_id"); }
+            else if (parseNode.GetChildNode("previous_id") is { } nullNodePreviousId && nullNodePreviousId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousId = null;
+            if (parseNode.GetChildNode("sender_id") is null) { _explicitNullValueSenderId = default!; _explicitNullProperties?.Remove("sender_id"); }
+            else if (parseNode.GetChildNode("sender_id") is { } nullNodeSenderId && nullNodeSenderId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SenderId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,87 +44,87 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The conversation_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
         private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
         private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>The version of the conversation key that encrypts the event&apos;s contents. Absent when the event is not encrypted, such as a message sent before the conversation was encrypted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        public string? ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; AdditionalData?.Remove("conversation_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
         private string? _explicitNullValueConversationKeyVersion = default!;
 #nullable restore
 #else
-        public string ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        public string ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; AdditionalData?.Remove("conversation_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
         private string _explicitNullValueConversationKeyVersion = default!;
 #endif
         /// <summary>Usually present on encrypted events; unencrypted events have none.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        public string? ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; AdditionalData?.Remove("conversation_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
         private string? _explicitNullValueConversationToken = default!;
 #nullable restore
 #else
-        public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
+        public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; AdditionalData?.Remove("conversation_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
         private string _explicitNullValueConversationToken = default!;
 #endif
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>The encoded_event property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
+        public string? EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; AdditionalData?.Remove("encoded_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
         private string? _explicitNullValueEncodedEvent = default!;
 #nullable restore
 #else
-        public string EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
+        public string EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; AdditionalData?.Remove("encoded_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
         private string _explicitNullValueEncodedEvent = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The is_trusted property</summary>
-        public bool? IsTrusted { get => _explicitNullValueIsTrusted; set { _explicitNullValueIsTrusted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_trusted"); else _explicitNullProperties?.Remove("is_trusted"); } }
+        public bool? IsTrusted { get => _explicitNullValueIsTrusted; set { _explicitNullValueIsTrusted = value; AdditionalData?.Remove("is_trusted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_trusted"); else _explicitNullProperties?.Remove("is_trusted"); } }
         private bool? _explicitNullValueIsTrusted = default!;
         /// <summary>Usually present on encrypted events; unencrypted events have none. Treat an encrypted event without one as unverified.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty? MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty? MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; AdditionalData?.Remove("message_event_signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty? _explicitNullValueMessageEventSignature = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty MessageEventSignature { get => _explicitNullValueMessageEventSignature; set { _explicitNullValueMessageEventSignature = value; AdditionalData?.Remove("message_event_signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_event_signature"); else _explicitNullProperties?.Remove("message_event_signature"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatMessageEventMessageEventSignatureProperty _explicitNullValueMessageEventSignature = default!;
 #endif
         /// <summary>The previous_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_id"); else _explicitNullProperties?.Remove("previous_id"); } }
+        public string? PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; AdditionalData?.Remove("previous_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_id"); else _explicitNullProperties?.Remove("previous_id"); } }
         private string? _explicitNullValuePreviousId = default!;
 #nullable restore
 #else
-        public string PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_id"); else _explicitNullProperties?.Remove("previous_id"); } }
+        public string PreviousId { get => _explicitNullValuePreviousId; set { _explicitNullValuePreviousId = value; AdditionalData?.Remove("previous_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_id"); else _explicitNullProperties?.Remove("previous_id"); } }
         private string _explicitNullValuePreviousId = default!;
 #endif
         /// <summary>The sender_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SenderId { get => _explicitNullValueSenderId; set { _explicitNullValueSenderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_id"); else _explicitNullProperties?.Remove("sender_id"); } }
+        public string? SenderId { get => _explicitNullValueSenderId; set { _explicitNullValueSenderId = value; AdditionalData?.Remove("sender_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_id"); else _explicitNullProperties?.Remove("sender_id"); } }
         private string? _explicitNullValueSenderId = default!;
 #nullable restore
 #else
-        public string SenderId { get => _explicitNullValueSenderId; set { _explicitNullValueSenderId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_id"); else _explicitNullProperties?.Remove("sender_id"); } }
+        public string SenderId { get => _explicitNullValueSenderId; set { _explicitNullValueSenderId = value; AdditionalData?.Remove("sender_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sender_id"); else _explicitNullProperties?.Remove("sender_id"); } }
         private string _explicitNullValueSenderId = default!;
 #endif
         /// <summary>

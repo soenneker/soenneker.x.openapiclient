@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("h") is { } nullNodeH && nullNodeH.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) H = null;
-            if (parseNode.GetChildNode("image_type") is { } nullNodeImageType && nullNodeImageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageType = null;
-            if (parseNode.GetChildNode("w") is { } nullNodeW && nullNodeW.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W = null;
+            if (parseNode.GetChildNode("h") is null) { _explicitNullValueH = default!; _explicitNullProperties?.Remove("h"); }
+            else if (parseNode.GetChildNode("h") is { } nullNodeH && nullNodeH.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) H = null;
+            if (parseNode.GetChildNode("image_type") is null) { _explicitNullValueImageType = default!; _explicitNullProperties?.Remove("image_type"); }
+            else if (parseNode.GetChildNode("image_type") is { } nullNodeImageType && nullNodeImageType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageType = null;
+            if (parseNode.GetChildNode("w") is null) { _explicitNullValueW = default!; _explicitNullProperties?.Remove("w"); }
+            else if (parseNode.GetChildNode("w") is { } nullNodeW && nullNodeW.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) W = null;
         }
 
         /// <summary>Height in pixels.</summary>

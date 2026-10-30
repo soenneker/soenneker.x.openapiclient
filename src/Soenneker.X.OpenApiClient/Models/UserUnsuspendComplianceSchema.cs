@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_unsuspend") is { } nullNodeUserUnsuspend && nullNodeUserUnsuspend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUnsuspend = null;
+            if (parseNode.GetChildNode("user_unsuspend") is null) { _explicitNullValueUserUnsuspend = default!; _explicitNullProperties?.Remove("user_unsuspend"); }
+            else if (parseNode.GetChildNode("user_unsuspend") is { } nullNodeUserUnsuspend && nullNodeUserUnsuspend.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUnsuspend = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user_unsuspend property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUnsuspend { get => _explicitNullValueUserUnsuspend; set { _explicitNullValueUserUnsuspend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unsuspend"); else _explicitNullProperties?.Remove("user_unsuspend"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUnsuspend { get => _explicitNullValueUserUnsuspend; set { _explicitNullValueUserUnsuspend = value; AdditionalData?.Remove("user_unsuspend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unsuspend"); else _explicitNullProperties?.Remove("user_unsuspend"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? _explicitNullValueUserUnsuspend = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUnsuspend { get => _explicitNullValueUserUnsuspend; set { _explicitNullValueUserUnsuspend = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unsuspend"); else _explicitNullProperties?.Remove("user_unsuspend"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUnsuspend { get => _explicitNullValueUserUnsuspend; set { _explicitNullValueUserUnsuspend = value; AdditionalData?.Remove("user_unsuspend"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unsuspend"); else _explicitNullProperties?.Remove("user_unsuspend"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema _explicitNullValueUserUnsuspend = default!;
 #endif
         /// <summary>

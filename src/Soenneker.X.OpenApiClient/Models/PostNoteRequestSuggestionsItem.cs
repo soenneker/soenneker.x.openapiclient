@@ -18,9 +18,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("source_link") is { } nullNodeSourceLink && nullNodeSourceLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLink = null;
-            if (parseNode.GetChildNode("suggestion") is { } nullNodeSuggestion && nullNodeSuggestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suggestion = null;
-            if (parseNode.GetChildNode("suggestion_id") is { } nullNodeSuggestionId && nullNodeSuggestionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestionId = null;
+            if (parseNode.GetChildNode("source_link") is null) { _explicitNullValueSourceLink = default!; _explicitNullProperties?.Remove("source_link"); }
+            else if (parseNode.GetChildNode("source_link") is { } nullNodeSourceLink && nullNodeSourceLink.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SourceLink = null;
+            if (parseNode.GetChildNode("suggestion") is null) { _explicitNullValueSuggestion = default!; _explicitNullProperties?.Remove("suggestion"); }
+            else if (parseNode.GetChildNode("suggestion") is { } nullNodeSuggestion && nullNodeSuggestion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Suggestion = null;
+            if (parseNode.GetChildNode("suggestion_id") is null) { _explicitNullValueSuggestionId = default!; _explicitNullProperties?.Remove("suggestion_id"); }
+            else if (parseNode.GetChildNode("suggestion_id") is { } nullNodeSuggestionId && nullNodeSuggestionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SuggestionId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A suggested source link supporting the note request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_link"); else _explicitNullProperties?.Remove("source_link"); } }
+        public string? SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; AdditionalData?.Remove("source_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_link"); else _explicitNullProperties?.Remove("source_link"); } }
         private string? _explicitNullValueSourceLink = default!;
 #nullable restore
 #else
-        public string SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_link"); else _explicitNullProperties?.Remove("source_link"); } }
+        public string SourceLink { get => _explicitNullValueSourceLink; set { _explicitNullValueSourceLink = value; AdditionalData?.Remove("source_link"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_link"); else _explicitNullProperties?.Remove("source_link"); } }
         private string _explicitNullValueSourceLink = default!;
 #endif
         /// <summary>The text of the note request suggestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Suggestion { get => _explicitNullValueSuggestion; set { _explicitNullValueSuggestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion"); else _explicitNullProperties?.Remove("suggestion"); } }
+        public string? Suggestion { get => _explicitNullValueSuggestion; set { _explicitNullValueSuggestion = value; AdditionalData?.Remove("suggestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion"); else _explicitNullProperties?.Remove("suggestion"); } }
         private string? _explicitNullValueSuggestion = default!;
 #nullable restore
 #else
-        public string Suggestion { get => _explicitNullValueSuggestion; set { _explicitNullValueSuggestion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion"); else _explicitNullProperties?.Remove("suggestion"); } }
+        public string Suggestion { get => _explicitNullValueSuggestion; set { _explicitNullValueSuggestion = value; AdditionalData?.Remove("suggestion"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion"); else _explicitNullProperties?.Remove("suggestion"); } }
         private string _explicitNullValueSuggestion = default!;
 #endif
         /// <summary>The unique identifier of the note request suggestion.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SuggestionId { get => _explicitNullValueSuggestionId; set { _explicitNullValueSuggestionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion_id"); else _explicitNullProperties?.Remove("suggestion_id"); } }
+        public string? SuggestionId { get => _explicitNullValueSuggestionId; set { _explicitNullValueSuggestionId = value; AdditionalData?.Remove("suggestion_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion_id"); else _explicitNullProperties?.Remove("suggestion_id"); } }
         private string? _explicitNullValueSuggestionId = default!;
 #nullable restore
 #else
-        public string SuggestionId { get => _explicitNullValueSuggestionId; set { _explicitNullValueSuggestionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion_id"); else _explicitNullProperties?.Remove("suggestion_id"); } }
+        public string SuggestionId { get => _explicitNullValueSuggestionId; set { _explicitNullValueSuggestionId = value; AdditionalData?.Remove("suggestion_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("suggestion_id"); else _explicitNullProperties?.Remove("suggestion_id"); } }
         private string _explicitNullValueSuggestionId = default!;
 #endif
         /// <summary>

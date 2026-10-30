@@ -17,11 +17,16 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("message_signing_key_info_list") is { } nullNodeMessageSigningKeyInfoList && nullNodeMessageSigningKeyInfoList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageSigningKeyInfoList = null;
-            if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
-            if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
-            if (parseNode.GetChildNode("signature_version") is { } nullNodeSignatureVersion && nullNodeSignatureVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureVersion = null;
-            if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
+            if (parseNode.GetChildNode("message_signing_key_info_list") is null) { _explicitNullValueMessageSigningKeyInfoList = default!; _explicitNullProperties?.Remove("message_signing_key_info_list"); }
+            else if (parseNode.GetChildNode("message_signing_key_info_list") is { } nullNodeMessageSigningKeyInfoList && nullNodeMessageSigningKeyInfoList.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageSigningKeyInfoList = null;
+            if (parseNode.GetChildNode("public_key_version") is null) { _explicitNullValuePublicKeyVersion = default!; _explicitNullProperties?.Remove("public_key_version"); }
+            else if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
+            if (parseNode.GetChildNode("signature") is null) { _explicitNullValueSignature = default!; _explicitNullProperties?.Remove("signature"); }
+            else if (parseNode.GetChildNode("signature") is { } nullNodeSignature && nullNodeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Signature = null;
+            if (parseNode.GetChildNode("signature_version") is null) { _explicitNullValueSignatureVersion = default!; _explicitNullProperties?.Remove("signature_version"); }
+            else if (parseNode.GetChildNode("signature_version") is { } nullNodeSignatureVersion && nullNodeSignatureVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SignatureVersion = null;
+            if (parseNode.GetChildNode("signing_public_key") is null) { _explicitNullValueSigningPublicKey = default!; _explicitNullProperties?.Remove("signing_public_key"); }
+            else if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>List of signing key information for message verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList>? MessageSigningKeyInfoList { get => _explicitNullValueMessageSigningKeyInfoList; set { _explicitNullValueMessageSigningKeyInfoList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_signing_key_info_list"); else _explicitNullProperties?.Remove("message_signing_key_info_list"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList>? MessageSigningKeyInfoList { get => _explicitNullValueMessageSigningKeyInfoList; set { _explicitNullValueMessageSigningKeyInfoList = value; AdditionalData?.Remove("message_signing_key_info_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_signing_key_info_list"); else _explicitNullProperties?.Remove("message_signing_key_info_list"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList>? _explicitNullValueMessageSigningKeyInfoList = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList> MessageSigningKeyInfoList { get => _explicitNullValueMessageSigningKeyInfoList; set { _explicitNullValueMessageSigningKeyInfoList = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_signing_key_info_list"); else _explicitNullProperties?.Remove("message_signing_key_info_list"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList> MessageSigningKeyInfoList { get => _explicitNullValueMessageSigningKeyInfoList; set { _explicitNullValueMessageSigningKeyInfoList = value; AdditionalData?.Remove("message_signing_key_info_list"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_signing_key_info_list"); else _explicitNullProperties?.Remove("message_signing_key_info_list"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.UnmuteChatConversationActionSignaturesMessageEventSignatureMessageSigningKeyInfoList> _explicitNullValueMessageSigningKeyInfoList = default!;
 #endif
         /// <summary>The version of the public key used for signing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string? _explicitNullValuePublicKeyVersion = default!;
 #nullable restore
 #else
-        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string _explicitNullValuePublicKeyVersion = default!;
 #endif
         /// <summary>The signature of the message event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        public string? Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
         private string? _explicitNullValueSignature = default!;
 #nullable restore
 #else
-        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
+        public string Signature { get => _explicitNullValueSignature; set { _explicitNullValueSignature = value; AdditionalData?.Remove("signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature"); else _explicitNullProperties?.Remove("signature"); } }
         private string _explicitNullValueSignature = default!;
 #endif
         /// <summary>The version of the signature algorithm.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SignatureVersion { get => _explicitNullValueSignatureVersion; set { _explicitNullValueSignatureVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_version"); else _explicitNullProperties?.Remove("signature_version"); } }
+        public string? SignatureVersion { get => _explicitNullValueSignatureVersion; set { _explicitNullValueSignatureVersion = value; AdditionalData?.Remove("signature_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_version"); else _explicitNullProperties?.Remove("signature_version"); } }
         private string? _explicitNullValueSignatureVersion = default!;
 #nullable restore
 #else
-        public string SignatureVersion { get => _explicitNullValueSignatureVersion; set { _explicitNullValueSignatureVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_version"); else _explicitNullProperties?.Remove("signature_version"); } }
+        public string SignatureVersion { get => _explicitNullValueSignatureVersion; set { _explicitNullValueSignatureVersion = value; AdditionalData?.Remove("signature_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signature_version"); else _explicitNullProperties?.Remove("signature_version"); } }
         private string _explicitNullValueSignatureVersion = default!;
 #endif
         /// <summary>The public key used for signing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        public string? SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; AdditionalData?.Remove("signing_public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
         private string? _explicitNullValueSigningPublicKey = default!;
 #nullable restore
 #else
-        public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; AdditionalData?.Remove("signing_public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
         private string _explicitNullValueSigningPublicKey = default!;
 #endif
         /// <summary>

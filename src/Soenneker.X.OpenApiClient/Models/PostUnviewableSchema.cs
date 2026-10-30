@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("public_tweet_unviewable") is { } nullNodePublicTweetUnviewable && nullNodePublicTweetUnviewable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicTweetUnviewable = null;
+            if (parseNode.GetChildNode("public_tweet_unviewable") is null) { _explicitNullValuePublicTweetUnviewable = default!; _explicitNullProperties?.Remove("public_tweet_unviewable"); }
+            else if (parseNode.GetChildNode("public_tweet_unviewable") is { } nullNodePublicTweetUnviewable && nullNodePublicTweetUnviewable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicTweetUnviewable = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The public_tweet_unviewable property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostUnviewable? PublicTweetUnviewable { get => _explicitNullValuePublicTweetUnviewable; set { _explicitNullValuePublicTweetUnviewable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_unviewable"); else _explicitNullProperties?.Remove("public_tweet_unviewable"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostUnviewable? PublicTweetUnviewable { get => _explicitNullValuePublicTweetUnviewable; set { _explicitNullValuePublicTweetUnviewable = value; AdditionalData?.Remove("public_tweet_unviewable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_unviewable"); else _explicitNullProperties?.Remove("public_tweet_unviewable"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostUnviewable? _explicitNullValuePublicTweetUnviewable = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostUnviewable PublicTweetUnviewable { get => _explicitNullValuePublicTweetUnviewable; set { _explicitNullValuePublicTweetUnviewable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_unviewable"); else _explicitNullProperties?.Remove("public_tweet_unviewable"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostUnviewable PublicTweetUnviewable { get => _explicitNullValuePublicTweetUnviewable; set { _explicitNullValuePublicTweetUnviewable = value; AdditionalData?.Remove("public_tweet_unviewable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_unviewable"); else _explicitNullProperties?.Remove("public_tweet_unviewable"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostUnviewable _explicitNullValuePublicTweetUnviewable = default!;
 #endif
         /// <summary>

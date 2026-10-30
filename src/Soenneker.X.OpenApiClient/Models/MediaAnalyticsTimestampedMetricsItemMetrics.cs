@@ -18,16 +18,26 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cta_url_clicks") is { } nullNodeCtaUrlClicks && nullNodeCtaUrlClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaUrlClicks = null;
-            if (parseNode.GetChildNode("cta_watch_clicks") is { } nullNodeCtaWatchClicks && nullNodeCtaWatchClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaWatchClicks = null;
-            if (parseNode.GetChildNode("playback25") is { } nullNodePlayback25 && nullNodePlayback25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback25 = null;
-            if (parseNode.GetChildNode("playback50") is { } nullNodePlayback50 && nullNodePlayback50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback50 = null;
-            if (parseNode.GetChildNode("playback75") is { } nullNodePlayback75 && nullNodePlayback75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback75 = null;
-            if (parseNode.GetChildNode("playback_complete") is { } nullNodePlaybackComplete && nullNodePlaybackComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackComplete = null;
-            if (parseNode.GetChildNode("playback_start") is { } nullNodePlaybackStart && nullNodePlaybackStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackStart = null;
-            if (parseNode.GetChildNode("play_from_tap") is { } nullNodePlayFromTap && nullNodePlayFromTap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayFromTap = null;
-            if (parseNode.GetChildNode("video_views") is { } nullNodeVideoViews && nullNodeVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoViews = null;
-            if (parseNode.GetChildNode("watch_time_ms") is { } nullNodeWatchTimeMs && nullNodeWatchTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchTimeMs = null;
+            if (parseNode.GetChildNode("cta_url_clicks") is null) { _explicitNullValueCtaUrlClicks = default!; _explicitNullProperties?.Remove("cta_url_clicks"); }
+            else if (parseNode.GetChildNode("cta_url_clicks") is { } nullNodeCtaUrlClicks && nullNodeCtaUrlClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaUrlClicks = null;
+            if (parseNode.GetChildNode("cta_watch_clicks") is null) { _explicitNullValueCtaWatchClicks = default!; _explicitNullProperties?.Remove("cta_watch_clicks"); }
+            else if (parseNode.GetChildNode("cta_watch_clicks") is { } nullNodeCtaWatchClicks && nullNodeCtaWatchClicks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaWatchClicks = null;
+            if (parseNode.GetChildNode("playback25") is null) { _explicitNullValuePlayback25 = default!; _explicitNullProperties?.Remove("playback25"); }
+            else if (parseNode.GetChildNode("playback25") is { } nullNodePlayback25 && nullNodePlayback25.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback25 = null;
+            if (parseNode.GetChildNode("playback50") is null) { _explicitNullValuePlayback50 = default!; _explicitNullProperties?.Remove("playback50"); }
+            else if (parseNode.GetChildNode("playback50") is { } nullNodePlayback50 && nullNodePlayback50.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback50 = null;
+            if (parseNode.GetChildNode("playback75") is null) { _explicitNullValuePlayback75 = default!; _explicitNullProperties?.Remove("playback75"); }
+            else if (parseNode.GetChildNode("playback75") is { } nullNodePlayback75 && nullNodePlayback75.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback75 = null;
+            if (parseNode.GetChildNode("playback_complete") is null) { _explicitNullValuePlaybackComplete = default!; _explicitNullProperties?.Remove("playback_complete"); }
+            else if (parseNode.GetChildNode("playback_complete") is { } nullNodePlaybackComplete && nullNodePlaybackComplete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackComplete = null;
+            if (parseNode.GetChildNode("playback_start") is null) { _explicitNullValuePlaybackStart = default!; _explicitNullProperties?.Remove("playback_start"); }
+            else if (parseNode.GetChildNode("playback_start") is { } nullNodePlaybackStart && nullNodePlaybackStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaybackStart = null;
+            if (parseNode.GetChildNode("play_from_tap") is null) { _explicitNullValuePlayFromTap = default!; _explicitNullProperties?.Remove("play_from_tap"); }
+            else if (parseNode.GetChildNode("play_from_tap") is { } nullNodePlayFromTap && nullNodePlayFromTap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayFromTap = null;
+            if (parseNode.GetChildNode("video_views") is null) { _explicitNullValueVideoViews = default!; _explicitNullProperties?.Remove("video_views"); }
+            else if (parseNode.GetChildNode("video_views") is { } nullNodeVideoViews && nullNodeVideoViews.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VideoViews = null;
+            if (parseNode.GetChildNode("watch_time_ms") is null) { _explicitNullValueWatchTimeMs = default!; _explicitNullProperties?.Remove("watch_time_ms"); }
+            else if (parseNode.GetChildNode("watch_time_ms") is { } nullNodeWatchTimeMs && nullNodeWatchTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchTimeMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -35,102 +45,102 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? CtaUrlClicks { get => _explicitNullValueCtaUrlClicks; set { _explicitNullValueCtaUrlClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_clicks"); else _explicitNullProperties?.Remove("cta_url_clicks"); } }
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? CtaUrlClicks { get => _explicitNullValueCtaUrlClicks; set { _explicitNullValueCtaUrlClicks = value; AdditionalData?.Remove("cta_url_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_clicks"); else _explicitNullProperties?.Remove("cta_url_clicks"); } }
         private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValueCtaUrlClicks = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks CtaUrlClicks { get => _explicitNullValueCtaUrlClicks; set { _explicitNullValueCtaUrlClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_clicks"); else _explicitNullProperties?.Remove("cta_url_clicks"); } }
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks CtaUrlClicks { get => _explicitNullValueCtaUrlClicks; set { _explicitNullValueCtaUrlClicks = value; AdditionalData?.Remove("cta_url_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_clicks"); else _explicitNullProperties?.Remove("cta_url_clicks"); } }
         private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValueCtaUrlClicks = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks? CtaWatchClicks { get => _explicitNullValueCtaWatchClicks; set { _explicitNullValueCtaWatchClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_clicks"); else _explicitNullProperties?.Remove("cta_watch_clicks"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks? _explicitNullValueCtaWatchClicks = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? CtaWatchClicks { get => _explicitNullValueCtaWatchClicks; set { _explicitNullValueCtaWatchClicks = value; AdditionalData?.Remove("cta_watch_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_clicks"); else _explicitNullProperties?.Remove("cta_watch_clicks"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValueCtaWatchClicks = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks CtaWatchClicks { get => _explicitNullValueCtaWatchClicks; set { _explicitNullValueCtaWatchClicks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_clicks"); else _explicitNullProperties?.Remove("cta_watch_clicks"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks _explicitNullValueCtaWatchClicks = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks CtaWatchClicks { get => _explicitNullValueCtaWatchClicks; set { _explicitNullValueCtaWatchClicks = value; AdditionalData?.Remove("cta_watch_clicks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_clicks"); else _explicitNullProperties?.Remove("cta_watch_clicks"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValueCtaWatchClicks = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25? Playback25 { get => _explicitNullValuePlayback25; set { _explicitNullValuePlayback25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback25"); else _explicitNullProperties?.Remove("playback25"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25? _explicitNullValuePlayback25 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? Playback25 { get => _explicitNullValuePlayback25; set { _explicitNullValuePlayback25 = value; AdditionalData?.Remove("playback25"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback25"); else _explicitNullProperties?.Remove("playback25"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlayback25 = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25 Playback25 { get => _explicitNullValuePlayback25; set { _explicitNullValuePlayback25 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback25"); else _explicitNullProperties?.Remove("playback25"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25 _explicitNullValuePlayback25 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks Playback25 { get => _explicitNullValuePlayback25; set { _explicitNullValuePlayback25 = value; AdditionalData?.Remove("playback25"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback25"); else _explicitNullProperties?.Remove("playback25"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlayback25 = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50? Playback50 { get => _explicitNullValuePlayback50; set { _explicitNullValuePlayback50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback50"); else _explicitNullProperties?.Remove("playback50"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50? _explicitNullValuePlayback50 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? Playback50 { get => _explicitNullValuePlayback50; set { _explicitNullValuePlayback50 = value; AdditionalData?.Remove("playback50"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback50"); else _explicitNullProperties?.Remove("playback50"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlayback50 = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50 Playback50 { get => _explicitNullValuePlayback50; set { _explicitNullValuePlayback50 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback50"); else _explicitNullProperties?.Remove("playback50"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50 _explicitNullValuePlayback50 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks Playback50 { get => _explicitNullValuePlayback50; set { _explicitNullValuePlayback50 = value; AdditionalData?.Remove("playback50"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback50"); else _explicitNullProperties?.Remove("playback50"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlayback50 = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75? Playback75 { get => _explicitNullValuePlayback75; set { _explicitNullValuePlayback75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback75"); else _explicitNullProperties?.Remove("playback75"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75? _explicitNullValuePlayback75 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? Playback75 { get => _explicitNullValuePlayback75; set { _explicitNullValuePlayback75 = value; AdditionalData?.Remove("playback75"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback75"); else _explicitNullProperties?.Remove("playback75"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlayback75 = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75 Playback75 { get => _explicitNullValuePlayback75; set { _explicitNullValuePlayback75 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback75"); else _explicitNullProperties?.Remove("playback75"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75 _explicitNullValuePlayback75 = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks Playback75 { get => _explicitNullValuePlayback75; set { _explicitNullValuePlayback75 = value; AdditionalData?.Remove("playback75"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback75"); else _explicitNullProperties?.Remove("playback75"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlayback75 = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete? PlaybackComplete { get => _explicitNullValuePlaybackComplete; set { _explicitNullValuePlaybackComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_complete"); else _explicitNullProperties?.Remove("playback_complete"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete? _explicitNullValuePlaybackComplete = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? PlaybackComplete { get => _explicitNullValuePlaybackComplete; set { _explicitNullValuePlaybackComplete = value; AdditionalData?.Remove("playback_complete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_complete"); else _explicitNullProperties?.Remove("playback_complete"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlaybackComplete = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete PlaybackComplete { get => _explicitNullValuePlaybackComplete; set { _explicitNullValuePlaybackComplete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_complete"); else _explicitNullProperties?.Remove("playback_complete"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete _explicitNullValuePlaybackComplete = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks PlaybackComplete { get => _explicitNullValuePlaybackComplete; set { _explicitNullValuePlaybackComplete = value; AdditionalData?.Remove("playback_complete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_complete"); else _explicitNullProperties?.Remove("playback_complete"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlaybackComplete = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart? PlaybackStart { get => _explicitNullValuePlaybackStart; set { _explicitNullValuePlaybackStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_start"); else _explicitNullProperties?.Remove("playback_start"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart? _explicitNullValuePlaybackStart = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? PlaybackStart { get => _explicitNullValuePlaybackStart; set { _explicitNullValuePlaybackStart = value; AdditionalData?.Remove("playback_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_start"); else _explicitNullProperties?.Remove("playback_start"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlaybackStart = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart PlaybackStart { get => _explicitNullValuePlaybackStart; set { _explicitNullValuePlaybackStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_start"); else _explicitNullProperties?.Remove("playback_start"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart _explicitNullValuePlaybackStart = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks PlaybackStart { get => _explicitNullValuePlaybackStart; set { _explicitNullValuePlaybackStart = value; AdditionalData?.Remove("playback_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_start"); else _explicitNullProperties?.Remove("playback_start"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlaybackStart = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap? PlayFromTap { get => _explicitNullValuePlayFromTap; set { _explicitNullValuePlayFromTap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_from_tap"); else _explicitNullProperties?.Remove("play_from_tap"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap? _explicitNullValuePlayFromTap = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? PlayFromTap { get => _explicitNullValuePlayFromTap; set { _explicitNullValuePlayFromTap = value; AdditionalData?.Remove("play_from_tap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_from_tap"); else _explicitNullProperties?.Remove("play_from_tap"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValuePlayFromTap = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap PlayFromTap { get => _explicitNullValuePlayFromTap; set { _explicitNullValuePlayFromTap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_from_tap"); else _explicitNullProperties?.Remove("play_from_tap"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap _explicitNullValuePlayFromTap = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks PlayFromTap { get => _explicitNullValuePlayFromTap; set { _explicitNullValuePlayFromTap = value; AdditionalData?.Remove("play_from_tap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play_from_tap"); else _explicitNullProperties?.Remove("play_from_tap"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValuePlayFromTap = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews? VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_views"); else _explicitNullProperties?.Remove("video_views"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews? _explicitNullValueVideoViews = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; AdditionalData?.Remove("video_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_views"); else _explicitNullProperties?.Remove("video_views"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValueVideoViews = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_views"); else _explicitNullProperties?.Remove("video_views"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews _explicitNullValueVideoViews = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks VideoViews { get => _explicitNullValueVideoViews; set { _explicitNullValueVideoViews = value; AdditionalData?.Remove("video_views"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("video_views"); else _explicitNullProperties?.Remove("video_views"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValueVideoViews = default!;
 #endif
         /// <summary>A video metric counter: an integer when the backend value parses as a number, otherwise the original string.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs? WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs? _explicitNullValueWatchTimeMs = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; AdditionalData?.Remove("watch_time_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks? _explicitNullValueWatchTimeMs = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
-        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs _explicitNullValueWatchTimeMs = default!;
+        public global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; AdditionalData?.Remove("watch_time_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks _explicitNullValueWatchTimeMs = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetrics"/> and sets the default values.
@@ -160,15 +170,15 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cta_url_clicks", n => { CtaUrlClicks = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
-                { "cta_watch_clicks", n => { CtaWatchClicks = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks.CreateFromDiscriminatorValue); } },
-                { "play_from_tap", n => { PlayFromTap = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap.CreateFromDiscriminatorValue); } },
-                { "playback25", n => { Playback25 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25.CreateFromDiscriminatorValue); } },
-                { "playback50", n => { Playback50 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50.CreateFromDiscriminatorValue); } },
-                { "playback75", n => { Playback75 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75.CreateFromDiscriminatorValue); } },
-                { "playback_complete", n => { PlaybackComplete = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete.CreateFromDiscriminatorValue); } },
-                { "playback_start", n => { PlaybackStart = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart.CreateFromDiscriminatorValue); } },
-                { "video_views", n => { VideoViews = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews.CreateFromDiscriminatorValue); } },
-                { "watch_time_ms", n => { WatchTimeMs = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs.CreateFromDiscriminatorValue); } },
+                { "cta_watch_clicks", n => { CtaWatchClicks = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "play_from_tap", n => { PlayFromTap = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "playback25", n => { Playback25 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "playback50", n => { Playback50 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "playback75", n => { Playback75 = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "playback_complete", n => { PlaybackComplete = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "playback_start", n => { PlaybackStart = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "video_views", n => { VideoViews = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
+                { "watch_time_ms", n => { WatchTimeMs = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>(global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -179,15 +189,15 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("cta_url_clicks", CtaUrlClicks);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks>("cta_watch_clicks", CtaWatchClicks);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback25>("playback25", Playback25);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback50>("playback50", Playback50);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayback75>("playback75", Playback75);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete>("playback_complete", PlaybackComplete);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart>("playback_start", PlaybackStart);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap>("play_from_tap", PlayFromTap);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsVideoViews>("video_views", VideoViews);
-            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs>("watch_time_ms", WatchTimeMs);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("cta_watch_clicks", CtaWatchClicks);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("playback25", Playback25);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("playback50", Playback50);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("playback75", Playback75);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("playback_complete", PlaybackComplete);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("playback_start", PlaybackStart);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("play_from_tap", PlayFromTap);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("video_views", VideoViews);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks>("watch_time_ms", WatchTimeMs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

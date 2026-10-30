@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("place_id") is { } nullNodePlaceId && nullNodePlaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaceId = null;
+            if (parseNode.GetChildNode("place_id") is null) { _explicitNullValuePlaceId = default!; _explicitNullProperties?.Remove("place_id"); }
+            else if (parseNode.GetChildNode("place_id") is { } nullNodePlaceId && nullNodePlaceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlaceId = null;
         }
 
         /// <summary>Place ID for geo tagging.</summary>

@@ -17,10 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("conversation_key_events") is { } nullNodeConversationKeyEvents && nullNodeConversationKeyEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyEvents = null;
-            if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
-            if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
-            if (parseNode.GetChildNode("result_count") is { } nullNodeResultCount && nullNodeResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCount = null;
+            if (parseNode.GetChildNode("conversation_key_events") is null) { _explicitNullValueConversationKeyEvents = default!; _explicitNullProperties?.Remove("conversation_key_events"); }
+            else if (parseNode.GetChildNode("conversation_key_events") is { } nullNodeConversationKeyEvents && nullNodeConversationKeyEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyEvents = null;
+            if (parseNode.GetChildNode("has_more") is null) { _explicitNullValueHasMore = default!; _explicitNullProperties?.Remove("has_more"); }
+            else if (parseNode.GetChildNode("has_more") is { } nullNodeHasMore && nullNodeHasMore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasMore = null;
+            if (parseNode.GetChildNode("next_token") is null) { _explicitNullValueNextToken = default!; _explicitNullProperties?.Remove("next_token"); }
+            else if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
+            if (parseNode.GetChildNode("result_count") is null) { _explicitNullValueResultCount = default!; _explicitNullProperties?.Remove("result_count"); }
+            else if (parseNode.GetChildNode("result_count") is { } nullNodeResultCount && nullNodeResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,28 +32,28 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The conversation_key_events property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
+        public List<string>? ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; AdditionalData?.Remove("conversation_key_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
         private List<string>? _explicitNullValueConversationKeyEvents = default!;
 #nullable restore
 #else
-        public List<string> ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
+        public List<string> ConversationKeyEvents { get => _explicitNullValueConversationKeyEvents; set { _explicitNullValueConversationKeyEvents = value; AdditionalData?.Remove("conversation_key_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_events"); else _explicitNullProperties?.Remove("conversation_key_events"); } }
         private List<string> _explicitNullValueConversationKeyEvents = default!;
 #endif
         /// <summary>The has_more property</summary>
-        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
+        public bool? HasMore { get => _explicitNullValueHasMore; set { _explicitNullValueHasMore = value; AdditionalData?.Remove("has_more"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_more"); else _explicitNullProperties?.Remove("has_more"); } }
         private bool? _explicitNullValueHasMore = default!;
         /// <summary>Pagination token for the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public string? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private string? _explicitNullValueNextToken = default!;
 #nullable restore
 #else
-        public string NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public string NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private string _explicitNullValueNextToken = default!;
 #endif
         /// <summary>Number of items in the data array.</summary>
-        public int? ResultCount { get => _explicitNullValueResultCount; set { _explicitNullValueResultCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_count"); else _explicitNullProperties?.Remove("result_count"); } }
+        public int? ResultCount { get => _explicitNullValueResultCount; set { _explicitNullValueResultCount = value; AdditionalData?.Remove("result_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_count"); else _explicitNullProperties?.Remove("result_count"); } }
         private int? _explicitNullValueResultCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetChatConversationEventsResponseMeta"/> and sets the default values.

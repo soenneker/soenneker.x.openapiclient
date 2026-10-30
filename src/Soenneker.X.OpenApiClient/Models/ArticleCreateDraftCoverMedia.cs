@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
-            if (parseNode.GetChildNode("media_id") is { } nullNodeMediaId && nullNodeMediaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaId = null;
+            if (parseNode.GetChildNode("media_category") is null) { _explicitNullValueMediaCategory = default!; _explicitNullProperties?.Remove("media_category"); }
+            else if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
+            if (parseNode.GetChildNode("media_id") is null) { _explicitNullValueMediaId = default!; _explicitNullProperties?.Remove("media_id"); }
+            else if (parseNode.GetChildNode("media_id") is { } nullNodeMediaId && nullNodeMediaId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaId = null;
         }
 
         /// <summary>The media category (e.g. tweet_image).</summary>

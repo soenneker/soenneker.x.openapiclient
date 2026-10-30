@@ -17,45 +17,49 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
-            if (parseNode.GetChildNode("delete_message_action") is { } nullNodeDeleteMessageAction && nullNodeDeleteMessageAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteMessageAction = null;
-            if (parseNode.GetChildNode("media_hash_keys") is { } nullNodeMediaHashKeys && nullNodeMediaHashKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaHashKeys = null;
-            if (parseNode.GetChildNode("sequence_ids") is { } nullNodeSequenceIds && nullNodeSequenceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceIds = null;
+            if (parseNode.GetChildNode("action_signatures") is null) { _explicitNullValueActionSignatures = default!; _explicitNullProperties?.Remove("action_signatures"); }
+            else if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("delete_message_action") is null) { _explicitNullValueDeleteMessageAction = default!; _explicitNullProperties?.Remove("delete_message_action"); }
+            else if (parseNode.GetChildNode("delete_message_action") is { } nullNodeDeleteMessageAction && nullNodeDeleteMessageAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeleteMessageAction = null;
+            if (parseNode.GetChildNode("media_hash_keys") is null) { _explicitNullValueMediaHashKeys = default!; _explicitNullProperties?.Remove("media_hash_keys"); }
+            else if (parseNode.GetChildNode("media_hash_keys") is { } nullNodeMediaHashKeys && nullNodeMediaHashKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaHashKeys = null;
+            if (parseNode.GetChildNode("sequence_ids") is null) { _explicitNullValueSequenceIds = default!; _explicitNullProperties?.Remove("sequence_ids"); }
+            else if (parseNode.GetChildNode("sequence_ids") is { } nullNodeSequenceIds && nullNodeSequenceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SequenceIds = null;
         }
 
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>delete_for_all removes the messages for every participant; delete_for_self removes them only from the authenticated user&apos;s view.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction? DeleteMessageAction { get => _explicitNullValueDeleteMessageAction; set { _explicitNullValueDeleteMessageAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_message_action"); else _explicitNullProperties?.Remove("delete_message_action"); } }
+        public global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction? DeleteMessageAction { get => _explicitNullValueDeleteMessageAction; set { _explicitNullValueDeleteMessageAction = value; AdditionalData?.Remove("delete_message_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("delete_message_action"); else _explicitNullProperties?.Remove("delete_message_action"); } }
         private global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction? _explicitNullValueDeleteMessageAction = default!;
         /// <summary>Hash keys of encrypted media blobs to delete alongside the messages (delete_for_all only).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaHashKeys { get => _explicitNullValueMediaHashKeys; set { _explicitNullValueMediaHashKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_keys"); else _explicitNullProperties?.Remove("media_hash_keys"); } }
+        public List<string>? MediaHashKeys { get => _explicitNullValueMediaHashKeys; set { _explicitNullValueMediaHashKeys = value; AdditionalData?.Remove("media_hash_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_keys"); else _explicitNullProperties?.Remove("media_hash_keys"); } }
         private List<string>? _explicitNullValueMediaHashKeys = default!;
 #nullable restore
 #else
-        public List<string> MediaHashKeys { get => _explicitNullValueMediaHashKeys; set { _explicitNullValueMediaHashKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_keys"); else _explicitNullProperties?.Remove("media_hash_keys"); } }
+        public List<string> MediaHashKeys { get => _explicitNullValueMediaHashKeys; set { _explicitNullValueMediaHashKeys = value; AdditionalData?.Remove("media_hash_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_hash_keys"); else _explicitNullProperties?.Remove("media_hash_keys"); } }
         private List<string> _explicitNullValueMediaHashKeys = default!;
 #endif
         /// <summary>Sequence IDs of the messages to delete.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SequenceIds { get => _explicitNullValueSequenceIds; set { _explicitNullValueSequenceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_ids"); else _explicitNullProperties?.Remove("sequence_ids"); } }
+        public List<string>? SequenceIds { get => _explicitNullValueSequenceIds; set { _explicitNullValueSequenceIds = value; AdditionalData?.Remove("sequence_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_ids"); else _explicitNullProperties?.Remove("sequence_ids"); } }
         private List<string>? _explicitNullValueSequenceIds = default!;
 #nullable restore
 #else
-        public List<string> SequenceIds { get => _explicitNullValueSequenceIds; set { _explicitNullValueSequenceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_ids"); else _explicitNullProperties?.Remove("sequence_ids"); } }
+        public List<string> SequenceIds { get => _explicitNullValueSequenceIds; set { _explicitNullValueSequenceIds = value; AdditionalData?.Remove("sequence_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sequence_ids"); else _explicitNullProperties?.Remove("sequence_ids"); } }
         private List<string> _explicitNullValueSequenceIds = default!;
 #endif
         /// <summary>
@@ -84,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action_signatures", n => { ActionSignatures = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures>(global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "delete_message_action", n => { DeleteMessageAction = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction>(); } },
+                { "delete_message_action", n => { var parsed = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeleteMessageAction = default; _explicitNullProperties?.Remove("delete_message_action"); AdditionalData["delete_message_action"] = unknown; } else { DeleteMessageAction = parsed; AdditionalData.Remove("delete_message_action"); } } },
                 { "media_hash_keys", n => { MediaHashKeys = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "sequence_ids", n => { SequenceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };

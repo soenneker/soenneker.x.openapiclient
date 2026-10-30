@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_unprotect") is { } nullNodeUserUnprotect && nullNodeUserUnprotect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUnprotect = null;
+            if (parseNode.GetChildNode("user_unprotect") is null) { _explicitNullValueUserUnprotect = default!; _explicitNullProperties?.Remove("user_unprotect"); }
+            else if (parseNode.GetChildNode("user_unprotect") is { } nullNodeUserUnprotect && nullNodeUserUnprotect.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUnprotect = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user_unprotect property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUnprotect { get => _explicitNullValueUserUnprotect; set { _explicitNullValueUserUnprotect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unprotect"); else _explicitNullProperties?.Remove("user_unprotect"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUnprotect { get => _explicitNullValueUserUnprotect; set { _explicitNullValueUserUnprotect = value; AdditionalData?.Remove("user_unprotect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unprotect"); else _explicitNullProperties?.Remove("user_unprotect"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? _explicitNullValueUserUnprotect = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUnprotect { get => _explicitNullValueUserUnprotect; set { _explicitNullValueUserUnprotect = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unprotect"); else _explicitNullProperties?.Remove("user_unprotect"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUnprotect { get => _explicitNullValueUserUnprotect; set { _explicitNullValueUserUnprotect = value; AdditionalData?.Remove("user_unprotect"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_unprotect"); else _explicitNullProperties?.Remove("user_unprotect"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema _explicitNullValueUserUnprotect = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("undrop") is { } nullNodeUndrop && nullNodeUndrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Undrop = null;
+            if (parseNode.GetChildNode("undrop") is null) { _explicitNullValueUndrop = default!; _explicitNullProperties?.Remove("undrop"); }
+            else if (parseNode.GetChildNode("undrop") is { } nullNodeUndrop && nullNodeUndrop.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Undrop = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The undrop property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema? Undrop { get => _explicitNullValueUndrop; set { _explicitNullValueUndrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undrop"); else _explicitNullProperties?.Remove("undrop"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema? Undrop { get => _explicitNullValueUndrop; set { _explicitNullValueUndrop = value; AdditionalData?.Remove("undrop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undrop"); else _explicitNullProperties?.Remove("undrop"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema? _explicitNullValueUndrop = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema Undrop { get => _explicitNullValueUndrop; set { _explicitNullValueUndrop = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undrop"); else _explicitNullProperties?.Remove("undrop"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema Undrop { get => _explicitNullValueUndrop; set { _explicitNullValueUndrop = value; AdditionalData?.Remove("undrop"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("undrop"); else _explicitNullProperties?.Remove("undrop"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostComplianceSchema _explicitNullValueUndrop = default!;
 #endif
         /// <summary>

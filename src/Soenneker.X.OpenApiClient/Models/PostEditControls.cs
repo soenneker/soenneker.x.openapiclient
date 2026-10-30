@@ -18,9 +18,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("editable_until") is { } nullNodeEditableUntil && nullNodeEditableUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditableUntil = null;
-            if (parseNode.GetChildNode("edits_remaining") is { } nullNodeEditsRemaining && nullNodeEditsRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditsRemaining = null;
-            if (parseNode.GetChildNode("is_edit_eligible") is { } nullNodeIsEditEligible && nullNodeIsEditEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEditEligible = null;
+            if (parseNode.GetChildNode("editable_until") is null) { _explicitNullValueEditableUntil = default!; _explicitNullProperties?.Remove("editable_until"); }
+            else if (parseNode.GetChildNode("editable_until") is { } nullNodeEditableUntil && nullNodeEditableUntil.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditableUntil = null;
+            if (parseNode.GetChildNode("edits_remaining") is null) { _explicitNullValueEditsRemaining = default!; _explicitNullProperties?.Remove("edits_remaining"); }
+            else if (parseNode.GetChildNode("edits_remaining") is { } nullNodeEditsRemaining && nullNodeEditsRemaining.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EditsRemaining = null;
+            if (parseNode.GetChildNode("is_edit_eligible") is null) { _explicitNullValueIsEditEligible = default!; _explicitNullProperties?.Remove("is_edit_eligible"); }
+            else if (parseNode.GetChildNode("is_edit_eligible") is { } nullNodeIsEditEligible && nullNodeIsEditEligible.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsEditEligible = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The time until which this Post can be edited.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EditableUntil { get => _explicitNullValueEditableUntil; set { _explicitNullValueEditableUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable_until"); else _explicitNullProperties?.Remove("editable_until"); } }
+        public string? EditableUntil { get => _explicitNullValueEditableUntil; set { _explicitNullValueEditableUntil = value; AdditionalData?.Remove("editable_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable_until"); else _explicitNullProperties?.Remove("editable_until"); } }
         private string? _explicitNullValueEditableUntil = default!;
 #nullable restore
 #else
-        public string EditableUntil { get => _explicitNullValueEditableUntil; set { _explicitNullValueEditableUntil = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable_until"); else _explicitNullProperties?.Remove("editable_until"); } }
+        public string EditableUntil { get => _explicitNullValueEditableUntil; set { _explicitNullValueEditableUntil = value; AdditionalData?.Remove("editable_until"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("editable_until"); else _explicitNullProperties?.Remove("editable_until"); } }
         private string _explicitNullValueEditableUntil = default!;
 #endif
         /// <summary>Number of edits still allowed for this Post.</summary>
-        public long? EditsRemaining { get => _explicitNullValueEditsRemaining; set { _explicitNullValueEditsRemaining = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_remaining"); else _explicitNullProperties?.Remove("edits_remaining"); } }
+        public long? EditsRemaining { get => _explicitNullValueEditsRemaining; set { _explicitNullValueEditsRemaining = value; AdditionalData?.Remove("edits_remaining"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("edits_remaining"); else _explicitNullProperties?.Remove("edits_remaining"); } }
         private long? _explicitNullValueEditsRemaining = default!;
         /// <summary>Indicates whether this Post is eligible to be edited.</summary>
-        public bool? IsEditEligible { get => _explicitNullValueIsEditEligible; set { _explicitNullValueIsEditEligible = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_edit_eligible"); else _explicitNullProperties?.Remove("is_edit_eligible"); } }
+        public bool? IsEditEligible { get => _explicitNullValueIsEditEligible; set { _explicitNullValueIsEditEligible = value; AdditionalData?.Remove("is_edit_eligible"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_edit_eligible"); else _explicitNullProperties?.Remove("is_edit_eligible"); } }
         private bool? _explicitNullValueIsEditEligible = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PostEditControls"/> and sets the default values.

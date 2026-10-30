@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
+            if (parseNode.GetChildNode("bookmarked") is null) { _explicitNullValueBookmarked = default!; _explicitNullProperties?.Remove("bookmarked"); }
+            else if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the Post is bookmarked by the user.</summary>
-        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
+        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; AdditionalData?.Remove("bookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
         private bool? _explicitNullValueBookmarked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateUsersBookmarkResponseOneOf1Data"/> and sets the default values.

@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("broadcasts") is { } nullNodeBroadcasts && nullNodeBroadcasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcasts = null;
-            if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
+            if (parseNode.GetChildNode("broadcasts") is null) { _explicitNullValueBroadcasts = default!; _explicitNullProperties?.Remove("broadcasts"); }
+            else if (parseNode.GetChildNode("broadcasts") is { } nullNodeBroadcasts && nullNodeBroadcasts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcasts = null;
+            if (parseNode.GetChildNode("next_token") is null) { _explicitNullValueNextToken = default!; _explicitNullProperties?.Remove("next_token"); }
+            else if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The broadcasts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts>? Broadcasts { get => _explicitNullValueBroadcasts; set { _explicitNullValueBroadcasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcasts"); else _explicitNullProperties?.Remove("broadcasts"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts>? Broadcasts { get => _explicitNullValueBroadcasts; set { _explicitNullValueBroadcasts = value; AdditionalData?.Remove("broadcasts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcasts"); else _explicitNullProperties?.Remove("broadcasts"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts>? _explicitNullValueBroadcasts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts> Broadcasts { get => _explicitNullValueBroadcasts; set { _explicitNullValueBroadcasts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcasts"); else _explicitNullProperties?.Remove("broadcasts"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts> Broadcasts { get => _explicitNullValueBroadcasts; set { _explicitNullValueBroadcasts = value; AdditionalData?.Remove("broadcasts"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcasts"); else _explicitNullProperties?.Remove("broadcasts"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataBroadcasts> _explicitNullValueBroadcasts = default!;
 #endif
         /// <summary>The next_token property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken? _explicitNullValueNextToken = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private global::Soenneker.X.OpenApiClient.Models.ListUserBroadcastsResponseDataNextToken _explicitNullValueNextToken = default!;
 #endif
         /// <summary>

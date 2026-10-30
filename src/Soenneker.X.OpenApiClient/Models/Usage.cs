@@ -17,67 +17,73 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cap_reset_day") is { } nullNodeCapResetDay && nullNodeCapResetDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapResetDay = null;
-            if (parseNode.GetChildNode("daily_client_app_usage") is { } nullNodeDailyClientAppUsage && nullNodeDailyClientAppUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyClientAppUsage = null;
-            if (parseNode.GetChildNode("daily_project_usage") is { } nullNodeDailyProjectUsage && nullNodeDailyProjectUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyProjectUsage = null;
-            if (parseNode.GetChildNode("project_cap") is { } nullNodeProjectCap && nullNodeProjectCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectCap = null;
-            if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
-            if (parseNode.GetChildNode("project_usage") is { } nullNodeProjectUsage && nullNodeProjectUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectUsage = null;
+            if (parseNode.GetChildNode("cap_reset_day") is null) { _explicitNullValueCapResetDay = default!; _explicitNullProperties?.Remove("cap_reset_day"); }
+            else if (parseNode.GetChildNode("cap_reset_day") is { } nullNodeCapResetDay && nullNodeCapResetDay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapResetDay = null;
+            if (parseNode.GetChildNode("daily_client_app_usage") is null) { _explicitNullValueDailyClientAppUsage = default!; _explicitNullProperties?.Remove("daily_client_app_usage"); }
+            else if (parseNode.GetChildNode("daily_client_app_usage") is { } nullNodeDailyClientAppUsage && nullNodeDailyClientAppUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyClientAppUsage = null;
+            if (parseNode.GetChildNode("daily_project_usage") is null) { _explicitNullValueDailyProjectUsage = default!; _explicitNullProperties?.Remove("daily_project_usage"); }
+            else if (parseNode.GetChildNode("daily_project_usage") is { } nullNodeDailyProjectUsage && nullNodeDailyProjectUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DailyProjectUsage = null;
+            if (parseNode.GetChildNode("project_cap") is null) { _explicitNullValueProjectCap = default!; _explicitNullProperties?.Remove("project_cap"); }
+            else if (parseNode.GetChildNode("project_cap") is { } nullNodeProjectCap && nullNodeProjectCap.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectCap = null;
+            if (parseNode.GetChildNode("project_id") is null) { _explicitNullValueProjectId = default!; _explicitNullProperties?.Remove("project_id"); }
+            else if (parseNode.GetChildNode("project_id") is { } nullNodeProjectId && nullNodeProjectId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectId = null;
+            if (parseNode.GetChildNode("project_usage") is null) { _explicitNullValueProjectUsage = default!; _explicitNullProperties?.Remove("project_usage"); }
+            else if (parseNode.GetChildNode("project_usage") is { } nullNodeProjectUsage && nullNodeProjectUsage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectUsage = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The cap_reset_day property</summary>
-        public int? CapResetDay { get => _explicitNullValueCapResetDay; set { _explicitNullValueCapResetDay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_reset_day"); else _explicitNullProperties?.Remove("cap_reset_day"); } }
+        public int? CapResetDay { get => _explicitNullValueCapResetDay; set { _explicitNullValueCapResetDay = value; AdditionalData?.Remove("cap_reset_day"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_reset_day"); else _explicitNullProperties?.Remove("cap_reset_day"); } }
         private int? _explicitNullValueCapResetDay = default!;
         /// <summary>Per-client-app daily Post usage for the caller&apos;s project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>? DailyClientAppUsage { get => _explicitNullValueDailyClientAppUsage; set { _explicitNullValueDailyClientAppUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_client_app_usage"); else _explicitNullProperties?.Remove("daily_client_app_usage"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>? DailyClientAppUsage { get => _explicitNullValueDailyClientAppUsage; set { _explicitNullValueDailyClientAppUsage = value; AdditionalData?.Remove("daily_client_app_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_client_app_usage"); else _explicitNullProperties?.Remove("daily_client_app_usage"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>? _explicitNullValueDailyClientAppUsage = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem> DailyClientAppUsage { get => _explicitNullValueDailyClientAppUsage; set { _explicitNullValueDailyClientAppUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_client_app_usage"); else _explicitNullProperties?.Remove("daily_client_app_usage"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem> DailyClientAppUsage { get => _explicitNullValueDailyClientAppUsage; set { _explicitNullValueDailyClientAppUsage = value; AdditionalData?.Remove("daily_client_app_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_client_app_usage"); else _explicitNullProperties?.Remove("daily_client_app_usage"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem> _explicitNullValueDailyClientAppUsage = default!;
 #endif
         /// <summary>Project-level daily Post usage for the caller&apos;s project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage? DailyProjectUsage { get => _explicitNullValueDailyProjectUsage; set { _explicitNullValueDailyProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_project_usage"); else _explicitNullProperties?.Remove("daily_project_usage"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage? DailyProjectUsage { get => _explicitNullValueDailyProjectUsage; set { _explicitNullValueDailyProjectUsage = value; AdditionalData?.Remove("daily_project_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_project_usage"); else _explicitNullProperties?.Remove("daily_project_usage"); } }
         private global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage? _explicitNullValueDailyProjectUsage = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage DailyProjectUsage { get => _explicitNullValueDailyProjectUsage; set { _explicitNullValueDailyProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_project_usage"); else _explicitNullProperties?.Remove("daily_project_usage"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage DailyProjectUsage { get => _explicitNullValueDailyProjectUsage; set { _explicitNullValueDailyProjectUsage = value; AdditionalData?.Remove("daily_project_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("daily_project_usage"); else _explicitNullProperties?.Remove("daily_project_usage"); } }
         private global::Soenneker.X.OpenApiClient.Models.UsageDailyProjectUsage _explicitNullValueDailyProjectUsage = default!;
 #endif
         /// <summary>The project_cap property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectCap { get => _explicitNullValueProjectCap; set { _explicitNullValueProjectCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_cap"); else _explicitNullProperties?.Remove("project_cap"); } }
+        public string? ProjectCap { get => _explicitNullValueProjectCap; set { _explicitNullValueProjectCap = value; AdditionalData?.Remove("project_cap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_cap"); else _explicitNullProperties?.Remove("project_cap"); } }
         private string? _explicitNullValueProjectCap = default!;
 #nullable restore
 #else
-        public string ProjectCap { get => _explicitNullValueProjectCap; set { _explicitNullValueProjectCap = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_cap"); else _explicitNullProperties?.Remove("project_cap"); } }
+        public string ProjectCap { get => _explicitNullValueProjectCap; set { _explicitNullValueProjectCap = value; AdditionalData?.Remove("project_cap"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_cap"); else _explicitNullProperties?.Remove("project_cap"); } }
         private string _explicitNullValueProjectCap = default!;
 #endif
         /// <summary>The project_id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string? ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string? _explicitNullValueProjectId = default!;
 #nullable restore
 #else
-        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
+        public string ProjectId { get => _explicitNullValueProjectId; set { _explicitNullValueProjectId = value; AdditionalData?.Remove("project_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_id"); else _explicitNullProperties?.Remove("project_id"); } }
         private string _explicitNullValueProjectId = default!;
 #endif
         /// <summary>The project_usage property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_usage"); else _explicitNullProperties?.Remove("project_usage"); } }
+        public string? ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; AdditionalData?.Remove("project_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_usage"); else _explicitNullProperties?.Remove("project_usage"); } }
         private string? _explicitNullValueProjectUsage = default!;
 #nullable restore
 #else
-        public string ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_usage"); else _explicitNullProperties?.Remove("project_usage"); } }
+        public string ProjectUsage { get => _explicitNullValueProjectUsage; set { _explicitNullValueProjectUsage = value; AdditionalData?.Remove("project_usage"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_usage"); else _explicitNullProperties?.Remove("project_usage"); } }
         private string _explicitNullValueProjectUsage = default!;
 #endif
         /// <summary>

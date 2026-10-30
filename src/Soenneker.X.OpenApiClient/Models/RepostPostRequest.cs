@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
+            if (parseNode.GetChildNode("tweet_id") is null) { _explicitNullValueTweetId = default!; _explicitNullProperties?.Remove("tweet_id"); }
+            else if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
         }
 
         /// <summary>The tweet_id property</summary>

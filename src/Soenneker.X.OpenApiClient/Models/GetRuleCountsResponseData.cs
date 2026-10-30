@@ -17,11 +17,16 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("all_project_client_apps") is { } nullNodeAllProjectClientApps && nullNodeAllProjectClientApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllProjectClientApps = null;
-            if (parseNode.GetChildNode("cap_per_client_app") is { } nullNodeCapPerClientApp && nullNodeCapPerClientApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapPerClientApp = null;
-            if (parseNode.GetChildNode("cap_per_project") is { } nullNodeCapPerProject && nullNodeCapPerProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapPerProject = null;
-            if (parseNode.GetChildNode("client_app_rules_count") is { } nullNodeClientAppRulesCount && nullNodeClientAppRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppRulesCount = null;
-            if (parseNode.GetChildNode("project_rules_count") is { } nullNodeProjectRulesCount && nullNodeProjectRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectRulesCount = null;
+            if (parseNode.GetChildNode("all_project_client_apps") is null) { _explicitNullValueAllProjectClientApps = default!; _explicitNullProperties?.Remove("all_project_client_apps"); }
+            else if (parseNode.GetChildNode("all_project_client_apps") is { } nullNodeAllProjectClientApps && nullNodeAllProjectClientApps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllProjectClientApps = null;
+            if (parseNode.GetChildNode("cap_per_client_app") is null) { _explicitNullValueCapPerClientApp = default!; _explicitNullProperties?.Remove("cap_per_client_app"); }
+            else if (parseNode.GetChildNode("cap_per_client_app") is { } nullNodeCapPerClientApp && nullNodeCapPerClientApp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapPerClientApp = null;
+            if (parseNode.GetChildNode("cap_per_project") is null) { _explicitNullValueCapPerProject = default!; _explicitNullProperties?.Remove("cap_per_project"); }
+            else if (parseNode.GetChildNode("cap_per_project") is { } nullNodeCapPerProject && nullNodeCapPerProject.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CapPerProject = null;
+            if (parseNode.GetChildNode("client_app_rules_count") is null) { _explicitNullValueClientAppRulesCount = default!; _explicitNullProperties?.Remove("client_app_rules_count"); }
+            else if (parseNode.GetChildNode("client_app_rules_count") is { } nullNodeClientAppRulesCount && nullNodeClientAppRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppRulesCount = null;
+            if (parseNode.GetChildNode("project_rules_count") is null) { _explicitNullValueProjectRulesCount = default!; _explicitNullProperties?.Remove("project_rules_count"); }
+            else if (parseNode.GetChildNode("project_rules_count") is { } nullNodeProjectRulesCount && nullNodeProjectRulesCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProjectRulesCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Per-client-app rule counts across the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps>? AllProjectClientApps { get => _explicitNullValueAllProjectClientApps; set { _explicitNullValueAllProjectClientApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_project_client_apps"); else _explicitNullProperties?.Remove("all_project_client_apps"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps>? AllProjectClientApps { get => _explicitNullValueAllProjectClientApps; set { _explicitNullValueAllProjectClientApps = value; AdditionalData?.Remove("all_project_client_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_project_client_apps"); else _explicitNullProperties?.Remove("all_project_client_apps"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps>? _explicitNullValueAllProjectClientApps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps> AllProjectClientApps { get => _explicitNullValueAllProjectClientApps; set { _explicitNullValueAllProjectClientApps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_project_client_apps"); else _explicitNullProperties?.Remove("all_project_client_apps"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps> AllProjectClientApps { get => _explicitNullValueAllProjectClientApps; set { _explicitNullValueAllProjectClientApps = value; AdditionalData?.Remove("all_project_client_apps"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("all_project_client_apps"); else _explicitNullProperties?.Remove("all_project_client_apps"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataAllProjectClientApps> _explicitNullValueAllProjectClientApps = default!;
 #endif
         /// <summary>Maximum number of rules allowed per client application.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CapPerClientApp { get => _explicitNullValueCapPerClientApp; set { _explicitNullValueCapPerClientApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_client_app"); else _explicitNullProperties?.Remove("cap_per_client_app"); } }
+        public string? CapPerClientApp { get => _explicitNullValueCapPerClientApp; set { _explicitNullValueCapPerClientApp = value; AdditionalData?.Remove("cap_per_client_app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_client_app"); else _explicitNullProperties?.Remove("cap_per_client_app"); } }
         private string? _explicitNullValueCapPerClientApp = default!;
 #nullable restore
 #else
-        public string CapPerClientApp { get => _explicitNullValueCapPerClientApp; set { _explicitNullValueCapPerClientApp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_client_app"); else _explicitNullProperties?.Remove("cap_per_client_app"); } }
+        public string CapPerClientApp { get => _explicitNullValueCapPerClientApp; set { _explicitNullValueCapPerClientApp = value; AdditionalData?.Remove("cap_per_client_app"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_client_app"); else _explicitNullProperties?.Remove("cap_per_client_app"); } }
         private string _explicitNullValueCapPerClientApp = default!;
 #endif
         /// <summary>Maximum number of rules allowed across the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CapPerProject { get => _explicitNullValueCapPerProject; set { _explicitNullValueCapPerProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_project"); else _explicitNullProperties?.Remove("cap_per_project"); } }
+        public string? CapPerProject { get => _explicitNullValueCapPerProject; set { _explicitNullValueCapPerProject = value; AdditionalData?.Remove("cap_per_project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_project"); else _explicitNullProperties?.Remove("cap_per_project"); } }
         private string? _explicitNullValueCapPerProject = default!;
 #nullable restore
 #else
-        public string CapPerProject { get => _explicitNullValueCapPerProject; set { _explicitNullValueCapPerProject = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_project"); else _explicitNullProperties?.Remove("cap_per_project"); } }
+        public string CapPerProject { get => _explicitNullValueCapPerProject; set { _explicitNullValueCapPerProject = value; AdditionalData?.Remove("cap_per_project"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cap_per_project"); else _explicitNullProperties?.Remove("cap_per_project"); } }
         private string _explicitNullValueCapPerProject = default!;
 #endif
         /// <summary>The client_app_rules_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount? ClientAppRulesCount { get => _explicitNullValueClientAppRulesCount; set { _explicitNullValueClientAppRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_rules_count"); else _explicitNullProperties?.Remove("client_app_rules_count"); } }
+        public global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount? ClientAppRulesCount { get => _explicitNullValueClientAppRulesCount; set { _explicitNullValueClientAppRulesCount = value; AdditionalData?.Remove("client_app_rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_rules_count"); else _explicitNullProperties?.Remove("client_app_rules_count"); } }
         private global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount? _explicitNullValueClientAppRulesCount = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount ClientAppRulesCount { get => _explicitNullValueClientAppRulesCount; set { _explicitNullValueClientAppRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_rules_count"); else _explicitNullProperties?.Remove("client_app_rules_count"); } }
+        public global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount ClientAppRulesCount { get => _explicitNullValueClientAppRulesCount; set { _explicitNullValueClientAppRulesCount = value; AdditionalData?.Remove("client_app_rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_app_rules_count"); else _explicitNullProperties?.Remove("client_app_rules_count"); } }
         private global::Soenneker.X.OpenApiClient.Models.GetRuleCountsResponseDataClientAppRulesCount _explicitNullValueClientAppRulesCount = default!;
 #endif
         /// <summary>Number of rules across every client application in the project.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProjectRulesCount { get => _explicitNullValueProjectRulesCount; set { _explicitNullValueProjectRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_rules_count"); else _explicitNullProperties?.Remove("project_rules_count"); } }
+        public string? ProjectRulesCount { get => _explicitNullValueProjectRulesCount; set { _explicitNullValueProjectRulesCount = value; AdditionalData?.Remove("project_rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_rules_count"); else _explicitNullProperties?.Remove("project_rules_count"); } }
         private string? _explicitNullValueProjectRulesCount = default!;
 #nullable restore
 #else
-        public string ProjectRulesCount { get => _explicitNullValueProjectRulesCount; set { _explicitNullValueProjectRulesCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_rules_count"); else _explicitNullProperties?.Remove("project_rules_count"); } }
+        public string ProjectRulesCount { get => _explicitNullValueProjectRulesCount; set { _explicitNullValueProjectRulesCount = value; AdditionalData?.Remove("project_rules_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("project_rules_count"); else _explicitNullProperties?.Remove("project_rules_count"); } }
         private string _explicitNullValueProjectRulesCount = default!;
 #endif
         /// <summary>

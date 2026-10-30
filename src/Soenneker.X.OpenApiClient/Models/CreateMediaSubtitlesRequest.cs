@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
-            if (parseNode.GetChildNode("subtitles") is { } nullNodeSubtitles && nullNodeSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitles = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("media_category") is null) { _explicitNullValueMediaCategory = default!; _explicitNullProperties?.Remove("media_category"); }
+            else if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
+            if (parseNode.GetChildNode("subtitles") is null) { _explicitNullValueSubtitles = default!; _explicitNullProperties?.Remove("subtitles"); }
+            else if (parseNode.GetChildNode("subtitles") is { } nullNodeSubtitles && nullNodeSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtitles = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,24 +30,24 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The media id of the video the subtitles belong to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The media category of the target media.</summary>
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesRequestMediaCategory? MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesRequestMediaCategory? MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; AdditionalData?.Remove("media_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesRequestMediaCategory? _explicitNullValueMediaCategory = default!;
         /// <summary>The subtitles property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles? Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles? Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; AdditionalData?.Remove("subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles? _explicitNullValueSubtitles = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles Subtitles { get => _explicitNullValueSubtitles; set { _explicitNullValueSubtitles = value; AdditionalData?.Remove("subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtitles"); else _explicitNullProperties?.Remove("subtitles"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles _explicitNullValueSubtitles = default!;
 #endif
         /// <summary>
@@ -73,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesRequestMediaCategory>(); } },
+                { "media_category", n => { var parsed = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesRequestMediaCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMediaCategory = default; _explicitNullProperties?.Remove("media_category"); AdditionalData["media_category"] = unknown; } else { MediaCategory = parsed; AdditionalData.Remove("media_category"); } } },
                 { "subtitles", n => { Subtitles = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles>(global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesSubtitles.CreateFromDiscriminatorValue); } },
             };
         }

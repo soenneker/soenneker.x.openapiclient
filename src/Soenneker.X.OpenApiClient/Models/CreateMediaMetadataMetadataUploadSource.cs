@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("upload_source") is { } nullNodeUploadSource && nullNodeUploadSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadSource = null;
+            if (parseNode.GetChildNode("upload_source") is null) { _explicitNullValueUploadSource = default!; _explicitNullProperties?.Remove("upload_source"); }
+            else if (parseNode.GetChildNode("upload_source") is { } nullNodeUploadSource && nullNodeUploadSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UploadSource = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The upload_source property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UploadSource { get => _explicitNullValueUploadSource; set { _explicitNullValueUploadSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_source"); else _explicitNullProperties?.Remove("upload_source"); } }
+        public string? UploadSource { get => _explicitNullValueUploadSource; set { _explicitNullValueUploadSource = value; AdditionalData?.Remove("upload_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_source"); else _explicitNullProperties?.Remove("upload_source"); } }
         private string? _explicitNullValueUploadSource = default!;
 #nullable restore
 #else
-        public string UploadSource { get => _explicitNullValueUploadSource; set { _explicitNullValueUploadSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_source"); else _explicitNullProperties?.Remove("upload_source"); } }
+        public string UploadSource { get => _explicitNullValueUploadSource; set { _explicitNullValueUploadSource = value; AdditionalData?.Remove("upload_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upload_source"); else _explicitNullProperties?.Remove("upload_source"); } }
         private string _explicitNullValueUploadSource = default!;
 #endif
         /// <summary>

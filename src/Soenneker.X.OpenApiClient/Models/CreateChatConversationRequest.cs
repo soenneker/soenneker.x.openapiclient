@@ -17,27 +17,38 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
-            if (parseNode.GetChildNode("base64_encoded_key_rotation") is { } nullNodeBase64EncodedKeyRotation && nullNodeBase64EncodedKeyRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedKeyRotation = null;
-            if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
-            if (parseNode.GetChildNode("conversation_key_version") is { } nullNodeConversationKeyVersion && nullNodeConversationKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyVersion = null;
-            if (parseNode.GetChildNode("conversation_participant_keys") is { } nullNodeConversationParticipantKeys && nullNodeConversationParticipantKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationParticipantKeys = null;
-            if (parseNode.GetChildNode("group_admins") is { } nullNodeGroupAdmins && nullNodeGroupAdmins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupAdmins = null;
-            if (parseNode.GetChildNode("group_avatar_url") is { } nullNodeGroupAvatarUrl && nullNodeGroupAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupAvatarUrl = null;
-            if (parseNode.GetChildNode("group_description") is { } nullNodeGroupDescription && nullNodeGroupDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupDescription = null;
-            if (parseNode.GetChildNode("group_members") is { } nullNodeGroupMembers && nullNodeGroupMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupMembers = null;
-            if (parseNode.GetChildNode("group_name") is { } nullNodeGroupName && nullNodeGroupName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupName = null;
-            if (parseNode.GetChildNode("ttl_msec") is { } nullNodeTtlMsec && nullNodeTtlMsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlMsec = null;
+            if (parseNode.GetChildNode("action_signatures") is null) { _explicitNullValueActionSignatures = default!; _explicitNullProperties?.Remove("action_signatures"); }
+            else if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("base64_encoded_key_rotation") is null) { _explicitNullValueBase64EncodedKeyRotation = default!; _explicitNullProperties?.Remove("base64_encoded_key_rotation"); }
+            else if (parseNode.GetChildNode("base64_encoded_key_rotation") is { } nullNodeBase64EncodedKeyRotation && nullNodeBase64EncodedKeyRotation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedKeyRotation = null;
+            if (parseNode.GetChildNode("conversation_id") is null) { _explicitNullValueConversationId = default!; _explicitNullProperties?.Remove("conversation_id"); }
+            else if (parseNode.GetChildNode("conversation_id") is { } nullNodeConversationId && nullNodeConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationId = null;
+            if (parseNode.GetChildNode("conversation_key_version") is null) { _explicitNullValueConversationKeyVersion = default!; _explicitNullProperties?.Remove("conversation_key_version"); }
+            else if (parseNode.GetChildNode("conversation_key_version") is { } nullNodeConversationKeyVersion && nullNodeConversationKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationKeyVersion = null;
+            if (parseNode.GetChildNode("conversation_participant_keys") is null) { _explicitNullValueConversationParticipantKeys = default!; _explicitNullProperties?.Remove("conversation_participant_keys"); }
+            else if (parseNode.GetChildNode("conversation_participant_keys") is { } nullNodeConversationParticipantKeys && nullNodeConversationParticipantKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationParticipantKeys = null;
+            if (parseNode.GetChildNode("group_admins") is null) { _explicitNullValueGroupAdmins = default!; _explicitNullProperties?.Remove("group_admins"); }
+            else if (parseNode.GetChildNode("group_admins") is { } nullNodeGroupAdmins && nullNodeGroupAdmins.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupAdmins = null;
+            if (parseNode.GetChildNode("group_avatar_url") is null) { _explicitNullValueGroupAvatarUrl = default!; _explicitNullProperties?.Remove("group_avatar_url"); }
+            else if (parseNode.GetChildNode("group_avatar_url") is { } nullNodeGroupAvatarUrl && nullNodeGroupAvatarUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupAvatarUrl = null;
+            if (parseNode.GetChildNode("group_description") is null) { _explicitNullValueGroupDescription = default!; _explicitNullProperties?.Remove("group_description"); }
+            else if (parseNode.GetChildNode("group_description") is { } nullNodeGroupDescription && nullNodeGroupDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupDescription = null;
+            if (parseNode.GetChildNode("group_members") is null) { _explicitNullValueGroupMembers = default!; _explicitNullProperties?.Remove("group_members"); }
+            else if (parseNode.GetChildNode("group_members") is { } nullNodeGroupMembers && nullNodeGroupMembers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupMembers = null;
+            if (parseNode.GetChildNode("group_name") is null) { _explicitNullValueGroupName = default!; _explicitNullProperties?.Remove("group_name"); }
+            else if (parseNode.GetChildNode("group_name") is { } nullNodeGroupName && nullNodeGroupName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GroupName = null;
+            if (parseNode.GetChildNode("ttl_msec") is null) { _explicitNullValueTtlMsec = default!; _explicitNullProperties?.Remove("ttl_msec"); }
+            else if (parseNode.GetChildNode("ttl_msec") is { } nullNodeTtlMsec && nullNodeTtlMsec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TtlMsec = null;
         }
 
         /// <summary>Signatures for this action, forwarded in the order they are sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,101 +56,101 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Base64-encoded key rotation payload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
+        public string? Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; AdditionalData?.Remove("base64_encoded_key_rotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
         private string? _explicitNullValueBase64EncodedKeyRotation = default!;
 #nullable restore
 #else
-        public string Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
+        public string Base64EncodedKeyRotation { get => _explicitNullValueBase64EncodedKeyRotation; set { _explicitNullValueBase64EncodedKeyRotation = value; AdditionalData?.Remove("base64_encoded_key_rotation"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_key_rotation"); else _explicitNullProperties?.Remove("base64_encoded_key_rotation"); } }
         private string _explicitNullValueBase64EncodedKeyRotation = default!;
 #endif
         /// <summary>Client-generated conversation ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        public string? ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
         private string? _explicitNullValueConversationId = default!;
 #nullable restore
 #else
-        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
+        public string ConversationId { get => _explicitNullValueConversationId; set { _explicitNullValueConversationId = value; AdditionalData?.Remove("conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_id"); else _explicitNullProperties?.Remove("conversation_id"); } }
         private string _explicitNullValueConversationId = default!;
 #endif
         /// <summary>Version of the conversation encryption key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        public string? ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; AdditionalData?.Remove("conversation_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
         private string? _explicitNullValueConversationKeyVersion = default!;
 #nullable restore
 #else
-        public string ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
+        public string ConversationKeyVersion { get => _explicitNullValueConversationKeyVersion; set { _explicitNullValueConversationKeyVersion = value; AdditionalData?.Remove("conversation_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_key_version"); else _explicitNullProperties?.Remove("conversation_key_version"); } }
         private string _explicitNullValueConversationKeyVersion = default!;
 #endif
         /// <summary>Encrypted conversation keys for each participant.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys>? ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys>? ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; AdditionalData?.Remove("conversation_participant_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys>? _explicitNullValueConversationParticipantKeys = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys> ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys> ConversationParticipantKeys { get => _explicitNullValueConversationParticipantKeys; set { _explicitNullValueConversationParticipantKeys = value; AdditionalData?.Remove("conversation_participant_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_participant_keys"); else _explicitNullProperties?.Remove("conversation_participant_keys"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateChatConversationConversationParticipantKeys> _explicitNullValueConversationParticipantKeys = default!;
 #endif
         /// <summary>User IDs of group admins. Defaults to the creator if omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupAdmins { get => _explicitNullValueGroupAdmins; set { _explicitNullValueGroupAdmins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_admins"); else _explicitNullProperties?.Remove("group_admins"); } }
+        public List<string>? GroupAdmins { get => _explicitNullValueGroupAdmins; set { _explicitNullValueGroupAdmins = value; AdditionalData?.Remove("group_admins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_admins"); else _explicitNullProperties?.Remove("group_admins"); } }
         private List<string>? _explicitNullValueGroupAdmins = default!;
 #nullable restore
 #else
-        public List<string> GroupAdmins { get => _explicitNullValueGroupAdmins; set { _explicitNullValueGroupAdmins = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_admins"); else _explicitNullProperties?.Remove("group_admins"); } }
+        public List<string> GroupAdmins { get => _explicitNullValueGroupAdmins; set { _explicitNullValueGroupAdmins = value; AdditionalData?.Remove("group_admins"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_admins"); else _explicitNullProperties?.Remove("group_admins"); } }
         private List<string> _explicitNullValueGroupAdmins = default!;
 #endif
         /// <summary>URL of the avatar image for the group conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupAvatarUrl { get => _explicitNullValueGroupAvatarUrl; set { _explicitNullValueGroupAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_avatar_url"); else _explicitNullProperties?.Remove("group_avatar_url"); } }
+        public string? GroupAvatarUrl { get => _explicitNullValueGroupAvatarUrl; set { _explicitNullValueGroupAvatarUrl = value; AdditionalData?.Remove("group_avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_avatar_url"); else _explicitNullProperties?.Remove("group_avatar_url"); } }
         private string? _explicitNullValueGroupAvatarUrl = default!;
 #nullable restore
 #else
-        public string GroupAvatarUrl { get => _explicitNullValueGroupAvatarUrl; set { _explicitNullValueGroupAvatarUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_avatar_url"); else _explicitNullProperties?.Remove("group_avatar_url"); } }
+        public string GroupAvatarUrl { get => _explicitNullValueGroupAvatarUrl; set { _explicitNullValueGroupAvatarUrl = value; AdditionalData?.Remove("group_avatar_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_avatar_url"); else _explicitNullProperties?.Remove("group_avatar_url"); } }
         private string _explicitNullValueGroupAvatarUrl = default!;
 #endif
         /// <summary>Description for the group conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupDescription { get => _explicitNullValueGroupDescription; set { _explicitNullValueGroupDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_description"); else _explicitNullProperties?.Remove("group_description"); } }
+        public string? GroupDescription { get => _explicitNullValueGroupDescription; set { _explicitNullValueGroupDescription = value; AdditionalData?.Remove("group_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_description"); else _explicitNullProperties?.Remove("group_description"); } }
         private string? _explicitNullValueGroupDescription = default!;
 #nullable restore
 #else
-        public string GroupDescription { get => _explicitNullValueGroupDescription; set { _explicitNullValueGroupDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_description"); else _explicitNullProperties?.Remove("group_description"); } }
+        public string GroupDescription { get => _explicitNullValueGroupDescription; set { _explicitNullValueGroupDescription = value; AdditionalData?.Remove("group_description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_description"); else _explicitNullProperties?.Remove("group_description"); } }
         private string _explicitNullValueGroupDescription = default!;
 #endif
         /// <summary>User IDs of group members to include in the conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? GroupMembers { get => _explicitNullValueGroupMembers; set { _explicitNullValueGroupMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_members"); else _explicitNullProperties?.Remove("group_members"); } }
+        public List<string>? GroupMembers { get => _explicitNullValueGroupMembers; set { _explicitNullValueGroupMembers = value; AdditionalData?.Remove("group_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_members"); else _explicitNullProperties?.Remove("group_members"); } }
         private List<string>? _explicitNullValueGroupMembers = default!;
 #nullable restore
 #else
-        public List<string> GroupMembers { get => _explicitNullValueGroupMembers; set { _explicitNullValueGroupMembers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_members"); else _explicitNullProperties?.Remove("group_members"); } }
+        public List<string> GroupMembers { get => _explicitNullValueGroupMembers; set { _explicitNullValueGroupMembers = value; AdditionalData?.Remove("group_members"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_members"); else _explicitNullProperties?.Remove("group_members"); } }
         private List<string> _explicitNullValueGroupMembers = default!;
 #endif
         /// <summary>Display name for the group conversation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_name"); else _explicitNullProperties?.Remove("group_name"); } }
+        public string? GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; AdditionalData?.Remove("group_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_name"); else _explicitNullProperties?.Remove("group_name"); } }
         private string? _explicitNullValueGroupName = default!;
 #nullable restore
 #else
-        public string GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_name"); else _explicitNullProperties?.Remove("group_name"); } }
+        public string GroupName { get => _explicitNullValueGroupName; set { _explicitNullValueGroupName = value; AdditionalData?.Remove("group_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("group_name"); else _explicitNullProperties?.Remove("group_name"); } }
         private string _explicitNullValueGroupName = default!;
 #endif
         /// <summary>Message time-to-live in milliseconds. Messages expire after this duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TtlMsec { get => _explicitNullValueTtlMsec; set { _explicitNullValueTtlMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_msec"); else _explicitNullProperties?.Remove("ttl_msec"); } }
+        public string? TtlMsec { get => _explicitNullValueTtlMsec; set { _explicitNullValueTtlMsec = value; AdditionalData?.Remove("ttl_msec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_msec"); else _explicitNullProperties?.Remove("ttl_msec"); } }
         private string? _explicitNullValueTtlMsec = default!;
 #nullable restore
 #else
-        public string TtlMsec { get => _explicitNullValueTtlMsec; set { _explicitNullValueTtlMsec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_msec"); else _explicitNullProperties?.Remove("ttl_msec"); } }
+        public string TtlMsec { get => _explicitNullValueTtlMsec; set { _explicitNullValueTtlMsec = value; AdditionalData?.Remove("ttl_msec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ttl_msec"); else _explicitNullProperties?.Remove("ttl_msec"); } }
         private string _explicitNullValueTtlMsec = default!;
 #endif
         /// <summary>

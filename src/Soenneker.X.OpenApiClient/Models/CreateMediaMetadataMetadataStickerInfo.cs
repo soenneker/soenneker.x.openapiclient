@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("stickers") is { } nullNodeStickers && nullNodeStickers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stickers = null;
+            if (parseNode.GetChildNode("stickers") is null) { _explicitNullValueStickers = default!; _explicitNullProperties?.Remove("stickers"); }
+            else if (parseNode.GetChildNode("stickers") is { } nullNodeStickers && nullNodeStickers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Stickers = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The stickers property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem>? Stickers { get => _explicitNullValueStickers; set { _explicitNullValueStickers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stickers"); else _explicitNullProperties?.Remove("stickers"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem>? Stickers { get => _explicitNullValueStickers; set { _explicitNullValueStickers = value; AdditionalData?.Remove("stickers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stickers"); else _explicitNullProperties?.Remove("stickers"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem>? _explicitNullValueStickers = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem> Stickers { get => _explicitNullValueStickers; set { _explicitNullValueStickers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stickers"); else _explicitNullProperties?.Remove("stickers"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem> Stickers { get => _explicitNullValueStickers; set { _explicitNullValueStickers = value; AdditionalData?.Remove("stickers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stickers"); else _explicitNullProperties?.Remove("stickers"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataStickerInfoStickersItem> _explicitNullValueStickers = default!;
 #endif
         /// <summary>

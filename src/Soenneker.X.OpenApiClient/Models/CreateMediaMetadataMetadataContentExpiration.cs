@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("timestamp_sec") is { } nullNodeTimestampSec && nullNodeTimestampSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampSec = null;
+            if (parseNode.GetChildNode("timestamp_sec") is null) { _explicitNullValueTimestampSec = default!; _explicitNullProperties?.Remove("timestamp_sec"); }
+            else if (parseNode.GetChildNode("timestamp_sec") is { } nullNodeTimestampSec && nullNodeTimestampSec.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampSec = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The timestamp_sec property</summary>
-        public double? TimestampSec { get => _explicitNullValueTimestampSec; set { _explicitNullValueTimestampSec = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_sec"); else _explicitNullProperties?.Remove("timestamp_sec"); } }
+        public double? TimestampSec { get => _explicitNullValueTimestampSec; set { _explicitNullValueTimestampSec = value; AdditionalData?.Remove("timestamp_sec"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp_sec"); else _explicitNullProperties?.Remove("timestamp_sec"); } }
         private double? _explicitNullValueTimestampSec = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataContentExpiration"/> and sets the default values.

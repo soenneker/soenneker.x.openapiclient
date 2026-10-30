@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_undelete") is { } nullNodeUserUndelete && nullNodeUserUndelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUndelete = null;
+            if (parseNode.GetChildNode("user_undelete") is null) { _explicitNullValueUserUndelete = default!; _explicitNullProperties?.Remove("user_undelete"); }
+            else if (parseNode.GetChildNode("user_undelete") is { } nullNodeUserUndelete && nullNodeUserUndelete.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserUndelete = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user_undelete property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUndelete { get => _explicitNullValueUserUndelete; set { _explicitNullValueUserUndelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_undelete"); else _explicitNullProperties?.Remove("user_undelete"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? UserUndelete { get => _explicitNullValueUserUndelete; set { _explicitNullValueUserUndelete = value; AdditionalData?.Remove("user_undelete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_undelete"); else _explicitNullProperties?.Remove("user_undelete"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema? _explicitNullValueUserUndelete = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUndelete { get => _explicitNullValueUserUndelete; set { _explicitNullValueUserUndelete = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_undelete"); else _explicitNullProperties?.Remove("user_undelete"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema UserUndelete { get => _explicitNullValueUserUndelete; set { _explicitNullValueUserUndelete = value; AdditionalData?.Remove("user_undelete"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_undelete"); else _explicitNullProperties?.Remove("user_undelete"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserComplianceSchema _explicitNullValueUserUndelete = default!;
 #endif
         /// <summary>

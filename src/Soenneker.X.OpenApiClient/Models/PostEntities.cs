@@ -18,10 +18,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cashtags") is { } nullNodeCashtags && nullNodeCashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cashtags = null;
-            if (parseNode.GetChildNode("hashtags") is { } nullNodeHashtags && nullNodeHashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hashtags = null;
-            if (parseNode.GetChildNode("mentions") is { } nullNodeMentions && nullNodeMentions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mentions = null;
-            if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
+            if (parseNode.GetChildNode("cashtags") is null) { _explicitNullValueCashtags = default!; _explicitNullProperties?.Remove("cashtags"); }
+            else if (parseNode.GetChildNode("cashtags") is { } nullNodeCashtags && nullNodeCashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cashtags = null;
+            if (parseNode.GetChildNode("hashtags") is null) { _explicitNullValueHashtags = default!; _explicitNullProperties?.Remove("hashtags"); }
+            else if (parseNode.GetChildNode("hashtags") is { } nullNodeHashtags && nullNodeHashtags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Hashtags = null;
+            if (parseNode.GetChildNode("mentions") is null) { _explicitNullValueMentions = default!; _explicitNullProperties?.Remove("mentions"); }
+            else if (parseNode.GetChildNode("mentions") is { } nullNodeMentions && nullNodeMentions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mentions = null;
+            if (parseNode.GetChildNode("urls") is null) { _explicitNullValueUrls = default!; _explicitNullProperties?.Remove("urls"); }
+            else if (parseNode.GetChildNode("urls") is { } nullNodeUrls && nullNodeUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Urls = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,41 +33,41 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The cashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem>? Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem>? Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; AdditionalData?.Remove("cashtags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem>? _explicitNullValueCashtags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem> Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem> Cashtags { get => _explicitNullValueCashtags; set { _explicitNullValueCashtags = value; AdditionalData?.Remove("cashtags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cashtags"); else _explicitNullProperties?.Remove("cashtags"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesCashtagsItem> _explicitNullValueCashtags = default!;
 #endif
         /// <summary>The hashtags property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem>? Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem>? Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; AdditionalData?.Remove("hashtags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem>? _explicitNullValueHashtags = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem> Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem> Hashtags { get => _explicitNullValueHashtags; set { _explicitNullValueHashtags = value; AdditionalData?.Remove("hashtags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("hashtags"); else _explicitNullProperties?.Remove("hashtags"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesHashtagsItem> _explicitNullValueHashtags = default!;
 #endif
         /// <summary>The mentions property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem>? Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem>? Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; AdditionalData?.Remove("mentions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem>? _explicitNullValueMentions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem> Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem> Mentions { get => _explicitNullValueMentions; set { _explicitNullValueMentions = value; AdditionalData?.Remove("mentions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mentions"); else _explicitNullProperties?.Remove("mentions"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesMentionsItem> _explicitNullValueMentions = default!;
 #endif
         /// <summary>The urls property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem>? Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem>? _explicitNullValueUrls = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem> Urls { get => _explicitNullValueUrls; set { _explicitNullValueUrls = value; AdditionalData?.Remove("urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("urls"); else _explicitNullProperties?.Remove("urls"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.PostEntitiesUrlsItem> _explicitNullValueUrls = default!;
 #endif
         /// <summary>

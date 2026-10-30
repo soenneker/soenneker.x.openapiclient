@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("broadcast") is { } nullNodeBroadcast && nullNodeBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcast = null;
+            if (parseNode.GetChildNode("broadcast") is null) { _explicitNullValueBroadcast = default!; _explicitNullProperties?.Remove("broadcast"); }
+            else if (parseNode.GetChildNode("broadcast") is { } nullNodeBroadcast && nullNodeBroadcast.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Broadcast = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The broadcast property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast? Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        public global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast? Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; AdditionalData?.Remove("broadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
         private global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast? _explicitNullValueBroadcast = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
+        public global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast Broadcast { get => _explicitNullValueBroadcast; set { _explicitNullValueBroadcast = value; AdditionalData?.Remove("broadcast"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("broadcast"); else _explicitNullProperties?.Remove("broadcast"); } }
         private global::Soenneker.X.OpenApiClient.Models.GetUserBroadcastResponseDataBroadcast _explicitNullValueBroadcast = default!;
 #endif
         /// <summary>

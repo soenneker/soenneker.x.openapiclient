@@ -17,17 +17,19 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("following") is { } nullNodeFollowing && nullNodeFollowing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Following = null;
-            if (parseNode.GetChildNode("pending_follow") is { } nullNodePendingFollow && nullNodePendingFollow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingFollow = null;
+            if (parseNode.GetChildNode("following") is null) { _explicitNullValueFollowing = default!; _explicitNullProperties?.Remove("following"); }
+            else if (parseNode.GetChildNode("following") is { } nullNodeFollowing && nullNodeFollowing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Following = null;
+            if (parseNode.GetChildNode("pending_follow") is null) { _explicitNullValuePendingFollow = default!; _explicitNullProperties?.Remove("pending_follow"); }
+            else if (parseNode.GetChildNode("pending_follow") is { } nullNodePendingFollow && nullNodePendingFollow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PendingFollow = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the source User is following the target User.</summary>
-        public bool? Following { get => _explicitNullValueFollowing; set { _explicitNullValueFollowing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following"); else _explicitNullProperties?.Remove("following"); } }
+        public bool? Following { get => _explicitNullValueFollowing; set { _explicitNullValueFollowing = value; AdditionalData?.Remove("following"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("following"); else _explicitNullProperties?.Remove("following"); } }
         private bool? _explicitNullValueFollowing = default!;
         /// <summary>Whether the follow request is pending the target User&apos;s approval.</summary>
-        public bool? PendingFollow { get => _explicitNullValuePendingFollow; set { _explicitNullValuePendingFollow = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_follow"); else _explicitNullProperties?.Remove("pending_follow"); } }
+        public bool? PendingFollow { get => _explicitNullValuePendingFollow; set { _explicitNullValuePendingFollow = value; AdditionalData?.Remove("pending_follow"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pending_follow"); else _explicitNullProperties?.Remove("pending_follow"); } }
         private bool? _explicitNullValuePendingFollow = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.FollowUserResponseData"/> and sets the default values.

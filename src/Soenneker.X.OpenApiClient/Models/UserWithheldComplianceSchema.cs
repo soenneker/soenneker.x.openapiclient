@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_withheld") is { } nullNodeUserWithheld && nullNodeUserWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserWithheld = null;
+            if (parseNode.GetChildNode("user_withheld") is null) { _explicitNullValueUserWithheld = default!; _explicitNullProperties?.Remove("user_withheld"); }
+            else if (parseNode.GetChildNode("user_withheld") is { } nullNodeUserWithheld && nullNodeUserWithheld.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserWithheld = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user_withheld property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema? UserWithheld { get => _explicitNullValueUserWithheld; set { _explicitNullValueUserWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_withheld"); else _explicitNullProperties?.Remove("user_withheld"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema? UserWithheld { get => _explicitNullValueUserWithheld; set { _explicitNullValueUserWithheld = value; AdditionalData?.Remove("user_withheld"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_withheld"); else _explicitNullProperties?.Remove("user_withheld"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema? _explicitNullValueUserWithheld = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema UserWithheld { get => _explicitNullValueUserWithheld; set { _explicitNullValueUserWithheld = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_withheld"); else _explicitNullProperties?.Remove("user_withheld"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema UserWithheld { get => _explicitNullValueUserWithheld; set { _explicitNullValueUserWithheld = value; AdditionalData?.Remove("user_withheld"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_withheld"); else _explicitNullProperties?.Remove("user_withheld"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserTakedownComplianceSchema _explicitNullValueUserWithheld = default!;
 #endif
         /// <summary>

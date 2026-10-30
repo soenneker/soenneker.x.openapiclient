@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("provisioned") is { } nullNodeProvisioned && nullNodeProvisioned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provisioned = null;
+            if (parseNode.GetChildNode("provisioned") is null) { _explicitNullValueProvisioned = default!; _explicitNullProperties?.Remove("provisioned"); }
+            else if (parseNode.GetChildNode("provisioned") is { } nullNodeProvisioned && nullNodeProvisioned.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Provisioned = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the stream link was provisioned.</summary>
-        public bool? Provisioned { get => _explicitNullValueProvisioned; set { _explicitNullValueProvisioned = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned"); else _explicitNullProperties?.Remove("provisioned"); } }
+        public bool? Provisioned { get => _explicitNullValueProvisioned; set { _explicitNullValueProvisioned = value; AdditionalData?.Remove("provisioned"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("provisioned"); else _explicitNullProperties?.Remove("provisioned"); } }
         private bool? _explicitNullValueProvisioned = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateWebhooksStreamLinkResponseData"/> and sets the default values.

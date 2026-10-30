@@ -17,12 +17,18 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_ip") is { } nullNodeClientIp && nullNodeClientIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientIp = null;
-            if (parseNode.GetChildNode("connected_at") is { } nullNodeConnectedAt && nullNodeConnectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedAt = null;
-            if (parseNode.GetChildNode("disconnected_at") is { } nullNodeDisconnectedAt && nullNodeDisconnectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisconnectedAt = null;
-            if (parseNode.GetChildNode("disconnect_reason") is { } nullNodeDisconnectReason && nullNodeDisconnectReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisconnectReason = null;
-            if (parseNode.GetChildNode("endpoint_name") is { } nullNodeEndpointName && nullNodeEndpointName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointName = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("client_ip") is null) { _explicitNullValueClientIp = default!; _explicitNullProperties?.Remove("client_ip"); }
+            else if (parseNode.GetChildNode("client_ip") is { } nullNodeClientIp && nullNodeClientIp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientIp = null;
+            if (parseNode.GetChildNode("connected_at") is null) { _explicitNullValueConnectedAt = default!; _explicitNullProperties?.Remove("connected_at"); }
+            else if (parseNode.GetChildNode("connected_at") is { } nullNodeConnectedAt && nullNodeConnectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConnectedAt = null;
+            if (parseNode.GetChildNode("disconnected_at") is null) { _explicitNullValueDisconnectedAt = default!; _explicitNullProperties?.Remove("disconnected_at"); }
+            else if (parseNode.GetChildNode("disconnected_at") is { } nullNodeDisconnectedAt && nullNodeDisconnectedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisconnectedAt = null;
+            if (parseNode.GetChildNode("disconnect_reason") is null) { _explicitNullValueDisconnectReason = default!; _explicitNullProperties?.Remove("disconnect_reason"); }
+            else if (parseNode.GetChildNode("disconnect_reason") is { } nullNodeDisconnectReason && nullNodeDisconnectReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisconnectReason = null;
+            if (parseNode.GetChildNode("endpoint_name") is null) { _explicitNullValueEndpointName = default!; _explicitNullProperties?.Remove("endpoint_name"); }
+            else if (parseNode.GetChildNode("endpoint_name") is { } nullNodeEndpointName && nullNodeEndpointName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndpointName = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,47 +36,47 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The client_ip property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ClientIp { get => _explicitNullValueClientIp; set { _explicitNullValueClientIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_ip"); else _explicitNullProperties?.Remove("client_ip"); } }
+        public string? ClientIp { get => _explicitNullValueClientIp; set { _explicitNullValueClientIp = value; AdditionalData?.Remove("client_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_ip"); else _explicitNullProperties?.Remove("client_ip"); } }
         private string? _explicitNullValueClientIp = default!;
 #nullable restore
 #else
-        public string ClientIp { get => _explicitNullValueClientIp; set { _explicitNullValueClientIp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_ip"); else _explicitNullProperties?.Remove("client_ip"); } }
+        public string ClientIp { get => _explicitNullValueClientIp; set { _explicitNullValueClientIp = value; AdditionalData?.Remove("client_ip"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("client_ip"); else _explicitNullProperties?.Remove("client_ip"); } }
         private string _explicitNullValueClientIp = default!;
 #endif
         /// <summary>The connected_at property</summary>
-        public DateTimeOffset? ConnectedAt { get => _explicitNullValueConnectedAt; set { _explicitNullValueConnectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_at"); else _explicitNullProperties?.Remove("connected_at"); } }
+        public DateTimeOffset? ConnectedAt { get => _explicitNullValueConnectedAt; set { _explicitNullValueConnectedAt = value; AdditionalData?.Remove("connected_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("connected_at"); else _explicitNullProperties?.Remove("connected_at"); } }
         private DateTimeOffset? _explicitNullValueConnectedAt = default!;
         /// <summary>The disconnected_at property</summary>
-        public DateTimeOffset? DisconnectedAt { get => _explicitNullValueDisconnectedAt; set { _explicitNullValueDisconnectedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnected_at"); else _explicitNullProperties?.Remove("disconnected_at"); } }
+        public DateTimeOffset? DisconnectedAt { get => _explicitNullValueDisconnectedAt; set { _explicitNullValueDisconnectedAt = value; AdditionalData?.Remove("disconnected_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnected_at"); else _explicitNullProperties?.Remove("disconnected_at"); } }
         private DateTimeOffset? _explicitNullValueDisconnectedAt = default!;
         /// <summary>The disconnect_reason property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisconnectReason { get => _explicitNullValueDisconnectReason; set { _explicitNullValueDisconnectReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnect_reason"); else _explicitNullProperties?.Remove("disconnect_reason"); } }
+        public string? DisconnectReason { get => _explicitNullValueDisconnectReason; set { _explicitNullValueDisconnectReason = value; AdditionalData?.Remove("disconnect_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnect_reason"); else _explicitNullProperties?.Remove("disconnect_reason"); } }
         private string? _explicitNullValueDisconnectReason = default!;
 #nullable restore
 #else
-        public string DisconnectReason { get => _explicitNullValueDisconnectReason; set { _explicitNullValueDisconnectReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnect_reason"); else _explicitNullProperties?.Remove("disconnect_reason"); } }
+        public string DisconnectReason { get => _explicitNullValueDisconnectReason; set { _explicitNullValueDisconnectReason = value; AdditionalData?.Remove("disconnect_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disconnect_reason"); else _explicitNullProperties?.Remove("disconnect_reason"); } }
         private string _explicitNullValueDisconnectReason = default!;
 #endif
         /// <summary>The endpoint_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EndpointName { get => _explicitNullValueEndpointName; set { _explicitNullValueEndpointName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_name"); else _explicitNullProperties?.Remove("endpoint_name"); } }
+        public string? EndpointName { get => _explicitNullValueEndpointName; set { _explicitNullValueEndpointName = value; AdditionalData?.Remove("endpoint_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_name"); else _explicitNullProperties?.Remove("endpoint_name"); } }
         private string? _explicitNullValueEndpointName = default!;
 #nullable restore
 #else
-        public string EndpointName { get => _explicitNullValueEndpointName; set { _explicitNullValueEndpointName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_name"); else _explicitNullProperties?.Remove("endpoint_name"); } }
+        public string EndpointName { get => _explicitNullValueEndpointName; set { _explicitNullValueEndpointName = value; AdditionalData?.Remove("endpoint_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("endpoint_name"); else _explicitNullProperties?.Remove("endpoint_name"); } }
         private string _explicitNullValueEndpointName = default!;
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>

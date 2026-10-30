@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("associated_subtitles") is { } nullNodeAssociatedSubtitles && nullNodeAssociatedSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedSubtitles = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
+            if (parseNode.GetChildNode("associated_subtitles") is null) { _explicitNullValueAssociatedSubtitles = default!; _explicitNullProperties?.Remove("associated_subtitles"); }
+            else if (parseNode.GetChildNode("associated_subtitles") is { } nullNodeAssociatedSubtitles && nullNodeAssociatedSubtitles.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AssociatedSubtitles = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("media_category") is null) { _explicitNullValueMediaCategory = default!; _explicitNullProperties?.Remove("media_category"); }
+            else if (parseNode.GetChildNode("media_category") is { } nullNodeMediaCategory && nullNodeMediaCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaCategory = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The subtitles now associated with the media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty? AssociatedSubtitles { get => _explicitNullValueAssociatedSubtitles; set { _explicitNullValueAssociatedSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_subtitles"); else _explicitNullProperties?.Remove("associated_subtitles"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty? AssociatedSubtitles { get => _explicitNullValueAssociatedSubtitles; set { _explicitNullValueAssociatedSubtitles = value; AdditionalData?.Remove("associated_subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_subtitles"); else _explicitNullProperties?.Remove("associated_subtitles"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty? _explicitNullValueAssociatedSubtitles = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty AssociatedSubtitles { get => _explicitNullValueAssociatedSubtitles; set { _explicitNullValueAssociatedSubtitles = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_subtitles"); else _explicitNullProperties?.Remove("associated_subtitles"); } }
+        public global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty AssociatedSubtitles { get => _explicitNullValueAssociatedSubtitles; set { _explicitNullValueAssociatedSubtitles = value; AdditionalData?.Remove("associated_subtitles"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("associated_subtitles"); else _explicitNullProperties?.Remove("associated_subtitles"); } }
         private global::Soenneker.X.OpenApiClient.Models.CreateMediaSubtitlesResponseDataAssociatedSubtitlesProperty _explicitNullValueAssociatedSubtitles = default!;
 #endif
         /// <summary>The media id.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The media category.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
+        public string? MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; AdditionalData?.Remove("media_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
         private string? _explicitNullValueMediaCategory = default!;
 #nullable restore
 #else
-        public string MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
+        public string MediaCategory { get => _explicitNullValueMediaCategory; set { _explicitNullValueMediaCategory = value; AdditionalData?.Remove("media_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_category"); else _explicitNullProperties?.Remove("media_category"); } }
         private string _explicitNullValueMediaCategory = default!;
 #endif
         /// <summary>

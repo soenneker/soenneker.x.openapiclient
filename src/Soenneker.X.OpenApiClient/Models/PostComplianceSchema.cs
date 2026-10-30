@@ -17,34 +17,37 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
-            if (parseNode.GetChildNode("quote_tweet_id") is { } nullNodeQuoteTweetId && nullNodeQuoteTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteTweetId = null;
-            if (parseNode.GetChildNode("tweet") is { } nullNodeTweet && nullNodeTweet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tweet = null;
+            if (parseNode.GetChildNode("event_at") is null) { _explicitNullValueEventAt = default!; _explicitNullProperties?.Remove("event_at"); }
+            else if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
+            if (parseNode.GetChildNode("quote_tweet_id") is null) { _explicitNullValueQuoteTweetId = default!; _explicitNullProperties?.Remove("quote_tweet_id"); }
+            else if (parseNode.GetChildNode("quote_tweet_id") is { } nullNodeQuoteTweetId && nullNodeQuoteTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuoteTweetId = null;
+            if (parseNode.GetChildNode("tweet") is null) { _explicitNullValueTweet = default!; _explicitNullProperties?.Remove("tweet"); }
+            else if (parseNode.GetChildNode("tweet") is { } nullNodeTweet && nullNodeTweet.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tweet = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event time.</summary>
-        public DateTimeOffset? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
+        public DateTimeOffset? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; AdditionalData?.Remove("event_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
         private DateTimeOffset? _explicitNullValueEventAt = default!;
         /// <summary>Unique identifier of a Post</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        public string? QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; AdditionalData?.Remove("quote_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
         private string? _explicitNullValueQuoteTweetId = default!;
 #nullable restore
 #else
-        public string QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
+        public string QuoteTweetId { get => _explicitNullValueQuoteTweetId; set { _explicitNullValueQuoteTweetId = value; AdditionalData?.Remove("quote_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quote_tweet_id"); else _explicitNullProperties?.Remove("quote_tweet_id"); } }
         private string _explicitNullValueQuoteTweetId = default!;
 #endif
         /// <summary>The tweet property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet? Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet? Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; AdditionalData?.Remove("tweet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet? _explicitNullValueTweet = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet Tweet { get => _explicitNullValueTweet; set { _explicitNullValueTweet = value; AdditionalData?.Remove("tweet"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet"); else _explicitNullProperties?.Remove("tweet"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostComplianceSchemaTweet _explicitNullValueTweet = default!;
 #endif
         /// <summary>

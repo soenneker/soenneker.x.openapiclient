@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("public_tweet_notice") is { } nullNodePublicTweetNotice && nullNodePublicTweetNotice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicTweetNotice = null;
+            if (parseNode.GetChildNode("public_tweet_notice") is null) { _explicitNullValuePublicTweetNotice = default!; _explicitNullProperties?.Remove("public_tweet_notice"); }
+            else if (parseNode.GetChildNode("public_tweet_notice") is { } nullNodePublicTweetNotice && nullNodePublicTweetNotice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicTweetNotice = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The public_tweet_notice property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostNotice? PublicTweetNotice { get => _explicitNullValuePublicTweetNotice; set { _explicitNullValuePublicTweetNotice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_notice"); else _explicitNullProperties?.Remove("public_tweet_notice"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostNotice? PublicTweetNotice { get => _explicitNullValuePublicTweetNotice; set { _explicitNullValuePublicTweetNotice = value; AdditionalData?.Remove("public_tweet_notice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_notice"); else _explicitNullProperties?.Remove("public_tweet_notice"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostNotice? _explicitNullValuePublicTweetNotice = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostNotice PublicTweetNotice { get => _explicitNullValuePublicTweetNotice; set { _explicitNullValuePublicTweetNotice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_notice"); else _explicitNullProperties?.Remove("public_tweet_notice"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostNotice PublicTweetNotice { get => _explicitNullValuePublicTweetNotice; set { _explicitNullValuePublicTweetNotice = value; AdditionalData?.Remove("public_tweet_notice"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_tweet_notice"); else _explicitNullProperties?.Remove("public_tweet_notice"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostNotice _explicitNullValuePublicTweetNotice = default!;
 #endif
         /// <summary>

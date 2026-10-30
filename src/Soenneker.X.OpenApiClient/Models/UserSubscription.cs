@@ -18,13 +18,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("subscribes_to_you") is { } nullNodeSubscribesToYou && nullNodeSubscribesToYou.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscribesToYou = null;
+            if (parseNode.GetChildNode("subscribes_to_you") is null) { _explicitNullValueSubscribesToYou = default!; _explicitNullProperties?.Remove("subscribes_to_you"); }
+            else if (parseNode.GetChildNode("subscribes_to_you") is { } nullNodeSubscribesToYou && nullNodeSubscribesToYou.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscribesToYou = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates if this User subscribes to you.</summary>
-        public bool? SubscribesToYou { get => _explicitNullValueSubscribesToYou; set { _explicitNullValueSubscribesToYou = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribes_to_you"); else _explicitNullProperties?.Remove("subscribes_to_you"); } }
+        public bool? SubscribesToYou { get => _explicitNullValueSubscribesToYou; set { _explicitNullValueSubscribesToYou = value; AdditionalData?.Remove("subscribes_to_you"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribes_to_you"); else _explicitNullProperties?.Remove("subscribes_to_you"); } }
         private bool? _explicitNullValueSubscribesToYou = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UserSubscription"/> and sets the default values.

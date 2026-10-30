@@ -17,11 +17,16 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("identity_public_key_signature") is { } nullNodeIdentityPublicKeySignature && nullNodeIdentityPublicKeySignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityPublicKeySignature = null;
-            if (parseNode.GetChildNode("juicebox_config") is { } nullNodeJuiceboxConfig && nullNodeJuiceboxConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JuiceboxConfig = null;
-            if (parseNode.GetChildNode("public_key") is { } nullNodePublicKeyProp && nullNodePublicKeyProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyProp = null;
-            if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
-            if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
+            if (parseNode.GetChildNode("identity_public_key_signature") is null) { _explicitNullValueIdentityPublicKeySignature = default!; _explicitNullProperties?.Remove("identity_public_key_signature"); }
+            else if (parseNode.GetChildNode("identity_public_key_signature") is { } nullNodeIdentityPublicKeySignature && nullNodeIdentityPublicKeySignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IdentityPublicKeySignature = null;
+            if (parseNode.GetChildNode("juicebox_config") is null) { _explicitNullValueJuiceboxConfig = default!; _explicitNullProperties?.Remove("juicebox_config"); }
+            else if (parseNode.GetChildNode("juicebox_config") is { } nullNodeJuiceboxConfig && nullNodeJuiceboxConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JuiceboxConfig = null;
+            if (parseNode.GetChildNode("public_key") is null) { _explicitNullValuePublicKeyProp = default!; _explicitNullProperties?.Remove("public_key"); }
+            else if (parseNode.GetChildNode("public_key") is { } nullNodePublicKeyProp && nullNodePublicKeyProp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyProp = null;
+            if (parseNode.GetChildNode("public_key_version") is null) { _explicitNullValuePublicKeyVersion = default!; _explicitNullProperties?.Remove("public_key_version"); }
+            else if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
+            if (parseNode.GetChildNode("signing_public_key") is null) { _explicitNullValueSigningPublicKey = default!; _explicitNullProperties?.Remove("signing_public_key"); }
+            else if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,51 +34,51 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The identity_public_key_signature property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
+        public string? IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; AdditionalData?.Remove("identity_public_key_signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
         private string? _explicitNullValueIdentityPublicKeySignature = default!;
 #nullable restore
 #else
-        public string IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
+        public string IdentityPublicKeySignature { get => _explicitNullValueIdentityPublicKeySignature; set { _explicitNullValueIdentityPublicKeySignature = value; AdditionalData?.Remove("identity_public_key_signature"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("identity_public_key_signature"); else _explicitNullProperties?.Remove("identity_public_key_signature"); } }
         private string _explicitNullValueIdentityPublicKeySignature = default!;
 #endif
         /// <summary>The juicebox_config property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty? JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty? JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; AdditionalData?.Remove("juicebox_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
         private global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty? _explicitNullValueJuiceboxConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; AdditionalData?.Remove("juicebox_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
         private global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty _explicitNullValueJuiceboxConfig = default!;
 #endif
         /// <summary>The public_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyProp { get => _explicitNullValuePublicKeyProp; set { _explicitNullValuePublicKeyProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        public string? PublicKeyProp { get => _explicitNullValuePublicKeyProp; set { _explicitNullValuePublicKeyProp = value; AdditionalData?.Remove("public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
         private string? _explicitNullValuePublicKeyProp = default!;
 #nullable restore
 #else
-        public string PublicKeyProp { get => _explicitNullValuePublicKeyProp; set { _explicitNullValuePublicKeyProp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
+        public string PublicKeyProp { get => _explicitNullValuePublicKeyProp; set { _explicitNullValuePublicKeyProp = value; AdditionalData?.Remove("public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key"); else _explicitNullProperties?.Remove("public_key"); } }
         private string _explicitNullValuePublicKeyProp = default!;
 #endif
         /// <summary>The public_key_version property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string? _explicitNullValuePublicKeyVersion = default!;
 #nullable restore
 #else
-        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string _explicitNullValuePublicKeyVersion = default!;
 #endif
         /// <summary>The signing_public_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        public string? SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; AdditionalData?.Remove("signing_public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
         private string? _explicitNullValueSigningPublicKey = default!;
 #nullable restore
 #else
-        public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
+        public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; AdditionalData?.Remove("signing_public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
         private string _explicitNullValueSigningPublicKey = default!;
 #endif
         /// <summary>

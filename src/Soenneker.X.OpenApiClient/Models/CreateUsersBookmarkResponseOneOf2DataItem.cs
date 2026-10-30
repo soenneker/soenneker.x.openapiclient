@@ -17,23 +17,25 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
-            if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
+            if (parseNode.GetChildNode("bookmarked") is null) { _explicitNullValueBookmarked = default!; _explicitNullProperties?.Remove("bookmarked"); }
+            else if (parseNode.GetChildNode("bookmarked") is { } nullNodeBookmarked && nullNodeBookmarked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bookmarked = null;
+            if (parseNode.GetChildNode("tweet_id") is null) { _explicitNullValueTweetId = default!; _explicitNullProperties?.Remove("tweet_id"); }
+            else if (parseNode.GetChildNode("tweet_id") is { } nullNodeTweetId && nullNodeTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Indicates whether the Post is bookmarked by the user.</summary>
-        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
+        public bool? Bookmarked { get => _explicitNullValueBookmarked; set { _explicitNullValueBookmarked = value; AdditionalData?.Remove("bookmarked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bookmarked"); else _explicitNullProperties?.Remove("bookmarked"); } }
         private bool? _explicitNullValueBookmarked = default!;
         /// <summary>The Post ID that was bookmarked.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
+        public string? TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; AdditionalData?.Remove("tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
         private string? _explicitNullValueTweetId = default!;
 #nullable restore
 #else
-        public string TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
+        public string TweetId { get => _explicitNullValueTweetId; set { _explicitNullValueTweetId = value; AdditionalData?.Remove("tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_id"); else _explicitNullProperties?.Remove("tweet_id"); } }
         private string _explicitNullValueTweetId = default!;
 #endif
         /// <summary>

@@ -17,23 +17,25 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
-            if (parseNode.GetChildNode("favorite") is { } nullNodeFavorite && nullNodeFavorite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Favorite = null;
+            if (parseNode.GetChildNode("event_at") is null) { _explicitNullValueEventAt = default!; _explicitNullProperties?.Remove("event_at"); }
+            else if (parseNode.GetChildNode("event_at") is { } nullNodeEventAt && nullNodeEventAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventAt = null;
+            if (parseNode.GetChildNode("favorite") is null) { _explicitNullValueFavorite = default!; _explicitNullProperties?.Remove("favorite"); }
+            else if (parseNode.GetChildNode("favorite") is { } nullNodeFavorite && nullNodeFavorite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Favorite = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Event time.</summary>
-        public DateTimeOffset? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
+        public DateTimeOffset? EventAt { get => _explicitNullValueEventAt; set { _explicitNullValueEventAt = value; AdditionalData?.Remove("event_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_at"); else _explicitNullProperties?.Remove("event_at"); } }
         private DateTimeOffset? _explicitNullValueEventAt = default!;
         /// <summary>The favorite property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite? Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite? Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; AdditionalData?.Remove("favorite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
         private global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite? _explicitNullValueFavorite = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite Favorite { get => _explicitNullValueFavorite; set { _explicitNullValueFavorite = value; AdditionalData?.Remove("favorite"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("favorite"); else _explicitNullProperties?.Remove("favorite"); } }
         private global::Soenneker.X.OpenApiClient.Models.UnlikeComplianceSchemaFavorite _explicitNullValueFavorite = default!;
 #endif
         /// <summary>

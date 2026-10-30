@@ -18,23 +18,25 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("has_access") is { } nullNodeHasAccess && nullNodeHasAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAccess = null;
-            if (parseNode.GetChildNode("rating_counts_per_model") is { } nullNodeRatingCountsPerModel && nullNodeRatingCountsPerModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatingCountsPerModel = null;
+            if (parseNode.GetChildNode("has_access") is null) { _explicitNullValueHasAccess = default!; _explicitNullProperties?.Remove("has_access"); }
+            else if (parseNode.GetChildNode("has_access") is { } nullNodeHasAccess && nullNodeHasAccess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAccess = null;
+            if (parseNode.GetChildNode("rating_counts_per_model") is null) { _explicitNullValueRatingCountsPerModel = default!; _explicitNullProperties?.Remove("rating_counts_per_model"); }
+            else if (parseNode.GetChildNode("rating_counts_per_model") is { } nullNodeRatingCountsPerModel && nullNodeRatingCountsPerModel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatingCountsPerModel = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the caller has access to the scoring details.</summary>
-        public bool? HasAccess { get => _explicitNullValueHasAccess; set { _explicitNullValueHasAccess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_access"); else _explicitNullProperties?.Remove("has_access"); } }
+        public bool? HasAccess { get => _explicitNullValueHasAccess; set { _explicitNullValueHasAccess = value; AdditionalData?.Remove("has_access"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_access"); else _explicitNullProperties?.Remove("has_access"); } }
         private bool? _explicitNullValueHasAccess = default!;
         /// <summary>Rating counts broken down per scoring model.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; AdditionalData?.Remove("rating_counts_per_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem>? _explicitNullValueRatingCountsPerModel = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> RatingCountsPerModel { get => _explicitNullValueRatingCountsPerModel; set { _explicitNullValueRatingCountsPerModel = value; AdditionalData?.Remove("rating_counts_per_model"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_counts_per_model"); else _explicitNullProperties?.Remove("rating_counts_per_model"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.NoteScoringStatusRatingCountsPerModelItem> _explicitNullValueRatingCountsPerModel = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("encoded_event") is { } nullNodeEncodedEvent && nullNodeEncodedEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedEvent = null;
+            if (parseNode.GetChildNode("encoded_event") is null) { _explicitNullValueEncodedEvent = default!; _explicitNullProperties?.Remove("encoded_event"); }
+            else if (parseNode.GetChildNode("encoded_event") is { } nullNodeEncodedEvent && nullNodeEncodedEvent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncodedEvent = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Base64-encoded Thrift pin event with end-to-end encrypted contents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
+        public string? EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; AdditionalData?.Remove("encoded_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
         private string? _explicitNullValueEncodedEvent = default!;
 #nullable restore
 #else
-        public string EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
+        public string EncodedEvent { get => _explicitNullValueEncodedEvent; set { _explicitNullValueEncodedEvent = value; AdditionalData?.Remove("encoded_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_event"); else _explicitNullProperties?.Remove("encoded_event"); } }
         private string _explicitNullValueEncodedEvent = default!;
 #endif
         /// <summary>

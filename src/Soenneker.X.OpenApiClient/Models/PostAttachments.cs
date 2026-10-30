@@ -18,9 +18,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
-            if (parseNode.GetChildNode("media_source_tweet_id") is { } nullNodeMediaSourceTweetId && nullNodeMediaSourceTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaSourceTweetId = null;
-            if (parseNode.GetChildNode("poll_ids") is { } nullNodePollIds && nullNodePollIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollIds = null;
+            if (parseNode.GetChildNode("media_keys") is null) { _explicitNullValueMediaKeys = default!; _explicitNullProperties?.Remove("media_keys"); }
+            else if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
+            if (parseNode.GetChildNode("media_source_tweet_id") is null) { _explicitNullValueMediaSourceTweetId = default!; _explicitNullProperties?.Remove("media_source_tweet_id"); }
+            else if (parseNode.GetChildNode("media_source_tweet_id") is { } nullNodeMediaSourceTweetId && nullNodeMediaSourceTweetId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaSourceTweetId = null;
+            if (parseNode.GetChildNode("poll_ids") is null) { _explicitNullValuePollIds = default!; _explicitNullProperties?.Remove("poll_ids"); }
+            else if (parseNode.GetChildNode("poll_ids") is { } nullNodePollIds && nullNodePollIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PollIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Media keys of media attached to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; AdditionalData?.Remove("media_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
         private List<string>? _explicitNullValueMediaKeys = default!;
 #nullable restore
 #else
-        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; AdditionalData?.Remove("media_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
         private List<string> _explicitNullValueMediaKeys = default!;
 #endif
         /// <summary>IDs of the source Posts the attached media originated from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
+        public List<string>? MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; AdditionalData?.Remove("media_source_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
         private List<string>? _explicitNullValueMediaSourceTweetId = default!;
 #nullable restore
 #else
-        public List<string> MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
+        public List<string> MediaSourceTweetId { get => _explicitNullValueMediaSourceTweetId; set { _explicitNullValueMediaSourceTweetId = value; AdditionalData?.Remove("media_source_tweet_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_source_tweet_id"); else _explicitNullProperties?.Remove("media_source_tweet_id"); } }
         private List<string> _explicitNullValueMediaSourceTweetId = default!;
 #endif
         /// <summary>IDs of polls attached to this Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
+        public List<string>? PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; AdditionalData?.Remove("poll_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
         private List<string>? _explicitNullValuePollIds = default!;
 #nullable restore
 #else
-        public List<string> PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
+        public List<string> PollIds { get => _explicitNullValuePollIds; set { _explicitNullValuePollIds = value; AdditionalData?.Remove("poll_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("poll_ids"); else _explicitNullProperties?.Remove("poll_ids"); } }
         private List<string> _explicitNullValuePollIds = default!;
 #endif
         /// <summary>

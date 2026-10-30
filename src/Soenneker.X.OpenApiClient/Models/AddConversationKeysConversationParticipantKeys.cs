@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("encrypted_conversation_key") is { } nullNodeEncryptedConversationKey && nullNodeEncryptedConversationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptedConversationKey = null;
-            if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
-            if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
+            if (parseNode.GetChildNode("encrypted_conversation_key") is null) { _explicitNullValueEncryptedConversationKey = default!; _explicitNullProperties?.Remove("encrypted_conversation_key"); }
+            else if (parseNode.GetChildNode("encrypted_conversation_key") is { } nullNodeEncryptedConversationKey && nullNodeEncryptedConversationKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EncryptedConversationKey = null;
+            if (parseNode.GetChildNode("public_key_version") is null) { _explicitNullValuePublicKeyVersion = default!; _explicitNullProperties?.Remove("public_key_version"); }
+            else if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Conversation key encrypted with this participant&apos;s public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EncryptedConversationKey { get => _explicitNullValueEncryptedConversationKey; set { _explicitNullValueEncryptedConversationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted_conversation_key"); else _explicitNullProperties?.Remove("encrypted_conversation_key"); } }
+        public string? EncryptedConversationKey { get => _explicitNullValueEncryptedConversationKey; set { _explicitNullValueEncryptedConversationKey = value; AdditionalData?.Remove("encrypted_conversation_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted_conversation_key"); else _explicitNullProperties?.Remove("encrypted_conversation_key"); } }
         private string? _explicitNullValueEncryptedConversationKey = default!;
 #nullable restore
 #else
-        public string EncryptedConversationKey { get => _explicitNullValueEncryptedConversationKey; set { _explicitNullValueEncryptedConversationKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted_conversation_key"); else _explicitNullProperties?.Remove("encrypted_conversation_key"); } }
+        public string EncryptedConversationKey { get => _explicitNullValueEncryptedConversationKey; set { _explicitNullValueEncryptedConversationKey = value; AdditionalData?.Remove("encrypted_conversation_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encrypted_conversation_key"); else _explicitNullProperties?.Remove("encrypted_conversation_key"); } }
         private string _explicitNullValueEncryptedConversationKey = default!;
 #endif
         /// <summary>Version of the participant&apos;s public key used for encryption.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string? _explicitNullValuePublicKeyVersion = default!;
 #nullable restore
 #else
-        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string _explicitNullValuePublicKeyVersion = default!;
 #endif
         /// <summary>Participant user ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private string? _explicitNullValueUserId = default!;
 #nullable restore
 #else
-        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
         private string _explicitNullValueUserId = default!;
 #endif
         /// <summary>

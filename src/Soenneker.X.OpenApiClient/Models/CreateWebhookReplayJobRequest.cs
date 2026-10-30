@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("from_date") is { } nullNodeFromDate && nullNodeFromDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDate = null;
-            if (parseNode.GetChildNode("to_date") is { } nullNodeToDate && nullNodeToDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDate = null;
-            if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
+            if (parseNode.GetChildNode("from_date") is null) { _explicitNullValueFromDate = default!; _explicitNullProperties?.Remove("from_date"); }
+            else if (parseNode.GetChildNode("from_date") is { } nullNodeFromDate && nullNodeFromDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FromDate = null;
+            if (parseNode.GetChildNode("to_date") is null) { _explicitNullValueToDate = default!; _explicitNullProperties?.Remove("to_date"); }
+            else if (parseNode.GetChildNode("to_date") is { } nullNodeToDate && nullNodeToDate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ToDate = null;
+            if (parseNode.GetChildNode("webhook_id") is null) { _explicitNullValueWebhookId = default!; _explicitNullProperties?.Remove("webhook_id"); }
+            else if (parseNode.GetChildNode("webhook_id") is { } nullNodeWebhookId && nullNodeWebhookId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WebhookId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The oldest (inclusive) UTC timestamp from which events are replayed, in yyyymmddhhmm format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FromDate { get => _explicitNullValueFromDate; set { _explicitNullValueFromDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_date"); else _explicitNullProperties?.Remove("from_date"); } }
+        public string? FromDate { get => _explicitNullValueFromDate; set { _explicitNullValueFromDate = value; AdditionalData?.Remove("from_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_date"); else _explicitNullProperties?.Remove("from_date"); } }
         private string? _explicitNullValueFromDate = default!;
 #nullable restore
 #else
-        public string FromDate { get => _explicitNullValueFromDate; set { _explicitNullValueFromDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_date"); else _explicitNullProperties?.Remove("from_date"); } }
+        public string FromDate { get => _explicitNullValueFromDate; set { _explicitNullValueFromDate = value; AdditionalData?.Remove("from_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from_date"); else _explicitNullProperties?.Remove("from_date"); } }
         private string _explicitNullValueFromDate = default!;
 #endif
         /// <summary>The newest (inclusive) UTC timestamp up to which events are replayed, in yyyymmddhhmm format.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ToDate { get => _explicitNullValueToDate; set { _explicitNullValueToDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_date"); else _explicitNullProperties?.Remove("to_date"); } }
+        public string? ToDate { get => _explicitNullValueToDate; set { _explicitNullValueToDate = value; AdditionalData?.Remove("to_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_date"); else _explicitNullProperties?.Remove("to_date"); } }
         private string? _explicitNullValueToDate = default!;
 #nullable restore
 #else
-        public string ToDate { get => _explicitNullValueToDate; set { _explicitNullValueToDate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_date"); else _explicitNullProperties?.Remove("to_date"); } }
+        public string ToDate { get => _explicitNullValueToDate; set { _explicitNullValueToDate = value; AdditionalData?.Remove("to_date"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to_date"); else _explicitNullProperties?.Remove("to_date"); } }
         private string _explicitNullValueToDate = default!;
 #endif
         /// <summary>The ID of the webhook to replay events to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        public string? WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
         private string? _explicitNullValueWebhookId = default!;
 #nullable restore
 #else
-        public string WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
+        public string WebhookId { get => _explicitNullValueWebhookId; set { _explicitNullValueWebhookId = value; AdditionalData?.Remove("webhook_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("webhook_id"); else _explicitNullProperties?.Remove("webhook_id"); } }
         private string _explicitNullValueWebhookId = default!;
 #endif
         /// <summary>

@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("moderator_user_ids") is { } nullNodeModeratorUserIds && nullNodeModeratorUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModeratorUserIds = null;
+            if (parseNode.GetChildNode("moderator_user_ids") is null) { _explicitNullValueModeratorUserIds = default!; _explicitNullProperties?.Remove("moderator_user_ids"); }
+            else if (parseNode.GetChildNode("moderator_user_ids") is { } nullNodeModeratorUserIds && nullNodeModeratorUserIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModeratorUserIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user IDs currently appointed as chat moderators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? ModeratorUserIds { get => _explicitNullValueModeratorUserIds; set { _explicitNullValueModeratorUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderator_user_ids"); else _explicitNullProperties?.Remove("moderator_user_ids"); } }
+        public List<string>? ModeratorUserIds { get => _explicitNullValueModeratorUserIds; set { _explicitNullValueModeratorUserIds = value; AdditionalData?.Remove("moderator_user_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderator_user_ids"); else _explicitNullProperties?.Remove("moderator_user_ids"); } }
         private List<string>? _explicitNullValueModeratorUserIds = default!;
 #nullable restore
 #else
-        public List<string> ModeratorUserIds { get => _explicitNullValueModeratorUserIds; set { _explicitNullValueModeratorUserIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderator_user_ids"); else _explicitNullProperties?.Remove("moderator_user_ids"); } }
+        public List<string> ModeratorUserIds { get => _explicitNullValueModeratorUserIds; set { _explicitNullValueModeratorUserIds = value; AdditionalData?.Remove("moderator_user_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("moderator_user_ids"); else _explicitNullProperties?.Remove("moderator_user_ids"); } }
         private List<string> _explicitNullValueModeratorUserIds = default!;
 #endif
         /// <summary>

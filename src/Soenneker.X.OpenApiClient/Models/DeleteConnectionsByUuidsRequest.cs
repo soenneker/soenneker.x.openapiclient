@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("uuids") is { } nullNodeUuids && nullNodeUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuids = null;
+            if (parseNode.GetChildNode("uuids") is null) { _explicitNullValueUuids = default!; _explicitNullProperties?.Remove("uuids"); }
+            else if (parseNode.GetChildNode("uuids") is { } nullNodeUuids && nullNodeUuids.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uuids = null;
         }
 
         /// <summary>Connection UUIDs to terminate (1-100).</summary>

@@ -17,11 +17,16 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_dms_from") is { } nullNodeAllowDmsFrom && nullNodeAllowDmsFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDmsFrom = null;
-            if (parseNode.GetChildNode("always_allow_dms_from_subscribers") is { } nullNodeAlwaysAllowDmsFromSubscribers && nullNodeAlwaysAllowDmsFromSubscribers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlwaysAllowDmsFromSubscribers = null;
-            if (parseNode.GetChildNode("av_settings") is { } nullNodeAvSettings && nullNodeAvSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvSettings = null;
-            if (parseNode.GetChildNode("dm_quality_filter") is { } nullNodeDmQualityFilter && nullNodeDmQualityFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmQualityFilter = null;
-            if (parseNode.GetChildNode("dm_receipt_settings") is { } nullNodeDmReceiptSettings && nullNodeDmReceiptSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmReceiptSettings = null;
+            if (parseNode.GetChildNode("allow_dms_from") is null) { _explicitNullValueAllowDmsFrom = default!; _explicitNullProperties?.Remove("allow_dms_from"); }
+            else if (parseNode.GetChildNode("allow_dms_from") is { } nullNodeAllowDmsFrom && nullNodeAllowDmsFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDmsFrom = null;
+            if (parseNode.GetChildNode("always_allow_dms_from_subscribers") is null) { _explicitNullValueAlwaysAllowDmsFromSubscribers = default!; _explicitNullProperties?.Remove("always_allow_dms_from_subscribers"); }
+            else if (parseNode.GetChildNode("always_allow_dms_from_subscribers") is { } nullNodeAlwaysAllowDmsFromSubscribers && nullNodeAlwaysAllowDmsFromSubscribers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AlwaysAllowDmsFromSubscribers = null;
+            if (parseNode.GetChildNode("av_settings") is null) { _explicitNullValueAvSettings = default!; _explicitNullProperties?.Remove("av_settings"); }
+            else if (parseNode.GetChildNode("av_settings") is { } nullNodeAvSettings && nullNodeAvSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvSettings = null;
+            if (parseNode.GetChildNode("dm_quality_filter") is null) { _explicitNullValueDmQualityFilter = default!; _explicitNullProperties?.Remove("dm_quality_filter"); }
+            else if (parseNode.GetChildNode("dm_quality_filter") is { } nullNodeDmQualityFilter && nullNodeDmQualityFilter.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmQualityFilter = null;
+            if (parseNode.GetChildNode("dm_receipt_settings") is null) { _explicitNullValueDmReceiptSettings = default!; _explicitNullProperties?.Remove("dm_receipt_settings"); }
+            else if (parseNode.GetChildNode("dm_receipt_settings") is { } nullNodeDmReceiptSettings && nullNodeDmReceiptSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmReceiptSettings = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,44 +34,44 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
+        public string? AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; AdditionalData?.Remove("allow_dms_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
         private string? _explicitNullValueAllowDmsFrom = default!;
 #nullable restore
 #else
-        public string AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
+        public string AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; AdditionalData?.Remove("allow_dms_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
         private string _explicitNullValueAllowDmsFrom = default!;
 #endif
         /// <summary>Whether the user&apos;s subscribers can always message them regardless of allow_dms_from.</summary>
-        public bool? AlwaysAllowDmsFromSubscribers { get => _explicitNullValueAlwaysAllowDmsFromSubscribers; set { _explicitNullValueAlwaysAllowDmsFromSubscribers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always_allow_dms_from_subscribers"); else _explicitNullProperties?.Remove("always_allow_dms_from_subscribers"); } }
+        public bool? AlwaysAllowDmsFromSubscribers { get => _explicitNullValueAlwaysAllowDmsFromSubscribers; set { _explicitNullValueAlwaysAllowDmsFromSubscribers = value; AdditionalData?.Remove("always_allow_dms_from_subscribers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("always_allow_dms_from_subscribers"); else _explicitNullProperties?.Remove("always_allow_dms_from_subscribers"); } }
         private bool? _explicitNullValueAlwaysAllowDmsFromSubscribers = default!;
         /// <summary>Audio and video call settings.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings? AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings? AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; AdditionalData?.Remove("av_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings? _explicitNullValueAvSettings = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings AvSettings { get => _explicitNullValueAvSettings; set { _explicitNullValueAvSettings = value; AdditionalData?.Remove("av_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_settings"); else _explicitNullProperties?.Remove("av_settings"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings _explicitNullValueAvSettings = default!;
 #endif
         /// <summary>Low-quality message request filter: `enabled` (low-quality requests go to a separate folder) or `disabled` (all requests stay in the main inbox).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmQualityFilter { get => _explicitNullValueDmQualityFilter; set { _explicitNullValueDmQualityFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_quality_filter"); else _explicitNullProperties?.Remove("dm_quality_filter"); } }
+        public string? DmQualityFilter { get => _explicitNullValueDmQualityFilter; set { _explicitNullValueDmQualityFilter = value; AdditionalData?.Remove("dm_quality_filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_quality_filter"); else _explicitNullProperties?.Remove("dm_quality_filter"); } }
         private string? _explicitNullValueDmQualityFilter = default!;
 #nullable restore
 #else
-        public string DmQualityFilter { get => _explicitNullValueDmQualityFilter; set { _explicitNullValueDmQualityFilter = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_quality_filter"); else _explicitNullProperties?.Remove("dm_quality_filter"); } }
+        public string DmQualityFilter { get => _explicitNullValueDmQualityFilter; set { _explicitNullValueDmQualityFilter = value; AdditionalData?.Remove("dm_quality_filter"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_quality_filter"); else _explicitNullProperties?.Remove("dm_quality_filter"); } }
         private string _explicitNullValueDmQualityFilter = default!;
 #endif
         /// <summary>Read receipts: `all_enabled` (send and receive read receipts) or `all_disabled` (neither).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmReceiptSettings { get => _explicitNullValueDmReceiptSettings; set { _explicitNullValueDmReceiptSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_receipt_settings"); else _explicitNullProperties?.Remove("dm_receipt_settings"); } }
+        public string? DmReceiptSettings { get => _explicitNullValueDmReceiptSettings; set { _explicitNullValueDmReceiptSettings = value; AdditionalData?.Remove("dm_receipt_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_receipt_settings"); else _explicitNullProperties?.Remove("dm_receipt_settings"); } }
         private string? _explicitNullValueDmReceiptSettings = default!;
 #nullable restore
 #else
-        public string DmReceiptSettings { get => _explicitNullValueDmReceiptSettings; set { _explicitNullValueDmReceiptSettings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_receipt_settings"); else _explicitNullProperties?.Remove("dm_receipt_settings"); } }
+        public string DmReceiptSettings { get => _explicitNullValueDmReceiptSettings; set { _explicitNullValueDmReceiptSettings = value; AdditionalData?.Remove("dm_receipt_settings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_receipt_settings"); else _explicitNullProperties?.Remove("dm_receipt_settings"); } }
         private string _explicitNullValueDmReceiptSettings = default!;
 #endif
         /// <summary>

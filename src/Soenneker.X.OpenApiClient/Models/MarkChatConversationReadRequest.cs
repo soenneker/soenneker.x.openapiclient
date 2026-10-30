@@ -17,17 +17,18 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
+            if (parseNode.GetChildNode("action_signatures") is null) { _explicitNullValueActionSignatures = default!; _explicitNullProperties?.Remove("action_signatures"); }
+            else if (parseNode.GetChildNode("action_signatures") is { } nullNodeActionSignatures && nullNodeActionSignatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionSignatures = null;
         }
 
         /// <summary>Signature over the read receipt (a MarkConversationReadEvent). Omit to send it unsigned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures>? ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures>? _explicitNullValueActionSignatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
+        public List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures> ActionSignatures { get => _explicitNullValueActionSignatures; set { _explicitNullValueActionSignatures = value; AdditionalData?.Remove("action_signatures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_signatures"); else _explicitNullProperties?.Remove("action_signatures"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.MarkChatConversationReadActionSignatures> _explicitNullValueActionSignatures = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>

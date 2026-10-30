@@ -18,8 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("card_ids") is { } nullNodeCardIds && nullNodeCardIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIds = null;
-            if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
+            if (parseNode.GetChildNode("card_ids") is null) { _explicitNullValueCardIds = default!; _explicitNullProperties?.Remove("card_ids"); }
+            else if (parseNode.GetChildNode("card_ids") is { } nullNodeCardIds && nullNodeCardIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardIds = null;
+            if (parseNode.GetChildNode("media_keys") is null) { _explicitNullValueMediaKeys = default!; _explicitNullProperties?.Remove("media_keys"); }
+            else if (parseNode.GetChildNode("media_keys") is { } nullNodeMediaKeys && nullNodeMediaKeys.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKeys = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>IDs of cards attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
+        public List<string>? CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; AdditionalData?.Remove("card_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
         private List<string>? _explicitNullValueCardIds = default!;
 #nullable restore
 #else
-        public List<string> CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
+        public List<string> CardIds { get => _explicitNullValueCardIds; set { _explicitNullValueCardIds = value; AdditionalData?.Remove("card_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_ids"); else _explicitNullProperties?.Remove("card_ids"); } }
         private List<string> _explicitNullValueCardIds = default!;
 #endif
         /// <summary>Media keys of media (including audio) attached to this Direct Message.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        public List<string>? MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; AdditionalData?.Remove("media_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
         private List<string>? _explicitNullValueMediaKeys = default!;
 #nullable restore
 #else
-        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
+        public List<string> MediaKeys { get => _explicitNullValueMediaKeys; set { _explicitNullValueMediaKeys = value; AdditionalData?.Remove("media_keys"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_keys"); else _explicitNullProperties?.Remove("media_keys"); } }
         private List<string> _explicitNullValueMediaKeys = default!;
 #endif
         /// <summary>

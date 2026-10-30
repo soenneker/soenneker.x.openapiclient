@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("user_profile_modification") is { } nullNodeUserProfileModification && nullNodeUserProfileModification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserProfileModification = null;
+            if (parseNode.GetChildNode("user_profile_modification") is null) { _explicitNullValueUserProfileModification = default!; _explicitNullProperties?.Remove("user_profile_modification"); }
+            else if (parseNode.GetChildNode("user_profile_modification") is { } nullNodeUserProfileModification && nullNodeUserProfileModification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserProfileModification = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The user_profile_modification property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema? UserProfileModification { get => _explicitNullValueUserProfileModification; set { _explicitNullValueUserProfileModification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_profile_modification"); else _explicitNullProperties?.Remove("user_profile_modification"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema? UserProfileModification { get => _explicitNullValueUserProfileModification; set { _explicitNullValueUserProfileModification = value; AdditionalData?.Remove("user_profile_modification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_profile_modification"); else _explicitNullProperties?.Remove("user_profile_modification"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema? _explicitNullValueUserProfileModification = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema UserProfileModification { get => _explicitNullValueUserProfileModification; set { _explicitNullValueUserProfileModification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_profile_modification"); else _explicitNullProperties?.Remove("user_profile_modification"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema UserProfileModification { get => _explicitNullValueUserProfileModification; set { _explicitNullValueUserProfileModification = value; AdditionalData?.Remove("user_profile_modification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_profile_modification"); else _explicitNullProperties?.Remove("user_profile_modification"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserProfileModificationObjectSchema _explicitNullValueUserProfileModification = default!;
 #endif
         /// <summary>

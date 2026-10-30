@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("client_app_id") is { } nullNodeClientAppId && nullNodeClientAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppId = null;
-            if (parseNode.GetChildNode("rule_count") is { } nullNodeRuleCount && nullNodeRuleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleCount = null;
+            if (parseNode.GetChildNode("client_app_id") is null) { _explicitNullValueClientAppId = default!; _explicitNullProperties?.Remove("client_app_id"); }
+            else if (parseNode.GetChildNode("client_app_id") is { } nullNodeClientAppId && nullNodeClientAppId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ClientAppId = null;
+            if (parseNode.GetChildNode("rule_count") is null) { _explicitNullValueRuleCount = default!; _explicitNullProperties?.Remove("rule_count"); }
+            else if (parseNode.GetChildNode("rule_count") is { } nullNodeRuleCount && nullNodeRuleCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RuleCount = null;
         }
 
         /// <summary>Unique identifier of the client application.</summary>

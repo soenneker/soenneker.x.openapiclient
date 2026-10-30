@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("previous_post_id") is { } nullNodePreviousPostId && nullNodePreviousPostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPostId = null;
+            if (parseNode.GetChildNode("previous_post_id") is null) { _explicitNullValuePreviousPostId = default!; _explicitNullProperties?.Remove("previous_post_id"); }
+            else if (parseNode.GetChildNode("previous_post_id") is { } nullNodePreviousPostId && nullNodePreviousPostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousPostId = null;
         }
 
         /// <summary>The ID of the Post being edited.</summary>

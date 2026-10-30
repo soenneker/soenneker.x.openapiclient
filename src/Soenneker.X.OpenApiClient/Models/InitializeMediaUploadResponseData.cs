@@ -17,34 +17,37 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("expires_after_secs") is { } nullNodeExpiresAfterSecs && nullNodeExpiresAfterSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAfterSecs = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
+            if (parseNode.GetChildNode("expires_after_secs") is null) { _explicitNullValueExpiresAfterSecs = default!; _explicitNullProperties?.Remove("expires_after_secs"); }
+            else if (parseNode.GetChildNode("expires_after_secs") is { } nullNodeExpiresAfterSecs && nullNodeExpiresAfterSecs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiresAfterSecs = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("media_key") is null) { _explicitNullValueMediaKey = default!; _explicitNullProperties?.Remove("media_key"); }
+            else if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Seconds until the upload session expires.</summary>
-        public int? ExpiresAfterSecs { get => _explicitNullValueExpiresAfterSecs; set { _explicitNullValueExpiresAfterSecs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_after_secs"); else _explicitNullProperties?.Remove("expires_after_secs"); } }
+        public int? ExpiresAfterSecs { get => _explicitNullValueExpiresAfterSecs; set { _explicitNullValueExpiresAfterSecs = value; AdditionalData?.Remove("expires_after_secs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_after_secs"); else _explicitNullProperties?.Remove("expires_after_secs"); } }
         private int? _explicitNullValueExpiresAfterSecs = default!;
         /// <summary>Unique identifier of the upload session.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>The media key for the uploaded media.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        public string? MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; AdditionalData?.Remove("media_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
         private string? _explicitNullValueMediaKey = default!;
 #nullable restore
 #else
-        public string MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
+        public string MediaKey { get => _explicitNullValueMediaKey; set { _explicitNullValueMediaKey = value; AdditionalData?.Remove("media_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_key"); else _explicitNullProperties?.Remove("media_key"); } }
         private string _explicitNullValueMediaKey = default!;
 #endif
         /// <summary>

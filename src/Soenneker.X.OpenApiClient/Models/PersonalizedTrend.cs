@@ -17,10 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
-            if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
-            if (parseNode.GetChildNode("trending_since") is { } nullNodeTrendingSince && nullNodeTrendingSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendingSince = null;
-            if (parseNode.GetChildNode("trend_name") is { } nullNodeTrendName && nullNodeTrendName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendName = null;
+            if (parseNode.GetChildNode("category") is null) { _explicitNullValueCategory = default!; _explicitNullProperties?.Remove("category"); }
+            else if (parseNode.GetChildNode("category") is { } nullNodeCategory && nullNodeCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Category = null;
+            if (parseNode.GetChildNode("post_count") is null) { _explicitNullValuePostCount = default!; _explicitNullProperties?.Remove("post_count"); }
+            else if (parseNode.GetChildNode("post_count") is { } nullNodePostCount && nullNodePostCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostCount = null;
+            if (parseNode.GetChildNode("trending_since") is null) { _explicitNullValueTrendingSince = default!; _explicitNullProperties?.Remove("trending_since"); }
+            else if (parseNode.GetChildNode("trending_since") is { } nullNodeTrendingSince && nullNodeTrendingSince.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendingSince = null;
+            if (parseNode.GetChildNode("trend_name") is null) { _explicitNullValueTrendName = default!; _explicitNullProperties?.Remove("trend_name"); }
+            else if (parseNode.GetChildNode("trend_name") is { } nullNodeTrendName && nullNodeTrendName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrendName = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,41 +32,41 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The category property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public string? Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private string? _explicitNullValueCategory = default!;
 #nullable restore
 #else
-        public string Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
+        public string Category { get => _explicitNullValueCategory; set { _explicitNullValueCategory = value; AdditionalData?.Remove("category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("category"); else _explicitNullProperties?.Remove("category"); } }
         private string _explicitNullValueCategory = default!;
 #endif
         /// <summary>The post_count property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
+        public string? PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; AdditionalData?.Remove("post_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
         private string? _explicitNullValuePostCount = default!;
 #nullable restore
 #else
-        public string PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
+        public string PostCount { get => _explicitNullValuePostCount; set { _explicitNullValuePostCount = value; AdditionalData?.Remove("post_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_count"); else _explicitNullProperties?.Remove("post_count"); } }
         private string _explicitNullValuePostCount = default!;
 #endif
         /// <summary>The trending_since property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrendingSince { get => _explicitNullValueTrendingSince; set { _explicitNullValueTrendingSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trending_since"); else _explicitNullProperties?.Remove("trending_since"); } }
+        public string? TrendingSince { get => _explicitNullValueTrendingSince; set { _explicitNullValueTrendingSince = value; AdditionalData?.Remove("trending_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trending_since"); else _explicitNullProperties?.Remove("trending_since"); } }
         private string? _explicitNullValueTrendingSince = default!;
 #nullable restore
 #else
-        public string TrendingSince { get => _explicitNullValueTrendingSince; set { _explicitNullValueTrendingSince = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trending_since"); else _explicitNullProperties?.Remove("trending_since"); } }
+        public string TrendingSince { get => _explicitNullValueTrendingSince; set { _explicitNullValueTrendingSince = value; AdditionalData?.Remove("trending_since"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trending_since"); else _explicitNullProperties?.Remove("trending_since"); } }
         private string _explicitNullValueTrendingSince = default!;
 #endif
         /// <summary>The trend_name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
+        public string? TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; AdditionalData?.Remove("trend_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
         private string? _explicitNullValueTrendName = default!;
 #nullable restore
 #else
-        public string TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
+        public string TrendName { get => _explicitNullValueTrendName; set { _explicitNullValueTrendName = value; AdditionalData?.Remove("trend_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trend_name"); else _explicitNullProperties?.Remove("trend_name"); } }
         private string _explicitNullValueTrendName = default!;
 #endif
         /// <summary>

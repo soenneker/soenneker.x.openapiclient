@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("juicebox_config") is { } nullNodeJuiceboxConfig && nullNodeJuiceboxConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JuiceboxConfig = null;
-            if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
+            if (parseNode.GetChildNode("juicebox_config") is null) { _explicitNullValueJuiceboxConfig = default!; _explicitNullProperties?.Remove("juicebox_config"); }
+            else if (parseNode.GetChildNode("juicebox_config") is { } nullNodeJuiceboxConfig && nullNodeJuiceboxConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) JuiceboxConfig = null;
+            if (parseNode.GetChildNode("public_key_version") is null) { _explicitNullValuePublicKeyVersion = default!; _explicitNullProperties?.Remove("public_key_version"); }
+            else if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Juicebox recovery-service configuration for this key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty? JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
+        public global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty? JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; AdditionalData?.Remove("juicebox_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
         private global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty? _explicitNullValueJuiceboxConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
+        public global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty JuiceboxConfig { get => _explicitNullValueJuiceboxConfig; set { _explicitNullValueJuiceboxConfig = value; AdditionalData?.Remove("juicebox_config"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("juicebox_config"); else _explicitNullProperties?.Remove("juicebox_config"); } }
         private global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponseDataJuiceboxConfigProperty _explicitNullValueJuiceboxConfig = default!;
 #endif
         /// <summary>Version assigned to the registered public key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string? PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string? _explicitNullValuePublicKeyVersion = default!;
 #nullable restore
 #else
-        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
+        public string PublicKeyVersion { get => _explicitNullValuePublicKeyVersion; set { _explicitNullValuePublicKeyVersion = value; AdditionalData?.Remove("public_key_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_key_version"); else _explicitNullProperties?.Remove("public_key_version"); } }
         private string _explicitNullValuePublicKeyVersion = default!;
 #endif
         /// <summary>

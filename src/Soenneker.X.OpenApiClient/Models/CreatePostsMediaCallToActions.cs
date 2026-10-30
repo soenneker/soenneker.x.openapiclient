@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("app_install") is { } nullNodeAppInstall && nullNodeAppInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppInstall = null;
-            if (parseNode.GetChildNode("visit_site") is { } nullNodeVisitSite && nullNodeVisitSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisitSite = null;
-            if (parseNode.GetChildNode("watch_now") is { } nullNodeWatchNow && nullNodeWatchNow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchNow = null;
+            if (parseNode.GetChildNode("app_install") is null) { _explicitNullValueAppInstall = default!; _explicitNullProperties?.Remove("app_install"); }
+            else if (parseNode.GetChildNode("app_install") is { } nullNodeAppInstall && nullNodeAppInstall.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AppInstall = null;
+            if (parseNode.GetChildNode("visit_site") is null) { _explicitNullValueVisitSite = default!; _explicitNullProperties?.Remove("visit_site"); }
+            else if (parseNode.GetChildNode("visit_site") is { } nullNodeVisitSite && nullNodeVisitSite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VisitSite = null;
+            if (parseNode.GetChildNode("watch_now") is null) { _explicitNullValueWatchNow = default!; _explicitNullProperties?.Remove("watch_now"); }
+            else if (parseNode.GetChildNode("watch_now") is { } nullNodeWatchNow && nullNodeWatchNow.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchNow = null;
         }
 
         /// <summary>The app_install property</summary>

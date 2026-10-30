@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("scrub_geo") is { } nullNodeScrubGeo && nullNodeScrubGeo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrubGeo = null;
+            if (parseNode.GetChildNode("scrub_geo") is null) { _explicitNullValueScrubGeo = default!; _explicitNullProperties?.Remove("scrub_geo"); }
+            else if (parseNode.GetChildNode("scrub_geo") is { } nullNodeScrubGeo && nullNodeScrubGeo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScrubGeo = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The scrub_geo property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema? ScrubGeo { get => _explicitNullValueScrubGeo; set { _explicitNullValueScrubGeo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrub_geo"); else _explicitNullProperties?.Remove("scrub_geo"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema? ScrubGeo { get => _explicitNullValueScrubGeo; set { _explicitNullValueScrubGeo = value; AdditionalData?.Remove("scrub_geo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrub_geo"); else _explicitNullProperties?.Remove("scrub_geo"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema? _explicitNullValueScrubGeo = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema ScrubGeo { get => _explicitNullValueScrubGeo; set { _explicitNullValueScrubGeo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrub_geo"); else _explicitNullProperties?.Remove("scrub_geo"); } }
+        public global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema ScrubGeo { get => _explicitNullValueScrubGeo; set { _explicitNullValueScrubGeo = value; AdditionalData?.Remove("scrub_geo"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scrub_geo"); else _explicitNullProperties?.Remove("scrub_geo"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserScrubGeoObjectSchema _explicitNullValueScrubGeo = default!;
 #endif
         /// <summary>

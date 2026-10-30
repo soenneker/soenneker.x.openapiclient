@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("base64_encoded_encrypted_pmk") is { } nullNodeBase64EncodedEncryptedPmk && nullNodeBase64EncodedEncryptedPmk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedEncryptedPmk = null;
-            if (parseNode.GetChildNode("message_sequence_id") is { } nullNodeMessageSequenceId && nullNodeMessageSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageSequenceId = null;
-            if (parseNode.GetChildNode("pme_sequence_id") is { } nullNodePmeSequenceId && nullNodePmeSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PmeSequenceId = null;
+            if (parseNode.GetChildNode("base64_encoded_encrypted_pmk") is null) { _explicitNullValueBase64EncodedEncryptedPmk = default!; _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); }
+            else if (parseNode.GetChildNode("base64_encoded_encrypted_pmk") is { } nullNodeBase64EncodedEncryptedPmk && nullNodeBase64EncodedEncryptedPmk.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Base64EncodedEncryptedPmk = null;
+            if (parseNode.GetChildNode("message_sequence_id") is null) { _explicitNullValueMessageSequenceId = default!; _explicitNullProperties?.Remove("message_sequence_id"); }
+            else if (parseNode.GetChildNode("message_sequence_id") is { } nullNodeMessageSequenceId && nullNodeMessageSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MessageSequenceId = null;
+            if (parseNode.GetChildNode("pme_sequence_id") is null) { _explicitNullValuePmeSequenceId = default!; _explicitNullProperties?.Remove("pme_sequence_id"); }
+            else if (parseNode.GetChildNode("pme_sequence_id") is { } nullNodePmeSequenceId && nullNodePmeSequenceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PmeSequenceId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Base64-encoded message key, encrypted with the new conversation key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
+        public string? Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; AdditionalData?.Remove("base64_encoded_encrypted_pmk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
         private string? _explicitNullValueBase64EncodedEncryptedPmk = default!;
 #nullable restore
 #else
-        public string Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
+        public string Base64EncodedEncryptedPmk { get => _explicitNullValueBase64EncodedEncryptedPmk; set { _explicitNullValueBase64EncodedEncryptedPmk = value; AdditionalData?.Remove("base64_encoded_encrypted_pmk"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("base64_encoded_encrypted_pmk"); else _explicitNullProperties?.Remove("base64_encoded_encrypted_pmk"); } }
         private string _explicitNullValueBase64EncodedEncryptedPmk = default!;
 #endif
         /// <summary>Sequence ID of the message the key belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
+        public string? MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; AdditionalData?.Remove("message_sequence_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
         private string? _explicitNullValueMessageSequenceId = default!;
 #nullable restore
 #else
-        public string MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
+        public string MessageSequenceId { get => _explicitNullValueMessageSequenceId; set { _explicitNullValueMessageSequenceId = value; AdditionalData?.Remove("message_sequence_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("message_sequence_id"); else _explicitNullProperties?.Remove("message_sequence_id"); } }
         private string _explicitNullValueMessageSequenceId = default!;
 #endif
         /// <summary>Sequence ID of the key&apos;s origin event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
+        public string? PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; AdditionalData?.Remove("pme_sequence_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
         private string? _explicitNullValuePmeSequenceId = default!;
 #nullable restore
 #else
-        public string PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
+        public string PmeSequenceId { get => _explicitNullValuePmeSequenceId; set { _explicitNullValuePmeSequenceId = value; AdditionalData?.Remove("pme_sequence_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pme_sequence_id"); else _explicitNullProperties?.Remove("pme_sequence_id"); } }
         private string _explicitNullValuePmeSequenceId = default!;
 #endif
         /// <summary>

@@ -17,9 +17,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
-            if (parseNode.GetChildNode("previous_token") is { } nullNodePreviousToken && nullNodePreviousToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousToken = null;
-            if (parseNode.GetChildNode("result_count") is { } nullNodeResultCount && nullNodeResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCount = null;
+            if (parseNode.GetChildNode("next_token") is null) { _explicitNullValueNextToken = default!; _explicitNullProperties?.Remove("next_token"); }
+            else if (parseNode.GetChildNode("next_token") is { } nullNodeNextToken && nullNodeNextToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextToken = null;
+            if (parseNode.GetChildNode("previous_token") is null) { _explicitNullValuePreviousToken = default!; _explicitNullProperties?.Remove("previous_token"); }
+            else if (parseNode.GetChildNode("previous_token") is { } nullNodePreviousToken && nullNodePreviousToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviousToken = null;
+            if (parseNode.GetChildNode("result_count") is null) { _explicitNullValueResultCount = default!; _explicitNullProperties?.Remove("result_count"); }
+            else if (parseNode.GetChildNode("result_count") is { } nullNodeResultCount && nullNodeResultCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResultCount = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Pagination token for the next page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public string? NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private string? _explicitNullValueNextToken = default!;
 #nullable restore
 #else
-        public string NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
+        public string NextToken { get => _explicitNullValueNextToken; set { _explicitNullValueNextToken = value; AdditionalData?.Remove("next_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_token"); else _explicitNullProperties?.Remove("next_token"); } }
         private string _explicitNullValueNextToken = default!;
 #endif
         /// <summary>Pagination token for the previous page of results.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviousToken { get => _explicitNullValuePreviousToken; set { _explicitNullValuePreviousToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_token"); else _explicitNullProperties?.Remove("previous_token"); } }
+        public string? PreviousToken { get => _explicitNullValuePreviousToken; set { _explicitNullValuePreviousToken = value; AdditionalData?.Remove("previous_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_token"); else _explicitNullProperties?.Remove("previous_token"); } }
         private string? _explicitNullValuePreviousToken = default!;
 #nullable restore
 #else
-        public string PreviousToken { get => _explicitNullValuePreviousToken; set { _explicitNullValuePreviousToken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_token"); else _explicitNullProperties?.Remove("previous_token"); } }
+        public string PreviousToken { get => _explicitNullValuePreviousToken; set { _explicitNullValuePreviousToken = value; AdditionalData?.Remove("previous_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previous_token"); else _explicitNullProperties?.Remove("previous_token"); } }
         private string _explicitNullValuePreviousToken = default!;
 #endif
         /// <summary>Number of items in the data array.</summary>
-        public int? ResultCount { get => _explicitNullValueResultCount; set { _explicitNullValueResultCount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_count"); else _explicitNullProperties?.Remove("result_count"); } }
+        public int? ResultCount { get => _explicitNullValueResultCount; set { _explicitNullValueResultCount = value; AdditionalData?.Remove("result_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result_count"); else _explicitNullProperties?.Remove("result_count"); } }
         private int? _explicitNullValueResultCount = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.GetPostsRepostsResponseMeta"/> and sets the default values.

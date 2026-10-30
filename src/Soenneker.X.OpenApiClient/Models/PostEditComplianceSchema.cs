@@ -17,7 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tweet_edit") is { } nullNodeTweetEdit && nullNodeTweetEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetEdit = null;
+            if (parseNode.GetChildNode("tweet_edit") is null) { _explicitNullValueTweetEdit = default!; _explicitNullProperties?.Remove("tweet_edit"); }
+            else if (parseNode.GetChildNode("tweet_edit") is { } nullNodeTweetEdit && nullNodeTweetEdit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TweetEdit = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The tweet_edit property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema? TweetEdit { get => _explicitNullValueTweetEdit; set { _explicitNullValueTweetEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_edit"); else _explicitNullProperties?.Remove("tweet_edit"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema? TweetEdit { get => _explicitNullValueTweetEdit; set { _explicitNullValueTweetEdit = value; AdditionalData?.Remove("tweet_edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_edit"); else _explicitNullProperties?.Remove("tweet_edit"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema? _explicitNullValueTweetEdit = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema TweetEdit { get => _explicitNullValueTweetEdit; set { _explicitNullValueTweetEdit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_edit"); else _explicitNullProperties?.Remove("tweet_edit"); } }
+        public global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema TweetEdit { get => _explicitNullValueTweetEdit; set { _explicitNullValueTweetEdit = value; AdditionalData?.Remove("tweet_edit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tweet_edit"); else _explicitNullProperties?.Remove("tweet_edit"); } }
         private global::Soenneker.X.OpenApiClient.Models.PostEditComplianceObjectSchema _explicitNullValueTweetEdit = default!;
 #endif
         /// <summary>

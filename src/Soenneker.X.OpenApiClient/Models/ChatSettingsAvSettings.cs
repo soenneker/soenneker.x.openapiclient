@@ -18,9 +18,12 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("av_call_permissions") is { } nullNodeAvCallPermissions && nullNodeAvCallPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvCallPermissions = null;
-            if (parseNode.GetChildNode("has_av_calls_enabled") is { } nullNodeHasAvCallsEnabled && nullNodeHasAvCallsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAvCallsEnabled = null;
-            if (parseNode.GetChildNode("has_enhanced_call_privacy_enabled") is { } nullNodeHasEnhancedCallPrivacyEnabled && nullNodeHasEnhancedCallPrivacyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasEnhancedCallPrivacyEnabled = null;
+            if (parseNode.GetChildNode("av_call_permissions") is null) { _explicitNullValueAvCallPermissions = default!; _explicitNullProperties?.Remove("av_call_permissions"); }
+            else if (parseNode.GetChildNode("av_call_permissions") is { } nullNodeAvCallPermissions && nullNodeAvCallPermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvCallPermissions = null;
+            if (parseNode.GetChildNode("has_av_calls_enabled") is null) { _explicitNullValueHasAvCallsEnabled = default!; _explicitNullProperties?.Remove("has_av_calls_enabled"); }
+            else if (parseNode.GetChildNode("has_av_calls_enabled") is { } nullNodeHasAvCallsEnabled && nullNodeHasAvCallsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasAvCallsEnabled = null;
+            if (parseNode.GetChildNode("has_enhanced_call_privacy_enabled") is null) { _explicitNullValueHasEnhancedCallPrivacyEnabled = default!; _explicitNullProperties?.Remove("has_enhanced_call_privacy_enabled"); }
+            else if (parseNode.GetChildNode("has_enhanced_call_privacy_enabled") is { } nullNodeHasEnhancedCallPrivacyEnabled && nullNodeHasEnhancedCallPrivacyEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasEnhancedCallPrivacyEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,18 +31,18 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Who may place audio or video calls to the user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions? AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions? AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; AdditionalData?.Remove("av_call_permissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions? _explicitNullValueAvCallPermissions = default!;
 #nullable restore
 #else
-        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
+        public global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions AvCallPermissions { get => _explicitNullValueAvCallPermissions; set { _explicitNullValueAvCallPermissions = value; AdditionalData?.Remove("av_call_permissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("av_call_permissions"); else _explicitNullProperties?.Remove("av_call_permissions"); } }
         private global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettingsAvCallPermissions _explicitNullValueAvCallPermissions = default!;
 #endif
         /// <summary>Whether audio and video calls are enabled.</summary>
-        public bool? HasAvCallsEnabled { get => _explicitNullValueHasAvCallsEnabled; set { _explicitNullValueHasAvCallsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_av_calls_enabled"); else _explicitNullProperties?.Remove("has_av_calls_enabled"); } }
+        public bool? HasAvCallsEnabled { get => _explicitNullValueHasAvCallsEnabled; set { _explicitNullValueHasAvCallsEnabled = value; AdditionalData?.Remove("has_av_calls_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_av_calls_enabled"); else _explicitNullProperties?.Remove("has_av_calls_enabled"); } }
         private bool? _explicitNullValueHasAvCallsEnabled = default!;
         /// <summary>Whether enhanced call privacy is enabled.</summary>
-        public bool? HasEnhancedCallPrivacyEnabled { get => _explicitNullValueHasEnhancedCallPrivacyEnabled; set { _explicitNullValueHasEnhancedCallPrivacyEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_enhanced_call_privacy_enabled"); else _explicitNullProperties?.Remove("has_enhanced_call_privacy_enabled"); } }
+        public bool? HasEnhancedCallPrivacyEnabled { get => _explicitNullValueHasEnhancedCallPrivacyEnabled; set { _explicitNullValueHasEnhancedCallPrivacyEnabled = value; AdditionalData?.Remove("has_enhanced_call_privacy_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_enhanced_call_privacy_enabled"); else _explicitNullProperties?.Remove("has_enhanced_call_privacy_enabled"); } }
         private bool? _explicitNullValueHasEnhancedCallPrivacyEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.ChatSettingsAvSettings"/> and sets the default values.

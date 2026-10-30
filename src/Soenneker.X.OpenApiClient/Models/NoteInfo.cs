@@ -18,12 +18,18 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
-            if (parseNode.GetChildNode("misleading_tags") is { } nullNodeMisleadingTags && nullNodeMisleadingTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MisleadingTags = null;
-            if (parseNode.GetChildNode("post_id") is { } nullNodePostId && nullNodePostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostId = null;
-            if (parseNode.GetChildNode("rating_status") is { } nullNodeRatingStatus && nullNodeRatingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatingStatus = null;
-            if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
-            if (parseNode.GetChildNode("trustworthy_sources") is { } nullNodeTrustworthySources && nullNodeTrustworthySources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustworthySources = null;
+            if (parseNode.GetChildNode("classification") is null) { _explicitNullValueClassification = default!; _explicitNullProperties?.Remove("classification"); }
+            else if (parseNode.GetChildNode("classification") is { } nullNodeClassification && nullNodeClassification.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Classification = null;
+            if (parseNode.GetChildNode("misleading_tags") is null) { _explicitNullValueMisleadingTags = default!; _explicitNullProperties?.Remove("misleading_tags"); }
+            else if (parseNode.GetChildNode("misleading_tags") is { } nullNodeMisleadingTags && nullNodeMisleadingTags.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MisleadingTags = null;
+            if (parseNode.GetChildNode("post_id") is null) { _explicitNullValuePostId = default!; _explicitNullProperties?.Remove("post_id"); }
+            else if (parseNode.GetChildNode("post_id") is { } nullNodePostId && nullNodePostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostId = null;
+            if (parseNode.GetChildNode("rating_status") is null) { _explicitNullValueRatingStatus = default!; _explicitNullProperties?.Remove("rating_status"); }
+            else if (parseNode.GetChildNode("rating_status") is { } nullNodeRatingStatus && nullNodeRatingStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RatingStatus = null;
+            if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
+            else if (parseNode.GetChildNode("text") is { } nullNodeText && nullNodeText.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Text = null;
+            if (parseNode.GetChildNode("trustworthy_sources") is null) { _explicitNullValueTrustworthySources = default!; _explicitNullProperties?.Remove("trustworthy_sources"); }
+            else if (parseNode.GetChildNode("trustworthy_sources") is { } nullNodeTrustworthySources && nullNodeTrustworthySources.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrustworthySources = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,55 +37,55 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>How the noted Post was classified (snake_case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        public string? Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
         private string? _explicitNullValueClassification = default!;
 #nullable restore
 #else
-        public string Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
+        public string Classification { get => _explicitNullValueClassification; set { _explicitNullValueClassification = value; AdditionalData?.Remove("classification"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("classification"); else _explicitNullProperties?.Remove("classification"); } }
         private string _explicitNullValueClassification = default!;
 #endif
         /// <summary>Reasons the noted Post may be misleading (snake_case).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
+        public List<string>? MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; AdditionalData?.Remove("misleading_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
         private List<string>? _explicitNullValueMisleadingTags = default!;
 #nullable restore
 #else
-        public List<string> MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
+        public List<string> MisleadingTags { get => _explicitNullValueMisleadingTags; set { _explicitNullValueMisleadingTags = value; AdditionalData?.Remove("misleading_tags"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("misleading_tags"); else _explicitNullProperties?.Remove("misleading_tags"); } }
         private List<string> _explicitNullValueMisleadingTags = default!;
 #endif
         /// <summary>Unique identifier of the Post this note is about.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostId { get => _explicitNullValuePostId; set { _explicitNullValuePostId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_id"); else _explicitNullProperties?.Remove("post_id"); } }
+        public string? PostId { get => _explicitNullValuePostId; set { _explicitNullValuePostId = value; AdditionalData?.Remove("post_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_id"); else _explicitNullProperties?.Remove("post_id"); } }
         private string? _explicitNullValuePostId = default!;
 #nullable restore
 #else
-        public string PostId { get => _explicitNullValuePostId; set { _explicitNullValuePostId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_id"); else _explicitNullProperties?.Remove("post_id"); } }
+        public string PostId { get => _explicitNullValuePostId; set { _explicitNullValuePostId = value; AdditionalData?.Remove("post_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("post_id"); else _explicitNullProperties?.Remove("post_id"); } }
         private string _explicitNullValuePostId = default!;
 #endif
         /// <summary>Current rating status of the note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RatingStatus { get => _explicitNullValueRatingStatus; set { _explicitNullValueRatingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_status"); else _explicitNullProperties?.Remove("rating_status"); } }
+        public string? RatingStatus { get => _explicitNullValueRatingStatus; set { _explicitNullValueRatingStatus = value; AdditionalData?.Remove("rating_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_status"); else _explicitNullProperties?.Remove("rating_status"); } }
         private string? _explicitNullValueRatingStatus = default!;
 #nullable restore
 #else
-        public string RatingStatus { get => _explicitNullValueRatingStatus; set { _explicitNullValueRatingStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_status"); else _explicitNullProperties?.Remove("rating_status"); } }
+        public string RatingStatus { get => _explicitNullValueRatingStatus; set { _explicitNullValueRatingStatus = value; AdditionalData?.Remove("rating_status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rating_status"); else _explicitNullProperties?.Remove("rating_status"); } }
         private string _explicitNullValueRatingStatus = default!;
 #endif
         /// <summary>The text of the Community Note.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string? _explicitNullValueText = default!;
 #nullable restore
 #else
-        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
+        public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; AdditionalData?.Remove("text"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
         /// <summary>Whether the note cites trustworthy sources.</summary>
-        public bool? TrustworthySources { get => _explicitNullValueTrustworthySources; set { _explicitNullValueTrustworthySources = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustworthy_sources"); else _explicitNullProperties?.Remove("trustworthy_sources"); } }
+        public bool? TrustworthySources { get => _explicitNullValueTrustworthySources; set { _explicitNullValueTrustworthySources = value; AdditionalData?.Remove("trustworthy_sources"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trustworthy_sources"); else _explicitNullProperties?.Remove("trustworthy_sources"); } }
         private bool? _explicitNullValueTrustworthySources = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.NoteInfo"/> and sets the default values.

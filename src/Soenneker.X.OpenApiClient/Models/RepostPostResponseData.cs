@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("rest_id") is { } nullNodeRestId && nullNodeRestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestId = null;
-            if (parseNode.GetChildNode("retweeted") is { } nullNodeRetweeted && nullNodeRetweeted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retweeted = null;
+            if (parseNode.GetChildNode("rest_id") is null) { _explicitNullValueRestId = default!; _explicitNullProperties?.Remove("rest_id"); }
+            else if (parseNode.GetChildNode("rest_id") is { } nullNodeRestId && nullNodeRestId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestId = null;
+            if (parseNode.GetChildNode("retweeted") is null) { _explicitNullValueRetweeted = default!; _explicitNullProperties?.Remove("retweeted"); }
+            else if (parseNode.GetChildNode("retweeted") is { } nullNodeRetweeted && nullNodeRetweeted.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Retweeted = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The ID of the reposted Post.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RestId { get => _explicitNullValueRestId; set { _explicitNullValueRestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rest_id"); else _explicitNullProperties?.Remove("rest_id"); } }
+        public string? RestId { get => _explicitNullValueRestId; set { _explicitNullValueRestId = value; AdditionalData?.Remove("rest_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rest_id"); else _explicitNullProperties?.Remove("rest_id"); } }
         private string? _explicitNullValueRestId = default!;
 #nullable restore
 #else
-        public string RestId { get => _explicitNullValueRestId; set { _explicitNullValueRestId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rest_id"); else _explicitNullProperties?.Remove("rest_id"); } }
+        public string RestId { get => _explicitNullValueRestId; set { _explicitNullValueRestId = value; AdditionalData?.Remove("rest_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rest_id"); else _explicitNullProperties?.Remove("rest_id"); } }
         private string _explicitNullValueRestId = default!;
 #endif
         /// <summary>Indicates whether the user reposted the Post.</summary>
-        public bool? Retweeted { get => _explicitNullValueRetweeted; set { _explicitNullValueRetweeted = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retweeted"); else _explicitNullProperties?.Remove("retweeted"); } }
+        public bool? Retweeted { get => _explicitNullValueRetweeted; set { _explicitNullValueRetweeted = value; AdditionalData?.Remove("retweeted"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retweeted"); else _explicitNullProperties?.Remove("retweeted"); } }
         private bool? _explicitNullValueRetweeted = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.RepostPostResponseData"/> and sets the default values.

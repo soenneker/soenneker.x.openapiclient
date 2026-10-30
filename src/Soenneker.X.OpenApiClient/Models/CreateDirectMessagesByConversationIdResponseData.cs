@@ -17,8 +17,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dm_conversation_id") is { } nullNodeDmConversationId && nullNodeDmConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmConversationId = null;
-            if (parseNode.GetChildNode("dm_event_id") is { } nullNodeDmEventId && nullNodeDmEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmEventId = null;
+            if (parseNode.GetChildNode("dm_conversation_id") is null) { _explicitNullValueDmConversationId = default!; _explicitNullProperties?.Remove("dm_conversation_id"); }
+            else if (parseNode.GetChildNode("dm_conversation_id") is { } nullNodeDmConversationId && nullNodeDmConversationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmConversationId = null;
+            if (parseNode.GetChildNode("dm_event_id") is null) { _explicitNullValueDmEventId = default!; _explicitNullProperties?.Remove("dm_event_id"); }
+            else if (parseNode.GetChildNode("dm_event_id") is { } nullNodeDmEventId && nullNodeDmEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmEventId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>The conversation the message was sent to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmConversationId { get => _explicitNullValueDmConversationId; set { _explicitNullValueDmConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_conversation_id"); else _explicitNullProperties?.Remove("dm_conversation_id"); } }
+        public string? DmConversationId { get => _explicitNullValueDmConversationId; set { _explicitNullValueDmConversationId = value; AdditionalData?.Remove("dm_conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_conversation_id"); else _explicitNullProperties?.Remove("dm_conversation_id"); } }
         private string? _explicitNullValueDmConversationId = default!;
 #nullable restore
 #else
-        public string DmConversationId { get => _explicitNullValueDmConversationId; set { _explicitNullValueDmConversationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_conversation_id"); else _explicitNullProperties?.Remove("dm_conversation_id"); } }
+        public string DmConversationId { get => _explicitNullValueDmConversationId; set { _explicitNullValueDmConversationId = value; AdditionalData?.Remove("dm_conversation_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_conversation_id"); else _explicitNullProperties?.Remove("dm_conversation_id"); } }
         private string _explicitNullValueDmConversationId = default!;
 #endif
         /// <summary>The id of the created DM event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DmEventId { get => _explicitNullValueDmEventId; set { _explicitNullValueDmEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_event_id"); else _explicitNullProperties?.Remove("dm_event_id"); } }
+        public string? DmEventId { get => _explicitNullValueDmEventId; set { _explicitNullValueDmEventId = value; AdditionalData?.Remove("dm_event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_event_id"); else _explicitNullProperties?.Remove("dm_event_id"); } }
         private string? _explicitNullValueDmEventId = default!;
 #nullable restore
 #else
-        public string DmEventId { get => _explicitNullValueDmEventId; set { _explicitNullValueDmEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_event_id"); else _explicitNullProperties?.Remove("dm_event_id"); } }
+        public string DmEventId { get => _explicitNullValueDmEventId; set { _explicitNullValueDmEventId = value; AdditionalData?.Remove("dm_event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_event_id"); else _explicitNullProperties?.Remove("dm_event_id"); } }
         private string _explicitNullValueDmEventId = default!;
 #endif
         /// <summary>

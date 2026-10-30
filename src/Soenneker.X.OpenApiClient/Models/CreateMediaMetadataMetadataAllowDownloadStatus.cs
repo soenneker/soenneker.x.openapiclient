@@ -17,13 +17,14 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("allow_download") is { } nullNodeAllowDownload && nullNodeAllowDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDownload = null;
+            if (parseNode.GetChildNode("allow_download") is null) { _explicitNullValueAllowDownload = default!; _explicitNullProperties?.Remove("allow_download"); }
+            else if (parseNode.GetChildNode("allow_download") is { } nullNodeAllowDownload && nullNodeAllowDownload.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AllowDownload = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The allow_download property</summary>
-        public bool? AllowDownload { get => _explicitNullValueAllowDownload; set { _explicitNullValueAllowDownload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_download"); else _explicitNullProperties?.Remove("allow_download"); } }
+        public bool? AllowDownload { get => _explicitNullValueAllowDownload; set { _explicitNullValueAllowDownload = value; AdditionalData?.Remove("allow_download"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_download"); else _explicitNullProperties?.Remove("allow_download"); } }
         private bool? _explicitNullValueAllowDownload = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataAllowDownloadStatus"/> and sets the default values.

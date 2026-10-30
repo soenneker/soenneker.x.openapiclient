@@ -50,7 +50,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -102,7 +102,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -146,7 +146,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -200,7 +200,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -209,10 +209,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "dm.write",
               "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.read"
             ]
           },
           {
@@ -273,7 +273,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -283,9 +283,9 @@
           {
             "OAuth2UserToken": [
               "dm.read",
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -335,7 +335,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -403,7 +403,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -479,7 +479,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -542,7 +542,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -618,7 +618,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -680,7 +680,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -742,7 +742,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -812,7 +812,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -870,7 +870,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -926,7 +926,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -984,7 +984,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1034,7 +1034,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1090,7 +1090,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1151,7 +1151,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1204,7 +1204,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1265,7 +1265,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1348,7 +1348,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1406,7 +1406,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1415,9 +1415,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "broadcast.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -1463,7 +1463,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1523,7 +1523,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1532,8 +1532,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1600,7 +1600,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1655,7 +1655,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1724,7 +1724,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1733,8 +1733,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1805,7 +1805,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1860,7 +1860,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1869,8 +1869,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1927,7 +1927,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -1984,7 +1984,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2050,7 +2050,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2059,8 +2059,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2109,7 +2109,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2118,8 +2118,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2168,7 +2168,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2228,7 +2228,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2314,7 +2314,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2380,7 +2380,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2389,8 +2389,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2449,7 +2449,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2458,8 +2458,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2518,7 +2518,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2586,7 +2586,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2595,8 +2595,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2655,7 +2655,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2664,8 +2664,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2713,7 +2713,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2803,7 +2803,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2858,7 +2858,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -2941,7 +2941,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3009,7 +3009,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3075,7 +3075,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3143,7 +3143,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3210,7 +3210,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3278,7 +3278,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3333,7 +3333,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3488,7 +3488,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3549,7 +3549,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3558,9 +3558,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -3601,7 +3601,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3673,7 +3673,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3743,7 +3743,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3753,8 +3753,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -3815,7 +3815,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3825,8 +3825,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3896,7 +3896,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3905,9 +3905,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "dm.read"
             ]
           },
           {
@@ -3968,7 +3968,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -3977,9 +3977,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -4052,7 +4052,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4061,9 +4061,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4136,7 +4136,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4146,8 +4146,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4210,7 +4210,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4219,9 +4219,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4284,7 +4284,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4294,8 +4294,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4358,7 +4358,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4367,9 +4367,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4432,7 +4432,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4441,9 +4441,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4504,7 +4504,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4513,8 +4513,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -4590,7 +4590,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4599,9 +4599,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -4664,7 +4664,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4673,8 +4673,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -4736,7 +4736,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4745,9 +4745,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4813,7 +4813,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4822,9 +4822,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -4887,7 +4887,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4896,8 +4896,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -4961,7 +4961,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -4970,9 +4970,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5034,7 +5034,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5043,9 +5043,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5107,7 +5107,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5116,9 +5116,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -5180,7 +5180,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5190,8 +5190,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5254,7 +5254,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5264,8 +5264,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5326,7 +5326,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5335,9 +5335,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5399,7 +5399,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5408,8 +5408,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5472,7 +5472,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5481,9 +5481,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -5546,7 +5546,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5618,7 +5618,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5694,7 +5694,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5703,9 +5703,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -5767,7 +5767,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5776,8 +5776,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5841,7 +5841,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5904,7 +5904,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5914,8 +5914,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5967,7 +5967,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -5976,9 +5976,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -6029,7 +6029,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6104,7 +6104,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6175,7 +6175,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6242,7 +6242,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6326,7 +6326,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6393,7 +6393,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6402,9 +6402,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -6457,7 +6457,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6466,9 +6466,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -6514,7 +6514,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6523,9 +6523,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -6574,7 +6574,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6584,8 +6584,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -6665,7 +6665,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6674,8 +6674,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -6728,7 +6728,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6803,7 +6803,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6861,7 +6861,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6920,7 +6920,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -6977,7 +6977,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7045,7 +7045,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7123,7 +7123,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7175,7 +7175,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7257,7 +7257,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7302,7 +7302,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7354,7 +7354,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7406,7 +7406,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7415,8 +7415,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -7481,7 +7481,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7589,7 +7589,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7598,9 +7598,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -7659,7 +7659,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7668,9 +7668,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -7728,7 +7728,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7738,8 +7738,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -7841,7 +7841,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7850,9 +7850,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -7945,7 +7945,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -7955,8 +7955,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -8005,7 +8005,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8077,7 +8077,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8157,7 +8157,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8313,7 +8313,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8469,7 +8469,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8522,7 +8522,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8531,10 +8531,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "list.read",
+              "tweet.read",
               "list.write",
-              "tweet.read"
+              "list.read",
+              "users.read"
             ]
           },
           {
@@ -8588,7 +8588,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8597,8 +8597,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -8657,7 +8657,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8666,9 +8666,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -8733,7 +8733,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8742,9 +8742,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -8823,7 +8823,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8832,9 +8832,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -8916,7 +8916,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8989,7 +8989,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -8998,9 +8998,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -9065,7 +9065,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9074,8 +9074,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -9165,7 +9165,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9174,8 +9174,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -9237,7 +9237,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9332,7 +9332,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9392,7 +9392,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9452,7 +9452,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9510,7 +9510,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9579,7 +9579,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9642,7 +9642,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9702,7 +9702,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9775,7 +9775,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9836,7 +9836,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9897,7 +9897,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9984,7 +9984,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -9993,8 +9993,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10052,7 +10052,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10113,7 +10113,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10170,7 +10170,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10248,7 +10248,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10348,7 +10348,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10410,7 +10410,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10479,7 +10479,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10526,7 +10526,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10581,7 +10581,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10590,8 +10590,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -10640,7 +10640,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10649,8 +10649,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -10697,7 +10697,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10763,7 +10763,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10772,8 +10772,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -10840,7 +10840,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10850,8 +10850,8 @@
           {
             "OAuth2UserToken": [
               "space.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10918,7 +10918,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -10928,8 +10928,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "space.read",
-              "tweet.read"
+              "tweet.read",
+              "space.read"
             ]
           },
           {
@@ -11012,7 +11012,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11021,8 +11021,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "space.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -11084,7 +11084,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11093,9 +11093,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "space.read"
+              "space.read",
+              "users.read"
             ]
           },
           {
@@ -11176,7 +11176,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11186,8 +11186,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "space.read",
-              "tweet.read"
+              "tweet.read",
+              "space.read"
             ]
           }
         ]
@@ -11273,7 +11273,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11282,8 +11282,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "space.read"
             ]
           },
@@ -11347,7 +11347,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11429,7 +11429,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11438,8 +11438,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11488,7 +11488,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11497,9 +11497,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "tweet.write",
-              "users.read"
+              "tweet.write"
             ]
           },
           {
@@ -11583,7 +11583,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11592,8 +11592,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11674,7 +11674,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11793,7 +11793,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -11912,7 +11912,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12084,7 +12084,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12254,7 +12254,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12424,7 +12424,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12594,7 +12594,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12764,7 +12764,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12838,7 +12838,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -12981,7 +12981,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13151,7 +13151,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13292,7 +13292,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13301,8 +13301,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -13442,7 +13442,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13611,7 +13611,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13693,7 +13693,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13762,7 +13762,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13813,7 +13813,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13858,7 +13858,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13914,7 +13914,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -13968,7 +13968,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14023,7 +14023,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14032,9 +14032,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "tweet.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14101,7 +14101,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14194,7 +14194,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14204,8 +14204,8 @@
           {
             "OAuth2UserToken": [
               "like.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14307,7 +14307,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14316,8 +14316,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14400,7 +14400,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14502,7 +14502,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14511,8 +14511,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -14579,7 +14579,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14588,9 +14588,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "tweet.moderate.write"
+              "tweet.moderate.write",
+              "tweet.read"
             ]
           },
           {
@@ -14628,7 +14628,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14689,7 +14689,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14759,7 +14759,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14836,7 +14836,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -14907,7 +14907,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15001,7 +15001,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15055,7 +15055,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15134,7 +15134,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15143,9 +15143,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "follows.read"
             ]
           },
           {
@@ -15214,7 +15214,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15223,9 +15223,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "follows.read",
-              "tweet.read"
+              "follows.read"
             ]
           },
           {
@@ -15268,7 +15268,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15340,7 +15340,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15350,8 +15350,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -15429,7 +15429,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15438,8 +15438,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "timeline.read"
+              "timeline.read",
+              "tweet.read"
             ]
           },
           {
@@ -15516,7 +15516,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15586,7 +15586,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15595,8 +15595,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15677,7 +15677,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15768,7 +15768,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15778,8 +15778,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "block.read",
-              "users.read"
+              "users.read",
+              "block.read"
             ]
           },
           {
@@ -15838,7 +15838,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15847,9 +15847,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "block.write",
               "users.read",
-              "tweet.read",
-              "block.write"
+              "tweet.read"
             ]
           },
           {
@@ -15937,7 +15937,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -15946,9 +15946,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "bookmark.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16007,7 +16007,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16016,9 +16016,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "bookmark.write",
-              "tweet.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -16085,7 +16085,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16094,8 +16094,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -16154,7 +16154,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16163,8 +16163,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.write"
+              "bookmark.write",
+              "users.read"
             ]
           }
         ]
@@ -16239,7 +16239,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16249,8 +16249,8 @@
           {
             "OAuth2UserToken": [
               "bookmark.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16315,7 +16315,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16383,7 +16383,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16451,7 +16451,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16521,7 +16521,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16530,8 +16530,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -16589,7 +16589,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16668,7 +16668,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16677,8 +16677,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -16729,7 +16729,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16738,9 +16738,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -16791,7 +16791,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16800,9 +16800,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -16881,7 +16881,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -16891,8 +16891,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -16954,7 +16954,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17030,7 +17030,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17039,9 +17039,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "list.write"
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -17121,7 +17121,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17215,7 +17215,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17224,9 +17224,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "follows.read",
               "users.read",
-              "follows.read"
+              "tweet.read"
             ]
           },
           {
@@ -17288,7 +17288,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17297,9 +17297,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "follows.write"
+              "follows.write",
+              "tweet.read"
             ]
           },
           {
@@ -17387,7 +17387,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17397,8 +17397,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "like.read",
-              "tweet.read"
+              "tweet.read",
+              "like.read"
             ]
           },
           {
@@ -17459,7 +17459,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17469,8 +17469,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "like.write",
-              "users.read"
+              "users.read",
+              "like.write"
             ]
           },
           {
@@ -17532,7 +17532,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17541,9 +17541,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "like.write",
               "users.read",
-              "tweet.read",
-              "like.write"
+              "tweet.read"
             ]
           },
           {
@@ -17621,7 +17621,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17630,9 +17630,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.read"
             ]
           },
           {
@@ -17757,7 +17757,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17848,7 +17848,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17857,8 +17857,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "mute.read"
             ]
           },
@@ -17918,7 +17918,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -17928,8 +17928,8 @@
           {
             "OAuth2UserToken": [
               "mute.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -18008,7 +18008,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18017,9 +18017,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -18082,7 +18082,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18091,9 +18091,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.read",
               "tweet.read",
-              "list.read"
+              "users.read"
             ]
           },
           {
@@ -18155,7 +18155,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18164,8 +18164,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -18231,7 +18231,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18240,8 +18240,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "list.write"
             ]
           },
@@ -18299,7 +18299,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18309,8 +18309,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -18372,7 +18372,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18447,7 +18447,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18456,9 +18456,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "tweet.write"
+              "tweet.write",
+              "tweet.read"
             ]
           },
           {
@@ -18521,7 +18521,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18530,8 +18530,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.write"
             ]
           },
@@ -18583,7 +18583,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18651,7 +18651,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18721,7 +18721,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18789,7 +18789,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18866,7 +18866,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -18875,8 +18875,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -19010,7 +19010,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19155,7 +19155,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19164,8 +19164,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -19233,7 +19233,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19242,9 +19242,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "block.write"
+              "block.write",
+              "tweet.read"
             ]
           },
           {
@@ -19309,7 +19309,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19318,8 +19318,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "follows.write"
             ]
           },
@@ -19385,7 +19385,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19395,8 +19395,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "mute.write",
-              "users.read"
+              "users.read",
+              "mute.write"
             ]
           },
           {
@@ -19442,7 +19442,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19501,7 +19501,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19562,7 +19562,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19618,7 +19618,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -19678,7 +19678,7 @@
               },
               "application/problem\u002Bjson": {
                 "schema": {
-                  "$ref": "#/components/schemas/Problem"
+                  "$ref": "#/components/schemas/ProblemError"
                 }
               }
             }
@@ -40657,31 +40657,31 @@
             "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "cta_watch_clicks": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaWatchClicks"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "play_from_tap": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayFromTap"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "playback25": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback25"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "playback50": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback50"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "playback75": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlayback75"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "playback_complete": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackComplete"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "playback_start": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsPlaybackStart"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "video_views": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsVideoViews"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           },
           "watch_time_ms": {
-            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsWatchTimeMs"
+            "$ref": "#/components/schemas/MediaAnalyticsTimestampedMetricsItemMetricsCtaUrlClicks"
           }
         },
         "description": "Video metric counts for this bucket. Counters are integers when the backend value parses as a number, otherwise the original string is preserved.",
@@ -52009,6 +52009,400 @@
               "name": "Retweets"
             }
           ]
+        }
+      },
+      "ProblemError": {
+        "type": "object",
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "parameter": {
+            "type": "string"
+          },
+          "resource_id": {
+            "type": "string"
+          },
+          "resource_type": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/resource-not-found",
+              "https://api.x.com/2/problems/invalid-request",
+              "https://api.x.com/2/problems/not-authorized-for-resource",
+              "https://api.x.com/2/problems/not-authorized-for-field",
+              "https://api.x.com/2/problems/field-unauthorized",
+              "https://api.x.com/2/problems/field-hydration-failure",
+              "https://api.x.com/2/problems/resource-unavailable",
+              "https://api.x.com/2/problems/disallowed-resource",
+              "https://api.x.com/2/problems/recipient-not-messageable",
+              "https://api.x.com/2/problems/internal-error",
+              "https://api.x.com/2/problems/dm-bad-attachment",
+              "https://api.x.com/2/problems/dm-bad-cta",
+              "https://api.x.com/2/problems/dm-bad-custom-profile",
+              "https://api.x.com/2/problems/dm-bad-media",
+              "https://api.x.com/2/problems/dm-bad-quick-reply",
+              "https://api.x.com/2/problems/dm-bad-url",
+              "https://api.x.com/2/problems/dm-conversation-name-too-long",
+              "https://api.x.com/2/problems/dm-conversation-not-found",
+              "https://api.x.com/2/problems/dm-duplicate",
+              "https://api.x.com/2/problems/dm-inactive-device",
+              "https://api.x.com/2/problems/dm-not-delivered",
+              "https://api.x.com/2/problems/dm-not-found",
+              "https://api.x.com/2/problems/dm-not-owner",
+              "https://api.x.com/2/problems/dm-participant-not-added",
+              "https://api.x.com/2/problems/dm-participant-not-found",
+              "https://api.x.com/2/problems/dm-participant-restricted",
+              "https://api.x.com/2/problems/dm-participant-unavailable",
+              "https://api.x.com/2/problems/dm-rate-limited",
+              "https://api.x.com/2/problems/dm-recipient-blocks-sender",
+              "https://api.x.com/2/problems/dm-recipient-cannot-receive",
+              "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable",
+              "https://api.x.com/2/problems/dm-recipient-not-accepting",
+              "https://api.x.com/2/problems/dm-recipient-not-found",
+              "https://api.x.com/2/problems/dm-recipient-restricts-groups",
+              "https://api.x.com/2/problems/dm-recipient-unavailable",
+              "https://api.x.com/2/problems/dm-request-in-progress",
+              "https://api.x.com/2/problems/dm-safety-limited",
+              "https://api.x.com/2/problems/dm-safety-rejected",
+              "https://api.x.com/2/problems/dm-sender-blocks-recipient",
+              "https://api.x.com/2/problems/dm-sender-declined-dms",
+              "https://api.x.com/2/problems/dm-sender-dms-closed",
+              "https://api.x.com/2/problems/dm-sender-encrypted-unavailable",
+              "https://api.x.com/2/problems/dm-sender-not-in-conversation",
+              "https://api.x.com/2/problems/dm-sender-not-permitted",
+              "https://api.x.com/2/problems/dm-sender-not-verified",
+              "https://api.x.com/2/problems/dm-sender-phone-required",
+              "https://api.x.com/2/problems/dm-sender-read-only",
+              "https://api.x.com/2/problems/dm-sender-unavailable",
+              "https://api.x.com/2/problems/dm-text-empty",
+              "https://api.x.com/2/problems/dm-text-too-long",
+              "https://api.x.com/2/problems/dm-too-few-participants",
+              "https://api.x.com/2/problems/dm-too-many-participants",
+              "https://api.x.com/2/problems/dm-unsupported-message",
+              "https://api.twitter.com/2/problems/duplicate-rules",
+              "https://api.twitter.com/2/problems/invalid-rules"
+            ],
+            "x-ms-enum": {
+              "name": "Type",
+              "modelAsString": false,
+              "values": [
+                {
+                  "value": "https://api.x.com/2/problems/resource-not-found",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsResourceNotFound"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/invalid-request",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsInvalidRequest"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/not-authorized-for-resource",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForResource"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/not-authorized-for-field",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForField"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/field-unauthorized",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsFieldUnauthorized"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/field-hydration-failure",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsFieldHydrationFailure"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/resource-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsResourceUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/disallowed-resource",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDisallowedResource"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/recipient-not-messageable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsRecipientNotMessageable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/internal-error",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsInternalError"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-attachment",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadAttachment"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-cta",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCta"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-custom-profile",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadCustomProfile"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-media",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadMedia"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-quick-reply",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadQuickReply"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-bad-url",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmBadUrl"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-conversation-name-too-long",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNameTooLong"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-conversation-not-found",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmConversationNotFound"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-duplicate",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmDuplicate"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-inactive-device",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmInactiveDevice"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-not-delivered",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotDelivered"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-not-found",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotFound"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-not-owner",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmNotOwner"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-participant-not-added",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotAdded"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-participant-not-found",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantNotFound"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-participant-restricted",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantRestricted"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-participant-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmParticipantUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-rate-limited",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRateLimited"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-blocks-sender",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientBlocksSender"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-cannot-receive",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientCannotReceive"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientEncryptedUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-not-accepting",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotAccepting"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-not-found",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientNotFound"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-restricts-groups",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientRestrictsGroups"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-recipient-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRecipientUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-request-in-progress",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmRequestInProgress"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-safety-limited",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyLimited"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-safety-rejected",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSafetyRejected"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-blocks-recipient",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderBlocksRecipient"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-declined-dms",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDeclinedDms"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-dms-closed",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderDmsClosed"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-encrypted-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderEncryptedUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-not-in-conversation",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotInConversation"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-not-permitted",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotPermitted"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-not-verified",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderNotVerified"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-phone-required",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderPhoneRequired"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-read-only",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderReadOnly"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-sender-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmSenderUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-text-empty",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextEmpty"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-text-too-long",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTextTooLong"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-too-few-participants",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooFewParticipants"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-too-many-participants",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmTooManyParticipants"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/dm-unsupported-message",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsDmUnsupportedMessage"
+                },
+                {
+                  "value": "https://api.twitter.com/2/problems/duplicate-rules",
+                  "name": "HttpsColonSlashSlashApiTwitterCom2ProblemsDuplicateRules"
+                },
+                {
+                  "value": "https://api.twitter.com/2/problems/invalid-rules",
+                  "name": "HttpsColonSlashSlashApiTwitterCom2ProblemsInvalidRules"
+                }
+              ]
+            }
+          },
+          "value": {
+            "type": "string"
+          },
+          "section": {
+            "type": "string"
+          },
+          "field": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "details": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "x-client-original-discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
+            "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
+            "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
+            "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
+            "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
+            "https://api.x.com/2/problems/dm-bad-custom-profile": "#/components/schemas/DmBadCustomProfileProblem",
+            "https://api.x.com/2/problems/dm-bad-media": "#/components/schemas/DmBadMediaProblem",
+            "https://api.x.com/2/problems/dm-bad-quick-reply": "#/components/schemas/DmBadQuickReplyProblem",
+            "https://api.x.com/2/problems/dm-bad-url": "#/components/schemas/DmBadUrlProblem",
+            "https://api.x.com/2/problems/dm-conversation-name-too-long": "#/components/schemas/DmConversationNameTooLongProblem",
+            "https://api.x.com/2/problems/dm-conversation-not-found": "#/components/schemas/DmConversationNotFoundProblem",
+            "https://api.x.com/2/problems/dm-duplicate": "#/components/schemas/DmDuplicateProblem",
+            "https://api.x.com/2/problems/dm-inactive-device": "#/components/schemas/DmInactiveDeviceProblem",
+            "https://api.x.com/2/problems/dm-not-delivered": "#/components/schemas/DmNotDeliveredProblem",
+            "https://api.x.com/2/problems/dm-not-found": "#/components/schemas/DmNotFoundProblem",
+            "https://api.x.com/2/problems/dm-not-owner": "#/components/schemas/DmNotOwnerProblem",
+            "https://api.x.com/2/problems/dm-participant-not-added": "#/components/schemas/DmParticipantNotAddedProblem",
+            "https://api.x.com/2/problems/dm-participant-not-found": "#/components/schemas/DmParticipantNotFoundProblem",
+            "https://api.x.com/2/problems/dm-participant-restricted": "#/components/schemas/DmParticipantRestrictedProblem",
+            "https://api.x.com/2/problems/dm-participant-unavailable": "#/components/schemas/DmParticipantUnavailableProblem",
+            "https://api.x.com/2/problems/dm-rate-limited": "#/components/schemas/DmRateLimitedProblem",
+            "https://api.x.com/2/problems/dm-recipient-blocks-sender": "#/components/schemas/DmRecipientBlocksSenderProblem",
+            "https://api.x.com/2/problems/dm-recipient-cannot-receive": "#/components/schemas/DmRecipientCannotReceiveProblem",
+            "https://api.x.com/2/problems/dm-recipient-encrypted-unavailable": "#/components/schemas/DmRecipientEncryptedUnavailableProblem",
+            "https://api.x.com/2/problems/dm-recipient-not-accepting": "#/components/schemas/DmRecipientNotAcceptingProblem",
+            "https://api.x.com/2/problems/dm-recipient-not-found": "#/components/schemas/DmRecipientNotFoundProblem",
+            "https://api.x.com/2/problems/dm-recipient-restricts-groups": "#/components/schemas/DmRecipientRestrictsGroupsProblem",
+            "https://api.x.com/2/problems/dm-recipient-unavailable": "#/components/schemas/DmRecipientUnavailableProblem",
+            "https://api.x.com/2/problems/dm-request-in-progress": "#/components/schemas/DmRequestInProgressProblem",
+            "https://api.x.com/2/problems/dm-safety-limited": "#/components/schemas/DmSafetyLimitedProblem",
+            "https://api.x.com/2/problems/dm-safety-rejected": "#/components/schemas/DmSafetyRejectedProblem",
+            "https://api.x.com/2/problems/dm-sender-blocks-recipient": "#/components/schemas/DmSenderBlocksRecipientProblem",
+            "https://api.x.com/2/problems/dm-sender-declined-dms": "#/components/schemas/DmSenderDeclinedDmsProblem",
+            "https://api.x.com/2/problems/dm-sender-dms-closed": "#/components/schemas/DmSenderDmsClosedProblem",
+            "https://api.x.com/2/problems/dm-sender-encrypted-unavailable": "#/components/schemas/DmSenderEncryptedUnavailableProblem",
+            "https://api.x.com/2/problems/dm-sender-not-in-conversation": "#/components/schemas/DmSenderNotInConversationProblem",
+            "https://api.x.com/2/problems/dm-sender-not-permitted": "#/components/schemas/DmSenderNotPermittedProblem",
+            "https://api.x.com/2/problems/dm-sender-not-verified": "#/components/schemas/DmSenderNotVerifiedProblem",
+            "https://api.x.com/2/problems/dm-sender-phone-required": "#/components/schemas/DmSenderPhoneRequiredProblem",
+            "https://api.x.com/2/problems/dm-sender-read-only": "#/components/schemas/DmSenderReadOnlyProblem",
+            "https://api.x.com/2/problems/dm-sender-unavailable": "#/components/schemas/DmSenderUnavailableProblem",
+            "https://api.x.com/2/problems/dm-text-empty": "#/components/schemas/DmTextEmptyProblem",
+            "https://api.x.com/2/problems/dm-text-too-long": "#/components/schemas/DmTextTooLongProblem",
+            "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
+            "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
+            "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
+            "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
+            "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
+            "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
+            "https://api.x.com/2/problems/invalid-request": "#/components/schemas/InvalidRequestProblem",
+            "https://api.x.com/2/problems/not-authorized-for-field": "#/components/schemas/NotAuthorizedForFieldProblem",
+            "https://api.x.com/2/problems/not-authorized-for-resource": "#/components/schemas/NotAuthorizedForResourceProblem",
+            "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
+            "https://api.x.com/2/problems/resource-not-found": "#/components/schemas/ResourceNotFoundProblem",
+            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem"
+          }
+        },
+        "required": [
+          "title",
+          "type"
+        ],
+        "x-client-original-error-schema": {
+          "$ref": "#/components/schemas/Problem"
         }
       }
     },
