@@ -150,7 +150,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Broadcasts
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class BroadcastsRequestBuilderGetQueryParameters 
         {
-            /// <summary>`next_token.offset` from the previous page.</summary>
+            /// <summary>`next_token.offset` from the previous page. Empty reads the first page.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("pagination_token")]
