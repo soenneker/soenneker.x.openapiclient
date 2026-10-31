@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Mutes.Item
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.X.OpenApiClient.Two.Broadcasts.Chat.Mutes.Item.WithUserItemRequestBuilder.WithUserItemRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.x.com", "/2/broadcasts/chat/mutes/{userId}", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
