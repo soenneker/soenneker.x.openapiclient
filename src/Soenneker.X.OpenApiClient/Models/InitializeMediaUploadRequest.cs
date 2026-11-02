@@ -49,8 +49,8 @@ namespace Soenneker.X.OpenApiClient.Models
         public bool? Shared { get => _explicitNullValueShared; set { _explicitNullValueShared = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shared"); else _explicitNullProperties?.Remove("shared"); } }
         private bool? _explicitNullValueShared = default!;
         /// <summary>The total size of the media upload in bytes.</summary>
-        public int? TotalBytes { get => _explicitNullValueTotalBytes; set { _explicitNullValueTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_bytes"); else _explicitNullProperties?.Remove("total_bytes"); } }
-        private int? _explicitNullValueTotalBytes = default!;
+        public long? TotalBytes { get => _explicitNullValueTotalBytes; set { _explicitNullValueTotalBytes = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total_bytes"); else _explicitNullProperties?.Remove("total_bytes"); } }
+        private long? _explicitNullValueTotalBytes = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -73,7 +73,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "media_category", n => { MediaCategory = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadRequestMediaCategory>(); } },
                 { "media_type", n => { MediaType = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadRequestMediaType>(); } },
                 { "shared", n => { Shared = n.GetBoolValue(); } },
-                { "total_bytes", n => { TotalBytes = n.GetIntValue(); } },
+                { "total_bytes", n => { TotalBytes = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -87,7 +87,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadRequestMediaCategory>("media_category", MediaCategory);
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadRequestMediaType>("media_type", MediaType);
             writer.WriteBoolValue("shared", Shared);
-            writer.WriteIntValue("total_bytes", TotalBytes);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteLongValue("total_bytes", TotalBytes);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }
