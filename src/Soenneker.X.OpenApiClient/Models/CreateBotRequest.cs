@@ -21,6 +21,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
             if (parseNode.GetChildNode("handle") is null) { _explicitNullValueHandle = default!; _explicitNullProperties?.Remove("handle"); }
             else if (parseNode.GetChildNode("handle") is { } nullNodeHandle && nullNodeHandle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Handle = null;
+            if (parseNode.GetChildNode("org_only") is null) { _explicitNullValueOrgOnly = default!; _explicitNullProperties?.Remove("org_only"); }
+            else if (parseNode.GetChildNode("org_only") is { } nullNodeOrgOnly && nullNodeOrgOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgOnly = null;
             if (parseNode.GetChildNode("scopes") is null) { _explicitNullValueScopes = default!; _explicitNullProperties?.Remove("scopes"); }
             else if (parseNode.GetChildNode("scopes") is { } nullNodeScopes && nullNodeScopes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Scopes = null;
         }
@@ -45,6 +47,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Handle { get => _explicitNullValueHandle; set { _explicitNullValueHandle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("handle"); else _explicitNullProperties?.Remove("handle"); } }
         private string _explicitNullValueHandle = default!;
 #endif
+        /// <summary>Whether only members of the bot&apos;s developer account can add it to group chats. An org-only bot has no public profile and doesn&apos;t appear in public search. Defaults to false. Applies only when the request creates the bot: a handle that already names one of the project&apos;s bots keeps that bot&apos;s setting.</summary>
+        public bool? OrgOnly { get => _explicitNullValueOrgOnly; set { _explicitNullValueOrgOnly = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_only"); else _explicitNullProperties?.Remove("org_only"); } }
+        private bool? _explicitNullValueOrgOnly = default!;
         /// <summary>Scopes for the bot&apos;s bearer token. Broadcast moderation additionally supports broadcast.read and broadcast.write. Defaults to the XChat scope set (dm.read, dm.write, tweet.read, users.read, media.write).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -75,6 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "handle", n => { Handle = n.GetStringValue(); } },
+                { "org_only", n => { OrgOnly = n.GetBoolValue(); } },
                 { "scopes", n => { Scopes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -87,6 +93,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("handle", Handle);
+            writer.WriteBoolValue("org_only", OrgOnly);
             writer.WriteCollectionOfPrimitiveValues<string>("scopes", Scopes);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
