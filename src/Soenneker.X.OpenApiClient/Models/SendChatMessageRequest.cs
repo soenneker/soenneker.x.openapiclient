@@ -7,16 +7,19 @@ using System.IO;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
+    /// <summary>
+    /// At least one of `encoded_message_create_event`, `content` is required.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SendChatMessageRequest : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("content") is null) { _explicitNullValueContent = default!; _explicitNullProperties?.Remove("content"); }
+            else if (parseNode.GetChildNode("content") is { } nullNodeContent && nullNodeContent.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Content = null;
             if (parseNode.GetChildNode("conversation_token") is null) { _explicitNullValueConversationToken = default!; _explicitNullProperties?.Remove("conversation_token"); }
             else if (parseNode.GetChildNode("conversation_token") is { } nullNodeConversationToken && nullNodeConversationToken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConversationToken = null;
             if (parseNode.GetChildNode("encoded_message_create_event") is null) { _explicitNullValueEncodedMessageCreateEvent = default!; _explicitNullProperties?.Remove("encoded_message_create_event"); }
@@ -31,6 +34,16 @@ namespace Soenneker.X.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent? Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent? _explicitNullValueContent = default!;
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent Content { get => _explicitNullValueContent; set { _explicitNullValueContent = value; AdditionalData?.Remove("content"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("content"); else _explicitNullProperties?.Remove("content"); } }
+        private global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent _explicitNullValueContent = default!;
+#endif
         /// <summary>Optional conversation token.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; AdditionalData?.Remove("conversation_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
         private string _explicitNullValueConversationToken = default!;
 #endif
-        /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents.</summary>
+        /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents. Omit when sending `content`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EncodedMessageCreateEvent { get => _explicitNullValueEncodedMessageCreateEvent; set { _explicitNullValueEncodedMessageCreateEvent = value; AdditionalData?.Remove("encoded_message_create_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_create_event"); else _explicitNullProperties?.Remove("encoded_message_create_event"); } }
@@ -106,6 +119,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "content", n => { Content = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent>(global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent.CreateFromDiscriminatorValue); } },
                 { "conversation_token", n => { ConversationToken = n.GetStringValue(); } },
                 { "encoded_message_create_event", n => { EncodedMessageCreateEvent = n.GetStringValue(); } },
                 { "encoded_message_event_signature", n => { EncodedMessageEventSignature = n.GetStringValue(); } },
@@ -120,6 +134,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.SendChatMessageContent>("content", Content);
             writer.WriteStringValue("conversation_token", ConversationToken);
             writer.WriteStringValue("encoded_message_create_event", EncodedMessageCreateEvent);
             writer.WriteStringValue("encoded_message_event_signature", EncodedMessageEventSignature);

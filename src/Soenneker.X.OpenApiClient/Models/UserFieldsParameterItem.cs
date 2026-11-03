@@ -68,6 +68,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         PublicMetrics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "receives_your_chat")]
+        #pragma warning disable CS1591
+        ReceivesYourChat,
+        #pragma warning restore CS1591
         [EnumMember(Value = "receives_your_dm")]
         #pragma warning disable CS1591
         ReceivesYourDm,

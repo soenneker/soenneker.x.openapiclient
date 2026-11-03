@@ -40,10 +40,10 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages
         {
         }
         /// <summary>
-        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
+        /// Sends a message or reaction to a specific Chat conversation. Send either `encoded_message_create_event`, an encrypted event built with the Chat XDK, or `content`, a plaintext message or reaction that is sent unencrypted. Use the recipient&apos;s `receives_your_chat` user field to choose: `encrypted` takes `encoded_message_create_event`, `unencrypted` takes `content`, and `none` means the recipient cannot be messaged. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">At least one of `encoded_message_create_event`, `content` is required.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
@@ -65,10 +65,10 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Messages
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.SendChatMessageResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
+        /// Sends a message or reaction to a specific Chat conversation. Send either `encoded_message_create_event`, an encrypted event built with the Chat XDK, or `content`, a plaintext message or reaction that is sent unencrypted. Use the recipient&apos;s `receives_your_chat` user field to choose: `encrypted` takes `encoded_message_create_event`, `unencrypted` takes `content`, and `none` means the recipient cannot be messaged. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
+        /// <param name="body">At least one of `encoded_message_create_event`, `content` is required.</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

@@ -158,10 +158,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -217,10 +217,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "dm.write",
+              "users.read",
               "dm.read",
-              "users.read"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -1382,9 +1382,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "broadcast.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -1637,8 +1637,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1695,8 +1695,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1853,8 +1853,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1911,8 +1911,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2036,8 +2036,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2375,8 +2375,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2445,8 +2445,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2586,8 +2586,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -3424,8 +3424,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -3608,8 +3608,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -3719,8 +3719,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -3792,9 +3792,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -3939,8 +3939,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -4020,9 +4020,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4096,8 +4096,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4181,9 +4181,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4267,9 +4267,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -4342,9 +4342,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -4417,8 +4417,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -4493,8 +4493,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -4566,8 +4566,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4732,8 +4732,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -4804,9 +4804,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -4880,8 +4880,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -5033,8 +5033,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -5108,8 +5108,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5182,9 +5182,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -5256,9 +5256,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -5330,9 +5330,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -5403,9 +5403,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5491,7 +5491,7 @@
           "Chat"
         ],
         "summary": "Send Chat Message",
-        "description": "Sends an encrypted message to a specific Chat conversation. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
+        "description": "Sends a message or reaction to a specific Chat conversation. Send either `encoded_message_create_event`, an encrypted event built with the Chat XDK, or `content`, a plaintext message or reaction that is sent unencrypted. Use the recipient's `receives_your_chat` user field to choose: `encrypted` takes `encoded_message_create_event`, `unencrypted` takes `content`, and `none` means the recipient cannot be messaged. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
         "externalDocs": {
           "url": "https://developer.x.com/"
         },
@@ -5626,9 +5626,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5699,9 +5699,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5853,9 +5853,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -5927,8 +5927,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -6002,9 +6002,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6067,8 +6067,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -6408,8 +6408,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.read"
             ]
           },
@@ -6505,9 +6505,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -6693,9 +6693,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -6755,8 +6755,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -6852,9 +6852,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "list.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -7602,9 +7602,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -7861,8 +7861,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -8126,8 +8126,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -8241,8 +8241,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
-              "dm.read"
+              "dm.read",
+              "dm.write"
             ]
           },
           {
@@ -8299,9 +8299,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -8985,8 +8985,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
+              "list.read",
               "tweet.read",
               "list.write"
             ]
@@ -9045,8 +9045,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "list.write"
             ]
           },
@@ -9106,8 +9106,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "list.read"
             ]
           },
@@ -9176,9 +9176,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "list.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -9249,8 +9249,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -9344,9 +9344,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "list.read"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -9437,9 +9437,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -9507,9 +9507,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "list.write"
+              "list.write",
+              "users.read"
             ]
           },
           {
@@ -9579,9 +9579,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -11133,8 +11133,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -11248,8 +11248,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -11319,8 +11319,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "space.read",
-              "users.read"
+              "users.read",
+              "space.read"
             ]
           },
           {
@@ -11397,9 +11397,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "space.read",
               "users.read",
-              "space.read"
+              "tweet.read"
             ]
           },
           {
@@ -11476,9 +11476,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "space.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -11582,8 +11582,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "space.read"
+              "space.read",
+              "users.read"
             ]
           },
           {
@@ -11654,9 +11654,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "space.read",
               "tweet.read",
-              "users.read",
-              "space.read"
+              "users.read"
             ]
           }
         ],
@@ -11748,9 +11748,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "space.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -12010,9 +12010,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "tweet.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -12069,8 +12069,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15709,8 +15709,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "tweet.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -15848,8 +15848,8 @@
           {
             "OAuth2UserToken": [
               "like.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16158,8 +16158,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16262,9 +16262,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.moderate.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.moderate.write"
             ]
           },
           {
@@ -16595,8 +16595,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16760,8 +16760,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16819,8 +16819,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.read",
               "tweet.read",
+              "follows.read",
               "users.read"
             ]
           },
@@ -16903,9 +16903,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "follows.read",
               "tweet.read",
-              "follows.read"
+              "users.read"
             ]
           },
           {
@@ -16987,8 +16987,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -17040,9 +17040,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.read",
               "tweet.read",
-              "users.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -17204,8 +17204,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -17619,9 +17619,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "bookmark.read",
               "tweet.read",
-              "users.read",
-              "bookmark.read"
+              "users.read"
             ]
           },
           {
@@ -17718,9 +17718,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "bookmark.write"
             ]
           }
         ],
@@ -17785,8 +17785,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.read"
+              "bookmark.read",
+              "users.read"
             ]
           },
           {
@@ -17865,8 +17865,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "bookmark.write"
+              "bookmark.write",
+              "users.read"
             ]
           }
         ],
@@ -17932,8 +17932,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "bookmark.read"
+              "bookmark.read",
+              "tweet.read"
             ]
           },
           {
@@ -18158,8 +18158,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -18362,8 +18362,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -18441,9 +18441,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -18501,9 +18501,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -18561,9 +18561,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "list.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -18655,8 +18655,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.write"
+              "list.write",
+              "tweet.read"
             ]
           },
           {
@@ -18724,8 +18724,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -18893,8 +18893,8 @@
           {
             "OAuth2UserToken": [
               "follows.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -19056,9 +19056,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "like.read"
             ]
           },
           {
@@ -19157,9 +19157,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "like.write",
               "tweet.read",
-              "users.read",
-              "like.write"
+              "users.read"
             ]
           },
           {
@@ -19227,8 +19227,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "like.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -19296,9 +19296,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "list.read"
             ]
           },
           {
@@ -19536,8 +19536,8 @@
           {
             "OAuth2UserToken": [
               "mute.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -19694,9 +19694,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -19789,9 +19789,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -19929,9 +19929,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -20001,9 +20001,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -20138,9 +20138,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "tweet.write",
-              "users.read"
+              "tweet.write"
             ]
           },
           {
@@ -20211,9 +20211,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -20340,8 +20340,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -20409,8 +20409,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -20542,8 +20542,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -20946,8 +20946,8 @@
           {
             "OAuth2UserToken": [
               "block.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -21017,9 +21017,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "follows.write"
             ]
           },
           {
@@ -21090,8 +21090,8 @@
           {
             "OAuth2UserToken": [
               "mute.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -25934,7 +25934,7 @@
             "type": "array",
             "description": "Media IDs to attach to the tweet.",
             "minItems": 1,
-            "maxItems": 4,
+            "maxItems": 20,
             "items": {
               "type": "string",
               "pattern": "^[0-9]{1,19}$"
@@ -26387,7 +26387,7 @@
           },
           "region": {
             "type": "string",
-            "description": "Ingest region: us-east-1, us-east-2, us-west-1, us-west-2, ca-central-1, sa-east-1, eu-west-1, eu-west-3, eu-central-1, ap-south-1, ap-southeast-1, ap-southeast-2, ap-northeast-1 or ap-northeast-2.",
+            "description": "Ingest region, as returned by GET /2/region. us-west-1 and us-west-2 ingest in US West; us-east-1, us-east-2, ca-central-1, sa-east-1, eu-west-1, eu-west-2, eu-west-3, eu-central-1, eu-north-1, ap-south-1, ap-northeast-1, ap-northeast-2, ap-southeast-1 and ap-southeast-2 ingest in US East. The response's `region` is the serving location (`us-east-1` or `us-west-2`).",
             "minLength": 1
           }
         },
@@ -26423,7 +26423,7 @@
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
+            "description": "Whether an encoder is currently sending video to the source."
           },
           "name": {
             "type": "string",
@@ -26431,19 +26431,19 @@
           },
           "region": {
             "type": "string",
-            "description": "Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem."
+            "description": "Region of the ingest location serving the source: `us-east-1` or `us-west-2`. Sources created before October 31, 2026 keep the AWS region they were created in."
           },
           "rtmp_url": {
             "type": "string",
-            "description": "RTMP ingest URL."
+            "description": "Ingest URL."
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443)."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
           },
           "stream_key": {
             "type": "string",
-            "description": "RTMP stream key."
+            "description": "Stream key. A credential: anyone with it can stream to the source."
           }
         }
       },
@@ -31888,7 +31888,7 @@
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
+            "description": "Whether an encoder is currently sending video to the source."
           },
           "name": {
             "type": "string",
@@ -31896,19 +31896,19 @@
           },
           "region": {
             "type": "string",
-            "description": "Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem."
+            "description": "Region of the ingest location serving the source: `us-east-1` or `us-west-2`. Sources created before October 31, 2026 keep the AWS region they were created in."
           },
           "rtmp_url": {
             "type": "string",
-            "description": "RTMP ingest URL."
+            "description": "Ingest URL."
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443)."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
           },
           "stream_key": {
             "type": "string",
-            "description": "RTMP stream key."
+            "description": "Stream key. A credential: anyone with it can stream to the source."
           }
         }
       },
@@ -34144,7 +34144,7 @@
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
+            "description": "Whether an encoder is currently sending video to the source."
           },
           "name": {
             "type": "string",
@@ -34152,19 +34152,19 @@
           },
           "region": {
             "type": "string",
-            "description": "Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem."
+            "description": "Region of the ingest location serving the source: `us-east-1` or `us-west-2`. Sources created before October 31, 2026 keep the AWS region they were created in."
           },
           "rtmp_url": {
             "type": "string",
-            "description": "RTMP ingest URL."
+            "description": "Ingest URL."
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443)."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
           },
           "stream_key": {
             "type": "string",
-            "description": "RTMP stream key."
+            "description": "Stream key. A credential: anyone with it can stream to the source."
           }
         }
       },
@@ -39031,20 +39031,108 @@
           }
         }
       },
-      "SendChatMessageRequest": {
+      "SendChatMessageContent": {
+        "type": "object",
+        "properties": {
+          "message": {
+            "description": "A text message.",
+            "$ref": "#/components/schemas/SendChatMessageContentMessage"
+          },
+          "reaction_add": {
+            "description": "Adds a reaction to a message.",
+            "$ref": "#/components/schemas/SendChatMessageContentReactionAdd"
+          },
+          "reaction_remove": {
+            "description": "Removes a reaction from a message.",
+            "$ref": "#/components/schemas/SendChatMessageContentReactionRemove"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendChatMessageContentMessage": {
         "type": "object",
         "required": [
-          "message_id",
-          "encoded_message_create_event"
+          "text"
         ],
         "properties": {
+          "text": {
+            "type": "string",
+            "description": "Text of the message.",
+            "minLength": 1
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendChatMessageContentReactionAdd": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "emoji"
+        ],
+        "properties": {
+          "emoji": {
+            "type": "string",
+            "description": "Emoji of the reaction.",
+            "minLength": 1
+          },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the message event the reaction is on.",
+            "pattern": "^[0-9]{1,19}$"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendChatMessageContentReactionRemove": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "emoji"
+        ],
+        "properties": {
+          "emoji": {
+            "type": "string",
+            "description": "Emoji of the reaction.",
+            "minLength": 1
+          },
+          "event_id": {
+            "type": "string",
+            "description": "ID of the message event the reaction is on.",
+            "pattern": "^[0-9]{1,19}$"
+          }
+        },
+        "additionalProperties": false
+      },
+      "SendChatMessageRequest": {
+        "anyOf": [
+          {
+            "required": [
+              "encoded_message_create_event"
+            ]
+          },
+          {
+            "required": [
+              "content"
+            ]
+          }
+        ],
+        "type": "object",
+        "description": "At least one of `encoded_message_create_event`, `content` is required.",
+        "required": [
+          "message_id"
+        ],
+        "properties": {
+          "content": {
+            "description": "Plaintext message or reaction, sent unencrypted. Set exactly one of `message`, `reaction_add`, or `reaction_remove`. Omit when sending `encoded_message_create_event`.",
+            "$ref": "#/components/schemas/SendChatMessageContent"
+          },
           "conversation_token": {
             "type": "string",
             "description": "Optional conversation token."
           },
           "encoded_message_create_event": {
             "type": "string",
-            "description": "Base64-encoded Thrift MessageCreateEvent containing encrypted message contents."
+            "description": "Base64-encoded Thrift MessageCreateEvent containing encrypted message contents. Omit when sending `content`."
           },
           "encoded_message_event_signature": {
             "type": "string",
@@ -41708,7 +41796,7 @@
           },
           "is_stream_active": {
             "type": "boolean",
-            "description": "Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it."
+            "description": "Whether an encoder is currently sending video to the source."
           },
           "name": {
             "type": "string",
@@ -41716,19 +41804,19 @@
           },
           "region": {
             "type": "string",
-            "description": "Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem."
+            "description": "Region of the ingest location serving the source: `us-east-1` or `us-west-2`. Sources created before October 31, 2026 keep the AWS region they were created in."
           },
           "rtmp_url": {
             "type": "string",
-            "description": "RTMP ingest URL."
+            "description": "Ingest URL."
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443)."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
           },
           "stream_key": {
             "type": "string",
-            "description": "RTMP stream key."
+            "description": "Stream key. A credential: anyone with it can stream to the source."
           }
         }
       },
@@ -42250,9 +42338,13 @@
           "public_metrics": {
             "$ref": "#/components/schemas/UserPublicMetrics"
           },
+          "receives_your_chat": {
+            "type": "string",
+            "description": "How you can send a Chat message to this User: encrypted, unencrypted, or none."
+          },
           "receives_your_dm": {
             "type": "boolean",
-            "description": "Indicates if you can send a DM to this User."
+            "description": "Indicates if you can send a DM to this User. Omitted when the DM permission can't be determined, so it is never reported as false in that case."
           },
           "subscriber_count": {
             "type": "integer",
@@ -44246,6 +44338,7 @@
               "profile_image_url",
               "protected",
               "public_metrics",
+              "receives_your_chat",
               "receives_your_dm",
               "subscriber_count",
               "subscribes_to_you",

@@ -53,6 +53,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("protected") is { } nullNodeProtected && nullNodeProtected.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Protected = null;
             if (parseNode.GetChildNode("public_metrics") is null) { _explicitNullValuePublicMetrics = default!; _explicitNullProperties?.Remove("public_metrics"); }
             else if (parseNode.GetChildNode("public_metrics") is { } nullNodePublicMetrics && nullNodePublicMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicMetrics = null;
+            if (parseNode.GetChildNode("receives_your_chat") is null) { _explicitNullValueReceivesYourChat = default!; _explicitNullProperties?.Remove("receives_your_chat"); }
+            else if (parseNode.GetChildNode("receives_your_chat") is { } nullNodeReceivesYourChat && nullNodeReceivesYourChat.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceivesYourChat = null;
             if (parseNode.GetChildNode("receives_your_dm") is null) { _explicitNullValueReceivesYourDm = default!; _explicitNullProperties?.Remove("receives_your_dm"); }
             else if (parseNode.GetChildNode("receives_your_dm") is { } nullNodeReceivesYourDm && nullNodeReceivesYourDm.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReceivesYourDm = null;
             if (parseNode.GetChildNode("subscriber_count") is null) { _explicitNullValueSubscriberCount = default!; _explicitNullProperties?.Remove("subscriber_count"); }
@@ -224,7 +226,17 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics PublicMetrics { get => _explicitNullValuePublicMetrics; set { _explicitNullValuePublicMetrics = value; AdditionalData?.Remove("public_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_metrics"); else _explicitNullProperties?.Remove("public_metrics"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics _explicitNullValuePublicMetrics = default!;
 #endif
-        /// <summary>Indicates if you can send a DM to this User.</summary>
+        /// <summary>How you can send a Chat message to this User: encrypted, unencrypted, or none.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ReceivesYourChat { get => _explicitNullValueReceivesYourChat; set { _explicitNullValueReceivesYourChat = value; AdditionalData?.Remove("receives_your_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receives_your_chat"); else _explicitNullProperties?.Remove("receives_your_chat"); } }
+        private string? _explicitNullValueReceivesYourChat = default!;
+#nullable restore
+#else
+        public string ReceivesYourChat { get => _explicitNullValueReceivesYourChat; set { _explicitNullValueReceivesYourChat = value; AdditionalData?.Remove("receives_your_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receives_your_chat"); else _explicitNullProperties?.Remove("receives_your_chat"); } }
+        private string _explicitNullValueReceivesYourChat = default!;
+#endif
+        /// <summary>Indicates if you can send a DM to this User. Omitted when the DM permission can&apos;t be determined, so it is never reported as false in that case.</summary>
         public bool? ReceivesYourDm { get => _explicitNullValueReceivesYourDm; set { _explicitNullValueReceivesYourDm = value; AdditionalData?.Remove("receives_your_dm"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receives_your_dm"); else _explicitNullProperties?.Remove("receives_your_dm"); } }
         private bool? _explicitNullValueReceivesYourDm = default!;
         /// <summary>The number of Premium subscribers of this User.</summary>
@@ -342,6 +354,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "profile_image_url", n => { ProfileImageUrl = n.GetStringValue(); } },
                 { "protected", n => { Protected = n.GetBoolValue(); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics.CreateFromDiscriminatorValue); } },
+                { "receives_your_chat", n => { ReceivesYourChat = n.GetStringValue(); } },
                 { "receives_your_dm", n => { ReceivesYourDm = n.GetBoolValue(); } },
                 { "subscriber_count", n => { SubscriberCount = n.GetIntValue(); } },
                 { "subscribes_to_you", n => { SubscribesToYou = n.GetBoolValue(); } },
@@ -380,6 +393,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("profile_image_url", ProfileImageUrl);
             writer.WriteBoolValue("protected", Protected);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics>("public_metrics", PublicMetrics);
+            writer.WriteStringValue("receives_your_chat", ReceivesYourChat);
             writer.WriteBoolValue("receives_your_dm", ReceivesYourDm);
             writer.WriteIntValue("subscriber_count", SubscriberCount);
             writer.WriteBoolValue("subscribes_to_you", SubscribesToYou);

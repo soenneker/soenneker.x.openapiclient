@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
-        /// <summary>Whether an encoder is currently sending video to the source. Publishing a broadcast on the source needs it.</summary>
+        /// <summary>Whether an encoder is currently sending video to the source.</summary>
         public bool? IsStreamActive { get => _explicitNullValueIsStreamActive; set { _explicitNullValueIsStreamActive = value; AdditionalData?.Remove("is_stream_active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_stream_active"); else _explicitNullProperties?.Remove("is_stream_active"); } }
         private bool? _explicitNullValueIsStreamActive = default!;
         /// <summary>Label for the source.</summary>
@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
-        /// <summary>Ingest region: `atla` or `pdxa` for on-prem sources, the AWS region (e.g. `us-east-1`) for sources created before the move to on-prem.</summary>
+        /// <summary>Region of the ingest location serving the source: `us-east-1` or `us-west-2`. Sources created before October 31, 2026 keep the AWS region they were created in.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>RTMPS ingest URL (port 443).</summary>
+        /// <summary>RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; AdditionalData?.Remove("rtmps_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }
@@ -90,7 +90,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; AdditionalData?.Remove("rtmps_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }
         private string _explicitNullValueRtmpsUrl = default!;
 #endif
-        /// <summary>RTMP ingest URL.</summary>
+        /// <summary>Ingest URL.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RtmpUrl { get => _explicitNullValueRtmpUrl; set { _explicitNullValueRtmpUrl = value; AdditionalData?.Remove("rtmp_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_url"); else _explicitNullProperties?.Remove("rtmp_url"); } }
@@ -100,7 +100,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string RtmpUrl { get => _explicitNullValueRtmpUrl; set { _explicitNullValueRtmpUrl = value; AdditionalData?.Remove("rtmp_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_url"); else _explicitNullProperties?.Remove("rtmp_url"); } }
         private string _explicitNullValueRtmpUrl = default!;
 #endif
-        /// <summary>RTMP stream key.</summary>
+        /// <summary>Stream key. A credential: anyone with it can stream to the source.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? StreamKey { get => _explicitNullValueStreamKey; set { _explicitNullValueStreamKey = value; AdditionalData?.Remove("stream_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_key"); else _explicitNullProperties?.Remove("stream_key"); } }
