@@ -47,7 +47,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string CreatedAtMs { get => _explicitNullValueCreatedAtMs; set { _explicitNullValueCreatedAtMs = value; AdditionalData?.Remove("created_at_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_ms"); else _explicitNullProperties?.Remove("created_at_ms"); } }
         private string _explicitNullValueCreatedAtMs = default!;
 #endif
-        /// <summary>Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`.</summary>
+        /// <summary>Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -80,7 +80,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`.</summary>
+        /// <summary>RTMPS ingest URL (port 443). Configure your encoder with this URL and the source&apos;s stream key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; AdditionalData?.Remove("rtmps_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }

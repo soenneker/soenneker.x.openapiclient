@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Sources.Item.Stream_key;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SourcesItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The stream_key property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Sources.Item.Stream_key.Stream_keyRequestBuilder Stream_key
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Sources.Item.Stream_key.Stream_keyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Sources.Item.SourcesItemRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -57,7 +63,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteSourceResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteSourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns one of the authenticated user&apos;s stream sources.
+        /// Returns one of the authenticated user&apos;s stream sources. Poll it after starting an encoder and wait for `is_stream_active` before going live. The stream key is not included; read it with GET /2/sources/:id/stream_key.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetSourceResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -124,7 +130,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources.Item
             return requestInfo;
         }
         /// <summary>
-        /// Returns one of the authenticated user&apos;s stream sources.
+        /// Returns one of the authenticated user&apos;s stream sources. Poll it after starting an encoder and wait for `is_stream_active` before going live. The stream key is not included; read it with GET /2/sources/:id/stream_key.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

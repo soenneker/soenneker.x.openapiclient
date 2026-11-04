@@ -210,9 +210,9 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -282,9 +282,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
               "dm.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -1494,8 +1494,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1686,8 +1686,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1755,8 +1755,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1849,7 +1849,7 @@
           "Broadcasts"
         ],
         "summary": "Create a Scheduled Broadcast",
-        "description": "Schedules a broadcast for the authenticated user. A \u0060source_id\u0060 (ingest) is required at create time.",
+        "description": "Schedules a broadcast for the authenticated user on one of their sources: \u0060source_id\u0060 is required. Passing a stream key as \u0060source_id\u0060 is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source\u0027s \u0060id\u0060 from GET /2/sources instead.",
         "operationId": "CreateScheduledBroadcast",
         "requestBody": {
           "content": {
@@ -2039,7 +2039,7 @@
           "Broadcasts"
         ],
         "summary": "Update a Scheduled Broadcast",
-        "description": "Updates a scheduled broadcast. Path \u0060:id\u0060 is the broadcast id; the body must include \u0060scheduled_broadcast_id\u0060. Re-send every field that should be kept.",
+        "description": "Updates a scheduled broadcast. Path \u0060:id\u0060 is the broadcast id; the body must include \u0060scheduled_broadcast_id\u0060. Re-send every field that should be kept. Passing a stream key as \u0060source_id\u0060 is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source\u0027s \u0060id\u0060 from GET /2/sources instead.",
         "operationId": "UpdateScheduledBroadcast",
         "parameters": [
           {
@@ -2092,8 +2092,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2151,8 +2151,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2422,8 +2422,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2560,8 +2560,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2628,8 +2628,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -3625,8 +3625,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3748,9 +3748,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -3819,8 +3819,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -3890,8 +3890,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -3971,9 +3971,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.read",
               "users.read",
-              "dm.read"
+              "tweet.read"
             ]
           },
           {
@@ -4043,9 +4043,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4127,8 +4127,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -4211,9 +4211,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -4507,9 +4507,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -4665,9 +4665,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -4739,9 +4739,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4811,9 +4811,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4888,8 +4888,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -4962,9 +4962,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -5036,9 +5036,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -5110,8 +5110,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5182,9 +5182,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -5255,8 +5255,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5329,8 +5329,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5402,8 +5402,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -5418,7 +5418,7 @@
           "Chat"
         ],
         "summary": "Send Chat Message",
-        "description": "Sends a message or reaction to a specific Chat conversation. Send either \u0060encoded_message_create_event\u0060, an encrypted event built with the Chat XDK, or \u0060content\u0060, a plaintext message or reaction that is sent unencrypted. Use the recipient\u0027s \u0060receives_your_chat\u0060 user field to choose: \u0060encrypted\u0060 takes \u0060encoded_message_create_event\u0060, \u0060unencrypted\u0060 takes \u0060content\u0060, and \u0060none\u0060 means the recipient cannot be messaged. For 1:1 conversations, provide the recipient\u0027s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
+        "description": "Sends a message or reaction to a specific Chat conversation. Send \u0060encoded_message_create_event\u0060, an end-to-end encrypted event built with the Chat XDK. \u0060content\u0060, a plaintext message or reaction sent unencrypted, is only a fallback for a 1:1 conversation that X Chat can\u0027t encrypt because one of the two users has connected an enterprise app that reads their DMs; check that the recipient\u0027s \u0060receives_your_chat\u0060 user field is \u0060unencrypted\u0060 before using it. Otherwise a \u0060content\u0060 send is refused, and retrying it won\u0027t help: HTTP 400 https://api.x.com/2/problems/encryption-required when the conversation can be encrypted or is a group (send \u0060encoded_message_create_event\u0060 instead), 400 https://api.x.com/2/problems/xchat-setup-required when you haven\u0027t set up X Chat, 400 https://api.x.com/2/problems/recipient-xchat-setup-required when the recipient hasn\u0027t, and 403 https://api.x.com/2/problems/message-request-not-supported when it would be a message request. HTTP 503 https://api.x.com/2/problems/chat-permissions-unavailable means the check failed and nothing was sent; retry it. For 1:1 conversations, provide the recipient\u0027s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
         "externalDocs": {
           "url": "https://developer.x.com/"
         },
@@ -5485,8 +5485,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5632,9 +5632,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5780,9 +5780,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -5853,9 +5853,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5927,9 +5927,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -5990,9 +5990,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6412,9 +6412,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -6543,9 +6543,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -6601,8 +6601,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -6814,8 +6814,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "list.read"
             ]
           },
@@ -7504,8 +7504,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -7686,9 +7686,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -7848,8 +7848,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -7960,9 +7960,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -8065,8 +8065,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -8652,10 +8652,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -8719,8 +8719,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.write",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -8787,9 +8787,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -8864,8 +8864,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8953,9 +8953,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -9047,8 +9047,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -9119,9 +9119,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -9195,9 +9195,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -9295,9 +9295,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10635,7 +10635,7 @@
           "Broadcasts"
         ],
         "summary": "List Stream Sources",
-        "description": "Returns the authenticated user\u0027s RTMP/RTMPS stream sources. A source\u0027s \u0060id\u0060 is the \u0060source_id\u0060 a scheduled broadcast binds to.",
+        "description": "Returns the authenticated user\u0027s RTMP/RTMPS stream sources. A source\u0027s \u0060id\u0060 is the \u0060source_id\u0060 that POST /2/broadcasts and scheduled broadcasts take. Stream keys are not included; read one with GET /2/sources/:id/stream_key.",
         "operationId": "ListSources",
         "responses": {
           "200": {
@@ -10680,7 +10680,7 @@
           "Broadcasts"
         ],
         "summary": "Create a Stream Source",
-        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to \u0060rtmps_url\u0060 with the source\u0027s stream key.",
+        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to \u0060rtmps_url\u0060 with the returned \u0060stream_key\u0060. This is the only response that includes the stream key; read it later with GET /2/sources/:id/stream_key.",
         "operationId": "CreateSource",
         "requestBody": {
           "content": {
@@ -10733,8 +10733,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -10755,9 +10755,10 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
-              "pattern": "^[a-zA-Z0-9]{1,32}$",
+              "pattern": "^9[0-2][0-9]{17}$",
               "type": "string"
             }
           }
@@ -10792,8 +10793,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -10806,15 +10807,16 @@
           "Broadcasts"
         ],
         "summary": "Get a Stream Source",
-        "description": "Returns one of the authenticated user\u0027s stream sources.",
+        "description": "Returns one of the authenticated user\u0027s stream sources. Poll it after starting an encoder and wait for \u0060is_stream_active\u0060 before going live. The stream key is not included; read it with GET /2/sources/:id/stream_key.",
         "operationId": "GetSource",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
-              "pattern": "^[a-zA-Z0-9]{1,32}$",
+              "pattern": "^9[0-2][0-9]{17}$",
               "type": "string"
             }
           }
@@ -10868,9 +10870,10 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
-              "pattern": "^[a-zA-Z0-9]{1,32}$",
+              "pattern": "^9[0-2][0-9]{17}$",
               "type": "string"
             }
           }
@@ -10917,6 +10920,66 @@
             "OAuth2UserToken": [
               "broadcast.write",
               "broadcast.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/sources/{id}/stream_key": {
+      "get": {
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Get a Stream Source\u0027s Stream Key",
+        "description": "Returns the stream key of one of the authenticated user\u0027s stream sources. The stream key is a credential: anyone with it can stream to the source, so keep it out of logs, URLs and client-side code.",
+        "operationId": "GetSourceStreamKey",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Source id, from GET /2/sources.",
+            "required": true,
+            "schema": {
+              "pattern": "^9[0-2][0-9]{17}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSourceStreamKeyResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -10992,9 +11055,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -11070,9 +11133,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "space.read",
-              "tweet.read"
+              "space.read"
             ]
           },
           {
@@ -11328,8 +11391,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
               "users.read",
+              "space.read",
               "tweet.read"
             ]
           }
@@ -11425,8 +11488,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "space.read"
             ]
           },
@@ -14186,8 +14249,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.write"
             ]
           },
@@ -14264,8 +14327,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14357,9 +14420,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "like.read"
             ]
           },
           {
@@ -14665,8 +14728,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14742,8 +14805,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.moderate.write"
             ]
           },
@@ -14922,8 +14985,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15070,8 +15133,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15297,9 +15360,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15378,8 +15441,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "follows.read",
-              "tweet.read"
+              "tweet.read",
+              "follows.read"
             ]
           },
           {
@@ -15503,9 +15566,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -15592,8 +15655,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "timeline.read",
-              "tweet.read"
+              "tweet.read",
+              "timeline.read"
             ]
           },
           {
@@ -15931,8 +15994,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "block.read"
             ]
           },
@@ -16001,9 +16064,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "block.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -16101,8 +16164,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "bookmark.read",
-              "tweet.read"
+              "tweet.read",
+              "bookmark.read"
             ]
           },
           {
@@ -16170,9 +16233,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -16248,8 +16311,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -16328,8 +16391,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -16413,9 +16476,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "bookmark.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16489,9 +16552,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "bookmark.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           }
         ]
@@ -16902,9 +16965,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16964,9 +17027,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -17127,9 +17190,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -17203,8 +17266,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -17295,8 +17358,8 @@
           {
             "OAuth2UserToken": [
               "follows.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -17388,8 +17451,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -17633,8 +17696,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "like.write",
-              "tweet.read"
+              "tweet.read",
+              "like.write"
             ]
           },
           {
@@ -17794,9 +17857,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -17930,8 +17993,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -18021,9 +18084,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "mute.read",
-              "tweet.read"
+              "mute.read"
             ]
           },
           {
@@ -18091,9 +18154,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "mute.write"
+              "mute.write",
+              "tweet.read"
             ]
           },
           {
@@ -18181,9 +18244,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.read",
               "tweet.read",
-              "list.read"
+              "users.read"
             ]
           },
           {
@@ -18328,9 +18391,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -18404,9 +18467,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -18472,8 +18535,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -18545,8 +18608,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -18621,8 +18684,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.write",
-              "tweet.read"
+              "tweet.read",
+              "tweet.write"
             ]
           },
           {
@@ -18694,9 +18757,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -19039,8 +19102,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -19328,8 +19391,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -19407,8 +19470,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "block.write"
+              "block.write",
+              "tweet.read"
             ]
           },
           {
@@ -19482,9 +19545,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "follows.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -19558,9 +19621,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "mute.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -21440,7 +21503,8 @@
             "type": "string"
           },
           "source_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the source the broadcast streams from, as returned by GET /2/sources."
           },
           "start_ms": {
             "type": "string"
@@ -24026,7 +24090,7 @@
           "source_id": {
             "minLength": 1,
             "type": "string",
-            "description": "Ingest / source id to bind (same as sources \u0060rtmp_stream_key\u0060)."
+            "description": "Source to bind: a source\u0027s \u0060id\u0060 from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027."
           },
           "telecast_id": {
             "pattern": "^[0-9]{1,19}$",
@@ -24104,7 +24168,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (\u0060rtmp_stream_key\u0060)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -24160,7 +24224,8 @@
       },
       "CreateSourceResponseData": {
         "required": [
-          "id"
+          "id",
+          "stream_key"
         ],
         "type": "object",
         "properties": {
@@ -24170,7 +24235,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
+            "description": "Source id, 19 decimal digits; the \u0060source_id\u0060 that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -24190,7 +24255,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and \u0060stream_key\u0060."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source\u0027s stream key."
           },
           "stream_key": {
             "type": "string",
@@ -27828,7 +27893,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (\u0060rtmp_stream_key\u0060)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -27891,7 +27956,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
+            "description": "Source id, 19 decimal digits; the \u0060source_id\u0060 that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -27911,7 +27976,34 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and \u0060stream_key\u0060."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source\u0027s stream key."
+          }
+        }
+      },
+      "GetSourceStreamKeyResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetSourceStreamKeyResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "GetSourceStreamKeyResponseData": {
+        "required": [
+          "id",
+          "stream_key"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Source id."
           },
           "stream_key": {
             "type": "string",
@@ -29080,7 +29172,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (\u0060rtmp_stream_key\u0060)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -29580,7 +29672,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (\u0060rtmp_stream_key\u0060)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -29655,7 +29747,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
+            "description": "Source id, 19 decimal digits; the \u0060source_id\u0060 that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -29675,11 +29767,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and \u0060stream_key\u0060."
-          },
-          "stream_key": {
-            "type": "string",
-            "description": "Stream key. A credential: anyone with it can stream to the source."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source\u0027s stream key."
           }
         }
       },
@@ -31657,6 +31745,7 @@
           "mapping": {
             "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
             "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
+            "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ChatPermissionsUnavailableProblem",
             "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
             "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
             "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
@@ -31701,15 +31790,20 @@
             "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
             "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
             "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
+            "https://api.x.com/2/problems/encryption-required": "#/components/schemas/EncryptionRequiredProblem",
             "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
             "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
             "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
             "https://api.x.com/2/problems/invalid-request": "#/components/schemas/InvalidRequestProblem",
+            "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/MessageRequestNotSupportedProblem",
             "https://api.x.com/2/problems/not-authorized-for-field": "#/components/schemas/NotAuthorizedForFieldProblem",
             "https://api.x.com/2/problems/not-authorized-for-resource": "#/components/schemas/NotAuthorizedForResourceProblem",
             "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
+            "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/RecipientXchatSetupRequiredProblem",
             "https://api.x.com/2/problems/resource-not-found": "#/components/schemas/ResourceNotFoundProblem",
-            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem"
+            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem",
+            "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/UnencryptedSendNotAllowedProblem",
+            "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/XchatSetupRequiredProblem"
           }
         },
         "discriminator": {
@@ -31725,6 +31819,12 @@
             "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/ProblemDisallowedResourceProblem",
             "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/ProblemRecipientNotMessageableProblem",
             "https://api.x.com/2/problems/internal-error": "#/components/schemas/ProblemInternalErrorProblem",
+            "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ProblemChatPermissionsUnavailableProblem",
+            "https://api.x.com/2/problems/encryption-required": "#/components/schemas/ProblemEncryptionRequiredProblem",
+            "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/ProblemMessageRequestNotSupportedProblem",
+            "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/ProblemRecipientXchatSetupRequiredProblem",
+            "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/ProblemUnencryptedSendNotAllowedProblem",
+            "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/ProblemXchatSetupRequiredProblem",
             "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/ProblemDmBadAttachmentProblem",
             "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/ProblemDmBadCtaProblem",
             "https://api.x.com/2/problems/dm-bad-custom-profile": "#/components/schemas/ProblemDmBadCustomProfileProblem",
@@ -31803,6 +31903,24 @@
             },
             {
               "$ref": "#/components/schemas/InternalErrorProblem"
+            },
+            {
+              "$ref": "#/components/schemas/ChatPermissionsUnavailableProblem"
+            },
+            {
+              "$ref": "#/components/schemas/EncryptionRequiredProblem"
+            },
+            {
+              "$ref": "#/components/schemas/MessageRequestNotSupportedProblem"
+            },
+            {
+              "$ref": "#/components/schemas/RecipientXchatSetupRequiredProblem"
+            },
+            {
+              "$ref": "#/components/schemas/UnencryptedSendNotAllowedProblem"
+            },
+            {
+              "$ref": "#/components/schemas/XchatSetupRequiredProblem"
             },
             {
               "$ref": "#/components/schemas/DmBadAttachmentProblem"
@@ -31945,6 +32063,7 @@
             "mapping": {
               "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
               "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
+              "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ChatPermissionsUnavailableProblem",
               "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
               "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
               "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
@@ -31989,15 +32108,20 @@
               "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
               "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
               "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
+              "https://api.x.com/2/problems/encryption-required": "#/components/schemas/EncryptionRequiredProblem",
               "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
               "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
               "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
               "https://api.x.com/2/problems/invalid-request": "#/components/schemas/InvalidRequestProblem",
+              "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/MessageRequestNotSupportedProblem",
               "https://api.x.com/2/problems/not-authorized-for-field": "#/components/schemas/NotAuthorizedForFieldProblem",
               "https://api.x.com/2/problems/not-authorized-for-resource": "#/components/schemas/NotAuthorizedForResourceProblem",
               "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
+              "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/RecipientXchatSetupRequiredProblem",
               "https://api.x.com/2/problems/resource-not-found": "#/components/schemas/ResourceNotFoundProblem",
-              "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem"
+              "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem",
+              "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/UnencryptedSendNotAllowedProblem",
+              "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/XchatSetupRequiredProblem"
             }
           },
           "discriminator": {
@@ -32013,6 +32137,12 @@
               "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
               "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
               "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
+              "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ChatPermissionsUnavailableProblem",
+              "https://api.x.com/2/problems/encryption-required": "#/components/schemas/EncryptionRequiredProblem",
+              "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/MessageRequestNotSupportedProblem",
+              "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/RecipientXchatSetupRequiredProblem",
+              "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/UnencryptedSendNotAllowedProblem",
+              "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/XchatSetupRequiredProblem",
               "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
               "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
               "https://api.x.com/2/problems/dm-bad-custom-profile": "#/components/schemas/DmBadCustomProfileProblem",
@@ -35682,7 +35812,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Ingest / source id."
+            "description": "Source to bind: a source\u0027s \u0060id\u0060 from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027."
           },
           "thumbnail_media_id": {
             "pattern": "^[0-9]{1,19}$",
@@ -35755,7 +35885,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (\u0060rtmp_stream_key\u0060)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -35937,7 +36067,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the \u0060source_id\u0060 a scheduled broadcast binds to. Currently equal to \u0060stream_key\u0060."
+            "description": "Source id, 19 decimal digits; the \u0060source_id\u0060 that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -35957,11 +36087,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and \u0060stream_key\u0060."
-          },
-          "stream_key": {
-            "type": "string",
-            "description": "Stream key. A credential: anyone with it can stream to the source."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source\u0027s stream key."
           }
         }
       },
@@ -40171,6 +40297,22 @@
           ]
         }
       },
+      "HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailableType": {
+        "enum": [
+          "https://api.x.com/2/problems/chat-permissions-unavailable"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailableType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/chat-permissions-unavailable",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailable"
+            }
+          ]
+        }
+      },
       "CreateActivitySubscriptionFilterDirection": {
         "enum": [
           "inbound",
@@ -41376,6 +41518,22 @@
           ]
         }
       },
+      "HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequiredType": {
+        "enum": [
+          "https://api.x.com/2/problems/encryption-required"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequiredType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/encryption-required",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequired"
+            }
+          ]
+        }
+      },
       "HttpsColonSlashSlashApiXCom2ProblemsFieldHydrationFailureType": {
         "enum": [
           "https://api.x.com/2/problems/field-hydration-failure"
@@ -41698,6 +41856,22 @@
           ]
         }
       },
+      "HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupportedType": {
+        "enum": [
+          "https://api.x.com/2/problems/message-request-not-supported"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupportedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/message-request-not-supported",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupported"
+            }
+          ]
+        }
+      },
       "HttpsColonSlashSlashApiXCom2ProblemsNotAuthorizedForFieldType": {
         "enum": [
           "https://api.x.com/2/problems/not-authorized-for-field"
@@ -41765,6 +41939,22 @@
             {
               "value": "https://api.x.com/2/problems/recipient-not-messageable",
               "name": "HttpsColonSlashSlashApiXCom2ProblemsRecipientNotMessageable"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequiredType": {
+        "enum": [
+          "https://api.x.com/2/problems/recipient-xchat-setup-required"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequiredType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/recipient-xchat-setup-required",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequired"
             }
           ]
         }
@@ -41851,6 +42041,22 @@
             {
               "value": "this_and_following",
               "name": "ThisAndFollowing"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowedType": {
+        "enum": [
+          "https://api.x.com/2/problems/unencrypted-send-not-allowed"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowedType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/unencrypted-send-not-allowed",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowed"
             }
           ]
         }
@@ -42133,6 +42339,22 @@
             {
               "value": "user",
               "name": "User"
+            }
+          ]
+        }
+      },
+      "HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequiredType": {
+        "enum": [
+          "https://api.x.com/2/problems/xchat-setup-required"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequiredType",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "https://api.x.com/2/problems/xchat-setup-required",
+              "name": "HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequired"
             }
           ]
         }
@@ -50507,6 +50729,12 @@
               "https://api.x.com/2/problems/disallowed-resource",
               "https://api.x.com/2/problems/recipient-not-messageable",
               "https://api.x.com/2/problems/internal-error",
+              "https://api.x.com/2/problems/chat-permissions-unavailable",
+              "https://api.x.com/2/problems/encryption-required",
+              "https://api.x.com/2/problems/message-request-not-supported",
+              "https://api.x.com/2/problems/recipient-xchat-setup-required",
+              "https://api.x.com/2/problems/unencrypted-send-not-allowed",
+              "https://api.x.com/2/problems/xchat-setup-required",
               "https://api.x.com/2/problems/dm-bad-attachment",
               "https://api.x.com/2/problems/dm-bad-cta",
               "https://api.x.com/2/problems/dm-bad-custom-profile",
@@ -50596,6 +50824,30 @@
                 {
                   "value": "https://api.x.com/2/problems/internal-error",
                   "name": "HttpsColonSlashSlashApiXCom2ProblemsInternalError"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/chat-permissions-unavailable",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailable"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/encryption-required",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequired"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/message-request-not-supported",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupported"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/recipient-xchat-setup-required",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequired"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/unencrypted-send-not-allowed",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowed"
+                },
+                {
+                  "value": "https://api.x.com/2/problems/xchat-setup-required",
+                  "name": "HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequired"
                 },
                 {
                   "value": "https://api.x.com/2/problems/dm-bad-attachment",
@@ -50804,6 +51056,7 @@
           "mapping": {
             "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
             "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
+            "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ChatPermissionsUnavailableProblem",
             "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
             "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
             "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
@@ -50848,15 +51101,20 @@
             "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
             "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
             "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
+            "https://api.x.com/2/problems/encryption-required": "#/components/schemas/EncryptionRequiredProblem",
             "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
             "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
             "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
             "https://api.x.com/2/problems/invalid-request": "#/components/schemas/InvalidRequestProblem",
+            "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/MessageRequestNotSupportedProblem",
             "https://api.x.com/2/problems/not-authorized-for-field": "#/components/schemas/NotAuthorizedForFieldProblem",
             "https://api.x.com/2/problems/not-authorized-for-resource": "#/components/schemas/NotAuthorizedForResourceProblem",
             "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
+            "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/RecipientXchatSetupRequiredProblem",
             "https://api.x.com/2/problems/resource-not-found": "#/components/schemas/ResourceNotFoundProblem",
-            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem"
+            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem",
+            "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/UnencryptedSendNotAllowedProblem",
+            "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/XchatSetupRequiredProblem"
           }
         },
         "required": [
@@ -51242,6 +51500,180 @@
               },
               "type": {
                 "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsInternalErrorType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemChatPermissionsUnavailableProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailableType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemEncryptionRequiredProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequiredType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemMessageRequestNotSupportedProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupportedType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemRecipientXchatSetupRequiredProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequiredType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemUnencryptedSendNotAllowedProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowedType"
+              }
+            }
+          }
+        ]
+      },
+      "ProblemXchatSetupRequiredProblem": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Problem"
+          },
+          {
+            "required": [
+              "type",
+              "title",
+              "detail"
+            ],
+            "type": "object",
+            "properties": {
+              "detail": {
+                "type": "string"
+              },
+              "status": {
+                "type": "integer"
+              },
+              "title": {
+                "type": "string"
+              },
+              "type": {
+                "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequiredType"
               }
             }
           }
@@ -53527,6 +53959,28 @@
       },
       "description": "IDs of users the authenticated user follows who also follow the sender."
     },
+    "ChatPermissionsUnavailableProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsChatPermissionsUnavailableType"
+        }
+      }
+    },
     "CommunityId": {
       "pattern": "^[0-9]{1,19}$",
       "type": "string",
@@ -54555,6 +55009,28 @@
         }
       }
     },
+    "EncryptionRequiredProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsEncryptionRequiredType"
+        }
+      }
+    },
     "FieldHydrationFailureProblem": {
       "required": [
         "type",
@@ -54744,6 +55220,28 @@
         "$ref": "#/components/schemas/MediaVariantsItem"
       },
       "description": "Each media object may have multiple display or playback variants, with different resolutions or formats."
+    },
+    "MessageRequestNotSupportedProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsMessageRequestNotSupportedType"
+        }
+      }
     },
     "NewsClusterPostsResults": {
       "type": "array",
@@ -54941,6 +55439,28 @@
         }
       }
     },
+    "RecipientXchatSetupRequiredProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsRecipientXchatSetupRequiredType"
+        }
+      }
+    },
     "ResourceNotFoundProblem": {
       "required": [
         "type",
@@ -55099,6 +55619,28 @@
       },
       "description": "A list of unique identifiers of the Topics associated with this Space."
     },
+    "UnencryptedSendNotAllowedProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsUnencryptedSendNotAllowedType"
+        }
+      }
+    },
     "UploadComplianceJobSubmissionRequest": {
       "required": [
         "submission"
@@ -55137,6 +55679,28 @@
       "pattern": "^[0-9]{1,19}$",
       "type": "string",
       "description": "Unique identifier of a WebhookConfig"
+    },
+    "XchatSetupRequiredProblem": {
+      "required": [
+        "type",
+        "title",
+        "detail"
+      ],
+      "type": "object",
+      "properties": {
+        "detail": {
+          "type": "string"
+        },
+        "status": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "type": {
+          "$ref": "#/components/schemas/HttpsColonSlashSlashApiXCom2ProblemsXchatSetupRequiredType"
+        }
+      }
     },
     "RulesCountAllProjectClientAppsItem": {
       "required": [

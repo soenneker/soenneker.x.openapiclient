@@ -31,8 +31,6 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("rtmps_url") is { } nullNodeRtmpsUrl && nullNodeRtmpsUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpsUrl = null;
             if (parseNode.GetChildNode("rtmp_url") is null) { _explicitNullValueRtmpUrl = default!; _explicitNullProperties?.Remove("rtmp_url"); }
             else if (parseNode.GetChildNode("rtmp_url") is { } nullNodeRtmpUrl && nullNodeRtmpUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RtmpUrl = null;
-            if (parseNode.GetChildNode("stream_key") is null) { _explicitNullValueStreamKey = default!; _explicitNullProperties?.Remove("stream_key"); }
-            else if (parseNode.GetChildNode("stream_key") is { } nullNodeStreamKey && nullNodeStreamKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StreamKey = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -47,7 +45,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string CreatedAtMs { get => _explicitNullValueCreatedAtMs; set { _explicitNullValueCreatedAtMs = value; AdditionalData?.Remove("created_at_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at_ms"); else _explicitNullProperties?.Remove("created_at_ms"); } }
         private string _explicitNullValueCreatedAtMs = default!;
 #endif
-        /// <summary>Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`.</summary>
+        /// <summary>Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
@@ -80,7 +78,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
         private string _explicitNullValueRegion = default!;
 #endif
-        /// <summary>RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`.</summary>
+        /// <summary>RTMPS ingest URL (port 443). Configure your encoder with this URL and the source&apos;s stream key.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? RtmpsUrl { get => _explicitNullValueRtmpsUrl; set { _explicitNullValueRtmpsUrl = value; AdditionalData?.Remove("rtmps_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmps_url"); else _explicitNullProperties?.Remove("rtmps_url"); } }
@@ -99,16 +97,6 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string RtmpUrl { get => _explicitNullValueRtmpUrl; set { _explicitNullValueRtmpUrl = value; AdditionalData?.Remove("rtmp_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rtmp_url"); else _explicitNullProperties?.Remove("rtmp_url"); } }
         private string _explicitNullValueRtmpUrl = default!;
-#endif
-        /// <summary>Stream key. A credential: anyone with it can stream to the source.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? StreamKey { get => _explicitNullValueStreamKey; set { _explicitNullValueStreamKey = value; AdditionalData?.Remove("stream_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_key"); else _explicitNullProperties?.Remove("stream_key"); } }
-        private string? _explicitNullValueStreamKey = default!;
-#nullable restore
-#else
-        public string StreamKey { get => _explicitNullValueStreamKey; set { _explicitNullValueStreamKey = value; AdditionalData?.Remove("stream_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("stream_key"); else _explicitNullProperties?.Remove("stream_key"); } }
-        private string _explicitNullValueStreamKey = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateSourceResponseData"/> and sets the default values.
@@ -142,7 +130,6 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "region", n => { Region = n.GetStringValue(); } },
                 { "rtmp_url", n => { RtmpUrl = n.GetStringValue(); } },
                 { "rtmps_url", n => { RtmpsUrl = n.GetStringValue(); } },
-                { "stream_key", n => { StreamKey = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -159,7 +146,6 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("rtmps_url", RtmpsUrl);
             writer.WriteStringValue("rtmp_url", RtmpUrl);
-            writer.WriteStringValue("stream_key", StreamKey);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

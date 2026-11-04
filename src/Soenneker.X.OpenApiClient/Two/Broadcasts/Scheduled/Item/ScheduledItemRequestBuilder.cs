@@ -86,7 +86,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetScheduledBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetScheduledBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept.
+        /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateScheduledBroadcastResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -149,7 +149,7 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Scheduled.Item
             return requestInfo;
         }
         /// <summary>
-        /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept.
+        /// Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source&apos;s `id` from GET /2/sources instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

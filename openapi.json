@@ -159,9 +159,9 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -217,9 +217,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
               "dm.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -1440,8 +1440,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1637,8 +1637,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -1695,8 +1695,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1865,7 +1865,7 @@
           "Broadcasts"
         ],
         "summary": "Create a Scheduled Broadcast",
-        "description": "Schedules a broadcast for the authenticated user. A `source_id` (ingest) is required at create time.",
+        "description": "Schedules a broadcast for the authenticated user on one of their sources: `source_id` is required. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source's `id` from GET /2/sources instead.",
         "operationId": "createScheduledBroadcast",
         "requestBody": {
           "content": {
@@ -2036,8 +2036,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2048,7 +2048,7 @@
           "Broadcasts"
         ],
         "summary": "Update a Scheduled Broadcast",
-        "description": "Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept.",
+        "description": "Updates a scheduled broadcast. Path `:id` is the broadcast id; the body must include `scheduled_broadcast_id`. Re-send every field that should be kept. Passing a stream key as `source_id` is deprecated and stops working when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027; pass the source's `id` from GET /2/sources instead.",
         "operationId": "updateScheduledBroadcast",
         "parameters": [
           {
@@ -2106,8 +2106,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2375,8 +2375,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2515,8 +2515,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2586,8 +2586,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -3608,8 +3608,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -3719,9 +3719,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -3793,8 +3793,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -3863,8 +3863,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -3938,9 +3938,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.read",
               "users.read",
-              "dm.read"
+              "tweet.read"
             ]
           },
           {
@@ -4020,9 +4020,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.write",
               "tweet.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4095,8 +4095,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -4181,9 +4181,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -4492,9 +4492,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -4640,9 +4640,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -4731,9 +4731,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4804,9 +4804,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4879,8 +4879,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -4958,9 +4958,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -5033,9 +5033,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -5109,8 +5109,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5182,9 +5182,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -5256,8 +5256,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5330,8 +5330,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "dm.write"
             ]
           },
@@ -5404,8 +5404,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "tweet.read",
+              "dm.write"
             ]
           },
           {
@@ -5478,8 +5478,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -5491,7 +5491,7 @@
           "Chat"
         ],
         "summary": "Send Chat Message",
-        "description": "Sends a message or reaction to a specific Chat conversation. Send either `encoded_message_create_event`, an encrypted event built with the Chat XDK, or `content`, a plaintext message or reaction that is sent unencrypted. Use the recipient's `receives_your_chat` user field to choose: `encrypted` takes `encoded_message_create_event`, `unencrypted` takes `content`, and `none` means the recipient cannot be messaged. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
+        "description": "Sends a message or reaction to a specific Chat conversation. Send `encoded_message_create_event`, an end-to-end encrypted event built with the Chat XDK. `content`, a plaintext message or reaction sent unencrypted, is only a fallback for a 1:1 conversation that X Chat can't encrypt because one of the two users has connected an enterprise app that reads their DMs; check that the recipient's `receives_your_chat` user field is `unencrypted` before using it. Otherwise a `content` send is refused, and retrying it won't help: HTTP 400 https://api.x.com/2/problems/encryption-required when the conversation can be encrypted or is a group (send `encoded_message_create_event` instead), 400 https://api.x.com/2/problems/xchat-setup-required when you haven't set up X Chat, 400 https://api.x.com/2/problems/recipient-xchat-setup-required when the recipient hasn't, and 403 https://api.x.com/2/problems/message-request-not-supported when it would be a message request. HTTP 503 https://api.x.com/2/problems/chat-permissions-unavailable means the check failed and nothing was sent; retry it. For 1:1 conversations, provide the recipient's user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. A recipient who cannot be messaged (closed inbox, system/notification account, or a 1:1 block) returns HTTP 403 with type https://api.x.com/2/problems/recipient-not-messageable.",
         "externalDocs": {
           "url": "https://developer.x.com/"
         },
@@ -5626,9 +5626,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -5774,9 +5774,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -5853,9 +5853,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5927,9 +5927,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -6002,9 +6002,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.write",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6408,9 +6408,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -6573,9 +6573,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -6639,8 +6639,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "dm.read",
-              "tweet.read"
+              "tweet.read",
+              "dm.read"
             ]
           },
           {
@@ -6852,8 +6852,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "list.read"
             ]
           },
@@ -7603,8 +7603,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -7735,9 +7735,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -7932,8 +7932,8 @@
           {
             "OAuth2UserToken": [
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8001,9 +8001,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -8127,8 +8127,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -8985,10 +8985,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -9046,8 +9046,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.write",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -9106,9 +9106,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -9177,8 +9177,8 @@
           {
             "OAuth2UserToken": [
               "list.write",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -9249,9 +9249,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -9345,8 +9345,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -9437,9 +9437,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.write",
               "tweet.read",
-              "users.read",
-              "list.write"
+              "users.read"
             ]
           },
           {
@@ -9507,9 +9507,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -9579,9 +9579,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11041,7 +11041,7 @@
           "Broadcasts"
         ],
         "summary": "List Stream Sources",
-        "description": "Returns the authenticated user's RTMP/RTMPS stream sources. A source's `id` is the `source_id` a scheduled broadcast binds to.",
+        "description": "Returns the authenticated user's RTMP/RTMPS stream sources. A source's `id` is the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Stream keys are not included; read one with GET /2/sources/:id/stream_key.",
         "operationId": "listSources",
         "responses": {
           "200": {
@@ -11075,8 +11075,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -11087,7 +11087,7 @@
           "Broadcasts"
         ],
         "summary": "Create a Stream Source",
-        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the source's stream key.",
+        "description": "Creates a persistent RTMP/RTMPS ingest point for the authenticated user. Push an encoder to `rtmps_url` with the returned `stream_key`. This is the only response that includes the stream key; read it later with GET /2/sources/:id/stream_key.",
         "operationId": "createSource",
         "requestBody": {
           "content": {
@@ -11133,8 +11133,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -11151,10 +11151,11 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
               "type": "string",
-              "pattern": "^[a-zA-Z0-9]{1,32}$"
+              "pattern": "^9[0-2][0-9]{17}$"
             },
             "style": "simple"
           }
@@ -11202,16 +11203,17 @@
           "Broadcasts"
         ],
         "summary": "Get a Stream Source",
-        "description": "Returns one of the authenticated user's stream sources.",
+        "description": "Returns one of the authenticated user's stream sources. Poll it after starting an encoder and wait for `is_stream_active` before going live. The stream key is not included; read it with GET /2/sources/:id/stream_key.",
         "operationId": "getSource",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
               "type": "string",
-              "pattern": "^[a-zA-Z0-9]{1,32}$"
+              "pattern": "^9[0-2][0-9]{17}$"
             },
             "style": "simple"
           }
@@ -11266,10 +11268,11 @@
           {
             "name": "id",
             "in": "path",
+            "description": "Source id, from GET /2/sources.",
             "required": true,
             "schema": {
               "type": "string",
-              "pattern": "^[a-zA-Z0-9]{1,32}$"
+              "pattern": "^9[0-2][0-9]{17}$"
             },
             "style": "simple"
           }
@@ -11313,14 +11316,75 @@
         }
       }
     },
+    "/2/sources/{id}/stream_key": {
+      "get": {
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "broadcast.read",
+              "broadcast.write"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ],
+        "tags": [
+          "Broadcasts"
+        ],
+        "summary": "Get a Stream Source's Stream Key",
+        "description": "Returns the stream key of one of the authenticated user's stream sources. The stream key is a credential: anyone with it can stream to the source, so keep it out of logs, URLs and client-side code.",
+        "operationId": "getSourceStreamKey",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Source id, from GET /2/sources.",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "pattern": "^9[0-2][0-9]{17}$"
+            },
+            "style": "simple"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetSourceStreamKeyResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem+json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Problem"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/2/spaces": {
       "get": {
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "space.read"
             ]
           },
           {
@@ -11397,9 +11461,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "space.read",
-              "tweet.read"
+              "space.read"
             ]
           },
           {
@@ -11654,8 +11718,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "space.read",
               "users.read",
+              "space.read",
               "tweet.read"
             ]
           }
@@ -11748,8 +11812,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "space.read"
             ]
           },
@@ -15709,8 +15773,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.write"
             ]
           },
@@ -15767,8 +15831,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15847,9 +15911,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "like.read"
             ]
           },
           {
@@ -16158,8 +16222,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16262,8 +16326,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.moderate.write"
             ]
           },
@@ -16440,8 +16504,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16595,8 +16659,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16819,9 +16883,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16904,8 +16968,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "follows.read",
-              "tweet.read"
+              "tweet.read",
+              "follows.read"
             ]
           },
           {
@@ -17040,9 +17104,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -17112,8 +17176,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "timeline.read",
-              "tweet.read"
+              "tweet.read",
+              "timeline.read"
             ]
           },
           {
@@ -17460,8 +17524,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "block.read"
             ]
           },
@@ -17549,9 +17613,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "block.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -17620,8 +17684,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "bookmark.read",
-              "tweet.read"
+              "tweet.read",
+              "bookmark.read"
             ]
           },
           {
@@ -17718,9 +17782,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ],
@@ -17785,8 +17849,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -17865,8 +17929,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ],
@@ -17931,9 +17995,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "bookmark.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -18023,9 +18087,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "bookmark.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           }
         ],
@@ -18441,9 +18505,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -18501,9 +18565,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -18654,9 +18718,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -18724,8 +18788,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -18797,8 +18861,8 @@
           {
             "OAuth2UserToken": [
               "follows.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -18892,8 +18956,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -19158,8 +19222,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "like.write",
-              "tweet.read"
+              "tweet.read",
+              "like.write"
             ]
           },
           {
@@ -19296,9 +19360,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "list.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -19390,8 +19454,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -19535,9 +19599,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "mute.read",
-              "tweet.read"
+              "mute.read"
             ]
           },
           {
@@ -19624,9 +19688,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "mute.write"
+              "mute.write",
+              "tweet.read"
             ]
           },
           {
@@ -19694,9 +19758,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "list.read",
               "tweet.read",
-              "list.read"
+              "users.read"
             ]
           },
           {
@@ -19856,9 +19920,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "list.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -19929,9 +19993,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -20001,8 +20065,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "dm.read",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -20065,8 +20129,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -20139,8 +20203,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.write",
-              "tweet.read"
+              "tweet.read",
+              "tweet.write"
             ]
           },
           {
@@ -20211,9 +20275,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -20542,8 +20606,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -20781,8 +20845,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -20946,8 +21010,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "block.write"
+              "block.write",
+              "tweet.read"
             ]
           },
           {
@@ -21017,9 +21081,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "follows.write",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -21089,9 +21153,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "mute.write",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -23492,7 +23556,8 @@
             "type": "string"
           },
           "source_id": {
-            "type": "string"
+            "type": "string",
+            "description": "Id of the source the broadcast streams from, as returned by GET /2/sources."
           },
           "start_ms": {
             "type": "string"
@@ -24142,6 +24207,31 @@
         "description": "IDs of users the authenticated user follows who also follow the sender.",
         "items": {
           "type": "string"
+        }
+      },
+      "ChatPermissionsUnavailableProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/chat-permissions-unavailable"
+            ]
+          }
         }
       },
       "ChatPinnedMessage": {
@@ -26278,7 +26368,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Ingest / source id to bind (same as sources `rtmp_stream_key`).",
+            "description": "Source to bind: a source's `id` from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027.",
             "minLength": 1
           },
           "telecast_id": {
@@ -26357,7 +26447,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (`rtmp_stream_key`)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -26414,7 +26504,8 @@
       "CreateSourceResponseData": {
         "type": "object",
         "required": [
-          "id"
+          "id",
+          "stream_key"
         ],
         "properties": {
           "created_at_ms": {
@@ -26423,7 +26514,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`."
+            "description": "Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -26443,7 +26534,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source's stream key."
           },
           "stream_key": {
             "type": "string",
@@ -29800,6 +29891,31 @@
           }
         }
       },
+      "EncryptionRequiredProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/encryption-required"
+            ]
+          }
+        }
+      },
       "EnsureAccountRequest": {
         "type": "object",
         "properties": {
@@ -31825,7 +31941,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (`rtmp_stream_key`)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -31888,7 +32004,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`."
+            "description": "Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -31908,7 +32024,34 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source's stream key."
+          }
+        }
+      },
+      "GetSourceStreamKeyResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/GetSourceStreamKeyResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "GetSourceStreamKeyResponseData": {
+        "type": "object",
+        "required": [
+          "id",
+          "stream_key"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Source id."
           },
           "stream_key": {
             "type": "string",
@@ -33402,7 +33545,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (`rtmp_stream_key`)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -34055,7 +34198,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (`rtmp_stream_key`)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -34144,7 +34287,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`."
+            "description": "Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -34164,11 +34307,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
-          },
-          "stream_key": {
-            "type": "string",
-            "description": "Stream key. A credential: anyone with it can stream to the source."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source's stream key."
           }
         }
       },
@@ -35127,6 +35266,31 @@
               "description": "The URL to this media variant.",
               "nullable": true
             }
+          }
+        }
+      },
+      "MessageRequestNotSupportedProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/message-request-not-supported"
+            ]
           }
         }
       },
@@ -37235,6 +37399,24 @@
             "$ref": "#/components/schemas/InternalErrorProblem"
           },
           {
+            "$ref": "#/components/schemas/ChatPermissionsUnavailableProblem"
+          },
+          {
+            "$ref": "#/components/schemas/EncryptionRequiredProblem"
+          },
+          {
+            "$ref": "#/components/schemas/MessageRequestNotSupportedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/RecipientXchatSetupRequiredProblem"
+          },
+          {
+            "$ref": "#/components/schemas/UnencryptedSendNotAllowedProblem"
+          },
+          {
+            "$ref": "#/components/schemas/XchatSetupRequiredProblem"
+          },
+          {
             "$ref": "#/components/schemas/DmBadAttachmentProblem"
           },
           {
@@ -37375,6 +37557,7 @@
           "mapping": {
             "https://api.twitter.com/2/problems/duplicate-rules": "#/components/schemas/DuplicateRuleProblem",
             "https://api.twitter.com/2/problems/invalid-rules": "#/components/schemas/InvalidRuleProblem",
+            "https://api.x.com/2/problems/chat-permissions-unavailable": "#/components/schemas/ChatPermissionsUnavailableProblem",
             "https://api.x.com/2/problems/disallowed-resource": "#/components/schemas/DisallowedResourceProblem",
             "https://api.x.com/2/problems/dm-bad-attachment": "#/components/schemas/DmBadAttachmentProblem",
             "https://api.x.com/2/problems/dm-bad-cta": "#/components/schemas/DmBadCtaProblem",
@@ -37419,15 +37602,20 @@
             "https://api.x.com/2/problems/dm-too-few-participants": "#/components/schemas/DmTooFewParticipantsProblem",
             "https://api.x.com/2/problems/dm-too-many-participants": "#/components/schemas/DmTooManyParticipantsProblem",
             "https://api.x.com/2/problems/dm-unsupported-message": "#/components/schemas/DmUnsupportedMessageProblem",
+            "https://api.x.com/2/problems/encryption-required": "#/components/schemas/EncryptionRequiredProblem",
             "https://api.x.com/2/problems/field-hydration-failure": "#/components/schemas/FieldHydrationFailureProblem",
             "https://api.x.com/2/problems/field-unauthorized": "#/components/schemas/FieldUnauthorizedProblem",
             "https://api.x.com/2/problems/internal-error": "#/components/schemas/InternalErrorProblem",
             "https://api.x.com/2/problems/invalid-request": "#/components/schemas/InvalidRequestProblem",
+            "https://api.x.com/2/problems/message-request-not-supported": "#/components/schemas/MessageRequestNotSupportedProblem",
             "https://api.x.com/2/problems/not-authorized-for-field": "#/components/schemas/NotAuthorizedForFieldProblem",
             "https://api.x.com/2/problems/not-authorized-for-resource": "#/components/schemas/NotAuthorizedForResourceProblem",
             "https://api.x.com/2/problems/recipient-not-messageable": "#/components/schemas/RecipientNotMessageableProblem",
+            "https://api.x.com/2/problems/recipient-xchat-setup-required": "#/components/schemas/RecipientXchatSetupRequiredProblem",
             "https://api.x.com/2/problems/resource-not-found": "#/components/schemas/ResourceNotFoundProblem",
-            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem"
+            "https://api.x.com/2/problems/resource-unavailable": "#/components/schemas/ResourceUnavailableProblem",
+            "https://api.x.com/2/problems/unencrypted-send-not-allowed": "#/components/schemas/UnencryptedSendNotAllowedProblem",
+            "https://api.x.com/2/problems/xchat-setup-required": "#/components/schemas/XchatSetupRequiredProblem"
           }
         }
       },
@@ -37489,6 +37677,31 @@
             "type": "string",
             "enum": [
               "https://api.x.com/2/problems/recipient-not-messageable"
+            ]
+          }
+        }
+      },
+      "RecipientXchatSetupRequiredProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/recipient-xchat-setup-required"
             ]
           }
         }
@@ -39127,7 +39340,7 @@
         ],
         "properties": {
           "content": {
-            "description": "Plaintext message or reaction, sent unencrypted. Set exactly one of `message`, `reaction_add`, or `reaction_remove`. Omit when sending `encoded_message_create_event`.",
+            "description": "Plaintext message or reaction, sent unencrypted. Only accepted for a 1:1 conversation that can't be encrypted because one of the two users has connected an enterprise app that reads their DMs. Set exactly one of `message`, `reaction_add`, or `reaction_remove`. Omit when sending `encoded_message_create_event`.",
             "$ref": "#/components/schemas/SendChatMessageContent"
           },
           "conversation_token": {
@@ -39790,6 +40003,31 @@
           "blocked": {
             "type": "boolean",
             "description": "Indicates whether the target user is DM-blocked."
+          }
+        }
+      },
+      "UnencryptedSendNotAllowedProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/unencrypted-send-not-allowed"
+            ]
           }
         }
       },
@@ -41535,7 +41773,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Ingest / source id."
+            "description": "Source to bind: a source's `id` from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027."
           },
           "thumbnail_media_id": {
             "type": "string",
@@ -41608,7 +41846,7 @@
           },
           "source_id": {
             "type": "string",
-            "description": "Bound ingest / source id (`rtmp_stream_key`)."
+            "description": "Id of the bound source, as returned by GET /2/sources. Omitted when unknown."
           },
           "state": {
             "type": "string",
@@ -41796,7 +42034,7 @@
           },
           "id": {
             "type": "string",
-            "description": "Source id; the `source_id` a scheduled broadcast binds to. Currently equal to `stream_key`."
+            "description": "Source id, 19 decimal digits; the `source_id` that POST /2/broadcasts and scheduled broadcasts take. Not a credential: read the stream key with GET /2/sources/:id/stream_key."
           },
           "is_stream_active": {
             "type": "boolean",
@@ -41816,11 +42054,7 @@
           },
           "rtmps_url": {
             "type": "string",
-            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and `stream_key`."
-          },
-          "stream_key": {
-            "type": "string",
-            "description": "Stream key. A credential: anyone with it can stream to the source."
+            "description": "RTMPS ingest URL (port 443). Configure your encoder with this URL and the source's stream key."
           }
         }
       },
@@ -43191,6 +43425,31 @@
         "type": "string",
         "description": "Unique identifier of a WebhookConfig",
         "pattern": "^[0-9]{1,19}$"
+      },
+      "XchatSetupRequiredProblem": {
+        "type": "object",
+        "required": [
+          "type",
+          "title",
+          "detail"
+        ],
+        "properties": {
+          "detail": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "https://api.x.com/2/problems/xchat-setup-required"
+            ]
+          }
+        }
       }
     },
     "parameters": {

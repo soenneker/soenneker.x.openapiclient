@@ -137,7 +137,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ScheduledStartMs { get => _explicitNullValueScheduledStartMs; set { _explicitNullValueScheduledStartMs = value; AdditionalData?.Remove("scheduled_start_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_start_ms"); else _explicitNullProperties?.Remove("scheduled_start_ms"); } }
         private string _explicitNullValueScheduledStartMs = default!;
 #endif
-        /// <summary>Bound ingest / source id (`rtmp_stream_key`).</summary>
+        /// <summary>Id of the bound source, as returned by GET /2/sources. Omitted when unknown.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; AdditionalData?.Remove("source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_id"); else _explicitNullProperties?.Remove("source_id"); } }

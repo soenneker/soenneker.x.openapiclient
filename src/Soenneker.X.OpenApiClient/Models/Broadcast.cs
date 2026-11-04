@@ -205,7 +205,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ShareUrl { get => _explicitNullValueShareUrl; set { _explicitNullValueShareUrl = value; AdditionalData?.Remove("share_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_url"); else _explicitNullProperties?.Remove("share_url"); } }
         private string _explicitNullValueShareUrl = default!;
 #endif
-        /// <summary>The source_id property</summary>
+        /// <summary>Id of the source the broadcast streams from, as returned by GET /2/sources.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; AdditionalData?.Remove("source_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_id"); else _explicitNullProperties?.Remove("source_id"); } }

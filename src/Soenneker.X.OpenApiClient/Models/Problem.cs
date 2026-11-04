@@ -53,6 +53,7 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 "https://api.twitter.com/2/problems/duplicate-rules" => new global::Soenneker.X.OpenApiClient.Models.ProblemDuplicateRuleProblem(),
                 "https://api.twitter.com/2/problems/invalid-rules" => new global::Soenneker.X.OpenApiClient.Models.ProblemInvalidRuleProblem(),
+                "https://api.x.com/2/problems/chat-permissions-unavailable" => new global::Soenneker.X.OpenApiClient.Models.ProblemChatPermissionsUnavailableProblem(),
                 "https://api.x.com/2/problems/disallowed-resource" => new global::Soenneker.X.OpenApiClient.Models.ProblemDisallowedResourceProblem(),
                 "https://api.x.com/2/problems/dm-bad-attachment" => new global::Soenneker.X.OpenApiClient.Models.ProblemDmBadAttachmentProblem(),
                 "https://api.x.com/2/problems/dm-bad-cta" => new global::Soenneker.X.OpenApiClient.Models.ProblemDmBadCtaProblem(),
@@ -97,15 +98,20 @@ namespace Soenneker.X.OpenApiClient.Models
                 "https://api.x.com/2/problems/dm-too-few-participants" => new global::Soenneker.X.OpenApiClient.Models.ProblemDmTooFewParticipantsProblem(),
                 "https://api.x.com/2/problems/dm-too-many-participants" => new global::Soenneker.X.OpenApiClient.Models.ProblemDmTooManyParticipantsProblem(),
                 "https://api.x.com/2/problems/dm-unsupported-message" => new global::Soenneker.X.OpenApiClient.Models.ProblemDmUnsupportedMessageProblem(),
+                "https://api.x.com/2/problems/encryption-required" => new global::Soenneker.X.OpenApiClient.Models.ProblemEncryptionRequiredProblem(),
                 "https://api.x.com/2/problems/field-hydration-failure" => new global::Soenneker.X.OpenApiClient.Models.ProblemFieldHydrationFailureProblem(),
                 "https://api.x.com/2/problems/field-unauthorized" => new global::Soenneker.X.OpenApiClient.Models.ProblemFieldUnauthorizedProblem(),
                 "https://api.x.com/2/problems/internal-error" => new global::Soenneker.X.OpenApiClient.Models.ProblemInternalErrorProblem(),
                 "https://api.x.com/2/problems/invalid-request" => new global::Soenneker.X.OpenApiClient.Models.ProblemInvalidRequestProblem(),
+                "https://api.x.com/2/problems/message-request-not-supported" => new global::Soenneker.X.OpenApiClient.Models.ProblemMessageRequestNotSupportedProblem(),
                 "https://api.x.com/2/problems/not-authorized-for-field" => new global::Soenneker.X.OpenApiClient.Models.ProblemNotAuthorizedForFieldProblem(),
                 "https://api.x.com/2/problems/not-authorized-for-resource" => new global::Soenneker.X.OpenApiClient.Models.ProblemNotAuthorizedForResourceProblem(),
                 "https://api.x.com/2/problems/recipient-not-messageable" => new global::Soenneker.X.OpenApiClient.Models.ProblemRecipientNotMessageableProblem(),
+                "https://api.x.com/2/problems/recipient-xchat-setup-required" => new global::Soenneker.X.OpenApiClient.Models.ProblemRecipientXchatSetupRequiredProblem(),
                 "https://api.x.com/2/problems/resource-not-found" => new global::Soenneker.X.OpenApiClient.Models.ProblemResourceNotFoundProblem(),
                 "https://api.x.com/2/problems/resource-unavailable" => new global::Soenneker.X.OpenApiClient.Models.ProblemResourceUnavailableProblem(),
+                "https://api.x.com/2/problems/unencrypted-send-not-allowed" => new global::Soenneker.X.OpenApiClient.Models.ProblemUnencryptedSendNotAllowedProblem(),
+                "https://api.x.com/2/problems/xchat-setup-required" => new global::Soenneker.X.OpenApiClient.Models.ProblemXchatSetupRequiredProblem(),
                 _ => new global::Soenneker.X.OpenApiClient.Models.Problem(),
             };
         }

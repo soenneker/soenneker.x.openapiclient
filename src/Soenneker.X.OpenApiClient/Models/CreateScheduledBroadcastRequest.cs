@@ -114,7 +114,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ScheduledStartMs { get => _explicitNullValueScheduledStartMs; set { _explicitNullValueScheduledStartMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_start_ms"); else _explicitNullProperties?.Remove("scheduled_start_ms"); } }
         private string _explicitNullValueScheduledStartMs = default!;
 #endif
-        /// <summary>Ingest / source id to bind (same as sources `rtmp_stream_key`).</summary>
+        /// <summary>Source to bind: a source&apos;s `id` from GET /2/sources. A stream key is also accepted but deprecated; stream keys stop being accepted when the /2/users/:id/sources and /2/users/:id/broadcasts routes reach end of life on January 1, 2027.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? SourceId { get => _explicitNullValueSourceId; set { _explicitNullValueSourceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source_id"); else _explicitNullProperties?.Remove("source_id"); } }
