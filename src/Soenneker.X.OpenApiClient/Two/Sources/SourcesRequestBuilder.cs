@@ -19,7 +19,7 @@ namespace Soenneker.X.OpenApiClient.Two.Sources
     public partial class SourcesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.sources.item collection</summary>
-        /// <param name="position">Source id, from GET /2/sources.</param>
+        /// <param name="position">Source id (19 digits), from GET /2/sources.</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Sources.Item.SourcesItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Sources.Item.SourcesItemRequestBuilder this[string position]
         {
