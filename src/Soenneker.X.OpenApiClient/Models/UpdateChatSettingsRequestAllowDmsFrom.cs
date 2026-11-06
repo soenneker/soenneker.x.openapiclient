@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows).</summary>
+    /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows). A bot may get a 400 for choosing `following` when it doesn&apos;t already have it, and an org-only bot for choosing `verified`.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum UpdateChatSettingsRequestAllowDmsFrom
     {

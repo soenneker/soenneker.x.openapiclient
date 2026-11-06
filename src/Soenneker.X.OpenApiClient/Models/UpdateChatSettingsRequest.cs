@@ -30,7 +30,7 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("dm_receipt_settings") is { } nullNodeDmReceiptSettings && nullNodeDmReceiptSettings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DmReceiptSettings = null;
         }
 
-        /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows).</summary>
+        /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows). A bot may get a 400 for choosing `following` when it doesn&apos;t already have it, and an org-only bot for choosing `verified`.</summary>
         public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom? AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
         private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom? _explicitNullValueAllowDmsFrom = default!;
         /// <summary>Whether the user&apos;s subscribers can always message them regardless of allow_dms_from.</summary>

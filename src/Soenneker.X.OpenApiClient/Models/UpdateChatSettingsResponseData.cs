@@ -31,7 +31,7 @@ namespace Soenneker.X.OpenApiClient.Models
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows).</summary>
+        /// <summary>Who can send the user messages: `all` (anyone), `verified` (verified accounts only), or `following` (accounts the user follows). A bot may get a 400 for choosing `following` when it doesn&apos;t already have it, and an org-only bot for choosing `verified`.</summary>
         public global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAllowDmsFrom? AllowDmsFrom { get => _explicitNullValueAllowDmsFrom; set { _explicitNullValueAllowDmsFrom = value; AdditionalData?.Remove("allow_dms_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("allow_dms_from"); else _explicitNullProperties?.Remove("allow_dms_from"); } }
         private global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAllowDmsFrom? _explicitNullValueAllowDmsFrom = default!;
         /// <summary>Whether the user&apos;s subscribers can always message them regardless of allow_dms_from.</summary>

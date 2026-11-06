@@ -35,7 +35,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
         private string _explicitNullValueDisplayName = default!;
 #endif
-        /// <summary>Who may send Direct Messages to the bot.</summary>
+        /// <summary>Who may send the bot Direct Messages: everyone, or premium for verified senders only. Premium isn&apos;t meant for org-only bots, since everyone in an org-only bot&apos;s developer account should be able to message it, verified or not; requesting premium for one may be refused with a 400. The no_one value is deprecated and kept only so bots that already use it can keep it; choosing it for any other bot may be refused with a 400.</summary>
         public global::Soenneker.X.OpenApiClient.Models.UpdateBotRequestDmPermission? DmPermission { get => _explicitNullValueDmPermission; set { _explicitNullValueDmPermission = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dm_permission"); else _explicitNullProperties?.Remove("dm_permission"); } }
         private global::Soenneker.X.OpenApiClient.Models.UpdateBotRequestDmPermission? _explicitNullValueDmPermission = default!;
         /// <summary>New handle (X screen name): 5-15 characters, letters, numbers, or underscores.</summary>
