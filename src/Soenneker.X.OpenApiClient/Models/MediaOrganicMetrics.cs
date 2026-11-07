@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Organic nonpublic engagement metrics for the media at the time of the request.
+    /// Lifetime organic engagement metrics for the media at the time of the request.Only available to the user who uploaded the video.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaOrganicMetrics : IAdditionalDataHolder, IParsable
@@ -18,6 +18,10 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("cta_url_click_count") is null) { _explicitNullValueCtaUrlClickCount = default!; _explicitNullProperties?.Remove("cta_url_click_count"); }
+            else if (parseNode.GetChildNode("cta_url_click_count") is { } nullNodeCtaUrlClickCount && nullNodeCtaUrlClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaUrlClickCount = null;
+            if (parseNode.GetChildNode("cta_watch_click_count") is null) { _explicitNullValueCtaWatchClickCount = default!; _explicitNullProperties?.Remove("cta_watch_click_count"); }
+            else if (parseNode.GetChildNode("cta_watch_click_count") is { } nullNodeCtaWatchClickCount && nullNodeCtaWatchClickCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CtaWatchClickCount = null;
             if (parseNode.GetChildNode("playback_0_count") is null) { _explicitNullValuePlayback0Count = default!; _explicitNullProperties?.Remove("playback_0_count"); }
             else if (parseNode.GetChildNode("playback_0_count") is { } nullNodePlayback0Count && nullNodePlayback0Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback0Count = null;
             if (parseNode.GetChildNode("playback_100_count") is null) { _explicitNullValuePlayback100Count = default!; _explicitNullProperties?.Remove("playback_100_count"); }
@@ -30,10 +34,18 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("playback_75_count") is { } nullNodePlayback75Count && nullNodePlayback75Count.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Playback75Count = null;
             if (parseNode.GetChildNode("view_count") is null) { _explicitNullValueViewCount = default!; _explicitNullProperties?.Remove("view_count"); }
             else if (parseNode.GetChildNode("view_count") is { } nullNodeViewCount && nullNodeViewCount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewCount = null;
+            if (parseNode.GetChildNode("watch_time_ms") is null) { _explicitNullValueWatchTimeMs = default!; _explicitNullProperties?.Remove("watch_time_ms"); }
+            else if (parseNode.GetChildNode("watch_time_ms") is { } nullNodeWatchTimeMs && nullNodeWatchTimeMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WatchTimeMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Number of clicks on the video&apos;s call-to-action URL.</summary>
+        public long? CtaUrlClickCount { get => _explicitNullValueCtaUrlClickCount; set { _explicitNullValueCtaUrlClickCount = value; AdditionalData?.Remove("cta_url_click_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_url_click_count"); else _explicitNullProperties?.Remove("cta_url_click_count"); } }
+        private long? _explicitNullValueCtaUrlClickCount = default!;
+        /// <summary>Number of clicks on the video&apos;s &quot;watch&quot; call to action.</summary>
+        public long? CtaWatchClickCount { get => _explicitNullValueCtaWatchClickCount; set { _explicitNullValueCtaWatchClickCount = value; AdditionalData?.Remove("cta_watch_click_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cta_watch_click_count"); else _explicitNullProperties?.Remove("cta_watch_click_count"); } }
+        private long? _explicitNullValueCtaWatchClickCount = default!;
         /// <summary>Number of users who started playback (0% quartile) of this video.</summary>
         public long? Playback0Count { get => _explicitNullValuePlayback0Count; set { _explicitNullValuePlayback0Count = value; AdditionalData?.Remove("playback_0_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_0_count"); else _explicitNullProperties?.Remove("playback_0_count"); } }
         private long? _explicitNullValuePlayback0Count = default!;
@@ -49,9 +61,12 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Number of users who watched at least 75% of this video.</summary>
         public long? Playback75Count { get => _explicitNullValuePlayback75Count; set { _explicitNullValuePlayback75Count = value; AdditionalData?.Remove("playback_75_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("playback_75_count"); else _explicitNullProperties?.Remove("playback_75_count"); } }
         private long? _explicitNullValuePlayback75Count = default!;
-        /// <summary>The number of organic views of this video. Null when the backend returns quartile data without a view count.</summary>
+        /// <summary>The number of organic views of this video.</summary>
         public long? ViewCount { get => _explicitNullValueViewCount; set { _explicitNullValueViewCount = value; AdditionalData?.Remove("view_count"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_count"); else _explicitNullProperties?.Remove("view_count"); } }
         private long? _explicitNullValueViewCount = default!;
+        /// <summary>Total time this video has been watched, in milliseconds.</summary>
+        public long? WatchTimeMs { get => _explicitNullValueWatchTimeMs; set { _explicitNullValueWatchTimeMs = value; AdditionalData?.Remove("watch_time_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("watch_time_ms"); else _explicitNullProperties?.Remove("watch_time_ms"); } }
+        private long? _explicitNullValueWatchTimeMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.MediaOrganicMetrics"/> and sets the default values.
         /// </summary>
@@ -77,12 +92,15 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "cta_url_click_count", n => { CtaUrlClickCount = n.GetLongValue(); } },
+                { "cta_watch_click_count", n => { CtaWatchClickCount = n.GetLongValue(); } },
                 { "playback_0_count", n => { Playback0Count = n.GetLongValue(); } },
                 { "playback_100_count", n => { Playback100Count = n.GetLongValue(); } },
                 { "playback_25_count", n => { Playback25Count = n.GetLongValue(); } },
                 { "playback_50_count", n => { Playback50Count = n.GetLongValue(); } },
                 { "playback_75_count", n => { Playback75Count = n.GetLongValue(); } },
                 { "view_count", n => { ViewCount = n.GetLongValue(); } },
+                { "watch_time_ms", n => { WatchTimeMs = n.GetLongValue(); } },
             };
         }
         /// <summary>
@@ -92,12 +110,15 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteLongValue("cta_url_click_count", CtaUrlClickCount);
+            writer.WriteLongValue("cta_watch_click_count", CtaWatchClickCount);
             writer.WriteLongValue("playback_0_count", Playback0Count);
             writer.WriteLongValue("playback_100_count", Playback100Count);
             writer.WriteLongValue("playback_25_count", Playback25Count);
             writer.WriteLongValue("playback_50_count", Playback50Count);
             writer.WriteLongValue("playback_75_count", Playback75Count);
             writer.WriteLongValue("view_count", ViewCount);
+            writer.WriteLongValue("watch_time_ms", WatchTimeMs);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
