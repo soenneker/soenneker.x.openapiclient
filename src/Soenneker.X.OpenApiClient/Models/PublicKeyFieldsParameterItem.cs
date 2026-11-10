@@ -28,5 +28,9 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         SigningPublicKey,
         #pragma warning restore CS1591
+        [EnumMember(Value = "user_id")]
+        #pragma warning disable CS1591
+        UserId,
+        #pragma warning restore CS1591
     }
 }

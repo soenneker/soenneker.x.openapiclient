@@ -226,7 +226,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics PublicMetrics { get => _explicitNullValuePublicMetrics; set { _explicitNullValuePublicMetrics = value; AdditionalData?.Remove("public_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_metrics"); else _explicitNullProperties?.Remove("public_metrics"); } }
         private global::Soenneker.X.OpenApiClient.Models.UserPublicMetrics _explicitNullValuePublicMetrics = default!;
 #endif
-        /// <summary>How you can send a Chat message to this User: encrypted, unencrypted, or none.</summary>
+        /// <summary>How you can send a Chat message to this User: encrypted (end-to-end, the default), unencrypted (X Chat can&apos;t encrypt your 1:1 chat, so send plaintext `content` instead), or none (you can&apos;t message them).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? ReceivesYourChat { get => _explicitNullValueReceivesYourChat; set { _explicitNullValueReceivesYourChat = value; AdditionalData?.Remove("receives_your_chat"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("receives_your_chat"); else _explicitNullProperties?.Remove("receives_your_chat"); } }

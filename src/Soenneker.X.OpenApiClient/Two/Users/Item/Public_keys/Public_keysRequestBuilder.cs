@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
         {
         }
         /// <summary>
-        /// Returns a user&apos;s registered public keys for X Chat encryption.
+        /// Returns a user&apos;s registered public keys for X Chat encryption.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version and juicebox_config.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersPublicKeyResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.AddUserPublicKeyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a user&apos;s registered public keys for X Chat encryption.
+        /// Returns a user&apos;s registered public keys for X Chat encryption.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version and juicebox_config.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,7 +132,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys
             return new global::Soenneker.X.OpenApiClient.Two.Users.Item.Public_keys.Public_keysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a user&apos;s registered public keys for X Chat encryption.
+        /// Returns a user&apos;s registered public keys for X Chat encryption.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version and juicebox_config.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Public_keysRequestBuilderGetQueryParameters 

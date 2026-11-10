@@ -27,6 +27,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("public_key_version") is { } nullNodePublicKeyVersion && nullNodePublicKeyVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicKeyVersion = null;
             if (parseNode.GetChildNode("signing_public_key") is null) { _explicitNullValueSigningPublicKey = default!; _explicitNullProperties?.Remove("signing_public_key"); }
             else if (parseNode.GetChildNode("signing_public_key") is { } nullNodeSigningPublicKey && nullNodeSigningPublicKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SigningPublicKey = null;
+            if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
+            else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -81,6 +83,16 @@ namespace Soenneker.X.OpenApiClient.Models
         public string SigningPublicKey { get => _explicitNullValueSigningPublicKey; set { _explicitNullValueSigningPublicKey = value; AdditionalData?.Remove("signing_public_key"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("signing_public_key"); else _explicitNullProperties?.Remove("signing_public_key"); } }
         private string _explicitNullValueSigningPublicKey = default!;
 #endif
+        /// <summary>ID of the user the key belongs to. Returned by Get Public Keys for Multiple Users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string? _explicitNullValueUserId = default!;
+#nullable restore
+#else
+        public string UserId { get => _explicitNullValueUserId; set { _explicitNullValueUserId = value; AdditionalData?.Remove("user_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("user_id"); else _explicitNullProperties?.Remove("user_id"); } }
+        private string _explicitNullValueUserId = default!;
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Models.PublicKey"/> and sets the default values.
         /// </summary>
@@ -111,6 +123,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "public_key", n => { PublicKeyProp = n.GetStringValue(); } },
                 { "public_key_version", n => { PublicKeyVersion = n.GetStringValue(); } },
                 { "signing_public_key", n => { SigningPublicKey = n.GetStringValue(); } },
+                { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -125,6 +138,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("public_key", PublicKeyProp);
             writer.WriteStringValue("public_key_version", PublicKeyVersion);
             writer.WriteStringValue("signing_public_key", SigningPublicKey);
+            writer.WriteStringValue("user_id", UserId);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

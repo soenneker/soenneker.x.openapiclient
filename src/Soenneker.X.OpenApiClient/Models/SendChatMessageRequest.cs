@@ -54,7 +54,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string ConversationToken { get => _explicitNullValueConversationToken; set { _explicitNullValueConversationToken = value; AdditionalData?.Remove("conversation_token"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("conversation_token"); else _explicitNullProperties?.Remove("conversation_token"); } }
         private string _explicitNullValueConversationToken = default!;
 #endif
-        /// <summary>Base64-encoded Thrift MessageCreateEvent containing encrypted message contents. Omit when sending `content`.</summary>
+        /// <summary>Default. The end-to-end encrypted message: a base64 Thrift MessageCreateEvent from the Chat XDK.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? EncodedMessageCreateEvent { get => _explicitNullValueEncodedMessageCreateEvent; set { _explicitNullValueEncodedMessageCreateEvent = value; AdditionalData?.Remove("encoded_message_create_event"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("encoded_message_create_event"); else _explicitNullProperties?.Remove("encoded_message_create_event"); } }

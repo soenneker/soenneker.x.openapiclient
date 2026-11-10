@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks> Blocks { get => _explicitNullValueBlocks; set { _explicitNullValueBlocks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blocks"); else _explicitNullProperties?.Remove("blocks"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocks> _explicitNullValueBlocks = default!;
 #endif
-        /// <summary>Non-text entities referenced by blocks (links, embedded posts, images, emoji,          markdown/code/tables, dividers, LaTeX). Full set matches article storage.</summary>
+        /// <summary>Non-text entities referenced by blocks (links, embedded posts, images, emoji, markdown/code/tables, dividers, LaTeX). Full set matches article storage.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateEntities>? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }

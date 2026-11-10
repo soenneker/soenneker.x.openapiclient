@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
         }
 
-        /// <summary>Index into the entities array.</summary>
+        /// <summary>The key of the referenced entity, as an integer.</summary>
         public int? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private int? _explicitNullValueKey = default!;
         /// <summary>Length of the entity range.</summary>

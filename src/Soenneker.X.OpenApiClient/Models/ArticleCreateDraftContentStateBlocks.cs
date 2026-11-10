@@ -41,7 +41,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksData _explicitNullValueData = default!;
 #endif
-        /// <summary>References to entries in entities.</summary>
+        /// <summary>Entity references. Each item has offset, length and key, the entity&apos;s key as an integer (0 for &quot;0&quot;).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksEntityRanges>? EntityRanges { get => _explicitNullValueEntityRanges; set { _explicitNullValueEntityRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_ranges"); else _explicitNullProperties?.Remove("entity_ranges"); } }
@@ -51,7 +51,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksEntityRanges> EntityRanges { get => _explicitNullValueEntityRanges; set { _explicitNullValueEntityRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity_ranges"); else _explicitNullProperties?.Remove("entity_ranges"); } }
         private List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksEntityRanges> _explicitNullValueEntityRanges = default!;
 #endif
-        /// <summary>Inline formatting ranges.</summary>
+        /// <summary>Inline styles. Each item has offset, length and style: bold, italic or strikethrough, in lowercase.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksInlineStyleRanges>? InlineStyleRanges { get => _explicitNullValueInlineStyleRanges; set { _explicitNullValueInlineStyleRanges = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("inline_style_ranges"); else _explicitNullProperties?.Remove("inline_style_ranges"); } }
@@ -71,7 +71,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
         private string _explicitNullValueKey = default!;
 #endif
-        /// <summary>The text content of this block. For latex entities, this holds the LaTeX source;          for divider/markdown/image/post atomic placeholders, typically a single space.</summary>
+        /// <summary>The text content of this block. For latex entities, this holds the LaTeX source; for divider/markdown/image/post atomic placeholders, typically a single space.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
@@ -81,7 +81,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
         private string _explicitNullValueText = default!;
 #endif
-        /// <summary>The block type. Use atomic for non-text embeds (image, post, markdown, divider, latex).</summary>
+        /// <summary>The block type. Articles have two heading levels, header-one and header-two. Use atomic for non-text embeds (image, post, markdown, divider, latex).</summary>
         public global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.X.OpenApiClient.Models.ArticleCreateDraftContentStateBlocksType? _explicitNullValueType = default!;
         /// <summary>

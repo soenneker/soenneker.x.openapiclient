@@ -56,7 +56,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>When true, the media&apos;s asset URLs do not expire and external syndicated playback is allowed.</summary>
         public bool? Embeddable { get => _explicitNullValueEmbeddable; set { _explicitNullValueEmbeddable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("embeddable"); else _explicitNullProperties?.Remove("embeddable"); } }
         private bool? _explicitNullValueEmbeddable = default!;
-        /// <summary>Media IDs to attach to the tweet.</summary>
+        /// <summary>Media IDs to attach to the Post, in the order given.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? MediaIds { get => _explicitNullValueMediaIds; set { _explicitNullValueMediaIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media_ids"); else _explicitNullProperties?.Remove("media_ids"); } }

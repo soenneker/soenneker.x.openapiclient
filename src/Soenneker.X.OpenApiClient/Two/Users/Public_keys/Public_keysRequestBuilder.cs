@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Public_keys
         {
         }
         /// <summary>
-        /// Returns registered public keys for X Chat encryption for the specified users.
+        /// Returns the public keys that up to 100 users registered for X Chat encryption, looked up by numeric user ID. Each key carries the user_id of the user it belongs to.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version, juicebox_config and user_id.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetUsersPublicKeysResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Public_keys
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetUsersPublicKeysResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetUsersPublicKeysResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns registered public keys for X Chat encryption for the specified users.
+        /// Returns the public keys that up to 100 users registered for X Chat encryption, looked up by numeric user ID. Each key carries the user_id of the user it belongs to.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version, juicebox_config and user_id.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,23 +85,20 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Public_keys
             return new global::Soenneker.X.OpenApiClient.Two.Users.Public_keys.Public_keysRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns registered public keys for X Chat encryption for the specified users.
+        /// Returns the public keys that up to 100 users registered for X Chat encryption, looked up by numeric user ID. Each key carries the user_id of the user it belongs to.Every key field is returned by default, so public_key.fields can be left out. It takes public_key, signing_public_key, identity_public_key_signature, public_key_version, juicebox_config and user_id.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class Public_keysRequestBuilderGetQueryParameters 
         {
+            /// <summary>Comma-separated numeric user IDs (1-100), not @usernames.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("ids")]
             public string[]? Ids { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("ids")]
             public string[] Ids { get; set; }
-            #pragma warning restore CS1591
 #endif
             /// <summary>A comma separated list of PublicKey fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

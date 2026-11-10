@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
-    /// <summary>The block type. Use atomic for non-text embeds (image, post, markdown, divider, latex).</summary>
+    /// <summary>The block type. Articles have two heading levels, header-one and header-two. Use atomic for non-text embeds (image, post, markdown, divider, latex).</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum ArticleCreateDraftContentStateBlocksType
     {
@@ -18,10 +18,6 @@ namespace Soenneker.X.OpenApiClient.Models
         [EnumMember(Value = "header-two")]
         #pragma warning disable CS1591
         HeaderTwo,
-        #pragma warning restore CS1591
-        [EnumMember(Value = "header-three")]
-        #pragma warning disable CS1591
-        HeaderThree,
         #pragma warning restore CS1591
         [EnumMember(Value = "unordered-list-item")]
         #pragma warning disable CS1591
