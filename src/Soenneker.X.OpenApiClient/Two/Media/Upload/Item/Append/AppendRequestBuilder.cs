@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Append
         {
         }
         /// <summary>
-        /// Appends data to a Media upload request.
+        /// Appends one segment of the file to a chunked upload. Send the segment base64-encoded in media (raw bytes in multipart bodies) and its position in the file in segment_index, counting from 0. A segment can be up to 8 MB; in a JSON body keep it to 4 MB or less, because base64 adds a third. After the last segment, call Finalize Media Upload.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Append
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Appends data to a Media upload request.
+        /// Appends one segment of the file to a chunked upload. Send the segment base64-encoded in media (raw bytes in multipart bodies) and its position in the file in segment_index, counting from 0. A segment can be up to 8 MB; in a JSON body keep it to 4 MB or less, because base64 adds a third. After the last segment, call Finalize Media Upload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

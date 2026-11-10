@@ -127,18 +127,15 @@ namespace Soenneker.X.OpenApiClient.Two.Users.Search
             [QueryParameter("post%2Efields")]
             public global::Soenneker.X.OpenApiClient.Models.PostFieldsParameterItem[] PostFields { get; set; }
 #endif
+            /// <summary>A name or @username (1-50 chars): letters and digits in any language, spaces, and _ &apos; . - @ &amp; &quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("query")]
             public string? Query { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("query")]
             public string Query { get; set; }
-            #pragma warning restore CS1591
 #endif
             /// <summary>A comma separated list of User fields to display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

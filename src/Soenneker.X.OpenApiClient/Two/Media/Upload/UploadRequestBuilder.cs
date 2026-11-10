@@ -25,7 +25,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             get => new global::Soenneker.X.OpenApiClient.Two.Media.Upload.Initialize.InitializeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.X.OpenApiClient.Two.media.upload.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">The upload id from Initialize Media Upload.</param>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Two.Media.Upload.Item.UploadItemRequestBuilder"/></returns>
         public global::Soenneker.X.OpenApiClient.Two.Media.Upload.Item.UploadItemRequestBuilder this[string position]
         {
@@ -53,7 +53,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
         {
         }
         /// <summary>
-        /// Retrieves the status of a Media upload by its ID.
+        /// Returns how far X has processed an uploaded media file, in processing_info.state: pending, in_progress, succeeded or failed. Call it after Finalize Media Upload returns processing_info, waiting check_after_secs between calls, until the state is succeeded. A failed state means the media can&apos;t be used.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetMediaUploadStatusResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Uploads a media file in one request and returns its id. Send the file base64-encoded in media (raw bytes in multipart bodies). For a Post, set media_category to tweet_image (JPG, PNG, GIF or WEBP, up to 5 MB) or tweet_gif, then pass the returned id in media.media_ids on Create or Edit Post. DM media uses dm_image or dm_gif. Use the chunked upload endpoints for video.
+        /// Uploads a media file in one request and returns its id. Send the file base64-encoded in media (raw bytes in multipart bodies). For a Post, set media_category to tweet_image (JPG, PNG, GIF or WEBP, up to 5 MB) or tweet_gif, then pass the returned id in media.media_ids on Create or Edit Post. DM media uses dm_image or dm_gif. For video, use Initialize Media Upload.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -101,7 +101,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.MediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves the status of a Media upload by its ID.
+        /// Returns how far X has processed an uploaded media file, in processing_info.state: pending, in_progress, succeeded or failed. Call it after Finalize Media Upload returns processing_info, waiting check_after_secs between calls, until the state is succeeded. A failed state means the media can&apos;t be used.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,7 +120,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return requestInfo;
         }
         /// <summary>
-        /// Uploads a media file in one request and returns its id. Send the file base64-encoded in media (raw bytes in multipart bodies). For a Post, set media_category to tweet_image (JPG, PNG, GIF or WEBP, up to 5 MB) or tweet_gif, then pass the returned id in media.media_ids on Create or Edit Post. DM media uses dm_image or dm_gif. Use the chunked upload endpoints for video.
+        /// Uploads a media file in one request and returns its id. Send the file base64-encoded in media (raw bytes in multipart bodies). For a Post, set media_category to tweet_image (JPG, PNG, GIF or WEBP, up to 5 MB) or tweet_gif, then pass the returned id in media.media_ids on Create or Edit Post. DM media uses dm_image or dm_gif. For video, use Initialize Media Upload.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
@@ -151,27 +151,23 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload
             return new global::Soenneker.X.OpenApiClient.Two.Media.Upload.UploadRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves the status of a Media upload by its ID.
+        /// Returns how far X has processed an uploaded media file, in processing_info.state: pending, in_progress, succeeded or failed. Call it after Finalize Media Upload returns processing_info, waiting check_after_secs between calls, until the state is succeeded. A failed state means the media can&apos;t be used.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class UploadRequestBuilderGetQueryParameters 
         {
-            #pragma warning disable CS1591
+            /// <summary>Always STATUS; can be left out.</summary>
             [QueryParameter("command")]
             public global::Soenneker.X.OpenApiClient.Models.StatusCommand? Command { get; set; }
-            #pragma warning restore CS1591
+            /// <summary>The media id from Initialize Media Upload.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-            #pragma warning disable CS1591
             [QueryParameter("media_id")]
             public string? MediaId { get; set; }
-            #pragma warning restore CS1591
 #nullable restore
 #else
-            #pragma warning disable CS1591
             [QueryParameter("media_id")]
             public string MediaId { get; set; }
-            #pragma warning restore CS1591
 #endif
         }
     }

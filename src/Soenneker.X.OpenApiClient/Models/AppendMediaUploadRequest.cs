@@ -23,7 +23,7 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("segment_index") is { } nullNodeSegmentIndex && nullNodeSegmentIndex.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SegmentIndex = null;
         }
 
-        /// <summary>The media chunk to upload.</summary>
+        /// <summary>One segment of the file: base64-encoded in JSON bodies, raw bytes in multipart bodies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadRequestMedia? Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
@@ -33,7 +33,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadRequestMedia Media { get => _explicitNullValueMedia; set { _explicitNullValueMedia = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("media"); else _explicitNullProperties?.Remove("media"); } }
         private global::Soenneker.X.OpenApiClient.Models.AppendMediaUploadRequestMedia _explicitNullValueMedia = default!;
 #endif
-        /// <summary>The index of this segment in the upload sequence.</summary>
+        /// <summary>The segment&apos;s position in the file, counting from 0.</summary>
         public int? SegmentIndex { get => _explicitNullValueSegmentIndex; set { _explicitNullValueSegmentIndex = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segment_index"); else _explicitNullProperties?.Remove("segment_index"); } }
         private int? _explicitNullValueSegmentIndex = default!;
         /// <summary>

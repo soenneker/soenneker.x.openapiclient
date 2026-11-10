@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Initialize
         {
         }
         /// <summary>
-        /// Initializes a media upload.
+        /// Starts a chunked media upload and returns its id. Use it for video and for other files too large for one request. For a video on a Post, set media_category to tweet_video, media_type to the file&apos;s type (for example video/mp4) and total_bytes to the file&apos;s size. Send the file with Append Media Upload, call Finalize Media Upload, then pass the id in media.media_ids on Create or Edit Post.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -59,7 +59,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Initialize
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.InitializeMediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Initializes a media upload.
+        /// Starts a chunked media upload and returns its id. Use it for video and for other files too large for one request. For a video on a Post, set media_category to tweet_video, media_type to the file&apos;s type (for example video/mp4) and total_bytes to the file&apos;s size. Send the file with Append Media Upload, call Finalize Media Upload, then pass the id in media.media_ids on Create or Edit Post.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

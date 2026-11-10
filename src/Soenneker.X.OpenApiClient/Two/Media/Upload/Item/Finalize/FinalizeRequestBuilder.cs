@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Finalize
         {
         }
         /// <summary>
-        /// Finalizes a Media upload request.
+        /// Completes a chunked upload once every segment is appended. For video the result carries processing_info: the media can go on a Post only when its state is succeeded, so call Get Media Upload Status until it is. A result without processing_info is ready to use.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.FinalizeMediaUploadResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Media.Upload.Item.Finalize
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.FinalizeMediaUploadResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.FinalizeMediaUploadResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Finalizes a Media upload request.
+        /// Completes a chunked upload once every segment is appended. For video the result carries processing_info: the media can go on a Post only when its state is succeeded, so call Get Media Upload Status until it is. A result without processing_info is ready to use.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

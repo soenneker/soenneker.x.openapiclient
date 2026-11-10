@@ -159,7 +159,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Share an exclusive (super-follower) tweet with all followers.</summary>
         public bool? ShareWithFollowers { get => _explicitNullValueShareWithFollowers; set { _explicitNullValueShareWithFollowers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("share_with_followers"); else _explicitNullProperties?.Remove("share_with_followers"); } }
         private bool? _explicitNullValueShareWithFollowers = default!;
-        /// <summary>Text of the tweet. Required unless media is provided.  Defaulted to an empty string so it is always sent: the backend&apos;s `tweet_text` variable is non-null and rejects an absent value.</summary>
+        /// <summary>Text of the Post. Required unless media is provided. At most 280 characters unless the account has X Premium.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Text { get => _explicitNullValueText; set { _explicitNullValueText = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("text"); else _explicitNullProperties?.Remove("text"); } }
