@@ -41,6 +41,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("most_recent_post_id") is { } nullNodeMostRecentPostId && nullNodeMostRecentPostId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MostRecentPostId = null;
             if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("org_only") is null) { _explicitNullValueOrgOnly = default!; _explicitNullProperties?.Remove("org_only"); }
+            else if (parseNode.GetChildNode("org_only") is { } nullNodeOrgOnly && nullNodeOrgOnly.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrgOnly = null;
             if (parseNode.GetChildNode("parody") is null) { _explicitNullValueParody = default!; _explicitNullProperties?.Remove("parody"); }
             else if (parseNode.GetChildNode("parody") is { } nullNodeParody && nullNodeParody.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Parody = null;
             if (parseNode.GetChildNode("pinned_post_id") is null) { _explicitNullValuePinnedPostId = default!; _explicitNullProperties?.Remove("pinned_post_id"); }
@@ -180,6 +182,9 @@ namespace Soenneker.X.OpenApiClient.Models
         public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
+        /// <summary>Indicates if this User is an org-only bot, which only members of its developer account can add to group chats. Omitted when it can&apos;t be determined for you, so it is never reported as false in that case. A bot can read its own value with its own token.</summary>
+        public bool? OrgOnly { get => _explicitNullValueOrgOnly; set { _explicitNullValueOrgOnly = value; AdditionalData?.Remove("org_only"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("org_only"); else _explicitNullProperties?.Remove("org_only"); } }
+        private bool? _explicitNullValueOrgOnly = default!;
         /// <summary>Indicates if this User is a parody account.</summary>
         public bool? Parody { get => _explicitNullValueParody; set { _explicitNullValueParody = value; AdditionalData?.Remove("parody"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("parody"); else _explicitNullProperties?.Remove("parody"); } }
         private bool? _explicitNullValueParody = default!;
@@ -348,6 +353,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "location", n => { Location = n.GetStringValue(); } },
                 { "most_recent_post_id", n => { MostRecentPostId = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
+                { "org_only", n => { OrgOnly = n.GetBoolValue(); } },
                 { "parody", n => { Parody = n.GetBoolValue(); } },
                 { "pinned_post_id", n => { PinnedPostId = n.GetStringValue(); } },
                 { "profile_banner_url", n => { ProfileBannerUrl = n.GetStringValue(); } },
@@ -387,6 +393,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("location", Location);
             writer.WriteStringValue("most_recent_post_id", MostRecentPostId);
             writer.WriteStringValue("name", Name);
+            writer.WriteBoolValue("org_only", OrgOnly);
             writer.WriteBoolValue("parody", Parody);
             writer.WriteStringValue("pinned_post_id", PinnedPostId);
             writer.WriteStringValue("profile_banner_url", ProfileBannerUrl);

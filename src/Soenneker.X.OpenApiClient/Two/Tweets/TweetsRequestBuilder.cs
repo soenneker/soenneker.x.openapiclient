@@ -118,7 +118,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetPostsByIdsResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetPostsByIdsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Media in media.media_ids is attached in the order given; get the ids by uploading each image with Upload Media, or a video with Initialize Media Upload. Supports paid partnership disclosure via the paid_partnership field.
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Media in media.media_ids is attached in the order given; get the ids by uploading each image with Upload Media, or a video with Initialize Media Upload. Supports paid partnership disclosure via the paid_partnership field. To share a clip of another Post&apos;s video, set clip to that Post&apos;s id and a range of 5 to 60 seconds.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.CreatePostsResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -162,7 +162,7 @@ namespace Soenneker.X.OpenApiClient.Two.Tweets
             return requestInfo;
         }
         /// <summary>
-        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Media in media.media_ids is attached in the order given; get the ids by uploading each image with Upload Media, or a video with Initialize Media Upload. Supports paid partnership disclosure via the paid_partnership field.
+        /// Creates a new Post for the authenticated user, or edits an existing Post when edit_options are provided. Media in media.media_ids is attached in the order given; get the ids by uploading each image with Upload Media, or a video with Initialize Media Upload. Supports paid partnership disclosure via the paid_partnership field. To share a clip of another Post&apos;s video, set clip to that Post&apos;s id and a range of 5 to 60 seconds.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>

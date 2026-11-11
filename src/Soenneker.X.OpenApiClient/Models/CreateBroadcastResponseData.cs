@@ -25,6 +25,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
             if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
             else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("live_category_id") is null) { _explicitNullValueLiveCategoryId = default!; _explicitNullProperties?.Remove("live_category_id"); }
+            else if (parseNode.GetChildNode("live_category_id") is { } nullNodeLiveCategoryId && nullNodeLiveCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveCategoryId = null;
             if (parseNode.GetChildNode("media_key") is null) { _explicitNullValueMediaKey = default!; _explicitNullProperties?.Remove("media_key"); }
             else if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
             if (parseNode.GetChildNode("share_url") is null) { _explicitNullValueShareUrl = default!; _explicitNullProperties?.Remove("share_url"); }
@@ -73,6 +75,16 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
+#endif
+        /// <summary>The broadcast&apos;s live category. Missing when it has none.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; AdditionalData?.Remove("live_category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string? _explicitNullValueLiveCategoryId = default!;
+#nullable restore
+#else
+        public string LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; AdditionalData?.Remove("live_category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string _explicitNullValueLiveCategoryId = default!;
 #endif
         /// <summary>Media key of the broadcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -163,6 +175,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "chat_option", n => { ChatOption = n.GetIntValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "live_category_id", n => { LiveCategoryId = n.GetStringValue(); } },
                 { "media_key", n => { MediaKey = n.GetStringValue(); } },
                 { "share_url", n => { ShareUrl = n.GetStringValue(); } },
                 { "start_ms", n => { StartMs = n.GetStringValue(); } },
@@ -182,6 +195,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteIntValue("chat_option", ChatOption);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("live_category_id", LiveCategoryId);
             writer.WriteStringValue("media_key", MediaKey);
             writer.WriteStringValue("share_url", ShareUrl);
             writer.WriteStringValue("start_ms", StartMs);

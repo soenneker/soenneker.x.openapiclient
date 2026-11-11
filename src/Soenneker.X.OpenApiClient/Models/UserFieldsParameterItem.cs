@@ -48,6 +48,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Name,
         #pragma warning restore CS1591
+        [EnumMember(Value = "org_only")]
+        #pragma warning disable CS1591
+        OrgOnly,
+        #pragma warning restore CS1591
         [EnumMember(Value = "parody")]
         #pragma warning disable CS1591
         Parody,

@@ -40,7 +40,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
         {
         }
         /// <summary>
-        /// Deletes a bot account from the calling app&apos;s project.
+        /// Deletes a bot account from the calling app&apos;s project. With an OAuth 2.0 user token, the user must be an admin of the project&apos;s developer account. On API Connect, where the request bills the user&apos;s own account, the bot is deleted from the user&apos;s project instead.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteBotResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Soenneker.X.OpenApiClient.Two.Bots.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateBotResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateBotResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a bot account from the calling app&apos;s project.
+        /// Deletes a bot account from the calling app&apos;s project. With an OAuth 2.0 user token, the user must be an admin of the project&apos;s developer account. On API Connect, where the request bills the user&apos;s own account, the bot is deleted from the user&apos;s project instead.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

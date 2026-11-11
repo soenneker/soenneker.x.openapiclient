@@ -19,6 +19,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("card_uri") is null) { _explicitNullValueCardUri = default!; _explicitNullProperties?.Remove("card_uri"); }
             else if (parseNode.GetChildNode("card_uri") is { } nullNodeCardUri && nullNodeCardUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardUri = null;
+            if (parseNode.GetChildNode("clip") is null) { _explicitNullValueClip = default!; _explicitNullProperties?.Remove("clip"); }
+            else if (parseNode.GetChildNode("clip") is { } nullNodeClip && nullNodeClip.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Clip = null;
             if (parseNode.GetChildNode("community_id") is null) { _explicitNullValueCommunityId = default!; _explicitNullProperties?.Remove("community_id"); }
             else if (parseNode.GetChildNode("community_id") is { } nullNodeCommunityId && nullNodeCommunityId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CommunityId = null;
             if (parseNode.GetChildNode("direct_message_deep_link") is null) { _explicitNullValueDirectMessageDeepLink = default!; _explicitNullProperties?.Remove("direct_message_deep_link"); }
@@ -60,6 +62,16 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string CardUri { get => _explicitNullValueCardUri; set { _explicitNullValueCardUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card_uri"); else _explicitNullProperties?.Remove("card_uri"); } }
         private string _explicitNullValueCardUri = default!;
+#endif
+        /// <summary>The clip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsClip? Clip { get => _explicitNullValueClip; set { _explicitNullValueClip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip"); else _explicitNullProperties?.Remove("clip"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsClip? _explicitNullValueClip = default!;
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.CreatePostsClip Clip { get => _explicitNullValueClip; set { _explicitNullValueClip = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("clip"); else _explicitNullProperties?.Remove("clip"); } }
+        private global::Soenneker.X.OpenApiClient.Models.CreatePostsClip _explicitNullValueClip = default!;
 #endif
         /// <summary>Community to post the tweet to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -188,6 +200,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "card_uri", n => { CardUri = n.GetStringValue(); } },
+                { "clip", n => { Clip = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsClip>(global::Soenneker.X.OpenApiClient.Models.CreatePostsClip.CreateFromDiscriminatorValue); } },
                 { "community_id", n => { CommunityId = n.GetStringValue(); } },
                 { "direct_message_deep_link", n => { DirectMessageDeepLink = n.GetStringValue(); } },
                 { "edit_options", n => { EditOptions = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions>(global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions.CreateFromDiscriminatorValue); } },
@@ -213,6 +226,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("card_uri", CardUri);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsClip>("clip", Clip);
             writer.WriteStringValue("community_id", CommunityId);
             writer.WriteStringValue("direct_message_deep_link", DirectMessageDeepLink);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsEditOptions>("edit_options", EditOptions);

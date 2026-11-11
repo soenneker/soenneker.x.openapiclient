@@ -19,6 +19,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("chat_option") is null) { _explicitNullValueChatOption = default!; _explicitNullProperties?.Remove("chat_option"); }
             else if (parseNode.GetChildNode("chat_option") is { } nullNodeChatOption && nullNodeChatOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatOption = null;
+            if (parseNode.GetChildNode("live_category_id") is null) { _explicitNullValueLiveCategoryId = default!; _explicitNullProperties?.Remove("live_category_id"); }
+            else if (parseNode.GetChildNode("live_category_id") is { } nullNodeLiveCategoryId && nullNodeLiveCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveCategoryId = null;
             if (parseNode.GetChildNode("locale") is null) { _explicitNullValueLocale = default!; _explicitNullProperties?.Remove("locale"); }
             else if (parseNode.GetChildNode("locale") is { } nullNodeLocale && nullNodeLocale.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Locale = null;
             if (parseNode.GetChildNode("should_not_tweet") is null) { _explicitNullValueShouldNotTweet = default!; _explicitNullProperties?.Remove("should_not_tweet"); }
@@ -32,6 +34,16 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host&apos;s subscribers, 6 accounts followed by an account the host follows.</summary>
         public int? ChatOption { get => _explicitNullValueChatOption; set { _explicitNullValueChatOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_option"); else _explicitNullProperties?.Remove("chat_option"); } }
         private int? _explicitNullValueChatOption = default!;
+        /// <summary>The live category the host picked, e.g. `gaming`. Ids come from the live category list in the docs; an unknown id is a 400. Ignored when the source already has a live broadcast.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string? _explicitNullValueLiveCategoryId = default!;
+#nullable restore
+#else
+        public string LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string _explicitNullValueLiveCategoryId = default!;
+#endif
         /// <summary>Broadcast language, e.g. `en`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,6 +96,7 @@ namespace Soenneker.X.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chat_option", n => { ChatOption = n.GetIntValue(); } },
+                { "live_category_id", n => { LiveCategoryId = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "should_not_tweet", n => { ShouldNotTweet = n.GetBoolValue(); } },
                 { "source_id", n => { SourceId = n.GetStringValue(); } },
@@ -98,6 +111,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("chat_option", ChatOption);
+            writer.WriteStringValue("live_category_id", LiveCategoryId);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("should_not_tweet", ShouldNotTweet);
             writer.WriteStringValue("source_id", SourceId);
