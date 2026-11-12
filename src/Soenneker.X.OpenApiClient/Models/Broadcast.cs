@@ -41,6 +41,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("is_high_latency") is { } nullNodeIsHighLatency && nullNodeIsHighLatency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsHighLatency = null;
             if (parseNode.GetChildNode("language") is null) { _explicitNullValueLanguage = default!; _explicitNullProperties?.Remove("language"); }
             else if (parseNode.GetChildNode("language") is { } nullNodeLanguage && nullNodeLanguage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Language = null;
+            if (parseNode.GetChildNode("live_category_id") is null) { _explicitNullValueLiveCategoryId = default!; _explicitNullProperties?.Remove("live_category_id"); }
+            else if (parseNode.GetChildNode("live_category_id") is { } nullNodeLiveCategoryId && nullNodeLiveCategoryId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LiveCategoryId = null;
             if (parseNode.GetChildNode("media_key") is null) { _explicitNullValueMediaKey = default!; _explicitNullProperties?.Remove("media_key"); }
             else if (parseNode.GetChildNode("media_key") is { } nullNodeMediaKey && nullNodeMediaKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MediaKey = null;
             if (parseNode.GetChildNode("scheduled_end_ms") is null) { _explicitNullValueScheduledEndMs = default!; _explicitNullProperties?.Remove("scheduled_end_ms"); }
@@ -164,6 +166,16 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Language { get => _explicitNullValueLanguage; set { _explicitNullValueLanguage = value; AdditionalData?.Remove("language"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("language"); else _explicitNullProperties?.Remove("language"); } }
         private string _explicitNullValueLanguage = default!;
+#endif
+        /// <summary>Id of the live category the host picked for the broadcast, as listed by GET /2/broadcasts/categories. Omitted when the broadcast has none.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; AdditionalData?.Remove("live_category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string? _explicitNullValueLiveCategoryId = default!;
+#nullable restore
+#else
+        public string LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; AdditionalData?.Remove("live_category_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
+        private string _explicitNullValueLiveCategoryId = default!;
 #endif
         /// <summary>The media_key property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -335,6 +347,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "image_url_small", n => { ImageUrlSmall = n.GetStringValue(); } },
                 { "is_high_latency", n => { IsHighLatency = n.GetBoolValue(); } },
                 { "language", n => { Language = n.GetStringValue(); } },
+                { "live_category_id", n => { LiveCategoryId = n.GetStringValue(); } },
                 { "media_key", n => { MediaKey = n.GetStringValue(); } },
                 { "scheduled_end_ms", n => { ScheduledEndMs = n.GetStringValue(); } },
                 { "scheduled_start_ms", n => { ScheduledStartMs = n.GetStringValue(); } },
@@ -370,6 +383,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("image_url_small", ImageUrlSmall);
             writer.WriteBoolValue("is_high_latency", IsHighLatency);
             writer.WriteStringValue("language", Language);
+            writer.WriteStringValue("live_category_id", LiveCategoryId);
             writer.WriteStringValue("media_key", MediaKey);
             writer.WriteStringValue("scheduled_end_ms", ScheduledEndMs);
             writer.WriteStringValue("scheduled_start_ms", ScheduledStartMs);

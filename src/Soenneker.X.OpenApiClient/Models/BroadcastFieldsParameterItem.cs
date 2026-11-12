@@ -56,6 +56,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Language,
         #pragma warning restore CS1591
+        [EnumMember(Value = "live_category_id")]
+        #pragma warning disable CS1591
+        LiveCategoryId,
+        #pragma warning restore CS1591
         [EnumMember(Value = "media_key")]
         #pragma warning disable CS1591
         MediaKey,

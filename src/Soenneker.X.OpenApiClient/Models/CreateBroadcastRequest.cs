@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <summary>Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host&apos;s subscribers, 6 accounts followed by an account the host follows.</summary>
         public int? ChatOption { get => _explicitNullValueChatOption; set { _explicitNullValueChatOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_option"); else _explicitNullProperties?.Remove("chat_option"); } }
         private int? _explicitNullValueChatOption = default!;
-        /// <summary>The live category the host picked, e.g. `gaming`. Ids come from the live category list in the docs; an unknown id is a 400. Ignored when the source already has a live broadcast.</summary>
+        /// <summary>The live category the host picked, e.g. `gaming`. Ids come from GET /2/broadcasts/categories; an unknown id is a 400. Ignored when the source already has a live broadcast.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? LiveCategoryId { get => _explicitNullValueLiveCategoryId; set { _explicitNullValueLiveCategoryId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("live_category_id"); else _explicitNullProperties?.Remove("live_category_id"); } }
