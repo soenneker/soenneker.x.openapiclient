@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account
         {
         }
         /// <summary>
-        /// Returns the authenticated user&apos;s X Developer Platform account. A user without an account gets a resource-not-found error entry.
+        /// Returns the X Developer Platform account that is billed for the authenticated user&apos;s API access. A user with no such account gets a resource-not-found error entry.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetDeveloperAccountResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -82,7 +82,7 @@ namespace Soenneker.X.OpenApiClient.Two.Account
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.EnsureAccountResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.EnsureAccountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns the authenticated user&apos;s X Developer Platform account. A user without an account gets a resource-not-found error entry.
+        /// Returns the X Developer Platform account that is billed for the authenticated user&apos;s API access. A user with no such account gets a resource-not-found error entry.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

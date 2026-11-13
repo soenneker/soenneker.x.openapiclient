@@ -17,6 +17,8 @@ namespace Soenneker.X.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            if (parseNode.GetChildNode("additional_source_ids") is null) { _explicitNullValueAdditionalSourceIds = default!; _explicitNullProperties?.Remove("additional_source_ids"); }
+            else if (parseNode.GetChildNode("additional_source_ids") is { } nullNodeAdditionalSourceIds && nullNodeAdditionalSourceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalSourceIds = null;
             if (parseNode.GetChildNode("chat_option") is null) { _explicitNullValueChatOption = default!; _explicitNullProperties?.Remove("chat_option"); }
             else if (parseNode.GetChildNode("chat_option") is { } nullNodeChatOption && nullNodeChatOption.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ChatOption = null;
             if (parseNode.GetChildNode("live_category_id") is null) { _explicitNullValueLiveCategoryId = default!; _explicitNullProperties?.Remove("live_category_id"); }
@@ -31,6 +33,16 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("title") is { } nullNodeTitle && nullNodeTitle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Title = null;
         }
 
+        /// <summary>Ids of further sources to go live on together with `source_id`, one per video format, at most 2, each a source&apos;s `id` from GET /2/sources. `source_id` comes first; duplicates are ignored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<string>? AdditionalSourceIds { get => _explicitNullValueAdditionalSourceIds; set { _explicitNullValueAdditionalSourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_source_ids"); else _explicitNullProperties?.Remove("additional_source_ids"); } }
+        private List<string>? _explicitNullValueAdditionalSourceIds = default!;
+#nullable restore
+#else
+        public List<string> AdditionalSourceIds { get => _explicitNullValueAdditionalSourceIds; set { _explicitNullValueAdditionalSourceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_source_ids"); else _explicitNullProperties?.Remove("additional_source_ids"); } }
+        private List<string> _explicitNullValueAdditionalSourceIds = default!;
+#endif
         /// <summary>Who can chat: 0 default, 1 chat off, 2 everyone, 3 verified accounts, 4 accounts the host follows, 5 the host&apos;s subscribers, 6 accounts followed by an account the host follows.</summary>
         public int? ChatOption { get => _explicitNullValueChatOption; set { _explicitNullValueChatOption = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chat_option"); else _explicitNullProperties?.Remove("chat_option"); } }
         private int? _explicitNullValueChatOption = default!;
@@ -95,6 +107,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "additional_source_ids", n => { AdditionalSourceIds = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "chat_option", n => { ChatOption = n.GetIntValue(); } },
                 { "live_category_id", n => { LiveCategoryId = n.GetStringValue(); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
@@ -110,6 +123,7 @@ namespace Soenneker.X.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfPrimitiveValues<string>("additional_source_ids", AdditionalSourceIds);
             writer.WriteIntValue("chat_option", ChatOption);
             writer.WriteStringValue("live_category_id", LiveCategoryId);
             writer.WriteStringValue("locale", Locale);
