@@ -44,6 +44,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         PublicMetrics,
         #pragma warning restore CS1591
+        [EnumMember(Value = "revenue")]
+        #pragma warning disable CS1591
+        Revenue,
+        #pragma warning restore CS1591
         [EnumMember(Value = "type")]
         #pragma warning disable CS1591
         Type,

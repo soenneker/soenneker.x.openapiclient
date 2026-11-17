@@ -35,6 +35,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("promoted_metrics") is { } nullNodePromotedMetrics && nullNodePromotedMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PromotedMetrics = null;
             if (parseNode.GetChildNode("public_metrics") is null) { _explicitNullValuePublicMetrics = default!; _explicitNullProperties?.Remove("public_metrics"); }
             else if (parseNode.GetChildNode("public_metrics") is { } nullNodePublicMetrics && nullNodePublicMetrics.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PublicMetrics = null;
+            if (parseNode.GetChildNode("revenue") is null) { _explicitNullValueRevenue = default!; _explicitNullProperties?.Remove("revenue"); }
+            else if (parseNode.GetChildNode("revenue") is { } nullNodeRevenue && nullNodeRevenue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Revenue = null;
             if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
             else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
@@ -123,6 +125,16 @@ namespace Soenneker.X.OpenApiClient.Models
         public global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics PublicMetrics { get => _explicitNullValuePublicMetrics; set { _explicitNullValuePublicMetrics = value; AdditionalData?.Remove("public_metrics"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("public_metrics"); else _explicitNullProperties?.Remove("public_metrics"); } }
         private global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics _explicitNullValuePublicMetrics = default!;
 #endif
+        /// <summary>Lifetime revenue earned by the media. Only available to the user whouploaded the video, and only to apps holding the `media.library.read` scope.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.MediaRevenue? Revenue { get => _explicitNullValueRevenue; set { _explicitNullValueRevenue = value; AdditionalData?.Remove("revenue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenue"); else _explicitNullProperties?.Remove("revenue"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaRevenue? _explicitNullValueRevenue = default!;
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.MediaRevenue Revenue { get => _explicitNullValueRevenue; set { _explicitNullValueRevenue = value; AdditionalData?.Remove("revenue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("revenue"); else _explicitNullProperties?.Remove("revenue"); } }
+        private global::Soenneker.X.OpenApiClient.Models.MediaRevenue _explicitNullValueRevenue = default!;
+#endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -190,6 +202,7 @@ namespace Soenneker.X.OpenApiClient.Models
                 { "preview_image_url", n => { PreviewImageUrl = n.GetStringValue(); } },
                 { "promoted_metrics", n => { PromotedMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics.CreateFromDiscriminatorValue); } },
                 { "public_metrics", n => { PublicMetrics = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics>(global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics.CreateFromDiscriminatorValue); } },
+                { "revenue", n => { Revenue = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaRevenue>(global::Soenneker.X.OpenApiClient.Models.MediaRevenue.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "url", n => { Url = n.GetStringValue(); } },
                 { "variants", n => { Variants = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>(global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -212,6 +225,7 @@ namespace Soenneker.X.OpenApiClient.Models
             writer.WriteStringValue("preview_image_url", PreviewImageUrl);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPromotedMetrics>("promoted_metrics", PromotedMetrics);
             writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaPublicMetrics>("public_metrics", PublicMetrics);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.MediaRevenue>("revenue", Revenue);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.MediaVariantsItem>("variants", Variants);

@@ -4,8 +4,10 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Media.Amplify;
 using Soenneker.X.OpenApiClient.Two.Media.Analytics;
 using Soenneker.X.OpenApiClient.Two.Media.Item;
+using Soenneker.X.OpenApiClient.Two.Media.Library;
 using Soenneker.X.OpenApiClient.Two.Media.Metadata;
 using Soenneker.X.OpenApiClient.Two.Media.Subtitles;
 using Soenneker.X.OpenApiClient.Two.Media.Upload;
@@ -22,10 +24,20 @@ namespace Soenneker.X.OpenApiClient.Two.Media
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MediaRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The amplify property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Media.Amplify.AmplifyRequestBuilder Amplify
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Media.Amplify.AmplifyRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The analytics property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Media.Analytics.AnalyticsRequestBuilder Analytics
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Media.Analytics.AnalyticsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The library property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Media.Library.LibraryRequestBuilder Library
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Media.Library.LibraryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The metadata property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Media.Metadata.MetadataRequestBuilder Metadata
