@@ -34,7 +34,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
         {
         }
         /// <summary>
-        /// Retrieves trending topics for a specific location identified by its WOEID.
+        /// Retrieves trending topics for a specific location identified by its WOEID. `meta.location` describes that location: its `woeid` and `name`, and when they are known its `country`, `country_code`, `place_type` (`town`, `country` or `supername`) and `parent_id`, the WOEID of the place that contains it.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.GetTrendsByWoeidResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -57,7 +57,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetTrendsByWoeidResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetTrendsByWoeidResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Retrieves trending topics for a specific location identified by its WOEID.
+        /// Retrieves trending topics for a specific location identified by its WOEID. `meta.location` describes that location: its `woeid` and `name`, and when they are known its `country`, `country_code`, `place_type` (`town`, `country` or `supername`) and `parent_id`, the WOEID of the place that contains it.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item
             return new global::Soenneker.X.OpenApiClient.Two.Trends.By.Woeid.Item.WithWoeItemRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Retrieves trending topics for a specific location identified by its WOEID.
+        /// Retrieves trending topics for a specific location identified by its WOEID. `meta.location` describes that location: its `woeid` and `name`, and when they are known its `country`, `country_code`, `place_type` (`town`, `country` or `supername`) and `parent_id`, the WOEID of the place that contains it.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithWoeItemRequestBuilderGetQueryParameters 
