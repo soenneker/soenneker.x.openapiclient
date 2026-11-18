@@ -100,7 +100,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "allowed_countries", n => { AllowedCountries = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "blocked_advertiser_category_ids", n => { BlockedAdvertiserCategoryIds = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },

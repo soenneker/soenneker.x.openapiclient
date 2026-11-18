@@ -28,6 +28,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         Id,
         #pragma warning restore CS1591
+        [EnumMember(Value = "relay_source")]
+        #pragma warning disable CS1591
+        RelaySource,
+        #pragma warning restore CS1591
         [EnumMember(Value = "reply_to")]
         #pragma warning disable CS1591
         ReplyTo,

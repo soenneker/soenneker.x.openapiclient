@@ -68,7 +68,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "allow_dms_from", n => { AllowDmsFrom = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsRequestAllowDmsFrom>(); } },
                 { "always_allow_dms_from_subscribers", n => { AlwaysAllowDmsFromSubscribers = n.GetBoolValue(); } },

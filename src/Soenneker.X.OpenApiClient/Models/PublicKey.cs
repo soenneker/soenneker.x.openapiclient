@@ -116,7 +116,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "identity_public_key_signature", n => { IdentityPublicKeySignature = n.GetStringValue(); } },
                 { "juicebox_config", n => { JuiceboxConfig = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty>(global::Soenneker.X.OpenApiClient.Models.PublicKeyJuiceboxConfigProperty.CreateFromDiscriminatorValue); } },

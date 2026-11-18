@@ -90,7 +90,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "event_type", n => { EventType = n.GetStringValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetStringValue(); } },

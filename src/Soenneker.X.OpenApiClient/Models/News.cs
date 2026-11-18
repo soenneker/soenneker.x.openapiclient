@@ -164,7 +164,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "category", n => { Category = n.GetStringValue(); } },
                 { "cluster_posts_results", n => { ClusterPostsResults = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem>(global::Soenneker.X.OpenApiClient.Models.NewsClusterPostsResultsItem.CreateFromDiscriminatorValue)?.AsList(); } },

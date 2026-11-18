@@ -92,6 +92,31 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.GetBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.GetBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Changes the title, chat option or live category of one of the authenticated user&apos;s broadcasts and returns the broadcast. Send at least one of `title`, `chat_option` and `live_category_id`; fields left out keep their values. A broadcast can be updated before it starts, while it is live and after it has ended. A 409 `conflict` means the broadcast can&apos;t be edited, for example because it was deleted or moderated.
+        /// </summary>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastResponse"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastResponse?> PutAsync(global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastResponse> PutAsync(global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
         /// Deletes one of the authenticated user&apos;s broadcasts, scheduled or ended, including its replay. A running broadcast must be ended first.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -127,6 +152,28 @@ namespace Soenneker.X.OpenApiClient.Two.Broadcasts.Item
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
+        /// Changes the title, chat option or live category of one of the authenticated user&apos;s broadcasts and returns the broadcast. Send at least one of `title`, `chat_option` and `live_category_id`; fields left out keep their values. A broadcast can be updated before it starts, while it is live and after it has ended. A 409 `conflict` means the broadcast can&apos;t be edited, for example because it was deleted or moderated.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.X.OpenApiClient.Models.UpdateBroadcastRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>

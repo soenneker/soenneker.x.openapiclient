@@ -92,7 +92,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "encoded_message_event_detail", n => { EncodedMessageEventDetail = n.GetStringValue(); } },
                 { "message_event_signature", n => { MessageEventSignature = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ArchiveChatConversationActionSignaturesMessageEventSignature>(global::Soenneker.X.OpenApiClient.Models.ArchiveChatConversationActionSignaturesMessageEventSignature.CreateFromDiscriminatorValue); } },

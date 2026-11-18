@@ -109,7 +109,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "cap_reset_day", n => { CapResetDay = n.GetIntValue(); } },
                 { "daily_client_app_usage", n => { DailyClientAppUsage = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem>(global::Soenneker.X.OpenApiClient.Models.UsageDailyClientAppUsageItem.CreateFromDiscriminatorValue)?.AsList(); } },

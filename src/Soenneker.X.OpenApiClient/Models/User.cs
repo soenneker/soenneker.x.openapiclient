@@ -339,7 +339,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(31)
             {
                 { "active_follower_count", n => { ActiveFollowerCount = n.GetIntValue(); } },
                 { "affiliation", n => { Affiliation = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.UserAffiliation>(global::Soenneker.X.OpenApiClient.Models.UserAffiliation.CreateFromDiscriminatorValue); } },

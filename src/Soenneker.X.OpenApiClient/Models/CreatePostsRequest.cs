@@ -197,7 +197,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "card_uri", n => { CardUri = n.GetStringValue(); } },
                 { "clip", n => { Clip = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreatePostsClip>(global::Soenneker.X.OpenApiClient.Models.CreatePostsClip.CreateFromDiscriminatorValue); } },

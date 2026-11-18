@@ -93,7 +93,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "cashtags", n => { Cashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventEntitiesCashtagsItem>(global::Soenneker.X.OpenApiClient.Models.DmEventEntitiesCashtagsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "hashtags", n => { Hashtags = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DmEventEntitiesHashtagsItem>(global::Soenneker.X.OpenApiClient.Models.DmEventEntitiesHashtagsItem.CreateFromDiscriminatorValue)?.AsList(); } },

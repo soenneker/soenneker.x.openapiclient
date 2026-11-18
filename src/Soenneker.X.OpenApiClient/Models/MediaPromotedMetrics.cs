@@ -75,7 +75,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(6)
             {
                 { "playback_0_count", n => { Playback0Count = n.GetLongValue(); } },
                 { "playback_100_count", n => { Playback100Count = n.GetLongValue(); } },

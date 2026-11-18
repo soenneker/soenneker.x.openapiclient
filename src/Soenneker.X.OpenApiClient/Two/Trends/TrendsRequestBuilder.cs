@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Two.Trends.By;
+using Soenneker.X.OpenApiClient.Two.Trends.Locations;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +20,11 @@ namespace Soenneker.X.OpenApiClient.Two.Trends
         public global::Soenneker.X.OpenApiClient.Two.Trends.By.ByRequestBuilder By
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Trends.By.ByRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The locations property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Trends.Locations.LocationsRequestBuilder Locations
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Trends.Locations.LocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Trends.TrendsRequestBuilder"/> and sets the default values.

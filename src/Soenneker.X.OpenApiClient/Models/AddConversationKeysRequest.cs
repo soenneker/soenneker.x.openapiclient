@@ -92,7 +92,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "action_signatures", n => { ActionSignatures = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures>(global::Soenneker.X.OpenApiClient.Models.AddConversationKeysActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "base64_encoded_key_rotation", n => { Base64EncodedKeyRotation = n.GetStringValue(); } },

@@ -85,7 +85,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "action_signatures", n => { ActionSignatures = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures>(global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "delete_message_action", n => { var parsed = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.DeleteChatMessagesRequestDeleteMessageAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeleteMessageAction = default; _explicitNullProperties?.Remove("delete_message_action"); AdditionalData["delete_message_action"] = unknown; } else { DeleteMessageAction = parsed; AdditionalData.Remove("delete_message_action"); } } },

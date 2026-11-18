@@ -76,7 +76,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "allow_dms_from", n => { var parsed = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.UpdateChatSettingsResponseDataAllowDmsFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAllowDmsFrom = default; _explicitNullProperties?.Remove("allow_dms_from"); AdditionalData["allow_dms_from"] = unknown; } else { AllowDmsFrom = parsed; AdditionalData.Remove("allow_dms_from"); } } },
                 { "always_allow_dms_from_subscribers", n => { AlwaysAllowDmsFromSubscribers = n.GetBoolValue(); } },

@@ -200,7 +200,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(13)
             {
                 { "allow_download_status", n => { AllowDownloadStatus = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataAllowDownloadStatus>(global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataAllowDownloadStatus.CreateFromDiscriminatorValue); } },
                 { "alt_text", n => { AltText = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataAltText>(global::Soenneker.X.OpenApiClient.Models.CreateMediaMetadataMetadataAltText.CreateFromDiscriminatorValue); } },

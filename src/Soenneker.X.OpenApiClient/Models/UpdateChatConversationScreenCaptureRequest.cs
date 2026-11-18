@@ -70,7 +70,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "blocking", n => { Blocking = n.GetBoolValue(); } },
                 { "blocking_action_signatures", n => { BlockingActionSignatures = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures>(global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationScreenCaptureBlockingActionSignatures.CreateFromDiscriminatorValue)?.AsList(); } },

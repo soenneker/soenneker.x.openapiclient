@@ -128,7 +128,7 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "calls", n => { Calls = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Call>(global::Soenneker.X.OpenApiClient.Models.Call.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "media", n => { Media = n.GetCollectionOfObjectValues<global::Soenneker.X.OpenApiClient.Models.Media>(global::Soenneker.X.OpenApiClient.Models.Media.CreateFromDiscriminatorValue)?.AsList(); } },
