@@ -209,10 +209,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
               "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "dm.read"
             ]
           },
           {
@@ -283,9 +283,9 @@
           {
             "OAuth2UserToken": [
               "dm.read",
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -627,8 +627,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "like.read",
-              "tweet.read"
+              "tweet.read",
+              "like.read"
             ]
           },
           {
@@ -1448,8 +1448,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -1554,9 +1554,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "broadcast.read",
-              "tweet.read"
+              "broadcast.read"
             ]
           },
           {
@@ -1611,8 +1611,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2019,8 +2019,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2268,8 +2268,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2327,8 +2327,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2453,8 +2453,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2606,8 +2606,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -2675,8 +2675,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2744,8 +2744,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -2812,8 +2812,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -3736,8 +3736,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.read",
-              "users.read"
+              "users.read",
+              "dm.read"
             ]
           },
           {
@@ -3808,9 +3808,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "dm.write",
-              "tweet.read"
+              "dm.write"
             ]
           },
           {
@@ -3933,8 +3933,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4074,9 +4074,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4155,9 +4155,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -4227,9 +4227,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.write",
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "users.read"
             ]
           },
           {
@@ -4469,9 +4469,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.write",
               "users.read",
-              "dm.write"
+              "tweet.read"
             ]
           },
           {
@@ -4543,9 +4543,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.write"
+              "dm.write",
+              "tweet.read"
             ]
           },
           {
@@ -4617,8 +4617,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -4691,9 +4691,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -4763,9 +4763,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -4849,9 +4849,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "dm.read",
               "users.read",
-              "dm.read"
+              "tweet.read"
             ]
           },
           {
@@ -4923,9 +4923,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -5072,9 +5072,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.read",
-              "users.read"
+              "dm.read"
             ]
           },
           {
@@ -5146,8 +5146,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.write"
             ]
           },
@@ -5221,8 +5221,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5293,9 +5293,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5513,9 +5513,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -5670,9 +5670,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -5744,8 +5744,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5817,8 +5817,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -5889,9 +5889,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -5965,9 +5965,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "dm.read"
+              "dm.read",
+              "tweet.read"
             ]
           },
           {
@@ -6038,9 +6038,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -6112,8 +6112,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "users.read",
+              "dm.write",
               "tweet.read"
             ]
           },
@@ -6238,9 +6238,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "dm.write",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -6597,9 +6597,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "tweet.read",
               "dm.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -6664,8 +6664,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "dm.read"
             ]
           },
@@ -6728,9 +6728,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "dm.write"
             ]
           },
           {
@@ -6785,9 +6785,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "dm.read",
               "tweet.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -6846,8 +6846,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "users.read",
-              "dm.write"
+              "dm.write",
+              "users.read"
             ]
           },
           {
@@ -6936,8 +6936,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -6999,9 +6999,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -7688,8 +7688,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
+              "dm.write",
               "users.read"
             ]
           },
@@ -7871,9 +7871,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "dm.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -7952,8 +7952,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -8145,9 +8145,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "dm.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8250,8 +8250,8 @@
           {
             "OAuth2UserToken": [
               "dm.read",
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -8381,9 +8381,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "dm.read",
               "tweet.read",
-              "users.read",
-              "dm.read"
+              "users.read"
             ]
           },
           {
@@ -8837,10 +8837,10 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
+              "users.read",
               "tweet.read",
               "list.write",
-              "users.read"
+              "list.read"
             ]
           },
           {
@@ -8903,8 +8903,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
+              "list.write",
               "users.read"
             ]
           },
@@ -8972,9 +8972,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "list.read",
               "users.read",
-              "list.read"
+              "tweet.read"
             ]
           },
           {
@@ -9048,9 +9048,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "list.write"
             ]
           },
           {
@@ -9138,8 +9138,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "list.read"
             ]
           },
@@ -9231,9 +9231,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "list.read"
             ]
           },
           {
@@ -9304,9 +9304,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "list.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "list.write"
             ]
           },
           {
@@ -9380,9 +9380,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -9481,8 +9481,8 @@
           {
             "OAuth2UserToken": [
               "list.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -10855,8 +10855,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -11253,6 +11253,207 @@
             }
           }
         }
+      }
+    },
+    "/2/posts/drafts": {
+      "get": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Get Post Drafts",
+        "description": "Returns the authenticated user\u0027s Post drafts, newest first, in the fields of the Create or Edit Post body. thread holds the Posts after the first. A draft with unsupported_content is not listed in full: do not publish it from this list or delete it unless the user asks. Needs the tweet.write scope.",
+        "operationId": "GetPostDrafts",
+        "parameters": [
+          {
+            "name": "max_results",
+            "in": "query",
+            "description": "The maximum number of drafts to return.",
+            "schema": {
+              "maximum": 100,
+              "minimum": 1,
+              "type": "integer",
+              "format": "int32",
+              "default": 20
+            }
+          },
+          {
+            "name": "pagination_token",
+            "in": "query",
+            "description": "The meta.next_token of the previous page.",
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/GetPostDraftsResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "users.read",
+              "tweet.read",
+              "tweet.write"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      },
+      "post": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Create Post Draft",
+        "description": "Saves a Post draft to the authenticated user\u0027s X account without publishing it. Takes the body of Create or Edit Post, of which a draft stores text, media with tagged users, a reply and the AI and paid partnership disclosures. Any other field that is set is a 400 that names it.",
+        "operationId": "CreatePostDraft",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreatePostDraftRequest"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePostDraftResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemError"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePostDraftResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "tweet.read",
+              "tweet.write",
+              "users.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
+      }
+    },
+    "/2/posts/drafts/{id}": {
+      "delete": {
+        "tags": [
+          "Posts"
+        ],
+        "summary": "Delete Post Draft",
+        "description": "Deletes one of the authenticated user\u0027s Post drafts by its ID. The whole draft is deleted, including any part Get Post Drafts does not list, and cannot be restored. An ID that is not one of the user\u0027s drafts also returns deleted: true.",
+        "operationId": "DeletePostDraft",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The ID of the draft to delete.",
+            "required": true,
+            "schema": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The request has succeeded.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DeletePostDraftResponse"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "The request has failed.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              },
+              "application/problem\u002Bjson": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemError"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "OAuth2UserToken": [
+              "tweet.read",
+              "tweet.write",
+              "users.read"
+            ]
+          },
+          {
+            "UserToken": []
+          }
+        ]
       }
     },
     "/2/region": {
@@ -11724,8 +11925,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "space.read"
             ]
           },
@@ -11802,8 +12003,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
+              "users.read",
               "space.read"
             ]
           },
@@ -11897,8 +12098,8 @@
           {
             "OAuth2UserToken": [
               "space.read",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -11968,9 +12169,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "space.read",
-              "users.read",
-              "tweet.read"
+              "users.read"
             ]
           },
           {
@@ -12060,8 +12261,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "space.read",
+              "users.read",
               "tweet.read"
             ]
           }
@@ -12157,9 +12358,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "space.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -12433,9 +12634,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "tweet.write"
             ]
           },
           {
@@ -12528,8 +12729,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -14968,8 +15169,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "tweet.write",
+              "tweet.read",
               "users.read"
             ]
           },
@@ -15046,8 +15247,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15139,9 +15340,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "like.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15447,8 +15648,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15524,9 +15725,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.moderate.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -15781,8 +15982,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -15852,8 +16053,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16000,8 +16201,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16079,9 +16280,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "follows.read",
               "tweet.read",
-              "users.read",
-              "follows.read"
+              "users.read"
             ]
           },
           {
@@ -16159,9 +16360,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "tweet.read",
-              "follows.read",
-              "users.read"
+              "follows.read"
             ]
           },
           {
@@ -16213,8 +16414,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16286,9 +16487,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "dm.read"
+              "dm.read",
+              "users.read"
             ]
           },
           {
@@ -16464,8 +16665,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -16537,8 +16738,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
-              "users.read"
+              "users.read",
+              "tweet.read"
             ]
           },
           {
@@ -16719,9 +16920,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "block.read",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "block.read"
             ]
           },
           {
@@ -16789,9 +16990,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "block.write",
               "users.read",
-              "tweet.read"
+              "tweet.read",
+              "block.write"
             ]
           },
           {
@@ -16889,9 +17090,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "bookmark.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -16960,9 +17161,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "bookmark.write"
             ]
           }
         ]
@@ -17039,8 +17240,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -17120,8 +17321,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "bookmark.write",
-              "users.read"
+              "users.read",
+              "bookmark.write"
             ]
           }
         ]
@@ -17207,8 +17408,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "bookmark.read",
-              "users.read"
+              "users.read",
+              "bookmark.read"
             ]
           },
           {
@@ -17283,9 +17484,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
-              "bookmark.write"
+              "bookmark.write",
+              "tweet.read"
             ]
           }
         ]
@@ -17418,8 +17619,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.write",
-              "broadcast.read"
+              "broadcast.read",
+              "broadcast.write"
             ]
           },
           {
@@ -17696,9 +17897,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "dm.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -17758,9 +17959,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "dm.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "dm.write"
             ]
           },
           {
@@ -17848,9 +18049,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "list.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -17921,9 +18122,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "list.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -17997,9 +18198,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "tweet.read",
               "users.read",
-              "list.write",
-              "tweet.read"
+              "list.write"
             ]
           },
           {
@@ -18088,9 +18289,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "follows.read",
               "tweet.read",
-              "follows.read"
+              "users.read"
             ]
           },
           {
@@ -18182,9 +18383,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "follows.read",
+              "tweet.read",
               "users.read",
-              "tweet.read"
+              "follows.read"
             ]
           },
           {
@@ -18354,9 +18555,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
+              "like.read",
               "tweet.read",
-              "like.read"
+              "users.read"
             ]
           },
           {
@@ -18426,8 +18627,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "like.write",
+              "users.read",
               "tweet.read"
             ]
           },
@@ -18500,8 +18701,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "like.write"
+              "like.write",
+              "tweet.read"
             ]
           },
           {
@@ -18589,8 +18790,8 @@
           {
             "OAuth2UserToken": [
               "users.read",
-              "tweet.read",
-              "list.read"
+              "list.read",
+              "tweet.read"
             ]
           },
           {
@@ -18724,8 +18925,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -18976,8 +19177,8 @@
           {
             "OAuth2UserToken": [
               "tweet.read",
-              "list.read",
-              "users.read"
+              "users.read",
+              "list.read"
             ]
           },
           {
@@ -19049,9 +19250,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "list.read",
               "tweet.read",
-              "users.read",
-              "list.read"
+              "users.read"
             ]
           },
           {
@@ -19122,9 +19323,9 @@
         "security": [
           {
             "OAuth2UserToken": [
+              "users.read",
               "list.write",
-              "tweet.read",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -19340,9 +19541,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
+              "users.read",
               "dm.write",
-              "users.read"
+              "tweet.read"
             ]
           },
           {
@@ -19415,8 +19616,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "tweet.read",
               "users.read",
+              "tweet.read",
               "tweet.write"
             ]
           },
@@ -19489,9 +19690,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "tweet.read",
-              "tweet.write"
+              "tweet.write",
+              "users.read"
             ]
           },
           {
@@ -19834,8 +20035,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "broadcast.read",
-              "broadcast.write"
+              "broadcast.write",
+              "broadcast.read"
             ]
           },
           {
@@ -20123,8 +20324,8 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -20201,9 +20402,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "block.write",
               "tweet.read",
-              "users.read"
+              "users.read",
+              "block.write"
             ]
           },
           {
@@ -20277,9 +20478,9 @@
         "security": [
           {
             "OAuth2UserToken": [
-              "users.read",
               "follows.write",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -20354,8 +20555,8 @@
           {
             "OAuth2UserToken": [
               "mute.write",
-              "users.read",
-              "tweet.read"
+              "tweet.read",
+              "users.read"
             ]
           },
           {
@@ -24766,6 +24967,323 @@
           }
         }
       },
+      "CreatePostDraftClip": {
+        "required": [
+          "post_id",
+          "start_seconds",
+          "end_seconds"
+        ],
+        "type": "object",
+        "properties": {
+          "end_seconds": {
+            "minimum": 1,
+            "type": "integer",
+            "description": "Second of the video at which the clip ends. A clip is 5 to 60 seconds long and at most 30% of the video."
+          },
+          "post_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "The ID of the Post whose video is clipped. The Post must have exactly one video, longer than 2 minutes."
+          },
+          "start_seconds": {
+            "minimum": 0,
+            "type": "integer",
+            "description": "Second of the video at which the clip starts."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftEditOptions": {
+        "required": [
+          "previous_post_id"
+        ],
+        "type": "object",
+        "properties": {
+          "previous_post_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "The ID of the Post being edited."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftGeo": {
+        "required": [
+          "place_id"
+        ],
+        "type": "object",
+        "properties": {
+          "place_id": {
+            "type": "string",
+            "description": "Place ID for geo tagging."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftMedia": {
+        "required": [
+          "media_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "call_to_actions": {
+            "$ref": "#/components/schemas/CreatePostDraftMediaCallToActions"
+          },
+          "description": {
+            "type": "string",
+            "description": "Description for the media, rendered on the Post card for video and Amplify content."
+          },
+          "embeddable": {
+            "type": "boolean",
+            "description": "When true, the media\u0027s asset URLs do not expire and external syndicated playback is allowed."
+          },
+          "media_ids": {
+            "maxItems": 20,
+            "minItems": 1,
+            "type": "array",
+            "items": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            },
+            "description": "Media IDs to attach to the Post, in the order given."
+          },
+          "preview_media_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Media id whose asset is used as the preview image."
+          },
+          "tagged_user_ids": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "pattern": "^[0-9]{1,19}$",
+              "type": "string"
+            },
+            "description": "User IDs tagged in the media."
+          },
+          "title": {
+            "type": "string",
+            "description": "Title for the media, rendered on the Post card for video and Amplify content."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftMediaCallToActions": {
+        "type": "object",
+        "properties": {
+          "app_install": {
+            "$ref": "#/components/schemas/CreatePostDraftMediaCallToActionsAppInstall"
+          },
+          "visit_site": {
+            "$ref": "#/components/schemas/CreatePostDraftMediaCallToActionsVisitSite"
+          },
+          "watch_now": {
+            "$ref": "#/components/schemas/CreatePostDraftMediaCallToActionsWatchNow"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftMediaCallToActionsAppInstall": {
+        "type": "object",
+        "properties": {
+          "app_store_id": {
+            "type": "string",
+            "description": "Apple App Store iPhone app id."
+          },
+          "ipad_app_store_id": {
+            "type": "string",
+            "description": "Apple App Store iPad app id."
+          },
+          "play_store_id": {
+            "type": "string",
+            "description": "Google Play Store app id."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftMediaCallToActionsVisitSite": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "HTTPS URL the CTA links to."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftMediaCallToActionsWatchNow": {
+        "required": [
+          "url"
+        ],
+        "type": "object",
+        "properties": {
+          "url": {
+            "type": "string",
+            "description": "HTTPS URL the CTA links to."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftPoll": {
+        "required": [
+          "options",
+          "duration_minutes"
+        ],
+        "type": "object",
+        "properties": {
+          "duration_minutes": {
+            "maximum": 10080,
+            "minimum": 5,
+            "type": "integer",
+            "description": "Duration of the poll in minutes."
+          },
+          "options": {
+            "maxItems": 4,
+            "minItems": 2,
+            "type": "array",
+            "items": {
+              "maxLength": 25,
+              "minLength": 1,
+              "type": "string"
+            },
+            "description": "Poll options (2-4 choices, 1-25 characters each)."
+          },
+          "reply_settings": {
+            "$ref": "#/components/schemas/CreatePostDraftPollReplySettings"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftReply": {
+        "required": [
+          "in_reply_to_tweet_id"
+        ],
+        "type": "object",
+        "properties": {
+          "auto_populate_reply_metadata": {
+            "type": "boolean",
+            "description": "If true, reply metadata is automatically populated. Accepted for compatibility; it carries no backend argument and is dropped before the mutation is issued (see \u0060translate_body\u0060)."
+          },
+          "exclude_reply_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "User IDs to exclude from the reply thread."
+          },
+          "in_reply_to_tweet_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "The ID of the tweet being replied to."
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftRequest": {
+        "type": "object",
+        "properties": {
+          "card_uri": {
+            "type": "string",
+            "description": "Card URI parameter."
+          },
+          "clip": {
+            "$ref": "#/components/schemas/CreatePostDraftClip"
+          },
+          "community_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Community to post the tweet to."
+          },
+          "direct_message_deep_link": {
+            "type": "string",
+            "description": "Direct message deep link."
+          },
+          "edit_options": {
+            "$ref": "#/components/schemas/CreatePostDraftEditOptions"
+          },
+          "for_super_followers_only": {
+            "type": "boolean",
+            "description": "Restrict tweet to super followers."
+          },
+          "geo": {
+            "$ref": "#/components/schemas/CreatePostDraftGeo"
+          },
+          "made_with_ai": {
+            "type": "boolean",
+            "description": "Disclose that the tweet contains AI-generated media."
+          },
+          "media": {
+            "$ref": "#/components/schemas/CreatePostDraftMedia"
+          },
+          "nullcast": {
+            "type": "boolean",
+            "description": "If true, the tweet is not shown in the public timeline."
+          },
+          "paid_partnership": {
+            "type": "boolean",
+            "description": "Disclose that the tweet is a paid partnership."
+          },
+          "poll": {
+            "$ref": "#/components/schemas/CreatePostDraftPoll"
+          },
+          "quote_tweet_id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Tweet ID to quote."
+          },
+          "reply": {
+            "$ref": "#/components/schemas/CreatePostDraftReply"
+          },
+          "reply_settings": {
+            "$ref": "#/components/schemas/CreatePostDraftRequestReplySettings"
+          },
+          "share_with_followers": {
+            "type": "boolean",
+            "description": "Share an exclusive (super-follower) tweet with all followers."
+          },
+          "text": {
+            "type": "string",
+            "description": "Text of the Post. Required unless media is provided. At most 280 characters unless the account has X Premium.",
+            "default": ""
+          }
+        },
+        "additionalProperties": false
+      },
+      "CreatePostDraftResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/CreatePostDraftResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "CreatePostDraftResponseData": {
+        "required": [
+          "id",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of the saved draft."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text of the saved draft."
+          }
+        }
+      },
       "CreatePostsClip": {
         "required": [
           "post_id",
@@ -26732,6 +27250,32 @@
           "deleted": {
             "type": "boolean",
             "description": "Indicates whether the subtitles were deleted."
+          }
+        }
+      },
+      "DeletePostDraftResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/DeletePostDraftResponseData"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          }
+        }
+      },
+      "DeletePostDraftResponseData": {
+        "required": [
+          "deleted"
+        ],
+        "type": "object",
+        "properties": {
+          "deleted": {
+            "type": "boolean",
+            "description": "Whether the draft is gone from the user\u0027s drafts."
           }
         }
       },
@@ -28753,6 +29297,170 @@
             }
           }
         }
+      },
+      "GetPostDraftsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPostDraftsResponseData"
+            }
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Problem"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/GetPostDraftsResponseMeta"
+          }
+        }
+      },
+      "GetPostDraftsResponseData": {
+        "required": [
+          "id",
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "created_at": {
+            "type": "string",
+            "description": "When the draft was saved (RFC 3339)."
+          },
+          "id": {
+            "pattern": "^[0-9]{1,19}$",
+            "type": "string",
+            "description": "Unique identifier of the draft."
+          },
+          "made_with_ai": {
+            "type": "boolean",
+            "description": "Whether the draft discloses AI-generated media."
+          },
+          "media": {
+            "$ref": "#/components/schemas/GetPostDraftsResponseDataMedia"
+          },
+          "paid_partnership": {
+            "type": "boolean",
+            "description": "Whether the draft discloses a paid partnership."
+          },
+          "quote_tweet_id": {
+            "type": "string",
+            "description": "The ID of the Post this Post quotes."
+          },
+          "reply": {
+            "$ref": "#/components/schemas/GetPostDraftsResponseDataReply"
+          },
+          "text": {
+            "type": "string",
+            "description": "The text of the draft. Empty for a draft that only has media."
+          },
+          "thread": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPostDraftsResponseDataThread"
+            },
+            "description": "For a draft that is a thread, the Posts after the first one, in order. Each replies to the Post before it."
+          },
+          "unsupported_content": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/GetPostDraftsResponseDataUnsupportedContentItem"
+            },
+            "description": "Parts of the draft that the other fields do not carry. Present only when the draft holds more than is listed."
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "When the draft last changed (RFC 3339)."
+          }
+        }
+      },
+      "GetPostDraftsResponseDataMedia": {
+        "required": [
+          "media_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "media_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Media IDs attached to the Post, in order."
+          },
+          "tagged_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of the users tagged in any of the media."
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPostDraftsResponseDataReply": {
+        "required": [
+          "in_reply_to_tweet_id"
+        ],
+        "type": "object",
+        "properties": {
+          "exclude_reply_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of the users the reply does not mention."
+          },
+          "in_reply_to_tweet_id": {
+            "type": "string",
+            "description": "The ID of the Post the draft replies to."
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPostDraftsResponseDataThread": {
+        "required": [
+          "text"
+        ],
+        "type": "object",
+        "properties": {
+          "media": {
+            "$ref": "#/components/schemas/GetPostDraftsResponseDataThreadMedia"
+          },
+          "quote_tweet_id": {
+            "type": "string",
+            "description": "The ID of the Post this Post quotes."
+          },
+          "text": {
+            "type": "string",
+            "description": "The text of the Post. Empty when it only has media."
+          }
+        },
+        "additionalProperties": false
+      },
+      "GetPostDraftsResponseDataThreadMedia": {
+        "required": [
+          "media_ids"
+        ],
+        "type": "object",
+        "properties": {
+          "media_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Media IDs attached to the Post, in order."
+          },
+          "tagged_user_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "IDs of the users tagged in any of the media."
+          }
+        },
+        "additionalProperties": false
       },
       "GetPostsAnalyticsResponse": {
         "type": "object",
@@ -39703,6 +40411,20 @@
           }
         }
       },
+      "GetPostDraftsResponseMeta": {
+        "type": "object",
+        "properties": {
+          "next_token": {
+            "type": "string",
+            "description": "Pagination token for the next page of results."
+          },
+          "result_count": {
+            "type": "integer",
+            "description": "Number of items in the data array.",
+            "format": "int32"
+          }
+        }
+      },
       "GetPostsByIdsResponseMeta": {
         "type": "object",
         "properties": {
@@ -42367,6 +43089,70 @@
         "type": "string",
         "description": "The media category of the target media."
       },
+      "CreatePostDraftPollReplySettings": {
+        "enum": [
+          "following",
+          "mentionedUsers",
+          "subscribers",
+          "verified"
+        ],
+        "type": "string",
+        "description": "Who can reply to the poll Tweet. Accepted for compatibility; it carries no backend argument and is dropped before the mutation is issued (see \u0060translate_body\u0060).",
+        "x-ms-enum": {
+          "name": "CreatePostDraftPollReplySettings",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "following",
+              "name": "Following"
+            },
+            {
+              "value": "mentionedUsers",
+              "name": "MentionedUsers"
+            },
+            {
+              "value": "subscribers",
+              "name": "Subscribers"
+            },
+            {
+              "value": "verified",
+              "name": "Verified"
+            }
+          ]
+        }
+      },
+      "CreatePostDraftRequestReplySettings": {
+        "enum": [
+          "following",
+          "mentionedUsers",
+          "subscribers",
+          "verified"
+        ],
+        "type": "string",
+        "description": "Who can reply to this tweet.",
+        "x-ms-enum": {
+          "name": "CreatePostDraftRequestReplySettings",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "following",
+              "name": "Following"
+            },
+            {
+              "value": "mentionedUsers",
+              "name": "MentionedUsers"
+            },
+            {
+              "value": "subscribers",
+              "name": "Subscribers"
+            },
+            {
+              "value": "verified",
+              "name": "Verified"
+            }
+          ]
+        }
+      },
       "CreatePostsPollReplySettings": {
         "enum": [
           "following",
@@ -43279,6 +44065,47 @@
             {
               "value": "deleted",
               "name": "Deleted"
+            }
+          ]
+        }
+      },
+      "GetPostDraftsResponseDataUnsupportedContentItem": {
+        "enum": [
+          "text_formatting",
+          "inline_media",
+          "media_tags",
+          "possibly_sensitive",
+          "attachment",
+          "cashtag_attachment"
+        ],
+        "type": "string",
+        "x-ms-enum": {
+          "name": "GetPostDraftsResponseDataUnsupportedContentItem",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "text_formatting",
+              "name": "TextFormatting"
+            },
+            {
+              "value": "inline_media",
+              "name": "InlineMedia"
+            },
+            {
+              "value": "media_tags",
+              "name": "MediaTags"
+            },
+            {
+              "value": "possibly_sensitive",
+              "name": "PossiblySensitive"
+            },
+            {
+              "value": "attachment",
+              "name": "Attachment"
+            },
+            {
+              "value": "cashtag_attachment",
+              "name": "CashtagAttachment"
             }
           ]
         }

@@ -21,6 +21,7 @@ using Soenneker.X.OpenApiClient.Two.Media;
 using Soenneker.X.OpenApiClient.Two.News;
 using Soenneker.X.OpenApiClient.Two.Notes;
 using Soenneker.X.OpenApiClient.Two.OpenapiJson;
+using Soenneker.X.OpenApiClient.Two.Posts;
 using Soenneker.X.OpenApiClient.Two.Region;
 using Soenneker.X.OpenApiClient.Two.Sources;
 using Soenneker.X.OpenApiClient.Two.Spaces;
@@ -135,6 +136,11 @@ namespace Soenneker.X.OpenApiClient.Two
         public global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiJsonRequestBuilder OpenapiJson
         {
             get => new global::Soenneker.X.OpenApiClient.Two.OpenapiJson.OpenapiJsonRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The posts property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Posts.PostsRequestBuilder Posts
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Posts.PostsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The region property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Region.RegionRequestBuilder Region
