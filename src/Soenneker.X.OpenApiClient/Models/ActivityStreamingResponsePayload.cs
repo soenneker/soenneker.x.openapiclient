@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.X.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Post"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.Post"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload"/>, <see cref="global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ActivityStreamingResponsePayload : IComposedTypeWrapper, IParsable
@@ -66,6 +66,14 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload ProfileUpdateActivityResponsePayload { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload? TrendActivityResponsePayload { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload TrendActivityResponsePayload { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -100,15 +108,20 @@ namespace Soenneker.X.OpenApiClient.Models
             {
                 
             }
+            else if("TrendActivityResponsePayload".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema5710(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4488(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema2419(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4686(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4772(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4025(unionPayload) } : null;
+            var unionBranchMatches = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? new bool?[] { global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema5715(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4493(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema7484(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema2424(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4691(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4777(unionPayload), global::Soenneker.OpenApi.Generated.OpenApiUnionMatchers.MatchSchema4030(unionPayload) } : null;
             bool? matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![0] : (bool?)false;
             bool? matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![1] : (bool?)false;
             bool? matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![2] : (bool?)false;
             bool? matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![3] : (bool?)false;
             bool? matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![4] : (bool?)false;
             bool? matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![5] : (bool?)false;
+            bool? matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject ? unionBranchMatches![6] : (bool?)false;
             int matchingUnionBranches = 0;
             if (matchesUnionBranch0 != false) matchingUnionBranches++;
             if (matchesUnionBranch1 != false) matchingUnionBranches++;
@@ -116,14 +129,16 @@ namespace Soenneker.X.OpenApiClient.Models
             if (matchesUnionBranch3 != false) matchingUnionBranches++;
             if (matchesUnionBranch4 != false) matchingUnionBranches++;
             if (matchesUnionBranch5 != false) matchingUnionBranches++;
-            bool noSelectedUnionBranch = result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null;
+            if (matchesUnionBranch6 != false) matchingUnionBranches++;
+            bool noSelectedUnionBranch = result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null && result.TrendActivityResponsePayload == null;
             if (noSelectedUnionBranch && matchesUnionBranch0 == true && matchingUnionBranches == 1) result.ProfileUpdateActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload(), parseNode);
             if (noSelectedUnionBranch && matchesUnionBranch1 == true && matchingUnionBranches == 1) result.NewsActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.NewsActivityResponsePayload(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.FollowActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch3 == true && matchingUnionBranches == 1) result.Post = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.Post(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch4 == true && matchingUnionBranches == 1) result.PostDeleteActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload(), parseNode);
-            if (noSelectedUnionBranch && matchesUnionBranch5 == true && matchingUnionBranches == 1) result.LikeWithPostAuthor = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor(), parseNode);
-            if (result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null) result.UnrecognizedValue = unionPayload;
+            if (noSelectedUnionBranch && matchesUnionBranch2 == true && matchingUnionBranches == 1) result.TrendActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch3 == true && matchingUnionBranches == 1) result.FollowActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.FollowActivityResponsePayload(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch4 == true && matchingUnionBranches == 1) result.Post = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.Post(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch5 == true && matchingUnionBranches == 1) result.PostDeleteActivityResponsePayload = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.PostDeleteActivityResponsePayload(), parseNode);
+            if (noSelectedUnionBranch && matchesUnionBranch6 == true && matchingUnionBranches == 1) result.LikeWithPostAuthor = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.X.OpenApiClient.Models.LikeWithPostAuthor(), parseNode);
+            if (result.FollowActivityResponsePayload == null && result.LikeWithPostAuthor == null && result.NewsActivityResponsePayload == null && result.Post == null && result.PostDeleteActivityResponsePayload == null && result.ProfileUpdateActivityResponsePayload == null && result.TrendActivityResponsePayload == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -158,6 +173,10 @@ return result;
             {
                 return ProfileUpdateActivityResponsePayload.GetFieldDeserializers();
             }
+            else if(TrendActivityResponsePayload != null)
+            {
+                return TrendActivityResponsePayload.GetFieldDeserializers();
+            }
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -167,7 +186,7 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (FollowActivityResponsePayload == null && LikeWithPostAuthor == null && NewsActivityResponsePayload == null && Post == null && PostDeleteActivityResponsePayload == null && ProfileUpdateActivityResponsePayload == null && TrendActivityResponsePayload == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
             int selectedUnionBranches = 0;
             if (FollowActivityResponsePayload != null) selectedUnionBranches++;
             if (LikeWithPostAuthor != null) selectedUnionBranches++;
@@ -175,12 +194,14 @@ return result;
             if (Post != null) selectedUnionBranches++;
             if (PostDeleteActivityResponsePayload != null) selectedUnionBranches++;
             if (ProfileUpdateActivityResponsePayload != null) selectedUnionBranches++;
+            if (TrendActivityResponsePayload != null) selectedUnionBranches++;
             if (FollowActivityResponsePayload != null && selectedUnionBranches == 1) { if (FollowActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, FollowActivityResponsePayload); return; }
             if (LikeWithPostAuthor != null && selectedUnionBranches == 1) { if (LikeWithPostAuthor is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, LikeWithPostAuthor); return; }
             if (NewsActivityResponsePayload != null && selectedUnionBranches == 1) { if (NewsActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, NewsActivityResponsePayload); return; }
             if (Post != null && selectedUnionBranches == 1) { if (Post is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, Post); return; }
             if (PostDeleteActivityResponsePayload != null && selectedUnionBranches == 1) { if (PostDeleteActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, PostDeleteActivityResponsePayload); return; }
             if (ProfileUpdateActivityResponsePayload != null && selectedUnionBranches == 1) { if (ProfileUpdateActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ProfileUpdateActivityResponsePayload); return; }
+            if (TrendActivityResponsePayload != null && selectedUnionBranches == 1) { if (TrendActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TrendActivityResponsePayload); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(FollowActivityResponsePayload != null)
@@ -212,6 +233,11 @@ return result;
             {
                 if (ProfileUpdateActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ProfileUpdateActivityResponsePayload>(null, ProfileUpdateActivityResponsePayload);
+            }
+            else if(TrendActivityResponsePayload != null)
+            {
+                if (TrendActivityResponsePayload is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.TrendActivityResponsePayload>(null, TrendActivityResponsePayload);
             }
         }
     }

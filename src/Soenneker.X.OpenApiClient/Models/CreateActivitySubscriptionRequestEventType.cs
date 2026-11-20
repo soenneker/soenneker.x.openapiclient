@@ -43,6 +43,10 @@ namespace Soenneker.X.OpenApiClient.Models
         #pragma warning disable CS1591
         ProfileUpdateHandle,
         #pragma warning restore CS1591
+        [EnumMember(Value = "trends.new")]
+        #pragma warning disable CS1591
+        TrendsNew,
+        #pragma warning restore CS1591
         [EnumMember(Value = "news.new")]
         #pragma warning disable CS1591
         NewsNew,

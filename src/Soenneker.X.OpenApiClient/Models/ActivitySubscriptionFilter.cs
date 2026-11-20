@@ -22,6 +22,8 @@ namespace Soenneker.X.OpenApiClient.Models
             else if (parseNode.GetChildNode("direction") is { } nullNodeDirection && nullNodeDirection.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Direction = null;
             if (parseNode.GetChildNode("keyword") is null) { _explicitNullValueKeyword = default!; _explicitNullProperties?.Remove("keyword"); }
             else if (parseNode.GetChildNode("keyword") is { } nullNodeKeyword && nullNodeKeyword.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Keyword = null;
+            if (parseNode.GetChildNode("qualifiers") is null) { _explicitNullValueQualifiers = default!; _explicitNullProperties?.Remove("qualifiers"); }
+            else if (parseNode.GetChildNode("qualifiers") is { } nullNodeQualifiers && nullNodeQualifiers.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Qualifiers = null;
             if (parseNode.GetChildNode("user_id") is null) { _explicitNullValueUserId = default!; _explicitNullProperties?.Remove("user_id"); }
             else if (parseNode.GetChildNode("user_id") is { } nullNodeUserId && nullNodeUserId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UserId = null;
         }
@@ -38,6 +40,16 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string Keyword { get => _explicitNullValueKeyword; set { _explicitNullValueKeyword = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("keyword"); else _explicitNullProperties?.Remove("keyword"); } }
         private string _explicitNullValueKeyword = default!;
+#endif
+        /// <summary>Event-specific string predicates applied to the subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty? Qualifiers { get => _explicitNullValueQualifiers; set { _explicitNullValueQualifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualifiers"); else _explicitNullProperties?.Remove("qualifiers"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty? _explicitNullValueQualifiers = default!;
+#nullable restore
+#else
+        public global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty Qualifiers { get => _explicitNullValueQualifiers; set { _explicitNullValueQualifiers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("qualifiers"); else _explicitNullProperties?.Remove("qualifiers"); } }
+        private global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty _explicitNullValueQualifiers = default!;
 #endif
         /// <summary>Unique identifier of a User</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,10 +77,11 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "direction", n => { Direction = n.GetEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterDirection>(); } },
                 { "keyword", n => { Keyword = n.GetStringValue(); } },
+                { "qualifiers", n => { Qualifiers = n.GetObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty>(global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty.CreateFromDiscriminatorValue); } },
                 { "user_id", n => { UserId = n.GetStringValue(); } },
             };
         }
@@ -81,6 +94,7 @@ namespace Soenneker.X.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterDirection>("direction", Direction);
             writer.WriteStringValue("keyword", Keyword);
+            writer.WriteObjectValue<global::Soenneker.X.OpenApiClient.Models.ActivitySubscriptionFilterQualifiersProperty>("qualifiers", Qualifiers);
             writer.WriteStringValue("user_id", UserId);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
