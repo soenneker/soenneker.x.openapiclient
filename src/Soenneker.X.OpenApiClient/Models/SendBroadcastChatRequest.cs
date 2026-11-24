@@ -19,6 +19,8 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if (parseNode.GetChildNode("relay_source") is null) { _explicitNullValueRelaySource = default!; _explicitNullProperties?.Remove("relay_source"); }
             else if (parseNode.GetChildNode("relay_source") is { } nullNodeRelaySource && nullNodeRelaySource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelaySource = null;
+            if (parseNode.GetChildNode("relay_user") is null) { _explicitNullValueRelayUser = default!; _explicitNullProperties?.Remove("relay_user"); }
+            else if (parseNode.GetChildNode("relay_user") is { } nullNodeRelayUser && nullNodeRelayUser.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RelayUser = null;
             if (parseNode.GetChildNode("reply_to") is null) { _explicitNullValueReplyTo = default!; _explicitNullProperties?.Remove("reply_to"); }
             else if (parseNode.GetChildNode("reply_to") is { } nullNodeReplyTo && nullNodeReplyTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ReplyTo = null;
             if (parseNode.GetChildNode("text") is null) { _explicitNullValueText = default!; _explicitNullProperties?.Remove("text"); }
@@ -34,6 +36,16 @@ namespace Soenneker.X.OpenApiClient.Models
 #else
         public string RelaySource { get => _explicitNullValueRelaySource; set { _explicitNullValueRelaySource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relay_source"); else _explicitNullProperties?.Remove("relay_source"); } }
         private string _explicitNullValueRelaySource = default!;
+#endif
+        /// <summary>The name of the person who wrote this message on the platform it was relayed from, shown next to that platform&apos;s icon. Display text only, not an X account. Requires `relay_source`. Links are not allowed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? RelayUser { get => _explicitNullValueRelayUser; set { _explicitNullValueRelayUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relay_user"); else _explicitNullProperties?.Remove("relay_user"); } }
+        private string? _explicitNullValueRelayUser = default!;
+#nullable restore
+#else
+        public string RelayUser { get => _explicitNullValueRelayUser; set { _explicitNullValueRelayUser = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("relay_user"); else _explicitNullProperties?.Remove("relay_user"); } }
+        private string _explicitNullValueRelayUser = default!;
 #endif
         /// <summary>Message id to reply to, returned as timestamp when sent.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -71,9 +83,10 @@ namespace Soenneker.X.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "relay_source", n => { RelaySource = n.GetStringValue(); } },
+                { "relay_user", n => { RelayUser = n.GetStringValue(); } },
                 { "reply_to", n => { ReplyTo = n.GetStringValue(); } },
                 { "text", n => { Text = n.GetStringValue(); } },
             };
@@ -86,6 +99,7 @@ namespace Soenneker.X.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("relay_source", RelaySource);
+            writer.WriteStringValue("relay_user", RelayUser);
             writer.WriteStringValue("reply_to", ReplyTo);
             writer.WriteStringValue("text", Text);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
