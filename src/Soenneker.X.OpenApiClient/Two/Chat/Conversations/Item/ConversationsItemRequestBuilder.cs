@@ -8,6 +8,7 @@ using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_requests;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admin_settings;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Admins;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Delete;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invite;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Invites;
@@ -21,6 +22,8 @@ using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Pinned_messages;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Read;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Screen_capture;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unarchive;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unmute;
 using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unread;
 using System.Collections.Generic;
 using System.IO;
@@ -54,6 +57,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder Archive
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Archive.ArchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The deletePath property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Delete.DeleteRequestBuilder DeletePath
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Delete.DeleteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The events property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Events.EventsRequestBuilder Events
@@ -120,6 +128,16 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         {
             get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Typing.TypingRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The unarchive property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unarchive.UnarchiveRequestBuilder Unarchive
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unarchive.UnarchiveRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unmute property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unmute.UnmuteRequestBuilder Unmute
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unmute.UnmuteRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The unread property</summary>
         public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Unread.UnreadRequestBuilder Unread
         {
@@ -142,20 +160,20 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
         {
         }
         /// <summary>
-        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app. Legacy route: prefer `POST /2/chat/conversations/{id}/delete`, which takes the same request and returns the same response.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -164,7 +182,7 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             {
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns metadata for a Chat conversation including type, muted status, group details, and your unread state. For the unread state, request chat_conversation.fields=unread,last_read_event_id,newest_event_id: those fields give your read state, computed from your latest read receipt and the conversation&apos;s latest notifying message. Use chat_conversation.fields to select which fields are returned. Use expansions to hydrate member, admin, or participant user objects. Use user.fields to control which profile fields are returned for expanded users; in a 1:1 chat, user.fields=receives_your_chat on the participant says how you can message them: encrypted, unencrypted, or none.
@@ -215,18 +233,18 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateChatGroupResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app.
+        /// Deletes a Chat conversation for the authenticated user only; other participants keep it. Works for group and 1:1 conversations. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient. Deleting a pending message request&apos;s conversation deletes the request, like Delete in the X app. Legacy route: prefer `POST /2/chat/conversations/{id}/delete`, which takes the same request and returns the same response.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationLegacyRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.X.OpenApiClient.Models;
+using Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Remove;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -17,6 +18,11 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class Message_ttlRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The remove property</summary>
+        public global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Remove.RemoveRequestBuilder Remove
+        {
+            get => new global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Remove.RemoveRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl.Message_ttlRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -32,31 +38,6 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public Message_ttlRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/2/chat/conversations/{id}/message_ttl", rawUrl)
         {
-        }
-        /// <summary>
-        /// Stops new messages in a 1:1 or group Chat conversation from disappearing, for every participant. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.X.OpenApiClient.Models.Error">When receiving a 4XX or 5XX status code</exception>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlResponse?> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlResponse> DeleteAsync(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Sets how long new messages in a 1:1 or group Chat conversation last before they disappear, for every participant. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
@@ -82,28 +63,6 @@ namespace Soenneker.X.OpenApiClient.Two.Chat.Conversations.Item.Message_ttl
                 { "XXX", global::Soenneker.X.OpenApiClient.Models.Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationMessageTtlResponse>(requestInfo, global::Soenneker.X.OpenApiClient.Models.UpdateChatConversationMessageTtlResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Stops new messages in a 1:1 or group Chat conversation from disappearing, for every participant. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.X.OpenApiClient.Models.DeleteChatConversationMessageTtlRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
         }
         /// <summary>
         /// Sets how long new messages in a 1:1 or group Chat conversation last before they disappear, for every participant. For 1:1 conversations, provide the recipient&apos;s user ID; the server constructs the canonical conversation ID from the authenticated user and recipient.
